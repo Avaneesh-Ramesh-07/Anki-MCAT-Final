@@ -1,0 +1,7 @@
+{
+    "_comment": "AAMC section distribution by scored multiple-choice question count (230 total). R5 overall readiness weights each section's mean per-topic readiness by these; all four sections stay in the denominator, so untested sections drag the overall down (anti-overconfidence). Keys are the four canonical section codes (see SECTIONS in performance.rs); a topic maps to its section via the first segment of its aamc::<section>::<topic> tag (section_of). Sub-topic weighting within a section is uniform — AAMC publishes counts only per section. Edit these counts to retune.",
+    "chem-phys": 59,
+    "bio-biochem": 59,
+    "psych-soc": 59,
+    "cars": 53
+}

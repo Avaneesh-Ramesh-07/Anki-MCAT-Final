@@ -13,6 +13,7 @@ mod error;
 mod github;
 mod i18n;
 mod import_export;
+mod mcat;
 mod ops;
 mod sync;
 

@@ -36,20 +36,22 @@ rsbridge (PyO3 cdylib, pylib/rsbridge) ──► Rust core `anki` crate (rslib/)
 every client and the source of generated APIs for Rust, Python, and TypeScript.
 
 ### Layer map (tracked-file counts)
-| Dir | Files | Role |
-|---|---|---|
-| `ts/` | 522 | Web frontend — SvelteKit 2 / Svelte 5 / TS 5 / Vite 6 / Sass + Bootstrap 5 |
-| `rslib/` | 481 | Core Rust engine (`anki` crate) — scheduler, storage, sync, search, import/export, media |
-| `qt/` | 293 | PyQt6 desktop GUI (`aqt`), embeds web views, mediasrv, installer |
-| `docs-site/` | 280 | Documentation website |
-| `pylib/` | 98 | Python library (`import anki`) wrapping Rust via `rsbridge` (PyO3 cdylib) |
-| `ftl/` | 58 | Fluent translation files (ftl/core, ftl/qt) |
-| `build/` | 46 | Rust-based build system (configure → Ninja generator → runner) |
-| `tools/` | 36 | Dev/build helper scripts |
-| `docs/` | 30 | Developer docs (contributing, development, syncserver, …) |
-| `proto/` | 28 | Protobuf definitions — the IPC contract & codegen source |
+
+| Dir          | Files | Role                                                                                     |
+| ------------ | ----- | ---------------------------------------------------------------------------------------- |
+| `ts/`        | 522   | Web frontend — SvelteKit 2 / Svelte 5 / TS 5 / Vite 6 / Sass + Bootstrap 5               |
+| `rslib/`     | 481   | Core Rust engine (`anki` crate) — scheduler, storage, sync, search, import/export, media |
+| `qt/`        | 293   | PyQt6 desktop GUI (`aqt`), embeds web views, mediasrv, installer                         |
+| `docs-site/` | 280   | Documentation website                                                                    |
+| `pylib/`     | 98    | Python library (`import anki`) wrapping Rust via `rsbridge` (PyO3 cdylib)                |
+| `ftl/`       | 58    | Fluent translation files (ftl/core, ftl/qt)                                              |
+| `build/`     | 46    | Rust-based build system (configure → Ninja generator → runner)                           |
+| `tools/`     | 36    | Dev/build helper scripts                                                                 |
+| `docs/`      | 30    | Developer docs (contributing, development, syncserver, …)                                |
+| `proto/`     | 28    | Protobuf definitions — the IPC contract & codegen source                                 |
 
 ### Build & tooling (from justfile + CLAUDE.md)
+
 - **Entry point:** `just` recipes wrap a Rust-generated **Ninja** build. Never call
   `./ninja`/`./run`/`tools/*` directly — use `just`.
 - Key recipes: `just run` (build pylib+qt, launch dev), `just run-optimized`, `just check`
@@ -64,6 +66,7 @@ every client and the source of generated APIs for Rust, Python, and TypeScript.
 - Web views served at `http://localhost:40000/_anki/pages/` in dev.
 
 ### MCAT-fork intent (from anki_tech_stack.md / PRDs)
+
 - One Rust engine, two clients (this desktop repo + an AnkiDroid Kotlin fork pinned to this
   repo's `anki` crate via `rsdroid`/`cargo-ndk`). iOS deferred.
 - New work targets: "MCAT services" (readiness / practice-test / comfort) added to the Rust
@@ -74,6 +77,7 @@ every client and the source of generated APIs for Rust, Python, and TypeScript.
   `rslib/src/stats/`, with tests in `rslib/src/...` + `pylib/tests/`.
 
 ---
+
 <!-- Subsystem deep-dives appended below as exploration proceeds. -->
 
 ## 1. `proto/` — the IPC contract
@@ -92,24 +96,25 @@ handlers under `rslib/src/backend/` and the service impls. Most mutations return
 which tells the UI what to refresh and drives undo.
 
 **Service inventory** (file → service → purpose → notable methods):
-| File | Service | Purpose | Notable methods |
-|---|---|---|---|
-| `sync.proto` | (Backend)SyncService | media + collection sync | `sync_media`, `sync_login`, `sync_status`, `sync_collection`, `full_upload_or_download`, `abort_sync` |
-| `collection.proto` | (Backend)CollectionService | collection lifecycle/txn | `open_collection`, `close_collection`, `create_backup`, `check_database`, `undo`, `redo` |
-| `cards.proto` | CardsService | card CRUD | `get_card`, `update_cards`, `remove_cards`, `set_deck`, `set_flag` |
-| `notes.proto` | NotesService | note CRUD/fields | `add_note(s)`, `get_note`, `update_notes`, `remove_notes`, `cloze_numbers_in_note` |
-| `decks.proto` | DecksService | deck CRUD/tree | `new_deck`, `add_deck`, `update_deck`, `deck_tree`, `set_current_deck` |
-| `notetypes.proto` | NotetypesService | notetypes/templates | `add_notetype`, `update_notetype`, `change_notetype` |
-| `deck_config.proto` | DeckConfigService | scheduling config | `get_deck_config`, `update_deck_configs`, `get_deck_configs_for_update` |
-| `scheduler.proto` | SchedulerService | scheduling/answering | `get_queued_cards`, `answer_card`, `sched_timing_today`, `bury_or_suspend_cards`, `get_scheduling_states`, `custom_study` |
-| `stats.proto` | StatsService | stats/graphs | `card_stats`, `get_review_logs`, `graphs`, `get_graph_preferences` |
-| `search.proto` | SearchService | search/browser | `search_cards`, `search_notes`, `find_and_replace`, `browser_row_for_id` |
-| `tags.proto` | TagsService | tags | `all_tags`, `add/remove_note_tags`, `rename_tags`, `complete_tag` |
-| `import_export.proto` | ImportExportService | package/CSV import/export | `import_anki_package`, `export_anki_package`, `import_csv`, `export_note_csv` |
-| `card_rendering.proto` | CardRenderingService | template render/media | `render_existing_card`, `render_uncommitted_card`, `extract_av_tags`, `extract_latex` |
-| `config.proto` | ConfigService | prefs/global config | `get_preferences`, `set_preferences`, `get/set_config_*` |
-| `media.proto` | MediaService | media files | `check_media`, `add_media_file`, `trash_media_files` |
-| others | I18nService, LinksService, ImageOcclusionService, AnkiwebService, AnkihubService, GithubService | localization, help links, image-occlusion, platform integrations | — |
+
+| File                   | Service                                                                                         | Purpose                                                          | Notable methods                                                                                                           |
+| ---------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `sync.proto`           | (Backend)SyncService                                                                            | media + collection sync                                          | `sync_media`, `sync_login`, `sync_status`, `sync_collection`, `full_upload_or_download`, `abort_sync`                     |
+| `collection.proto`     | (Backend)CollectionService                                                                      | collection lifecycle/txn                                         | `open_collection`, `close_collection`, `create_backup`, `check_database`, `undo`, `redo`                                  |
+| `cards.proto`          | CardsService                                                                                    | card CRUD                                                        | `get_card`, `update_cards`, `remove_cards`, `set_deck`, `set_flag`                                                        |
+| `notes.proto`          | NotesService                                                                                    | note CRUD/fields                                                 | `add_note(s)`, `get_note`, `update_notes`, `remove_notes`, `cloze_numbers_in_note`                                        |
+| `decks.proto`          | DecksService                                                                                    | deck CRUD/tree                                                   | `new_deck`, `add_deck`, `update_deck`, `deck_tree`, `set_current_deck`                                                    |
+| `notetypes.proto`      | NotetypesService                                                                                | notetypes/templates                                              | `add_notetype`, `update_notetype`, `change_notetype`                                                                      |
+| `deck_config.proto`    | DeckConfigService                                                                               | scheduling config                                                | `get_deck_config`, `update_deck_configs`, `get_deck_configs_for_update`                                                   |
+| `scheduler.proto`      | SchedulerService                                                                                | scheduling/answering                                             | `get_queued_cards`, `answer_card`, `sched_timing_today`, `bury_or_suspend_cards`, `get_scheduling_states`, `custom_study` |
+| `stats.proto`          | StatsService                                                                                    | stats/graphs                                                     | `card_stats`, `get_review_logs`, `graphs`, `get_graph_preferences`                                                        |
+| `search.proto`         | SearchService                                                                                   | search/browser                                                   | `search_cards`, `search_notes`, `find_and_replace`, `browser_row_for_id`                                                  |
+| `tags.proto`           | TagsService                                                                                     | tags                                                             | `all_tags`, `add/remove_note_tags`, `rename_tags`, `complete_tag`                                                         |
+| `import_export.proto`  | ImportExportService                                                                             | package/CSV import/export                                        | `import_anki_package`, `export_anki_package`, `import_csv`, `export_note_csv`                                             |
+| `card_rendering.proto` | CardRenderingService                                                                            | template render/media                                            | `render_existing_card`, `render_uncommitted_card`, `extract_av_tags`, `extract_latex`                                     |
+| `config.proto`         | ConfigService                                                                                   | prefs/global config                                              | `get_preferences`, `set_preferences`, `get/set_config_*`                                                                  |
+| `media.proto`          | MediaService                                                                                    | media files                                                      | `check_media`, `add_media_file`, `trash_media_files`                                                                      |
+| others                 | I18nService, LinksService, ImageOcclusionService, AnkiwebService, AnkihubService, GithubService | localization, help links, image-occlusion, platform integrations | —                                                                                                                         |
 
 Note the recurring pairing: a public `XyzService` (on-the-fly ops) plus a backend-only
 `BackendXyzService` (offline ops not exposed to all clients).
@@ -181,6 +186,7 @@ and contains the per-service traits + the `run_service_method(service, method, b
 Subcrates: `rslib/{i18n,io,linkchecker,process,proto,sync}`.
 
 ### 3.1 Data model — notes / cards / notetypes
+
 - **`Note`** (`rslib/src/notes/mod.rs`): `id: NoteId` (ms-timestamp i64), `guid` (base91), `notetype_id`,
   `mtime: TimestampSecs`, `usn: Usn`, `tags: Vec<String>`, `fields: Vec<String>` (field 0 = sort field),
   cached `sort_field` + `checksum` (u32, for dupe detection). `prepare_for_update()` normalizes NFC,
@@ -199,6 +205,7 @@ Subcrates: `rslib/{i18n,io,linkchecker,process,proto,sync}`.
   unique cloze number. Cached lookups in `Collection.state.notetype_cache`.
 
 ### 3.2 Scheduler (`rslib/src/scheduler/`) — most relevant to the MCAT fork
+
 Module layout: **answering/** (rating→state transition: `mod.rs`, `current.rs`, `learning.rs`,
 `review.rs`, `relearning.rs`, `preview.rs`, `revlog.rs`), **queue/** (`builder/` gathers + sorts +
 intersperses; `main.rs` pops/pushes), **states/** (`normal.rs` = New/Learning/Review/Relearning,
@@ -228,6 +235,7 @@ intersperses; `main.rs` pops/pushes), **states/** (`normal.rs` = New/Learning/Re
   On first call after rollover, scheduler-buried cards are auto-unburied.
 
 ### 3.3 revlog (`rslib/src/revlog/mod.rs`)
+
 `RevlogEntry`: `id: RevlogId` (ms timestamp), `cid`, `usn`, `button_chosen` (ease 1–4; 0 = manual),
 `interval`/`last_interval` (positive=days, negative=seconds for intraday), `ease_factor: u32`
 (normally ×10 of %, e.g. 2500=250%; with FSRS encodes normalized difficulty 100–1100),
@@ -236,6 +244,7 @@ intersperses; `main.rs` pops/pushes), **states/** (`normal.rs` = New/Learning/Re
 `interval_secs()`, `is_reset()`, `is_cramming()`, `has_rating_and_affects_scheduling()`.
 
 ### 3.4 decks & deck config
+
 - **`Deck`** (`decks/mod.rs`): id, `name: NativeDeckName`, mtime, usn, `common` (description, collapse),
   `kind: Normal{config_id, desired_retention?} | Filtered`. `decks/limits.rs` builds `RemainingLimits`
   per deck (review+new remaining after today's usage; `new_cards_ignore_review_limit` flag).
@@ -246,12 +255,14 @@ intersperses; `main.rs` pops/pushes), **states/** (`normal.rs` = New/Learning/Re
   (new/reviews/interday-learning). Validated on read.
 
 ### 3.5 config (`rslib/src/config/`)
+
 Global `ConfigKey` enum (`config/mod.rs`): timing (`LocalOffset`, `CreationOffset`, `Rollover`,
 `FirstDayOfWeek`), scheduler (`SchedulerVersion` V1/V2; V3 = V2 + `Sched2021` bool), queuing
 (`NewReviewMix`, `LearnAheadSecs`, `NextNewCardPosition`, `AnswerTimeLimitSecs`), `LastUnburiedDay`,
 session (`CurrentDeckId`, `CurrentNotetypeId`). Bool flags in `config/bool.rs` (Fsrs, Sched2021, …).
 
 ### 3.6 search (`rslib/src/search/`)
+
 `parser.rs` (nom recursive-descent) parses a query string into a `Node` AST (And/Or/Not/Group/Search);
 `SearchNode` has 30+ variants (UnqualifiedText, SingleField{field,text,mode}, Deck, Tag, Rated{days,ease},
 State, Property, Duplicates, Regex, AddedInDays, …). `sqlwriter.rs` (`SqlWriter::build_query`) turns the
@@ -261,6 +272,7 @@ match. `builder.rs` composes/flattens queries. Entry points `search_cards`/`sear
 Columns defined in `browser_table.rs`.
 
 ### 3.7 stats (`rslib/src/stats/`) — template for a new MCAT service
+
 `stats/service.rs` implements the generated `StatsService` trait for `Collection`: `card_stats`,
 `get_review_logs`, `graphs`, `get/set_graph_preferences`. `card.rs`: `card_stats(cid)` loads
 card→note→notetype→deck + revlog, computes average/total secs, retrievability, returns proto.
@@ -273,6 +285,7 @@ compute derived metrics → return proto. Register by adding `pub mod mcat;` to 
 generates the trait + dispatcher.
 
 ### 3.8 rendering & text
+
 `template.rs` (mustache-like `{{field}}`/`{{#cond}}`/`{{^inv}}`, nom parser, field requirements),
 `template_filters.rs`, `cloze.rs` (`{{c1::text::hint}}` regex/tokenizer + per-number card gen),
 `latex.rs` (MathJax `\[ \] \( \)`, preamble/postamble), `typeanswer.rs` (type-in answer compare),
@@ -281,6 +294,7 @@ combining-mark stripping), `card_rendering/` (RenderCardService: render question
 tags via `CardNodes::parse`, extract LaTeX).
 
 ### 3.9 import/export & media
+
 `import_export/` (ImportExportService): apkg (ZIP of collection.anki2 + media), colpkg (full backup),
 CSV (configurable delimiter/field-mapping/HTML), JSON. Key dirs: `package/apkg/`, `package/colpkg/`,
 `text/csv/`, `text/json.rs`. `media/` (MediaService): `check_media` (orphans/missing/in-templates),
@@ -288,6 +302,7 @@ CSV (configurable delimiter/field-mapping/HTML), JSON. Key dirs: `package/apkg/`
 from notetype CSS/templates (`_underscored` refs).
 
 ### 3.10 storage (`rslib/src/storage/`)
+
 SQLite via rusqlite. `storage/sqlite.rs` `SqliteStorage` opens the DB (WAL, page size, exclusive lock,
 prepared-statement cache) and registers custom SQL functions (`field_at_index`, `process_text`,
 `fnvhash`, `regexp`, `regexp_fields`, `regexp_tags`). Schema versioning in `storage/upgrades/mod.rs`
@@ -297,6 +312,7 @@ tracks tombstones `(oid, type, usn)`; `storage/sync.rs` handles USN (`usn()`, `i
 `objects_pending_sync`, `pending_object_clause` → `"usn = ?"` for clients at usn=-1 vs `"usn >= ?"` for server).
 
 ### 3.11 collection / transactions / undo / ops / progress
+
 `collection/mod.rs` `Collection` holds `storage`, paths, media folder/db, `tr: I18n`, `server: bool`,
 `state` (caches, undo manager, progress). Built via `CollectionBuilder`. `collection/transact.rs`
 `transact(op, fn)` wraps a DB transaction, brackets it with `begin/end_undoable_operation`, bumps mtime
@@ -309,6 +325,7 @@ bypass undo. `collection/timestamps.rs` tracks `collection_change`/`schema_chang
 shared `Arc<Mutex<ProgressState>>` (~0.1s throttle) and surfaces `want_abort` as `Interrupted`.
 
 ### 3.12 sync client (`rslib/src/sync/`) & server (`rslib/sync/`)
+
 **Client phases** (`sync/collection/normal.rs` `NormalSyncer`): (1) meta exchange (`meta.rs` — compare
 modified/schema/usn; schema mismatch ⇒ full sync), (2) start + deletions (`start.rs` — exchange & apply
 `Graves`), (3) unchunked changes (`changes.rs` — notetypes/decks/deckconfig/tags/config in one batch),
@@ -324,12 +341,14 @@ HTTP via `sync/http_client/` (reqwest) with zstd compression; media sync is a se
 Docker (see `docs/syncserver/`).
 
 ### 3.13 Android & AnkiHub glue
+
 `rslib/src/ankidroid/` (`service.rs`, `db.rs`): `AnkidroidService` lets the Android client run raw SQL as
 protobuf (`run_db_command`, paginated `get_next_result_page`, `insert_for_id`, result-cache mgmt) via
 `backend/dbproxy.rs`. `rslib/src/ankihub/` (`mod.rs`, `login.rs`, `http_client/`): HTTP client + login for
 the AnkiHub cloud service.
 
 ### 3.14 backend dispatch & errors
+
 `backend/mod.rs` `Backend` wraps a `Mutex<Collection>` and implements
 `run_service_method(service, method, input) → Result<Vec<u8>, Vec<u8>>`, matching the service index then
 the per-service `run_*_service_method(method, bytes)`. Backend-only services live in
@@ -339,6 +358,7 @@ services are implemented in each module's `service.rs`. Errors: `error/mod.rs` `
 NotFound, …) with `into_protobuf()` → `BackendError`; helper traits `OrInvalid`/`OrNotFound`.
 
 ### 3.15 MCAT-fork engine hooks (concrete)
+
 - **Points-at-stake / topic-aware queue:** intercept `scheduler/queue/builder/` gathering (new-card
   priority) and `decks/limits.rs` (per-topic limits).
 - **Mastery query / readiness service:** new `rslib/src/mcat/` modeled on `stats/` (search→revlog→derived
@@ -353,6 +373,7 @@ NotFound, …) with `into_protobuf()` → `BackendError`; helper traits `OrInval
 ## 4. `pylib/` — Python library (`import anki`) + rsbridge
 
 ### 4.1 rsbridge (PyO3 cdylib, `pylib/rsbridge/lib.rs`)
+
 A `#[pyclass] Backend` wraps the Rust `anki::Backend`. Core methods: `command(service: u32, method: u32,
 input: &PyBytes) -> PyBytes` (calls `backend.run_service_method(...)` — the single dispatch point) and
 `db_command(bytes)` (JSON SQL interface). Releases the GIL via `py.detach()` during Rust work; Rust errors
@@ -360,20 +381,22 @@ become a PyO3 `BackendError` exception. Module exports: `buildhash()`, `open_bac
 `initialize_logging(path)`, `syncserver()`. `pylib/rsbridge/build.rs` sets platform linker flags.
 
 ### 4.2 anki package layout (key modules)
-| Module | Responsibility |
-|---|---|
-| `_backend.py` | `RustBackend(RustBackendGenerated)` wrapper; `backend_exception_to_pylib()` error translation; Translations |
-| `_backend_generated.py` | **generated** at build time; snake_case method per RPC, each calls `_run_command(service, method, bytes)` |
-| `collection.py` | `Collection` facade (~1300 lines): exposes `.db/.models/.decks/.tags/.conf/.media/.sched/.tr` |
-| `cards.py` / `notes.py` | `Card`/`Note` models, proto↔Python conversion, `load()`/`_to_backend_*()` |
-| `decks.py` / `models.py` | `DeckManager` / `ModelManager` (notetypes); CRUD via backend |
-| `scheduler/v3.py` | `Scheduler`: `get_queued_cards`, `answer_card(CardAnswer)`, `describe_next_states`; `base.py`/`dummy.py` legacy |
-| `sync.py` / `media.py` | thin wrappers over backend sync + media |
-| `errors.py` | exception hierarchy (BackendError, NetworkError, SyncError, DBError…) |
-| `hooks.py` + `hooks_gen.py` | hook system (legacy dict + generated typed hooks) |
-| `dbproxy.py` | `DBProxy` SQL interface; `httpclient.py`, `config.py`, `consts.py`, `tags.py`, `template.py`, `lang.py`, `utils.py`, `importing/`, `exporting.py` |
+
+| Module                      | Responsibility                                                                                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `_backend.py`               | `RustBackend(RustBackendGenerated)` wrapper; `backend_exception_to_pylib()` error translation; Translations                                       |
+| `_backend_generated.py`     | **generated** at build time; snake_case method per RPC, each calls `_run_command(service, method, bytes)`                                         |
+| `collection.py`             | `Collection` facade (~1300 lines): exposes `.db/.models/.decks/.tags/.conf/.media/.sched/.tr`                                                     |
+| `cards.py` / `notes.py`     | `Card`/`Note` models, proto↔Python conversion, `load()`/`_to_backend_*()`                                                                         |
+| `decks.py` / `models.py`    | `DeckManager` / `ModelManager` (notetypes); CRUD via backend                                                                                      |
+| `scheduler/v3.py`           | `Scheduler`: `get_queued_cards`, `answer_card(CardAnswer)`, `describe_next_states`; `base.py`/`dummy.py` legacy                                   |
+| `sync.py` / `media.py`      | thin wrappers over backend sync + media                                                                                                           |
+| `errors.py`                 | exception hierarchy (BackendError, NetworkError, SyncError, DBError…)                                                                             |
+| `hooks.py` + `hooks_gen.py` | hook system (legacy dict + generated typed hooks)                                                                                                 |
+| `dbproxy.py`                | `DBProxy` SQL interface; `httpclient.py`, `config.py`, `consts.py`, `tags.py`, `template.py`, `lang.py`, `utils.py`, `importing/`, `exporting.py` |
 
 ### 4.3 Call chain & hooks
+
 `Collection.method()` → `self._backend.method(args)` (generated) → `_run_command(service, method, bytes)`
 → `self._backend.command(...)` (PyO3) → Rust `run_service_method`. Response proto bytes decoded; backend
 errors → Python exceptions. **Hooks:** legacy `runHook/addHook/runFilter` in `hooks.py`; typed generated
@@ -381,12 +404,14 @@ hooks in `hooks_gen.py` (each is a callable class with `.append()` + `__call__`)
 `pylib/tools/genhooks.py`. Ops fire hooks like `note_will_be_added`, `card_will_flush`, `card_did_render`.
 
 ### 4.4 Tests (`pylib/tests/`)
+
 `shared.py` provides `getEmptyCol()` (cached fresh collection) + assertion helpers. Per-domain
 `test_*.py` (e.g. `test_schedv3.py` is large). Pattern: `getEmptyCol()` → mutate via Collection API →
 assert → `col.close()`. Run with `just test-py` (pytest). **The MCAT spec's required "Python-calling test"
 lands here** as `pylib/tests/test_mcat.py`, exercising the full Python→generated→Rust chain.
 
 ### 4.5 MCAT-fork relevance
+
 After adding the Rust/proto MCAT service, the snake_case binding appears automatically in
 `_backend_generated.py` (e.g. `col._backend.compute_readiness(req)`). Add a hand-written facade
 (`pylib/anki/mcat.py`, exposed as `col.mcat`) + new exception types in `errors.py` if needed + the pylib
@@ -395,6 +420,7 @@ test above.
 ## 5. `qt/` — PyQt6 desktop GUI (`aqt`)
 
 ### 5.1 App bootstrap (`qt/aqt/__init__.py`, `qt/aqt/main.py`)
+
 `AnkiApp` (QApplication) + global `mw` singleton; `DialogManager` enforces single-instance modals.
 `AnkiQt(QMainWindow)` holds `col: Collection`, `pm: ProfileManager` (`qt/aqt/profiles.py`), `taskman`,
 `media_syncer`. State machine: `startup → deckBrowser → overview → review` (+ `resetRequired`,
@@ -402,6 +428,7 @@ test above.
 collection; fires `main_window_did_init`.
 
 ### 5.2 Web integration — the bridge between Svelte UI and Python/Rust
+
 - **mediasrv** (`qt/aqt/mediasrv.py`): Flask + Waitress on `127.0.0.1:~40000` (localhost-only). Serves
   bundled SvelteKit pages under `/_anki/*` (from `qt/aqt/data/web/`), `/_addons/*`, and media. `POST
   /_anki/{endpoint}`: either a custom Python handler (`congrats_info`, `update_deck_configs`, `import_csv`,
@@ -415,6 +442,7 @@ collection; fires `main_window_did_init`.
   `/_anki/...` for RPCs.
 
 ### 5.3 Operations & hooks (`qt/aqt/operations/`)
+
 `CollectionOp` (mutating, undoable) runs on a background thread (`taskman.py` `TaskManager`), shows
 progress (`progress.py`), commits, then fires `operation_did_execute(changes, initiator)` so views refresh
 by inspecting `OpChanges`. `QueryOp` is read-only (no undo/auto-refresh, can run off-collection). Submodules:
@@ -423,17 +451,20 @@ by inspecting `OpChanges`. `QueryOp` is read-only (no undo/auto-refresh, can run
 surfaced via `qt/aqt/gui_hooks.py`.
 
 ### 5.4 Major UI modules & add-ons
+
 `reviewer.py`, `editor.py`, `browser/`, `deckbrowser.py`, `overview.py`, `toolbar.py`, `sync.py`,
 `addons.py`, `preferences.py`, `deckoptions.py`, `changenotetype.py`, `clayout.py` (card template editor),
 `import_export/`. **Add-ons** (`addons.py`): loaded from the `addons21/` profile dir, extend via
 `gui_hooks.<name>.append(cb)` and `webExports` served at `/_addons/<id>/...`; per-addon JSON config.
 
 ### 5.5 Installer & tests
+
 `qt/installer/` is Briefcase-based with `app/` config + `linux-template/`, `mac-template/`,
 `windows-template/` and custom `briefcase_plugins/`. `qt/tests/`: `test_addons.py`, `test_mediasrv.py`,
 `test_installer.py`, plus `launch_anki_for_e2e.py` (e2e fixture) and `qwebengine_csp_smoke.py`.
 
 ### 5.6 MCAT-fork relevance
+
 Desktop readiness dashboard / practice-test UI = a new SvelteKit page (registered in mediasrv's
 sveltekit-page list) + a mediasrv POST handler (or raw backend RPC) calling the new MCAT service +
 a menu/state entry in `main.py`/toolbar. Collection-mutating actions wrap in `CollectionOp` for undo +
@@ -442,6 +473,7 @@ a menu/state entry in `main.py`/toolbar. Collection-mutating actions wrap in `Co
 ## 6. `ts/` — SvelteKit/Svelte 5 frontend
 
 ### 6.1 Build & serving
+
 SvelteKit 2 / Svelte 5 / TS 5 on **Vite 6**. `ts/svelte.config.js` uses `adapter-static` → output to
 `out/sveltekit`; aliases `@tslib` → `ts/lib/tslib`, `@generated` → `out/ts/lib/generated`. `ts/vite.config.ts`
 proxies `/_anki/*` to mediasrv (`127.0.0.1:40000`) in dev; target es2020. Legacy (non-SvelteKit) pages are
@@ -449,12 +481,14 @@ bundled by `bundle_svelte.mjs` / `bundle_ts.mjs` (esbuild) with `page.html` as t
 built bundles at `/_anki/pages/`; `just web-watch` live-rebuilds in dev.
 
 ### 6.2 Routes/pages (`ts/routes/`)
+
 `congrats` (post-review screen), `graphs` (stats dashboard — ~14 graph components: CardCounts, Calendar,
 Reviews, Intervals, Stability, Ease, Difficulty, Retrievability, …), `deck-options/[deckId]`,
 `card-info/[cardId]`, `change-notetype/[...ids]`, `image-occlusion`, `import-anki-package`, `import-csv`,
 `import-page`. SvelteKit pages use `+page.svelte` + `+page.ts` (load fn); legacy pages use `index.ts` entries.
 
 ### 6.3 Backend communication (the TS→Rust call path)
+
 `ts/lib/generated/post.ts` `postProto(method, input, outputType, opts)` encodes the request message to
 bytes (`input.toBinary()`), `POST`s to `/_anki/{method}` (`Content-Type: application/binary`), decodes the
 reply (`outputType.fromBinary()`). `@generated/backend` (codegen, `out/ts/lib/generated/backend.ts`) exports
@@ -463,6 +497,7 @@ each calling `postProto`. Proto message classes live in `out/ts/lib/generated/an
 `@generated/ftl` (`ftl-helpers.ts`).
 
 ### 6.4 ts/lib subdirs
+
 `components/` (~50 Svelte/Bootstrap wrappers: Select, Switch, SpinBox, ButtonGroup, Popover, Icon,
 WithTooltip, WithFloating, VirtualTable…), `sveltelib/` (stores/helpers: event-store, shortcut, theme,
 modal-closing, resize-store), `generated/` (codegen output copied at build), `tslib/` (utilities: i18n,
@@ -470,6 +505,7 @@ nightmode, shortcuts, dom, platform), `sass/` (Bootstrap theme + dark mode), `do
 surround/selection), `tag-editor/` (tag input UI).
 
 ### 6.5 Reviewer & editor (rich surfaces)
+
 - **reviewer/** (`index.ts`): Python calls `_showQuestion()`/`_showAnswer()` over the bridge; `_updateQA()`
   injects card HTML, renders MathJax, preloads fonts/images (`preload.ts`/`images.ts`). `answering.ts`
   `mutateNextCardStates(key, transform)` fetches scheduling states (`getSchedulingStatesWithContext`),
@@ -485,12 +521,14 @@ surround/selection), `tag-editor/` (tag input UI).
   **icons/** (SVG assets).
 
 ### 6.6 Tests
+
 Unit: vitest (`*.test.ts` next to sources, e.g. `html-filter/index.test.ts`,
 `lib/domlib/surround/surround.test.ts`, `reviewer/lib.test.ts`). e2e: Playwright in `ts/tests/e2e/`
 (`fixtures.ts`, `sanity.test.ts`) driven by `just test-e2e` (launches a temp Anki via
 `qt/tests/launch_anki_for_e2e.py` and drives mediasrv pages with Chromium).
 
 ### 6.7 MCAT-fork relevance
+
 Readiness dashboard = new `ts/routes/readiness-dashboard/` page whose `+page.ts` load fn calls a generated
 `@generated/backend` MCAT RPC (auto-added once the proto service exists), composing `ts/lib/components`.
 The **comfort/answer-time signal** originates frontend-side in the reviewer (timing around
@@ -500,6 +538,7 @@ or mount an overlay in the reviewer QA container.
 ## 7. Translations, docs, CI & stragglers
 
 ### 7.1 ftl/ — translations + i18n codegen
+
 `ftl/core/` holds cross-platform/backend strings (~35 files: actions, browsing, card-stats,
 deck-config, errors, scheduling, sync, undo, …); `ftl/qt/` holds desktop-GUI strings (about, addons,
 preferences, profiles, qt-misc, …); `ftl/core-repo/` is a submodule with the localized translations.
@@ -511,6 +550,7 @@ missing/typo'd key fails the build. Runtime wraps Mozilla's `fluent` crate. **Ad
 typed APIs; localized translations are handled externally (translating.ankiweb.net).
 
 ### 7.2 docs/ — developer docs
+
 `index.md`, `development.md` (clone/build/run/test), `build.md` (configure/ninja_gen/runner internals),
 `contributing.md` (PR rules: linked issue, type hints, passing tests, CONTRIBUTORS), `architecture.md`,
 `protobuf.md`, `language_bridge.md` (rsbridge), `e2e-testing.md`, `testing-coverage.md`, `editing.md` (IDE
@@ -519,11 +559,13 @@ setup), `releasing.md`, platform docs (`linux/mac/windows.md`), `ninja.md`, auto
 sync server: Dockerfile(+distroless), env-var user config — directly relevant to the fork's two-way sync).
 
 ### 7.3 docs-site/
+
 Mintlify-based public documentation website (Node + Mintlify CLI). Sections: `addons/` (add-on dev guide +
 hooks reference), `ankimobile/` (iOS manual), `developers/` (mirror of docs/), `faqs/`; i18n via language
 subdirs. Purpose: end-user + add-on-developer facing docs (distinct from the in-repo `docs/`).
 
 ### 7.4 CI (.github/workflows/)
+
 **ci.yml** (push to main/release/**, PRs): jobs = **minilints** (license/contributor checks via
 `cargo run -p minilints -- check`), **format** (`just fmt`), **check-linux** (`just build && just lint &&
 just test --coverage && just test-e2e` — full build, clippy/ruff/eslint/svelte/ts, unit + Playwright e2e,
@@ -533,12 +575,14 @@ per-OS builds, signing, GitHub draft, PyPI). **docs-site.yml** (`mintlify valida
 pytest). Others: prepare-release, publish-audio-package, auto-close-missing-issue, check-linked-issue.
 
 ### 7.5 Stragglers
+
 `python/` = `version.py` (exposes `__version__` from `.version`) + `mkempty.py`. `cargo/` = crate-license
 metadata (maintained by minilints) + nightly toolchain for formatting. `.config/nextest.toml` = Rust
 nextest config (test store at `out/tests/nextest`). `.cargo/config.toml`, `rust-toolchain.toml` pin the
 Rust build; `.cursor/rules/` mirror build/i18n guidance.
 
 ### 7.6 MCAT-fork relevance
+
 New MCAT user-facing strings go in `ftl/core/` (engine features like readiness/comfort) or `ftl/qt/`
 (desktop dialogs), referenced through the generated typed API in each language. A fork must keep CI green:
 `just fmt`, `just lint` (clippy/ruff/eslint/svelte/ts), `just test --coverage`, `just test-e2e`, and
@@ -548,6 +592,7 @@ build cleanly under `just check` because the i18n/proto codegen is compile-time-
 ## 8. Cross-cutting synthesis
 
 ### 8.1 The end-to-end request path (one diagram to rule them all)
+
 A user action in the web UI → Svelte handler → either (a) `pycmd("...")` over QWebChannel for a
 Python-side callback, or (b) `postProto(method, msg)` → `POST /_anki/{method}` → **mediasrv**
 (`qt/aqt/mediasrv.py`) → `col._backend.{method}_raw(bytes)` → **rsbridge** `Backend.command(service,
@@ -558,6 +603,7 @@ back up the stack. Mutations return `OpChanges`; on the Qt side `CollectionOp` f
 entrypoint is what the Android client hits over JNI (`rsdroid`).
 
 ### 8.2 Adding a feature touches these layers in order
+
 1. `proto/anki/<svc>.proto` — define service + messages (the contract).
 2. `rslib/src/<area>/service.rs` (or a new `rslib/src/mcat/`) — implement the generated trait for
    `Collection`; register the module in `lib.rs`. Build script regenerates `services.rs` + dispatch.
@@ -569,6 +615,7 @@ entrypoint is what the Android client hits over JNI (`rsdroid`).
 8. Keep `just check` (fmt + lint + test + e2e + minilints) green.
 
 ### 8.3 Identifiers, sync & data-integrity invariants worth remembering
+
 - IDs are timestamps: `NoteId`/`CardId`/`RevlogId`/`DeckId`/`NotetypeId` are i64 ms/s timestamps.
 - `usn = -1` marks locally-pending objects (clients); the server assigns real USNs. Conflict = last-write
   wins by `mtime`, with pending-local always losing; **graves** (tombstones) prevent resurrection of
@@ -580,6 +627,7 @@ entrypoint is what the Android client hits over JNI (`rsdroid`).
   variant + grave type + a sync `*Entry` in `chunks.rs`/`changes.rs` + a `SanityCheckCounts` field.
 
 ### 8.4 Exploration coverage (this pass)
+
 Covered: root configs + justfile; `build/` (+`tools/`); `proto/`; `rslib/` (data model, scheduler/FSRS,
 revlog, decks/deckconfig, config, search, stats, rendering/text, import/export, media, storage, collection/
 undo/ops/progress, sync client + server, ankidroid/ankihub, backend/errors); `pylib/` (+rsbridge, tests);

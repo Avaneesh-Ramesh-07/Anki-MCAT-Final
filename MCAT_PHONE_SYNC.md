@@ -8,7 +8,7 @@ ways automatically:
 - cards, decks, and their due dates / scheduling queues
 - the full review history (revlog)
 - **FSRS memory state (DSR)** — the MCAT readiness / Mastery Query scores are
-  *computed from* this synced state, so the readiness dashboard matches on both
+  _computed from_ this synced state, so the readiness dashboard matches on both
   devices without syncing anything extra.
 
 ## One-time setup
@@ -29,7 +29,7 @@ other device picks up the progress on its next sync.
 
 ## First-sync direction (read once)
 
-The first time two devices with *different* data meet on one AnkiWeb account,
+The first time two devices with _different_ data meet on one AnkiWeb account,
 Anki can't merge divergent full collections, so it asks you to choose **Upload**
 (this device wins) or **Download** (server wins). To avoid losing anything:
 

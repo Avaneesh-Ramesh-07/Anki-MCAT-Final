@@ -20,15 +20,27 @@ import "anki/generic.proto";
 //   and the same abstain-when-thin give-up rule.
 service McatService {
   rpc MasteryQuery(MasteryQueryRequest) returns (MasteryQueryResponse);
-  rpc RecordPracticeResult(RecordPracticeResultRequest)
-      returns (generic.Empty);
+  rpc RecordPracticeResult(RecordPracticeResultRequest) returns (generic.Empty);
   rpc PerformanceQuery(PerformanceQueryRequest)
       returns (PerformanceQueryResponse);
+  // The readiness model: the sanctioned composite of memory, topical practice
+  // tests, and per-topic accuracy within full-length exams. Abstains until the
+  // topic has enough card + topical + full-length evidence (compound give-up).
+  rpc ReadinessQuery(ReadinessQueryRequest) returns (ReadinessQueryResponse);
 }
 
 // Implicitly includes any of the above methods that are not listed here, run on
 // the backend instead of an open collection.
-service BackendMcatService {}
+service BackendMcatService {
+  // Grade one free-response practice answer against its rubric via an external
+  // LLM (OpenAI). Runs on the Backend (not an open collection) because it needs
+  // network + the OPENAI_API_KEY env var. The grader receives ONLY the prompt,
+  // the rubric, and the student's answer — never the reference/ground-truth
+  // answer. Returns graded=false (never a hard error) when the key/network are
+  // unavailable, so the caller can degrade gracefully.
+  rpc GradeFreeResponse(GradeFreeResponseRequest)
+      returns (GradeFreeResponseResponse);
+}
 
 message MasteryQueryRequest {
   // Optional search limiting which cards are considered (e.g. a deck or tag
@@ -57,10 +69,20 @@ message TopicMastery {
   // Cards judged "mastered" (retrievability >= threshold) and the total seen.
   uint32 mastered_count = 5;
   uint32 total_cards = 6;
-  // Graded reviews backing this topic's estimate.
+  // Distinct cards with >=1 graded review backing this topic's estimate (the
+  // evidence unit is cards, not individual revlog events).
   uint32 reviews = 7;
   // True when there is not enough evidence to show a number (give-up rule).
   bool abstain = 8;
+}
+
+// Whether a submitted practice result came from a standalone topical test or a
+// full-length exam. Full-length evidence feeds only the readiness model (its
+// per-topic accuracy under timing/fatigue), never the performance headline.
+enum ExamKind {
+  EXAM_KIND_UNSPECIFIED = 0;  // treated as TOPICAL for backwards compatibility
+  EXAM_KIND_TOPICAL = 1;
+  EXAM_KIND_FULL_LENGTH = 2;
 }
 
 // ---- Performance model (topical practice tests) --------------------------
@@ -71,8 +93,15 @@ message TopicMastery {
 message RecordPracticeResultRequest {
   string test_id = 1;
   // AAMC section code, e.g. "bio-biochem", "chem-phys", "psych-soc", "cars".
+  // Empty for a full-length submission (which spans all four sections).
   string section_code = 2;
   repeated PracticeTopicResult topic_results = 3;
+  // Topical vs full-length. Unspecified is treated as topical.
+  ExamKind exam_kind = 4;
+  // Unique id for this submission, used to dedupe re-POSTs idempotently. Empty
+  // => the engine synthesizes one (a fresh id per submission accumulates as new
+  // evidence, so retakes count and drive recency).
+  string exam_id = 5;
 }
 
 message PracticeTopicResult {
@@ -96,8 +125,12 @@ message PerformanceQueryResponse {
   // Collection-wide rollup (the performance-model headline).
   TopicPerformance overall = 3;
   // Approximate total MCAT scaled score (472-528) summed across the four
-  // sections; only meaningful when !overall.abstain.
+  // sections; only meaningful when !overall.abstain. Partial until all four
+  // sections are tested (see sections_tested) — never a full-exam claim.
   uint32 scaled_total = 4;
+  // How many of the four canonical sections have any evidence (0-4). Lets the
+  // dashboard show "X of 4 sections tested" and avoid faking a full score.
+  uint32 sections_tested = 5;
 }
 
 message TopicPerformance {
@@ -123,5 +156,111 @@ message SectionPerformance {
   uint32 scaled_score = 3;
   uint32 correct = 4;
   uint32 answered = 5;
+  // True when there is some but not enough evidence (thin) to show a number.
   bool abstain = 6;
+  // True when the section has zero evidence — render "Not tested yet", which is
+  // distinct from a thin `abstain` ("not enough evidence yet").
+  bool not_tested = 7;
+}
+
+// ---- Readiness model (the composite) -------------------------------------
+
+message ReadinessQueryRequest {
+  // Optional card search, passed through to the memory model. Empty = whole
+  // collection.
+  string search = 1;
+  // Card gate: topics with fewer than this many reviewed cards abstain. 0 =
+  // built-in default.
+  uint32 min_reviews = 2;
+  // Question gate for the topical/full-length components. 0 = built-in default.
+  uint32 min_questions = 3;
+}
+
+message ReadinessQueryResponse {
+  // One entry per topic with any evidence.
+  repeated TopicReadiness topics = 1;
+  // AAMC-content-weighted aggregate across the whole taxonomy (unstudied topics
+  // count as 0). Abstains until at least one full-length exam is completed.
+  TopicReadiness overall = 2;
+}
+
+message TopicReadiness {
+  // The `aamc::...` tag; empty for the overall rollup.
+  string topic = 1;
+  // 0.05*memory + 0.45*topical + 0.50*full_length in [0,1]. Only meaningful
+  // when !abstain. A missing component contributes 0 (not ignored).
+  double readiness_score = 2;
+  double range_low = 3;
+  double range_high = 4;
+  ReadinessComponents components = 5;
+  // True when the compound give-up rule is not satisfied (see the gate fields).
+  bool abstain = 6;
+  // Evidence backing the gate, for the "how sure / why" transparency panel.
+  uint32 reviewed_cards = 7;
+  uint32 topical_tests = 8;
+  bool has_completed_full_length = 9;
+}
+
+message ReadinessComponents {
+  // Raw component scores in [0,1]; a missing component is 0 (R2.2).
+  double memory = 1;
+  double topical = 2;
+  double full_length = 3;
+  // Presence flags let the UI tell a real low score from a missing component.
+  bool has_memory = 4;
+  bool has_topical = 5;
+  bool has_full_length = 6;
+  // Pre-weighted contributions (0.05 / 0.45 / 0.50), so the dashboard breakdown
+  // never re-hardcodes the weights.
+  double memory_contribution = 7;
+  double topical_contribution = 8;
+  double full_length_contribution = 9;
+}
+
+// ---- Free-response grading (AI grader) -----------------------------------
+
+// One rubric criterion. Self-contained so an LLM with no MCAT knowledge can
+// apply it: award 0..points based only on these fields; if any disqualifier
+// applies, award 0.
+message RubricCriterion {
+  string id = 1;
+  // Plain-language statement of what earns the points.
+  string description = 2;
+  uint32 points = 3;
+  // Concepts/phrasings whose (semantic) presence grants the criterion.
+  repeated string required_concepts = 4;
+  // Statements that void the criterion even if required concepts appear.
+  repeated string disqualifiers = 5;
+}
+
+message GradeFreeResponseRequest {
+  // The free-response prompt shown to the student.
+  string prompt = 1;
+  // The student's free-text answer.
+  string answer = 2;
+  // Total points available; must equal the sum of rubric criterion points.
+  uint32 max_points = 3;
+  // The ONLY MCAT knowledge given to the grader. No reference answer is sent.
+  repeated RubricCriterion rubric = 4;
+  // Optional model override; empty uses the backend default.
+  string model = 5;
+}
+
+message CriterionResult {
+  string id = 1;
+  uint32 points_awarded = 2;
+  uint32 points_possible = 3;
+  bool met = 4;
+  string rationale = 5;
+}
+
+message GradeFreeResponseResponse {
+  // False when grading couldn't run (no API key / network); `error` says why.
+  // In that case the caller should not record a score.
+  bool graded = 1;
+  string error = 2;
+  uint32 points_awarded = 3;
+  uint32 max_points = 4;
+  repeated CriterionResult criteria = 5;
+  string feedback = 6;
 }

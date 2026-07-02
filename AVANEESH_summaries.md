@@ -4,7 +4,7 @@ The data model is found in folders like notes, card, etc. It is like a class tha
 
 SCHEDULING & STUDY
 
-The scheduler folder is the state machine that determines when to review various cards. The mcat folder is everything specific for mcat studying. 
+The scheduler folder is the state machine that determines when to review various cards. The mcat folder is everything specific for mcat studying.
 mastery.rs implements the mastery query feature, which quickly returns a statistic of how many cards are mastered and the average retrievability (FSRS's predicted recall probability, augmented with time-based comfort metric). The mastery query is aggregated per AAMC topic (how familiar is the user with this specific topic). It also returns a confidence range, as opposed to simply a number. It also gives up below a minimum number of reviews (give-up-rule).
 
 RENDERING & CONTENT
@@ -19,16 +19,12 @@ import_export/ handles importing new Anki decks.
 media/ handles images/audio attached to cards
 search? handles searching cards/notes within your own collection
 
-
-
-
-
 Terminology:
 
 1. "just" - "make" from Makefile
 2. "cargo" - Rust's package manager (similar to pip for Python)
 3. "Qt" - GUI framework
-    Even though we have a Svelte frontend, it compiles to HTML/CSS/JS and needs a browser to run. By itself, it can't open a window on your OS, read files, or do any OS operations. **Svelte needs QT**, which hosts and surrounds the web UI. On desktop most of the UI is Qt itself, but Svelte onlyu powers embedded pages. On Android, there is no Qt.
+   Even though we have a Svelte frontend, it compiles to HTML/CSS/JS and needs a browser to run. By itself, it can't open a window on your OS, read files, or do any OS operations. **Svelte needs QT**, which hosts and surrounds the web UI. On desktop most of the UI is Qt itself, but Svelte onlyu powers embedded pages. On Android, there is no Qt.
 4. "Ninja" - low-level build system. Rust decides the plan for how to compile its code (writes a build.ninja manifest) and Ninja just runs the build.ninja. build the frontend, protobuf codegen, Python packaging
 5. protobuf codegen
-    Protobuf (Protocol Buffers): a file that defines different data structures/types used in the program
+   Protobuf (Protocol Buffers): a file that defines different data structures/types used in the program

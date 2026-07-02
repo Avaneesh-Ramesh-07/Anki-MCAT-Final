@@ -1,225 +1,483 @@
 {
-  "topic": "Organic Chemistry",
-  "deck": "MCAT Core::Organic Chemistry",
-  "aamc_tag": "aamc::chem-phys::orgo",
-  "cards": [
-    {"front": "Functional group with a carbonyl (C=O) bonded to an -OH", "back": "Carboxylic acid"},
-    {"front": "Functional group: carbonyl carbon bonded to a hydrogen and one carbon (RCHO)", "back": "Aldehyde"},
-    {"front": "Functional group: carbonyl carbon bonded to two carbons (RCOR')", "back": "Ketone"},
-    {"front": "Functional group: two carbon groups joined by an oxygen (R-O-R')", "back": "Ether"},
-    {"front": "Functional group with an -OH bonded to a saturated carbon", "back": "Alcohol (hydroxyl)"},
-    {"front": "Functional group: carbonyl bonded to a nitrogen (R-CO-NR2)", "back": "Amide"},
-    {"front": "Functional group: carbonyl bonded to an -OR group (R-CO-OR')", "back": "Ester"},
-    {"front": "Functional group: carbonyl bonded to a halogen (R-CO-X)", "back": "Acyl halide (acid halide)"},
-    {"front": "Functional group formed from two acyl groups sharing one oxygen", "back": "Acid anhydride"},
-    {"front": "Sulfur analog of an alcohol (-SH group)", "back": "Thiol (mercaptan)"},
-    {"front": "Nitrogen functional group derived from ammonia (R-NH2)", "back": "Amine"},
-    {"front": "Functional group with C=N derived from a carbonyl + primary amine", "back": "Imine (Schiff base)"},
-    {"front": "Functional group with C=N-R where N bears an alkyl group", "back": "Substituted imine"},
-    {"front": "Functional group with C=C adjacent to an amine nitrogen", "back": "Enamine"},
-    {"front": "Functional group with two acyl groups bonded to one nitrogen", "back": "Imide"},
-    {"front": "Ester in which -OR is replaced by -SR", "back": "Thioester"},
-    {"front": "Functional group -C(=O)- in general", "back": "Carbonyl"},
-    {"front": "IUPAC suffix for an aldehyde", "back": "-al"},
-    {"front": "IUPAC suffix for a ketone", "back": "-one"},
-    {"front": "IUPAC suffix for a carboxylic acid", "back": "-oic acid"},
-    {"front": "IUPAC suffix for an alcohol", "back": "-ol"},
-    {"front": "IUPAC suffix for an alkene", "back": "-ene"},
-    {"front": "IUPAC suffix for an alkyne", "back": "-yne"},
-    {"front": "IUPAC suffix for an ester", "back": "-oate"},
-    {"front": "IUPAC suffix for an amide", "back": "-amide"},
-    {"front": "IUPAC prefix indicating an -OH substituent that isn't the priority group", "back": "hydroxy-"},
-    {"front": "IUPAC prefix for a ketone oxygen when it isn't the principal group", "back": "oxo-"},
-    {"front": "Common name for methanal", "back": "Formaldehyde"},
-    {"front": "Common name for ethanal", "back": "Acetaldehyde"},
-    {"front": "Common name for propanone", "back": "Acetone"},
-    {"front": "Common name for methanoic acid", "back": "Formic acid"},
-    {"front": "Common name for ethanoic acid", "back": "Acetic acid"},
-    {"front": "Non-IUPAC (common) name for ethene", "back": "Ethylene"},
-    {"front": "Non-IUPAC (common) name for ethyne", "back": "Acetylene"},
-    {"front": "Classification of an alcohol whose carbon bears one other carbon", "back": "Primary alcohol"},
-    {"front": "Classification of an alcohol whose carbon bears two other carbons", "back": "Secondary alcohol"},
-    {"front": "Classification of an alcohol whose carbon bears three other carbons", "back": "Tertiary alcohol"},
-    {"front": "Alcohol class of isopropanol (2-propanol)", "back": "Secondary alcohol"},
-    {"front": "Ester of a 4-hydroxy or 5-hydroxy acid formed intramolecularly (cyclic ester)", "back": "Lactone"},
-    {"front": "Cyclic amide", "back": "Lactam"},
-    {"front": "Isomers with the same molecular formula but different atom connectivity", "back": "Constitutional (structural) isomers"},
-    {"front": "General term for isomers with identical connectivity but different 3D arrangement", "back": "Stereoisomers"},
-    {"front": "Stereoisomers that are nonsuperimposable mirror images", "back": "Enantiomers"},
-    {"front": "Stereoisomers that are NOT mirror images of each other", "back": "Diastereomers"},
-    {"front": "Number of structural isomers of pentane", "back": "Three"},
-    {"front": "Relationship between isopentane and n-pentane", "back": "Constitutional (configurational) isomers"},
-    {"front": "A molecule that is nonsuperimposable on its mirror image is said to be", "back": "Chiral"},
-    {"front": "A carbon bonded to four different groups", "back": "Chiral center (stereocenter)"},
-    {"front": "Molecule with stereocenters that is achiral due to an internal mirror plane", "back": "Meso compound"},
-    {"front": "System used to assign absolute configuration at a stereocenter (R or S)", "back": "Cahn-Ingold-Prelog priority rules"},
-    {"front": "Configuration when priority decreases clockwise (lowest group pointing away)", "back": "R (rectus)"},
-    {"front": "Configuration when priority decreases counterclockwise (lowest group away)", "back": "S (sinister)"},
-    {"front": "Designation for the alkene isomer with higher-priority groups on the same side", "back": "Z (zusammen)"},
-    {"front": "Designation for the alkene isomer with higher-priority groups on opposite sides", "back": "E (entgegen)"},
-    {"front": "Older cis/trans equivalent of the Z designation for a simple alkene", "back": "Cis"},
-    {"front": "Ability of a compound to rotate plane-polarized light", "back": "Optical activity"},
-    {"front": "Term for a compound that rotates plane-polarized light clockwise", "back": "Dextrorotatory (+)"},
-    {"front": "Term for a compound that rotates plane-polarized light counterclockwise", "back": "Levorotatory (-)"},
-    {"front": "A 50:50 mixture of two enantiomers, showing no net optical rotation", "back": "Racemic mixture"},
-    {"front": "Maximum number of stereoisomers for a molecule with n stereocenters", "back": "2 to the power n"},
-    {"front": "Diastereomers of sugars differing in configuration at exactly one carbon", "back": "Epimers"},
-    {"front": "Sugar stereoisomers differing only at the anomeric (hemiacetal) carbon", "back": "Anomers"},
-    {"front": "The carbonyl-derived carbon that becomes a new stereocenter in cyclic sugars", "back": "Anomeric carbon"},
-    {"front": "Straight-chain 3D representation using horizontal (toward) and vertical (back) bonds", "back": "Fischer projection"},
-    {"front": "Newman-projection conformer with substituents 60 degrees apart and staggered", "back": "Gauche"},
-    {"front": "Newman-projection staggered conformer with large groups 180 degrees apart", "back": "Anti"},
-    {"front": "Newman-projection conformer with front and back bonds aligned (0 degrees)", "back": "Eclipsed"},
-    {"front": "Isomers that interconvert by single-bond rotation without breaking bonds", "back": "Conformational isomers (conformers)"},
-    {"front": "The three sequential steps of a free-radical chain reaction, in order", "back": "Initiation, propagation, termination"},
-    {"front": "Highly reactive species possessing an unpaired valence electron", "back": "Free radical"},
-    {"front": "Reaction adding a halogen to an alkane using light or heat via radicals", "back": "Free-radical halogenation"},
-    {"front": "Rule: in HX addition to an alkene, H adds to the carbon with more hydrogens", "back": "Markovnikov's rule"},
-    {"front": "Product with halogen on the less-substituted carbon, formed via radical HBr addition", "back": "Anti-Markovnikov product"},
-    {"front": "Mechanism whose rate depends only on substrate concentration (first order)", "back": "SN1"},
-    {"front": "Mechanism whose rate depends on both substrate and nucleophile (second order)", "back": "SN2"},
-    {"front": "Substitution mechanism proceeding through a planar carbocation intermediate", "back": "SN1"},
-    {"front": "Substitution mechanism proceeding through a single pentacoordinate transition state", "back": "SN2"},
-    {"front": "Stereochemical outcome of an SN2 reaction at the electrophilic carbon", "back": "Inversion of configuration (Walden inversion)"},
-    {"front": "Stereochemical result of an SN1 reaction at a stereocenter", "back": "Racemization (mixture of both configurations)"},
-    {"front": "Substrate class that most favors SN1 (most stable carbocation)", "back": "Tertiary"},
-    {"front": "Substrate class that most favors SN2 (least steric hindrance)", "back": "Primary (or methyl)"},
-    {"front": "Solvent type that best favors SN2 reactions", "back": "Polar aprotic solvent"},
-    {"front": "Solvent type that best favors SN1 reactions", "back": "Polar protic solvent"},
-    {"front": "Elimination mechanism that is first order and forms a carbocation", "back": "E1"},
-    {"front": "Elimination mechanism that is second order and concerted", "back": "E2"},
-    {"front": "Geometric requirement for the leaving group and beta-hydrogen in E2", "back": "Anti-periplanar"},
-    {"front": "Rule predicting the more substituted (more stable) alkene as major elimination product", "back": "Zaitsev's rule"},
-    {"front": "Order of carbocation stability from most to least stable", "back": "Tertiary > secondary > primary > methyl"},
-    {"front": "Reagent that converts an alkyl halide + Mg in dry ether into an organometallic", "back": "Grignard reagent (RMgX)"},
-    {"front": "Solvent required for synthesizing a Grignard reagent", "back": "Anhydrous (dry) diethyl ether"},
-    {"front": "Reagent name: adding H2 across a multiple bond over a metal catalyst", "back": "Catalytic hydrogenation"},
-    {"front": "Common metal catalysts used for hydrogenation of alkenes/alkynes", "back": "Pt, Pd, or Ni"},
-    {"front": "Product of full hydrogenation (reduction) of propyne", "back": "Propane"},
-    {"front": "Term for a reaction that increases the number of C-H bonds / decreases C-O bonds", "back": "Reduction"},
-    {"front": "Term for a reaction that decreases C-H bonds / increases bonds to O", "back": "Oxidation"},
-    {"front": "Oxidation product of a primary alcohol with a strong oxidant (e.g., K2Cr2O7)", "back": "Carboxylic acid"},
-    {"front": "Oxidation product of a secondary alcohol", "back": "Ketone"},
-    {"front": "Result of attempting to oxidize a tertiary alcohol", "back": "No reaction (cannot be oxidized)"},
-    {"front": "Alcohol class that gives NO color change with chromate oxidant (orange-to-green)", "back": "Tertiary alcohol"},
-    {"front": "Common Cr(VI) reagents used to oxidize alcohols", "back": "K2Cr2O7, CrO3, or PCC"},
-    {"front": "Color change seen when Cr6+ is reduced to Cr3+ during alcohol oxidation", "back": "Orange to green"},
-    {"front": "Reagent that reduces a carboxylic acid or ester all the way to a primary alcohol", "back": "Lithium aluminum hydride (LAH)"},
-    {"front": "Mild hydride reagent that reduces aldehydes/ketones but not carboxylic acids", "back": "Sodium borohydride (NaBH4)"},
-    {"front": "Reagent name for treating an alcohol to make a good leaving group (tosylate)", "back": "Tosyl chloride (TsCl)"},
-    {"front": "SN2 reaction converting a primary alcohol (via tosylate) to a primary alkyl halide", "back": "Finkelstein reaction"},
-    {"front": "Which is more acidic: an -OH proton or an -SH proton?", "back": "The -SH proton (thiol)"},
-    {"front": "More reactive toward nucleophilic addition: an aldehyde or a ketone?", "back": "Aldehyde"},
-    {"front": "Reason aldehydes are more reactive than ketones toward nucleophiles", "back": "Less steric hindrance and more electrophilic carbonyl carbon"},
-    {"front": "Hydrogen on the carbon adjacent to a carbonyl group", "back": "Alpha hydrogen"},
-    {"front": "Carbon directly bonded to a carbonyl carbon", "back": "Alpha carbon"},
-    {"front": "Interconversion of a ketone/aldehyde with its enol form", "back": "Tautomerization (keto-enol tautomerism)"},
-    {"front": "Constitutional isomer of a ketone bearing C=C and adjacent -OH", "back": "Enol"},
-    {"front": "Deprotonated enol; nucleophilic conjugate base of a carbonyl compound", "back": "Enolate"},
-    {"front": "Enolate favored under thermodynamic control (more substituted, more stable)", "back": "Thermodynamic enolate"},
-    {"front": "Enolate favored under kinetic control (less hindered, forms faster)", "back": "Kinetic enolate"},
-    {"front": "Reaction of two carbonyl compounds forming a beta-hydroxy carbonyl, then dehydrating", "back": "Aldol condensation"},
-    {"front": "Product type of a completed aldol condensation", "back": "Alpha,beta-unsaturated aldehyde (or ketone)"},
-    {"front": "Product formed when an aldehyde/ketone reacts with one equivalent of alcohol", "back": "Hemiacetal"},
-    {"front": "Product formed when an aldehyde/ketone reacts with two equivalents of alcohol", "back": "Acetal"},
-    {"front": "Conditions required to form an acetal from a carbonyl and alcohol", "back": "Acidic conditions"},
-    {"front": "Method to regenerate a carbonyl from its acetal", "back": "Acid-catalyzed hydrolysis"},
-    {"front": "Product formed when a carbonyl reacts with HCN", "back": "Cyanohydrin"},
-    {"front": "Reaction converting an aldehyde/ketone + amine + reducing agent into an amine", "back": "Reductive amination"},
-    {"front": "General type of reaction when a nucleophile adds to a carbonyl C=O", "back": "Nucleophilic addition"},
-    {"front": "Hybridization and geometry of the tetrahedral carbonyl-addition intermediate", "back": "sp3, tetrahedral"},
-    {"front": "Hybridization and geometry of a carbonyl carbon", "back": "sp2, trigonal planar"},
-    {"front": "Which is shorter: a C=O bond or a C=C bond?", "back": "C=O bond"},
-    {"front": "General name for esters, amides, anhydrides, and acyl halides", "back": "Carboxylic acid derivatives"},
-    {"front": "Rank of carboxylic acid derivative reactivity from most to least reactive", "back": "Acyl halide > anhydride > ester > amide"},
-    {"front": "Most reactive (best leaving group) carboxylic acid derivative", "back": "Acyl halide (acid halide)"},
-    {"front": "Least reactive carboxylic acid derivative", "back": "Amide"},
-    {"front": "Reason amides are especially stable/unreactive", "back": "Nitrogen lone pair resonance donation into the carbonyl"},
-    {"front": "Acid-catalyzed reaction of a carboxylic acid with an alcohol to form an ester", "back": "Fischer esterification"},
-    {"front": "Reaction converting one ester into another by exchanging the -OR group", "back": "Transesterification"},
-    {"front": "Reagents that convert a carboxylic acid to a more reactive acyl chloride", "back": "SOCl2 or PCl5"},
-    {"front": "Products of acid-catalyzed hydrolysis of an amide", "back": "Carboxylic acid + amine (as ammonium salt)"},
-    {"front": "Loss of CO2 from a carboxylic acid or its derivative", "back": "Decarboxylation"},
-    {"front": "Amide product of ethylamine reacting with propionyl chloride", "back": "N-ethylpropionamide"},
-    {"front": "Effect of an electron-withdrawing group near a carboxylic acid on its acidity", "back": "Increases acidity (stabilizes conjugate base)"},
-    {"front": "Reason carboxylic acids are more acidic than alcohols", "back": "Resonance-stabilized carboxylate conjugate base"},
-    {"front": "Simplest aromatic hydrocarbon (C6H6)", "back": "Benzene"},
-    {"front": "Number of pi electrons required for aromaticity (Huckel's rule)", "back": "4n + 2 pi electrons"},
-    {"front": "Term for an aromatic ring containing a non-carbon atom in the ring", "back": "Heteroaromatic (heterocyclic aromatic)"},
-    {"front": "Oxygen-containing five-membered heteroaromatic ring", "back": "Furan"},
-    {"front": "Aromatic ring bearing an -OH group directly on the ring", "back": "Phenol"},
-    {"front": "Aromatic amine (aminobenzene)", "back": "Aniline"},
-    {"front": "Cyclic conjugated diketone formed by oxidizing a phenol/hydroquinone", "back": "Quinone"},
-    {"front": "Product of reducing benzoquinone", "back": "Hydroquinone"},
-    {"front": "Reaction (oxidation or reduction) that converts a phenol into a quinone", "back": "Oxidation"},
-    {"front": "More acidic: an aliphatic alcohol or a phenol?", "back": "Phenol"},
-    {"front": "Reason phenol is more acidic than a typical alcohol", "back": "Resonance delocalization of the phenoxide negative charge into the ring"},
-    {"front": "Fused three-ring aromatic hydrocarbon named in the QBook (linear tricyclic)", "back": "Anthracene"},
-    {"front": "Alpha carbon of an amino acid bears which four groups", "back": "Amino group, carboxyl group, hydrogen, and R side chain"},
-    {"front": "The only standard amino acid that is achiral (no stereocenter)", "back": "Glycine"},
-    {"front": "Absolute configuration of all standard L-amino acids except cysteine", "back": "S"},
-    {"front": "Bond linking two amino acids in a protein", "back": "Peptide (amide) bond"},
-    {"front": "pH at which an amino acid carries no net charge", "back": "Isoelectric point (pI)"},
-    {"front": "Amino acid form bearing both a positive and a negative charge simultaneously", "back": "Zwitterion"},
-    {"front": "Secondary structure held by backbone H-bonds forming a coiled dipole along its axis", "back": "Alpha helix"},
-    {"front": "Backbone atoms that hydrogen bond to create alpha-helix stability", "back": "Carbonyl oxygen and amide (N-H) nitrogen"},
-    {"front": "Carbohydrate with an aldehyde functional group", "back": "Aldose"},
-    {"front": "Carbohydrate with a ketone functional group", "back": "Ketose"},
-    {"front": "Classification of a six-carbon aldehyde sugar", "back": "Aldohexose"},
-    {"front": "Classification of a five-carbon aldehyde sugar", "back": "Aldopentose"},
-    {"front": "Six-membered cyclic sugar ring form", "back": "Pyranose"},
-    {"front": "Five-membered cyclic sugar ring form", "back": "Furanose"},
-    {"front": "Internal reaction of a sugar's -OH with its own carbonyl to close the ring", "back": "Intramolecular hemiacetal formation"},
-    {"front": "Spontaneous interconversion of alpha and beta anomers of a cyclic sugar", "back": "Mutarotation"},
-    {"front": "Bond type joining two monosaccharides", "back": "Glycosidic bond (acetal linkage)"},
-    {"front": "Glycosidic linkage type in cellulose", "back": "Beta-1,4"},
-    {"front": "Glycosidic linkage type in starch/maltose", "back": "Alpha-1,4"},
-    {"front": "Two monosaccharides that make up lactose", "back": "Galactose and glucose"},
-    {"front": "Enzyme that hydrolyzes lactose", "back": "Lactase"},
-    {"front": "Carboxylic acid with a long hydrocarbon tail (building block of many lipids)", "back": "Fatty acid"},
-    {"front": "Fatty acid with no carbon-carbon double bonds", "back": "Saturated fatty acid"},
-    {"front": "Fatty acid with two or more carbon-carbon double bonds", "back": "Polyunsaturated fatty acid"},
-    {"front": "Ester of glycerol with three fatty acids", "back": "Triacylglycerol (triglyceride)"},
-    {"front": "Base-catalyzed hydrolysis of a triglyceride ester to form soap", "back": "Saponification"},
-    {"front": "Lipid class characterized by a four fused-ring core (e.g., cholesterol)", "back": "Steroid"},
-    {"front": "Separation technique exploiting differences in boiling point", "back": "Distillation"},
-    {"front": "Distillation variant using a fractionating column to separate close-boiling liquids", "back": "Fractional distillation"},
-    {"front": "Separation exploiting differing solubility between two immiscible liquid phases", "back": "Liquid-liquid extraction"},
-    {"front": "Extraction technique separating compounds by protonation/deprotonation with acid or base", "back": "Acid-base extraction"},
-    {"front": "Separation based on differential migration between a stationary and mobile phase", "back": "Chromatography"},
-    {"front": "Chromatography run on a silica-coated plate, quantified by an Rf value", "back": "Thin-layer chromatography (TLC)"},
-    {"front": "Ratio of distance traveled by a spot to distance traveled by the solvent front", "back": "Rf value (retention factor)"},
-    {"front": "Purification technique that separates a solid from solution by controlled cooling", "back": "Recrystallization"},
-    {"front": "Chromatography separating charged species by their net charge", "back": "Ion-exchange chromatography"},
-    {"front": "Method that can resolve a racemic mixture into individual enantiomers", "back": "Reaction with a chiral resolving agent (forming diastereomers)"},
-    {"front": "Spectroscopy that probes bond vibrations to identify functional groups", "back": "Infrared (IR) spectroscopy"},
-    {"front": "Functional group indicated by a strong IR absorption near 1700 cm^-1", "back": "Carbonyl (C=O)"},
-    {"front": "Functional group indicated by a broad IR absorption around 3200-3550 cm^-1", "back": "Alcohol O-H (hydroxyl)"},
-    {"front": "Functional group giving a very broad IR band near 2500-3300 cm^-1 (with C=O)", "back": "Carboxylic acid O-H"},
-    {"front": "IR region below ~1500 cm^-1 unique to each molecule", "back": "Fingerprint region"},
-    {"front": "Spectroscopy that probes nuclear spin environments (commonly 1H)", "back": "Nuclear magnetic resonance (NMR)"},
-    {"front": "NMR term for the position of a peak, reported in ppm", "back": "Chemical shift"},
-    {"front": "Direction on an NMR spectrum corresponding to low ppm / more shielded protons", "back": "Upfield"},
-    {"front": "Direction on an NMR spectrum corresponding to high ppm / deshielded protons", "back": "Downfield"},
-    {"front": "NMR feature that reveals the number of neighboring nonequivalent protons (n+1 rule)", "back": "Spin-spin splitting (coupling)"},
-    {"front": "Approximate 1H NMR shift of a carboxylic acid proton (very downfield)", "back": "About 10-12 ppm"},
-    {"front": "Approximate 1H NMR shift of an aldehyde proton", "back": "About 9-10 ppm"},
-    {"front": "What determines the number of distinct peaks in a 1H NMR spectrum", "back": "Number of chemically nonequivalent proton environments"},
-    {"front": "Spectroscopy technique that measures mass-to-charge (m/z) ratio of ions", "back": "Mass spectrometry"},
-    {"front": "Name of the peak corresponding to the intact ionized molecule in mass spec", "back": "Molecular ion (M+) peak / parent peak"},
-    {"front": "Spectroscopy best for detecting conjugated (multiple double bond) systems", "back": "Ultraviolet-visible (UV-Vis) spectroscopy"},
-    {"front": "Structural feature required for a molecule to absorb strongly in UV-Vis", "back": "Conjugation (alternating multiple bonds)"},
-    {"front": "Compared to IR, UV-Vis relies on light of which relative energy", "back": "Higher energy (shorter wavelength)"},
-    {"front": "Protein-sequencing method that removes N-terminal residues one at a time", "back": "Edman degradation"},
-    {"front": "Electrophoresis technique separating denatured proteins by size using a detergent", "back": "SDS-PAGE"},
-    {"front": "Product of reacting formaldehyde with cyanide", "back": "Cyanohydrin"},
-    {"front": "Functional groups present in urea", "back": "Two amide groups"},
-    {"front": "The number of carbons in methyl acetate", "back": "Three (a three-carbon ester)"},
-    {"front": "Which alcohol is a stronger base as its conjugate base: tert-butoxide or ethoxide?", "back": "Tert-butoxide"},
-    {"front": "Effect of branching on the boiling point of an alkane isomer", "back": "More branching lowers the boiling point"},
-    {"front": "Geometric isomer of a symmetric alkene predicted to have the lower melting point", "back": "The cis isomer (packs less efficiently)"},
-    {"front": "Number of pi bonds in a single carbon-carbon triple bond", "back": "Two"},
-    {"front": "Number of sigma bonds in any single, double, or triple carbon-carbon bond", "back": "One"},
-    {"front": "Molecules capable of hydrogen bonding with water contain H bonded to which atoms", "back": "N, O, or F"}
-  ]
+    "topic": "Organic Chemistry",
+    "deck": "MCAT Core::Organic Chemistry",
+    "aamc_tag": "aamc::chem-phys::orgo",
+    "cards": [
+        { "front": "Functional group with a carbonyl (C=O) bonded to an -OH", "back": "Carboxylic acid" },
+        { "front": "Functional group: carbonyl carbon bonded to a hydrogen and one carbon (RCHO)", "back": "Aldehyde" },
+        { "front": "Functional group: carbonyl carbon bonded to two carbons (RCOR')", "back": "Ketone" },
+        { "front": "Functional group: two carbon groups joined by an oxygen (R-O-R')", "back": "Ether" },
+        { "front": "Functional group with an -OH bonded to a saturated carbon", "back": "Alcohol (hydroxyl)" },
+        { "front": "Functional group: carbonyl bonded to a nitrogen (R-CO-NR2)", "back": "Amide" },
+        { "front": "Functional group: carbonyl bonded to an -OR group (R-CO-OR')", "back": "Ester" },
+        { "front": "Functional group: carbonyl bonded to a halogen (R-CO-X)", "back": "Acyl halide (acid halide)" },
+        { "front": "Functional group formed from two acyl groups sharing one oxygen", "back": "Acid anhydride" },
+        { "front": "Sulfur analog of an alcohol (-SH group)", "back": "Thiol (mercaptan)" },
+        { "front": "Nitrogen functional group derived from ammonia (R-NH2)", "back": "Amine" },
+        { "front": "Functional group with C=N derived from a carbonyl + primary amine", "back": "Imine (Schiff base)" },
+        { "front": "Functional group with C=N-R where N bears an alkyl group", "back": "Substituted imine" },
+        { "front": "Functional group with C=C adjacent to an amine nitrogen", "back": "Enamine" },
+        { "front": "Functional group with two acyl groups bonded to one nitrogen", "back": "Imide" },
+        { "front": "Ester in which -OR is replaced by -SR", "back": "Thioester" },
+        { "front": "Functional group -C(=O)- in general", "back": "Carbonyl" },
+        { "front": "IUPAC suffix for an aldehyde", "back": "-al" },
+        { "front": "IUPAC suffix for a ketone", "back": "-one" },
+        { "front": "IUPAC suffix for a carboxylic acid", "back": "-oic acid" },
+        { "front": "IUPAC suffix for an alcohol", "back": "-ol" },
+        { "front": "IUPAC suffix for an alkene", "back": "-ene" },
+        { "front": "IUPAC suffix for an alkyne", "back": "-yne" },
+        { "front": "IUPAC suffix for an ester", "back": "-oate" },
+        { "front": "IUPAC suffix for an amide", "back": "-amide" },
+        { "front": "IUPAC prefix indicating an -OH substituent that isn't the priority group", "back": "hydroxy-" },
+        { "front": "IUPAC prefix for a ketone oxygen when it isn't the principal group", "back": "oxo-" },
+        { "front": "Common name for methanal", "back": "Formaldehyde" },
+        { "front": "Common name for ethanal", "back": "Acetaldehyde" },
+        { "front": "Common name for propanone", "back": "Acetone" },
+        { "front": "Common name for methanoic acid", "back": "Formic acid" },
+        { "front": "Common name for ethanoic acid", "back": "Acetic acid" },
+        { "front": "Non-IUPAC (common) name for ethene", "back": "Ethylene" },
+        { "front": "Non-IUPAC (common) name for ethyne", "back": "Acetylene" },
+        { "front": "Classification of an alcohol whose carbon bears one other carbon", "back": "Primary alcohol" },
+        { "front": "Classification of an alcohol whose carbon bears two other carbons", "back": "Secondary alcohol" },
+        { "front": "Classification of an alcohol whose carbon bears three other carbons", "back": "Tertiary alcohol" },
+        { "front": "Alcohol class of isopropanol (2-propanol)", "back": "Secondary alcohol" },
+        { "front": "Ester of a 4-hydroxy or 5-hydroxy acid formed intramolecularly (cyclic ester)", "back": "Lactone" },
+        { "front": "Cyclic amide", "back": "Lactam" },
+        {
+            "front": "Isomers with the same molecular formula but different atom connectivity",
+            "back": "Constitutional (structural) isomers"
+        },
+        {
+            "front": "General term for isomers with identical connectivity but different 3D arrangement",
+            "back": "Stereoisomers"
+        },
+        { "front": "Stereoisomers that are nonsuperimposable mirror images", "back": "Enantiomers" },
+        { "front": "Stereoisomers that are NOT mirror images of each other", "back": "Diastereomers" },
+        { "front": "Number of structural isomers of pentane", "back": "Three" },
+        {
+            "front": "Relationship between isopentane and n-pentane",
+            "back": "Constitutional (configurational) isomers"
+        },
+        { "front": "A molecule that is nonsuperimposable on its mirror image is said to be", "back": "Chiral" },
+        { "front": "A carbon bonded to four different groups", "back": "Chiral center (stereocenter)" },
+        {
+            "front": "Molecule with stereocenters that is achiral due to an internal mirror plane",
+            "back": "Meso compound"
+        },
+        {
+            "front": "System used to assign absolute configuration at a stereocenter (R or S)",
+            "back": "Cahn-Ingold-Prelog priority rules"
+        },
+        {
+            "front": "Configuration when priority decreases clockwise (lowest group pointing away)",
+            "back": "R (rectus)"
+        },
+        {
+            "front": "Configuration when priority decreases counterclockwise (lowest group away)",
+            "back": "S (sinister)"
+        },
+        {
+            "front": "Designation for the alkene isomer with higher-priority groups on the same side",
+            "back": "Z (zusammen)"
+        },
+        {
+            "front": "Designation for the alkene isomer with higher-priority groups on opposite sides",
+            "back": "E (entgegen)"
+        },
+        { "front": "Older cis/trans equivalent of the Z designation for a simple alkene", "back": "Cis" },
+        { "front": "Ability of a compound to rotate plane-polarized light", "back": "Optical activity" },
+        { "front": "Term for a compound that rotates plane-polarized light clockwise", "back": "Dextrorotatory (+)" },
+        {
+            "front": "Term for a compound that rotates plane-polarized light counterclockwise",
+            "back": "Levorotatory (-)"
+        },
+        { "front": "A 50:50 mixture of two enantiomers, showing no net optical rotation", "back": "Racemic mixture" },
+        { "front": "Maximum number of stereoisomers for a molecule with n stereocenters", "back": "2 to the power n" },
+        { "front": "Diastereomers of sugars differing in configuration at exactly one carbon", "back": "Epimers" },
+        { "front": "Sugar stereoisomers differing only at the anomeric (hemiacetal) carbon", "back": "Anomers" },
+        {
+            "front": "The carbonyl-derived carbon that becomes a new stereocenter in cyclic sugars",
+            "back": "Anomeric carbon"
+        },
+        {
+            "front": "Straight-chain 3D representation using horizontal (toward) and vertical (back) bonds",
+            "back": "Fischer projection"
+        },
+        { "front": "Newman-projection conformer with substituents 60 degrees apart and staggered", "back": "Gauche" },
+        { "front": "Newman-projection staggered conformer with large groups 180 degrees apart", "back": "Anti" },
+        { "front": "Newman-projection conformer with front and back bonds aligned (0 degrees)", "back": "Eclipsed" },
+        {
+            "front": "Isomers that interconvert by single-bond rotation without breaking bonds",
+            "back": "Conformational isomers (conformers)"
+        },
+        {
+            "front": "The three sequential steps of a free-radical chain reaction, in order",
+            "back": "Initiation, propagation, termination"
+        },
+        { "front": "Highly reactive species possessing an unpaired valence electron", "back": "Free radical" },
+        {
+            "front": "Reaction adding a halogen to an alkane using light or heat via radicals",
+            "back": "Free-radical halogenation"
+        },
+        {
+            "front": "Rule: in HX addition to an alkene, H adds to the carbon with more hydrogens",
+            "back": "Markovnikov's rule"
+        },
+        {
+            "front": "Product with halogen on the less-substituted carbon, formed via radical HBr addition",
+            "back": "Anti-Markovnikov product"
+        },
+        { "front": "Mechanism whose rate depends only on substrate concentration (first order)", "back": "SN1" },
+        { "front": "Mechanism whose rate depends on both substrate and nucleophile (second order)", "back": "SN2" },
+        { "front": "Substitution mechanism proceeding through a planar carbocation intermediate", "back": "SN1" },
+        {
+            "front": "Substitution mechanism proceeding through a single pentacoordinate transition state",
+            "back": "SN2"
+        },
+        {
+            "front": "Stereochemical outcome of an SN2 reaction at the electrophilic carbon",
+            "back": "Inversion of configuration (Walden inversion)"
+        },
+        {
+            "front": "Stereochemical result of an SN1 reaction at a stereocenter",
+            "back": "Racemization (mixture of both configurations)"
+        },
+        { "front": "Substrate class that most favors SN1 (most stable carbocation)", "back": "Tertiary" },
+        { "front": "Substrate class that most favors SN2 (least steric hindrance)", "back": "Primary (or methyl)" },
+        { "front": "Solvent type that best favors SN2 reactions", "back": "Polar aprotic solvent" },
+        { "front": "Solvent type that best favors SN1 reactions", "back": "Polar protic solvent" },
+        { "front": "Elimination mechanism that is first order and forms a carbocation", "back": "E1" },
+        { "front": "Elimination mechanism that is second order and concerted", "back": "E2" },
+        { "front": "Geometric requirement for the leaving group and beta-hydrogen in E2", "back": "Anti-periplanar" },
+        {
+            "front": "Rule predicting the more substituted (more stable) alkene as major elimination product",
+            "back": "Zaitsev's rule"
+        },
+        {
+            "front": "Order of carbocation stability from most to least stable",
+            "back": "Tertiary > secondary > primary > methyl"
+        },
+        {
+            "front": "Reagent that converts an alkyl halide + Mg in dry ether into an organometallic",
+            "back": "Grignard reagent (RMgX)"
+        },
+        { "front": "Solvent required for synthesizing a Grignard reagent", "back": "Anhydrous (dry) diethyl ether" },
+        {
+            "front": "Reagent name: adding H2 across a multiple bond over a metal catalyst",
+            "back": "Catalytic hydrogenation"
+        },
+        { "front": "Common metal catalysts used for hydrogenation of alkenes/alkynes", "back": "Pt, Pd, or Ni" },
+        { "front": "Product of full hydrogenation (reduction) of propyne", "back": "Propane" },
+        {
+            "front": "Term for a reaction that increases the number of C-H bonds / decreases C-O bonds",
+            "back": "Reduction"
+        },
+        { "front": "Term for a reaction that decreases C-H bonds / increases bonds to O", "back": "Oxidation" },
+        {
+            "front": "Oxidation product of a primary alcohol with a strong oxidant (e.g., K2Cr2O7)",
+            "back": "Carboxylic acid"
+        },
+        { "front": "Oxidation product of a secondary alcohol", "back": "Ketone" },
+        { "front": "Result of attempting to oxidize a tertiary alcohol", "back": "No reaction (cannot be oxidized)" },
+        {
+            "front": "Alcohol class that gives NO color change with chromate oxidant (orange-to-green)",
+            "back": "Tertiary alcohol"
+        },
+        { "front": "Common Cr(VI) reagents used to oxidize alcohols", "back": "K2Cr2O7, CrO3, or PCC" },
+        {
+            "front": "Color change seen when Cr6+ is reduced to Cr3+ during alcohol oxidation",
+            "back": "Orange to green"
+        },
+        {
+            "front": "Reagent that reduces a carboxylic acid or ester all the way to a primary alcohol",
+            "back": "Lithium aluminum hydride (LAH)"
+        },
+        {
+            "front": "Mild hydride reagent that reduces aldehydes/ketones but not carboxylic acids",
+            "back": "Sodium borohydride (NaBH4)"
+        },
+        {
+            "front": "Reagent name for treating an alcohol to make a good leaving group (tosylate)",
+            "back": "Tosyl chloride (TsCl)"
+        },
+        {
+            "front": "SN2 reaction converting a primary alcohol (via tosylate) to a primary alkyl halide",
+            "back": "Finkelstein reaction"
+        },
+        { "front": "Which is more acidic: an -OH proton or an -SH proton?", "back": "The -SH proton (thiol)" },
+        { "front": "More reactive toward nucleophilic addition: an aldehyde or a ketone?", "back": "Aldehyde" },
+        {
+            "front": "Reason aldehydes are more reactive than ketones toward nucleophiles",
+            "back": "Less steric hindrance and more electrophilic carbonyl carbon"
+        },
+        { "front": "Hydrogen on the carbon adjacent to a carbonyl group", "back": "Alpha hydrogen" },
+        { "front": "Carbon directly bonded to a carbonyl carbon", "back": "Alpha carbon" },
+        {
+            "front": "Interconversion of a ketone/aldehyde with its enol form",
+            "back": "Tautomerization (keto-enol tautomerism)"
+        },
+        { "front": "Constitutional isomer of a ketone bearing C=C and adjacent -OH", "back": "Enol" },
+        { "front": "Deprotonated enol; nucleophilic conjugate base of a carbonyl compound", "back": "Enolate" },
+        {
+            "front": "Enolate favored under thermodynamic control (more substituted, more stable)",
+            "back": "Thermodynamic enolate"
+        },
+        { "front": "Enolate favored under kinetic control (less hindered, forms faster)", "back": "Kinetic enolate" },
+        {
+            "front": "Reaction of two carbonyl compounds forming a beta-hydroxy carbonyl, then dehydrating",
+            "back": "Aldol condensation"
+        },
+        {
+            "front": "Product type of a completed aldol condensation",
+            "back": "Alpha,beta-unsaturated aldehyde (or ketone)"
+        },
+        {
+            "front": "Product formed when an aldehyde/ketone reacts with one equivalent of alcohol",
+            "back": "Hemiacetal"
+        },
+        { "front": "Product formed when an aldehyde/ketone reacts with two equivalents of alcohol", "back": "Acetal" },
+        { "front": "Conditions required to form an acetal from a carbonyl and alcohol", "back": "Acidic conditions" },
+        { "front": "Method to regenerate a carbonyl from its acetal", "back": "Acid-catalyzed hydrolysis" },
+        { "front": "Product formed when a carbonyl reacts with HCN", "back": "Cyanohydrin" },
+        {
+            "front": "Reaction converting an aldehyde/ketone + amine + reducing agent into an amine",
+            "back": "Reductive amination"
+        },
+        {
+            "front": "General type of reaction when a nucleophile adds to a carbonyl C=O",
+            "back": "Nucleophilic addition"
+        },
+        {
+            "front": "Hybridization and geometry of the tetrahedral carbonyl-addition intermediate",
+            "back": "sp3, tetrahedral"
+        },
+        { "front": "Hybridization and geometry of a carbonyl carbon", "back": "sp2, trigonal planar" },
+        { "front": "Which is shorter: a C=O bond or a C=C bond?", "back": "C=O bond" },
+        {
+            "front": "General name for esters, amides, anhydrides, and acyl halides",
+            "back": "Carboxylic acid derivatives"
+        },
+        {
+            "front": "Rank of carboxylic acid derivative reactivity from most to least reactive",
+            "back": "Acyl halide > anhydride > ester > amide"
+        },
+        {
+            "front": "Most reactive (best leaving group) carboxylic acid derivative",
+            "back": "Acyl halide (acid halide)"
+        },
+        { "front": "Least reactive carboxylic acid derivative", "back": "Amide" },
+        {
+            "front": "Reason amides are especially stable/unreactive",
+            "back": "Nitrogen lone pair resonance donation into the carbonyl"
+        },
+        {
+            "front": "Acid-catalyzed reaction of a carboxylic acid with an alcohol to form an ester",
+            "back": "Fischer esterification"
+        },
+        {
+            "front": "Reaction converting one ester into another by exchanging the -OR group",
+            "back": "Transesterification"
+        },
+        {
+            "front": "Reagents that convert a carboxylic acid to a more reactive acyl chloride",
+            "back": "SOCl2 or PCl5"
+        },
+        {
+            "front": "Products of acid-catalyzed hydrolysis of an amide",
+            "back": "Carboxylic acid + amine (as ammonium salt)"
+        },
+        { "front": "Loss of CO2 from a carboxylic acid or its derivative", "back": "Decarboxylation" },
+        { "front": "Amide product of ethylamine reacting with propionyl chloride", "back": "N-ethylpropionamide" },
+        {
+            "front": "Effect of an electron-withdrawing group near a carboxylic acid on its acidity",
+            "back": "Increases acidity (stabilizes conjugate base)"
+        },
+        {
+            "front": "Reason carboxylic acids are more acidic than alcohols",
+            "back": "Resonance-stabilized carboxylate conjugate base"
+        },
+        { "front": "Simplest aromatic hydrocarbon (C6H6)", "back": "Benzene" },
+        { "front": "Number of pi electrons required for aromaticity (Huckel's rule)", "back": "4n + 2 pi electrons" },
+        {
+            "front": "Term for an aromatic ring containing a non-carbon atom in the ring",
+            "back": "Heteroaromatic (heterocyclic aromatic)"
+        },
+        { "front": "Oxygen-containing five-membered heteroaromatic ring", "back": "Furan" },
+        { "front": "Aromatic ring bearing an -OH group directly on the ring", "back": "Phenol" },
+        { "front": "Aromatic amine (aminobenzene)", "back": "Aniline" },
+        { "front": "Cyclic conjugated diketone formed by oxidizing a phenol/hydroquinone", "back": "Quinone" },
+        { "front": "Product of reducing benzoquinone", "back": "Hydroquinone" },
+        { "front": "Reaction (oxidation or reduction) that converts a phenol into a quinone", "back": "Oxidation" },
+        { "front": "More acidic: an aliphatic alcohol or a phenol?", "back": "Phenol" },
+        {
+            "front": "Reason phenol is more acidic than a typical alcohol",
+            "back": "Resonance delocalization of the phenoxide negative charge into the ring"
+        },
+        {
+            "front": "Fused three-ring aromatic hydrocarbon named in the QBook (linear tricyclic)",
+            "back": "Anthracene"
+        },
+        {
+            "front": "Alpha carbon of an amino acid bears which four groups",
+            "back": "Amino group, carboxyl group, hydrogen, and R side chain"
+        },
+        { "front": "The only standard amino acid that is achiral (no stereocenter)", "back": "Glycine" },
+        { "front": "Absolute configuration of all standard L-amino acids except cysteine", "back": "S" },
+        { "front": "Bond linking two amino acids in a protein", "back": "Peptide (amide) bond" },
+        { "front": "pH at which an amino acid carries no net charge", "back": "Isoelectric point (pI)" },
+        {
+            "front": "Amino acid form bearing both a positive and a negative charge simultaneously",
+            "back": "Zwitterion"
+        },
+        {
+            "front": "Secondary structure held by backbone H-bonds forming a coiled dipole along its axis",
+            "back": "Alpha helix"
+        },
+        {
+            "front": "Backbone atoms that hydrogen bond to create alpha-helix stability",
+            "back": "Carbonyl oxygen and amide (N-H) nitrogen"
+        },
+        { "front": "Carbohydrate with an aldehyde functional group", "back": "Aldose" },
+        { "front": "Carbohydrate with a ketone functional group", "back": "Ketose" },
+        { "front": "Classification of a six-carbon aldehyde sugar", "back": "Aldohexose" },
+        { "front": "Classification of a five-carbon aldehyde sugar", "back": "Aldopentose" },
+        { "front": "Six-membered cyclic sugar ring form", "back": "Pyranose" },
+        { "front": "Five-membered cyclic sugar ring form", "back": "Furanose" },
+        {
+            "front": "Internal reaction of a sugar's -OH with its own carbonyl to close the ring",
+            "back": "Intramolecular hemiacetal formation"
+        },
+        { "front": "Spontaneous interconversion of alpha and beta anomers of a cyclic sugar", "back": "Mutarotation" },
+        { "front": "Bond type joining two monosaccharides", "back": "Glycosidic bond (acetal linkage)" },
+        { "front": "Glycosidic linkage type in cellulose", "back": "Beta-1,4" },
+        { "front": "Glycosidic linkage type in starch/maltose", "back": "Alpha-1,4" },
+        { "front": "Two monosaccharides that make up lactose", "back": "Galactose and glucose" },
+        { "front": "Enzyme that hydrolyzes lactose", "back": "Lactase" },
+        {
+            "front": "Carboxylic acid with a long hydrocarbon tail (building block of many lipids)",
+            "back": "Fatty acid"
+        },
+        { "front": "Fatty acid with no carbon-carbon double bonds", "back": "Saturated fatty acid" },
+        { "front": "Fatty acid with two or more carbon-carbon double bonds", "back": "Polyunsaturated fatty acid" },
+        { "front": "Ester of glycerol with three fatty acids", "back": "Triacylglycerol (triglyceride)" },
+        { "front": "Base-catalyzed hydrolysis of a triglyceride ester to form soap", "back": "Saponification" },
+        { "front": "Lipid class characterized by a four fused-ring core (e.g., cholesterol)", "back": "Steroid" },
+        { "front": "Separation technique exploiting differences in boiling point", "back": "Distillation" },
+        {
+            "front": "Distillation variant using a fractionating column to separate close-boiling liquids",
+            "back": "Fractional distillation"
+        },
+        {
+            "front": "Separation exploiting differing solubility between two immiscible liquid phases",
+            "back": "Liquid-liquid extraction"
+        },
+        {
+            "front": "Extraction technique separating compounds by protonation/deprotonation with acid or base",
+            "back": "Acid-base extraction"
+        },
+        {
+            "front": "Separation based on differential migration between a stationary and mobile phase",
+            "back": "Chromatography"
+        },
+        {
+            "front": "Chromatography run on a silica-coated plate, quantified by an Rf value",
+            "back": "Thin-layer chromatography (TLC)"
+        },
+        {
+            "front": "Ratio of distance traveled by a spot to distance traveled by the solvent front",
+            "back": "Rf value (retention factor)"
+        },
+        {
+            "front": "Purification technique that separates a solid from solution by controlled cooling",
+            "back": "Recrystallization"
+        },
+        {
+            "front": "Chromatography separating charged species by their net charge",
+            "back": "Ion-exchange chromatography"
+        },
+        {
+            "front": "Method that can resolve a racemic mixture into individual enantiomers",
+            "back": "Reaction with a chiral resolving agent (forming diastereomers)"
+        },
+        {
+            "front": "Spectroscopy that probes bond vibrations to identify functional groups",
+            "back": "Infrared (IR) spectroscopy"
+        },
+        { "front": "Functional group indicated by a strong IR absorption near 1700 cm^-1", "back": "Carbonyl (C=O)" },
+        {
+            "front": "Functional group indicated by a broad IR absorption around 3200-3550 cm^-1",
+            "back": "Alcohol O-H (hydroxyl)"
+        },
+        {
+            "front": "Functional group giving a very broad IR band near 2500-3300 cm^-1 (with C=O)",
+            "back": "Carboxylic acid O-H"
+        },
+        { "front": "IR region below ~1500 cm^-1 unique to each molecule", "back": "Fingerprint region" },
+        {
+            "front": "Spectroscopy that probes nuclear spin environments (commonly 1H)",
+            "back": "Nuclear magnetic resonance (NMR)"
+        },
+        { "front": "NMR term for the position of a peak, reported in ppm", "back": "Chemical shift" },
+        { "front": "Direction on an NMR spectrum corresponding to low ppm / more shielded protons", "back": "Upfield" },
+        { "front": "Direction on an NMR spectrum corresponding to high ppm / deshielded protons", "back": "Downfield" },
+        {
+            "front": "NMR feature that reveals the number of neighboring nonequivalent protons (n+1 rule)",
+            "back": "Spin-spin splitting (coupling)"
+        },
+        { "front": "Approximate 1H NMR shift of a carboxylic acid proton (very downfield)", "back": "About 10-12 ppm" },
+        { "front": "Approximate 1H NMR shift of an aldehyde proton", "back": "About 9-10 ppm" },
+        {
+            "front": "What determines the number of distinct peaks in a 1H NMR spectrum",
+            "back": "Number of chemically nonequivalent proton environments"
+        },
+        {
+            "front": "Spectroscopy technique that measures mass-to-charge (m/z) ratio of ions",
+            "back": "Mass spectrometry"
+        },
+        {
+            "front": "Name of the peak corresponding to the intact ionized molecule in mass spec",
+            "back": "Molecular ion (M+) peak / parent peak"
+        },
+        {
+            "front": "Spectroscopy best for detecting conjugated (multiple double bond) systems",
+            "back": "Ultraviolet-visible (UV-Vis) spectroscopy"
+        },
+        {
+            "front": "Structural feature required for a molecule to absorb strongly in UV-Vis",
+            "back": "Conjugation (alternating multiple bonds)"
+        },
+        {
+            "front": "Compared to IR, UV-Vis relies on light of which relative energy",
+            "back": "Higher energy (shorter wavelength)"
+        },
+        {
+            "front": "Protein-sequencing method that removes N-terminal residues one at a time",
+            "back": "Edman degradation"
+        },
+        {
+            "front": "Electrophoresis technique separating denatured proteins by size using a detergent",
+            "back": "SDS-PAGE"
+        },
+        { "front": "Product of reacting formaldehyde with cyanide", "back": "Cyanohydrin" },
+        { "front": "Functional groups present in urea", "back": "Two amide groups" },
+        { "front": "The number of carbons in methyl acetate", "back": "Three (a three-carbon ester)" },
+        {
+            "front": "Which alcohol is a stronger base as its conjugate base: tert-butoxide or ethoxide?",
+            "back": "Tert-butoxide"
+        },
+        {
+            "front": "Effect of branching on the boiling point of an alkane isomer",
+            "back": "More branching lowers the boiling point"
+        },
+        {
+            "front": "Geometric isomer of a symmetric alkene predicted to have the lower melting point",
+            "back": "The cis isomer (packs less efficiently)"
+        },
+        { "front": "Number of pi bonds in a single carbon-carbon triple bond", "back": "Two" },
+        { "front": "Number of sigma bonds in any single, double, or triple carbon-carbon bond", "back": "One" },
+        {
+            "front": "Molecules capable of hydrogen bonding with water contain H bonded to which atoms",
+            "back": "N, O, or F"
+        }
+    ]
 }

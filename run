@@ -2,6 +2,17 @@
 
 set -e
 
+# Load local secrets (e.g. OPENAI_API_KEY for the free-response grader) so the
+# launched app inherits them. .env.local is git-ignored; see .env.example.
+for envfile in .env.local .env; do
+    if [ -f "$envfile" ]; then
+        set -a
+        # shellcheck disable=SC1090
+        . "./$envfile"
+        set +a
+    fi
+done
+
 export PYTHONWARNINGS=default
 export PYTHONPYCACHEPREFIX=out/pycache
 # define these as blank before calling the script if you want to disable them

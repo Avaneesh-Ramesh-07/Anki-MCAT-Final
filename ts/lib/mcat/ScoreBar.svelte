@@ -106,11 +106,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         line-height: 1;
         font-variant-numeric: tabular-nums;
         // colour tracks the score: reads blue when low, green when high.
-        color: color-mix(
-            in srgb,
-            var(--mcat-sky-ink),
-            var(--mcat-sage-ink) var(--pct)
-        );
+        color: color-mix(in srgb, var(--mcat-sky-ink), var(--mcat-sage-ink) var(--pct));
     }
     .pct--none {
         color: var(--mcat-ink-faint);
@@ -147,7 +143,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             var(--fill-color)
         );
         box-shadow: 0 0 0 1px color-mix(in srgb, var(--fill-color), #000 8%) inset;
-        animation: mcat-fill var(--mcat-fill-dur) var(--mcat-ease) var(--mcat-fill-delay, 0s) both;
+        animation: mcat-fill var(--mcat-fill-dur) var(--mcat-ease)
+            var(--mcat-fill-delay, 0s) both;
     }
     @keyframes mcat-fill {
         from {

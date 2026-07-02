@@ -1,823 +1,823 @@
 {
-  "topic": "Sociology",
-  "deck": "MCAT Core::Sociology",
-  "aamc_tag": "aamc::psych-soc::sociology",
-  "cards": [
-    {
-      "front": "Sociological paradigm viewing society as interdependent parts working together for stability",
-      "back": "Functionalism (structural functionalism)"
-    },
-    {
-      "front": "Functionalist term for a recognized, intended consequence of a social structure",
-      "back": "Manifest function"
-    },
-    {
-      "front": "Functionalist term for an unintended, often unrecognized consequence of a social structure",
-      "back": "Latent function"
-    },
-    {
-      "front": "Functionalist term for a consequence that disrupts a society's stability or equilibrium",
-      "back": "Dysfunction (latent dysfunction)"
-    },
-    {
-      "front": "Theorist most associated with founding structural functionalism and the concept of social solidarity",
-      "back": "Emile Durkheim"
-    },
-    {
-      "front": "Paradigm viewing society as competition among groups over scarce resources and power",
-      "back": "Conflict theory"
-    },
-    {
-      "front": "Theorist whose focus on class struggle between bourgeoisie and proletariat grounds conflict theory",
-      "back": "Karl Marx"
-    },
-    {
-      "front": "Marx's term for the owners of the means of production",
-      "back": "Bourgeoisie"
-    },
-    {
-      "front": "Marx's term for the working class who sell their labor",
-      "back": "Proletariat"
-    },
-    {
-      "front": "Micro-level paradigm focused on the meanings people attach to symbols in interaction",
-      "back": "Symbolic interactionism"
-    },
-    {
-      "front": "Theorist central to symbolic interactionism who developed the concept of the 'self'",
-      "back": "George Herbert Mead"
-    },
-    {
-      "front": "View that social phenomena and categories are created and maintained through shared human agreement",
-      "back": "Social constructionism"
-    },
-    {
-      "front": "Theory that individuals weigh perceived rewards against costs to guide social behavior",
-      "back": "Exchange (rational choice) theory"
-    },
-    {
-      "front": "Conflict-based paradigm arguing that male-dominated society systematically oppresses women",
-      "back": "Feminist theory"
-    },
-    {
-      "front": "General term for study of small-scale, face-to-face social interactions",
-      "back": "Microsociology"
-    },
-    {
-      "front": "General term for study of large-scale social structures and whole societies",
-      "back": "Macrosociology"
-    },
-    {
-      "front": "Shared beliefs, values, norms, and material objects that characterize a group",
-      "back": "Culture"
-    },
-    {
-      "front": "Physical objects and artifacts produced by a culture",
-      "back": "Material culture"
-    },
-    {
-      "front": "Nonmaterial elements of a culture such as beliefs, values, and language",
-      "back": "Symbolic (nonmaterial) culture"
-    },
-    {
-      "front": "Culture's standards for what is good, desirable, and proper",
-      "back": "Values"
-    },
-    {
-      "front": "Culture's rules and expectations for behavior",
-      "back": "Norms"
-    },
-    {
-      "front": "Informal norms of everyday casual interaction, violation of which brings little sanction",
-      "back": "Folkways"
-    },
-    {
-      "front": "Norms with strong moral significance, violation of which brings serious social disapproval",
-      "back": "Mores"
-    },
-    {
-      "front": "Norm so strongly prohibited that its violation is considered deeply forbidden or unthinkable",
-      "back": "Taboo"
-    },
-    {
-      "front": "Norms formally written into law",
-      "back": "Laws (formal norms)"
-    },
-    {
-      "front": "Culture within a larger culture that shares distinct values while participating in the whole",
-      "back": "Subculture"
-    },
-    {
-      "front": "Subculture whose values and norms oppose those of the dominant culture",
-      "back": "Counterculture"
-    },
-    {
-      "front": "Tendency to judge another culture by the standards of one's own, believing one's own superior",
-      "back": "Ethnocentrism"
-    },
-    {
-      "front": "Practice of understanding a culture on its own terms without judging by outside standards",
-      "back": "Cultural relativism"
-    },
-    {
-      "front": "Fear or dislike of people from other countries or cultures",
-      "back": "Xenophobia"
-    },
-    {
-      "front": "Delay when nonmaterial culture struggles to adapt to changes in material culture or technology",
-      "back": "Culture lag"
-    },
-    {
-      "front": "Spread of cultural elements from one society or group to another",
-      "back": "Cultural diffusion"
-    },
-    {
-      "front": "Passing of cultural norms and knowledge from one generation to the next",
-      "back": "Cultural transmission"
-    },
-    {
-      "front": "Process by which a minority group adopts the culture of the dominant group",
-      "back": "Cultural assimilation"
-    },
-    {
-      "front": "Ideology promoting respect for and coexistence of multiple cultures within a society",
-      "back": "Multiculturalism"
-    },
-    {
-      "front": "First, euphoric stage of culture shock upon arriving in a new culture",
-      "back": "Honeymoon stage"
-    },
-    {
-      "front": "Culture shock stage marked by frustration and difficulty adjusting to a new culture",
-      "back": "Negotiation (frustration) stage"
-    },
-    {
-      "front": "Culture shock stage in which a person grows accustomed and develops a routine",
-      "back": "Adjustment stage"
-    },
-    {
-      "front": "Disorientation and anxiety felt when immersed in an unfamiliar culture",
-      "back": "Culture shock"
-    },
-    {
-      "front": "Lifelong process of learning the norms, values, and behaviors of one's society",
-      "back": "Socialization"
-    },
-    {
-      "front": "Earliest socialization in childhood, largely through the family",
-      "back": "Primary socialization"
-    },
-    {
-      "front": "Later socialization into smaller groups within the larger society, such as at school or work",
-      "back": "Secondary socialization"
-    },
-    {
-      "front": "Rehearsing behaviors in anticipation of a future social role",
-      "back": "Anticipatory socialization"
-    },
-    {
-      "front": "Discarding old behavior patterns and adopting new ones to enter a new phase of life",
-      "back": "Resocialization"
-    },
-    {
-      "front": "Person or group responsible for socializing an individual, such as family, peers, or media",
-      "back": "Agent of socialization"
-    },
-    {
-      "front": "Type of self-perception first developed when a child recognizes existence as a separate entity",
-      "back": "Existential self"
-    },
-    {
-      "front": "Self-awareness that one is an 'object' that can be categorized by traits like age and gender",
-      "back": "Categorical self"
-    },
-    {
-      "front": "The way an individual perceives and evaluates himself or herself",
-      "back": "Self-concept"
-    },
-    {
-      "front": "Erikson's psychosocial crisis of adolescence about forming a stable sense of self",
-      "back": "Identity versus role confusion"
-    },
-    {
-      "front": "Case of a child raised in isolation from human contact, illustrating socialization's importance",
-      "back": "Feral (wild) child"
-    },
-    {
-      "front": "Goffman's theatrical metaphor for how people present themselves to an 'audience'",
-      "back": "Dramaturgical approach"
-    },
-    {
-      "front": "In dramaturgy, the setting where a person performs knowing they are being observed",
-      "back": "Front stage"
-    },
-    {
-      "front": "In dramaturgy, the private setting where a person can drop their public persona",
-      "back": "Back stage"
-    },
-    {
-      "front": "Efforts to control the impression others form of oneself",
-      "back": "Impression management"
-    },
-    {
-      "front": "Sociologist who developed the dramaturgical perspective and impression management",
-      "back": "Erving Goffman"
-    },
-    {
-      "front": "Small, intimate group with close, enduring personal relationships",
-      "back": "Primary group"
-    },
-    {
-      "front": "Large, impersonal group organized around a specific goal or activity",
-      "back": "Secondary group"
-    },
-    {
-      "front": "Group or category an individual uses as a standard for self-evaluation",
-      "back": "Reference group"
-    },
-    {
-      "front": "Group to which an individual feels loyalty and belonging",
-      "back": "In-group"
-    },
-    {
-      "front": "Group to which an individual feels no belonging or feels competition or hostility",
-      "back": "Out-group"
-    },
-    {
-      "front": "Group of people of similar age and social status",
-      "back": "Peer group"
-    },
-    {
-      "front": "Status that dominates all others and shapes a person's overall social identity",
-      "back": "Master status"
-    },
-    {
-      "front": "Social status a person is born with or assigned involuntarily",
-      "back": "Ascribed status"
-    },
-    {
-      "front": "Social status a person earns through effort or accomplishment",
-      "back": "Achieved status"
-    },
-    {
-      "front": "Set of behaviors and expectations attached to a particular social status",
-      "back": "Role"
-    },
-    {
-      "front": "Difficulty meeting the conflicting demands of a single role",
-      "back": "Role strain"
-    },
-    {
-      "front": "Difficulty meeting the demands of two or more distinct roles that clash",
-      "back": "Role conflict"
-    },
-    {
-      "front": "Process of disengaging from a role that has been central to one's identity",
-      "back": "Role exit"
-    },
-    {
-      "front": "Large, hierarchical organization governed by formal rules and impersonal positions",
-      "back": "Bureaucracy"
-    },
-    {
-      "front": "Weber's metaphor for entrapment by the impersonal rationality of modern bureaucracy",
-      "back": "Iron cage"
-    },
-    {
-      "front": "Theorist associated with rationalization, bureaucracy, and the Protestant work ethic",
-      "back": "Max Weber"
-    },
-    {
-      "front": "Organization people join voluntarily to pursue a shared cause or interest",
-      "back": "Normative (voluntary) organization"
-    },
-    {
-      "front": "Organization people join for practical, tangible reward such as pay",
-      "back": "Utilitarian organization"
-    },
-    {
-      "front": "Organization people are forced to join, such as a prison or mandatory institution",
-      "back": "Coercive organization"
-    },
-    {
-      "front": "Sociological network property describing many acquaintances providing access to information",
-      "back": "Weak ties"
-    },
-    {
-      "front": "Sociological network property describing close relationships providing emotional support",
-      "back": "Strong ties"
-    },
-    {
-      "front": "Improved performance on a task in the presence of others",
-      "back": "Social facilitation"
-    },
-    {
-      "front": "Reduced individual effort when working in a group",
-      "back": "Social loafing"
-    },
-    {
-      "front": "Group discussion strengthening members' pre-existing attitudes toward an extreme",
-      "back": "Group polarization"
-    },
-    {
-      "front": "Faulty group decision making driven by desire for harmony and conformity",
-      "back": "Groupthink"
-    },
-    {
-      "front": "Theorist who coined the term groupthink",
-      "back": "Irving Janis"
-    },
-    {
-      "front": "Janis's term for group members who shield the group from dissenting information",
-      "back": "Mindguards"
-    },
-    {
-      "front": "Failure of bystanders to help a victim, made likelier by the presence of others",
-      "back": "Bystander effect (bystander apathy)"
-    },
-    {
-      "front": "Case whose murder popularized the study of the bystander effect",
-      "back": "Kitty Genovese"
-    },
-    {
-      "front": "Loss of individual self-awareness and restraint within a group or crowd",
-      "back": "Deindividuation"
-    },
-    {
-      "front": "Adjusting one's behavior or beliefs to match those of a group",
-      "back": "Conformity"
-    },
-    {
-      "front": "Social influence in which peers encourage a person to change to fit group norms",
-      "back": "Peer pressure"
-    },
-    {
-      "front": "Prestige and honor attached to a person's position or occupation",
-      "back": "Prestige"
-    },
-    {
-      "front": "Preconceived, often negative, attitude or belief about a group",
-      "back": "Prejudice"
-    },
-    {
-      "front": "Unfair treatment or action directed toward an individual or group",
-      "back": "Discrimination"
-    },
-    {
-      "front": "Oversimplified, generalized belief about the members of a group",
-      "back": "Stereotype"
-    },
-    {
-      "front": "Model categorizing stereotypes by the dimensions of warmth and competence",
-      "back": "Stereotype content model"
-    },
-    {
-      "front": "Anxiety that one's performance will confirm a negative stereotype about one's group",
-      "back": "Stereotype threat"
-    },
-    {
-      "front": "Prediction that causes itself to come true by influencing behavior toward the expectation",
-      "back": "Self-fulfilling prophecy"
-    },
-    {
-      "front": "Classroom effect in which teachers' expectations influence student performance",
-      "back": "Teacher expectancy (Pygmalion) effect"
-    },
-    {
-      "front": "Discrimination built into the policies and practices of social institutions",
-      "back": "Institutional discrimination"
-    },
-    {
-      "front": "Belief that the world is fair and people get what they deserve",
-      "back": "Just-world hypothesis"
-    },
-    {
-      "front": "Blaming an innocent individual or group for a problem they did not cause",
-      "back": "Scapegoating"
-    },
-    {
-      "front": "Policy giving preferential opportunities to underrepresented or disadvantaged groups",
-      "back": "Affirmative action"
-    },
-    {
-      "front": "Negative social label that devalues and discredits an individual",
-      "back": "Stigma"
-    },
-    {
-      "front": "Loss of a group's rights, especially the right to vote",
-      "back": "Disenfranchisement"
-    },
-    {
-      "front": "Hidden lessons about norms and values that schools teach beyond the formal curriculum",
-      "back": "Hidden curriculum"
-    },
-    {
-      "front": "Brain structure whose activation is linked to fear and aggression in prejudice studies",
-      "back": "Amygdala"
-    },
-    {
-      "front": "Discrimination arising from criteria that appear neutral but produce unequal outcomes",
-      "back": "Implicit (disparate-impact) discrimination"
-    },
-    {
-      "front": "Kinship system tracing descent through both the mother's and father's lines",
-      "back": "Bilateral descent"
-    },
-    {
-      "front": "Kinship system tracing descent through the father's line",
-      "back": "Patrilineal descent"
-    },
-    {
-      "front": "Kinship system tracing descent through the mother's line",
-      "back": "Matrilineal descent"
-    },
-    {
-      "front": "Family or society in which authority is held by males, especially the father",
-      "back": "Patriarchy"
-    },
-    {
-      "front": "Family or society in which authority is held by females",
-      "back": "Matriarchy"
-    },
-    {
-      "front": "Family social benefits include companionship, socialization, and protection but not this demanded trait",
-      "back": "Obedience"
-    },
-    {
-      "front": "Small religious group that has broken away from an established larger religion",
-      "back": "Sect"
-    },
-    {
-      "front": "New religious movement with beliefs and practices outside societal norms, often led by one charismatic figure",
-      "back": "Cult"
-    },
-    {
-      "front": "Government in which religious leaders rule in the name of a deity",
-      "back": "Theocracy"
-    },
-    {
-      "front": "Officially established religion of a nation",
-      "back": "State religion"
-    },
-    {
-      "front": "Government controlled by a small group of powerful or wealthy people",
-      "back": "Oligarchy"
-    },
-    {
-      "front": "Government or society specifically controlled by its wealthiest members",
-      "back": "Plutocracy"
-    },
-    {
-      "front": "Economic system in which private owners control the means of production for profit",
-      "back": "Capitalism"
-    },
-    {
-      "front": "Systematic dissemination of biased information to shape public attitudes",
-      "back": "Propaganda"
-    },
-    {
-      "front": "Process by which a society becomes increasingly connected economically and culturally worldwide",
-      "back": "Globalization"
-    },
-    {
-      "front": "Process of defining a nonmedical problem or behavior as a medical condition",
-      "back": "Medicalization"
-    },
-    {
-      "front": "Theorist who defined the rights and obligations of the 'sick role'",
-      "back": "Talcott Parsons"
-    },
-    {
-      "front": "Sick-role right releasing the ill person from normal duties and responsibilities",
-      "back": "Exemption from normal roles"
-    },
-    {
-      "front": "Sick-role obligation to seek help and cooperate with medical professionals to get well",
-      "back": "Duty to try to get well"
-    },
-    {
-      "front": "Study of the distribution and social determinants of health and disease in populations",
-      "back": "Social epidemiology"
-    },
-    {
-      "front": "Shift toward large insurer-managed hospital systems described by this bureaucratic process",
-      "back": "Bureaucratization"
-    },
-    {
-      "front": "Ethical principle of acting for the patient's benefit",
-      "back": "Beneficence"
-    },
-    {
-      "front": "Ethical principle of avoiding harm to the patient",
-      "back": "Nonmaleficence"
-    },
-    {
-      "front": "Ethical principle of respecting a patient's right to make their own decisions",
-      "back": "Respect for autonomy"
-    },
-    {
-      "front": "Ethical principle of fair distribution of benefits and burdens in care",
-      "back": "Justice"
-    },
-    {
-      "front": "Research ethics requirement that participants agree with full knowledge of the study",
-      "back": "Informed consent"
-    },
-    {
-      "front": "Study in which black men with syphilis were left untreated, a landmark ethics violation",
-      "back": "Tuskegee syphilis study"
-    },
-    {
-      "front": "Woman whose cancer cells (HeLa) were used in research without her consent",
-      "back": "Henrietta Lacks"
-    },
-    {
-      "front": "Differences in health outcomes and access closely tied to social and economic disadvantage",
-      "back": "Health disparities"
-    },
-    {
-      "front": "Area with limited access to affordable, nutritious food, linked to poor diet outcomes",
-      "back": "Food desert"
-    },
-    {
-      "front": "Disproportionate placement of environmental hazards in disadvantaged communities",
-      "back": "Environmental (institutional) discrimination"
-    },
-    {
-      "front": "Ranking of people into a hierarchy of social and economic layers",
-      "back": "Social stratification"
-    },
-    {
-      "front": "A person's combined economic and social position based on income, education, and occupation",
-      "back": "Socioeconomic status (SES)"
-    },
-    {
-      "front": "Stratification system based on economic position that permits movement between levels",
-      "back": "Class system"
-    },
-    {
-      "front": "Rigid stratification system in which status is fixed at birth and mobility is impossible",
-      "back": "Caste system"
-    },
-    {
-      "front": "Stratification system rewarding individuals on the basis of ability and effort",
-      "back": "Meritocracy"
-    },
-    {
-      "front": "Stratification system that permits movement between social strata",
-      "back": "Open system"
-    },
-    {
-      "front": "Stratification system that prevents movement between social strata",
-      "back": "Closed system"
-    },
-    {
-      "front": "Movement of an individual or group up or down the social hierarchy",
-      "back": "Social mobility"
-    },
-    {
-      "front": "Change in social position within a single individual's lifetime",
-      "back": "Intragenerational mobility"
-    },
-    {
-      "front": "Change in social position across generations of a family",
-      "back": "Intergenerational mobility"
-    },
-    {
-      "front": "Transmission of social and economic status from parents to children across generations",
-      "back": "Social reproduction"
-    },
-    {
-      "front": "Awareness of one's position within the class structure and shared interests with that class",
-      "back": "Class consciousness"
-    },
-    {
-      "front": "Marx's term for false understanding of one's true class position and interests",
-      "back": "False consciousness"
-    },
-    {
-      "front": "Poverty defined by inability to meet basic needs for survival",
-      "back": "Absolute poverty"
-    },
-    {
-      "front": "Poverty defined relative to the standard of living of others in one's society",
-      "back": "Relative poverty"
-    },
-    {
-      "front": "Networks of relationships that provide resources and opportunities",
-      "back": "Social capital"
-    },
-    {
-      "front": "Nonfinancial assets like education, skills, and tastes that promote social mobility",
-      "back": "Cultural capital"
-    },
-    {
-      "front": "Massey and Denton's set of measures quantifying dimensions of residential segregation",
-      "back": "Indices of segregation"
-    },
-    {
-      "front": "Feeling of isolation and powerlessness in a segregated, resource-poor neighborhood lacking job connections",
-      "back": "Lack of social capital"
-    },
-    {
-      "front": "Statistical study of the size, structure, and distribution of human populations",
-      "back": "Demography"
-    },
-    {
-      "front": "Model describing population shifts as a society industrializes, proposed by Warren Thompson",
-      "back": "Demographic transition"
-    },
-    {
-      "front": "Number of live births per woman or per 1,000 people in a population",
-      "back": "Fertility rate"
-    },
-    {
-      "front": "Number of deaths per 1,000 people in a population",
-      "back": "Mortality rate"
-    },
-    {
-      "front": "Ratio of males to females in a population, normally about 1:1",
-      "back": "Sex ratio"
-    },
-    {
-      "front": "Movement of people into a country to settle",
-      "back": "Immigration"
-    },
-    {
-      "front": "Movement of people out of a country to settle elsewhere",
-      "back": "Emigration"
-    },
-    {
-      "front": "General movement of people from one place to another",
-      "back": "Migration"
-    },
-    {
-      "front": "Demographic transition stage with high birth and death rates and stable population",
-      "back": "Stage 1 (pre-industrial)"
-    },
-    {
-      "front": "Demographic transition stage with falling death rates causing rapid population growth",
-      "back": "Stage 2"
-    },
-    {
-      "front": "Demographic transition stage in which fertility falls below mortality, shrinking the population",
-      "back": "Stage 4 (post-industrial)"
-    },
-    {
-      "front": "Factor NOT responsible for the falling death rate of demographic transition stage 2",
-      "back": "Increased access to contraceptives"
-    },
-    {
-      "front": "Number of individuals of a species that an environment can sustainably support",
-      "back": "Carrying capacity"
-    },
-    {
-      "front": "Growth in the proportion of a population living in cities",
-      "back": "Urbanization"
-    },
-    {
-      "front": "Population movement from central cities to surrounding suburbs",
-      "back": "Suburbanization"
-    },
-    {
-      "front": "Return of higher-income residents to a poorer urban area, often displacing residents",
-      "back": "Gentrification"
-    },
-    {
-      "front": "Temporary, novel, and short-lived interest or behavior adopted by many people",
-      "back": "Fad"
-    },
-    {
-      "front": "Rapid spread of intense, often irrational fear or anxiety through a population",
-      "back": "Mass hysteria"
-    },
-    {
-      "front": "Widespread reaction of fear that a group or issue threatens society's values",
-      "back": "Moral panic"
-    },
-    {
-      "front": "Crowd theory holding that people in crowds lose rationality through a hypnotic, anonymous influence",
-      "back": "Contagion theory"
-    },
-    {
-      "front": "Crowd theory holding that crowds form because like-minded individuals come together",
-      "back": "Convergence theory"
-    },
-    {
-      "front": "Crowd theory holding that crowds develop new norms in ambiguous situations that guide behavior",
-      "back": "Emergent-norm theory"
-    },
-    {
-      "front": "Collective, organized effort to promote or resist social change",
-      "back": "Social movement"
-    },
-    {
-      "front": "Violation of a society's norms",
-      "back": "Deviance"
-    },
-    {
-      "front": "Deviance involving violation of formally codified rules or laws",
-      "back": "Formal deviance"
-    },
-    {
-      "front": "Deviance involving violation of unwritten social norms",
-      "back": "Informal deviance"
-    },
-    {
-      "front": "Penalty imposed by law for formal deviance",
-      "back": "Legal (formal) sanction"
-    },
-    {
-      "front": "Informal social penalty such as disapproval or ridicule for norm violation",
-      "back": "Social (informal) sanction"
-    },
-    {
-      "front": "Theory that deviance results from the label society attaches to an act or person",
-      "back": "Labeling theory"
-    },
-    {
-      "front": "Merton's theory that deviance arises from a gap between cultural goals and legitimate means",
-      "back": "Strain theory"
-    },
-    {
-      "front": "Durkheim's term for normlessness and social instability, often felt when one cannot integrate into society",
-      "back": "Anomie"
-    },
-    {
-      "front": "Theory that deviance is learned through interaction with others who deviate",
-      "back": "Differential association theory"
-    },
-    {
-      "front": "Any means, formal or informal, a society uses to enforce conformity to norms",
-      "back": "Social control"
-    },
-    {
-      "front": "Adding a desirable stimulus to increase a behavior",
-      "back": "Positive reinforcement"
-    },
-    {
-      "front": "Adding an undesirable stimulus to decrease a behavior",
-      "back": "Positive punishment"
-    },
-    {
-      "front": "Learning behavior by observing and imitating others",
-      "back": "Social learning"
-    },
-    {
-      "front": "Range of characteristics from masculine to feminine that are socially constructed",
-      "back": "Gender"
-    },
-    {
-      "front": "A person's biological classification as male or female",
-      "back": "Sex"
-    },
-    {
-      "front": "A person's internal sense of their own gender",
-      "back": "Gender identity"
-    },
-    {
-      "front": "Imbalance arising from natural factors, sex-selective abortion, or differential aging",
-      "back": "Gender imbalance"
-    },
-    {
-      "front": "Study following the same subjects over an extended period of time",
-      "back": "Longitudinal study"
-    },
-    {
-      "front": "Study observing a population at a single point in time",
-      "back": "Cross-sectional study"
-    },
-    {
-      "front": "Study group followed over time, defined by a shared characteristic",
-      "back": "Cohort study"
-    },
-    {
-      "front": "In-depth investigation of a single individual or small group",
-      "back": "Case study"
-    },
-    {
-      "front": "Study that looks backward using existing records to link past exposures to outcomes",
-      "back": "Retrospective study"
-    },
-    {
-      "front": "Bias in which respondents answer in ways they think are socially acceptable",
-      "back": "Social desirability bias"
-    },
-    {
-      "front": "Extent to which study results generalize to real-world settings and populations",
-      "back": "External validity"
-    },
-    {
-      "front": "Form of external validity concerning how well findings apply to real-life situations",
-      "back": "Ecological validity"
-    },
-    {
-      "front": "Variable that changes the strength or direction of a relationship between two variables",
-      "back": "Moderating variable"
-    },
-    {
-      "front": "Uncontrolled variable that distorts the apparent relationship between studied variables",
-      "back": "Confounding variable"
-    }
-  ]
+    "topic": "Sociology",
+    "deck": "MCAT Core::Sociology",
+    "aamc_tag": "aamc::psych-soc::sociology",
+    "cards": [
+        {
+            "front": "Sociological paradigm viewing society as interdependent parts working together for stability",
+            "back": "Functionalism (structural functionalism)"
+        },
+        {
+            "front": "Functionalist term for a recognized, intended consequence of a social structure",
+            "back": "Manifest function"
+        },
+        {
+            "front": "Functionalist term for an unintended, often unrecognized consequence of a social structure",
+            "back": "Latent function"
+        },
+        {
+            "front": "Functionalist term for a consequence that disrupts a society's stability or equilibrium",
+            "back": "Dysfunction (latent dysfunction)"
+        },
+        {
+            "front": "Theorist most associated with founding structural functionalism and the concept of social solidarity",
+            "back": "Emile Durkheim"
+        },
+        {
+            "front": "Paradigm viewing society as competition among groups over scarce resources and power",
+            "back": "Conflict theory"
+        },
+        {
+            "front": "Theorist whose focus on class struggle between bourgeoisie and proletariat grounds conflict theory",
+            "back": "Karl Marx"
+        },
+        {
+            "front": "Marx's term for the owners of the means of production",
+            "back": "Bourgeoisie"
+        },
+        {
+            "front": "Marx's term for the working class who sell their labor",
+            "back": "Proletariat"
+        },
+        {
+            "front": "Micro-level paradigm focused on the meanings people attach to symbols in interaction",
+            "back": "Symbolic interactionism"
+        },
+        {
+            "front": "Theorist central to symbolic interactionism who developed the concept of the 'self'",
+            "back": "George Herbert Mead"
+        },
+        {
+            "front": "View that social phenomena and categories are created and maintained through shared human agreement",
+            "back": "Social constructionism"
+        },
+        {
+            "front": "Theory that individuals weigh perceived rewards against costs to guide social behavior",
+            "back": "Exchange (rational choice) theory"
+        },
+        {
+            "front": "Conflict-based paradigm arguing that male-dominated society systematically oppresses women",
+            "back": "Feminist theory"
+        },
+        {
+            "front": "General term for study of small-scale, face-to-face social interactions",
+            "back": "Microsociology"
+        },
+        {
+            "front": "General term for study of large-scale social structures and whole societies",
+            "back": "Macrosociology"
+        },
+        {
+            "front": "Shared beliefs, values, norms, and material objects that characterize a group",
+            "back": "Culture"
+        },
+        {
+            "front": "Physical objects and artifacts produced by a culture",
+            "back": "Material culture"
+        },
+        {
+            "front": "Nonmaterial elements of a culture such as beliefs, values, and language",
+            "back": "Symbolic (nonmaterial) culture"
+        },
+        {
+            "front": "Culture's standards for what is good, desirable, and proper",
+            "back": "Values"
+        },
+        {
+            "front": "Culture's rules and expectations for behavior",
+            "back": "Norms"
+        },
+        {
+            "front": "Informal norms of everyday casual interaction, violation of which brings little sanction",
+            "back": "Folkways"
+        },
+        {
+            "front": "Norms with strong moral significance, violation of which brings serious social disapproval",
+            "back": "Mores"
+        },
+        {
+            "front": "Norm so strongly prohibited that its violation is considered deeply forbidden or unthinkable",
+            "back": "Taboo"
+        },
+        {
+            "front": "Norms formally written into law",
+            "back": "Laws (formal norms)"
+        },
+        {
+            "front": "Culture within a larger culture that shares distinct values while participating in the whole",
+            "back": "Subculture"
+        },
+        {
+            "front": "Subculture whose values and norms oppose those of the dominant culture",
+            "back": "Counterculture"
+        },
+        {
+            "front": "Tendency to judge another culture by the standards of one's own, believing one's own superior",
+            "back": "Ethnocentrism"
+        },
+        {
+            "front": "Practice of understanding a culture on its own terms without judging by outside standards",
+            "back": "Cultural relativism"
+        },
+        {
+            "front": "Fear or dislike of people from other countries or cultures",
+            "back": "Xenophobia"
+        },
+        {
+            "front": "Delay when nonmaterial culture struggles to adapt to changes in material culture or technology",
+            "back": "Culture lag"
+        },
+        {
+            "front": "Spread of cultural elements from one society or group to another",
+            "back": "Cultural diffusion"
+        },
+        {
+            "front": "Passing of cultural norms and knowledge from one generation to the next",
+            "back": "Cultural transmission"
+        },
+        {
+            "front": "Process by which a minority group adopts the culture of the dominant group",
+            "back": "Cultural assimilation"
+        },
+        {
+            "front": "Ideology promoting respect for and coexistence of multiple cultures within a society",
+            "back": "Multiculturalism"
+        },
+        {
+            "front": "First, euphoric stage of culture shock upon arriving in a new culture",
+            "back": "Honeymoon stage"
+        },
+        {
+            "front": "Culture shock stage marked by frustration and difficulty adjusting to a new culture",
+            "back": "Negotiation (frustration) stage"
+        },
+        {
+            "front": "Culture shock stage in which a person grows accustomed and develops a routine",
+            "back": "Adjustment stage"
+        },
+        {
+            "front": "Disorientation and anxiety felt when immersed in an unfamiliar culture",
+            "back": "Culture shock"
+        },
+        {
+            "front": "Lifelong process of learning the norms, values, and behaviors of one's society",
+            "back": "Socialization"
+        },
+        {
+            "front": "Earliest socialization in childhood, largely through the family",
+            "back": "Primary socialization"
+        },
+        {
+            "front": "Later socialization into smaller groups within the larger society, such as at school or work",
+            "back": "Secondary socialization"
+        },
+        {
+            "front": "Rehearsing behaviors in anticipation of a future social role",
+            "back": "Anticipatory socialization"
+        },
+        {
+            "front": "Discarding old behavior patterns and adopting new ones to enter a new phase of life",
+            "back": "Resocialization"
+        },
+        {
+            "front": "Person or group responsible for socializing an individual, such as family, peers, or media",
+            "back": "Agent of socialization"
+        },
+        {
+            "front": "Type of self-perception first developed when a child recognizes existence as a separate entity",
+            "back": "Existential self"
+        },
+        {
+            "front": "Self-awareness that one is an 'object' that can be categorized by traits like age and gender",
+            "back": "Categorical self"
+        },
+        {
+            "front": "The way an individual perceives and evaluates himself or herself",
+            "back": "Self-concept"
+        },
+        {
+            "front": "Erikson's psychosocial crisis of adolescence about forming a stable sense of self",
+            "back": "Identity versus role confusion"
+        },
+        {
+            "front": "Case of a child raised in isolation from human contact, illustrating socialization's importance",
+            "back": "Feral (wild) child"
+        },
+        {
+            "front": "Goffman's theatrical metaphor for how people present themselves to an 'audience'",
+            "back": "Dramaturgical approach"
+        },
+        {
+            "front": "In dramaturgy, the setting where a person performs knowing they are being observed",
+            "back": "Front stage"
+        },
+        {
+            "front": "In dramaturgy, the private setting where a person can drop their public persona",
+            "back": "Back stage"
+        },
+        {
+            "front": "Efforts to control the impression others form of oneself",
+            "back": "Impression management"
+        },
+        {
+            "front": "Sociologist who developed the dramaturgical perspective and impression management",
+            "back": "Erving Goffman"
+        },
+        {
+            "front": "Small, intimate group with close, enduring personal relationships",
+            "back": "Primary group"
+        },
+        {
+            "front": "Large, impersonal group organized around a specific goal or activity",
+            "back": "Secondary group"
+        },
+        {
+            "front": "Group or category an individual uses as a standard for self-evaluation",
+            "back": "Reference group"
+        },
+        {
+            "front": "Group to which an individual feels loyalty and belonging",
+            "back": "In-group"
+        },
+        {
+            "front": "Group to which an individual feels no belonging or feels competition or hostility",
+            "back": "Out-group"
+        },
+        {
+            "front": "Group of people of similar age and social status",
+            "back": "Peer group"
+        },
+        {
+            "front": "Status that dominates all others and shapes a person's overall social identity",
+            "back": "Master status"
+        },
+        {
+            "front": "Social status a person is born with or assigned involuntarily",
+            "back": "Ascribed status"
+        },
+        {
+            "front": "Social status a person earns through effort or accomplishment",
+            "back": "Achieved status"
+        },
+        {
+            "front": "Set of behaviors and expectations attached to a particular social status",
+            "back": "Role"
+        },
+        {
+            "front": "Difficulty meeting the conflicting demands of a single role",
+            "back": "Role strain"
+        },
+        {
+            "front": "Difficulty meeting the demands of two or more distinct roles that clash",
+            "back": "Role conflict"
+        },
+        {
+            "front": "Process of disengaging from a role that has been central to one's identity",
+            "back": "Role exit"
+        },
+        {
+            "front": "Large, hierarchical organization governed by formal rules and impersonal positions",
+            "back": "Bureaucracy"
+        },
+        {
+            "front": "Weber's metaphor for entrapment by the impersonal rationality of modern bureaucracy",
+            "back": "Iron cage"
+        },
+        {
+            "front": "Theorist associated with rationalization, bureaucracy, and the Protestant work ethic",
+            "back": "Max Weber"
+        },
+        {
+            "front": "Organization people join voluntarily to pursue a shared cause or interest",
+            "back": "Normative (voluntary) organization"
+        },
+        {
+            "front": "Organization people join for practical, tangible reward such as pay",
+            "back": "Utilitarian organization"
+        },
+        {
+            "front": "Organization people are forced to join, such as a prison or mandatory institution",
+            "back": "Coercive organization"
+        },
+        {
+            "front": "Sociological network property describing many acquaintances providing access to information",
+            "back": "Weak ties"
+        },
+        {
+            "front": "Sociological network property describing close relationships providing emotional support",
+            "back": "Strong ties"
+        },
+        {
+            "front": "Improved performance on a task in the presence of others",
+            "back": "Social facilitation"
+        },
+        {
+            "front": "Reduced individual effort when working in a group",
+            "back": "Social loafing"
+        },
+        {
+            "front": "Group discussion strengthening members' pre-existing attitudes toward an extreme",
+            "back": "Group polarization"
+        },
+        {
+            "front": "Faulty group decision making driven by desire for harmony and conformity",
+            "back": "Groupthink"
+        },
+        {
+            "front": "Theorist who coined the term groupthink",
+            "back": "Irving Janis"
+        },
+        {
+            "front": "Janis's term for group members who shield the group from dissenting information",
+            "back": "Mindguards"
+        },
+        {
+            "front": "Failure of bystanders to help a victim, made likelier by the presence of others",
+            "back": "Bystander effect (bystander apathy)"
+        },
+        {
+            "front": "Case whose murder popularized the study of the bystander effect",
+            "back": "Kitty Genovese"
+        },
+        {
+            "front": "Loss of individual self-awareness and restraint within a group or crowd",
+            "back": "Deindividuation"
+        },
+        {
+            "front": "Adjusting one's behavior or beliefs to match those of a group",
+            "back": "Conformity"
+        },
+        {
+            "front": "Social influence in which peers encourage a person to change to fit group norms",
+            "back": "Peer pressure"
+        },
+        {
+            "front": "Prestige and honor attached to a person's position or occupation",
+            "back": "Prestige"
+        },
+        {
+            "front": "Preconceived, often negative, attitude or belief about a group",
+            "back": "Prejudice"
+        },
+        {
+            "front": "Unfair treatment or action directed toward an individual or group",
+            "back": "Discrimination"
+        },
+        {
+            "front": "Oversimplified, generalized belief about the members of a group",
+            "back": "Stereotype"
+        },
+        {
+            "front": "Model categorizing stereotypes by the dimensions of warmth and competence",
+            "back": "Stereotype content model"
+        },
+        {
+            "front": "Anxiety that one's performance will confirm a negative stereotype about one's group",
+            "back": "Stereotype threat"
+        },
+        {
+            "front": "Prediction that causes itself to come true by influencing behavior toward the expectation",
+            "back": "Self-fulfilling prophecy"
+        },
+        {
+            "front": "Classroom effect in which teachers' expectations influence student performance",
+            "back": "Teacher expectancy (Pygmalion) effect"
+        },
+        {
+            "front": "Discrimination built into the policies and practices of social institutions",
+            "back": "Institutional discrimination"
+        },
+        {
+            "front": "Belief that the world is fair and people get what they deserve",
+            "back": "Just-world hypothesis"
+        },
+        {
+            "front": "Blaming an innocent individual or group for a problem they did not cause",
+            "back": "Scapegoating"
+        },
+        {
+            "front": "Policy giving preferential opportunities to underrepresented or disadvantaged groups",
+            "back": "Affirmative action"
+        },
+        {
+            "front": "Negative social label that devalues and discredits an individual",
+            "back": "Stigma"
+        },
+        {
+            "front": "Loss of a group's rights, especially the right to vote",
+            "back": "Disenfranchisement"
+        },
+        {
+            "front": "Hidden lessons about norms and values that schools teach beyond the formal curriculum",
+            "back": "Hidden curriculum"
+        },
+        {
+            "front": "Brain structure whose activation is linked to fear and aggression in prejudice studies",
+            "back": "Amygdala"
+        },
+        {
+            "front": "Discrimination arising from criteria that appear neutral but produce unequal outcomes",
+            "back": "Implicit (disparate-impact) discrimination"
+        },
+        {
+            "front": "Kinship system tracing descent through both the mother's and father's lines",
+            "back": "Bilateral descent"
+        },
+        {
+            "front": "Kinship system tracing descent through the father's line",
+            "back": "Patrilineal descent"
+        },
+        {
+            "front": "Kinship system tracing descent through the mother's line",
+            "back": "Matrilineal descent"
+        },
+        {
+            "front": "Family or society in which authority is held by males, especially the father",
+            "back": "Patriarchy"
+        },
+        {
+            "front": "Family or society in which authority is held by females",
+            "back": "Matriarchy"
+        },
+        {
+            "front": "Family social benefits include companionship, socialization, and protection but not this demanded trait",
+            "back": "Obedience"
+        },
+        {
+            "front": "Small religious group that has broken away from an established larger religion",
+            "back": "Sect"
+        },
+        {
+            "front": "New religious movement with beliefs and practices outside societal norms, often led by one charismatic figure",
+            "back": "Cult"
+        },
+        {
+            "front": "Government in which religious leaders rule in the name of a deity",
+            "back": "Theocracy"
+        },
+        {
+            "front": "Officially established religion of a nation",
+            "back": "State religion"
+        },
+        {
+            "front": "Government controlled by a small group of powerful or wealthy people",
+            "back": "Oligarchy"
+        },
+        {
+            "front": "Government or society specifically controlled by its wealthiest members",
+            "back": "Plutocracy"
+        },
+        {
+            "front": "Economic system in which private owners control the means of production for profit",
+            "back": "Capitalism"
+        },
+        {
+            "front": "Systematic dissemination of biased information to shape public attitudes",
+            "back": "Propaganda"
+        },
+        {
+            "front": "Process by which a society becomes increasingly connected economically and culturally worldwide",
+            "back": "Globalization"
+        },
+        {
+            "front": "Process of defining a nonmedical problem or behavior as a medical condition",
+            "back": "Medicalization"
+        },
+        {
+            "front": "Theorist who defined the rights and obligations of the 'sick role'",
+            "back": "Talcott Parsons"
+        },
+        {
+            "front": "Sick-role right releasing the ill person from normal duties and responsibilities",
+            "back": "Exemption from normal roles"
+        },
+        {
+            "front": "Sick-role obligation to seek help and cooperate with medical professionals to get well",
+            "back": "Duty to try to get well"
+        },
+        {
+            "front": "Study of the distribution and social determinants of health and disease in populations",
+            "back": "Social epidemiology"
+        },
+        {
+            "front": "Shift toward large insurer-managed hospital systems described by this bureaucratic process",
+            "back": "Bureaucratization"
+        },
+        {
+            "front": "Ethical principle of acting for the patient's benefit",
+            "back": "Beneficence"
+        },
+        {
+            "front": "Ethical principle of avoiding harm to the patient",
+            "back": "Nonmaleficence"
+        },
+        {
+            "front": "Ethical principle of respecting a patient's right to make their own decisions",
+            "back": "Respect for autonomy"
+        },
+        {
+            "front": "Ethical principle of fair distribution of benefits and burdens in care",
+            "back": "Justice"
+        },
+        {
+            "front": "Research ethics requirement that participants agree with full knowledge of the study",
+            "back": "Informed consent"
+        },
+        {
+            "front": "Study in which black men with syphilis were left untreated, a landmark ethics violation",
+            "back": "Tuskegee syphilis study"
+        },
+        {
+            "front": "Woman whose cancer cells (HeLa) were used in research without her consent",
+            "back": "Henrietta Lacks"
+        },
+        {
+            "front": "Differences in health outcomes and access closely tied to social and economic disadvantage",
+            "back": "Health disparities"
+        },
+        {
+            "front": "Area with limited access to affordable, nutritious food, linked to poor diet outcomes",
+            "back": "Food desert"
+        },
+        {
+            "front": "Disproportionate placement of environmental hazards in disadvantaged communities",
+            "back": "Environmental (institutional) discrimination"
+        },
+        {
+            "front": "Ranking of people into a hierarchy of social and economic layers",
+            "back": "Social stratification"
+        },
+        {
+            "front": "A person's combined economic and social position based on income, education, and occupation",
+            "back": "Socioeconomic status (SES)"
+        },
+        {
+            "front": "Stratification system based on economic position that permits movement between levels",
+            "back": "Class system"
+        },
+        {
+            "front": "Rigid stratification system in which status is fixed at birth and mobility is impossible",
+            "back": "Caste system"
+        },
+        {
+            "front": "Stratification system rewarding individuals on the basis of ability and effort",
+            "back": "Meritocracy"
+        },
+        {
+            "front": "Stratification system that permits movement between social strata",
+            "back": "Open system"
+        },
+        {
+            "front": "Stratification system that prevents movement between social strata",
+            "back": "Closed system"
+        },
+        {
+            "front": "Movement of an individual or group up or down the social hierarchy",
+            "back": "Social mobility"
+        },
+        {
+            "front": "Change in social position within a single individual's lifetime",
+            "back": "Intragenerational mobility"
+        },
+        {
+            "front": "Change in social position across generations of a family",
+            "back": "Intergenerational mobility"
+        },
+        {
+            "front": "Transmission of social and economic status from parents to children across generations",
+            "back": "Social reproduction"
+        },
+        {
+            "front": "Awareness of one's position within the class structure and shared interests with that class",
+            "back": "Class consciousness"
+        },
+        {
+            "front": "Marx's term for false understanding of one's true class position and interests",
+            "back": "False consciousness"
+        },
+        {
+            "front": "Poverty defined by inability to meet basic needs for survival",
+            "back": "Absolute poverty"
+        },
+        {
+            "front": "Poverty defined relative to the standard of living of others in one's society",
+            "back": "Relative poverty"
+        },
+        {
+            "front": "Networks of relationships that provide resources and opportunities",
+            "back": "Social capital"
+        },
+        {
+            "front": "Nonfinancial assets like education, skills, and tastes that promote social mobility",
+            "back": "Cultural capital"
+        },
+        {
+            "front": "Massey and Denton's set of measures quantifying dimensions of residential segregation",
+            "back": "Indices of segregation"
+        },
+        {
+            "front": "Feeling of isolation and powerlessness in a segregated, resource-poor neighborhood lacking job connections",
+            "back": "Lack of social capital"
+        },
+        {
+            "front": "Statistical study of the size, structure, and distribution of human populations",
+            "back": "Demography"
+        },
+        {
+            "front": "Model describing population shifts as a society industrializes, proposed by Warren Thompson",
+            "back": "Demographic transition"
+        },
+        {
+            "front": "Number of live births per woman or per 1,000 people in a population",
+            "back": "Fertility rate"
+        },
+        {
+            "front": "Number of deaths per 1,000 people in a population",
+            "back": "Mortality rate"
+        },
+        {
+            "front": "Ratio of males to females in a population, normally about 1:1",
+            "back": "Sex ratio"
+        },
+        {
+            "front": "Movement of people into a country to settle",
+            "back": "Immigration"
+        },
+        {
+            "front": "Movement of people out of a country to settle elsewhere",
+            "back": "Emigration"
+        },
+        {
+            "front": "General movement of people from one place to another",
+            "back": "Migration"
+        },
+        {
+            "front": "Demographic transition stage with high birth and death rates and stable population",
+            "back": "Stage 1 (pre-industrial)"
+        },
+        {
+            "front": "Demographic transition stage with falling death rates causing rapid population growth",
+            "back": "Stage 2"
+        },
+        {
+            "front": "Demographic transition stage in which fertility falls below mortality, shrinking the population",
+            "back": "Stage 4 (post-industrial)"
+        },
+        {
+            "front": "Factor NOT responsible for the falling death rate of demographic transition stage 2",
+            "back": "Increased access to contraceptives"
+        },
+        {
+            "front": "Number of individuals of a species that an environment can sustainably support",
+            "back": "Carrying capacity"
+        },
+        {
+            "front": "Growth in the proportion of a population living in cities",
+            "back": "Urbanization"
+        },
+        {
+            "front": "Population movement from central cities to surrounding suburbs",
+            "back": "Suburbanization"
+        },
+        {
+            "front": "Return of higher-income residents to a poorer urban area, often displacing residents",
+            "back": "Gentrification"
+        },
+        {
+            "front": "Temporary, novel, and short-lived interest or behavior adopted by many people",
+            "back": "Fad"
+        },
+        {
+            "front": "Rapid spread of intense, often irrational fear or anxiety through a population",
+            "back": "Mass hysteria"
+        },
+        {
+            "front": "Widespread reaction of fear that a group or issue threatens society's values",
+            "back": "Moral panic"
+        },
+        {
+            "front": "Crowd theory holding that people in crowds lose rationality through a hypnotic, anonymous influence",
+            "back": "Contagion theory"
+        },
+        {
+            "front": "Crowd theory holding that crowds form because like-minded individuals come together",
+            "back": "Convergence theory"
+        },
+        {
+            "front": "Crowd theory holding that crowds develop new norms in ambiguous situations that guide behavior",
+            "back": "Emergent-norm theory"
+        },
+        {
+            "front": "Collective, organized effort to promote or resist social change",
+            "back": "Social movement"
+        },
+        {
+            "front": "Violation of a society's norms",
+            "back": "Deviance"
+        },
+        {
+            "front": "Deviance involving violation of formally codified rules or laws",
+            "back": "Formal deviance"
+        },
+        {
+            "front": "Deviance involving violation of unwritten social norms",
+            "back": "Informal deviance"
+        },
+        {
+            "front": "Penalty imposed by law for formal deviance",
+            "back": "Legal (formal) sanction"
+        },
+        {
+            "front": "Informal social penalty such as disapproval or ridicule for norm violation",
+            "back": "Social (informal) sanction"
+        },
+        {
+            "front": "Theory that deviance results from the label society attaches to an act or person",
+            "back": "Labeling theory"
+        },
+        {
+            "front": "Merton's theory that deviance arises from a gap between cultural goals and legitimate means",
+            "back": "Strain theory"
+        },
+        {
+            "front": "Durkheim's term for normlessness and social instability, often felt when one cannot integrate into society",
+            "back": "Anomie"
+        },
+        {
+            "front": "Theory that deviance is learned through interaction with others who deviate",
+            "back": "Differential association theory"
+        },
+        {
+            "front": "Any means, formal or informal, a society uses to enforce conformity to norms",
+            "back": "Social control"
+        },
+        {
+            "front": "Adding a desirable stimulus to increase a behavior",
+            "back": "Positive reinforcement"
+        },
+        {
+            "front": "Adding an undesirable stimulus to decrease a behavior",
+            "back": "Positive punishment"
+        },
+        {
+            "front": "Learning behavior by observing and imitating others",
+            "back": "Social learning"
+        },
+        {
+            "front": "Range of characteristics from masculine to feminine that are socially constructed",
+            "back": "Gender"
+        },
+        {
+            "front": "A person's biological classification as male or female",
+            "back": "Sex"
+        },
+        {
+            "front": "A person's internal sense of their own gender",
+            "back": "Gender identity"
+        },
+        {
+            "front": "Imbalance arising from natural factors, sex-selective abortion, or differential aging",
+            "back": "Gender imbalance"
+        },
+        {
+            "front": "Study following the same subjects over an extended period of time",
+            "back": "Longitudinal study"
+        },
+        {
+            "front": "Study observing a population at a single point in time",
+            "back": "Cross-sectional study"
+        },
+        {
+            "front": "Study group followed over time, defined by a shared characteristic",
+            "back": "Cohort study"
+        },
+        {
+            "front": "In-depth investigation of a single individual or small group",
+            "back": "Case study"
+        },
+        {
+            "front": "Study that looks backward using existing records to link past exposures to outcomes",
+            "back": "Retrospective study"
+        },
+        {
+            "front": "Bias in which respondents answer in ways they think are socially acceptable",
+            "back": "Social desirability bias"
+        },
+        {
+            "front": "Extent to which study results generalize to real-world settings and populations",
+            "back": "External validity"
+        },
+        {
+            "front": "Form of external validity concerning how well findings apply to real-life situations",
+            "back": "Ecological validity"
+        },
+        {
+            "front": "Variable that changes the strength or direction of a relationship between two variables",
+            "back": "Moderating variable"
+        },
+        {
+            "front": "Uncontrolled variable that distorts the apparent relationship between studied variables",
+            "back": "Confounding variable"
+        }
+    ]
 }

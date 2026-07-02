@@ -771,6 +771,9 @@ exposed_backend_list = [
     "mastery_query",
     "record_practice_result",
     "performance_query",
+    "readiness_query",
+    # BackendMcatService (runs on the backend, not an open collection)
+    "grade_free_response",
 ]
 
 

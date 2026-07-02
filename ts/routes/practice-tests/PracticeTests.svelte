@@ -5,11 +5,33 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <script lang="ts">
     import "$lib/mcat/theme.scss";
 
+    import { gradeFreeResponse, recordPracticeResult } from "@generated/backend";
+    import type { GradeFreeResponseResponse } from "@generated/anki/mcat_pb";
+    import { ExamKind } from "@generated/anki/mcat_pb";
+
     import ScoreBar from "$lib/mcat/ScoreBar.svelte";
+    import FreeResponseCard from "./FreeResponseCard.svelte";
     import QuestionCard from "./QuestionCard.svelte";
-    import { scoreSection, sectionQuestions } from "./scoring";
-    import { compositionSummary, FULL_LENGTH_SECTIONS, FULL_LENGTH_TOTAL, PRACTICE_TESTS } from "./tests";
-    import type { OptionLetter, PracticeTest, Question } from "./types";
+    import type { FrqGrade } from "./scoring";
+    import {
+        frqTopicTallies,
+        mergeTallies,
+        scoreSection,
+        sectionQuestions,
+        topicTallies,
+    } from "./scoring";
+    import {
+        compositionSummary,
+        FULL_LENGTH_SECTIONS,
+        FULL_LENGTH_TOTAL,
+        PRACTICE_TESTS,
+    } from "./tests";
+    import type {
+        FreeResponseQuestion,
+        OptionLetter,
+        PracticeTest,
+        Question,
+    } from "./types";
 
     type View = "list" | "take" | "results";
 
@@ -24,10 +46,14 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     let isFullLength = false;
     // Question id -> chosen option letter.
     let answers: Record<string, OptionLetter> = {};
+    // Free-response state: id -> typed answer / AI grade / grading-in-flight.
+    let frqAnswers: Record<string, string> = {};
+    let frqGrades: Record<string, GradeFreeResponseResponse> = {};
+    let frqPending: Record<string, boolean> = {};
 
     const SECTION_LABEL: Record<string, string> = {
         "chem-phys": "Chemical & Physical Foundations",
-        "cars": "Critical Analysis & Reasoning Skills (CARS)",
+        cars: "Critical Analysis & Reasoning Skills (CARS)",
         "bio-biochem": "Biological & Biochemical Foundations",
         "psych-soc": "Psychological, Social & Biological Foundations",
     };
@@ -36,6 +62,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         sections = [test];
         isFullLength = false;
         answers = {};
+        frqAnswers = {};
+        frqGrades = {};
+        frqPending = {};
         view = "take";
         scrollTop();
     }
@@ -44,6 +73,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         sections = FULL_LENGTH_SECTIONS;
         isFullLength = true;
         answers = {};
+        frqAnswers = {};
+        frqGrades = {};
+        frqPending = {};
         view = "take";
         scrollTop();
     }
@@ -51,6 +83,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     function backToList(): void {
         sections = [];
         answers = {};
+        frqAnswers = {};
+        frqGrades = {};
+        frqPending = {};
         view = "list";
         scrollTop();
     }
@@ -59,15 +94,96 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         answers = { ...answers, [question.id]: letter };
     }
 
-    function submit(): void {
-        // Performance scoring is disabled for now, so results aren't recorded to
-        // the performance model — we just show the local score for this test.
+    // Map the JSON rubric (snake_case) to the grader RPC's proto shape (camelCase).
+    function toProtoRubric(q: FreeResponseQuestion) {
+        return q.rubric.map((c) => ({
+            id: c.id,
+            description: c.description,
+            points: c.points,
+            requiredConcepts: c.required_concepts,
+            disqualifiers: c.disqualifiers,
+        }));
+    }
+
+    // Grade every FRQ via the backend AI grader (in parallel). The grader gets
+    // only the prompt + rubric + answer — never the reference answer. Only
+    // successfully-graded FRQ contribute topic evidence.
+    async function gradeFrqs(frqs: FreeResponseQuestion[]): Promise<FrqGrade[]> {
+        const graded: FrqGrade[] = [];
+        await Promise.all(
+            frqs.map(async (q) => {
+                frqPending = { ...frqPending, [q.id]: true };
+                try {
+                    const g = await gradeFreeResponse({
+                        prompt: q.prompt,
+                        answer: frqAnswers[q.id] ?? "",
+                        maxPoints: q.max_points,
+                        rubric: toProtoRubric(q),
+                        model: "",
+                    });
+                    frqGrades = { ...frqGrades, [q.id]: g };
+                    if (g.graded) {
+                        graded.push({
+                            topic_tags: q.topic_tags,
+                            pointsAwarded: g.pointsAwarded,
+                            maxPoints: g.maxPoints,
+                        });
+                    }
+                } catch (e) {
+                    console.error("FRQ grading failed", q.id, e);
+                } finally {
+                    frqPending = { ...frqPending, [q.id]: false };
+                }
+            }),
+        );
+        return graded;
+    }
+
+    async function submit(): Promise<void> {
+        // Show the local MCQ score immediately; FRQ grading + recording to the
+        // performance model are best-effort and must never block the results screen.
         view = "results";
         scrollTop();
+        const mcqTallies = sections.flatMap((s) => topicTallies(s, answers));
+        const frqs = sections.flatMap((s) => s.free_response_questions ?? []);
+        let frqGradeList: FrqGrade[] = [];
+        try {
+            frqGradeList = await gradeFrqs(frqs);
+        } catch (e) {
+            console.error("FRQ grading batch failed", e);
+        }
+        try {
+            const merged = mergeTallies(mcqTallies, frqTopicTallies(frqGradeList));
+            if (isFullLength) {
+                // One submission spanning all four sections; each tag carries its
+                // own section, so the engine re-splits it via the tag prefix.
+                await recordPracticeResult({
+                    testId: "full-length",
+                    sectionCode: "",
+                    examKind: ExamKind.FULL_LENGTH,
+                    examId: `fl-${Date.now()}`,
+                    topicResults: merged,
+                });
+            } else {
+                const test = sections[0];
+                await recordPracticeResult({
+                    testId: test.test_id,
+                    sectionCode: test.section_code,
+                    examKind: ExamKind.TOPICAL,
+                    examId: `${test.test_id}-${Date.now()}`,
+                    topicResults: merged,
+                });
+            }
+        } catch (e) {
+            console.error("failed to record practice result", e);
+        }
     }
 
     function retake(): void {
         answers = {};
+        frqAnswers = {};
+        frqGrades = {};
+        frqPending = {};
         view = "take";
         scrollTop();
     }
@@ -88,12 +204,22 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     $: scoreFraction = totalCount === 0 ? 0 : correctCount / totalCount;
     $: sectionScores = sections.map((s) => scoreSection(s, answers));
     $: scaledTotal = sectionScores.reduce((n, s) => n + s.scaled, 0);
-    $: examTitle = isFullLength ? "Full-Length Practice Exam" : (sections[0]?.section ?? "");
+    $: examTitle = isFullLength
+        ? "Full-Length Practice Exam"
+        : (sections[0]?.section ?? "");
 
     // Number each question in display order for stable "Q1..Qn" labels.
     $: numberOf = (() => {
         const map: Record<string, number> = {};
         flatQuestions.forEach((q, i) => (map[q.id] = i + 1));
+        return map;
+    })();
+
+    // Free-response questions across the exam, numbered "FR1..FRn".
+    $: flatFrqs = sections.flatMap((s) => s.free_response_questions ?? []);
+    $: frqNumberOf = (() => {
+        const map: Record<string, number> = {};
+        flatFrqs.forEach((q, i) => (map[q.id] = i + 1));
         return map;
     })();
 </script>
@@ -105,13 +231,14 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                 <h1>{fullLength ? "Full-length practice exam" : "Practice tests"}</h1>
                 <p class="subtitle">
                     {#if fullLength}
-                        Take a full-length exam that mirrors the real MCAT — all four sections
-                        in order. Submit to see your score, an approximate scaled score, and
-                        full explanations — take it as a check-in, not a verdict.
+                        Take a full-length exam that mirrors the real MCAT — all four
+                        sections in order. Submit to see your score, an approximate
+                        scaled score, and full explanations — take it as a check-in, not
+                        a verdict.
                     {:else}
-                        Drill a single MCAT section. Submit to see your score, an approximate
-                        scaled score, and full explanations — take it as a check-in, not a
-                        verdict.
+                        Drill a single MCAT section. Submit to see your score, an
+                        approximate scaled score, and full explanations — take it as a
+                        check-in, not a verdict.
                     {/if}
                 </p>
             </header>
@@ -121,7 +248,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     <span class="badge">Full-length</span>
                     <span class="fl-title">MCAT Full-Length Exam</span>
                     <span class="fl-detail">
-                        {FULL_LENGTH_TOTAL} questions · 4 sections · Chem/Phys → CARS → Bio/Biochem → Psych/Soc
+                        {FULL_LENGTH_TOTAL} questions · 4 sections · Chem/Phys → CARS → Bio/Biochem
+                        → Psych/Soc
                     </span>
                     <span class="start">Start full-length →</span>
                 </button>
@@ -148,7 +276,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             {#each sections as section (section.test_id)}
                 {#if isFullLength}
                     <div class="section-banner">
-                        <h2>{SECTION_LABEL[section.section_code] ?? section.section}</h2>
+                        <h2>
+                            {SECTION_LABEL[section.section_code] ?? section.section}
+                        </h2>
                         <span>{compositionSummary(section)}</span>
                     </div>
                 {/if}
@@ -181,12 +311,28 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         {/each}
                     </section>
                 {/if}
+
+                {#if (section.free_response_questions ?? []).length}
+                    <section class="passage">
+                        <h2 class="passage-title">Free Response</h2>
+                        {#each section.free_response_questions ?? [] as q (q.id)}
+                            <FreeResponseCard
+                                question={q}
+                                index={frqNumberOf[q.id]}
+                                value={frqAnswers[q.id] ?? ""}
+                                onInput={(text) =>
+                                    (frqAnswers = { ...frqAnswers, [q.id]: text })}
+                            />
+                        {/each}
+                    </section>
+                {/if}
             {/each}
 
             <div class="submit-bar">
                 <div class="submit-note">
                     {#if answeredCount < totalCount}
-                        {totalCount - answeredCount} question(s) still unanswered — you can still submit.
+                        {totalCount - answeredCount} question(s) still unanswered — you can
+                        still submit.
                     {:else}
                         All questions answered.
                     {/if}
@@ -202,7 +348,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                 {#if isFullLength}
                     <div class="score-big">{scaledTotal}</div>
                     <div class="score-detail">
-                        approx. scaled score (472–528) · {correctCount}/{totalCount} correct ({scorePct}%)
+                        approx. scaled score (472–528) · {correctCount}/{totalCount} correct
+                        ({scorePct}%)
                     </div>
                     <div class="scorecard-bar">
                         <ScoreBar label="Overall correct" value={scoreFraction} />
@@ -224,10 +371,13 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     <div class="breakdown">
                         {#each sectionScores as s (s.sectionCode)}
                             <div class="breakdown-row">
-                                <div class="bd-name">{SECTION_LABEL[s.sectionCode] ?? s.section}</div>
+                                <div class="bd-name">
+                                    {SECTION_LABEL[s.sectionCode] ?? s.section}
+                                </div>
                                 <div class="bd-bar">
                                     <ScoreBar
-                                        label={SECTION_LABEL[s.sectionCode] ?? s.section}
+                                        label={SECTION_LABEL[s.sectionCode] ??
+                                            s.section}
                                         value={s.total === 0 ? 0 : s.correct / s.total}
                                         size="sm"
                                     />
@@ -243,14 +393,17 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             {/if}
 
             <p class="scaled-note">
-                Scaled scores are a documented linear approximation of the MCAT 118–132 scale — AAMC's
-                exact raw-to-scaled curves are not public, so treat these as estimates.
+                Scaled scores are a documented linear approximation of the MCAT 118–132
+                scale — AAMC's exact raw-to-scaled curves are not public, so treat these
+                as estimates.
             </p>
 
             {#each sections as section (section.test_id)}
                 {#if isFullLength}
                     <div class="section-banner">
-                        <h2>{SECTION_LABEL[section.section_code] ?? section.section}</h2>
+                        <h2>
+                            {SECTION_LABEL[section.section_code] ?? section.section}
+                        </h2>
                     </div>
                 {/if}
                 {#each section.passages as passage (passage.passage_id)}
@@ -278,6 +431,23 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                 selected={answers[q.id] ?? null}
                                 graded={true}
                                 onSelect={() => {}}
+                            />
+                        {/each}
+                    </section>
+                {/if}
+
+                {#if (section.free_response_questions ?? []).length}
+                    <section class="passage">
+                        <h2 class="passage-title">Free Response</h2>
+                        {#each section.free_response_questions ?? [] as q (q.id)}
+                            <FreeResponseCard
+                                question={q}
+                                index={frqNumberOf[q.id]}
+                                value={frqAnswers[q.id] ?? ""}
+                                graded={true}
+                                grade={frqGrades[q.id] ?? null}
+                                pending={frqPending[q.id] ?? false}
+                                onInput={() => {}}
                             />
                         {/each}
                     </section>

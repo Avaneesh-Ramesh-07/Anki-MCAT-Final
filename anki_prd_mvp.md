@@ -13,6 +13,7 @@
 This is the must-hit milestone. Everything in §5+ is MVP product scope that builds on this core.
 
 **Desktop**
+
 - Anki **forked and building from source** (`just run` / `just build`).
 - **Your Rust change working end to end** — the diff, **3 Rust unit tests**, and **1 test that calls it from Python**.
 - A **review loop running on your exam deck** (the real Anki reviewer over an MCAT deck).
@@ -20,11 +21,13 @@ This is the must-hit milestone. Everything in §5+ is MVP product scope that bui
 - An **installer that runs on a clean machine** (Briefcase — `qt/installer/`).
 
 **Mobile**
+
 - A phone app that **builds and runs on a real device or emulator** (AnkiDroid built against this fork's `anki` crate via `rsdroid`).
 - It **loads your exam deck and runs a real review session on the shared engine.**
-  **Two-way sync is *not* required yet; reviewing the same deck is.**
+  **Two-way sync is _not_ required yet; reviewing the same deck is.**
 
 **Proof (the deliverable artifacts)**
+
 - **Commit hash** + a **clean-build recording**, the **test results**, a **clean-machine install recording**, and a **screen recording of a review session on the phone.**
 
 > Scope note: the Wednesday core = fork/build + the Rust memory-model change + review loop + the
@@ -38,7 +41,7 @@ This is the must-hit milestone. Everything in §5+ is MVP product scope that bui
 Anki is a bare spaced-repetition engine: a flashcard scheduler (FSRS) plus open deck sharing.
 That is not enough for MCAT prep, for four reasons grounded in the BrainLift:
 
-- **Flashcards test isolated facts, not the *relationships between ideas* the MCAT actually asks.**
+- **Flashcards test isolated facts, not the _relationships between ideas_ the MCAT actually asks.**
   The MCAT is a synthesis exam (Source 6); flashcards are a memorization tool and work best on
   simple chunks (Source 1, Insight 1). Pure recall says little about exam readiness.
 - **Anki has no practice tests** — especially the synthesis-style, topic-level tests that mirror the
@@ -49,7 +52,7 @@ That is not enough for MCAT prep, for four reasons grounded in the BrainLift:
 - **Open deck search exposes unvetted, often-wrong decks** (Source 7, SPOV 1). A topically-correct
   but learning-science-poor deck misleads a learner who can't self-assess.
 
-The MVP fixes the *inputs* (vetted fact-level decks), replaces self-report with a behavioral signal,
+The MVP fixes the _inputs_ (vetted fact-level decks), replaces self-report with a behavioral signal,
 adds exam-style testing, and produces a defensible readiness estimate — **all without AI.**
 
 ---
@@ -78,14 +81,15 @@ wrapping it.
 
 **What.** A new backend RPC that returns, **per AAMC topic**, the **comfort-augmented DSR memory
 score** and a **statistical range** (plus the underlying mastered-card count / mean recall), fast
-enough to power the dashboard on a **50,000-card** deck. This single change satisfies *both*
+enough to power the dashboard on a **50,000-card** deck. This single change satisfies _both_
 Wednesday requirements: it **is** "your Rust change," and it **is** the memory model.
 
 **Why Rust, not Python.** The aggregation scans the whole card/revlog set per dashboard load; doing
 it in Rust over the collection's SQLite avoids marshalling the full card set across the PyO3/JNI
-boundary, and the *same compiled query ships to the phone* via `rsdroid`. (anki_tech_stack.md §1.)
+boundary, and the _same compiled query ships to the phone_ via `rsdroid`. (anki_tech_stack.md §1.)
 
 **Where it goes (in-codebase).**
+
 - Proto: new `proto/anki/mcat.proto` with a `McatService` (modeled on `StatsService`), or extend
   `stats.proto` — per notes.md, a dedicated `mcat.proto` + `rslib/src/mcat/` is preferred.
 - Rust impl: new `rslib/src/mcat/` implementing the generated trait for `Collection` (pattern:
@@ -111,8 +115,10 @@ gate, one readiness component.
 Each feature traces to a Spiky POV / Insight. AI-only items (SPOV 2, Insight 2) are deferred (§9).
 
 ### F1 — Curated Deck Catalog (SPOV 1, Insight 4)
+
 Replace open "Get Shared Decks" with a **curated catalog of empirically-solid, fact/terminology-level
 decks** (no open-ended synthesis cards); users can't point it at arbitrary URLs.
+
 - **R1.1** Curated catalog of vetted decks, each with an "empirically solid" status set by a steward.
 - **R1.2** Catalog decks are **fact/terminology-level only** (deck-level flag + ingestion lint).
 - **R1.3** Deck metadata: AAMC category/subtopic, card count, vetting status, version.
@@ -123,9 +129,11 @@ decks** (no open-ended synthesis cards); users can't point it at arbitrary URLs.
   `qt/aqt/import_export/`; new `ts/routes/catalog/` page.
 
 ### F2 — Answer-Time Comfort Signal → the memory model (Insight 3)
+
 FSRS spacing is driven by the self-reported button; learners exaggerate comfort. Replace that signal
 with **answer latency**, and define the **memory-model score = the DSR score Anki already computes,
 augmented with the comfort-level change.**
+
 - **R2.1** Per-card **comfort score** from answer latency, normalized to the user's own rolling
   distribution (z-score/percentile) so it's robust to fast vs. slow users.
 - **R2.2** Detect confidence mismatches (e.g. "Easy" + slow = likely guessing) and use the mismatch
@@ -137,27 +145,33 @@ augmented with the comfort-level change.**
   `rslib/src/card/mod.rs` + `rslib/src/stats/card.rs`; compute in `rslib/src/mcat/`.
 
 ### F3 — Topical Synthesis Practice Tests, MCQ (Insight 1)
+
 A **topical test mode**: synthesis-style **multiple-choice** questions for the user's current AAMC
 topic, with **trick questions + pre-authored explanations** of why each distractor is wrong
 (targets overconfidence). Static content — **no AI.**
+
 - **R3.1** Topical MCQ test mode **keyed by AAMC topic**: the same `aamc::…` topic tag that drives
   the memory model (§4) selects which questions appear, so a topic's flashcards and its topical
   practice test share one AAMC topic key. Each question is tagged to its AAMC topic.
 - **R3.2** Trick questions with pre-authored per-distractor explanations.
 - **R3.3** Tests are **scored and timed**; attempts persist per topic for the readiness model.
 - **R3.4** Distinct from flashcards — discrete graded sessions, not scheduled FSRS cards.
-- **R3.5** *(Post-MVP hook)* item-type field so written/short-answer items (F4/F5, AI) slot in later.
+- **R3.5** _(Post-MVP hook)_ item-type field so written/short-answer items (F4/F5, AI) slot in later.
 - **Touchpoints:** new MCQ/attempt data model + RPCs in `proto/anki/mcat.proto` + `rslib/src/mcat/`
   (persist attempts in the collection DB); reference `qt/aqt/customstudy.py`; new
   `ts/routes/practice-test/` page.
 
 ### F6 — Full-Length Practice Tests, MCQ (Insight 1)
+
 A **full-length MCQ mode** across all four MCAT sections (Bio/Biochem, Chem/Phys, Psych/Soc, CARS)
 in realistic proportions/timing. Carries the **highest weight** in readiness (Insight 5).
+
 - **Touchpoints:** extends the F3 engine (section sequencing + timing) — same service/module/route.
 
 ### F7 — Topical & Full Readiness Scores (Insight 5, Insight 6)
+
 Honest, **separately shown** scores with ranges — never one blended number.
+
 - **R7.1 Topical readiness** = weighted sum, **lowest → highest**:
   (1) **DSR memory score** (the §6 memory model), (2) **synthesis topical-test score**,
   (3) **full-length test score**. **Missing component → 0** (Insight 5; anti-overconfidence).
@@ -173,7 +187,9 @@ Honest, **separately shown** scores with ranges — never one blended number.
   AAMC weight table (config/resource); `ts/routes/readiness/` dashboard modeled on `ts/routes/graphs/`.
 
 ### F8 — Linear Progression Gating (Insight 7)
+
 Enforce facts → topical tests → full-length tests.
+
 - **R8.1** A topical test (F3) unlocks only after **X rounds of flashcards** on that topic.
 - **R8.2** A full-length test (F6) unlocks only after **Y rounds of topical tests** (excluding a baseline).
 - **R8.3** X and Y are **defaults, adjustable**.
@@ -181,6 +197,7 @@ Enforce facts → topical tests → full-length tests.
   gate check in the F3 service; round counts from revlog + recorded attempts.
 
 ### F9 — Adjustable Ideal Timeline (Insight 7)
+
 - **R9.1** Generate an ideal study timeline from exam date + AAMC weights + current readiness (F7).
 - **R9.2** Adjustable (move exam date, reweight, change daily load) and recomputes.
 - **R9.3** Respects the F8 gates.
@@ -195,6 +212,7 @@ rule." Per Insight 3, the **memory score = Anki's existing DSR (Difficulty, Stab
 Retrievability), augmented with the answer-time comfort change** — not a new model.
 
 **Research question: what is the best way to build this memory model?** Things to settle/validate:
+
 - **Aggregation:** per AAMC topic, take **mean FSRS retrievability** across the topic's cards
   (unstudied cards = 0), then **adjust by the comfort signal** (effortful/guessed recalls discount
   the raw value). Stability/difficulty inform the confidence indicator and down-weight fragile cards.
@@ -243,18 +261,18 @@ its scores in a Kotlin UI is post-MVP.
 
 ## 10. Traceability (BrainLift → MVP feature)
 
-| BrainLift item | MVP feature | Status |
-|---|---|---|
-| SPOV 1 (empirically-solid decks, no open search) | F1 | In MVP |
-| Insight 4 (recommend reliable fact/terminology decks) | F1 | In MVP |
-| Insight 3 (comfort from answer time; memory score = DSR + comfort) | F2 + §4 + §6 | In MVP |
-| Insight 1 (topical synthesis + full-length tests, trick questions) | F3, F6 | **MCQ only** in MVP |
-| Insight 5 (topical readiness = weighted sum, missing = 0) | F7 | In MVP |
-| Insight 6 (full readiness, AAMC-weighted, unstudied = 0) | F7 | In MVP |
-| Insight 7 (linear gating + adjustable timeline) | F8, F9 | In MVP |
-| §7a-style real Rust engine change | Mastery Query (§4) | In MVP |
-| **SPOV 2** (written questions, AI 1–10 grading) | **F4 → post-MVP** | Requires AI |
-| **Insight 2** (AI explanation-similarity scoring) | **F5 → post-MVP** | Requires AI |
+| BrainLift item                                                     | MVP feature        | Status              |
+| ------------------------------------------------------------------ | ------------------ | ------------------- |
+| SPOV 1 (empirically-solid decks, no open search)                   | F1                 | In MVP              |
+| Insight 4 (recommend reliable fact/terminology decks)              | F1                 | In MVP              |
+| Insight 3 (comfort from answer time; memory score = DSR + comfort) | F2 + §4 + §6       | In MVP              |
+| Insight 1 (topical synthesis + full-length tests, trick questions) | F3, F6             | **MCQ only** in MVP |
+| Insight 5 (topical readiness = weighted sum, missing = 0)          | F7                 | In MVP              |
+| Insight 6 (full readiness, AAMC-weighted, unstudied = 0)           | F7                 | In MVP              |
+| Insight 7 (linear gating + adjustable timeline)                    | F8, F9             | In MVP              |
+| §7a-style real Rust engine change                                  | Mastery Query (§4) | In MVP              |
+| **SPOV 2** (written questions, AI 1–10 grading)                    | **F4 → post-MVP**  | Requires AI         |
+| **Insight 2** (AI explanation-similarity scoring)                  | **F5 → post-MVP**  | Requires AI         |
 
 ---
 

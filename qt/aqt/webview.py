@@ -145,6 +145,7 @@ class AnkiWebPage(QWebEnginePage):
             AnkiWebViewKind.IMPORT_CSV,
             AnkiWebViewKind.IMPORT_LOG,
             AnkiWebViewKind.READINESS,
+            AnkiWebViewKind.PRACTICE_TESTS,
         )
 
         global _profile_with_api_access, _profile_without_api_access

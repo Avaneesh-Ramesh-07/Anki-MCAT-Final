@@ -9,4 +9,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     export let data: PageData;
 </script>
 
-<ReadinessDashboard mastery={data.mastery} />
+<ReadinessDashboard
+    mastery={data.mastery}
+    performance={data.performance}
+    readiness={data.readiness}
+/>

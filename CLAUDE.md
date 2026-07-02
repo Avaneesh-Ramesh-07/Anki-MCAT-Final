@@ -133,6 +133,7 @@ you did NOT edit, do not try to fix them. Wait 30 seconds and retry the build -
 the other agent is likely mid-edit.
 
 ## While Coding
+
 Allow all cd commands (don't ask me for confirmation). Allow all git commands that are only for checking purposes. In other words, only ask me for git commands that make an edit to my repository like checkout out a branch, making a commit, pushing, etc.
 
 ## Individual preferences

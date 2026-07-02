@@ -54,7 +54,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     {#if graded}
         <div class="feedback" class:right={isCorrect} class:wrong={!isCorrect}>
             <div class="verdict">
-                <span class="verdict-icon" aria-hidden="true">{isCorrect ? "✓" : "✗"}</span>
+                <span class="verdict-icon" aria-hidden="true">
+                    {isCorrect ? "✓" : "✗"}
+                </span>
                 {#if selected == null}
                     Not answered — correct answer is {question.correct}.
                 {:else if isCorrect}

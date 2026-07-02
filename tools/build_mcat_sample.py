@@ -40,9 +40,15 @@ TOPICS = {
     ),
     "aamc::bio-biochem::enzyme-kinetics": (
         [
-            ("In Michaelis-Menten kinetics, what does Km represent?", "[substrate] at half Vmax"),
+            (
+                "In Michaelis-Menten kinetics, what does Km represent?",
+                "[substrate] at half Vmax",
+            ),
             ("How does a competitive inhibitor affect Vmax?", "No change"),
-            ("A low Km indicates what about enzyme-substrate affinity?", "High affinity"),
+            (
+                "A low Km indicates what about enzyme-substrate affinity?",
+                "High affinity",
+            ),
         ],
         FAST_MS,
     ),
@@ -57,7 +63,10 @@ TOPICS = {
     "aamc::chem-phys::circuits": (
         [
             ("State Ohm's law.", "V = IR"),
-            ("How does total resistance change for resistors in parallel?", "It decreases"),
+            (
+                "How does total resistance change for resistors in parallel?",
+                "It decreases",
+            ),
             ("Unit of capacitance?", "Farad"),
         ],
         FAST_MS,
@@ -65,7 +74,10 @@ TOPICS = {
     # answered slowly -> should show a lower (comfort-discounted) memory score
     "aamc::psych-soc::memory": (
         [
-            ("Memory store holding info ~15-30s without rehearsal?", "Short-term memory"),
+            (
+                "Memory store holding info ~15-30s without rehearsal?",
+                "Short-term memory",
+            ),
             ("Term for memory of facts and events?", "Declarative (explicit) memory"),
             ("Who proposed the multi-store model of memory?", "Atkinson and Shiffrin"),
         ],
@@ -102,7 +114,7 @@ def main() -> None:
         # populate memory state, so retrievability/scores become non-zero.
         answered = 0
         for _ in range(500):
-            queued = col.sched.get_queued_cards(fetch_limit=1)
+            queued = col.sched.get_queued_cards(fetch_limit=1)  # type: ignore[union-attr]
             if not queued.cards:
                 break
             top = queued.cards[0]
@@ -114,13 +126,13 @@ def main() -> None:
                 answered_at_millis=int_time(1000),
                 milliseconds_taken=latency_by_card.get(top.card.id, FAST_MS),
             )
-            col.sched.answer_card(answer)
+            col.sched.answer_card(answer)  # type: ignore[union-attr]
             answered += 1
 
         # Diagnostics: show the live memory model over the freshly-studied deck.
         cids = col.find_cards("")
         try:
-            mem = col.get_card(cids[0]).memory_state
+            mem: object = col.get_card(cids[0]).memory_state
         except Exception as exc:  # pragma: no cover - diagnostic only
             mem = f"<unavailable: {exc}>"
         print(f"answered={answered} cards={len(cids)} sample_memory_state={mem}")
@@ -134,7 +146,9 @@ def main() -> None:
                 f"reviews={t.reviews} abstain={t.abstain}"
             )
         o = resp.overall
-        print(f"  OVERALL: score={o.memory_score:.3f} reviews={o.reviews} abstain={o.abstain}")
+        print(
+            f"  OVERALL: score={o.memory_score:.3f} reviews={o.reviews} abstain={o.abstain}"
+        )
 
         col.export_anki_package(
             out_path=OUT,

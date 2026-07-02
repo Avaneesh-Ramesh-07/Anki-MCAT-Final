@@ -10,10 +10,14 @@
 //! no AI.
 //!
 //! v1 tunables (documented, expected to be calibrated later):
-//! - `MASTERED_RETRIEVABILITY`: a card counts as "mastered" at/above this recall prob.
-//! - `MAX_COMFORT_PENALTY` + `SLOW_LATENCY_FACTOR`: how much "effortful" recalls
-//!   (a good rating answered slower than ~1.5× the user's median) discount the score.
-//! - `DEFAULT_MIN_REVIEWS`: abstain below this many graded reviews for a topic.
+//! - `MASTERED_RETRIEVABILITY`: a card counts as "mastered" at/above this
+//!   recall prob.
+//! - `MAX_COMFORT_PENALTY` + `SLOW_LATENCY_FACTOR`: how much "effortful"
+//!   recalls (a good rating answered slower than ~1.5× the user's median)
+//!   discount the score.
+//! - `DEFAULT_MIN_REVIEWS`: abstain below this many *reviewed cards* for a
+//!   topic (the evidence unit is distinct studied cards, not individual review
+//!   events).
 
 use std::collections::HashMap;
 
@@ -26,8 +30,9 @@ use crate::search::SortMode;
 const AAMC_TAG_PREFIX: &str = "aamc::";
 const MASTERED_RETRIEVABILITY: f64 = 0.9;
 // The reviewer now derives the rating from answer time (qt/aqt/reviewer.py), so
-// slowness already flows into rating -> FSRS -> retrievability. Discounting again
-// here would double-count time, so the penalty is disabled (kept for tunability).
+// slowness already flows into rating -> FSRS -> retrievability. Discounting
+// again here would double-count time, so the penalty is disabled (kept for
+// tunability).
 const MAX_COMFORT_PENALTY: f64 = 0.0;
 const SLOW_LATENCY_FACTOR: f64 = 1.5;
 const DEFAULT_MIN_REVIEWS: u32 = 5;
@@ -48,7 +53,12 @@ struct TopicAcc {
     retrievability_sum: f64,
     total_cards: u32,
     mastered: u32,
+    /// Distinct cards with >=1 graded review — the evidence unit for the
+    /// give-up rule and the Wilson n (one studied card = one observation).
     reviews: u32,
+    /// Individual graded review events — the denominator for the comfort factor
+    /// (which is a per-event ratio), kept separate from the card count.
+    graded_reviews: u32,
     effortful_reviews: u32,
 }
 
@@ -59,7 +69,10 @@ impl TopicAcc {
         if card.retrievability >= MASTERED_RETRIEVABILITY {
             self.mastered += 1;
         }
-        self.reviews += card.rated.len() as u32;
+        if !card.rated.is_empty() {
+            self.reviews += 1;
+        }
+        self.graded_reviews += card.rated.len() as u32;
         self.effortful_reviews += card
             .rated
             .iter()
@@ -78,10 +91,11 @@ impl TopicAcc {
         };
         // comfort augmentation: effortful (slow but "comfortable") recalls
         // discount the raw DSR score.
-        let comfort_factor = if self.reviews == 0 {
+        let comfort_factor = if self.graded_reviews == 0 {
             1.0
         } else {
-            1.0 - MAX_COMFORT_PENALTY * (f64::from(self.effortful_reviews) / f64::from(self.reviews))
+            1.0 - MAX_COMFORT_PENALTY
+                * (f64::from(self.effortful_reviews) / f64::from(self.graded_reviews))
         };
         let (low, high) = wilson_interval(raw, self.reviews);
         anki_proto::mcat::TopicMastery {
@@ -109,6 +123,13 @@ impl Collection {
         } else {
             min_reviews
         };
+
+        // S6: FSRS is mandatory for the memory model, which reads FSRS DSR state
+        // and must never fall back to SM-2. Force-enable it if the collection
+        // still has it off so DSR state is populated going forward.
+        if !self.get_config_bool(BoolKey::Fsrs) {
+            self.set_config_bool(BoolKey::Fsrs, true, false)?;
+        }
 
         let cids = self.search_cards(search, SortMode::NoOrder)?;
         let now = self.timing_today()?.now;
@@ -172,7 +193,10 @@ impl Collection {
         for card in &cards {
             overall.add(card, slow_threshold);
             for topic in &card.topics {
-                topics.entry(topic.clone()).or_default().add(card, slow_threshold);
+                topics
+                    .entry(topic.clone())
+                    .or_default()
+                    .add(card, slow_threshold);
             }
         }
 
@@ -201,7 +225,10 @@ fn wilson_interval(p: f64, n: u32) -> (f64, f64) {
     let denom = 1.0 + z2 / n;
     let center = (p + z2 / (2.0 * n)) / denom;
     let margin = (z / denom) * (p * (1.0 - p) / n + z2 / (4.0 * n * n)).sqrt();
-    ((center - margin).clamp(0.0, 1.0), (center + margin).clamp(0.0, 1.0))
+    (
+        (center - margin).clamp(0.0, 1.0),
+        (center + margin).clamp(0.0, 1.0),
+    )
 }
 
 /// Median of the values as f64 (0.0 if empty). Sorts the slice in place.
@@ -269,6 +296,36 @@ mod test {
         // overall sees all three cards.
         assert_eq!(resp.overall.unwrap().total_cards, 3);
         Ok(())
+    }
+
+    #[test]
+    fn reviews_count_distinct_cards_not_events() {
+        // The evidence unit is cards: a card reviewed many times still counts
+        // once toward `reviews` (Wilson n / give-up gate), while `graded_reviews`
+        // keeps the raw event count for the comfort denominator.
+        let mut acc = TopicAcc::default();
+        let reviewed_4x = CardData {
+            topics: vec![],
+            retrievability: 0.5,
+            rated: vec![(1000, 3), (1200, 3), (900, 4), (1100, 3)],
+        };
+        let reviewed_1x = CardData {
+            topics: vec![],
+            retrievability: 0.8,
+            rated: vec![(800, 3)],
+        };
+        let unseen = CardData {
+            topics: vec![],
+            retrievability: 0.0,
+            rated: vec![],
+        };
+        acc.add(&reviewed_4x, f64::MAX);
+        acc.add(&reviewed_1x, f64::MAX);
+        acc.add(&unseen, f64::MAX);
+
+        assert_eq!(acc.total_cards, 3);
+        assert_eq!(acc.reviews, 2); // 2 cards had >=1 review (not 5 events)
+        assert_eq!(acc.graded_reviews, 5); // 4 + 1 raw events
     }
 
     #[test]

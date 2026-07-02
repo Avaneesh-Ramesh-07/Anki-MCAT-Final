@@ -15,15 +15,15 @@ query ships to desktop and (via `rsdroid`) the phone with no reimplementation.
 
 ## Wednesday deliverable status (honest)
 
-| Item | Status |
-|---|---|
-| Anki forked & building from source | ✅ Done |
-| Rust change end-to-end (diff + 3 Rust tests + 1 Python test) | ✅ Done & passing |
-| Review loop on the exam deck | ✅ Done (vanilla reviewer + tagged sample deck) |
-| Memory model with honest score (range + give-up rule) | ✅ Done (+ readiness dashboard UI) |
-| Desktop installer on a clean machine | ⏳ Build attempted — see "Installer" below |
-| Mobile: phone builds + runs a review session on the shared engine | ❌ Not done (see "Mobile") |
-| Proof recordings (build / install / phone) | ⛔ Manual capture (yours) |
+| Item                                                              | Status                                          |
+| ----------------------------------------------------------------- | ----------------------------------------------- |
+| Anki forked & building from source                                | ✅ Done                                         |
+| Rust change end-to-end (diff + 3 Rust tests + 1 Python test)      | ✅ Done & passing                               |
+| Review loop on the exam deck                                      | ✅ Done (vanilla reviewer + tagged sample deck) |
+| Memory model with honest score (range + give-up rule)             | ✅ Done (+ readiness dashboard UI)              |
+| Desktop installer on a clean machine                              | ⏳ Build attempted — see "Installer" below      |
+| Mobile: phone builds + runs a review session on the shared engine | ❌ Not done (see "Mobile")                      |
+| Proof recordings (build / install / phone)                        | ⛔ Manual capture (yours)                       |
 
 ## How to build & run (desktop)
 
@@ -47,11 +47,13 @@ cargo-nextest`, so `just test-rust` fails. Run the Rust tests directly instead:
 ```powershell
 $env:CARGO_TARGET_DIR='out\rust'; $env:CARGO_HTTP_CHECK_REVOKE='false'; cargo test -p anki mcat
 ```
+
 → `test result: ok. 3 passed` (`wilson_interval_behaves`, `empty_collection_abstains`, `groups_unstudied_cards_by_aamc_tag`).
 
 ```powershell
 out\pyenv\Scripts\pytest.exe pylib\tests\test_mcat.py
 ```
+
 → `1 passed` (full Python → generated binding → Rust backend chain).
 
 ## The memory model (one-pager)
@@ -86,6 +88,7 @@ be rewritten for Android.
 ## Files touched (the change)
 
 **New:**
+
 - `proto/anki/mcat.proto` — `McatService.MasteryQuery` + messages.
 - `rslib/src/mcat/{mod,service,mastery}.rs` — the memory-model engine + 3 unit tests.
 - `qt/aqt/mcat.py` — the readiness dashboard window (API-enabled webview).
@@ -94,6 +97,7 @@ be rewritten for Android.
 - `tools/build_mcat_sample.py` (+ `tools/mcat_sample.apkg`) — the tagged sample deck.
 
 **Modified (wiring):**
+
 - `rslib/src/lib.rs` (`pub mod mcat;`), `rslib/proto/src/lib.rs` (`protobuf!(mcat)`), `rslib/proto/python.rs` (`import anki.mcat_pb2`).
 - `qt/aqt/mediasrv.py` (expose RPC + register the `readiness` page), `qt/aqt/webview.py` (`READINESS` webview kind + API access), `qt/aqt/main.py` (Tools → MCAT Readiness).
 

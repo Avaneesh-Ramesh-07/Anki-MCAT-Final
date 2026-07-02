@@ -375,8 +375,7 @@ class DeckBrowser:
         if secs is not None:
             timespan = html.escape(self.mw.col.format_timespan(secs))
             return (
-                '<span class="db-chip db-chip-next">Next review in %s</span>'
-                % timespan
+                '<span class="db-chip db-chip-next">Next review in %s</span>' % timespan
             )
 
         # No upcoming due cards. If the deck has never been reviewed (only

@@ -5,16 +5,67 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <script lang="ts">
     import "$lib/mcat/theme.scss";
 
-    import type { MasteryQueryResponse } from "@generated/anki/mcat_pb";
+    import type {
+        MasteryQueryResponse,
+        PerformanceQueryResponse,
+        ReadinessQueryResponse,
+        TopicReadiness,
+    } from "@generated/anki/mcat_pb";
 
     import ScoreBar from "$lib/mcat/ScoreBar.svelte";
+    import CoverageGarden from "$lib/mcat/CoverageGarden.svelte";
 
     export let mastery: MasteryQueryResponse;
+    export let performance: PerformanceQueryResponse;
+    export let readiness: ReadinessQueryResponse;
 
     const pct = (v: number): string => `${Math.round(v * 100)}%`;
 
+    const SECTION_LABEL: Record<string, string> = {
+        "chem-phys": "Chem/Phys",
+        cars: "CARS",
+        "bio-biochem": "Bio/Biochem",
+        "psych-soc": "Psych/Soc",
+    };
+
+    // Memory
     $: overall = mastery.overall;
     $: topics = [...mastery.topics].sort((a, b) => a.topic.localeCompare(b.topic));
+
+    // Performance (Rust emits all four sections in canonical order).
+    $: perfOverall = performance.overall;
+
+    // Readiness
+    $: readyOverall = readiness.overall;
+    $: readyTopics = [...readiness.topics].sort((a, b) =>
+        a.topic.localeCompare(b.topic),
+    );
+
+    // "How sure" bucket from the confidence-interval width.
+    function confidence(low: number, high: number): string {
+        const width = high - low;
+        if (width < 0.15) {
+            return "High confidence";
+        }
+        if (width < 0.3) {
+            return "Medium confidence";
+        }
+        return "Low confidence";
+    }
+
+    // Why a topic's readiness is abstaining (which gate failed first).
+    function readinessReason(t: TopicReadiness): string {
+        if (!t.hasCompletedFullLength) {
+            return "no full-length yet";
+        }
+        if (t.topicalTests < 1) {
+            return "needs a topical test";
+        }
+        if (t.reviewedCards < 5) {
+            return `only ${t.reviewedCards} cards`;
+        }
+        return "not enough evidence yet";
+    }
 </script>
 
 <div class="mcat">
@@ -31,20 +82,32 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                 />
             </svg>
             <p class="subtitle">
-                Three honest signals, side by side — no blended black-box number. This fills in
-                gently as you study, one review at a time. You've got this.
+                Three honest signals, side by side — no blended black-box number. This
+                fills in gently as you study, one review at a time. You've got this.
             </p>
         </header>
 
         <div class="models">
             <!-- Memory -->
-            <section class="model" style="--card-accent: var(--mcat-sky); --card-tint: var(--mcat-sky-tint);">
+            <section
+                class="model"
+                style="--card-accent: var(--mcat-sky); --card-tint: var(--mcat-sky-tint);"
+            >
                 <div class="model-head">
                     <span class="doodle" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
                             <path d="M9 18h6" />
                             <path d="M10 21h4" />
-                            <path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0 0 12 3Z" />
+                            <path
+                                d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0 0 12 3Z"
+                            />
                         </svg>
                     </span>
                     <div>
@@ -58,7 +121,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         value={overall.memoryScore}
                         delay={0}
                         showLabel={false}
-                        caption={`likely ${pct(overall.rangeLow)}–${pct(overall.rangeHigh)} · ${overall.reviews} reviews`}
+                        caption={`likely ${pct(overall.rangeLow)}–${pct(overall.rangeHigh)} · ${overall.reviews} cards studied`}
                     />
                     <p class="method">Comfort-augmented FSRS retrievability.</p>
                 {:else}
@@ -68,34 +131,75 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             </section>
 
             <!-- Performance -->
-            <section class="model" style="--card-accent: var(--mcat-blush); --card-tint: var(--mcat-blush-tint);">
+            <section
+                class="model"
+                style="--card-accent: var(--mcat-blush); --card-tint: var(--mcat-blush-tint);"
+            >
                 <div class="model-head">
                     <span class="doodle" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
                             <path d="M15.5 4.5l4 4L9 19l-4.5 1L5.5 15.5 15.5 4.5Z" />
                             <path d="M14 6l4 4" />
                         </svg>
                     </span>
                     <div>
                         <h2>Performance</h2>
-                        <p class="question">Can you answer new exam-style questions?</p>
+                        <p class="question">
+                            Can you answer new exam-style questions on topics you've
+                            studied?
+                        </p>
                     </div>
                 </div>
-                <ScoreBar
-                    label="Performance"
-                    value={null}
-                    abstainText="Not available yet"
-                    delay={0.12}
-                    showLabel={false}
-                />
-                <p class="method">Performance scoring is turned off for now.</p>
+                {#if perfOverall && !perfOverall.abstain}
+                    <ScoreBar
+                        label="Performance"
+                        value={perfOverall.score}
+                        delay={0.12}
+                        showLabel={false}
+                        caption={`likely ${pct(perfOverall.rangeLow)}–${pct(perfOverall.rangeHigh)} · tested topics only`}
+                    />
+                    <p class="method">
+                        Recency-weighted accuracy on practice questions ·
+                        {performance.sectionsTested} of 4 sections tested{#if performance.sectionsTested === 4}
+                            · ≈ scaled {performance.scaledTotal}{:else if performance.sectionsTested > 0}
+                            · ≈ scaled {performance.scaledTotal} (partial){/if}
+                    </p>
+                {:else}
+                    <ScoreBar
+                        label="Performance"
+                        value={null}
+                        abstainText="Not enough evidence yet"
+                        delay={0.12}
+                        showLabel={false}
+                    />
+                    <p class="method">
+                        Take a topical practice test to unlock this score.
+                    </p>
+                {/if}
             </section>
 
             <!-- Readiness -->
-            <section class="model" style="--card-accent: var(--mcat-sage); --card-tint: var(--mcat-sage-tint);">
+            <section
+                class="model"
+                style="--card-accent: var(--mcat-sage); --card-tint: var(--mcat-sage-tint);"
+            >
                 <div class="model-head">
                     <span class="doodle" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
                             <path d="M6 21V4" />
                             <path d="M6 4c3-1.5 6 1.5 9 0 v7 c-3 1.5-6-1.5-9 0" />
                         </svg>
@@ -105,10 +209,62 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         <p class="question">What would you score today?</p>
                     </div>
                 </div>
-                <ScoreBar label="Readiness" value={null} abstainText="Not available yet" delay={0.24} showLabel={false} />
-                <p class="method">Unlocks once you've logged some practice questions.</p>
+                {#if readyOverall && !readyOverall.abstain}
+                    <ScoreBar
+                        label="Readiness"
+                        value={readyOverall.readinessScore}
+                        delay={0.24}
+                        showLabel={false}
+                        caption={`likely ${pct(readyOverall.rangeLow)}–${pct(readyOverall.rangeHigh)}`}
+                    />
+                    {#if readyOverall.components}
+                        <div
+                            class="breakdown"
+                            title="Contribution to readiness — Memory 5% · Topical 45% · Full-length 50%"
+                        >
+                            <span
+                                class="seg mem"
+                                style="flex:{Math.max(
+                                    readyOverall.components.memoryContribution,
+                                    0.001,
+                                )}"
+                            ></span>
+                            <span
+                                class="seg top"
+                                style="flex:{Math.max(
+                                    readyOverall.components.topicalContribution,
+                                    0.001,
+                                )}"
+                            ></span>
+                            <span
+                                class="seg fl"
+                                style="flex:{Math.max(
+                                    readyOverall.components.fullLengthContribution,
+                                    0.001,
+                                )}"
+                            ></span>
+                        </div>
+                    {/if}
+                    <p class="method">
+                        {confidence(readyOverall.rangeLow, readyOverall.rangeHigh)} · memory
+                        5% · topical 45% · full-length 50%
+                    </p>
+                {:else}
+                    <ScoreBar
+                        label="Readiness"
+                        value={null}
+                        abstainText="Not enough evidence yet"
+                        delay={0.24}
+                        showLabel={false}
+                    />
+                    <p class="method">
+                        Take a full-length exam to unlock your readiness score.
+                    </p>
+                {/if}
             </section>
         </div>
+
+        <CoverageGarden {readiness} {performance} />
 
         <!-- Memory by topic -->
         <section class="panel">
@@ -116,15 +272,25 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             {#if topics.length === 0}
                 <div class="empty">
                     <span class="empty-doodle" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
                             <rect x="4" y="3" width="16" height="18" rx="2.5" />
                             <path d="M8 8h8M8 12h8M8 16h5" />
                         </svg>
                     </span>
                     <p>
-                        No <code>aamc::</code>-tagged cards yet. Import the sample deck
-                        (<code>tools/mcat_sample.apkg</code>), or tag your cards
-                        <code>aamc::section::topic</code> and your topic breakdown will appear here.
+                        No <code>aamc::</code>
+                        -tagged cards yet. Import the sample deck (
+                        <code>tools/mcat_sample.apkg</code>
+                        ), or tag your cards
+                        <code>aamc::section::topic</code>
+                        and your topic breakdown will appear here.
                     </p>
                 </div>
             {:else}
@@ -141,10 +307,14 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                 />
                             </div>
                             <div class="topic-meta">
-                                <span class="chip">{t.masteredCount}/{t.totalCards} mastered</span>
-                                <span class="muted">{t.reviews} reviews</span>
+                                <span class="chip">
+                                    {t.masteredCount}/{t.totalCards} mastered
+                                </span>
+                                <span class="muted">{t.reviews} cards studied</span>
                                 {#if !t.abstain}
-                                    <span class="muted">likely {pct(t.rangeLow)}–{pct(t.rangeHigh)}</span>
+                                    <span class="muted">
+                                        likely {pct(t.rangeLow)}–{pct(t.rangeHigh)}
+                                    </span>
                                 {/if}
                             </div>
                         </div>
@@ -153,6 +323,102 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             {/if}
         </section>
 
+        <!-- Performance by section (all four, incl. "Not tested yet") -->
+        <section class="panel">
+            <h2 class="section-title">Performance by section</h2>
+            <div class="topic-list">
+                {#each performance.sections as s (s.sectionCode)}
+                    <div class="topic-row">
+                        <div class="topic-name">
+                            {SECTION_LABEL[s.sectionCode] ?? s.sectionCode}
+                        </div>
+                        <div class="topic-bar">
+                            <ScoreBar
+                                label={s.sectionCode}
+                                value={s.notTested || s.abstain ? null : s.score}
+                                size="sm"
+                                abstainText={s.notTested
+                                    ? "Not tested yet"
+                                    : "not enough evidence yet"}
+                            />
+                        </div>
+                        <div class="topic-meta">
+                            {#if !s.abstain}
+                                <span class="chip">scaled {s.scaledScore}</span>
+                                <span class="muted">{s.correct}/{s.answered}</span>
+                            {:else if !s.notTested}
+                                <span class="muted">
+                                    {s.correct}/{s.answered} · thin
+                                </span>
+                            {/if}
+                        </div>
+                    </div>
+                {/each}
+            </div>
+        </section>
+
+        <!-- Readiness by AAMC topic (abstain renders as the dashed rail, never 0%) -->
+        <section class="panel">
+            <h2 class="section-title">Readiness by AAMC topic</h2>
+            {#if readyTopics.length === 0}
+                <div class="empty">
+                    <p>
+                        Readiness fills in per topic once you have card reviews, a
+                        topical test, and at least one full-length exam on record.
+                    </p>
+                </div>
+            {:else}
+                <div class="topic-list">
+                    {#each readyTopics as t (t.topic)}
+                        <div class="topic-row">
+                            <div class="topic-name">{t.topic}</div>
+                            <div class="topic-bar">
+                                <ScoreBar
+                                    label={t.topic}
+                                    value={t.abstain ? null : t.readinessScore}
+                                    size="sm"
+                                    abstainText="not enough evidence yet"
+                                />
+                            </div>
+                            <div class="topic-meta">
+                                {#if t.components}
+                                    <span
+                                        class="pips"
+                                        title="Memory · Topical · Full-length (dim = missing)"
+                                    >
+                                        <span
+                                            class="pip mem"
+                                            class:off={!t.components.hasMemory}
+                                        >
+                                            M
+                                        </span>
+                                        <span
+                                            class="pip top"
+                                            class:off={!t.components.hasTopical}
+                                        >
+                                            T
+                                        </span>
+                                        <span
+                                            class="pip fl"
+                                            class:off={!t.components.hasFullLength}
+                                        >
+                                            F
+                                        </span>
+                                    </span>
+                                {/if}
+                                {#if t.abstain}
+                                    <span class="muted">{readinessReason(t)}</span>
+                                {:else}
+                                    <span class="muted">
+                                        likely {pct(t.rangeLow)}–{pct(t.rangeHigh)}
+                                    </span>
+                                {/if}
+                            </div>
+                        </div>
+                    {/each}
+                </div>
+            {/if}
+        </section>
     </div>
 </div>
 
@@ -304,6 +570,59 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     .muted {
         color: var(--mcat-ink-soft);
         white-space: nowrap;
+    }
+
+    // ---- readiness component breakdown bar (5 / 45 / 50) -----------------
+    .breakdown {
+        display: flex;
+        width: 100%;
+        height: 8px;
+        gap: 2px;
+        border-radius: var(--mcat-radius-pill);
+        overflow: hidden;
+    }
+    .seg {
+        display: block;
+        min-width: 2px;
+        border-radius: var(--mcat-radius-pill);
+        &.mem {
+            background: var(--mcat-sky);
+        }
+        &.top {
+            background: var(--mcat-blush);
+        }
+        &.fl {
+            background: var(--mcat-sage);
+        }
+    }
+
+    // ---- per-topic component pips (M / T / FL) ---------------------------
+    .pips {
+        display: inline-flex;
+        gap: 0.25rem;
+    }
+    .pip {
+        display: grid;
+        place-items: center;
+        width: 1.15rem;
+        height: 1.15rem;
+        border-radius: 999px;
+        font-size: 0.62rem;
+        font-weight: 700;
+        color: white;
+        &.mem {
+            background: var(--mcat-sky);
+        }
+        &.top {
+            background: var(--mcat-blush);
+        }
+        &.fl {
+            background: var(--mcat-sage);
+        }
+        &.off {
+            opacity: 0.28;
+            filter: grayscale(0.5);
+        }
     }
 
     // ---- empty state -----------------------------------------------------

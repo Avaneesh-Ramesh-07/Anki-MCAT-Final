@@ -56,6 +56,67 @@ export function scoreSection(
     };
 }
 
-// Note: per-topic/performance tallying was removed while performance scoring is
-// disabled. `scoreSection` above is still used for the local per-test score
-// shown on the results screen.
+export interface TopicTally {
+    topic: string;
+    correct: number;
+    answered: number;
+}
+
+/**
+ * Per-`aamc::`-topic correct/answered tally for one test, submitted to the
+ * performance model. Exam-style: every question counts toward `answered` (a
+ * blank counts as answered-and-wrong), matching `scoreSection`. A question with
+ * several `aamc::` tags contributes to each.
+ */
+export function topicTallies(
+    test: PracticeTest,
+    answers: Record<string, OptionLetter>,
+): TopicTally[] {
+    const map = new Map<string, { correct: number; answered: number }>();
+    for (const q of sectionQuestions(test)) {
+        const isCorrect = answers[q.id] === q.correct;
+        for (const tag of q.topic_tags ?? []) {
+            const entry = map.get(tag) ?? { correct: 0, answered: 0 };
+            entry.answered += 1;
+            if (isCorrect) {
+                entry.correct += 1;
+            }
+            map.set(tag, entry);
+        }
+    }
+    return [...map].map(([topic, v]) => ({ topic, correct: v.correct, answered: v.answered }));
+}
+
+/** A graded free-response result, ready to fold into topic evidence. Partial
+ * credit is carried as points: `correct` += points awarded, `answered` += max. */
+export interface FrqGrade {
+    topic_tags: string[];
+    pointsAwarded: number;
+    maxPoints: number;
+}
+
+/** Per-`aamc::`-topic tally from graded FRQs (points_awarded / max_points). */
+export function frqTopicTallies(grades: FrqGrade[]): TopicTally[] {
+    const map = new Map<string, { correct: number; answered: number }>();
+    for (const g of grades) {
+        for (const tag of g.topic_tags ?? []) {
+            const entry = map.get(tag) ?? { correct: 0, answered: 0 };
+            entry.correct += g.pointsAwarded;
+            entry.answered += g.maxPoints;
+            map.set(tag, entry);
+        }
+    }
+    return [...map].map(([topic, v]) => ({ topic, correct: v.correct, answered: v.answered }));
+}
+
+/** Sum two topic-tally lists by topic (e.g. MCQ evidence + FRQ evidence). */
+export function mergeTallies(a: TopicTally[], b: TopicTally[]): TopicTally[] {
+    const map = new Map<string, { correct: number; answered: number }>();
+    for (const t of [...a, ...b]) {
+        const entry = map.get(t.topic) ?? { correct: 0, answered: 0 };
+        entry.correct += t.correct;
+        entry.answered += t.answered;
+        map.set(t.topic, entry);
+    }
+    return [...map].map(([topic, v]) => ({ topic, correct: v.correct, answered: v.answered }));
+}

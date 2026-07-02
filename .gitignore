@@ -1,6 +1,9 @@
 __pycache__
 .mypy_cache
 .DS_Store
+# Local secrets (OPENAI_API_KEY etc.) — never commit; .env.example is the template.
+.env
+.env.local
 anki.prof
 target
 /user.bazelrc
@@ -26,4 +29,6 @@ docs/autoapi/
 .complexipy_cache
 
 # Copyrighted MCAT source material — private ground truth only, never commit/distribute.
-resources/*.pdf
+# (Typo fixed: was "groud_truth". Covers the PDFs and any locally-curated eval
+# sets/results under resources/ground_truth/.)
+resources/ground_truth/*

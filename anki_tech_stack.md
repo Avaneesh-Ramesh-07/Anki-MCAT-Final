@@ -82,14 +82,14 @@ flowchart TB
     class SV,QT,MS,PY,GEN,RB,CB n;
 ```
 
-| Layer | Tech | Location |
-|---|---|---|
-| Web UI | SvelteKit 2, Svelte 5, TypeScript 5, Vite 6, Sass, Bootstrap 5 | `ts/routes/`, `ts/lib/sass/` |
-| Native shell | PyQt6 6.11 + QtWebEngine, QWebChannel | `qt/aqt/webview.py`, `main.py` |
-| Local web server | Flask + Waitress (`mediasrv`) | `qt/aqt/mediasrv.py` |
-| Python library | CPython 3.13, `import anki` | `pylib/anki/` |
-| Language bridge | **PyO3 `cdylib`** | `pylib/rsbridge/lib.rs` |
-| Engine | Rust `anki` crate | `rslib/` |
+| Layer            | Tech                                                           | Location                       |
+| ---------------- | -------------------------------------------------------------- | ------------------------------ |
+| Web UI           | SvelteKit 2, Svelte 5, TypeScript 5, Vite 6, Sass, Bootstrap 5 | `ts/routes/`, `ts/lib/sass/`   |
+| Native shell     | PyQt6 6.11 + QtWebEngine, QWebChannel                          | `qt/aqt/webview.py`, `main.py` |
+| Local web server | Flask + Waitress (`mediasrv`)                                  | `qt/aqt/mediasrv.py`           |
+| Python library   | CPython 3.13, `import anki`                                    | `pylib/anki/`                  |
+| Language bridge  | **PyO3 `cdylib`**                                              | `pylib/rsbridge/lib.rs`        |
+| Engine           | Rust `anki` crate                                              | `rslib/`                       |
 
 ## 3. Android stack (AnkiDroid fork)
 
@@ -114,11 +114,11 @@ flowchart TB
     class CB core;
 ```
 
-| Layer | Tech | Source |
-|---|---|---|
-| UI | Kotlin (AnkiDroid screens + new MCAT screens) | AnkiDroid fork |
-| Bridge | `rsdroid` JNI, `cargo-ndk` builds `anki` `.so` | AnkiDroid fork, depends on this repo's `anki` crate |
-| Engine | **the same `anki` crate** (pinned to your fork) | `rslib/` (this repo) |
+| Layer  | Tech                                            | Source                                              |
+| ------ | ----------------------------------------------- | --------------------------------------------------- |
+| UI     | Kotlin (AnkiDroid screens + new MCAT screens)   | AnkiDroid fork                                      |
+| Bridge | `rsdroid` JNI, `cargo-ndk` builds `anki` `.so`  | AnkiDroid fork, depends on this repo's `anki` crate |
+| Engine | **the same `anki` crate** (pinned to your fork) | `rslib/` (this repo)                                |
 
 > The engine change you make in `rslib` reaches Android by pinning AnkiDroid's `rsdroid`
 > dependency to your fork's `anki` crate — no scheduler reimplementation in Kotlin.
@@ -148,17 +148,17 @@ flowchart LR
 
 ## 5. Where the Speedrun work lands
 
-| Spec requirement | Layer it lives in | Path |
-|---|---|---|
-| Real Rust change (§7a: points-at-stake queue / topic-aware sched / mastery query) | **Engine** — new proto msg + scheduler/query | `proto/anki/`, `rslib/src/scheduler/`, `rslib/src/services.rs` |
-| 3 Rust unit tests + 1 Python-calling test | Engine + pylib | `rslib/src/...`, `pylib/tests/` |
-| Memory model (FSRS) + answer-time comfort | Engine | `rslib/src/scheduler/fsrs/`, `rslib/src/revlog/mod.rs` (`taken_millis`) |
-| Performance + readiness services | Engine, exposed like `StatsService` | `proto/anki/`, `rslib/src/stats/service.rs` pattern |
-| Readiness dashboard (3 scores + ranges) | Desktop UI + Android UI | `ts/routes/` (new page) + AnkiDroid Kotlin screen |
-| Two-way sync + conflict rule | Engine (sync) | `rslib/src/sync/collection/chunks.rs` |
-| Desktop installer | Packaging | `qt/installer/` (Briefcase: mac/windows/linux) |
-| Phone build (signed APK) | AnkiDroid fork build | AnkiDroid Gradle |
-| AI off still scores | All clients | feature-flag the post-MVP AI service |
+| Spec requirement                                                                  | Layer it lives in                            | Path                                                                    |
+| --------------------------------------------------------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------- |
+| Real Rust change (§7a: points-at-stake queue / topic-aware sched / mastery query) | **Engine** — new proto msg + scheduler/query | `proto/anki/`, `rslib/src/scheduler/`, `rslib/src/services.rs`          |
+| 3 Rust unit tests + 1 Python-calling test                                         | Engine + pylib                               | `rslib/src/...`, `pylib/tests/`                                         |
+| Memory model (FSRS) + answer-time comfort                                         | Engine                                       | `rslib/src/scheduler/fsrs/`, `rslib/src/revlog/mod.rs` (`taken_millis`) |
+| Performance + readiness services                                                  | Engine, exposed like `StatsService`          | `proto/anki/`, `rslib/src/stats/service.rs` pattern                     |
+| Readiness dashboard (3 scores + ranges)                                           | Desktop UI + Android UI                      | `ts/routes/` (new page) + AnkiDroid Kotlin screen                       |
+| Two-way sync + conflict rule                                                      | Engine (sync)                                | `rslib/src/sync/collection/chunks.rs`                                   |
+| Desktop installer                                                                 | Packaging                                    | `qt/installer/` (Briefcase: mac/windows/linux)                          |
+| Phone build (signed APK)                                                          | AnkiDroid fork build                         | AnkiDroid Gradle                                                        |
+| AI off still scores                                                               | All clients                                  | feature-flag the post-MVP AI service                                    |
 
 ## 6. Build & packaging toolchain
 
@@ -178,7 +178,7 @@ flowchart LR
   substantial — start it day one, don't leave it to Thursday. (Mirrors the MVP PRD's mobile
   phasing note.)
 - **Two repos, one engine:** the AnkiDroid fork is a second repo that depends on this repo's
-  `anki` crate (pin `rsdroid`'s dependency to your fork). The *engine change* still satisfies
+  `anki` crate (pin `rsdroid`'s dependency to your fork). The _engine change_ still satisfies
   "modify the core, not a plugin."
 - **No in-repo mobile FFI** today — relying on AnkiDroid's proven `rsdroid` JNI avoids building one.
 - **FSRS is the external `fsrs` crate v5.2.0** — extend around it (comfort signal, readiness), don't fork it lightly.

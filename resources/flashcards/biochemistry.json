@@ -1,263 +1,629 @@
 {
-  "topic": "Biochemistry",
-  "deck": "MCAT Core::Biochemistry",
-  "aamc_tag": "aamc::bio-biochem::biochemistry",
-  "cards": [
-    {"front": "How many standard amino acids are used to build proteins?", "back": "Twenty"},
-    {"front": "Which stereochemical configuration do all standard proteinogenic amino acids share?", "back": "L-configuration"},
-    {"front": "Which is the only standard amino acid that is achiral?", "back": "Glycine"},
-    {"front": "Which amino acid has a secondary amine and forms a rigid ring with its backbone?", "back": "Proline"},
-    {"front": "Which three amino acids are aromatic?", "back": "Phenylalanine, tyrosine, and tryptophan"},
-    {"front": "Which two amino acids contain sulfur in their side chains?", "back": "Cysteine and methionine"},
-    {"front": "Which sulfur-containing amino acid can form disulfide bonds?", "back": "Cysteine"},
-    {"front": "Which three amino acids are positively charged (basic) at physiological pH?", "back": "Lysine, arginine, and histidine"},
-    {"front": "Which two amino acids are negatively charged (acidic) at physiological pH?", "back": "Aspartate and glutamate"},
-    {"front": "Which basic amino acid side chain contains an imidazole ring?", "back": "Histidine"},
-    {"front": "Which basic amino acid side chain contains a guanidinium group?", "back": "Arginine"},
-    {"front": "Which amino acid side chains contain a hydroxyl group?", "back": "Serine, threonine, and tyrosine"},
-    {"front": "What is the one-letter code for tryptophan?", "back": "W"},
-    {"front": "What is the one-letter code for glutamate?", "back": "E"},
-    {"front": "What is the one-letter code for glutamine?", "back": "Q"},
-    {"front": "What is the one-letter code for lysine?", "back": "K"},
-    {"front": "What is the one-letter code for phenylalanine?", "back": "F"},
-    {"front": "What is the three-letter code for asparagine?", "back": "Asn"},
-    {"front": "The amino acid coded by the start codon AUG is which residue?", "back": "Methionine"},
-    {"front": "A zwitterion carries what type of net charge?", "back": "Zero (equal positive and negative charges)"},
-    {"front": "What is the isoelectric point (pI) of an amino acid?", "back": "The pH at which it has no net charge"},
-    {"front": "For an amino acid with only one acidic and one basic group, how is the pI calculated?", "back": "Average of its two pKa values"},
-    {"front": "Amino acids with a nonpolar side chain tend to be located where in a folded globular protein?", "back": "The buried interior/core"},
-    {"front": "Charged, hydrophilic residues tend to be located where in a folded globular protein?", "back": "On the surface/exterior"},
-    {"front": "Which amino acid frequently disrupts alpha helices and introduces kinks?", "back": "Proline"},
-    {"front": "What functional group defines the carboxyl-terminus of a polypeptide?", "back": "A free carboxyl (-COOH) group"},
-    {"front": "In what direction is a polypeptide chain conventionally written?", "back": "N-terminus to C-terminus"},
-    {"front": "What type of covalent bond links amino acids in a polypeptide?", "back": "Peptide (amide) bond"},
-    {"front": "What small molecule is released when a peptide bond forms?", "back": "Water"},
-    {"front": "The partial double-bond character of the peptide bond arises from what?", "back": "Resonance/delocalization of electrons across the amide"},
-    {"front": "What is the primary structure of a protein?", "back": "The linear sequence of amino acids"},
-    {"front": "Name the two most common types of secondary structure.", "back": "Alpha helix and beta pleated sheet"},
-    {"front": "Which bonds stabilize protein secondary structure?", "back": "Hydrogen bonds between backbone atoms"},
-    {"front": "What is tertiary structure?", "back": "The overall three-dimensional folding of a single polypeptide"},
-    {"front": "What is quaternary structure?", "back": "The assembly of multiple polypeptide subunits into one protein"},
-    {"front": "Which level of protein structure involves multiple separate polypeptide chains?", "back": "Quaternary structure"},
-    {"front": "Which covalent bond helps stabilize tertiary structure and forms between two cysteines?", "back": "Disulfide bond"},
-    {"front": "What type of reaction forms a disulfide bond?", "back": "Oxidation"},
-    {"front": "What type of reaction cleaves a disulfide bond?", "back": "Reduction"},
-    {"front": "Anfinsen's ribonuclease experiment demonstrated that a protein's tertiary structure is determined by what?", "back": "Its primary (amino acid) sequence"},
-    {"front": "What is the loss of a protein's native three-dimensional structure called?", "back": "Denaturation"},
-    {"front": "Name two agents commonly used to denature proteins.", "back": "Heat and urea (also extreme pH, detergents)"},
-    {"front": "Which protein contains a heme prosthetic group and consists of a single polypeptide?", "back": "Myoglobin"},
-    {"front": "How many subunits does hemoglobin have?", "back": "Four"},
-    {"front": "Which oxygen-binding protein displays cooperative (sigmoidal) binding?", "back": "Hemoglobin"},
-    {"front": "What is a non-amino-acid molecule permanently and tightly bound to a protein called?", "back": "A prosthetic group"},
-    {"front": "The motor protein that walks toward the plus (+) end of microtubules is called what?", "back": "Kinesin"},
-    {"front": "The motor protein that moves toward the minus (-) end of microtubules is called what?", "back": "Dynein"},
-    {"front": "Actin monomers at the (+) end are typically bound to which nucleotide?", "back": "ATP"},
-    {"front": "What is the term for actin filament growth at the (+) end matched by shrinkage at the (-) end?", "back": "Treadmilling"},
-    {"front": "Which antibody class is secreted as a pentamer in the early immune response?", "back": "IgM"},
-    {"front": "Which antibody class predominates in mucosal secretions?", "back": "IgA"},
-    {"front": "Which antibody binds allergens and triggers histamine release?", "back": "IgE"},
-    {"front": "Which region of an antibody binds the antigen?", "back": "The variable region"},
-    {"front": "By what general term is a biological catalyst that is a protein described?", "back": "An enzyme"},
-    {"front": "Enzymes increase reaction rate by lowering what quantity?", "back": "The activation energy"},
-    {"front": "Do enzymes change the equilibrium constant (Keq) of a reaction?", "back": "No"},
-    {"front": "Do enzymes change the free energy (deltaG) of a reaction?", "back": "No"},
-    {"front": "Which molecular species does an enzyme's active site bind most tightly?", "back": "The transition state"},
-    {"front": "Which model describes an active site that changes shape upon substrate binding?", "back": "Induced-fit model"},
-    {"front": "Which model describes a rigid, complementary active site?", "back": "Lock-and-key model"},
-    {"front": "Enzymes that catalyze the transfer of a phosphate group are called what?", "back": "Kinases"},
-    {"front": "Enzymes that catalyze oxidation-reduction reactions are called what?", "back": "Oxidoreductases"},
-    {"front": "Enzymes that rearrange atoms within a molecule are called what?", "back": "Isomerases"},
-    {"front": "Enzymes that remove a phosphate group are called what?", "back": "Phosphatases"},
-    {"front": "Enzymes that join two molecules using ATP are classified as what?", "back": "Ligases"},
-    {"front": "What enzyme catalyzes the interconversion of CO2 and water with carbonic acid?", "back": "Carbonic anhydrase"},
-    {"front": "In Michaelis-Menten kinetics, what does Vmax represent?", "back": "The maximum reaction rate at saturating substrate"},
-    {"front": "What does the Michaelis constant Km equal in terms of reaction rate?", "back": "The substrate concentration at half of Vmax"},
-    {"front": "A low Km indicates what about an enzyme's affinity for its substrate?", "back": "High affinity"},
-    {"front": "How does a competitive inhibitor affect apparent Km?", "back": "Increases it"},
-    {"front": "How does a competitive inhibitor affect Vmax?", "back": "No change"},
-    {"front": "Where does a competitive inhibitor bind?", "back": "The active site"},
-    {"front": "How does a pure noncompetitive inhibitor affect Vmax?", "back": "Decreases it"},
-    {"front": "How does a pure noncompetitive inhibitor affect Km?", "back": "No change"},
-    {"front": "Competitive inhibition can be overcome by increasing what?", "back": "Substrate concentration"},
-    {"front": "An uncompetitive inhibitor binds only to which complex?", "back": "The enzyme-substrate complex"},
-    {"front": "How does an uncompetitive inhibitor affect both Km and Vmax?", "back": "Decreases both"},
-    {"front": "What kind of plot linearizes Michaelis-Menten data as a double-reciprocal graph?", "back": "Lineweaver-Burk plot"},
-    {"front": "On a Lineweaver-Burk plot, the y-intercept equals what?", "back": "1/Vmax"},
-    {"front": "On a Lineweaver-Burk plot, the x-intercept equals what?", "back": "-1/Km"},
-    {"front": "Regulation of an enzyme by a molecule binding away from the active site is called what?", "back": "Allosteric regulation"},
-    {"front": "When a pathway's final product inhibits an early enzyme, this is called what?", "back": "Feedback inhibition"},
-    {"front": "Enzymes displaying cooperative, sigmoidal kinetics are said to be what type?", "back": "Allosteric (non-Michaelis-Menten)"},
-    {"front": "Adding phosphate groups to modify enzyme activity is called what covalent modification?", "back": "Phosphorylation"},
-    {"front": "A small organic molecule that assists enzyme catalysis and is loosely bound is called what?", "back": "A coenzyme"},
-    {"front": "Inorganic ions that assist enzyme function are called what?", "back": "Cofactors"},
-    {"front": "The full catalytically active enzyme with its cofactor is called what?", "back": "Holoenzyme"},
-    {"front": "An enzyme lacking its required cofactor is called what?", "back": "Apoenzyme"},
-    {"front": "Which digestive protease is secreted by the stomach?", "back": "Pepsin"},
-    {"front": "Carboxypeptidase cleaves peptide bonds at which end of a protein?", "back": "The C-terminus"},
-    {"front": "What is the general term for an inactive enzyme precursor?", "back": "A zymogen (proenzyme)"},
-    {"front": "Which functional group determines whether a monosaccharide is an aldose or a ketose?", "back": "Aldehyde (aldose) versus ketone (ketose)"},
-    {"front": "What is the molecular formula of glucose?", "back": "C6H12O6"},
-    {"front": "Which carbon's configuration distinguishes D from L sugars in Fischer projection?", "back": "The highest-numbered chiral (penultimate) carbon"},
-    {"front": "Which sugars are used by human metabolism, D or L?", "back": "D-sugars"},
-    {"front": "The six-membered cyclic form of a sugar is called a what?", "back": "Pyranose"},
-    {"front": "The five-membered cyclic form of a sugar is called a what?", "back": "Furanose"},
-    {"front": "What is the new stereocenter formed when a sugar cyclizes called?", "back": "The anomeric carbon"},
-    {"front": "The two cyclic forms differing only at the anomeric carbon are called what?", "back": "Anomers (alpha and beta)"},
-    {"front": "Sugars that differ in configuration at a single non-anomeric carbon are called what?", "back": "Epimers"},
-    {"front": "The spontaneous interconversion of alpha and beta anomers in solution is called what?", "back": "Mutarotation"},
-    {"front": "A sugar with a free anomeric carbon that can reduce other agents is called a what?", "back": "Reducing sugar"},
-    {"front": "Which disaccharide is composed of glucose and fructose?", "back": "Sucrose"},
-    {"front": "Which disaccharide is composed of glucose and galactose?", "back": "Lactose"},
-    {"front": "Which disaccharide is composed of two glucose units?", "back": "Maltose"},
-    {"front": "Is sucrose a reducing or non-reducing sugar?", "back": "Non-reducing"},
-    {"front": "Which enzyme hydrolyzes sucrose into its monosaccharides?", "back": "Sucrase"},
-    {"front": "What glycosidic linkage joins glucose units in cellulose?", "back": "Beta-1,4"},
-    {"front": "What glycosidic linkage joins glucose units in the linear portions of starch and glycogen?", "back": "Alpha-1,4"},
-    {"front": "What glycosidic linkage forms the branch points in glycogen?", "back": "Alpha-1,6"},
-    {"front": "Why is glycogen highly branched?", "back": "To maximize non-reducing ends for rapid glucose release"},
-    {"front": "Which polysaccharide is the main storage form of glucose in animals?", "back": "Glycogen"},
-    {"front": "What are the three fatty acid ester bonds of a triacylglycerol attached to?", "back": "A glycerol backbone"},
-    {"front": "Which have higher melting points, saturated or unsaturated fatty acids?", "back": "Saturated fatty acids"},
-    {"front": "Cis double bonds in fatty acid tails have what effect on membrane fluidity?", "back": "They increase fluidity"},
-    {"front": "What amphipathic lipid class forms the bulk of cell membranes?", "back": "Phospholipids"},
-    {"front": "In a phospholipid, which part is hydrophilic?", "back": "The phosphate-containing head group"},
-    {"front": "Which structural lipid increases membrane rigidity at high temperature and fluidity at low temperature?", "back": "Cholesterol"},
-    {"front": "Which lipid class serves as the precursor for steroid hormones?", "back": "Cholesterol"},
-    {"front": "The reaction that hydrolyzes a triacylglycerol with a strong base to yield soap is called what?", "back": "Saponification"},
-    {"front": "The self-assembly of amphipathic lipids in water is driven by which effect?", "back": "The hydrophobic effect"},
-    {"front": "What model describes the cell membrane as a dynamic lipid bilayer with embedded proteins?", "back": "The fluid mosaic model"},
-    {"front": "Which lipoprotein transports dietary lipids from the intestine?", "back": "Chylomicrons"},
-    {"front": "Which lipoprotein is known as 'good cholesterol' and returns cholesterol to the liver?", "back": "HDL"},
-    {"front": "Which lipoprotein delivers cholesterol to tissues and is called 'bad cholesterol'?", "back": "LDL"},
-    {"front": "Which lipoprotein carries the highest proportion of triacylglycerols made by the liver?", "back": "VLDL"},
-    {"front": "Fat-soluble vitamins are which four?", "back": "A, D, E, and K"},
-    {"front": "Water-soluble vitamins include which two groups?", "back": "The B vitamins and vitamin C"},
-    {"front": "Which class of vitamins can accumulate to toxic levels because they are stored in fat?", "back": "Fat-soluble vitamins"},
-    {"front": "Which nitrogenous bases are purines?", "back": "Adenine and guanine"},
-    {"front": "Which nitrogenous bases are pyrimidines?", "back": "Cytosine, thymine, and uracil"},
-    {"front": "Which base is found in RNA but not DNA?", "back": "Uracil"},
-    {"front": "Which base is found in DNA but not RNA?", "back": "Thymine"},
-    {"front": "How many hydrogen bonds form between guanine and cytosine?", "back": "Three"},
-    {"front": "How many hydrogen bonds form between adenine and thymine?", "back": "Two"},
-    {"front": "A nucleoside plus one or more phosphate groups is called a what?", "back": "A nucleotide"},
-    {"front": "Which sugar is found in DNA?", "back": "Deoxyribose"},
-    {"front": "Which sugar is found in RNA?", "back": "Ribose"},
-    {"front": "At which carbon does deoxyribose lack a hydroxyl relative to ribose?", "back": "The 2' carbon"},
-    {"front": "The backbone of a nucleic acid strand is composed of what two alternating units?", "back": "Sugar and phosphate"},
-    {"front": "The linkage joining nucleotides in a nucleic acid backbone is called what?", "back": "Phosphodiester bond"},
-    {"front": "In which direction is a new DNA strand synthesized?", "back": "5' to 3'"},
-    {"front": "The two strands of the DNA double helix are oriented how relative to each other?", "back": "Antiparallel"},
-    {"front": "DNA-rich regions with many G-C pairs have a higher or lower melting temperature?", "back": "Higher melting temperature"},
-    {"front": "Which interactions between adjacent bases stabilize the DNA double helix in addition to hydrogen bonds?", "back": "Base-stacking (hydrophobic/van der Waals) interactions"},
-    {"front": "In which cellular compartment does glycolysis occur?", "back": "The cytoplasm (cytosol)"},
-    {"front": "Does glycolysis require oxygen?", "back": "No, it is anaerobic"},
-    {"front": "What is the net ATP yield of glycolysis per glucose?", "back": "2 ATP"},
-    {"front": "How many ATP are invested in the early (energy investment) phase of glycolysis?", "back": "2 ATP"},
-    {"front": "What is the end product of glycolysis (per three-carbon molecule)?", "back": "Pyruvate"},
-    {"front": "How many pyruvate molecules are produced per glucose in glycolysis?", "back": "Two"},
-    {"front": "How many NADH are produced per glucose in glycolysis?", "back": "Two"},
-    {"front": "Which enzyme is the rate-limiting (committed) step of glycolysis?", "back": "Phosphofructokinase-1 (PFK-1)"},
-    {"front": "Which enzyme phosphorylates glucose to glucose-6-phosphate in most cells?", "back": "Hexokinase"},
-    {"front": "Which liver-specific isozyme phosphorylates glucose and has a high Km?", "back": "Glucokinase"},
-    {"front": "High levels of ATP have what effect on phosphofructokinase-1?", "back": "They inhibit it (allosterically)"},
-    {"front": "Which glycolytic enzyme converts PEP to pyruvate?", "back": "Pyruvate kinase"},
-    {"front": "Name the three irreversible enzymes of glycolysis.", "back": "Hexokinase, phosphofructokinase-1, and pyruvate kinase"},
-    {"front": "In glycolysis, ATP produced by direct phosphate transfer to ADP is called what?", "back": "Substrate-level phosphorylation"},
-    {"front": "Under anaerobic conditions in human muscle, pyruvate is converted to what?", "back": "Lactate"},
-    {"front": "What is the purpose of fermentation in regenerating a coenzyme?", "back": "To regenerate NAD+ so glycolysis can continue"},
-    {"front": "In yeast, anaerobic fermentation of pyruvate produces which two products?", "back": "Ethanol and CO2"},
-    {"front": "Which human cell relies exclusively on glycolysis because it lacks mitochondria?", "back": "The erythrocyte (red blood cell)"},
-    {"front": "Which enzyme complex converts pyruvate to acetyl-CoA?", "back": "Pyruvate dehydrogenase"},
-    {"front": "In which cellular compartment does the pyruvate dehydrogenase reaction occur?", "back": "The mitochondrial matrix"},
-    {"front": "What gas is released when pyruvate is converted to acetyl-CoA?", "back": "CO2 (decarboxylation)"},
-    {"front": "The conversion of pyruvate to acetyl-CoA produces which electron carrier?", "back": "NADH"},
-    {"front": "How many carbons does acetyl-CoA contribute to the citric acid cycle?", "back": "Two"},
-    {"front": "Another common name for the citric acid cycle is what?", "back": "The Krebs cycle (TCA cycle)"},
-    {"front": "In which cellular compartment does the citric acid cycle occur?", "back": "The mitochondrial matrix"},
-    {"front": "Acetyl-CoA combines with which four-carbon molecule to start the citric acid cycle?", "back": "Oxaloacetate"},
-    {"front": "What six-carbon product forms in the first step of the citric acid cycle?", "back": "Citrate"},
-    {"front": "Which enzyme catalyzes the first step of the citric acid cycle?", "back": "Citrate synthase"},
-    {"front": "How many NADH are produced per turn of the citric acid cycle?", "back": "Three"},
-    {"front": "How many FADH2 are produced per turn of the citric acid cycle?", "back": "One"},
-    {"front": "How many CO2 molecules are released per turn of the citric acid cycle?", "back": "Two"},
-    {"front": "What high-energy nucleotide is produced by substrate-level phosphorylation in the citric acid cycle?", "back": "GTP"},
-    {"front": "Which citric acid cycle enzyme is also part of the electron transport chain and reduces FAD?", "back": "Succinate dehydrogenase"},
-    {"front": "Where is the electron transport chain located?", "back": "The inner mitochondrial membrane"},
-    {"front": "Which molecule is the final electron acceptor of the electron transport chain?", "back": "Oxygen (O2)"},
-    {"front": "The final product formed when oxygen accepts electrons in the ETC is what?", "back": "Water"},
-    {"front": "At which ETC complex does NADH donate its electrons?", "back": "Complex I"},
-    {"front": "At which ETC complex does FADH2 donate its electrons?", "back": "Complex II"},
-    {"front": "Which mobile lipid carrier shuttles electrons to Complex III?", "back": "Coenzyme Q (ubiquinone)"},
-    {"front": "Which mobile protein carries electrons from Complex III to Complex IV?", "back": "Cytochrome c"},
-    {"front": "What ion gradient does the electron transport chain build across the inner membrane?", "back": "A proton (H+) gradient"},
-    {"front": "The theory linking the proton gradient to ATP synthesis is called what?", "back": "The chemiosmotic theory"},
-    {"front": "Which enzyme uses the proton gradient to synthesize ATP?", "back": "ATP synthase"},
-    {"front": "Approximately how many ATP does one NADH yield via oxidative phosphorylation?", "back": "About 2.5 ATP"},
-    {"front": "Approximately how many ATP does one FADH2 yield via oxidative phosphorylation?", "back": "About 1.5 ATP"},
-    {"front": "A molecule that dissipates the proton gradient without ATP synthesis is called a what?", "back": "An uncoupler (e.g., DNP)"},
-    {"front": "The synthesis of new glucose from non-carbohydrate precursors is called what?", "back": "Gluconeogenesis"},
-    {"front": "In which two organs does gluconeogenesis primarily occur?", "back": "The liver and kidneys"},
-    {"front": "Gluconeogenesis bypasses which three irreversible steps of glycolysis?", "back": "Those catalyzed by pyruvate kinase, PFK-1, and hexokinase"},
-    {"front": "Which enzyme converts pyruvate to oxaloacetate in gluconeogenesis?", "back": "Pyruvate carboxylase"},
-    {"front": "Which enzyme hydrolyzes fructose-1,6-bisphosphate in gluconeogenesis?", "back": "Fructose-1,6-bisphosphatase"},
-    {"front": "The breakdown of glycogen to release glucose is called what?", "back": "Glycogenolysis"},
-    {"front": "The synthesis of glycogen is called what?", "back": "Glycogenesis"},
-    {"front": "Which enzyme cleaves glucose units from glycogen using inorganic phosphate?", "back": "Glycogen phosphorylase"},
-    {"front": "What product results when glycogen phosphorylase removes a glucose unit?", "back": "Glucose-1-phosphate"},
-    {"front": "Which enzyme adds glucose units to a growing glycogen chain?", "back": "Glycogen synthase"},
-    {"front": "Which hormone stimulates glycogen breakdown and gluconeogenesis during fasting?", "back": "Glucagon"},
-    {"front": "Which hormone promotes glucose uptake and glycogen synthesis after a meal?", "back": "Insulin"},
-    {"front": "Which hormone mediates the fight-or-flight stimulation of glycogenolysis?", "back": "Epinephrine (adrenaline)"},
-    {"front": "The oxidation of fatty acids to acetyl-CoA is called what?", "back": "Beta-oxidation"},
-    {"front": "In which cellular compartment does fatty acid beta-oxidation occur?", "back": "The mitochondrial matrix"},
-    {"front": "Each round of beta-oxidation shortens the fatty acid chain by how many carbons?", "back": "Two carbons"},
-    {"front": "Each round of beta-oxidation produces which three products?", "back": "One acetyl-CoA, one NADH, and one FADH2"},
-    {"front": "How many acetyl-CoA molecules are produced from complete beta-oxidation of an 18-carbon fatty acid?", "back": "Nine"},
-    {"front": "Which molecule carries fatty acids across the inner mitochondrial membrane?", "back": "Carnitine (the carnitine shuttle)"},
-    {"front": "Compared to carbohydrates, do fatty acids yield more or less ATP per gram?", "back": "More ATP per gram"},
-    {"front": "The liver produces which fuel molecules from acetyl-CoA during prolonged fasting?", "back": "Ketone bodies"},
-    {"front": "Which cellular process synthesizes fatty acids in the cytosol?", "back": "Fatty acid synthesis (lipogenesis)"},
-    {"front": "The toxic nitrogenous waste from amino acid catabolism is converted to what for excretion?", "back": "Urea"},
-    {"front": "The transfer of an amino group from an amino acid to a keto acid is catalyzed by which enzyme?", "back": "A transaminase (aminotransferase)"},
-    {"front": "The first law of thermodynamics states that energy is what?", "back": "Conserved (neither created nor destroyed)"},
-    {"front": "A reaction with a negative deltaG is described as what?", "back": "Spontaneous (exergonic)"},
-    {"front": "A reaction with a positive deltaG is described as what?", "back": "Nonspontaneous (endergonic)"},
-    {"front": "Cells drive nonspontaneous reactions by linking them to ATP hydrolysis; this is called what?", "back": "Energy coupling"},
-    {"front": "Which cellular molecule is the primary energy currency?", "back": "ATP"},
-    {"front": "Hydrolysis of ATP most commonly yields which two products?", "back": "ADP and inorganic phosphate"},
-    {"front": "When ATP is cleaved to AMP, what byproduct is released?", "back": "Pyrophosphate"},
-    {"front": "Which electron carrier is reduced by accepting a hydride ion to become NADH?", "back": "NAD+"},
-    {"front": "Which flavin electron carrier is reduced to FADH2?", "back": "FAD"},
-    {"front": "Which factors affect the rate of a reaction but not its equilibrium?", "back": "Temperature and catalyst presence"},
-    {"front": "Le Chatelier's principle predicts a system shifts to counteract changes in what?", "back": "Concentration, temperature, and pressure"},
-    {"front": "The overall aerobic catabolism of glucose yields approximately how many ATP?", "back": "About 30 to 32 ATP"},
-    {"front": "Which lab technique separates charged molecules by size and charge in an electric field?", "back": "Electrophoresis"},
-    {"front": "In SDS-PAGE, what does the detergent SDS do to proteins?", "back": "Denatures them and gives a uniform negative charge"},
-    {"front": "In SDS-PAGE, proteins are separated primarily by what property?", "back": "Molecular size (mass)"},
-    {"front": "In SDS-PAGE, do smaller or larger proteins migrate farther through the gel?", "back": "Smaller proteins migrate farther"},
-    {"front": "What reagent is added to SDS-PAGE to reduce disulfide bonds?", "back": "Beta-mercaptoethanol (or DTT)"},
-    {"front": "Which stain is commonly used to visualize protein bands on a gel?", "back": "Coomassie Blue"},
-    {"front": "At what pH will a protein not migrate in electrophoresis?", "back": "At its isoelectric point (pI)"},
-    {"front": "Which chromatography technique separates molecules by size, eluting the largest first?", "back": "Size-exclusion (gel-filtration) chromatography"},
-    {"front": "Which chromatography technique separates molecules based on net charge?", "back": "Ion-exchange chromatography"},
-    {"front": "Which chromatography technique separates using a specific binding partner like an antibody?", "back": "Affinity chromatography"},
-    {"front": "In reversed-phase chromatography, which molecules elute last?", "back": "The most nonpolar (hydrophobic) molecules"},
-    {"front": "The Rf value in chromatography is the ratio of distance traveled by the compound to that by what?", "back": "The solvent front"},
-    {"front": "Which blotting technique detects a specific protein using antibodies?", "back": "Western blot"},
-    {"front": "Which blotting technique detects a specific DNA sequence?", "back": "Southern blot"},
-    {"front": "Which blotting technique detects a specific RNA sequence?", "back": "Northern blot"},
-    {"front": "Which antibody-based assay quantifies a protein or antigen using enzyme-linked detection?", "back": "ELISA"},
-    {"front": "Which technique amplifies specific DNA sequences using cycles of heating and cooling?", "back": "Polymerase chain reaction (PCR)"},
-    {"front": "Which heat-stable DNA polymerase is used in PCR?", "back": "Taq polymerase"},
-    {"front": "Which divalent cation is essential in the PCR reaction buffer?", "back": "Magnesium (Mg2+)"},
-    {"front": "During which PCR phase are the two DNA strands separated by heat?", "back": "The denaturation (melting) phase"},
-    {"front": "Short DNA sequences that define the region amplified in PCR are called what?", "back": "Primers"},
-    {"front": "Which DNA sequencing method uses chain-terminating dideoxynucleotides?", "back": "Sanger sequencing"},
-    {"front": "A cDNA library is generated from mRNA using which enzyme?", "back": "Reverse transcriptase"},
-    {"front": "A cDNA library contains only which sequences of a genome?", "back": "Expressed (transcribed) sequences"},
-    {"front": "Enzymes that cut DNA at specific palindromic recognition sequences are called what?", "back": "Restriction enzymes (endonucleases)"},
-    {"front": "Which enzyme joins DNA fragments together by forming phosphodiester bonds?", "back": "DNA ligase"},
-    {"front": "The eukaryotic mRNA feature that poly-thymine probes hybridize to is called what?", "back": "The poly-A tail"},
-    {"front": "A protein's absorbance and extinction coefficient are related to concentration by which law?", "back": "The Beer-Lambert law"}
-  ]
+    "topic": "Biochemistry",
+    "deck": "MCAT Core::Biochemistry",
+    "aamc_tag": "aamc::bio-biochem::biochemistry",
+    "cards": [
+        { "front": "How many standard amino acids are used to build proteins?", "back": "Twenty" },
+        {
+            "front": "Which stereochemical configuration do all standard proteinogenic amino acids share?",
+            "back": "L-configuration"
+        },
+        { "front": "Which is the only standard amino acid that is achiral?", "back": "Glycine" },
+        {
+            "front": "Which amino acid has a secondary amine and forms a rigid ring with its backbone?",
+            "back": "Proline"
+        },
+        { "front": "Which three amino acids are aromatic?", "back": "Phenylalanine, tyrosine, and tryptophan" },
+        { "front": "Which two amino acids contain sulfur in their side chains?", "back": "Cysteine and methionine" },
+        { "front": "Which sulfur-containing amino acid can form disulfide bonds?", "back": "Cysteine" },
+        {
+            "front": "Which three amino acids are positively charged (basic) at physiological pH?",
+            "back": "Lysine, arginine, and histidine"
+        },
+        {
+            "front": "Which two amino acids are negatively charged (acidic) at physiological pH?",
+            "back": "Aspartate and glutamate"
+        },
+        { "front": "Which basic amino acid side chain contains an imidazole ring?", "back": "Histidine" },
+        { "front": "Which basic amino acid side chain contains a guanidinium group?", "back": "Arginine" },
+        {
+            "front": "Which amino acid side chains contain a hydroxyl group?",
+            "back": "Serine, threonine, and tyrosine"
+        },
+        { "front": "What is the one-letter code for tryptophan?", "back": "W" },
+        { "front": "What is the one-letter code for glutamate?", "back": "E" },
+        { "front": "What is the one-letter code for glutamine?", "back": "Q" },
+        { "front": "What is the one-letter code for lysine?", "back": "K" },
+        { "front": "What is the one-letter code for phenylalanine?", "back": "F" },
+        { "front": "What is the three-letter code for asparagine?", "back": "Asn" },
+        { "front": "The amino acid coded by the start codon AUG is which residue?", "back": "Methionine" },
+        {
+            "front": "A zwitterion carries what type of net charge?",
+            "back": "Zero (equal positive and negative charges)"
+        },
+        {
+            "front": "What is the isoelectric point (pI) of an amino acid?",
+            "back": "The pH at which it has no net charge"
+        },
+        {
+            "front": "For an amino acid with only one acidic and one basic group, how is the pI calculated?",
+            "back": "Average of its two pKa values"
+        },
+        {
+            "front": "Amino acids with a nonpolar side chain tend to be located where in a folded globular protein?",
+            "back": "The buried interior/core"
+        },
+        {
+            "front": "Charged, hydrophilic residues tend to be located where in a folded globular protein?",
+            "back": "On the surface/exterior"
+        },
+        { "front": "Which amino acid frequently disrupts alpha helices and introduces kinks?", "back": "Proline" },
+        {
+            "front": "What functional group defines the carboxyl-terminus of a polypeptide?",
+            "back": "A free carboxyl (-COOH) group"
+        },
+        {
+            "front": "In what direction is a polypeptide chain conventionally written?",
+            "back": "N-terminus to C-terminus"
+        },
+        { "front": "What type of covalent bond links amino acids in a polypeptide?", "back": "Peptide (amide) bond" },
+        { "front": "What small molecule is released when a peptide bond forms?", "back": "Water" },
+        {
+            "front": "The partial double-bond character of the peptide bond arises from what?",
+            "back": "Resonance/delocalization of electrons across the amide"
+        },
+        { "front": "What is the primary structure of a protein?", "back": "The linear sequence of amino acids" },
+        {
+            "front": "Name the two most common types of secondary structure.",
+            "back": "Alpha helix and beta pleated sheet"
+        },
+        {
+            "front": "Which bonds stabilize protein secondary structure?",
+            "back": "Hydrogen bonds between backbone atoms"
+        },
+        {
+            "front": "What is tertiary structure?",
+            "back": "The overall three-dimensional folding of a single polypeptide"
+        },
+        {
+            "front": "What is quaternary structure?",
+            "back": "The assembly of multiple polypeptide subunits into one protein"
+        },
+        {
+            "front": "Which level of protein structure involves multiple separate polypeptide chains?",
+            "back": "Quaternary structure"
+        },
+        {
+            "front": "Which covalent bond helps stabilize tertiary structure and forms between two cysteines?",
+            "back": "Disulfide bond"
+        },
+        { "front": "What type of reaction forms a disulfide bond?", "back": "Oxidation" },
+        { "front": "What type of reaction cleaves a disulfide bond?", "back": "Reduction" },
+        {
+            "front": "Anfinsen's ribonuclease experiment demonstrated that a protein's tertiary structure is determined by what?",
+            "back": "Its primary (amino acid) sequence"
+        },
+        {
+            "front": "What is the loss of a protein's native three-dimensional structure called?",
+            "back": "Denaturation"
+        },
+        {
+            "front": "Name two agents commonly used to denature proteins.",
+            "back": "Heat and urea (also extreme pH, detergents)"
+        },
+        {
+            "front": "Which protein contains a heme prosthetic group and consists of a single polypeptide?",
+            "back": "Myoglobin"
+        },
+        { "front": "How many subunits does hemoglobin have?", "back": "Four" },
+        { "front": "Which oxygen-binding protein displays cooperative (sigmoidal) binding?", "back": "Hemoglobin" },
+        {
+            "front": "What is a non-amino-acid molecule permanently and tightly bound to a protein called?",
+            "back": "A prosthetic group"
+        },
+        {
+            "front": "The motor protein that walks toward the plus (+) end of microtubules is called what?",
+            "back": "Kinesin"
+        },
+        {
+            "front": "The motor protein that moves toward the minus (-) end of microtubules is called what?",
+            "back": "Dynein"
+        },
+        { "front": "Actin monomers at the (+) end are typically bound to which nucleotide?", "back": "ATP" },
+        {
+            "front": "What is the term for actin filament growth at the (+) end matched by shrinkage at the (-) end?",
+            "back": "Treadmilling"
+        },
+        { "front": "Which antibody class is secreted as a pentamer in the early immune response?", "back": "IgM" },
+        { "front": "Which antibody class predominates in mucosal secretions?", "back": "IgA" },
+        { "front": "Which antibody binds allergens and triggers histamine release?", "back": "IgE" },
+        { "front": "Which region of an antibody binds the antigen?", "back": "The variable region" },
+        { "front": "By what general term is a biological catalyst that is a protein described?", "back": "An enzyme" },
+        { "front": "Enzymes increase reaction rate by lowering what quantity?", "back": "The activation energy" },
+        { "front": "Do enzymes change the equilibrium constant (Keq) of a reaction?", "back": "No" },
+        { "front": "Do enzymes change the free energy (deltaG) of a reaction?", "back": "No" },
+        {
+            "front": "Which molecular species does an enzyme's active site bind most tightly?",
+            "back": "The transition state"
+        },
+        {
+            "front": "Which model describes an active site that changes shape upon substrate binding?",
+            "back": "Induced-fit model"
+        },
+        { "front": "Which model describes a rigid, complementary active site?", "back": "Lock-and-key model" },
+        { "front": "Enzymes that catalyze the transfer of a phosphate group are called what?", "back": "Kinases" },
+        { "front": "Enzymes that catalyze oxidation-reduction reactions are called what?", "back": "Oxidoreductases" },
+        { "front": "Enzymes that rearrange atoms within a molecule are called what?", "back": "Isomerases" },
+        { "front": "Enzymes that remove a phosphate group are called what?", "back": "Phosphatases" },
+        { "front": "Enzymes that join two molecules using ATP are classified as what?", "back": "Ligases" },
+        {
+            "front": "What enzyme catalyzes the interconversion of CO2 and water with carbonic acid?",
+            "back": "Carbonic anhydrase"
+        },
+        {
+            "front": "In Michaelis-Menten kinetics, what does Vmax represent?",
+            "back": "The maximum reaction rate at saturating substrate"
+        },
+        {
+            "front": "What does the Michaelis constant Km equal in terms of reaction rate?",
+            "back": "The substrate concentration at half of Vmax"
+        },
+        { "front": "A low Km indicates what about an enzyme's affinity for its substrate?", "back": "High affinity" },
+        { "front": "How does a competitive inhibitor affect apparent Km?", "back": "Increases it" },
+        { "front": "How does a competitive inhibitor affect Vmax?", "back": "No change" },
+        { "front": "Where does a competitive inhibitor bind?", "back": "The active site" },
+        { "front": "How does a pure noncompetitive inhibitor affect Vmax?", "back": "Decreases it" },
+        { "front": "How does a pure noncompetitive inhibitor affect Km?", "back": "No change" },
+        { "front": "Competitive inhibition can be overcome by increasing what?", "back": "Substrate concentration" },
+        { "front": "An uncompetitive inhibitor binds only to which complex?", "back": "The enzyme-substrate complex" },
+        { "front": "How does an uncompetitive inhibitor affect both Km and Vmax?", "back": "Decreases both" },
+        {
+            "front": "What kind of plot linearizes Michaelis-Menten data as a double-reciprocal graph?",
+            "back": "Lineweaver-Burk plot"
+        },
+        { "front": "On a Lineweaver-Burk plot, the y-intercept equals what?", "back": "1/Vmax" },
+        { "front": "On a Lineweaver-Burk plot, the x-intercept equals what?", "back": "-1/Km" },
+        {
+            "front": "Regulation of an enzyme by a molecule binding away from the active site is called what?",
+            "back": "Allosteric regulation"
+        },
+        {
+            "front": "When a pathway's final product inhibits an early enzyme, this is called what?",
+            "back": "Feedback inhibition"
+        },
+        {
+            "front": "Enzymes displaying cooperative, sigmoidal kinetics are said to be what type?",
+            "back": "Allosteric (non-Michaelis-Menten)"
+        },
+        {
+            "front": "Adding phosphate groups to modify enzyme activity is called what covalent modification?",
+            "back": "Phosphorylation"
+        },
+        {
+            "front": "A small organic molecule that assists enzyme catalysis and is loosely bound is called what?",
+            "back": "A coenzyme"
+        },
+        { "front": "Inorganic ions that assist enzyme function are called what?", "back": "Cofactors" },
+        { "front": "The full catalytically active enzyme with its cofactor is called what?", "back": "Holoenzyme" },
+        { "front": "An enzyme lacking its required cofactor is called what?", "back": "Apoenzyme" },
+        { "front": "Which digestive protease is secreted by the stomach?", "back": "Pepsin" },
+        { "front": "Carboxypeptidase cleaves peptide bonds at which end of a protein?", "back": "The C-terminus" },
+        { "front": "What is the general term for an inactive enzyme precursor?", "back": "A zymogen (proenzyme)" },
+        {
+            "front": "Which functional group determines whether a monosaccharide is an aldose or a ketose?",
+            "back": "Aldehyde (aldose) versus ketone (ketose)"
+        },
+        { "front": "What is the molecular formula of glucose?", "back": "C6H12O6" },
+        {
+            "front": "Which carbon's configuration distinguishes D from L sugars in Fischer projection?",
+            "back": "The highest-numbered chiral (penultimate) carbon"
+        },
+        { "front": "Which sugars are used by human metabolism, D or L?", "back": "D-sugars" },
+        { "front": "The six-membered cyclic form of a sugar is called a what?", "back": "Pyranose" },
+        { "front": "The five-membered cyclic form of a sugar is called a what?", "back": "Furanose" },
+        { "front": "What is the new stereocenter formed when a sugar cyclizes called?", "back": "The anomeric carbon" },
+        {
+            "front": "The two cyclic forms differing only at the anomeric carbon are called what?",
+            "back": "Anomers (alpha and beta)"
+        },
+        {
+            "front": "Sugars that differ in configuration at a single non-anomeric carbon are called what?",
+            "back": "Epimers"
+        },
+        {
+            "front": "The spontaneous interconversion of alpha and beta anomers in solution is called what?",
+            "back": "Mutarotation"
+        },
+        {
+            "front": "A sugar with a free anomeric carbon that can reduce other agents is called a what?",
+            "back": "Reducing sugar"
+        },
+        { "front": "Which disaccharide is composed of glucose and fructose?", "back": "Sucrose" },
+        { "front": "Which disaccharide is composed of glucose and galactose?", "back": "Lactose" },
+        { "front": "Which disaccharide is composed of two glucose units?", "back": "Maltose" },
+        { "front": "Is sucrose a reducing or non-reducing sugar?", "back": "Non-reducing" },
+        { "front": "Which enzyme hydrolyzes sucrose into its monosaccharides?", "back": "Sucrase" },
+        { "front": "What glycosidic linkage joins glucose units in cellulose?", "back": "Beta-1,4" },
+        {
+            "front": "What glycosidic linkage joins glucose units in the linear portions of starch and glycogen?",
+            "back": "Alpha-1,4"
+        },
+        { "front": "What glycosidic linkage forms the branch points in glycogen?", "back": "Alpha-1,6" },
+        {
+            "front": "Why is glycogen highly branched?",
+            "back": "To maximize non-reducing ends for rapid glucose release"
+        },
+        { "front": "Which polysaccharide is the main storage form of glucose in animals?", "back": "Glycogen" },
+        {
+            "front": "What are the three fatty acid ester bonds of a triacylglycerol attached to?",
+            "back": "A glycerol backbone"
+        },
+        {
+            "front": "Which have higher melting points, saturated or unsaturated fatty acids?",
+            "back": "Saturated fatty acids"
+        },
+        {
+            "front": "Cis double bonds in fatty acid tails have what effect on membrane fluidity?",
+            "back": "They increase fluidity"
+        },
+        { "front": "What amphipathic lipid class forms the bulk of cell membranes?", "back": "Phospholipids" },
+        { "front": "In a phospholipid, which part is hydrophilic?", "back": "The phosphate-containing head group" },
+        {
+            "front": "Which structural lipid increases membrane rigidity at high temperature and fluidity at low temperature?",
+            "back": "Cholesterol"
+        },
+        { "front": "Which lipid class serves as the precursor for steroid hormones?", "back": "Cholesterol" },
+        {
+            "front": "The reaction that hydrolyzes a triacylglycerol with a strong base to yield soap is called what?",
+            "back": "Saponification"
+        },
+        {
+            "front": "The self-assembly of amphipathic lipids in water is driven by which effect?",
+            "back": "The hydrophobic effect"
+        },
+        {
+            "front": "What model describes the cell membrane as a dynamic lipid bilayer with embedded proteins?",
+            "back": "The fluid mosaic model"
+        },
+        { "front": "Which lipoprotein transports dietary lipids from the intestine?", "back": "Chylomicrons" },
+        {
+            "front": "Which lipoprotein is known as 'good cholesterol' and returns cholesterol to the liver?",
+            "back": "HDL"
+        },
+        {
+            "front": "Which lipoprotein delivers cholesterol to tissues and is called 'bad cholesterol'?",
+            "back": "LDL"
+        },
+        {
+            "front": "Which lipoprotein carries the highest proportion of triacylglycerols made by the liver?",
+            "back": "VLDL"
+        },
+        { "front": "Fat-soluble vitamins are which four?", "back": "A, D, E, and K" },
+        { "front": "Water-soluble vitamins include which two groups?", "back": "The B vitamins and vitamin C" },
+        {
+            "front": "Which class of vitamins can accumulate to toxic levels because they are stored in fat?",
+            "back": "Fat-soluble vitamins"
+        },
+        { "front": "Which nitrogenous bases are purines?", "back": "Adenine and guanine" },
+        { "front": "Which nitrogenous bases are pyrimidines?", "back": "Cytosine, thymine, and uracil" },
+        { "front": "Which base is found in RNA but not DNA?", "back": "Uracil" },
+        { "front": "Which base is found in DNA but not RNA?", "back": "Thymine" },
+        { "front": "How many hydrogen bonds form between guanine and cytosine?", "back": "Three" },
+        { "front": "How many hydrogen bonds form between adenine and thymine?", "back": "Two" },
+        { "front": "A nucleoside plus one or more phosphate groups is called a what?", "back": "A nucleotide" },
+        { "front": "Which sugar is found in DNA?", "back": "Deoxyribose" },
+        { "front": "Which sugar is found in RNA?", "back": "Ribose" },
+        { "front": "At which carbon does deoxyribose lack a hydroxyl relative to ribose?", "back": "The 2' carbon" },
+        {
+            "front": "The backbone of a nucleic acid strand is composed of what two alternating units?",
+            "back": "Sugar and phosphate"
+        },
+        {
+            "front": "The linkage joining nucleotides in a nucleic acid backbone is called what?",
+            "back": "Phosphodiester bond"
+        },
+        { "front": "In which direction is a new DNA strand synthesized?", "back": "5' to 3'" },
+        {
+            "front": "The two strands of the DNA double helix are oriented how relative to each other?",
+            "back": "Antiparallel"
+        },
+        {
+            "front": "DNA-rich regions with many G-C pairs have a higher or lower melting temperature?",
+            "back": "Higher melting temperature"
+        },
+        {
+            "front": "Which interactions between adjacent bases stabilize the DNA double helix in addition to hydrogen bonds?",
+            "back": "Base-stacking (hydrophobic/van der Waals) interactions"
+        },
+        { "front": "In which cellular compartment does glycolysis occur?", "back": "The cytoplasm (cytosol)" },
+        { "front": "Does glycolysis require oxygen?", "back": "No, it is anaerobic" },
+        { "front": "What is the net ATP yield of glycolysis per glucose?", "back": "2 ATP" },
+        { "front": "How many ATP are invested in the early (energy investment) phase of glycolysis?", "back": "2 ATP" },
+        { "front": "What is the end product of glycolysis (per three-carbon molecule)?", "back": "Pyruvate" },
+        { "front": "How many pyruvate molecules are produced per glucose in glycolysis?", "back": "Two" },
+        { "front": "How many NADH are produced per glucose in glycolysis?", "back": "Two" },
+        {
+            "front": "Which enzyme is the rate-limiting (committed) step of glycolysis?",
+            "back": "Phosphofructokinase-1 (PFK-1)"
+        },
+        { "front": "Which enzyme phosphorylates glucose to glucose-6-phosphate in most cells?", "back": "Hexokinase" },
+        { "front": "Which liver-specific isozyme phosphorylates glucose and has a high Km?", "back": "Glucokinase" },
+        {
+            "front": "High levels of ATP have what effect on phosphofructokinase-1?",
+            "back": "They inhibit it (allosterically)"
+        },
+        { "front": "Which glycolytic enzyme converts PEP to pyruvate?", "back": "Pyruvate kinase" },
+        {
+            "front": "Name the three irreversible enzymes of glycolysis.",
+            "back": "Hexokinase, phosphofructokinase-1, and pyruvate kinase"
+        },
+        {
+            "front": "In glycolysis, ATP produced by direct phosphate transfer to ADP is called what?",
+            "back": "Substrate-level phosphorylation"
+        },
+        { "front": "Under anaerobic conditions in human muscle, pyruvate is converted to what?", "back": "Lactate" },
+        {
+            "front": "What is the purpose of fermentation in regenerating a coenzyme?",
+            "back": "To regenerate NAD+ so glycolysis can continue"
+        },
+        {
+            "front": "In yeast, anaerobic fermentation of pyruvate produces which two products?",
+            "back": "Ethanol and CO2"
+        },
+        {
+            "front": "Which human cell relies exclusively on glycolysis because it lacks mitochondria?",
+            "back": "The erythrocyte (red blood cell)"
+        },
+        { "front": "Which enzyme complex converts pyruvate to acetyl-CoA?", "back": "Pyruvate dehydrogenase" },
+        {
+            "front": "In which cellular compartment does the pyruvate dehydrogenase reaction occur?",
+            "back": "The mitochondrial matrix"
+        },
+        { "front": "What gas is released when pyruvate is converted to acetyl-CoA?", "back": "CO2 (decarboxylation)" },
+        { "front": "The conversion of pyruvate to acetyl-CoA produces which electron carrier?", "back": "NADH" },
+        { "front": "How many carbons does acetyl-CoA contribute to the citric acid cycle?", "back": "Two" },
+        { "front": "Another common name for the citric acid cycle is what?", "back": "The Krebs cycle (TCA cycle)" },
+        {
+            "front": "In which cellular compartment does the citric acid cycle occur?",
+            "back": "The mitochondrial matrix"
+        },
+        {
+            "front": "Acetyl-CoA combines with which four-carbon molecule to start the citric acid cycle?",
+            "back": "Oxaloacetate"
+        },
+        { "front": "What six-carbon product forms in the first step of the citric acid cycle?", "back": "Citrate" },
+        { "front": "Which enzyme catalyzes the first step of the citric acid cycle?", "back": "Citrate synthase" },
+        { "front": "How many NADH are produced per turn of the citric acid cycle?", "back": "Three" },
+        { "front": "How many FADH2 are produced per turn of the citric acid cycle?", "back": "One" },
+        { "front": "How many CO2 molecules are released per turn of the citric acid cycle?", "back": "Two" },
+        {
+            "front": "What high-energy nucleotide is produced by substrate-level phosphorylation in the citric acid cycle?",
+            "back": "GTP"
+        },
+        {
+            "front": "Which citric acid cycle enzyme is also part of the electron transport chain and reduces FAD?",
+            "back": "Succinate dehydrogenase"
+        },
+        { "front": "Where is the electron transport chain located?", "back": "The inner mitochondrial membrane" },
+        {
+            "front": "Which molecule is the final electron acceptor of the electron transport chain?",
+            "back": "Oxygen (O2)"
+        },
+        { "front": "The final product formed when oxygen accepts electrons in the ETC is what?", "back": "Water" },
+        { "front": "At which ETC complex does NADH donate its electrons?", "back": "Complex I" },
+        { "front": "At which ETC complex does FADH2 donate its electrons?", "back": "Complex II" },
+        { "front": "Which mobile lipid carrier shuttles electrons to Complex III?", "back": "Coenzyme Q (ubiquinone)" },
+        { "front": "Which mobile protein carries electrons from Complex III to Complex IV?", "back": "Cytochrome c" },
+        {
+            "front": "What ion gradient does the electron transport chain build across the inner membrane?",
+            "back": "A proton (H+) gradient"
+        },
+        {
+            "front": "The theory linking the proton gradient to ATP synthesis is called what?",
+            "back": "The chemiosmotic theory"
+        },
+        { "front": "Which enzyme uses the proton gradient to synthesize ATP?", "back": "ATP synthase" },
+        {
+            "front": "Approximately how many ATP does one NADH yield via oxidative phosphorylation?",
+            "back": "About 2.5 ATP"
+        },
+        {
+            "front": "Approximately how many ATP does one FADH2 yield via oxidative phosphorylation?",
+            "back": "About 1.5 ATP"
+        },
+        {
+            "front": "A molecule that dissipates the proton gradient without ATP synthesis is called a what?",
+            "back": "An uncoupler (e.g., DNP)"
+        },
+        {
+            "front": "The synthesis of new glucose from non-carbohydrate precursors is called what?",
+            "back": "Gluconeogenesis"
+        },
+        { "front": "In which two organs does gluconeogenesis primarily occur?", "back": "The liver and kidneys" },
+        {
+            "front": "Gluconeogenesis bypasses which three irreversible steps of glycolysis?",
+            "back": "Those catalyzed by pyruvate kinase, PFK-1, and hexokinase"
+        },
+        {
+            "front": "Which enzyme converts pyruvate to oxaloacetate in gluconeogenesis?",
+            "back": "Pyruvate carboxylase"
+        },
+        {
+            "front": "Which enzyme hydrolyzes fructose-1,6-bisphosphate in gluconeogenesis?",
+            "back": "Fructose-1,6-bisphosphatase"
+        },
+        { "front": "The breakdown of glycogen to release glucose is called what?", "back": "Glycogenolysis" },
+        { "front": "The synthesis of glycogen is called what?", "back": "Glycogenesis" },
+        {
+            "front": "Which enzyme cleaves glucose units from glycogen using inorganic phosphate?",
+            "back": "Glycogen phosphorylase"
+        },
+        {
+            "front": "What product results when glycogen phosphorylase removes a glucose unit?",
+            "back": "Glucose-1-phosphate"
+        },
+        { "front": "Which enzyme adds glucose units to a growing glycogen chain?", "back": "Glycogen synthase" },
+        {
+            "front": "Which hormone stimulates glycogen breakdown and gluconeogenesis during fasting?",
+            "back": "Glucagon"
+        },
+        { "front": "Which hormone promotes glucose uptake and glycogen synthesis after a meal?", "back": "Insulin" },
+        {
+            "front": "Which hormone mediates the fight-or-flight stimulation of glycogenolysis?",
+            "back": "Epinephrine (adrenaline)"
+        },
+        { "front": "The oxidation of fatty acids to acetyl-CoA is called what?", "back": "Beta-oxidation" },
+        {
+            "front": "In which cellular compartment does fatty acid beta-oxidation occur?",
+            "back": "The mitochondrial matrix"
+        },
+        {
+            "front": "Each round of beta-oxidation shortens the fatty acid chain by how many carbons?",
+            "back": "Two carbons"
+        },
+        {
+            "front": "Each round of beta-oxidation produces which three products?",
+            "back": "One acetyl-CoA, one NADH, and one FADH2"
+        },
+        {
+            "front": "How many acetyl-CoA molecules are produced from complete beta-oxidation of an 18-carbon fatty acid?",
+            "back": "Nine"
+        },
+        {
+            "front": "Which molecule carries fatty acids across the inner mitochondrial membrane?",
+            "back": "Carnitine (the carnitine shuttle)"
+        },
+        {
+            "front": "Compared to carbohydrates, do fatty acids yield more or less ATP per gram?",
+            "back": "More ATP per gram"
+        },
+        {
+            "front": "The liver produces which fuel molecules from acetyl-CoA during prolonged fasting?",
+            "back": "Ketone bodies"
+        },
+        {
+            "front": "Which cellular process synthesizes fatty acids in the cytosol?",
+            "back": "Fatty acid synthesis (lipogenesis)"
+        },
+        {
+            "front": "The toxic nitrogenous waste from amino acid catabolism is converted to what for excretion?",
+            "back": "Urea"
+        },
+        {
+            "front": "The transfer of an amino group from an amino acid to a keto acid is catalyzed by which enzyme?",
+            "back": "A transaminase (aminotransferase)"
+        },
+        {
+            "front": "The first law of thermodynamics states that energy is what?",
+            "back": "Conserved (neither created nor destroyed)"
+        },
+        { "front": "A reaction with a negative deltaG is described as what?", "back": "Spontaneous (exergonic)" },
+        { "front": "A reaction with a positive deltaG is described as what?", "back": "Nonspontaneous (endergonic)" },
+        {
+            "front": "Cells drive nonspontaneous reactions by linking them to ATP hydrolysis; this is called what?",
+            "back": "Energy coupling"
+        },
+        { "front": "Which cellular molecule is the primary energy currency?", "back": "ATP" },
+        {
+            "front": "Hydrolysis of ATP most commonly yields which two products?",
+            "back": "ADP and inorganic phosphate"
+        },
+        { "front": "When ATP is cleaved to AMP, what byproduct is released?", "back": "Pyrophosphate" },
+        { "front": "Which electron carrier is reduced by accepting a hydride ion to become NADH?", "back": "NAD+" },
+        { "front": "Which flavin electron carrier is reduced to FADH2?", "back": "FAD" },
+        {
+            "front": "Which factors affect the rate of a reaction but not its equilibrium?",
+            "back": "Temperature and catalyst presence"
+        },
+        {
+            "front": "Le Chatelier's principle predicts a system shifts to counteract changes in what?",
+            "back": "Concentration, temperature, and pressure"
+        },
+        {
+            "front": "The overall aerobic catabolism of glucose yields approximately how many ATP?",
+            "back": "About 30 to 32 ATP"
+        },
+        {
+            "front": "Which lab technique separates charged molecules by size and charge in an electric field?",
+            "back": "Electrophoresis"
+        },
+        {
+            "front": "In SDS-PAGE, what does the detergent SDS do to proteins?",
+            "back": "Denatures them and gives a uniform negative charge"
+        },
+        { "front": "In SDS-PAGE, proteins are separated primarily by what property?", "back": "Molecular size (mass)" },
+        {
+            "front": "In SDS-PAGE, do smaller or larger proteins migrate farther through the gel?",
+            "back": "Smaller proteins migrate farther"
+        },
+        {
+            "front": "What reagent is added to SDS-PAGE to reduce disulfide bonds?",
+            "back": "Beta-mercaptoethanol (or DTT)"
+        },
+        { "front": "Which stain is commonly used to visualize protein bands on a gel?", "back": "Coomassie Blue" },
+        {
+            "front": "At what pH will a protein not migrate in electrophoresis?",
+            "back": "At its isoelectric point (pI)"
+        },
+        {
+            "front": "Which chromatography technique separates molecules by size, eluting the largest first?",
+            "back": "Size-exclusion (gel-filtration) chromatography"
+        },
+        {
+            "front": "Which chromatography technique separates molecules based on net charge?",
+            "back": "Ion-exchange chromatography"
+        },
+        {
+            "front": "Which chromatography technique separates using a specific binding partner like an antibody?",
+            "back": "Affinity chromatography"
+        },
+        {
+            "front": "In reversed-phase chromatography, which molecules elute last?",
+            "back": "The most nonpolar (hydrophobic) molecules"
+        },
+        {
+            "front": "The Rf value in chromatography is the ratio of distance traveled by the compound to that by what?",
+            "back": "The solvent front"
+        },
+        { "front": "Which blotting technique detects a specific protein using antibodies?", "back": "Western blot" },
+        { "front": "Which blotting technique detects a specific DNA sequence?", "back": "Southern blot" },
+        { "front": "Which blotting technique detects a specific RNA sequence?", "back": "Northern blot" },
+        {
+            "front": "Which antibody-based assay quantifies a protein or antigen using enzyme-linked detection?",
+            "back": "ELISA"
+        },
+        {
+            "front": "Which technique amplifies specific DNA sequences using cycles of heating and cooling?",
+            "back": "Polymerase chain reaction (PCR)"
+        },
+        { "front": "Which heat-stable DNA polymerase is used in PCR?", "back": "Taq polymerase" },
+        { "front": "Which divalent cation is essential in the PCR reaction buffer?", "back": "Magnesium (Mg2+)" },
+        {
+            "front": "During which PCR phase are the two DNA strands separated by heat?",
+            "back": "The denaturation (melting) phase"
+        },
+        { "front": "Short DNA sequences that define the region amplified in PCR are called what?", "back": "Primers" },
+        {
+            "front": "Which DNA sequencing method uses chain-terminating dideoxynucleotides?",
+            "back": "Sanger sequencing"
+        },
+        { "front": "A cDNA library is generated from mRNA using which enzyme?", "back": "Reverse transcriptase" },
+        {
+            "front": "A cDNA library contains only which sequences of a genome?",
+            "back": "Expressed (transcribed) sequences"
+        },
+        {
+            "front": "Enzymes that cut DNA at specific palindromic recognition sequences are called what?",
+            "back": "Restriction enzymes (endonucleases)"
+        },
+        { "front": "Which enzyme joins DNA fragments together by forming phosphodiester bonds?", "back": "DNA ligase" },
+        {
+            "front": "The eukaryotic mRNA feature that poly-thymine probes hybridize to is called what?",
+            "back": "The poly-A tail"
+        },
+        {
+            "front": "A protein's absorbance and extinction coefficient are related to concentration by which law?",
+            "back": "The Beer-Lambert law"
+        }
+    ]
 }

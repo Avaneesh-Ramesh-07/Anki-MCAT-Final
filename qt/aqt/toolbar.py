@@ -313,6 +313,7 @@ class Toolbar:
         func: Callable,
         tip: str | None = None,
         id: str | None = None,
+        active: bool = False,
     ) -> str:
         """Generates HTML link element and registers link handler
 
@@ -335,9 +336,11 @@ class Toolbar:
 
         title_attr = f'title="{tip}"' if tip else ""
         id_attr = f'id="{id}"' if id else ""
+        class_attr = "hitem current" if active else "hitem"
+        current_attr = 'aria-current="page"' if active else ""
 
         return (
-            f"""<a class=hitem tabindex="-1" aria-label="{label}" """
+            f"""<a class="{class_attr}" tabindex="-1" aria-label="{label}" {current_attr} """
             f"""{title_attr} {id_attr} href=# onclick="return pycmd('{cmd}')">"""
             f"""{label}</a>"""
         )
@@ -357,6 +360,8 @@ class Toolbar:
                 self._deckLinkHandler,
                 tip=tr.actions_shortcut_key(val="D"),
                 id="decks",
+                # Highlight the current page: the deck list is the home screen.
+                active=getattr(self.mw, "state", "") == "deckBrowser",
             ),
             self.create_link(
                 "browse",

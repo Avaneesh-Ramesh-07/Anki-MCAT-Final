@@ -139,6 +139,29 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         return graded;
     }
 
+    // Re-grade a single FRQ from the results screen — used by the card's Retry
+    // affordance when the grader was unavailable at submit (or the student wants
+    // another read). This refreshes the visible grade only; it deliberately does
+    // NOT re-post to the performance model, so a retry can never double-count a
+    // topic's evidence.
+    async function regradeFrq(q: FreeResponseQuestion): Promise<void> {
+        frqPending = { ...frqPending, [q.id]: true };
+        try {
+            const g = await gradeFreeResponse({
+                prompt: q.prompt,
+                answer: frqAnswers[q.id] ?? "",
+                maxPoints: q.max_points,
+                rubric: toProtoRubric(q),
+                model: "",
+            });
+            frqGrades = { ...frqGrades, [q.id]: g };
+        } catch (e) {
+            console.error("FRQ regrade failed", q.id, e);
+        } finally {
+            frqPending = { ...frqPending, [q.id]: false };
+        }
+    }
+
     async function submit(): Promise<void> {
         // Show the local MCQ score immediately; FRQ grading + recording to the
         // performance model are best-effort and must never block the results screen.
@@ -222,6 +245,19 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         flatFrqs.forEach((q, i) => (map[q.id] = i + 1));
         return map;
     })();
+
+    // Free-response points that actually graded. Reported as an honest separate
+    // line — FRQ feed the readiness model (via mergeTallies), never the MCQ-only
+    // headline score, so the results screen must say where that effort went.
+    $: frqGradedList = flatFrqs.filter((q) => frqGrades[q.id]?.graded);
+    $: frqPointsAwarded = frqGradedList.reduce(
+        (n, q) => n + (frqGrades[q.id]?.pointsAwarded ?? 0),
+        0,
+    );
+    $: frqPointsMax = frqGradedList.reduce(
+        (n, q) => n + (frqGrades[q.id]?.maxPoints ?? 0),
+        0,
+    );
 </script>
 
 <div class="mcat">
@@ -365,6 +401,15 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                 <button class="secondary" on:click={retake}>Retake</button>
             </div>
 
+            {#if flatFrqs.length}
+                <p class="frq-note">
+                    {#if frqPointsMax > 0}
+                        Free response: {frqPointsAwarded} / {frqPointsMax} points (AI estimate).
+                    {/if}
+                    Graded separately below — it feeds your readiness, not this score.
+                </p>
+            {/if}
+
             {#if isFullLength}
                 <section class="panel">
                     <h2 class="section-title tight">Section breakdown</h2>
@@ -448,6 +493,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                 grade={frqGrades[q.id] ?? null}
                                 pending={frqPending[q.id] ?? false}
                                 onInput={() => {}}
+                                onRetry={() => regradeFrq(q)}
                             />
                         {/each}
                     </section>
@@ -765,6 +811,13 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         font-size: 0.8rem;
         color: var(--mcat-ink-faint);
         line-height: 1.55;
+    }
+    .frq-note {
+        margin: 0.75rem 0 0;
+        font-size: 0.85rem;
+        color: var(--mcat-ink-soft);
+        line-height: 1.55;
+        text-wrap: pretty;
     }
 
     // ---- buttons -------------------------------------------------------

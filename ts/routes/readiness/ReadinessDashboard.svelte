@@ -41,6 +41,34 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         a.topic.localeCompare(b.topic),
     );
 
+    // Group readiness topics by test section, with human-readable topic names
+    // (never the raw `aamc::section::topic` tag).
+    const sectionOf = (tag: string): string => tag.split("::")[1] ?? "";
+    const prettyTopic = (tag: string): string =>
+        (tag.split("::")[2] ?? tag)
+            .replace(/[-_]/g, " ")
+            .replace(/\b\w/g, (c) => c.toUpperCase())
+            .trim();
+
+    $: readySections = ["chem-phys", "cars", "bio-biochem", "psych-soc"]
+        .map((code) => ({
+            code,
+            label: SECTION_LABEL[code] ?? code,
+            topics: readyTopics.filter((t) => sectionOf(t.topic) === code),
+        }))
+        .filter((s) => s.topics.length > 0);
+
+    // Expandable-by-section (accordion); open the first section by default.
+    let openReady: Record<string, boolean> = {};
+    let didAutoOpenReady = false;
+    $: if (!didAutoOpenReady && readySections.length) {
+        openReady = { [readySections[0].code]: true };
+        didAutoOpenReady = true;
+    }
+    const toggleReady = (code: string): void => {
+        openReady = { ...openReady, [code]: !openReady[code] };
+    };
+
     // "How sure" bucket from the confidence-interval width.
     function confidence(low: number, high: number): string {
         const width = high - low;
@@ -124,6 +152,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         caption={`likely ${pct(overall.rangeLow)}–${pct(overall.rangeHigh)} · ${overall.reviews} cards studied`}
                     />
                     <p class="method">Comfort-augmented FSRS retrievability.</p>
+                    <p class="range-note">
+                        Range = a 95% confidence band from how many cards you've studied
+                        — it narrows as you review more.
+                    </p>
                 {:else}
                     <ScoreBar label="Memory" value={null} showLabel={false} />
                     <p class="method">Study a few more cards to unlock this score.</p>
@@ -170,6 +202,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         {performance.sectionsTested} of 4 sections tested{#if performance.sectionsTested === 4}
                             · ≈ scaled {performance.scaledTotal}{:else if performance.sectionsTested > 0}
                             · ≈ scaled {performance.scaledTotal} (partial){/if}
+                    </p>
+                    <p class="range-note">
+                        Range = a 95% confidence band from how many practice questions
+                        you've answered — it narrows as you answer more.
                     </p>
                 {:else}
                     <ScoreBar
@@ -249,6 +285,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         {confidence(readyOverall.rangeLow, readyOverall.rangeHigh)} · memory
                         5% · topical 45% · full-length 50%
                     </p>
+                    <p class="range-note">
+                        Range = your three signals' bands blended by weight; sections
+                        you haven't tested count as a certain 0, which lowers it.
+                    </p>
                 {:else}
                     <ScoreBar
                         label="Readiness"
@@ -297,10 +337,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                 <div class="topic-list">
                     {#each topics as t (t.topic)}
                         <div class="topic-row">
-                            <div class="topic-name">{t.topic}</div>
+                            <div class="topic-name">{prettyTopic(t.topic)}</div>
                             <div class="topic-bar">
                                 <ScoreBar
-                                    label={t.topic}
+                                    label={prettyTopic(t.topic)}
                                     value={t.abstain ? null : t.memoryScore}
                                     size="sm"
                                     abstainText="not enough evidence yet"
@@ -357,10 +397,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             </div>
         </section>
 
-        <!-- Readiness by AAMC topic (abstain renders as the dashed rail, never 0%) -->
+        <!-- Readiness by section → topic (expandable; abstain = dashed rail, never 0%) -->
         <section class="panel">
-            <h2 class="section-title">Readiness by AAMC topic</h2>
-            {#if readyTopics.length === 0}
+            <h2 class="section-title">Readiness by section</h2>
+            {#if readySections.length === 0}
                 <div class="empty">
                     <p>
                         Readiness fills in per topic once you have card reviews, a
@@ -368,52 +408,100 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     </p>
                 </div>
             {:else}
-                <div class="topic-list">
-                    {#each readyTopics as t (t.topic)}
-                        <div class="topic-row">
-                            <div class="topic-name">{t.topic}</div>
-                            <div class="topic-bar">
-                                <ScoreBar
-                                    label={t.topic}
-                                    value={t.abstain ? null : t.readinessScore}
-                                    size="sm"
-                                    abstainText="not enough evidence yet"
-                                />
-                            </div>
-                            <div class="topic-meta">
-                                {#if t.components}
-                                    <span
-                                        class="pips"
-                                        title="Memory · Topical · Full-length (dim = missing)"
-                                    >
-                                        <span
-                                            class="pip mem"
-                                            class:off={!t.components.hasMemory}
-                                        >
-                                            M
-                                        </span>
-                                        <span
-                                            class="pip top"
-                                            class:off={!t.components.hasTopical}
-                                        >
-                                            T
-                                        </span>
-                                        <span
-                                            class="pip fl"
-                                            class:off={!t.components.hasFullLength}
-                                        >
-                                            F
-                                        </span>
+                <div class="rsecs">
+                    {#each readySections as sec (sec.code)}
+                        <div class="rsec">
+                            <button
+                                class="rsec-head"
+                                aria-expanded={openReady[sec.code] ? "true" : "false"}
+                                aria-controls={`ready-${sec.code}`}
+                                on:click={() => toggleReady(sec.code)}
+                            >
+                                <span class="rsec-name">
+                                    {sec.label}
+                                    <span class="rsec-count">
+                                        {sec.topics.length}
+                                        {sec.topics.length === 1 ? "topic" : "topics"}
                                     </span>
-                                {/if}
-                                {#if t.abstain}
-                                    <span class="muted">{readinessReason(t)}</span>
-                                {:else}
-                                    <span class="muted">
-                                        likely {pct(t.rangeLow)}–{pct(t.rangeHigh)}
-                                    </span>
-                                {/if}
-                            </div>
+                                </span>
+                                <svg
+                                    class="rcaret"
+                                    class:open={openReady[sec.code]}
+                                    viewBox="0 0 16 16"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M4 6l4 4 4-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                            {#if openReady[sec.code]}
+                                <div class="topic-list" id={`ready-${sec.code}`}>
+                                    {#each sec.topics as t (t.topic)}
+                                        <div class="topic-row">
+                                            <div class="topic-name">
+                                                {prettyTopic(t.topic)}
+                                            </div>
+                                            <div class="topic-bar">
+                                                <ScoreBar
+                                                    label={prettyTopic(t.topic)}
+                                                    value={t.abstain
+                                                        ? null
+                                                        : t.readinessScore}
+                                                    size="sm"
+                                                    abstainText="not enough evidence yet"
+                                                />
+                                            </div>
+                                            <div class="topic-meta">
+                                                {#if t.components}
+                                                    <span
+                                                        class="pips"
+                                                        title="Memory · Topical · Full-length (dim = missing)"
+                                                    >
+                                                        <span
+                                                            class="pip mem"
+                                                            class:off={!t.components
+                                                                .hasMemory}
+                                                        >
+                                                            M
+                                                        </span>
+                                                        <span
+                                                            class="pip top"
+                                                            class:off={!t.components
+                                                                .hasTopical}
+                                                        >
+                                                            T
+                                                        </span>
+                                                        <span
+                                                            class="pip fl"
+                                                            class:off={!t.components
+                                                                .hasFullLength}
+                                                        >
+                                                            F
+                                                        </span>
+                                                    </span>
+                                                {/if}
+                                                {#if t.abstain}
+                                                    <span class="muted">
+                                                        {readinessReason(t)}
+                                                    </span>
+                                                {:else}
+                                                    <span class="muted">
+                                                        likely {pct(t.rangeLow)}–{pct(
+                                                            t.rangeHigh,
+                                                        )}
+                                                    </span>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    {/each}
+                                </div>
+                            {/if}
                         </div>
                     {/each}
                 </div>
@@ -509,6 +597,16 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         line-height: 1.45;
         color: var(--mcat-ink-faint);
     }
+    // Short "where the range comes from" note. ink-soft (AA) since it's
+    // meaningful explanatory text, with a hairline to set it apart from .method.
+    .range-note {
+        margin: 0.1rem 0 0;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--mcat-border);
+        font-size: 0.78rem;
+        line-height: 1.45;
+        color: var(--mcat-ink-soft);
+    }
 
     // ---- panels (topic / section lists) ----------------------------------
     .panel {
@@ -524,6 +622,73 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         font-size: 1.15rem;
         font-weight: 700;
         color: var(--mcat-ink);
+    }
+
+    // ---- readiness section accordion ----------------------------------------
+    .rsecs {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    .rsec {
+        border: 1px solid var(--mcat-border);
+        border-radius: var(--mcat-radius);
+        overflow: hidden;
+    }
+    .rsec-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 0.7rem 0.95rem;
+        background: var(--mcat-surface-2);
+        border: none;
+        cursor: pointer;
+        font: inherit;
+        color: var(--mcat-ink);
+        text-align: left;
+
+        &:hover {
+            background: var(--mcat-inset);
+        }
+        &:focus-visible {
+            outline: 2px solid var(--mcat-sage-ink);
+            outline-offset: -2px;
+        }
+    }
+    .rsec-name {
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    .rsec-count {
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: var(--mcat-ink-faint);
+    }
+    .rcaret {
+        width: 1rem;
+        height: 1rem;
+        flex: 0 0 auto;
+        color: var(--mcat-ink-soft);
+        transition: transform 0.18s var(--mcat-ease);
+    }
+    .rcaret.open {
+        transform: rotate(180deg);
+    }
+    .rsec .topic-list {
+        padding: 0.2rem 0.95rem 0.6rem;
+    }
+    .rsec .topic-row:last-child {
+        border-bottom: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .rcaret {
+            transition: none;
+        }
     }
 
     .topic-list {

@@ -201,6 +201,12 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         background: var(--mcat-blush-ink);
         color: #fff;
     }
+    // In night mode the *-ink fills are lightened (they double as text-on-dark),
+    // so a white glyph drops to ~1.8:1. Use a dark glyph on the light fill.
+    :global(.night-mode) .right .verdict-icon,
+    :global(.night-mode) .wrong .verdict-icon {
+        color: var(--mcat-inset);
+    }
     .distractor {
         margin-top: 0.55rem;
         color: var(--mcat-ink-soft);

@@ -1,0 +1,127 @@
+// Copyright: Ankitects Pty Ltd and contributors
+// License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package anki.mcat;
+
+import "anki/generic.proto";
+
+// MCAT readiness features built into the Anki engine.
+//
+// - MasteryQuery is the memory model: per AAMC topic it returns the
+//   comfort-augmented DSR score with a statistical range, abstaining (give-up
+//   rule) when there isn't enough review evidence yet.
+// - RecordPracticeResult / PerformanceQuery are the performance model: topical
+//   practice-test scores accumulated per AAMC topic and rolled up per section,
+//   with an approximate MCAT scaled score (118-132 per section, 472-528 total)
+//   and the same abstain-when-thin give-up rule.
+service McatService {
+  rpc MasteryQuery(MasteryQueryRequest) returns (MasteryQueryResponse);
+  rpc RecordPracticeResult(RecordPracticeResultRequest)
+      returns (generic.Empty);
+  rpc PerformanceQuery(PerformanceQueryRequest)
+      returns (PerformanceQueryResponse);
+}
+
+// Implicitly includes any of the above methods that are not listed here, run on
+// the backend instead of an open collection.
+service BackendMcatService {}
+
+message MasteryQueryRequest {
+  // Optional search limiting which cards are considered (e.g. a deck or tag
+  // filter). Empty = the whole collection.
+  string search = 1;
+  // Topics with fewer than this many graded reviews abstain (the give-up rule).
+  // 0 means use the built-in default.
+  uint32 min_reviews = 2;
+}
+
+message MasteryQueryResponse {
+  // One entry per AAMC topic tag found under the search.
+  repeated TopicMastery topics = 1;
+  // Collection-wide rollup across all topics (the memory-model headline).
+  TopicMastery overall = 2;
+}
+
+message TopicMastery {
+  // The `aamc::...` tag identifying the topic; empty for the overall rollup.
+  string topic = 1;
+  // Comfort-augmented DSR memory score in [0,1]. Only meaningful when !abstain.
+  double memory_score = 2;
+  // Statistical confidence interval on the score (Wilson / beta-binomial).
+  double range_low = 3;
+  double range_high = 4;
+  // Cards judged "mastered" (retrievability >= threshold) and the total seen.
+  uint32 mastered_count = 5;
+  uint32 total_cards = 6;
+  // Graded reviews backing this topic's estimate.
+  uint32 reviews = 7;
+  // True when there is not enough evidence to show a number (give-up rule).
+  bool abstain = 8;
+}
+
+// ---- Performance model (topical practice tests) --------------------------
+
+// One completed topical practice test's per-topic tally, submitted by the
+// player when a test is graded. The engine accumulates these so repeated
+// attempts build evidence (mirroring how review count backs the memory score).
+message RecordPracticeResultRequest {
+  string test_id = 1;
+  // AAMC section code, e.g. "bio-biochem", "chem-phys", "psych-soc", "cars".
+  string section_code = 2;
+  repeated PracticeTopicResult topic_results = 3;
+}
+
+message PracticeTopicResult {
+  // The `aamc::...` tag for this group of questions.
+  string topic = 1;
+  uint32 correct = 2;
+  uint32 answered = 3;
+}
+
+message PerformanceQueryRequest {
+  // Topics/sections with fewer than this many answered questions abstain.
+  // 0 means use the built-in default.
+  uint32 min_questions = 1;
+}
+
+message PerformanceQueryResponse {
+  // One entry per AAMC topic that has practice-test evidence.
+  repeated TopicPerformance topics = 1;
+  // One entry per MCAT section that has evidence (carries the scaled score).
+  repeated SectionPerformance sections = 2;
+  // Collection-wide rollup (the performance-model headline).
+  TopicPerformance overall = 3;
+  // Approximate total MCAT scaled score (472-528) summed across the four
+  // sections; only meaningful when !overall.abstain.
+  uint32 scaled_total = 4;
+}
+
+message TopicPerformance {
+  // The `aamc::...` tag; empty for the overall rollup.
+  string topic = 1;
+  // Fraction correct in [0,1]. Only meaningful when !abstain.
+  double score = 2;
+  // Wilson confidence interval on the fraction correct.
+  double range_low = 3;
+  double range_high = 4;
+  uint32 correct = 5;
+  uint32 answered = 6;
+  // True when there is not enough evidence to show a number (give-up rule).
+  bool abstain = 7;
+}
+
+message SectionPerformance {
+  // AAMC section code, e.g. "bio-biochem".
+  string section_code = 1;
+  double score = 2;
+  // Approximate MCAT section scaled score in [118,132] (documented linear
+  // approximation; AAMC's exact raw->scaled tables are not public).
+  uint32 scaled_score = 3;
+  uint32 correct = 4;
+  uint32 answered = 5;
+  bool abstain = 6;
+}

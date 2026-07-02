@@ -1,0 +1,1776 @@
+{
+  "test_id": "chem-phys-2",
+  "section": "Chemical and Physical Foundations of Biological Systems",
+  "section_code": "chem-phys",
+  "provenance": "Original content. Concepts calibrated against MCAT QBook Ch4 (General Chemistry), Ch5 (Physics), Ch7 (Organic Chemistry), and Ch2 (Biochemistry) used privately as ground truth; no source text reproduced.",
+  "composition": {
+    "passages": 10,
+    "passage_questions": 44,
+    "discrete_questions": 15,
+    "total": 59
+  },
+  "weighting_target": {
+    "gen-chem": 0.3,
+    "physics": 0.25,
+    "biochemistry": 0.25,
+    "orgo": 0.15,
+    "biology": 0.05
+  },
+  "trademark_notice": "MCAT is a registered trademark of the AAMC. This material is independently authored and not endorsed by the AAMC.",
+  "passages": [
+    {
+      "passage_id": "chem-phys-2-p1",
+      "title": "Kinetics of an enzyme-free hydrolysis reaction",
+      "topic_tags": [
+        "aamc::chem-phys::chemical-kinetics"
+      ],
+      "passage_text": "A chemist studies the aqueous hydrolysis of an ester, S, into products in a stirred flask held at constant temperature. By varying the initial concentration of S and measuring the initial rate of product formation, the chemist determines how the rate depends on [S]. Separate trials examine the effect of adding a catalyst and of raising the temperature.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p1-q1",
+          "stem": "In a hypothetical trial, doubling the initial concentration of S while holding all else constant doubles the initial rate. With respect to S, the reaction is:",
+          "options": {
+            "A": "Zero order",
+            "B": "First order",
+            "C": "Second order",
+            "D": "Third order"
+          },
+          "correct": "B",
+          "explanation": "If rate is proportional to [S] to the first power, doubling [S] doubles the rate (2^1 = 2). That linear proportionality defines a reaction that is first order in S.",
+          "distractor_notes": {
+            "A": "For zero order, rate is independent of [S], so doubling [S] would leave the rate unchanged.",
+            "C": "For second order, doubling [S] would quadruple the rate (2^2 = 4), not double it.",
+            "D": "For third order, doubling [S] would increase the rate eightfold (2^3 = 8)."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::chemical-kinetics",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "reaction order from rate-vs-concentration behavior (QBook Ch4) - original scenario",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p1-q2",
+          "stem": "The chemist adds a catalyst to the reaction. Which statement best describes its effect?",
+          "options": {
+            "A": "It raises the equilibrium constant so that more product forms",
+            "B": "It is consumed stoichiometrically, so more must be added as the reaction proceeds",
+            "C": "It makes an otherwise nonspontaneous reaction spontaneous",
+            "D": "It lowers the activation energy, increasing the rate without changing the overall equilibrium position"
+          },
+          "correct": "D",
+          "explanation": "A catalyst provides an alternative pathway with a lower activation energy, speeding both the forward and reverse reactions equally. It changes the rate at which equilibrium is reached but not the position of equilibrium or the thermodynamics.",
+          "distractor_notes": {
+            "A": "A catalyst does not change Keq; it accelerates the approach to the same equilibrium.",
+            "B": "A catalyst is regenerated and not consumed overall, so it is not used up stoichiometrically.",
+            "C": "A catalyst cannot alter the sign of delta G; it does not make a nonspontaneous reaction spontaneous."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::chemical-kinetics",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "catalysts lower Ea, do not shift equilibrium (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p1-q3",
+          "stem": "Raising the temperature of the reaction increases the initial rate. The most fundamental reason is that:",
+          "options": {
+            "A": "The activation energy of the reaction decreases with temperature",
+            "B": "A larger fraction of molecular collisions has energy exceeding the activation energy",
+            "C": "The enthalpy change of the reaction becomes more negative",
+            "D": "The concentration of S increases as the solution warms"
+          },
+          "correct": "B",
+          "explanation": "Higher temperature broadens the Maxwell-Boltzmann distribution of molecular energies, so a greater fraction of collisions exceeds the activation energy. This raises the rate constant (Arrhenius behavior) and thus the rate.",
+          "distractor_notes": {
+            "A": "The activation energy is a property of the pathway and is essentially fixed; temperature does not lower it.",
+            "C": "The reaction enthalpy is a thermodynamic quantity; a change in it is not why the rate rises.",
+            "D": "Warming a solution does not increase solute concentration; if anything, thermal expansion slightly dilutes it."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::chemical-kinetics",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "temperature and collision energy (Arrhenius) (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p1-q4",
+          "stem": "For a proposed multistep mechanism, the overall rate law is determined by:",
+          "options": {
+            "A": "The fastest elementary step",
+            "B": "The step with the most reactant molecules",
+            "C": "The rate-determining (slowest) elementary step",
+            "D": "The sum of the rate constants of all steps"
+          },
+          "correct": "C",
+          "explanation": "The overall rate of a multistep reaction is limited by its slowest elementary step, the rate-determining step; the observed rate law reflects that step (accounting for any preceding fast equilibria).",
+          "distractor_notes": {
+            "A": "The fastest step is not limiting; molecules pass through it quickly and it does not control overall rate.",
+            "B": "Molecularity of a single step does not, by itself, determine which step governs the overall rate.",
+            "D": "Rate constants are not simply summed; the slowest step controls the rate law."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::chemical-kinetics",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "rate-determining step (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p2",
+      "title": "Le Chatelier's principle in a gas-phase equilibrium",
+      "topic_tags": [
+        "aamc::chem-phys::equilibrium"
+      ],
+      "passage_text": "A reversible gas-phase reaction is studied in a sealed, rigid container: 2 X(g) + Y(g) reversibly forms 2 Z(g), and the forward reaction is exothermic. The system is allowed to reach equilibrium, after which the researchers impose various stresses and observe how the equilibrium position responds.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p2-q1",
+          "stem": "Some Y is removed from the equilibrium mixture at constant temperature and volume. The equilibrium responds by:",
+          "options": {
+            "A": "Shifting toward the products (forming more Z)",
+            "B": "Not shifting, because Y is a reactant",
+            "C": "Increasing the value of the equilibrium constant",
+            "D": "Shifting toward the reactants (consuming Z to replace Y)"
+          },
+          "correct": "D",
+          "explanation": "Removing a reactant (Y) reduces the reactant side. By Le Chatelier's principle the system shifts to partially replace Y, i.e., toward the reactants, consuming some Z.",
+          "distractor_notes": {
+            "A": "Shifting toward products would consume more Y, opposing the goal of replacing the removed Y.",
+            "B": "Removing a species does perturb the equilibrium; the system does shift.",
+            "C": "Keq depends only on temperature; removing a reactant does not change its value."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::equilibrium",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "Le Chatelier, removing a reactant (QBook Ch4) - original scenario",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p2-q2",
+          "stem": "The volume of the rigid container is suddenly decreased (raising the total pressure) at constant temperature. The equilibrium will shift:",
+          "options": {
+            "A": "Toward the products, the side with fewer moles of gas",
+            "B": "Toward the reactants, the side with fewer moles of gas",
+            "C": "Toward the reactants, the side with more moles of gas",
+            "D": "Not at all, because pressure has no effect on gas equilibria"
+          },
+          "correct": "A",
+          "explanation": "Compression raises pressure, and the system shifts toward the side with fewer moles of gas to relieve it. The reaction has 3 moles of gas on the left (2 X + 1 Y) and 2 on the right (2 Z), so it shifts toward products.",
+          "distractor_notes": {
+            "B": "The reactant side has more moles of gas (3), not fewer, so shifting there would raise pressure.",
+            "C": "Shifting toward more moles of gas opposes the response to increased pressure.",
+            "D": "Changing pressure by volume change does affect equilibria that have unequal gas moles on each side."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::equilibrium",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "pressure/volume shift toward fewer gas moles (QBook Ch4) - original stoichiometry",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p2-q3",
+          "stem": "Because the forward reaction is exothermic, raising the temperature of the equilibrium mixture will:",
+          "options": {
+            "A": "Shift the equilibrium toward products and increase Keq",
+            "B": "Shift the equilibrium toward reactants and decrease Keq",
+            "C": "Shift the equilibrium toward products but leave Keq unchanged",
+            "D": "Have no effect on either the position or Keq"
+          },
+          "correct": "B",
+          "explanation": "For an exothermic reaction, heat is effectively a product. Adding heat (raising temperature) shifts the equilibrium toward reactants, and because the shift is due to temperature, Keq itself decreases.",
+          "distractor_notes": {
+            "A": "Heating an exothermic reaction favors reactants, not products, and lowers Keq.",
+            "C": "A temperature change is the one stress that does change Keq, so it cannot be unchanged.",
+            "D": "Temperature changes shift equilibria whose reactions have nonzero enthalpy, as here."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::equilibrium",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "temperature effect on exothermic equilibrium and Keq (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p2-q4",
+          "stem": "An inert gas (argon) is added to the sealed rigid container at constant temperature and volume. The equilibrium position will:",
+          "options": {
+            "A": "Shift toward products",
+            "B": "Shift toward reactants",
+            "C": "Not shift, because the partial pressures of the reacting gases are unchanged",
+            "D": "Shift toward whichever side has fewer moles of gas"
+          },
+          "correct": "C",
+          "explanation": "At constant volume, adding an inert gas raises the total pressure but does not change the partial pressures or concentrations of the reacting species. Since Q is unchanged, the equilibrium does not shift.",
+          "distractor_notes": {
+            "A": "Products are not favored because the reacting gases' partial pressures are unchanged.",
+            "B": "Reactants are not favored for the same reason; the reaction quotient is unaffected.",
+            "D": "A shift toward fewer gas moles occurs when the volume is decreased, not when an inert gas is added at fixed volume."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::equilibrium",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "inert gas at constant volume does not shift equilibrium (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p3",
+      "title": "A galvanic cell built from two metal half-cells",
+      "topic_tags": [
+        "aamc::chem-phys::electrochemistry"
+      ],
+      "passage_text": "A student assembles a galvanic (voltaic) cell from two half-cells connected by a wire and a salt bridge. One half-cell contains a zinc electrode in a Zn2+ solution; the other contains a copper electrode in a Cu2+ solution. As a hypothetical for analysis, take the standard reduction potentials to be -0.76 V for Zn2+/Zn and +0.34 V for Cu2+/Cu. The cell operates spontaneously at standard conditions.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p3-q1",
+          "stem": "Which electrode is the anode, and what occurs there?",
+          "options": {
+            "A": "The copper electrode; reduction occurs",
+            "B": "The copper electrode; oxidation occurs",
+            "C": "The zinc electrode; reduction occurs",
+            "D": "The zinc electrode; oxidation occurs"
+          },
+          "correct": "D",
+          "explanation": "The species with the more negative reduction potential is oxidized. Zn (E = -0.76 V) is more easily oxidized than Cu, so zinc is the anode, where oxidation (Zn to Zn2+ + 2 e-) takes place.",
+          "distractor_notes": {
+            "A": "Copper has the higher reduction potential and is reduced at the cathode, not oxidized at an anode.",
+            "B": "Copper is the cathode here; oxidation occurs at the zinc anode instead.",
+            "C": "Oxidation, not reduction, occurs at the anode; zinc is oxidized."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::electrochemistry",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "anode identification from reduction potentials (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p3-q2",
+          "stem": "What is the standard cell potential (E_cell) for this galvanic cell?",
+          "options": {
+            "A": "+1.10 V",
+            "B": "+0.42 V",
+            "C": "-0.42 V",
+            "D": "-1.10 V"
+          },
+          "correct": "A",
+          "explanation": "E_cell = E_cathode - E_anode = (+0.34 V) - (-0.76 V) = +1.10 V. A positive standard cell potential confirms the spontaneous galvanic operation.",
+          "distractor_notes": {
+            "B": "0.42 V results from subtracting the magnitudes incorrectly rather than E_cathode - E_anode.",
+            "C": "A negative value would indicate a nonspontaneous cell, contradicting the spontaneous operation described.",
+            "D": "-1.10 V reverses the sign; the reduction potentials were subtracted in the wrong order."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::electrochemistry",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "E_cell = E_cathode - E_anode (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p3-q3",
+          "stem": "In the external circuit, electrons flow:",
+          "options": {
+            "A": "From the copper electrode to the zinc electrode",
+            "B": "From the zinc electrode to the copper electrode",
+            "C": "Through the salt bridge rather than the wire",
+            "D": "In neither direction until the salt bridge is removed"
+          },
+          "correct": "B",
+          "explanation": "Electrons are released by oxidation at the zinc anode and travel through the external wire to the copper cathode, where reduction consumes them. Current in the external circuit flows anode to cathode as electrons.",
+          "distractor_notes": {
+            "A": "This reverses the direction; electrons originate at the anode (zinc), not the cathode (copper).",
+            "C": "The salt bridge carries ions to maintain charge balance, not the electrons; electrons travel through the wire.",
+            "D": "Removing the salt bridge stops sustained current; the salt bridge is required for continued flow, not an obstacle to it."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::electrochemistry",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "electron flow anode to cathode (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p3-q4",
+          "stem": "As the cell discharges, [Cu2+] falls in the cathode compartment. Qualitatively, according to the Nernst equation, the measured cell potential will:",
+          "options": {
+            "A": "Increase steadily above the standard value",
+            "B": "Remain exactly at the standard value until the cell dies",
+            "C": "Decrease from the standard value toward zero as the reaction proceeds",
+            "D": "Reverse sign, making the cell electrolytic"
+          },
+          "correct": "C",
+          "explanation": "As reactants are consumed and products accumulate, the reaction quotient Q rises, and by the Nernst equation the cell potential falls below the standard value, approaching zero as the system nears equilibrium.",
+          "distractor_notes": {
+            "A": "Consuming Cu2+ raises Q and lowers, not raises, the cell potential.",
+            "B": "The potential stays at standard only at standard (1 M) conditions; as concentrations change it drifts.",
+            "D": "The potential falls toward zero at equilibrium; it does not spontaneously reverse into electrolytic operation."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::electrochemistry",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "Nernst equation qualitative concentration dependence (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p4",
+      "title": "DC circuit with resistors and a capacitor",
+      "topic_tags": [
+        "aamc::chem-phys::circuits"
+      ],
+      "passage_text": "A direct-current circuit is powered by an ideal 12 V battery. In one branch, two resistors are wired in series; in another configuration the same resistors are wired in parallel. A capacitor is also placed in the circuit through a resistor so that it charges over time. The internal resistance of the battery is negligible.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p4-q1",
+          "stem": "Two resistors of 4 ohms and 8 ohms are connected in series across the 12 V battery. What is the current supplied by the battery?",
+          "options": {
+            "A": "0.5 A",
+            "B": "1.5 A",
+            "C": "3 A",
+            "D": "1 A"
+          },
+          "correct": "D",
+          "explanation": "Series resistances add: R_total = 4 + 8 = 12 ohms. By Ohm's law, I = V/R = 12 V / 12 ohms = 1 A.",
+          "distractor_notes": {
+            "A": "0.5 A would require a 24 ohm total resistance, double the actual series total.",
+            "B": "1.5 A corresponds to an 8 ohm total, which ignores one of the resistors.",
+            "C": "3 A corresponds to a 4 ohm total, as if only the smaller resistor were present."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::circuits",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "series resistance and Ohm's law (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p4-q2",
+          "stem": "The same 4 ohm and 8 ohm resistors are instead connected in parallel. Their equivalent resistance is:",
+          "options": {
+            "A": "About 2.7 ohms",
+            "B": "12 ohms",
+            "C": "6 ohms",
+            "D": "0.375 ohms"
+          },
+          "correct": "A",
+          "explanation": "For parallel resistors, 1/R_eq = 1/4 + 1/8 = 3/8, so R_eq = 8/3 ohms, approximately 2.7 ohms. The equivalent resistance is always less than the smallest individual resistor.",
+          "distractor_notes": {
+            "B": "12 ohms is the series total, not the parallel equivalent.",
+            "C": "6 ohms is the simple average, which is not how parallel resistances combine.",
+            "D": "0.375 ohms is the value of 1/R_eq (in 1/ohms), not R_eq itself."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::circuits",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "parallel resistance formula (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p4-q3",
+          "stem": "In the series arrangement of the 4 ohm and 8 ohm resistors, the power dissipated by the 8 ohm resistor is:",
+          "options": {
+            "A": "4 W",
+            "B": "8 W",
+            "C": "12 W",
+            "D": "16 W"
+          },
+          "correct": "B",
+          "explanation": "In series the current is 1 A through both resistors. Power in the 8 ohm resistor is P = I^2 R = (1 A)^2 (8 ohms) = 8 W.",
+          "distractor_notes": {
+            "A": "4 W is the power dissipated by the 4 ohm resistor, not the 8 ohm one.",
+            "C": "12 W is the total power delivered by the battery (P = VI = 12 x 1), split between both resistors.",
+            "D": "16 W would require 2 A through the 8 ohm resistor, but the series current is 1 A."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::circuits",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "power dissipation P = I^2 R in series (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p4-q4",
+          "stem": "A capacitor is charged through a resistor from the battery. A long time after the switch is closed (steady state), the current through the capacitor branch is:",
+          "options": {
+            "A": "At its maximum value",
+            "B": "Equal to the battery voltage divided by the capacitance",
+            "C": "Zero, because a fully charged capacitor blocks DC current",
+            "D": "Oscillating at a fixed frequency"
+          },
+          "correct": "C",
+          "explanation": "As a capacitor charges, the current decays exponentially. At steady state the capacitor is fully charged and acts as an open circuit in a DC circuit, so no current flows through that branch.",
+          "distractor_notes": {
+            "A": "Current is maximal at the instant of switching, not at steady state.",
+            "B": "V/C has units of charge, not current; steady-state current is zero, not this ratio.",
+            "D": "A simple RC charging circuit approaches a steady state; it does not oscillate."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::circuits",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "capacitor as open circuit at DC steady state (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p4-q5",
+          "stem": "Two identical capacitors are connected in parallel. Compared with a single such capacitor, the combined (equivalent) capacitance is:",
+          "options": {
+            "A": "Half as large",
+            "B": "The same",
+            "C": "Four times as large",
+            "D": "Twice as large"
+          },
+          "correct": "D",
+          "explanation": "Capacitances in parallel add: C_eq = C1 + C2. Two identical capacitors in parallel give twice the capacitance of one.",
+          "distractor_notes": {
+            "A": "Halving occurs for two identical capacitors in series, not in parallel.",
+            "B": "Adding a second capacitor in parallel increases the total; it does not stay the same.",
+            "C": "Four times would require four such capacitors in parallel, not two."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::circuits",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "parallel capacitors add (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p5",
+      "title": "Sound, the Doppler effect, and hearing",
+      "topic_tags": [
+        "aamc::chem-phys::waves-sound"
+      ],
+      "passage_text": "An ambulance travels along a straight road with its siren emitting a steady tone. A stationary observer on the sidewalk hears the pitch change as the vehicle approaches and then recedes. Investigators also study how sound intensity relates to perceived loudness and how sound travels through different media.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p5-q1",
+          "stem": "As the ambulance approaches the stationary observer, the observer perceives the siren's frequency as:",
+          "options": {
+            "A": "Higher than the emitted frequency",
+            "B": "Lower than the emitted frequency",
+            "C": "Equal to the emitted frequency",
+            "D": "Zero until the ambulance passes"
+          },
+          "correct": "A",
+          "explanation": "For a source approaching a stationary observer, successive wavefronts are compressed, shortening the observed wavelength and raising the observed frequency (Doppler effect). The pitch is higher on approach.",
+          "distractor_notes": {
+            "B": "A lower observed frequency occurs while the source is receding, not approaching.",
+            "C": "The observed frequency equals the emitted frequency only when there is no relative motion along the line of sight.",
+            "D": "The observer hears the tone continuously; the frequency is shifted, not silenced."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::waves-sound",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "Doppler effect for approaching source (QBook Ch5) - original scenario",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p5-q2",
+          "stem": "The sound intensity level in decibels is a logarithmic measure. If the sound intensity (in W/m^2) increases by a factor of 100, the intensity level increases by:",
+          "options": {
+            "A": "2 dB",
+            "B": "20 dB",
+            "C": "10 dB",
+            "D": "100 dB"
+          },
+          "correct": "B",
+          "explanation": "Intensity level in decibels is 10 log10(I/I0). A hundredfold increase in intensity is log10(100) = 2 factors of ten, so the level rises by 10 x 2 = 20 dB.",
+          "distractor_notes": {
+            "A": "2 dB would correspond to a factor of about 1.6 in intensity, not 100.",
+            "C": "10 dB corresponds to a tenfold increase in intensity, not a hundredfold.",
+            "D": "100 dB would require a factor of 10^10 in intensity, not 100."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::waves-sound",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "decibel scale, 10 log(I/I0) (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p5-q3",
+          "stem": "Sound waves in air are best described as:",
+          "options": {
+            "A": "Transverse waves that can travel through a vacuum",
+            "B": "Electromagnetic waves",
+            "C": "Longitudinal waves that require a material medium",
+            "D": "Standing waves that carry no energy"
+          },
+          "correct": "C",
+          "explanation": "Sound is a longitudinal pressure (compression-rarefaction) wave in which particle motion is parallel to propagation. It requires a medium and cannot travel through a vacuum.",
+          "distractor_notes": {
+            "A": "Sound is longitudinal, not transverse, and cannot travel through a vacuum.",
+            "B": "Electromagnetic waves (like light) do not require a medium; sound is mechanical.",
+            "D": "Traveling sound waves transport energy; standing waves are a special confined case, not the general description."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::waves-sound",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "sound as longitudinal mechanical wave (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p5-q4",
+          "stem": "A string fixed at both ends vibrates in its fundamental mode. If the tension is increased, the speed of waves on the string increases. Holding length fixed, the fundamental frequency will:",
+          "options": {
+            "A": "Decrease",
+            "B": "Stay the same",
+            "C": "Drop to zero",
+            "D": "Increase"
+          },
+          "correct": "D",
+          "explanation": "The fundamental frequency is f = v / (2L). With length L fixed, a higher wave speed v (from greater tension) raises the fundamental frequency.",
+          "distractor_notes": {
+            "A": "Higher tension raises wave speed and thus frequency; it does not lower it.",
+            "B": "Since v changes while L is fixed, f = v/(2L) must change, not stay constant.",
+            "C": "Increasing tension does not silence the string; the frequency rises."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::waves-sound",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "standing wave fundamental f = v/2L, tension raises v (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p6",
+      "title": "Geometric optics of lenses and mirrors",
+      "topic_tags": [
+        "aamc::chem-phys::optics"
+      ],
+      "passage_text": "An optics bench holds a thin converging lens and, separately, a concave mirror. A small illuminated object is placed at various distances along the principal axis, and the resulting images are located and characterized. The refraction of light passing between media of different indices is also examined.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p6-q1",
+          "stem": "An object is placed 30 cm in front of a thin converging lens whose focal length is 10 cm. Using 1/f = 1/do + 1/di, the image distance is:",
+          "options": {
+            "A": "15 cm on the opposite side of the lens",
+            "B": "7.5 cm on the same side as the object",
+            "C": "20 cm on the opposite side of the lens",
+            "D": "30 cm on the same side as the object"
+          },
+          "correct": "A",
+          "explanation": "1/di = 1/f - 1/do = 1/10 - 1/30 = 3/30 - 1/30 = 2/30, so di = 15 cm. A positive di means the real image is on the side opposite the object.",
+          "distractor_notes": {
+            "B": "7.5 cm does not satisfy the thin-lens equation for these values, and a real image from a converging lens is not on the object's side.",
+            "C": "20 cm would result if do were 20 cm; here do is 30 cm, giving di = 15 cm.",
+            "D": "30 cm equals the object distance; the computed image distance is 15 cm."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::optics",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "thin-lens equation (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p6-q2",
+          "stem": "For the image formed in the previous scenario (do = 30 cm, f = 10 cm, di = 15 cm), the magnification is:",
+          "options": {
+            "A": "+2, upright and enlarged",
+            "B": "-0.5, inverted and reduced",
+            "C": "-2, inverted and enlarged",
+            "D": "+0.5, upright and reduced"
+          },
+          "correct": "B",
+          "explanation": "Magnification m = -di/do = -15/30 = -0.5. The negative sign indicates an inverted image, and the magnitude less than 1 indicates it is reduced.",
+          "distractor_notes": {
+            "A": "A converging lens with the object outside the focal point forms an inverted (negative m) image, not upright.",
+            "C": "m = -2 would require di = 60 cm, not 15 cm.",
+            "D": "The magnification is negative (inverted), not positive; only its magnitude is 0.5."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::optics",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "magnification m = -di/do (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p6-q3",
+          "stem": "When an object is placed between a concave mirror and its focal point (inside the focal length), the image formed is:",
+          "options": {
+            "A": "Real, inverted, and reduced",
+            "B": "Real, inverted, and enlarged",
+            "C": "Virtual, upright, and enlarged",
+            "D": "Virtual, upright, and reduced"
+          },
+          "correct": "C",
+          "explanation": "A concave mirror with the object inside the focal length produces a virtual, upright, magnified image behind the mirror, analogous to a converging lens with the object inside its focal point.",
+          "distractor_notes": {
+            "A": "Real, inverted, reduced images form when the object is well beyond the center of curvature.",
+            "B": "Real, inverted, enlarged images form when the object is between the focal point and the center of curvature.",
+            "D": "A concave mirror does not produce a reduced virtual image for an object inside the focal length; the virtual image is enlarged."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::optics",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "concave mirror image inside focal length (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p6-q4",
+          "stem": "Light travels from water (n = 1.33) into air (n = 1.00). Compared with its path in water, the refracted ray in air bends:",
+          "options": {
+            "A": "Toward the normal, because it enters a less dense medium",
+            "B": "Straight through without bending regardless of angle",
+            "C": "Back into the water by total internal reflection at all angles",
+            "D": "Away from the normal, because it enters a medium of lower refractive index"
+          },
+          "correct": "D",
+          "explanation": "By Snell's law, when light passes into a medium of lower refractive index it speeds up and bends away from the normal. (Beyond the critical angle it would instead totally internally reflect, but in general it refracts away from the normal.)",
+          "distractor_notes": {
+            "A": "Light bends toward the normal when entering a higher-index medium, the opposite of this case.",
+            "B": "The ray bends unless it strikes exactly along the normal (0 degrees incidence).",
+            "C": "Total internal reflection occurs only beyond the critical angle, not at all angles."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::optics",
+            "aamc::chem-phys::physics"
+          ],
+          "ground_truth_ref": "Snell's law, refraction into lower-index medium (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p7",
+      "title": "Hemoglobin, oxygen binding, and its regulation",
+      "topic_tags": [
+        "aamc::chem-phys::hemoglobin"
+      ],
+      "passage_text": "Hemoglobin is a tetrameric oxygen-transport protein, each subunit bearing a heme group with a central iron atom that reversibly binds one O2 molecule. Its oxygen-binding curve is sigmoidal, in contrast to the hyperbolic curve of the single-subunit myoglobin. Physiological effectors including protons, carbon dioxide, and 2,3-bisphosphoglycerate modulate hemoglobin's affinity for oxygen.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p7-q1",
+          "stem": "The sigmoidal shape of hemoglobin's oxygen-binding curve is a direct consequence of:",
+          "options": {
+            "A": "Positive cooperativity among its four subunits",
+            "B": "Competitive inhibition by carbon dioxide",
+            "C": "Irreversible oxidation of the heme iron",
+            "D": "The Michaelis-Menten behavior of a single active site"
+          },
+          "correct": "A",
+          "explanation": "Binding of O2 to one subunit increases the affinity of the remaining subunits (positive cooperativity). This cooperative behavior produces the characteristic S-shaped (sigmoidal) binding curve.",
+          "distractor_notes": {
+            "B": "CO2 acts as an allosteric effector shifting the curve, but the sigmoidal shape itself arises from cooperativity, not competitive inhibition.",
+            "C": "Oxidation of heme iron to the ferric state prevents O2 binding; it does not create the sigmoidal curve.",
+            "D": "A single active site following Michaelis-Menten kinetics yields a hyperbolic curve, as seen with myoglobin."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::hemoglobin",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "cooperativity gives sigmoidal binding (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p7-q2",
+          "stem": "Compared with hemoglobin, myoglobin has a hyperbolic O2-binding curve and a higher affinity for O2 at low partial pressures. This is consistent with myoglobin's role in:",
+          "options": {
+            "A": "Loading O2 in the lungs for transport",
+            "B": "Storing O2 in muscle tissue and releasing it only at very low O2 levels",
+            "C": "Buffering blood pH",
+            "D": "Catalyzing the oxidation of glucose"
+          },
+          "correct": "B",
+          "explanation": "Myoglobin's high affinity and hyperbolic curve let it bind O2 tightly in muscle and release it only when tissue O2 falls very low, matching its function as an oxygen store rather than a transporter.",
+          "distractor_notes": {
+            "A": "Loading O2 for transport is hemoglobin's role; myoglobin is a single-subunit muscle protein.",
+            "C": "Blood pH buffering is not myoglobin's function; it stores oxygen in muscle.",
+            "D": "Myoglobin binds oxygen; it does not catalyze glucose oxidation."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::hemoglobin",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "myoglobin vs hemoglobin affinity/role (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p7-q3",
+          "stem": "2,3-bisphosphoglycerate (2,3-BPG) binds hemoglobin and shifts its O2-binding curve to the right. The functional consequence is that hemoglobin:",
+          "options": {
+            "A": "Binds O2 more tightly and releases less to tissues",
+            "B": "Loses its cooperative behavior entirely",
+            "C": "Binds O2 less tightly and releases more to tissues",
+            "D": "Converts into myoglobin"
+          },
+          "correct": "C",
+          "explanation": "A right shift indicates decreased O2 affinity. 2,3-BPG stabilizes the low-affinity (T) state, so hemoglobin unloads more O2 to tissues at a given partial pressure.",
+          "distractor_notes": {
+            "A": "A right shift means lower affinity and more O2 release, not tighter binding.",
+            "B": "2,3-BPG modulates affinity through allosteric binding; it does not abolish cooperativity.",
+            "D": "2,3-BPG changes hemoglobin's affinity; it does not transform the protein into myoglobin."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::hemoglobin",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "2,3-BPG right shift and O2 unloading (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p7-q4",
+          "stem": "Effectors such as 2,3-BPG, H+, and CO2 bind hemoglobin at sites distinct from the O2-binding heme pockets. This mode of regulation is best described as:",
+          "options": {
+            "A": "Covalent modification",
+            "B": "Feedback inhibition of an enzyme's active site",
+            "C": "Competitive displacement of O2 from the heme",
+            "D": "Allosteric regulation"
+          },
+          "correct": "D",
+          "explanation": "Binding at a site other than the functional (O2-binding) site to alter protein conformation and activity is allosteric regulation. These effectors shift hemoglobin between its high- and low-affinity states.",
+          "distractor_notes": {
+            "A": "These effectors bind noncovalently and reversibly; they do not covalently modify hemoglobin.",
+            "B": "Hemoglobin is a transport protein, not an enzyme catalyzing a pathway with feedback inhibition of an active site.",
+            "C": "These effectors act allosterically at separate sites; they do not compete with O2 at the heme iron itself."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::hemoglobin",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "allosteric regulation of hemoglobin (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p7-q5",
+          "stem": "In carbon monoxide poisoning, CO binds the heme iron with far greater affinity than O2. This most directly impairs oxygen transport because CO:",
+          "options": {
+            "A": "Occupies the O2-binding sites, preventing O2 from binding there",
+            "B": "Oxidizes the iron to a form that cannot bind any ligand",
+            "C": "Denatures the entire hemoglobin tetramer",
+            "D": "Blocks synthesis of new hemoglobin"
+          },
+          "correct": "A",
+          "explanation": "CO binds tightly at the same heme iron site that normally binds O2, so it directly occupies and blocks the oxygen-binding sites, sharply reducing the blood's oxygen-carrying capacity.",
+          "distractor_notes": {
+            "B": "CO binds the ferrous iron directly; it does not act primarily by oxidizing iron to a non-binding form.",
+            "C": "CO binding does not denature the protein; hemoglobin remains folded but blocked.",
+            "D": "The acute effect is on oxygen binding to existing hemoglobin, not on hemoglobin synthesis."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::hemoglobin",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "CO competes at the heme O2 site (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p8",
+      "title": "Membrane transport energetics and electron carriers",
+      "topic_tags": [
+        "aamc::chem-phys::membrane-transport"
+      ],
+      "passage_text": "A cell maintains steep transmembrane gradients of ions and metabolites. Primary active transporters hydrolyze ATP to move solutes against their gradients, while secondary transporters harness those gradients to move other solutes. During aerobic metabolism, electron carriers shuttle reducing equivalents to the electron transport chain, and the resulting proton gradient powers ATP synthesis.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p8-q1",
+          "stem": "The free energy required to move a solute against its concentration gradient across a membrane increases most directly with:",
+          "options": {
+            "A": "The thickness of the lipid bilayer only",
+            "B": "The magnitude of the concentration ratio across the membrane",
+            "C": "The molecular weight of the solute only",
+            "D": "The temperature dropping toward absolute zero"
+          },
+          "correct": "B",
+          "explanation": "For an uncharged solute, the free-energy cost of transport scales with RT ln(C2/C1); the larger the concentration ratio being established, the greater the energy required.",
+          "distractor_notes": {
+            "A": "Bilayer thickness affects permeability kinetics but is not the thermodynamic determinant of the free-energy change for moving against a gradient.",
+            "C": "The energy depends on the concentration ratio, not simply on the solute's molecular weight.",
+            "D": "The RT ln term shrinks as temperature falls; lower temperature does not raise the required free energy."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::membrane-transport",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "free energy of transport, RT ln(C2/C1) (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p8-q2",
+          "stem": "For a charged ion, the total driving force for its movement across the membrane depends on:",
+          "options": {
+            "A": "The concentration gradient only",
+            "B": "The membrane potential only",
+            "C": "Both the concentration gradient and the membrane potential (the electrochemical gradient)",
+            "D": "Neither; ion movement is purely random"
+          },
+          "correct": "C",
+          "explanation": "A charged ion experiences both a chemical driving force (its concentration gradient) and an electrical driving force (the membrane potential). Together these define the electrochemical gradient that determines net movement.",
+          "distractor_notes": {
+            "A": "For a charged species the electrical component cannot be ignored; concentration alone is incomplete.",
+            "B": "The chemical concentration gradient also contributes; potential alone is incomplete.",
+            "D": "Ion flux is directional along the electrochemical gradient, not purely random."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::membrane-transport",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "electrochemical gradient for ions (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p8-q3",
+          "stem": "During aerobic respiration, NADH and FADH2 function chiefly as:",
+          "options": {
+            "A": "Structural components of the inner membrane",
+            "B": "Enzymes that phosphorylate ADP directly",
+            "C": "Electron carriers that deliver reducing equivalents to the electron transport chain",
+            "D": "Terminal electron acceptors of the chain"
+          },
+          "correct": "C",
+          "explanation": "NADH and FADH2 are reduced electron carriers; they donate high-energy electrons to the electron transport chain, which uses them to pump protons and ultimately reduce O2.",
+          "distractor_notes": {
+            "A": "They are diffusible or loosely associated carriers, not structural membrane components.",
+            "B": "They do not directly phosphorylate ADP; ATP synthase does that using the proton gradient.",
+            "D": "Molecular oxygen, not NADH/FADH2, is the terminal electron acceptor of the chain."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::redox-metabolism",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "NADH/FADH2 as electron carriers (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p8-q4",
+          "stem": "When NADH donates its electrons to the first complex of the electron transport chain, the NADH is:",
+          "options": {
+            "A": "Reduced to NAD+, acting as an oxidizing agent",
+            "B": "Unchanged, acting only as a catalyst",
+            "C": "Converted to ATP",
+            "D": "Oxidized to NAD+, acting as a reducing agent"
+          },
+          "correct": "D",
+          "explanation": "Donating electrons means NADH is oxidized (to NAD+). A species that donates electrons and is itself oxidized acts as a reducing agent.",
+          "distractor_notes": {
+            "A": "Losing electrons is oxidation, not reduction; a reduced NAD+ description reverses the process.",
+            "B": "NADH is chemically converted to NAD+; it is a co-substrate, not an unchanged catalyst.",
+            "C": "NADH is not converted into ATP; its electrons drive proton pumping that later powers ATP synthesis."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::redox-metabolism",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "oxidation of NADH, reducing agent (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p8-q5",
+          "stem": "A secondary active transporter moves glucose into a cell by coupling it to Na+ flowing down its electrochemical gradient. The energy for uphill glucose movement ultimately comes from:",
+          "options": {
+            "A": "The Na+ gradient, which is maintained by ATP-driven primary transport elsewhere",
+            "B": "Direct hydrolysis of ATP by the transporter itself",
+            "C": "The glucose gradient alone",
+            "D": "Diffusion of glucose through the lipid bilayer"
+          },
+          "correct": "A",
+          "explanation": "Secondary active transport does not hydrolyze ATP directly; it uses the Na+ electrochemical gradient. That gradient is established and maintained by a primary active transporter (the Na+/K+-ATPase) that does use ATP.",
+          "distractor_notes": {
+            "B": "The secondary transporter itself does not hydrolyze ATP; that defines primary active transport.",
+            "C": "Glucose is moved against its own gradient, so the glucose gradient cannot be the energy source.",
+            "D": "Glucose is polar and does not appreciably diffuse through the bilayer; it uses the coupled carrier."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::membrane-transport",
+            "aamc::chem-phys::biochemistry"
+          ],
+          "ground_truth_ref": "secondary active transport energetics (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p9",
+      "title": "Substitution reactions and separation of an alcohol",
+      "topic_tags": [
+        "aamc::chem-phys::orgo-reactions"
+      ],
+      "passage_text": "A synthetic chemist studies nucleophilic substitution using several alkyl halides and a set of nucleophiles. In parallel, the chemist oxidizes a series of alcohols and then purifies the organic products using distillation and chromatography. Reaction conditions are varied to favor either a one-step or a two-step substitution pathway.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p9-q1",
+          "stem": "Which substrate would most favor an SN1 reaction by forming the most stable carbocation intermediate?",
+          "options": {
+            "A": "A primary alkyl halide",
+            "B": "A tertiary alkyl halide",
+            "C": "A methyl halide",
+            "D": "A vinyl halide"
+          },
+          "correct": "B",
+          "explanation": "SN1 proceeds through a carbocation intermediate whose stability is enhanced by alkyl substitution (hyperconjugation and induction). A tertiary substrate forms the most stable carbocation and most favors SN1.",
+          "distractor_notes": {
+            "A": "Primary carbocations are unstable, so primary substrates strongly disfavor SN1 (they tend toward SN2).",
+            "C": "A methyl cation is the least stable; methyl halides react by SN2, not SN1.",
+            "D": "Vinyl cations are very unstable, so vinyl halides do not readily undergo SN1."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::orgo-reactions",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "carbocation stability and SN1 (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p9-q2",
+          "stem": "An SN2 reaction on a chiral secondary carbon proceeds with:",
+          "options": {
+            "A": "Retention of configuration at the reacting carbon",
+            "B": "Complete racemization",
+            "C": "Inversion of configuration (backside attack) at the reacting carbon",
+            "D": "No stereochemical change because carbon is achiral"
+          },
+          "correct": "C",
+          "explanation": "SN2 occurs in a single concerted step with the nucleophile attacking opposite the leaving group (backside attack), inverting the configuration at the stereocenter (Walden inversion).",
+          "distractor_notes": {
+            "A": "Retention is not characteristic of a direct SN2 backside attack.",
+            "B": "Racemization is characteristic of SN1 (planar carbocation attacked from both faces), not SN2.",
+            "D": "A chiral secondary carbon is a stereocenter; SN2 changes its configuration by inversion."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::orgo-reactions",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "SN2 backside attack and inversion (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p9-q3",
+          "stem": "Oxidation of a primary alcohol with a strong oxidant such as potassium dichromate, without special precautions, yields:",
+          "options": {
+            "A": "A ketone",
+            "B": "An ether",
+            "C": "No reaction, because primary alcohols cannot be oxidized",
+            "D": "A carboxylic acid"
+          },
+          "correct": "D",
+          "explanation": "A strong oxidant (e.g., K2Cr2O7) oxidizes a primary alcohol past the aldehyde to a carboxylic acid. (A milder, controlled oxidant like PCC would stop at the aldehyde.)",
+          "distractor_notes": {
+            "A": "Ketones are the oxidation product of secondary alcohols, not primary ones.",
+            "B": "Ethers are not formed by oxidation of an alcohol with dichromate.",
+            "C": "Primary alcohols are readily oxidized; they are not inert to strong oxidants."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::orgo-reactions",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "oxidation of primary alcohol to carboxylic acid (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p9-q4",
+          "stem": "A tertiary alcohol is treated with the same strong oxidant under identical conditions. The expected outcome is:",
+          "options": {
+            "A": "Essentially no oxidation of the carbinol carbon",
+            "B": "Oxidation to a carboxylic acid",
+            "C": "Oxidation to a ketone",
+            "D": "Oxidation to an aldehyde"
+          },
+          "correct": "A",
+          "explanation": "A tertiary alcohol's carbinol carbon bears no hydrogen, which is required for oxidation to a carbonyl. Under standard conditions it resists oxidation, unlike primary and secondary alcohols.",
+          "distractor_notes": {
+            "B": "Carboxylic acids form from primary alcohols; tertiary alcohols lack the needed C-H for oxidation.",
+            "C": "Ketones form from secondary alcohols; a tertiary carbinol carbon cannot become a ketone carbonyl.",
+            "D": "Aldehydes form from controlled oxidation of primary alcohols, not from tertiary alcohols."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::orgo-reactions",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "tertiary alcohols resist oxidation (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p9-q5",
+          "stem": "To separate two miscible liquids whose boiling points differ substantially, the most appropriate technique is:",
+          "options": {
+            "A": "Filtration",
+            "B": "Simple distillation",
+            "C": "Recrystallization",
+            "D": "Centrifugation"
+          },
+          "correct": "B",
+          "explanation": "Simple distillation separates miscible liquids by exploiting differences in boiling point; the lower-boiling component vaporizes and is collected first. A large boiling-point gap makes simple distillation effective.",
+          "distractor_notes": {
+            "A": "Filtration separates solids from liquids, not two miscible liquids.",
+            "C": "Recrystallization purifies solids from solution, not miscible liquid mixtures.",
+            "D": "Centrifugation separates components by density (e.g., particles from liquid), not by boiling point."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::separations",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "distillation to separate liquids by boiling point (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-2-p10",
+      "title": "Colligative properties and periodic trends",
+      "topic_tags": [
+        "aamc::chem-phys::solutions"
+      ],
+      "passage_text": "A chemistry class investigates how dissolving solutes changes the physical properties of a solvent. They compare boiling-point elevation and freezing-point depression for solutions of nonvolatile solutes at various concentrations, distinguishing electrolytes from nonelectrolytes. Separately, the class reviews periodic trends in atomic properties to predict reactivity.",
+      "questions": [
+        {
+          "id": "chem-phys-2-p10-q1",
+          "stem": "Adding a nonvolatile solute to a pure solvent will:",
+          "options": {
+            "A": "Raise the boiling point and lower the freezing point of the solvent",
+            "B": "Lower the boiling point and raise the freezing point of the solvent",
+            "C": "Raise both the boiling point and the freezing point",
+            "D": "Have no effect on either the boiling or freezing point"
+          },
+          "correct": "A",
+          "explanation": "A nonvolatile solute lowers the solvent's vapor pressure, which elevates the boiling point and depresses the freezing point. These are colligative properties depending on the number of dissolved particles.",
+          "distractor_notes": {
+            "B": "This reverses both effects; the boiling point rises and the freezing point falls.",
+            "C": "The freezing point is lowered, not raised, by a dissolved solute.",
+            "D": "Colligative effects are real and measurable for a nonvolatile solute."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::solutions",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "colligative properties directions (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p10-q2",
+          "stem": "For freezing-point depression at equal molal concentrations, which solute would depress the freezing point the most (largest van't Hoff factor)?",
+          "options": {
+            "A": "Glucose (a nonelectrolyte)",
+            "B": "NaCl (dissociates into 2 ions)",
+            "C": "CaCl2 (dissociates into 3 ions)",
+            "D": "All depress it equally at equal molality"
+          },
+          "correct": "C",
+          "explanation": "Freezing-point depression scales with the number of dissolved particles (the van't Hoff factor i). CaCl2 dissociates into 3 ions (i ~ 3), more than NaCl (i ~ 2) or glucose (i = 1), so it depresses the freezing point most.",
+          "distractor_notes": {
+            "A": "Glucose does not dissociate (i = 1), giving the smallest depression per mole.",
+            "B": "NaCl gives i ~ 2, less than CaCl2's i ~ 3.",
+            "D": "Effects differ because the number of particles per formula unit differs among these solutes."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::solutions",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "van't Hoff factor and freezing-point depression (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p10-q3",
+          "stem": "Moving from left to right across a period in the periodic table, atomic radius generally:",
+          "options": {
+            "A": "Increases, because more electron shells are added",
+            "B": "Stays constant, because the shell number is unchanged",
+            "C": "Increases, because electron-electron repulsion dominates",
+            "D": "Decreases, because increasing nuclear charge pulls the electrons in more tightly"
+          },
+          "correct": "D",
+          "explanation": "Across a period, protons are added to the same principal shell, increasing the effective nuclear charge felt by the valence electrons and pulling them inward, so atomic radius decreases.",
+          "distractor_notes": {
+            "A": "Shells are added down a group, not across a period; radius increases down a group.",
+            "B": "Although the shell number is the same, the growing nuclear charge contracts the radius.",
+            "C": "The increasing nuclear charge outweighs electron-electron repulsion across a period, so radius decreases."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::periodic-trends",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "atomic radius trend across a period (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-2-p10-q4",
+          "stem": "Which trend correctly describes first ionization energy?",
+          "options": {
+            "A": "It increases across a period and decreases down a group",
+            "B": "It decreases across a period and increases down a group",
+            "C": "It increases both across a period and down a group",
+            "D": "It is unrelated to position in the periodic table"
+          },
+          "correct": "A",
+          "explanation": "Ionization energy rises across a period (electrons are held more tightly by higher effective nuclear charge and smaller radius) and falls down a group (valence electrons are farther out and better shielded, so easier to remove).",
+          "distractor_notes": {
+            "B": "This reverses both trends; ionization energy actually increases across a period and decreases down a group.",
+            "C": "Down a group ionization energy decreases, not increases.",
+            "D": "Ionization energy varies systematically with periodic position; it is not unrelated."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::periodic-trends",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "ionization energy periodic trends (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "discrete_questions": [
+    {
+      "id": "chem-phys-2-d1",
+      "stem": "At a pH well below its isoelectric point (pI), a free amino acid in solution will predominantly carry:",
+      "options": {
+        "A": "A net positive charge",
+        "B": "A net negative charge",
+        "C": "No net charge (it is a neutral zwitterion)",
+        "D": "A charge of exactly +2 regardless of the amino acid"
+      },
+      "correct": "A",
+      "explanation": "The pI is the pH at which the amino acid carries no net charge. At a pH below the pI (more acidic), the higher proton concentration protonates ionizable groups, so the molecule carries a net positive charge.",
+      "distractor_notes": {
+        "B": "A net negative charge predominates at a pH above the pI, not below it.",
+        "C": "The molecule is net-neutral (zwitterionic) only at the pI itself, not below it.",
+        "D": "The net charge depends on the specific amino acid and pH; it is not fixed at +2."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::amino-acids",
+        "aamc::chem-phys::biochemistry"
+      ],
+      "ground_truth_ref": "amino acid net charge relative to pI (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d2",
+      "stem": "A sparingly soluble salt MX2 dissolves as MX2 forms M2+ + 2 X-. If its molar solubility is s, the solubility product Ksp is:",
+      "options": {
+        "A": "s^2",
+        "B": "4s^3",
+        "C": "2s^2",
+        "D": "s^3"
+      },
+      "correct": "B",
+      "explanation": "At equilibrium [M2+] = s and [X-] = 2s. Ksp = [M2+][X-]^2 = (s)(2s)^2 = s x 4s^2 = 4s^3.",
+      "distractor_notes": {
+        "A": "s^2 ignores the stoichiometric coefficient of 2 on X- and the correct powers.",
+        "C": "2s^2 misapplies the factor; squaring 2s gives 4s^2, not 2s^2, and the M term adds another s.",
+        "D": "s^3 omits the factor of 4 that comes from (2s)^2."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::equilibrium",
+        "aamc::chem-phys::gen-chem"
+      ],
+      "ground_truth_ref": "Ksp expression for MX2 (QBook Ch4) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d3",
+      "stem": "In an electrolytic cell (as opposed to a galvanic cell), the reaction is driven by an external power source. In such a cell:",
+      "options": {
+        "A": "The reaction is spontaneous and delta G is negative",
+        "B": "No electrodes are needed",
+        "C": "The reaction is nonspontaneous and requires energy input (delta G positive for the driven reaction)",
+        "D": "Oxidation occurs at the cathode"
+      },
+      "correct": "C",
+      "explanation": "An electrolytic cell uses an external power source to drive an otherwise nonspontaneous reaction (positive delta G for the reaction being forced). This contrasts with a galvanic cell, which harnesses a spontaneous reaction.",
+      "distractor_notes": {
+        "A": "A spontaneous reaction with negative delta G characterizes a galvanic cell, not an electrolytic one.",
+        "B": "Electrolytic cells still require electrodes (anode and cathode) to pass current.",
+        "D": "Oxidation always occurs at the anode, by definition, in both cell types."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::electrochemistry",
+        "aamc::chem-phys::gen-chem"
+      ],
+      "ground_truth_ref": "electrolytic vs galvanic cell energetics (QBook Ch4) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d4",
+      "stem": "Cells use the hydrolysis of ATP to ADP + Pi to drive many otherwise unfavorable reactions. In terms of energetics, ATP hydrolysis is best described as:",
+      "options": {
+        "A": "Endergonic, with a positive standard free-energy change",
+        "B": "Energetically neutral, serving only as a signaling event",
+        "C": "Favorable only because it releases oxygen gas",
+        "D": "Exergonic, with a negative standard free-energy change, often coupled to endergonic reactions"
+      },
+      "correct": "D",
+      "explanation": "ATP hydrolysis is exergonic (negative delta G). Cells couple this favorable reaction to endergonic (unfavorable) reactions so that the combined process has a net negative free-energy change and proceeds.",
+      "distractor_notes": {
+        "A": "ATP hydrolysis releases free energy (negative delta G); it is exergonic, not endergonic.",
+        "B": "It is far from energetically neutral; the released free energy is what powers cellular work.",
+        "C": "ATP hydrolysis yields ADP and inorganic phosphate, not oxygen gas."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::bioenergetics",
+        "aamc::chem-phys::biochemistry"
+      ],
+      "ground_truth_ref": "ATP hydrolysis exergonic, energy coupling (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d5",
+      "stem": "Two fatty acids have the same chain length, but one is fully saturated and the other contains several cis double bonds. Compared with the saturated fatty acid, the unsaturated one will generally have:",
+      "options": {
+        "A": "A lower melting point, because cis double bonds introduce kinks that hinder tight packing",
+        "B": "A higher melting point, because double bonds strengthen packing",
+        "C": "The same melting point, because chain length is identical",
+        "D": "No defined melting point, because unsaturation prevents crystallization entirely"
+      },
+      "correct": "A",
+      "explanation": "Cis double bonds put rigid kinks in the hydrocarbon chain, preventing the tight, ordered packing that maximizes van der Waals contacts. Poorer packing means less energy is needed to melt, giving a lower melting point.",
+      "distractor_notes": {
+        "B": "Double bonds hinder, not strengthen, packing, so they lower the melting point.",
+        "C": "Melting point depends on packing and saturation, not chain length alone.",
+        "D": "Unsaturated fatty acids still have definable melting points; they simply melt at lower temperatures."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::lipids",
+        "aamc::chem-phys::biochemistry"
+      ],
+      "ground_truth_ref": "saturation and fatty acid melting point (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d6",
+      "stem": "Blood flow through a vessel is analogous to current in a circuit, with the pressure difference acting like voltage and vascular resistance like electrical resistance. If a blood vessel constricts so that its radius decreases, the resistance to flow (for a given pressure difference):",
+      "options": {
+        "A": "Decreases, increasing the flow rate through that vessel",
+        "B": "Increases, reducing the flow rate through that vessel",
+        "C": "Is unaffected, because resistance depends only on blood viscosity",
+        "D": "Drops to zero, because a narrower vessel offers no resistance"
+      },
+      "correct": "B",
+      "explanation": "Resistance to laminar flow rises steeply as vessel radius shrinks (resistance is inversely related to a high power of the radius). At a fixed pressure difference, higher resistance means a lower flow rate, analogous to raising resistance in an electrical circuit.",
+      "distractor_notes": {
+        "A": "A smaller radius raises resistance and lowers flow; it does not decrease resistance.",
+        "C": "Radius strongly affects resistance; viscosity is not the only factor.",
+        "D": "A narrower vessel offers more resistance, not zero resistance."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::circulatory-physics",
+        "aamc::chem-phys::biology"
+      ],
+      "ground_truth_ref": "vascular resistance vs vessel radius, flow analogy (QBook Ch1/physics) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d7",
+      "stem": "A charged particle moves with velocity v perpendicular to a uniform magnetic field B. The magnetic force on the particle:",
+      "options": {
+        "A": "Points along the direction of motion, speeding the particle up",
+        "B": "Is zero because magnetic fields exert no force on moving charges",
+        "C": "Is perpendicular to the velocity, so it changes direction but does no work on the particle",
+        "D": "Points opposite the velocity, always slowing the particle"
+      },
+      "correct": "C",
+      "explanation": "The magnetic force F = qv x B is always perpendicular to the velocity. A force perpendicular to motion changes the particle's direction (curving its path) but does no work, so the speed is unchanged.",
+      "distractor_notes": {
+        "A": "The magnetic force is perpendicular to v, never along it, so it does not speed the particle up.",
+        "B": "A moving charge in a magnetic field does experience a force (unless v is parallel to B).",
+        "D": "Being perpendicular to v, the force neither directly speeds up nor slows down the particle."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::magnetism",
+        "aamc::chem-phys::physics"
+      ],
+      "ground_truth_ref": "magnetic force perpendicular to velocity, does no work (QBook Ch5) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d8",
+      "stem": "During an isothermal expansion of an ideal gas, the temperature is held constant. For this process, the change in the internal energy of the gas is:",
+      "options": {
+        "A": "Positive, because the gas does work",
+        "B": "Negative, because volume increases",
+        "C": "Equal to the heat absorbed plus the work done",
+        "D": "Zero, because internal energy of an ideal gas depends only on temperature"
+      },
+      "correct": "D",
+      "explanation": "For an ideal gas, internal energy depends only on temperature. In an isothermal process the temperature does not change, so the change in internal energy is zero (and any heat absorbed equals the work done by the gas).",
+      "distractor_notes": {
+        "A": "The gas does work, but that energy comes from absorbed heat; internal energy itself is unchanged at constant T.",
+        "B": "Internal energy of an ideal gas is not determined by volume alone; at constant T it does not change.",
+        "C": "Delta U = q + w is the first law in general, but for this isothermal ideal-gas case delta U is specifically zero."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::thermodynamics",
+        "aamc::chem-phys::physics"
+      ],
+      "ground_truth_ref": "isothermal ideal gas, delta U = 0 (QBook Ch5) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d9",
+      "stem": "In proton (1H) NMR spectroscopy, the number of distinct signals (peaks) in a spectrum corresponds most directly to:",
+      "options": {
+        "A": "The number of chemically nonequivalent sets of hydrogen atoms",
+        "B": "The total number of hydrogen atoms in the molecule",
+        "C": "The molecular weight of the compound",
+        "D": "The number of carbon atoms in the molecule"
+      },
+      "correct": "A",
+      "explanation": "Each set of chemically equivalent protons gives rise to one signal. The number of distinct signals therefore reflects the number of nonequivalent (chemically distinct) hydrogen environments in the molecule.",
+      "distractor_notes": {
+        "B": "Equivalent hydrogens share a signal, so the total hydrogen count usually exceeds the number of signals.",
+        "C": "Molecular weight is unrelated to the count of proton environments.",
+        "D": "Carbon count relates to 13C NMR environments, not the number of 1H signals."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::nmr",
+        "aamc::chem-phys::orgo"
+      ],
+      "ground_truth_ref": "number of 1H NMR signals = nonequivalent H sets (QBook Ch7) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d10",
+      "stem": "In a 1H NMR spectrum, a proton with two equivalent neighboring protons on adjacent carbons is split into how many peaks, according to the n+1 rule?",
+      "options": {
+        "A": "1 (a singlet)",
+        "B": "3 (a triplet)",
+        "C": "2 (a doublet)",
+        "D": "4 (a quartet)"
+      },
+      "correct": "B",
+      "explanation": "The n+1 rule predicts that a proton with n equivalent neighboring protons is split into n+1 peaks. With n = 2 neighbors, the signal is split into 2 + 1 = 3 peaks (a triplet).",
+      "distractor_notes": {
+        "A": "A singlet arises when there are no neighboring protons (n = 0).",
+        "C": "A doublet corresponds to a single neighboring proton (n = 1).",
+        "D": "A quartet corresponds to three neighboring protons (n = 3)."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::nmr",
+        "aamc::chem-phys::orgo"
+      ],
+      "ground_truth_ref": "n+1 splitting rule (QBook Ch7) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d11",
+      "stem": "A nucleophilic addition of a Grignard reagent to a ketone, followed by aqueous workup, produces:",
+      "options": {
+        "A": "A carboxylic acid",
+        "B": "An aldehyde",
+        "C": "A tertiary alcohol",
+        "D": "An ether"
+      },
+      "correct": "C",
+      "explanation": "A Grignard reagent adds a carbon nucleophile to the carbonyl carbon of a ketone; after protonation the oxygen becomes a hydroxyl. Because a ketone carbonyl carbon already bears two carbon groups, adding a third gives a tertiary alcohol.",
+      "distractor_notes": {
+        "A": "Carboxylic acids arise from other reactions (e.g., oxidation or CO2 addition), not Grignard addition to a ketone.",
+        "B": "Aldehydes are reactants/intermediates in some sequences; a Grignard adds to the carbonyl rather than producing an aldehyde here.",
+        "D": "Grignard addition to a ketone forms a C-C bond and an alcohol, not an ether linkage."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::orgo-reactions",
+        "aamc::chem-phys::orgo"
+      ],
+      "ground_truth_ref": "Grignard addition to ketone gives tertiary alcohol (QBook Ch7) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d12",
+      "stem": "Which pair correctly identifies a steroid and its common structural feature?",
+      "options": {
+        "A": "A triglyceride; three fatty acids on glycerol",
+        "B": "A phospholipid; a phosphate-containing polar head group",
+        "C": "A wax; a single long ester of a fatty acid and a long-chain alcohol",
+        "D": "Cholesterol; a four-fused-ring (steroid nucleus) carbon skeleton"
+      },
+      "correct": "D",
+      "explanation": "Steroids, including cholesterol and steroid hormones, share the characteristic fused four-ring (three six-membered and one five-membered) carbon skeleton. This defines the steroid class of lipids.",
+      "distractor_notes": {
+        "A": "A triglyceride is a glycerol ester of three fatty acids, not a steroid; it lacks the fused-ring nucleus.",
+        "B": "A phospholipid has a phosphate head group and fatty acid tails; it is not a steroid.",
+        "C": "A wax is an ester of a fatty acid and a long-chain alcohol; it is not a steroid."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::lipids",
+        "aamc::chem-phys::biochemistry"
+      ],
+      "ground_truth_ref": "steroid four-fused-ring structure (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d13",
+      "stem": "Saponification is the base-catalyzed hydrolysis of a triacylglycerol. Its products are:",
+      "options": {
+        "A": "Glycerol and fatty acid salts (soaps)",
+        "B": "Glycerol and free fatty acids only",
+        "C": "Cholesterol and phosphate",
+        "D": "Amino acids and glycerol"
+      },
+      "correct": "A",
+      "explanation": "Saponification hydrolyzes the ester bonds of a triacylglycerol under basic conditions, releasing glycerol and the carboxylate salts of the fatty acids, which are soaps.",
+      "distractor_notes": {
+        "B": "Under basic conditions the fatty acids are deprotonated to their salts (soaps), not left as free acids.",
+        "C": "Cholesterol and phosphate are not products of triacylglycerol hydrolysis.",
+        "D": "Triacylglycerols contain no amino acids; hydrolysis yields glycerol and fatty acid salts."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::lipids",
+        "aamc::chem-phys::biochemistry"
+      ],
+      "ground_truth_ref": "saponification products (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d14",
+      "stem": "A myelinated axon conducts action potentials faster than an unmyelinated one primarily because:",
+      "options": {
+        "A": "Myelin increases the axon's electrical capacitance",
+        "B": "Myelin insulates the axon so the signal jumps between nodes of Ranvier (saltatory conduction)",
+        "C": "Myelin generates additional action potentials along the internodes",
+        "D": "Myelin lowers the resting membrane potential to zero"
+      },
+      "correct": "B",
+      "explanation": "Myelin acts as an electrical insulator, restricting ion flow to the unmyelinated nodes of Ranvier. The action potential regenerates only at the nodes and effectively jumps from node to node (saltatory conduction), greatly increasing conduction speed.",
+      "distractor_notes": {
+        "A": "Myelin decreases membrane capacitance (and increases resistance), which speeds conduction; it does not increase capacitance.",
+        "C": "Action potentials are not generated along the myelinated internodes; they regenerate at the nodes.",
+        "D": "Myelin does not set the resting potential to zero; it insulates the membrane between nodes."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::nerve-conduction",
+        "aamc::chem-phys::biology"
+      ],
+      "ground_truth_ref": "saltatory conduction and myelin (QBook Ch1/Ch5 physics of physiology) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-2-d15",
+      "stem": "During inhalation, the diaphragm contracts and the thoracic volume increases. According to the gas behavior underlying breathing, air flows into the lungs because:",
+      "options": {
+        "A": "Increasing lung volume raises the intrapulmonary pressure above atmospheric pressure",
+        "B": "The oxygen concentration gradient alone pushes air in",
+        "C": "Increasing lung volume lowers the intrapulmonary pressure below atmospheric pressure",
+        "D": "The diaphragm actively pumps air molecules into the alveoli"
+      },
+      "correct": "C",
+      "explanation": "By Boyle's law, increasing lung volume at constant temperature lowers the pressure inside the lungs below atmospheric pressure. Air then flows down the pressure gradient from the higher-pressure atmosphere into the lungs.",
+      "distractor_notes": {
+        "A": "If lung pressure rose above atmospheric, air would flow out (as in exhalation), not in.",
+        "B": "Bulk airflow into the lungs is driven by the pressure difference, not by the oxygen concentration gradient (which governs alveolar gas exchange).",
+        "D": "The diaphragm changes thoracic volume and pressure; it does not directly pump individual air molecules."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::respiratory-physics",
+        "aamc::chem-phys::biology"
+      ],
+      "ground_truth_ref": "Boyle's law and pressure-driven ventilation (QBook Ch1/physics) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    }
+  ]
+}

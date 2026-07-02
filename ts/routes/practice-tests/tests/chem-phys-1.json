@@ -1,0 +1,1749 @@
+{
+  "test_id": "chem-phys-1",
+  "section": "Chemical and Physical Foundations of Biological Systems",
+  "section_code": "chem-phys",
+  "provenance": "Original content. Concepts calibrated against MCAT QBook Ch4 (General Chemistry), Ch5 (Physics), Ch7 (Organic Chemistry), and Ch2 (Biochemistry) used privately as ground truth; no source text reproduced.",
+  "composition": {
+    "passages": 10,
+    "passage_questions": 44,
+    "discrete_questions": 15,
+    "total": 59
+  },
+  "weighting_target": {
+    "gen-chem": 0.3,
+    "physics": 0.25,
+    "biochemistry": 0.25,
+    "orgo": 0.15,
+    "biology": 0.05
+  },
+  "trademark_notice": "MCAT is a registered trademark of the AAMC. This material is independently authored and not endorsed by the AAMC.",
+  "passages": [
+    {
+      "passage_id": "chem-phys-1-p1",
+      "title": "Combustion stoichiometry of a hydrocarbon fuel",
+      "topic_tags": [
+        "aamc::chem-phys::stoichiometry"
+      ],
+      "passage_text": "A laboratory studies the complete combustion of propane (C3H8) as a model fuel. In each trial, a measured mass of propane is burned in excess oxygen, and the carbon dioxide and water produced are collected. The balanced equation for complete combustion is C3H8 + 5 O2 -> 3 CO2 + 4 H2O. Students are asked to relate masses, moles, and volumes of the reactants and products, assuming ideal behavior and a molar mass of 44 g/mol for both propane and CO2.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p1-q1",
+          "stem": "How many moles of oxygen gas are required to completely combust 2.0 mol of propane according to the balanced equation?",
+          "options": {
+            "A": "2.0 mol",
+            "B": "10.0 mol",
+            "C": "5.0 mol",
+            "D": "15.0 mol"
+          },
+          "correct": "B",
+          "explanation": "The balanced equation shows 5 mol O2 per 1 mol propane. For 2.0 mol propane, the oxygen required is 2.0 x 5 = 10.0 mol.",
+          "distractor_notes": {
+            "A": "2.0 mol simply repeats the propane amount and ignores the 5:1 mole ratio.",
+            "C": "5.0 mol is the oxygen needed for only 1.0 mol of propane.",
+            "D": "15.0 mol would apply a 5:1 ratio to 3 mol of propane, not 2."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::stoichiometry",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "mole ratios from a balanced equation (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p1-q2",
+          "stem": "If 0.50 mol of propane is completely combusted, what mass of CO2 is produced? (Molar mass of CO2 = 44 g/mol.)",
+          "options": {
+            "A": "22 g",
+            "B": "44 g",
+            "C": "66 g",
+            "D": "88 g"
+          },
+          "correct": "C",
+          "explanation": "Each mole of propane yields 3 mol CO2, so 0.50 mol propane gives 1.5 mol CO2. Mass = 1.5 mol x 44 g/mol = 66 g.",
+          "distractor_notes": {
+            "A": "22 g corresponds to 0.5 mol CO2, which ignores the 3:1 CO2-to-propane ratio.",
+            "B": "44 g is 1.0 mol CO2, the amount from a 1:1 (rather than 3:1) ratio applied to 0.5 mol propane wrongly.",
+            "D": "88 g is 2.0 mol CO2, which overstates the CO2 produced from 0.5 mol propane."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::stoichiometry",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "mass-mole conversion via stoichiometry (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p1-q3",
+          "stem": "In one trial the burner is supplied with 3.0 mol propane and 10.0 mol O2. Which reactant is limiting, and how much propane remains unreacted?",
+          "options": {
+            "A": "O2 is limiting; 1.0 mol propane remains",
+            "B": "O2 is limiting; 2.0 mol propane remains",
+            "C": "Propane is limiting; no propane remains",
+            "D": "Neither is limiting; both are fully consumed"
+          },
+          "correct": "A",
+          "explanation": "Complete combustion of 3.0 mol propane would need 15.0 mol O2, but only 10.0 mol is available, so O2 is limiting. The 10.0 mol O2 consumes 10.0/5 = 2.0 mol propane, leaving 3.0 - 2.0 = 1.0 mol propane unreacted.",
+          "distractor_notes": {
+            "B": "This overstates the leftover; only 1.0 mol (not 2.0 mol) of propane remains after 2.0 mol reacts.",
+            "C": "Propane is in excess relative to the available O2, so it is not the limiting reactant.",
+            "D": "The reactants are not in the exact 1:5 ratio, so one must be limiting."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::stoichiometry",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "limiting reactant determination (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p1-q4",
+          "stem": "At standard temperature and pressure (STP), what volume does the CO2 produced from combusting 1.0 mol of propane occupy? (Molar volume of an ideal gas at STP = 22.4 L/mol.)",
+          "options": {
+            "A": "22.4 L",
+            "B": "44.8 L",
+            "C": "89.6 L",
+            "D": "67.2 L"
+          },
+          "correct": "D",
+          "explanation": "1.0 mol propane produces 3 mol CO2. At STP each mole of gas occupies 22.4 L, so 3 x 22.4 L = 67.2 L.",
+          "distractor_notes": {
+            "A": "22.4 L is the volume of only 1 mol of CO2.",
+            "B": "44.8 L is the volume of 2 mol of CO2.",
+            "C": "89.6 L is 4 mol, which would match the water coefficient, not the CO2 coefficient."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::stoichiometry",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "STP molar volume with stoichiometry (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p2",
+      "title": "Behavior of a gas in a sealed cylinder",
+      "topic_tags": [
+        "aamc::chem-phys::ideal-gas"
+      ],
+      "passage_text": "A rigid and a movable-piston apparatus are used to study an ideal gas. In one setup, a fixed quantity of gas is confined in a sealed cylinder fitted with a frictionless piston that keeps the pressure constant. In another, the gas is held in a rigid steel tank of constant volume. Investigators vary temperature, pressure, and the amount of gas and predict the resulting changes using the ideal gas law, PV = nRT.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p2-q1",
+          "stem": "A fixed amount of ideal gas in the movable-piston cylinder is held at constant pressure. If its absolute temperature is doubled, the volume of the gas will:",
+          "options": {
+            "A": "Double",
+            "B": "Be halved",
+            "C": "Remain unchanged",
+            "D": "Quadruple"
+          },
+          "correct": "A",
+          "explanation": "At constant pressure and fixed moles, Charles's law gives V proportional to absolute temperature. Doubling T doubles V.",
+          "distractor_notes": {
+            "B": "Halving would occur if volume were inversely related to temperature, which it is not at constant pressure.",
+            "C": "Volume changes with temperature at constant pressure; it does not stay fixed.",
+            "D": "Quadrupling would require T to increase fourfold, not twofold."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::ideal-gas",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "Charles's law (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p2-q2",
+          "stem": "In the rigid steel tank of constant volume, the temperature of a fixed amount of gas is increased. What happens to the pressure?",
+          "options": {
+            "A": "It decreases in proportion to the temperature",
+            "B": "It increases in proportion to the absolute temperature",
+            "C": "It stays constant because the volume is fixed",
+            "D": "It depends only on the number of moles, not temperature"
+          },
+          "correct": "B",
+          "explanation": "At constant volume and moles, PV = nRT reduces to P proportional to T (Gay-Lussac's law). Raising the absolute temperature raises the pressure proportionally.",
+          "distractor_notes": {
+            "A": "Pressure rises, not falls, when temperature increases at constant volume.",
+            "C": "A fixed volume does not fix the pressure; pressure still changes with temperature.",
+            "D": "With moles fixed, temperature is exactly what changes the pressure here."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::ideal-gas",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "Gay-Lussac's law (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p2-q3",
+          "stem": "An ideal gas occupies 4.0 L at 2.0 atm. It is compressed isothermally until the pressure reaches 8.0 atm. What is the new volume?",
+          "options": {
+            "A": "2.0 L",
+            "B": "8.0 L",
+            "C": "1.0 L",
+            "D": "16.0 L"
+          },
+          "correct": "C",
+          "explanation": "At constant temperature and moles, Boyle's law gives P1V1 = P2V2. So V2 = (2.0 atm)(4.0 L) / (8.0 atm) = 1.0 L.",
+          "distractor_notes": {
+            "A": "2.0 L would result from doubling (not quadrupling) the pressure.",
+            "B": "8.0 L would require the volume to increase, but compression decreases volume.",
+            "D": "16.0 L incorrectly multiplies rather than divides by the pressure ratio."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::ideal-gas",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "Boyle's law (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p2-q4",
+          "stem": "A sealed 10.0 L rigid tank contains an ideal gas at 300 K and 1.0 atm. Additional gas is added at constant temperature until the tank holds twice as many moles. The new pressure is approximately:",
+          "options": {
+            "A": "0.5 atm",
+            "B": "1.0 atm",
+            "C": "4.0 atm",
+            "D": "2.0 atm"
+          },
+          "correct": "D",
+          "explanation": "At constant volume and temperature, PV = nRT gives P proportional to n. Doubling the moles doubles the pressure from 1.0 atm to 2.0 atm.",
+          "distractor_notes": {
+            "A": "0.5 atm would result from halving the moles, not doubling them.",
+            "B": "1.0 atm ignores the change in the number of moles.",
+            "C": "4.0 atm would require quadrupling the moles, not doubling them."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::ideal-gas",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "P proportional to n at constant V,T (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p3",
+      "title": "Titration of a weak acid with strong base",
+      "topic_tags": [
+        "aamc::chem-phys::acid-base"
+      ],
+      "passage_text": "A student titrates 50.0 mL of 0.10 M acetic acid (a weak monoprotic acid, pKa = 4.76) with 0.10 M sodium hydroxide. As base is added, the pH is monitored to construct a titration curve. The student identifies the half-equivalence point and the equivalence point and analyzes the buffering behavior of the acetic acid/acetate mixture along the way.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p3-q1",
+          "stem": "At the half-equivalence point of this titration, the pH is approximately equal to:",
+          "options": {
+            "A": "4.76",
+            "B": "1.0",
+            "C": "7.00",
+            "D": "9.24"
+          },
+          "correct": "A",
+          "explanation": "At the half-equivalence point, half the acid has been converted to its conjugate base, so [HA] = [A-]. By Henderson-Hasselbalch, pH = pKa + log(1) = pKa = 4.76.",
+          "distractor_notes": {
+            "B": "1.0 would be the pH of a fairly concentrated strong acid, not a half-neutralized weak acid.",
+            "C": "7.00 is neutral; the half-equivalence point of a weak acid is acidic and equals the pKa.",
+            "D": "9.24 (= 14 - 4.76) corresponds to the conjugate base's environment, not the half-equivalence point."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::acid-base",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "pH = pKa at half-equivalence (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p3-q2",
+          "stem": "What volume of 0.10 M NaOH is required to reach the equivalence point?",
+          "options": {
+            "A": "25.0 mL",
+            "B": "50.0 mL",
+            "C": "75.0 mL",
+            "D": "100.0 mL"
+          },
+          "correct": "B",
+          "explanation": "Moles of acetic acid = 0.0500 L x 0.10 M = 0.0050 mol. At equivalence, moles of NaOH must equal moles of acid, so volume = 0.0050 mol / 0.10 M = 0.0500 L = 50.0 mL.",
+          "distractor_notes": {
+            "A": "25.0 mL is the volume needed to reach the half-equivalence point, not the equivalence point.",
+            "C": "75.0 mL is past the equivalence point.",
+            "D": "100.0 mL would neutralize twice the acid present."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::acid-base",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "equivalence-point volume from moles (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p3-q3",
+          "stem": "At the equivalence point of this weak-acid/strong-base titration, the solution's pH is:",
+          "options": {
+            "A": "Exactly 7, because equal moles of acid and base were mixed",
+            "B": "Less than 7, because acetic acid remains in excess",
+            "C": "Greater than 7, because the conjugate base (acetate) hydrolyzes water",
+            "D": "Undefined, because no acid or base remains"
+          },
+          "correct": "C",
+          "explanation": "At the equivalence point all acetic acid has been converted to acetate, the conjugate base of a weak acid. Acetate reacts with water to produce hydroxide, giving a basic solution (pH > 7).",
+          "distractor_notes": {
+            "A": "Only strong-acid/strong-base titrations give a neutral equivalence point; the weak acid's conjugate base makes this basic.",
+            "B": "At the equivalence point the acid is fully neutralized, so no excess acetic acid remains.",
+            "D": "Acetate is present and determines the pH, so it is well defined."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::acid-base",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "weak-acid equivalence point is basic (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p3-q4",
+          "stem": "A separate buffer is made by mixing acetic acid with acetate so that [acetate]/[acetic acid] = 10. Using pKa = 4.76, the approximate pH of this buffer is:",
+          "options": {
+            "A": "3.76",
+            "B": "4.76",
+            "C": "14.76",
+            "D": "5.76"
+          },
+          "correct": "D",
+          "explanation": "By Henderson-Hasselbalch, pH = pKa + log([A-]/[HA]) = 4.76 + log(10) = 4.76 + 1 = 5.76.",
+          "distractor_notes": {
+            "A": "3.76 corresponds to a ratio of 0.1 (log = -1), the reverse of the stated ratio.",
+            "B": "4.76 assumes a 1:1 ratio (log = 0), not 10:1.",
+            "C": "14.76 nonsensically adds 10 rather than log(10) = 1 to the pKa."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::acid-base",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "Henderson-Hasselbalch with 10:1 ratio (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p4",
+      "title": "Thermochemistry of a formation reaction",
+      "topic_tags": [
+        "aamc::chem-phys::thermodynamics"
+      ],
+      "passage_text": "A chemistry course explores reaction enthalpies. Students are given standard enthalpies of formation and are asked to combine reactions using Hess's law to obtain the enthalpy of a target reaction. They also relate the sign of the enthalpy change to whether a reaction absorbs or releases heat and interpret bond formation and bond breaking energetically.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p4-q1",
+          "stem": "A reaction has a standard enthalpy change of -285 kJ/mol. This reaction is best described as:",
+          "options": {
+            "A": "Exothermic, releasing heat to the surroundings",
+            "B": "Endothermic, absorbing heat from the surroundings",
+            "C": "Thermoneutral, exchanging no heat",
+            "D": "Impossible, because enthalpy cannot be negative"
+          },
+          "correct": "A",
+          "explanation": "A negative enthalpy change means the products have lower enthalpy than the reactants; the reaction releases heat and is exothermic.",
+          "distractor_notes": {
+            "B": "Endothermic reactions have positive enthalpy changes and absorb heat.",
+            "C": "A thermoneutral process would have an enthalpy change near zero, not -285 kJ/mol.",
+            "D": "Enthalpy changes are routinely negative for exothermic reactions; there is nothing impossible about it."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::thermodynamics",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "sign of delta H (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p4-q2",
+          "stem": "For the reaction A -> B, delta H = +40 kJ/mol. What is the enthalpy change for the reverse reaction B -> A?",
+          "options": {
+            "A": "+40 kJ/mol",
+            "B": "-40 kJ/mol",
+            "C": "0 kJ/mol",
+            "D": "+80 kJ/mol"
+          },
+          "correct": "B",
+          "explanation": "Reversing a reaction reverses the sign of its enthalpy change (enthalpy is a state function). So the reverse reaction has delta H = -40 kJ/mol.",
+          "distractor_notes": {
+            "A": "The reverse reaction has the opposite sign, not the same value.",
+            "C": "The magnitude does not cancel to zero simply by reversing the reaction.",
+            "D": "Reversing changes the sign, not the magnitude, so it is not doubled."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::thermodynamics",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "Hess's law sign reversal (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p4-q3",
+          "stem": "Given the reactions (1) X -> Y, delta H1 = -100 kJ/mol and (2) Y -> Z, delta H2 = +30 kJ/mol, what is the enthalpy change for the overall reaction X -> Z?",
+          "options": {
+            "A": "-130 kJ/mol",
+            "B": "+70 kJ/mol",
+            "C": "-70 kJ/mol",
+            "D": "+130 kJ/mol"
+          },
+          "correct": "C",
+          "explanation": "By Hess's law, adding the two steps X -> Y -> Z gives delta H = (-100) + (+30) = -70 kJ/mol.",
+          "distractor_notes": {
+            "A": "-130 kJ/mol would subtract the second step rather than add its actual (+30) value.",
+            "B": "+70 kJ/mol has the wrong sign; the large exothermic step dominates.",
+            "D": "+130 kJ/mol both flips the sign and mis-adds the steps."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::thermodynamics",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "Hess's law addition of steps (QBook Ch4) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p4-q4",
+          "stem": "In an exothermic reaction, which statement about bond energies is generally true?",
+          "options": {
+            "A": "The energy required to break reactant bonds exceeds the energy released forming product bonds",
+            "B": "No bonds are broken or formed",
+            "C": "Only bond breaking occurs, never bond formation",
+            "D": "The energy released in forming product bonds exceeds the energy required to break reactant bonds"
+          },
+          "correct": "D",
+          "explanation": "Bond breaking absorbs energy and bond forming releases energy. When the energy released by forming the new product bonds is greater than the energy needed to break the reactant bonds, the net reaction releases energy and is exothermic.",
+          "distractor_notes": {
+            "A": "This describes an endothermic reaction, where net energy is absorbed.",
+            "B": "Chemical reactions by definition involve breaking and forming bonds.",
+            "C": "Both breaking and forming occur in a reaction; products cannot form without new bonds."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::thermodynamics",
+            "aamc::chem-phys::gen-chem"
+          ],
+          "ground_truth_ref": "bond energies and reaction enthalpy (QBook Ch4) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p5",
+      "title": "Motion of a projectile and a block on an incline",
+      "topic_tags": [
+        "aamc::chem-phys::kinematics"
+      ],
+      "passage_text": "A physics laboratory investigates motion under gravity and forces on inclined planes. In one experiment a ball is launched horizontally from a tabletop; in another, a block is placed on a frictionless ramp. Students analyze the trajectories and forces, taking the acceleration due to gravity as g = 10 m/s^2 and neglecting air resistance unless stated otherwise.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p5-q1",
+          "stem": "A ball is dropped from rest from a height of 20 m. Neglecting air resistance, how long does it take to reach the ground? (Use g = 10 m/s^2.)",
+          "options": {
+            "A": "2.0 s",
+            "B": "1.0 s",
+            "C": "4.0 s",
+            "D": "20 s"
+          },
+          "correct": "A",
+          "explanation": "For free fall from rest, h = (1/2) g t^2. Solving 20 = (1/2)(10) t^2 gives t^2 = 4, so t = 2.0 s.",
+          "distractor_notes": {
+            "B": "1.0 s corresponds to a fall of only 5 m, not 20 m.",
+            "C": "4.0 s corresponds to a fall of 80 m.",
+            "D": "20 s confuses the drop height in meters with a time in seconds."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::kinematics"
+          ],
+          "ground_truth_ref": "free fall kinematics (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p5-q2",
+          "stem": "A ball is launched horizontally from a table with an initial horizontal speed of 5 m/s and takes 2.0 s to land. How far horizontally does it travel before landing? (Neglect air resistance.)",
+          "options": {
+            "A": "2.5 m",
+            "B": "10.0 m",
+            "C": "5.0 m",
+            "D": "20.0 m"
+          },
+          "correct": "B",
+          "explanation": "Horizontal velocity is constant in projectile motion (no horizontal acceleration). Horizontal distance = v_x x t = 5 m/s x 2.0 s = 10.0 m.",
+          "distractor_notes": {
+            "A": "2.5 m would result from using half the time or half the speed.",
+            "C": "5.0 m uses only 1.0 s of flight time.",
+            "D": "20.0 m would require a horizontal speed of 10 m/s or double the time."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::kinematics"
+          ],
+          "ground_truth_ref": "horizontal range of a projectile (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p5-q3",
+          "stem": "For a projectile launched horizontally, how does the horizontal component of its velocity change during flight (ignoring air resistance)?",
+          "options": {
+            "A": "It increases at a rate of g",
+            "B": "It decreases at a rate of g",
+            "C": "It remains constant",
+            "D": "It reverses direction at the peak"
+          },
+          "correct": "C",
+          "explanation": "With no air resistance, no horizontal force acts on the projectile, so its horizontal velocity is constant throughout the flight. Gravity affects only the vertical component.",
+          "distractor_notes": {
+            "A": "Gravity acts vertically, so it does not accelerate the horizontal velocity.",
+            "B": "There is no horizontal force to decelerate the horizontal motion in the absence of air resistance.",
+            "D": "A horizontally launched projectile does not reverse its horizontal direction; there is no peak-turnaround in x."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::kinematics"
+          ],
+          "ground_truth_ref": "independence of projectile components (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p5-q4",
+          "stem": "A 2.0 kg block rests on a frictionless incline angled 30 degrees above the horizontal. What is the magnitude of the net force accelerating the block down the incline? (Use g = 10 m/s^2, sin 30 degrees = 0.5.)",
+          "options": {
+            "A": "5.0 N",
+            "B": "17.3 N",
+            "C": "20.0 N",
+            "D": "10.0 N"
+          },
+          "correct": "D",
+          "explanation": "On a frictionless incline the net force along the surface is the gravity component mg sin(theta) = (2.0 kg)(10 m/s^2)(0.5) = 10.0 N.",
+          "distractor_notes": {
+            "A": "5.0 N would use a 1.0 kg mass or omit a factor.",
+            "B": "17.3 N uses cos 30 degrees (the normal-direction component), not sin 30 degrees.",
+            "C": "20.0 N is the full weight mg, ignoring the incline angle."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::newtons-laws"
+          ],
+          "ground_truth_ref": "force along a frictionless incline (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p5-q5",
+          "stem": "The same 2.0 kg block on the 30-degree frictionless incline accelerates down the slope. What is the magnitude of its acceleration along the incline? (Use g = 10 m/s^2, sin 30 degrees = 0.5.)",
+          "options": {
+            "A": "5.0 m/s^2",
+            "B": "2.5 m/s^2",
+            "C": "8.7 m/s^2",
+            "D": "10.0 m/s^2"
+          },
+          "correct": "A",
+          "explanation": "Acceleration along a frictionless incline is g sin(theta) = 10 m/s^2 x 0.5 = 5.0 m/s^2, independent of mass.",
+          "distractor_notes": {
+            "B": "2.5 m/s^2 would halve the correct value with no justification.",
+            "C": "8.7 m/s^2 uses cos 30 degrees rather than sin 30 degrees.",
+            "D": "10.0 m/s^2 is full g, which applies only to a vertical (90-degree) drop."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::newtons-laws"
+          ],
+          "ground_truth_ref": "acceleration = g sin(theta) on frictionless incline (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p6",
+      "title": "Work, energy, and power on a loading ramp",
+      "topic_tags": [
+        "aamc::chem-phys::work-energy"
+      ],
+      "passage_text": "Workers use a ramp and a motorized winch to raise crates onto a truck bed. Investigators analyze the work done against gravity, the kinetic energy of moving crates, and the power delivered by the winch. Unless otherwise stated, friction is neglected and g = 10 m/s^2.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p6-q1",
+          "stem": "How much work is done against gravity to lift a 10 kg crate vertically by 2.0 m at constant speed? (Use g = 10 m/s^2.)",
+          "options": {
+            "A": "20 J",
+            "B": "200 J",
+            "C": "100 J",
+            "D": "400 J"
+          },
+          "correct": "B",
+          "explanation": "Work against gravity equals the gain in gravitational potential energy: W = mgh = (10 kg)(10 m/s^2)(2.0 m) = 200 J.",
+          "distractor_notes": {
+            "A": "20 J omits the factor of g (or of mass).",
+            "C": "100 J corresponds to lifting only 1.0 m, or to a 5 kg crate.",
+            "D": "400 J would correspond to a 4.0 m lift or double the mass."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::work-energy"
+          ],
+          "ground_truth_ref": "work against gravity = mgh (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p6-q2",
+          "stem": "A 2.0 kg cart moves at 3.0 m/s. What is its kinetic energy?",
+          "options": {
+            "A": "3.0 J",
+            "B": "6.0 J",
+            "C": "9.0 J",
+            "D": "18.0 J"
+          },
+          "correct": "C",
+          "explanation": "Kinetic energy = (1/2) m v^2 = (1/2)(2.0 kg)(3.0 m/s)^2 = (1/2)(2.0)(9.0) = 9.0 J.",
+          "distractor_notes": {
+            "A": "3.0 J incorrectly uses v rather than v^2 and drops the mass factor.",
+            "B": "6.0 J uses m*v (like momentum's magnitude) rather than (1/2)m v^2.",
+            "D": "18.0 J omits the factor of one-half."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::work-energy"
+          ],
+          "ground_truth_ref": "kinetic energy formula (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p6-q3",
+          "stem": "The winch does 600 J of work lifting a crate in 3.0 s. What is the average power output of the winch?",
+          "options": {
+            "A": "20 W",
+            "B": "600 W",
+            "C": "1800 W",
+            "D": "200 W"
+          },
+          "correct": "D",
+          "explanation": "Power is work divided by time: P = 600 J / 3.0 s = 200 W.",
+          "distractor_notes": {
+            "A": "20 W would result from dividing by 30 s instead of 3.0 s.",
+            "B": "600 W ignores the time and reports the work value as power.",
+            "C": "1800 W multiplies work by time instead of dividing."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::work-energy"
+          ],
+          "ground_truth_ref": "power = work/time (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p6-q4",
+          "stem": "A frictionless ramp is used to raise a crate to the same final height as a vertical lift. Compared with lifting the crate straight up, using the longer ramp:",
+          "options": {
+            "A": "Requires the same total work against gravity but a smaller applied force",
+            "B": "Requires less total work but a smaller applied force",
+            "C": "Requires more total work and a larger applied force",
+            "D": "Requires no work because the ramp is frictionless"
+          },
+          "correct": "A",
+          "explanation": "The work against gravity depends only on the change in height (mgh), which is the same for both paths. The ramp spreads that work over a longer distance, so the force needed is smaller (the machine trades force for distance).",
+          "distractor_notes": {
+            "B": "The total work against gravity is the same, not less; only the force is reduced.",
+            "C": "An ideal frictionless ramp does not increase the total work against gravity.",
+            "D": "Raising the crate still increases its potential energy, so work must be done."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::work-energy"
+          ],
+          "ground_truth_ref": "inclined plane trades force for distance (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p6-q5",
+          "stem": "A crate slides from rest down a frictionless ramp, dropping a vertical height of 5.0 m. Using energy conservation, what is its speed at the bottom? (Use g = 10 m/s^2.)",
+          "options": {
+            "A": "5.0 m/s",
+            "B": "10.0 m/s",
+            "C": "50 m/s",
+            "D": "100 m/s"
+          },
+          "correct": "B",
+          "explanation": "Setting mgh = (1/2) m v^2 gives v = sqrt(2 g h) = sqrt(2 x 10 x 5.0) = sqrt(100) = 10.0 m/s, independent of mass.",
+          "distractor_notes": {
+            "A": "5.0 m/s corresponds to a height of only 1.25 m for these values.",
+            "C": "50 m/s incorrectly uses v = gh rather than sqrt(2gh).",
+            "D": "100 m/s is the value of 2gh (=100) before taking the square root."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::work-energy"
+          ],
+          "ground_truth_ref": "energy conservation v = sqrt(2gh) (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p7",
+      "title": "Fluids in a hydraulic and hydrostatic system",
+      "topic_tags": [
+        "aamc::chem-phys::fluids"
+      ],
+      "passage_text": "An engineering demonstration uses water-filled columns and a tapering pipe to illustrate fluid behavior. In one section, water flows steadily through a pipe whose cross-sectional area narrows. In another, a sealed tank holds water to varying depths. A separate demonstration floats a solid block in water. Take the density of water as 1000 kg/m^3 and g = 10 m/s^2.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p7-q1",
+          "stem": "What is the gauge pressure due to the water at a depth of 2.0 m below the surface of an open tank? (density = 1000 kg/m^3, g = 10 m/s^2.)",
+          "options": {
+            "A": "2000 Pa",
+            "B": "10000 Pa",
+            "C": "20000 Pa",
+            "D": "40000 Pa"
+          },
+          "correct": "C",
+          "explanation": "Hydrostatic gauge pressure is P = rho g h = (1000 kg/m^3)(10 m/s^2)(2.0 m) = 20000 Pa.",
+          "distractor_notes": {
+            "A": "2000 Pa omits the factor of g.",
+            "B": "10000 Pa corresponds to a depth of only 1.0 m.",
+            "D": "40000 Pa corresponds to a depth of 4.0 m."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::fluids"
+          ],
+          "ground_truth_ref": "hydrostatic pressure P = rho g h (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p7-q2",
+          "stem": "Water flows steadily through a horizontal pipe. Where the cross-sectional area is halved, the flow speed of the water will:",
+          "options": {
+            "A": "Be halved",
+            "B": "Stay the same",
+            "C": "Quadruple",
+            "D": "Double"
+          },
+          "correct": "D",
+          "explanation": "The continuity equation A1 v1 = A2 v2 requires that volume flow rate be constant. Halving the area doubles the speed.",
+          "distractor_notes": {
+            "A": "Halving the speed would occur if area increased, not decreased.",
+            "B": "Speed cannot stay the same if the area changes, given a constant flow rate.",
+            "C": "Quadrupling would require the area to drop to one-quarter, not one-half."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::fluids"
+          ],
+          "ground_truth_ref": "continuity equation (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p7-q3",
+          "stem": "A solid block floats at rest in water with part of its volume submerged. The magnitude of the buoyant force on the block is:",
+          "options": {
+            "A": "Equal to the weight of the block",
+            "B": "Equal to the weight of the entire block's volume of water",
+            "C": "Zero, because the block is at rest",
+            "D": "Greater than the block's weight, which is why it floats"
+          },
+          "correct": "A",
+          "explanation": "A floating object is in equilibrium, so the upward buoyant force exactly balances its weight. The buoyant force equals the weight of the displaced water, which for a floating object equals the object's own weight.",
+          "distractor_notes": {
+            "B": "Only the submerged volume displaces water; a floating block does not displace its entire volume.",
+            "C": "At equilibrium the net force is zero, but the buoyant force itself is nonzero and balances gravity.",
+            "D": "If buoyancy exceeded weight, the block would accelerate upward; at float it just equals the weight."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::fluids"
+          ],
+          "ground_truth_ref": "Archimedes' principle for a floating object (QBook Ch5) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p7-q4",
+          "stem": "A block of density 800 kg/m^3 floats in water (density 1000 kg/m^3). What fraction of the block's volume is submerged?",
+          "options": {
+            "A": "0.2",
+            "B": "0.8",
+            "C": "0.5",
+            "D": "1.0"
+          },
+          "correct": "B",
+          "explanation": "For a floating object, the submerged fraction equals the ratio of object density to fluid density: 800/1000 = 0.8.",
+          "distractor_notes": {
+            "A": "0.2 is the fraction above the water (the emergent part), not the submerged part.",
+            "C": "0.5 would require the block density to be half that of water.",
+            "D": "A fully submerged block (1.0) would mean it does not float with any part above the surface."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::fluids"
+          ],
+          "ground_truth_ref": "submerged fraction = density ratio (QBook Ch5) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p8",
+      "title": "Coupling of ATP hydrolysis to an unfavorable reaction",
+      "topic_tags": [
+        "aamc::chem-phys::bioenergetics"
+      ],
+      "passage_text": "A cell must run a biosynthetic reaction that is thermodynamically unfavorable on its own. To drive it forward, the cell couples the reaction to the hydrolysis of ATP to ADP and inorganic phosphate, a strongly exergonic process under cellular conditions. Researchers analyze the free-energy bookkeeping of the coupled system and the role of enzymes in the pathway.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p8-q1",
+          "stem": "Under standard-like cellular conditions, the hydrolysis of ATP to ADP + Pi has a Gibbs free-energy change (delta G) that is:",
+          "options": {
+            "A": "Positive, so ATP hydrolysis is endergonic",
+            "B": "Zero, so ATP is at equilibrium",
+            "C": "Negative, so ATP hydrolysis is exergonic",
+            "D": "Positive only at body temperature"
+          },
+          "correct": "C",
+          "explanation": "ATP hydrolysis releases free energy; its delta G is negative (exergonic), which is why cells use it as an energy currency to drive unfavorable reactions.",
+          "distractor_notes": {
+            "A": "ATP hydrolysis releases energy; it is exergonic, not endergonic.",
+            "B": "Cellular ATP is maintained far from equilibrium, and hydrolysis has a large negative delta G, not zero.",
+            "D": "ATP hydrolysis is exergonic across physiological temperatures, so 'positive at body temperature' is wrong."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::bioenergetics",
+            "aamc::chem-phys::thermodynamics"
+          ],
+          "ground_truth_ref": "sign of delta G for ATP hydrolysis (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p8-q2",
+          "stem": "An unfavorable reaction has delta G = +15 kJ/mol. It is coupled to ATP hydrolysis with delta G = -30 kJ/mol. What is the delta G of the overall coupled reaction, and is it spontaneous?",
+          "options": {
+            "A": "+45 kJ/mol; not spontaneous",
+            "B": "-45 kJ/mol; spontaneous",
+            "C": "+15 kJ/mol; not spontaneous",
+            "D": "-15 kJ/mol; spontaneous"
+          },
+          "correct": "D",
+          "explanation": "Free energies of coupled reactions add: (+15) + (-30) = -15 kJ/mol. A negative overall delta G means the coupled process is spontaneous (exergonic).",
+          "distractor_notes": {
+            "A": "+45 kJ/mol wrongly subtracts the ATP term instead of adding its negative value.",
+            "B": "-45 kJ/mol ignores the +15 kJ/mol of the unfavorable reaction.",
+            "C": "+15 kJ/mol ignores the coupling to ATP hydrolysis altogether."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::bioenergetics",
+            "aamc::chem-phys::thermodynamics"
+          ],
+          "ground_truth_ref": "additivity of coupled delta G (QBook Ch2) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p8-q3",
+          "stem": "An enzyme catalyzing a step in this pathway increases the reaction rate primarily by:",
+          "options": {
+            "A": "Lowering the activation energy of the reaction",
+            "B": "Making the reaction's delta G more negative",
+            "C": "Increasing the temperature of the cell",
+            "D": "Shifting the equilibrium toward products"
+          },
+          "correct": "A",
+          "explanation": "Enzymes accelerate reactions by lowering the activation energy barrier, increasing the fraction of collisions that can react. They do not change the reaction's thermodynamics (delta G) or the equilibrium position.",
+          "distractor_notes": {
+            "B": "delta G is a thermodynamic property of the reaction; catalysts do not change it.",
+            "C": "Enzymes work at the cell's temperature; they do not heat the cell.",
+            "D": "Catalysts speed both forward and reverse reactions equally and do not shift the equilibrium position."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::enzyme-kinetics"
+          ],
+          "ground_truth_ref": "enzymes lower activation energy (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p8-q4",
+          "stem": "The large negative free energy of ATP hydrolysis is often attributed in part to:",
+          "options": {
+            "A": "The formation of additional high-energy bonds in the products",
+            "B": "Relief of electrostatic repulsion among the phosphate groups and stabilization of the products by resonance and solvation",
+            "C": "The absorption of heat that raises the products' enthalpy",
+            "D": "A decrease in the entropy of the surroundings"
+          },
+          "correct": "B",
+          "explanation": "ATP's closely spaced negatively charged phosphates repel one another; hydrolysis relieves this strain, and the released products (ADP and Pi) are further stabilized by resonance and by favorable solvation, contributing to the large negative delta G.",
+          "distractor_notes": {
+            "A": "Hydrolysis breaks a phosphoanhydride bond; it does not create additional high-energy bonds.",
+            "C": "The process releases free energy (exergonic); it is not driven by absorbing heat.",
+            "D": "The favorable free-energy change is associated with increased entropy of products/surroundings, not a decrease."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::bioenergetics"
+          ],
+          "ground_truth_ref": "basis of ATP's high phosphoryl-transfer potential (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p9",
+      "title": "Ionization and behavior of amino acids",
+      "topic_tags": [
+        "aamc::chem-phys::amino-acids"
+      ],
+      "passage_text": "A biochemistry lab studies the acid-base behavior of amino acids in aqueous solution. A simple amino acid such as glycine has an alpha-carboxyl group (pKa near 2.3) and an alpha-amino group (pKa near 9.6). Students examine how the net charge of the amino acid changes with pH, define the isoelectric point, and relate side-chain chemistry to protein behavior.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p9-q1",
+          "stem": "At a pH well below both pKa values (very acidic solution), glycine exists predominantly as a species whose net charge is:",
+          "options": {
+            "A": "0",
+            "B": "-1",
+            "C": "+1",
+            "D": "-2"
+          },
+          "correct": "C",
+          "explanation": "At very low pH both groups are protonated: the carboxyl is -COOH (neutral) and the amino group is -NH3+ (positive). The net charge is therefore +1.",
+          "distractor_notes": {
+            "A": "A net charge of zero (the zwitterion) occurs near the isoelectric point, not at very low pH.",
+            "B": "A net charge of -1 requires the carboxyl to be deprotonated, which does not occur at very low pH.",
+            "D": "-2 would require two negatively charged groups, which glycine does not have."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::amino-acids"
+          ],
+          "ground_truth_ref": "amino acid protonation at low pH (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p9-q2",
+          "stem": "The isoelectric point (pI) of glycine, using pKa values of 2.3 (carboxyl) and 9.6 (amino), is approximately:",
+          "options": {
+            "A": "2.3",
+            "B": "7.3",
+            "C": "9.6",
+            "D": "6.0"
+          },
+          "correct": "D",
+          "explanation": "For an amino acid with no ionizable side chain, pI is the average of the two relevant pKa values: (2.3 + 9.6)/2 = 5.95, approximately 6.0.",
+          "distractor_notes": {
+            "A": "2.3 is the carboxyl pKa alone, not the average.",
+            "B": "7.3 is not the average of these two pKa values.",
+            "C": "9.6 is the amino pKa alone, not the pI."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::amino-acids"
+          ],
+          "ground_truth_ref": "pI as average of flanking pKa values (QBook Ch2) - original values",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p9-q3",
+          "stem": "At a pH equal to its isoelectric point, glycine will:",
+          "options": {
+            "A": "Not migrate in an electric field, because its net charge is zero",
+            "B": "Migrate toward the positive electrode in an electric field",
+            "C": "Migrate toward the negative electrode in an electric field",
+            "D": "Precipitate because it becomes fully protonated"
+          },
+          "correct": "A",
+          "explanation": "At the pI the amino acid carries no net charge (it exists as the zwitterion), so it experiences no net force in an electric field and does not migrate.",
+          "distractor_notes": {
+            "B": "Migration toward the positive electrode (cathode/anode wording aside) requires a net negative charge, which is absent at pI.",
+            "C": "Migration toward the negative electrode requires a net positive charge, which is absent at pI.",
+            "D": "At the pI the molecule is a neutral zwitterion, not fully protonated; the statement misdescribes its state."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::amino-acids"
+          ],
+          "ground_truth_ref": "no migration at pI (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p9-q4",
+          "stem": "Which amino acid side chain is most likely to carry a positive charge at physiological pH (about 7.4)?",
+          "options": {
+            "A": "Aspartate (acidic carboxyl side chain)",
+            "B": "Lysine (amino side chain)",
+            "C": "Leucine (branched hydrocarbon side chain)",
+            "D": "Serine (hydroxyl side chain)"
+          },
+          "correct": "B",
+          "explanation": "Lysine has a basic amino side chain with a pKa around 10.5, so at pH 7.4 it is protonated and positively charged.",
+          "distractor_notes": {
+            "A": "Aspartate's carboxyl side chain is deprotonated and negatively charged at pH 7.4.",
+            "C": "Leucine's side chain is nonpolar and carries no charge.",
+            "D": "Serine's hydroxyl side chain is uncharged at physiological pH."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::amino-acids"
+          ],
+          "ground_truth_ref": "charged side chains at physiological pH (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p9-q5",
+          "stem": "As the pH of a glycine solution is raised from 2 to 12, the net charge on glycine changes in which overall direction?",
+          "options": {
+            "A": "From -1 through 0 to +1",
+            "B": "It stays at 0 throughout",
+            "C": "From +1 through 0 to -1",
+            "D": "From +2 to -2"
+          },
+          "correct": "C",
+          "explanation": "At low pH glycine is +1 (both groups protonated). As pH rises, the carboxyl deprotonates (net 0, the zwitterion), and at high pH the amino group deprotonates (net -1). The progression is +1 -> 0 -> -1.",
+          "distractor_notes": {
+            "A": "This reverses the correct direction; raising pH removes protons, decreasing net charge.",
+            "B": "The net charge changes across the titration; it is not fixed at zero.",
+            "D": "Glycine's net charge ranges only from +1 to -1, not +2 to -2."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::amino-acids"
+          ],
+          "ground_truth_ref": "net charge vs pH for glycine (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "chem-phys-1-p10",
+      "title": "Identifying an unknown organic compound",
+      "topic_tags": [
+        "aamc::chem-phys::functional-groups"
+      ],
+      "passage_text": "An organic chemistry student is given an unknown liquid and asked to identify its functional groups and structure. The student records an infrared (IR) spectrum and considers the molecular formula and possible isomers. No numerical spectrum table is provided; the student reasons qualitatively from characteristic IR absorption regions and from the rules of structural and stereoisomerism.",
+      "questions": [
+        {
+          "id": "chem-phys-1-p10-q1",
+          "stem": "A strong, broad IR absorption centered around 3300 cm^-1 (over a wide range) most strongly suggests the presence of which functional group?",
+          "options": {
+            "A": "A carbonyl (C=O) group",
+            "B": "A carbon-carbon triple bond",
+            "C": "A carbon-halogen bond",
+            "D": "An O-H group, as in an alcohol"
+          },
+          "correct": "D",
+          "explanation": "A broad absorption near 3200-3550 cm^-1 is characteristic of the O-H stretch of an alcohol (or carboxylic acid), broadened by hydrogen bonding.",
+          "distractor_notes": {
+            "A": "A carbonyl gives a sharp, strong band near 1700 cm^-1, not a broad band near 3300 cm^-1.",
+            "B": "A C-C triple bond gives a weaker band near 2200 cm^-1.",
+            "C": "Carbon-halogen stretches appear at much lower wavenumbers (roughly 500-800 cm^-1)."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::spectroscopy",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "IR O-H stretch region (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p10-q2",
+          "stem": "A sharp, intense IR absorption near 1710 cm^-1 is most consistent with:",
+          "options": {
+            "A": "A C=O (carbonyl) stretch",
+            "B": "An O-H stretch",
+            "C": "An N-H bend",
+            "D": "A C-H stretch"
+          },
+          "correct": "A",
+          "explanation": "Carbonyl (C=O) groups produce a strong, sharp stretch near 1700-1750 cm^-1, a hallmark of aldehydes, ketones, carboxylic acids, and esters.",
+          "distractor_notes": {
+            "B": "O-H stretches appear near 3300 cm^-1, not near 1710 cm^-1.",
+            "C": "N-H bending is not the strong sharp band at 1710 cm^-1; N-H stretches appear near 3300 cm^-1.",
+            "D": "C-H stretches appear near 2900-3000 cm^-1."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::spectroscopy",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "IR carbonyl stretch region (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p10-q3",
+          "stem": "The unknown is found to be an aldehyde with the condensed formula CH3CH2CHO. Its correct IUPAC name is:",
+          "options": {
+            "A": "Propanone",
+            "B": "Propanal",
+            "C": "Propanoic acid",
+            "D": "1-Propanol"
+          },
+          "correct": "B",
+          "explanation": "CH3CH2CHO is a three-carbon chain ending in a terminal aldehyde (-CHO). The aldehyde of propane is propanal.",
+          "distractor_notes": {
+            "A": "Propanone (acetone) is a ketone (CH3COCH3), not an aldehyde.",
+            "C": "Propanoic acid has a -COOH group, not an aldehyde -CHO.",
+            "D": "1-Propanol is an alcohol (CH3CH2CH2OH), not an aldehyde."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::functional-groups",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "aldehyde nomenclature (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p10-q4",
+          "stem": "The molecular formula C2H6O corresponds to two well-known constitutional (structural) isomers. They are:",
+          "options": {
+            "A": "Ethanol and ethanal",
+            "B": "Acetic acid and methyl formate",
+            "C": "Ethanol and dimethyl ether",
+            "D": "Ethane and ethene"
+          },
+          "correct": "C",
+          "explanation": "C2H6O can be arranged as ethanol (CH3CH2OH) or dimethyl ether (CH3OCH3). These constitutional isomers share a formula but differ in connectivity (alcohol vs ether).",
+          "distractor_notes": {
+            "A": "Ethanal (acetaldehyde) has the formula C2H4O, not C2H6O.",
+            "B": "Acetic acid and methyl formate share C2H4O2, a different molecular formula.",
+            "D": "Ethane (C2H6) and ethene (C2H4) contain no oxygen and are not isomers of each other."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::isomerism",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "constitutional isomers of C2H6O (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "chem-phys-1-p10-q5",
+          "stem": "Two compounds have the same molecular formula and the same bonding connectivity but differ in the fixed spatial arrangement of groups around a carbon-carbon double bond (cis vs trans). They are best described as:",
+          "options": {
+            "A": "Constitutional (structural) isomers",
+            "B": "Enantiomers",
+            "C": "The same compound in different conformations",
+            "D": "Cis-trans (geometric) stereoisomers"
+          },
+          "correct": "D",
+          "explanation": "Same connectivity but different fixed spatial arrangement about a double bond defines cis-trans (geometric) isomerism, a type of stereoisomerism arising from restricted rotation about the C=C bond.",
+          "distractor_notes": {
+            "A": "Constitutional isomers differ in connectivity, but these have the same connectivity.",
+            "B": "Enantiomers are nonsuperimposable mirror images that differ at chiral centers, not about a double bond's cis/trans arrangement.",
+            "C": "Cis and trans forms cannot interconvert by rotation (the double bond is rigid), so they are distinct compounds, not conformers."
+          },
+          "topic_tags": [
+            "aamc::chem-phys::isomerism",
+            "aamc::chem-phys::orgo"
+          ],
+          "ground_truth_ref": "geometric (cis-trans) isomerism (QBook Ch7) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "discrete_questions": [
+    {
+      "id": "chem-phys-1-d1",
+      "stem": "How many moles of water are present in 36 g of pure water? (Molar mass of water = 18 g/mol.)",
+      "options": {
+        "A": "2.0 mol",
+        "B": "0.5 mol",
+        "C": "1.0 mol",
+        "D": "18 mol"
+      },
+      "correct": "A",
+      "explanation": "Moles = mass / molar mass = 36 g / 18 g/mol = 2.0 mol.",
+      "distractor_notes": {
+        "B": "0.5 mol would correspond to 9 g of water.",
+        "C": "1.0 mol would correspond to 18 g of water.",
+        "D": "18 is the molar mass value, not the number of moles."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::stoichiometry",
+        "aamc::chem-phys::gen-chem"
+      ],
+      "ground_truth_ref": "mass-to-mole conversion (QBook Ch4) - original values",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d2",
+      "stem": "What is the pH of a 0.010 M solution of the strong acid HCl?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "10",
+        "D": "12"
+      },
+      "correct": "B",
+      "explanation": "HCl dissociates completely, so [H+] = 0.010 M = 10^-2 M. pH = -log(10^-2) = 2.",
+      "distractor_notes": {
+        "A": "pH 1 corresponds to [H+] = 0.10 M, tenfold higher than given.",
+        "C": "pH 10 corresponds to a basic solution, not a strong acid.",
+        "D": "pH 12 is strongly basic and inconsistent with an acidic HCl solution."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::acid-base",
+        "aamc::chem-phys::gen-chem"
+      ],
+      "ground_truth_ref": "pH of a strong acid (QBook Ch4) - original values",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d3",
+      "stem": "For an enzyme following Michaelis-Menten kinetics, the catalytic efficiency of the enzyme with a given substrate is best represented by which ratio?",
+      "options": {
+        "A": "Vmax / Km",
+        "B": "Km / kcat",
+        "C": "kcat / Km",
+        "D": "Km x Vmax"
+      },
+      "correct": "C",
+      "explanation": "Catalytic efficiency is defined as kcat/Km. It captures both how fast the enzyme turns over substrate once bound (kcat) and how effectively it binds substrate at low concentration (reflected inversely in Km); a higher kcat/Km means a more efficient enzyme.",
+      "distractor_notes": {
+        "A": "Vmax depends on total enzyme concentration, so Vmax/Km is not an intrinsic measure of efficiency the way kcat/Km is.",
+        "B": "This inverts the accepted ratio; efficiency rises with kcat and falls with Km, so kcat belongs in the numerator.",
+        "D": "The product Km x Vmax has no standard meaning as a catalytic-efficiency parameter."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::enzyme-kinetics"
+      ],
+      "ground_truth_ref": "catalytic efficiency kcat/Km (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d4",
+      "stem": "What is the empirical formula of a compound that is 40% carbon, 6.7% hydrogen, and 53.3% oxygen by mass? (Atomic masses: C = 12, H = 1, O = 16.)",
+      "options": {
+        "A": "CHO",
+        "B": "C2H4O2",
+        "C": "CH4O",
+        "D": "CH2O"
+      },
+      "correct": "D",
+      "explanation": "Per 100 g: C = 40/12 = 3.33 mol, H = 6.7/1 = 6.7 mol, O = 53.3/16 = 3.33 mol. Dividing by the smallest (3.33) gives roughly C1H2O1, so the empirical formula is CH2O.",
+      "distractor_notes": {
+        "A": "CHO would require equal moles of C, H, and O, but there is about twice as much hydrogen as carbon.",
+        "B": "C2H4O2 is a molecular formula (a multiple of CH2O), not the empirical (simplest) formula.",
+        "C": "CH4O does not match the calculated 1:2:1 mole ratio of C:H:O."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::stoichiometry",
+        "aamc::chem-phys::gen-chem"
+      ],
+      "ground_truth_ref": "empirical formula from percent composition (QBook Ch4) - original values",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d5",
+      "stem": "A metabolic reaction has a standard free-energy change (delta G) of +7 kJ/mol but proceeds readily in the forward direction inside the cell. Which explanation is most consistent with thermodynamics?",
+      "options": {
+        "A": "Cellular concentrations of reactants and products keep the actual delta G negative even though the standard delta G is positive",
+        "B": "The enzyme lowers the reaction's delta G to a negative value",
+        "C": "A positive standard delta G means the reaction is impossible under any conditions",
+        "D": "The reaction consumes heat, which reverses the sign of delta G"
+      },
+      "correct": "A",
+      "explanation": "The actual delta G depends on the reaction quotient, not just the standard value: delta G = delta G(standard) + RT ln(Q). When products are kept low and reactants high (as by rapid downstream use), the ln(Q) term can make the actual delta G negative, so the reaction proceeds forward despite a positive standard value.",
+      "distractor_notes": {
+        "B": "Enzymes speed reactions by lowering activation energy; they do not change the reaction's delta G.",
+        "C": "A positive standard delta G only means the standard-state reaction is nonspontaneous; concentration effects (or coupling) can still drive it forward.",
+        "D": "Absorbing heat relates to enthalpy; it does not simply flip the sign of the free-energy change."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::bioenergetics",
+        "aamc::chem-phys::thermodynamics"
+      ],
+      "ground_truth_ref": "actual vs standard delta G and reaction quotient (QBook Ch2) - original values",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d6",
+      "stem": "In the cell, ATP is often described as an energy currency because it couples exergonic and endergonic processes. The energy for driving an unfavorable reaction is released chiefly when ATP is:",
+      "options": {
+        "A": "Synthesized from ADP and inorganic phosphate",
+        "B": "Hydrolyzed to ADP and inorganic phosphate",
+        "C": "Converted to cyclic AMP",
+        "D": "Bound to an enzyme without any bond cleavage"
+      },
+      "correct": "B",
+      "explanation": "Hydrolysis of ATP's terminal phosphoanhydride bond to give ADP and inorganic phosphate is strongly exergonic. Coupling this hydrolysis to an endergonic reaction supplies the free energy that drives the unfavorable process forward.",
+      "distractor_notes": {
+        "A": "Synthesizing ATP from ADP and Pi consumes energy (endergonic); it does not release the energy used to drive reactions.",
+        "C": "Conversion to cyclic AMP is a signaling event and is not the principal energy-releasing reaction of the ATP cycle.",
+        "D": "Merely binding ATP without cleaving a phosphoanhydride bond does not release the free energy stored in that bond."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::bioenergetics"
+      ],
+      "ground_truth_ref": "ATP hydrolysis as the energy-releasing step (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d7",
+      "stem": "When a standing person's arm hangs below the level of the heart, the blood pressure measured in a vein of the hand is higher than at heart level. The physical reason is that the hydrostatic pressure of a fluid column:",
+      "options": {
+        "A": "Decreases with depth below the reference point",
+        "B": "Depends only on the cross-sectional area of the vessel",
+        "C": "Increases with vertical distance below the reference point",
+        "D": "Is independent of the height of the fluid column"
+      },
+      "correct": "C",
+      "explanation": "Hydrostatic pressure increases with depth as P = rho g h. Blood in a vessel below heart level bears the weight of the column of blood above it, so the pressure there is higher than at heart level, by an amount rho g h set by the vertical drop.",
+      "distractor_notes": {
+        "A": "Pressure increases (not decreases) as one goes deeper below a reference level.",
+        "B": "Hydrostatic pressure depends on depth and fluid density, not on the vessel's cross-sectional area.",
+        "D": "The added pressure is exactly rho g h, so it depends on the height of the column."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::physiology",
+        "aamc::chem-phys::fluids"
+      ],
+      "ground_truth_ref": "hydrostatic pressure in the circulation (QBook Ch5) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d8",
+      "stem": "A hydraulic lift has a small input piston of area 0.01 m^2 and a large output piston of area 0.10 m^2. If a force of 100 N is applied to the small piston, what is the ideal output force on the large piston? (Assume an incompressible fluid and Pascal's principle.)",
+      "options": {
+        "A": "10 N",
+        "B": "100 N",
+        "C": "10000 N",
+        "D": "1000 N"
+      },
+      "correct": "D",
+      "explanation": "Pascal's principle: pressure is transmitted equally, so F_out = F_in x (A_out / A_in) = 100 N x (0.10 / 0.01) = 100 N x 10 = 1000 N.",
+      "distractor_notes": {
+        "A": "10 N would result from dividing rather than multiplying by the area ratio.",
+        "B": "100 N ignores the area difference between the pistons.",
+        "C": "10000 N applies an area ratio of 100, but the ratio is 10."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::fluids"
+      ],
+      "ground_truth_ref": "Pascal's principle in a hydraulic lift (QBook Ch5) - original values",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d9",
+      "stem": "Which functional group is characterized by a carbon double-bonded to one oxygen and single-bonded to a hydroxyl (-OH) group on the same carbon?",
+      "options": {
+        "A": "Carboxylic acid",
+        "B": "Ketone",
+        "C": "Aldehyde",
+        "D": "Ester"
+      },
+      "correct": "A",
+      "explanation": "A carboxylic acid has the -COOH group: a carbonyl (C=O) and a hydroxyl (-OH) on the same carbon.",
+      "distractor_notes": {
+        "B": "A ketone has a carbonyl flanked by two carbon groups and no -OH on that carbon.",
+        "C": "An aldehyde has a carbonyl bonded to at least one hydrogen, not a hydroxyl.",
+        "D": "An ester has a carbonyl bonded to an -OR group (an oxygen linked to carbon), not a free -OH."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::functional-groups",
+        "aamc::chem-phys::orgo"
+      ],
+      "ground_truth_ref": "carboxylic acid functional group (QBook Ch7) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d10",
+      "stem": "A molecule contains three distinct stereocenters and has no internal symmetry. What is the maximum number of stereoisomers it can have?",
+      "options": {
+        "A": "3",
+        "B": "8",
+        "C": "6",
+        "D": "9"
+      },
+      "correct": "B",
+      "explanation": "The maximum number of stereoisomers is 2^n, where n is the number of stereocenters. For n = 3, that is 2^3 = 8.",
+      "distractor_notes": {
+        "A": "3 is the number of stereocenters, not 2^n.",
+        "C": "6 would be 2 x 3, not 2^3.",
+        "D": "9 would be 3^2, which is not the stereoisomer formula."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::isomerism",
+        "aamc::chem-phys::orgo"
+      ],
+      "ground_truth_ref": "2^n stereoisomers (QBook Ch7) - original values",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d11",
+      "stem": "In infrared spectroscopy, a strong absorption band arises when a molecular vibration causes a change in the molecule's:",
+      "options": {
+        "A": "Nuclear spin state",
+        "B": "Mass number",
+        "C": "Dipole moment",
+        "D": "Oxidation state"
+      },
+      "correct": "C",
+      "explanation": "A vibration is IR-active (absorbs strongly) only if it produces a change in the molecule's dipole moment. Vibrations with no change in dipole moment are IR-inactive.",
+      "distractor_notes": {
+        "A": "Changes in nuclear spin state underlie NMR, not IR spectroscopy.",
+        "B": "Mass number is a nuclear property and is unrelated to IR absorption.",
+        "D": "Oxidation state describes electron bookkeeping in bonding, not the basis for IR absorption."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::spectroscopy",
+        "aamc::chem-phys::orgo"
+      ],
+      "ground_truth_ref": "IR activity requires a dipole change (QBook Ch7) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d12",
+      "stem": "An enzyme is described as lowering the activation energy of a reaction. Which quantity does the enzyme NOT change?",
+      "options": {
+        "A": "The rate at which the reaction reaches equilibrium",
+        "B": "The activation energy of the forward reaction",
+        "C": "The activation energy of the reverse reaction",
+        "D": "The overall Gibbs free-energy change (delta G) of the reaction"
+      },
+      "correct": "D",
+      "explanation": "Enzymes lower the activation energy of both the forward and reverse reactions (speeding the approach to equilibrium), but they do not alter the thermodynamics: the overall delta G between reactants and products is unchanged.",
+      "distractor_notes": {
+        "A": "By lowering the barrier, the enzyme speeds how fast equilibrium is reached, so this does change.",
+        "B": "The forward activation energy is lowered by the enzyme, so this does change.",
+        "C": "The reverse activation energy is also lowered by the enzyme, so this does change."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::enzyme-kinetics"
+      ],
+      "ground_truth_ref": "enzymes do not change delta G (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d13",
+      "stem": "Which statement about the relationship between an enzyme's Km and its apparent affinity for substrate is correct?",
+      "options": {
+        "A": "A lower Km indicates higher affinity for substrate",
+        "B": "A higher Km indicates higher affinity for substrate",
+        "C": "Km is unrelated to substrate affinity",
+        "D": "Km equals the maximum reaction velocity"
+      },
+      "correct": "A",
+      "explanation": "Km is the substrate concentration giving half-maximal velocity. A lower Km means half-maximal rate is reached at a lower substrate concentration, reflecting tighter binding, i.e., higher apparent affinity.",
+      "distractor_notes": {
+        "B": "A higher Km reflects lower, not higher, apparent affinity.",
+        "C": "Km is inversely related to apparent affinity, so it is not unrelated.",
+        "D": "Km is a concentration, not the maximum velocity (Vmax)."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::enzyme-kinetics"
+      ],
+      "ground_truth_ref": "Km as an inverse measure of affinity (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d14",
+      "stem": "Blood flows from the aorta into the vast network of systemic capillaries. Although each capillary is tiny, the blood slows dramatically in the capillaries compared with the aorta. By the continuity principle, this is because the capillaries collectively have:",
+      "options": {
+        "A": "A much smaller total cross-sectional area than the aorta",
+        "B": "A much larger total cross-sectional area than the aorta",
+        "C": "The same total cross-sectional area as the aorta",
+        "D": "A higher blood pressure than the aorta"
+      },
+      "correct": "B",
+      "explanation": "By continuity, flow speed times total cross-sectional area is constant. Because the combined cross-sectional area of all capillaries is far larger than that of the aorta, blood must move much more slowly through them, which also aids exchange.",
+      "distractor_notes": {
+        "A": "A smaller total area would speed the blood up, not slow it down.",
+        "C": "Equal areas would give equal speeds, contradicting the observed slowing.",
+        "D": "Capillary pressure is actually lower than aortic pressure, and pressure is not what the continuity argument addresses."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::fluids",
+        "aamc::chem-phys::physiology"
+      ],
+      "ground_truth_ref": "continuity applied to the circulation (QBook Ch5) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "chem-phys-1-d15",
+      "stem": "At the alveoli of the lungs, oxygen moves from the air spaces into the blood. This net movement of O2 occurs because oxygen diffuses:",
+      "options": {
+        "A": "From a region of lower partial pressure to a region of higher partial pressure",
+        "B": "Only when actively pumped across the alveolar membrane",
+        "C": "From a region of higher partial pressure to a region of lower partial pressure",
+        "D": "Against its partial-pressure gradient using ATP"
+      },
+      "correct": "C",
+      "explanation": "Gases diffuse down their partial-pressure gradient. Alveolar air has a higher partial pressure of O2 than the incoming deoxygenated blood, so O2 diffuses from the alveoli into the blood until the gradient is reduced.",
+      "distractor_notes": {
+        "A": "Diffusion proceeds down the gradient (high to low), not from low to high.",
+        "B": "Gas exchange at the alveoli is passive diffusion, not active pumping.",
+        "D": "Oxygen moves down its gradient passively; no ATP is expended to move it here."
+      },
+      "topic_tags": [
+        "aamc::chem-phys::physiology"
+      ],
+      "ground_truth_ref": "gas exchange by partial-pressure gradients (QBook Ch1) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    }
+  ]
+}

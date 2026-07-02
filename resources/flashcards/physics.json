@@ -1,0 +1,847 @@
+{
+  "topic": "Physics",
+  "deck": "MCAT Core::Physics",
+  "aamc_tag": "aamc::chem-phys::physics",
+  "cards": [
+    {
+      "front": "SI unit of displacement",
+      "back": "meter (m)"
+    },
+    {
+      "front": "SI unit of velocity",
+      "back": "meters per second (m/s)"
+    },
+    {
+      "front": "SI unit of acceleration",
+      "back": "meters per second squared (m/s^2)"
+    },
+    {
+      "front": "Definition of a scalar quantity",
+      "back": "A quantity with magnitude only, no direction"
+    },
+    {
+      "front": "Definition of a vector quantity",
+      "back": "A quantity with both magnitude and direction"
+    },
+    {
+      "front": "Is velocity a scalar or a vector?",
+      "back": "Vector"
+    },
+    {
+      "front": "Difference between distance and displacement",
+      "back": "Distance is a scalar path length; displacement is a vector between start and end"
+    },
+    {
+      "front": "Definition of average velocity",
+      "back": "Displacement divided by elapsed time"
+    },
+    {
+      "front": "Definition of acceleration",
+      "back": "Rate of change of velocity with time"
+    },
+    {
+      "front": "Kinematic equation for final velocity (constant a, no distance)",
+      "back": "v = v0 + a*t"
+    },
+    {
+      "front": "Kinematic equation relating v^2 to displacement",
+      "back": "v^2 = v0^2 + 2*a*x"
+    },
+    {
+      "front": "Kinematic equation for displacement using time and acceleration",
+      "back": "x = v0*t + 1/2 a t^2"
+    },
+    {
+      "front": "Value of gravitational acceleration g near Earth's surface",
+      "back": "About 9.8 m/s^2"
+    },
+    {
+      "front": "Horizontal acceleration of a projectile (no air resistance)",
+      "back": "Zero"
+    },
+    {
+      "front": "At the peak of a projectile's arc, its vertical velocity is",
+      "back": "Zero"
+    },
+    {
+      "front": "Slope of a velocity vs. time graph represents",
+      "back": "Acceleration"
+    },
+    {
+      "front": "Area under a velocity vs. time graph represents",
+      "back": "Displacement"
+    },
+    {
+      "front": "Launch angle that gives maximum range for a projectile on level ground",
+      "back": "45 degrees"
+    },
+    {
+      "front": "Newton's first law",
+      "back": "An object stays at rest or in uniform motion unless acted on by a net external force (law of inertia)"
+    },
+    {
+      "front": "Newton's second law",
+      "back": "F_net = m*a"
+    },
+    {
+      "front": "Newton's third law",
+      "back": "For every action there is an equal and opposite reaction"
+    },
+    {
+      "front": "SI unit of force",
+      "back": "Newton (N)"
+    },
+    {
+      "front": "Definition of 1 newton in base units",
+      "back": "1 N = 1 kg*m/s^2"
+    },
+    {
+      "front": "Definition of inertia",
+      "back": "An object's resistance to changes in its state of motion"
+    },
+    {
+      "front": "Formula for weight",
+      "back": "W = m*g"
+    },
+    {
+      "front": "Difference between mass and weight (units)",
+      "back": "Mass in kg; weight is a force in newtons"
+    },
+    {
+      "front": "Formula for the force of kinetic friction",
+      "back": "f = mu_k * N"
+    },
+    {
+      "front": "Formula for maximum static friction",
+      "back": "f_max = mu_s * N"
+    },
+    {
+      "front": "Which is generally larger, mu_s or mu_k?",
+      "back": "mu_s (static coefficient)"
+    },
+    {
+      "front": "Direction of the normal force",
+      "back": "Perpendicular to the surface of contact"
+    },
+    {
+      "front": "Direction of kinetic friction",
+      "back": "Opposite to the direction of motion"
+    },
+    {
+      "front": "Definition of equilibrium (mechanics)",
+      "back": "Net force and net torque are zero"
+    },
+    {
+      "front": "Hooke's law",
+      "back": "F = -k*x"
+    },
+    {
+      "front": "SI unit of the spring constant",
+      "back": "newtons per meter (N/m)"
+    },
+    {
+      "front": "Formula for torque",
+      "back": "tau = r*F*sin(theta)"
+    },
+    {
+      "front": "SI unit of torque",
+      "back": "newton-meter (N*m)"
+    },
+    {
+      "front": "Definition of a lever arm (moment arm)",
+      "back": "Perpendicular distance from the axis to the line of action of the force"
+    },
+    {
+      "front": "SI unit of energy and work",
+      "back": "joule (J)"
+    },
+    {
+      "front": "Formula for work by a constant force",
+      "back": "W = F*d*cos(theta)"
+    },
+    {
+      "front": "Formula for kinetic energy",
+      "back": "KE = 1/2 m v^2"
+    },
+    {
+      "front": "Formula for gravitational potential energy near Earth",
+      "back": "PE = m*g*h"
+    },
+    {
+      "front": "Formula for elastic potential energy of a spring",
+      "back": "PE = 1/2 k x^2"
+    },
+    {
+      "front": "Work-energy theorem",
+      "back": "Net work done equals the change in kinetic energy"
+    },
+    {
+      "front": "Definition of mechanical energy",
+      "back": "The sum of kinetic and potential energy"
+    },
+    {
+      "front": "Law of conservation of energy",
+      "back": "Energy cannot be created or destroyed, only transformed"
+    },
+    {
+      "front": "Work done by a force perpendicular to displacement",
+      "back": "Zero"
+    },
+    {
+      "front": "SI unit of power",
+      "back": "watt (W); 1 W = 1 J/s"
+    },
+    {
+      "front": "Formula for average power",
+      "back": "P = W/t (work over time)"
+    },
+    {
+      "front": "Formula for instantaneous power in terms of force and velocity",
+      "back": "P = F*v"
+    },
+    {
+      "front": "Definition of a conservative force",
+      "back": "A force whose work is path-independent (e.g., gravity)"
+    },
+    {
+      "front": "Definition of mechanical efficiency",
+      "back": "Useful energy output divided by total energy input"
+    },
+    {
+      "front": "Formula for linear momentum",
+      "back": "p = m*v"
+    },
+    {
+      "front": "SI unit of momentum",
+      "back": "kg*m/s"
+    },
+    {
+      "front": "Definition of impulse",
+      "back": "The product of force and the time over which it acts"
+    },
+    {
+      "front": "Impulse-momentum theorem",
+      "back": "Impulse equals change in momentum (F*t = delta p)"
+    },
+    {
+      "front": "Law of conservation of momentum",
+      "back": "Total momentum is conserved when no net external force acts"
+    },
+    {
+      "front": "Defining feature of an elastic collision",
+      "back": "Both momentum and kinetic energy are conserved"
+    },
+    {
+      "front": "Defining feature of an inelastic collision",
+      "back": "Momentum is conserved but kinetic energy is not"
+    },
+    {
+      "front": "Defining feature of a perfectly inelastic collision",
+      "back": "The objects stick together after colliding"
+    },
+    {
+      "front": "In a perfectly inelastic collision, kinetic energy is",
+      "back": "Not conserved (some is lost)"
+    },
+    {
+      "front": "Formula for centripetal acceleration",
+      "back": "a = v^2 / r"
+    },
+    {
+      "front": "Formula for centripetal force",
+      "back": "F = m v^2 / r"
+    },
+    {
+      "front": "Direction of centripetal acceleration",
+      "back": "Toward the center of the circle"
+    },
+    {
+      "front": "Newton's law of universal gravitation",
+      "back": "F = G m1 m2 / r^2"
+    },
+    {
+      "front": "What does G stand for in the gravitation formula",
+      "back": "The universal gravitational constant"
+    },
+    {
+      "front": "SI unit of frequency",
+      "back": "hertz (Hz)"
+    },
+    {
+      "front": "Relationship between period and frequency",
+      "back": "T = 1/f"
+    },
+    {
+      "front": "Definition of period",
+      "back": "Time for one complete cycle or revolution"
+    },
+    {
+      "front": "SI unit of angular velocity",
+      "back": "radians per second (rad/s)"
+    },
+    {
+      "front": "As orbital radius increases, gravitational force between two masses",
+      "back": "Decreases (inverse-square)"
+    },
+    {
+      "front": "Formula for density",
+      "back": "rho = m/V (mass over volume)"
+    },
+    {
+      "front": "SI unit of density",
+      "back": "kg/m^3"
+    },
+    {
+      "front": "Density of pure water",
+      "back": "1000 kg/m^3 (1 g/cm^3)"
+    },
+    {
+      "front": "Definition of pressure",
+      "back": "Force per unit area"
+    },
+    {
+      "front": "SI unit of pressure",
+      "back": "pascal (Pa); 1 Pa = 1 N/m^2"
+    },
+    {
+      "front": "Formula for hydrostatic (gauge) pressure at depth",
+      "back": "P = rho*g*h"
+    },
+    {
+      "front": "Relationship between absolute, gauge, and atmospheric pressure",
+      "back": "P_absolute = P_atmospheric + P_gauge"
+    },
+    {
+      "front": "Pascal's principle",
+      "back": "Pressure applied to a confined fluid is transmitted equally throughout"
+    },
+    {
+      "front": "Archimedes' principle",
+      "back": "Buoyant force equals the weight of the fluid displaced"
+    },
+    {
+      "front": "Formula for buoyant force",
+      "back": "F_b = rho_fluid * V_displaced * g"
+    },
+    {
+      "front": "Condition for an object to float",
+      "back": "Its average density is less than the fluid's density"
+    },
+    {
+      "front": "Definition of specific gravity",
+      "back": "Ratio of a substance's density to the density of water"
+    },
+    {
+      "front": "Continuity equation for incompressible fluid flow",
+      "back": "A1*v1 = A2*v2"
+    },
+    {
+      "front": "Bernoulli's principle (qualitative)",
+      "back": "In fluid flow, higher speed corresponds to lower pressure"
+    },
+    {
+      "front": "Standard atmospheric pressure",
+      "back": "About 101 kPa (760 torr = 1 atm)"
+    },
+    {
+      "front": "Definition of viscosity",
+      "back": "A fluid's resistance to flow"
+    },
+    {
+      "front": "Definition of an ideal fluid",
+      "back": "Incompressible and nonviscous"
+    },
+    {
+      "front": "SI unit of temperature",
+      "back": "kelvin (K)"
+    },
+    {
+      "front": "Absolute zero in Celsius",
+      "back": "-273.15 degrees C"
+    },
+    {
+      "front": "Definition of heat",
+      "back": "Energy transferred between objects due to a temperature difference"
+    },
+    {
+      "front": "Zeroth law of thermodynamics",
+      "back": "If two systems are each in thermal equilibrium with a third, they are in equilibrium with each other"
+    },
+    {
+      "front": "First law of thermodynamics",
+      "back": "delta U = Q - W (change in internal energy)"
+    },
+    {
+      "front": "Second law of thermodynamics",
+      "back": "The total entropy of an isolated system never decreases"
+    },
+    {
+      "front": "Definition of entropy",
+      "back": "A measure of disorder or the number of microstates"
+    },
+    {
+      "front": "Formula for heat to change temperature (specific heat)",
+      "back": "Q = m*c*delta T"
+    },
+    {
+      "front": "What does c represent in Q = m c delta T",
+      "back": "Specific heat capacity"
+    },
+    {
+      "front": "Formula for heat during a phase change",
+      "back": "Q = m*L (L is latent heat)"
+    },
+    {
+      "front": "Heat transfer by direct contact",
+      "back": "Conduction"
+    },
+    {
+      "front": "Heat transfer by fluid movement",
+      "back": "Convection"
+    },
+    {
+      "front": "Heat transfer by electromagnetic waves",
+      "back": "Radiation"
+    },
+    {
+      "front": "Definition of an isothermal process",
+      "back": "A process at constant temperature"
+    },
+    {
+      "front": "Definition of an adiabatic process",
+      "back": "A process with no heat exchange (Q = 0)"
+    },
+    {
+      "front": "Definition of an isobaric process",
+      "back": "A process at constant pressure"
+    },
+    {
+      "front": "Definition of an isovolumetric (isochoric) process",
+      "back": "A process at constant volume"
+    },
+    {
+      "front": "Wave speed equation",
+      "back": "v = f * lambda"
+    },
+    {
+      "front": "Definition of wavelength",
+      "back": "Distance between successive identical points on a wave"
+    },
+    {
+      "front": "Definition of amplitude",
+      "back": "Maximum displacement from equilibrium"
+    },
+    {
+      "front": "Definition of a transverse wave",
+      "back": "Oscillation is perpendicular to the direction of propagation"
+    },
+    {
+      "front": "Definition of a longitudinal wave",
+      "back": "Oscillation is parallel to the direction of propagation"
+    },
+    {
+      "front": "Is sound a transverse or longitudinal wave?",
+      "back": "Longitudinal"
+    },
+    {
+      "front": "Approximate speed of sound in air",
+      "back": "About 340 m/s"
+    },
+    {
+      "front": "Definition of constructive interference",
+      "back": "Waves add to produce a larger amplitude"
+    },
+    {
+      "front": "Definition of destructive interference",
+      "back": "Waves combine to reduce or cancel amplitude"
+    },
+    {
+      "front": "Phase difference for fully destructive interference",
+      "back": "180 degrees (half-wavelength offset)"
+    },
+    {
+      "front": "Definition of the Doppler effect",
+      "back": "The change in observed frequency due to relative motion of source and observer"
+    },
+    {
+      "front": "Observed frequency change when a sound source approaches",
+      "back": "It increases"
+    },
+    {
+      "front": "Definition of a node (standing wave)",
+      "back": "A point of zero displacement"
+    },
+    {
+      "front": "Definition of an antinode (standing wave)",
+      "back": "A point of maximum displacement"
+    },
+    {
+      "front": "SI unit of sound intensity level",
+      "back": "decibel (dB)"
+    },
+    {
+      "front": "Definition of resonance",
+      "back": "Large-amplitude oscillation when driven at a natural frequency"
+    },
+    {
+      "front": "Relationship between sound intensity and amplitude",
+      "back": "Intensity is proportional to amplitude squared"
+    },
+    {
+      "front": "Phase relationship between sin(t) and cos(t)",
+      "back": "90 degrees out of phase"
+    },
+    {
+      "front": "Definition of simple harmonic motion",
+      "back": "Oscillation with restoring force proportional to displacement"
+    },
+    {
+      "front": "Formula for the period of a mass-spring system",
+      "back": "T = 2*pi*sqrt(m/k)"
+    },
+    {
+      "front": "Formula for the period of a simple pendulum",
+      "back": "T = 2*pi*sqrt(L/g)"
+    },
+    {
+      "front": "Does a simple pendulum's period depend on its mass?",
+      "back": "No"
+    },
+    {
+      "front": "What variables affect a pendulum's period?",
+      "back": "Length and gravitational acceleration"
+    },
+    {
+      "front": "Where is speed greatest in SHM?",
+      "back": "At the equilibrium position"
+    },
+    {
+      "front": "Where is acceleration greatest in SHM?",
+      "back": "At maximum displacement (amplitude)"
+    },
+    {
+      "front": "Effect of quadrupling pendulum length on its period",
+      "back": "Period doubles"
+    },
+    {
+      "front": "SI unit of electric charge",
+      "back": "coulomb (C)"
+    },
+    {
+      "front": "Charge of a single electron (magnitude)",
+      "back": "About 1.6 x 10^-19 C"
+    },
+    {
+      "front": "Coulomb's law",
+      "back": "F = k*q1*q2 / r^2"
+    },
+    {
+      "front": "Do like charges attract or repel?",
+      "back": "Repel"
+    },
+    {
+      "front": "Formula for electric field from a point charge",
+      "back": "E = k*q / r^2"
+    },
+    {
+      "front": "SI unit of electric field",
+      "back": "newtons per coulomb (N/C) or volts per meter (V/m)"
+    },
+    {
+      "front": "Formula for force on a charge in an electric field",
+      "back": "F = q*E"
+    },
+    {
+      "front": "SI unit of electric potential (voltage)",
+      "back": "volt (V); 1 V = 1 J/C"
+    },
+    {
+      "front": "Formula for electric potential energy of two point charges",
+      "back": "U = k*q1*q2 / r"
+    },
+    {
+      "front": "Direction of electric field lines",
+      "back": "From positive charge toward negative charge"
+    },
+    {
+      "front": "Definition of an electric dipole",
+      "back": "Two equal and opposite charges separated by a distance"
+    },
+    {
+      "front": "Work done moving a charge along an equipotential surface",
+      "back": "Zero"
+    },
+    {
+      "front": "Ohm's law",
+      "back": "V = I*R"
+    },
+    {
+      "front": "SI unit of current",
+      "back": "ampere (A)"
+    },
+    {
+      "front": "Definition of electric current",
+      "back": "Rate of flow of electric charge (I = Q/t)"
+    },
+    {
+      "front": "SI unit of resistance",
+      "back": "ohm (Omega)"
+    },
+    {
+      "front": "Formula for equivalent resistance of resistors in series",
+      "back": "R = R1 + R2 + R3 + ..."
+    },
+    {
+      "front": "Formula for equivalent resistance of resistors in parallel",
+      "back": "1/R = 1/R1 + 1/R2 + ..."
+    },
+    {
+      "front": "Formula for electrical power (voltage and current)",
+      "back": "P = I*V"
+    },
+    {
+      "front": "Formula for power dissipated in a resistor (current and resistance)",
+      "back": "P = I^2*R"
+    },
+    {
+      "front": "SI unit of capacitance",
+      "back": "farad (F)"
+    },
+    {
+      "front": "Formula relating charge, capacitance, and voltage",
+      "back": "Q = C*V"
+    },
+    {
+      "front": "Formula for energy stored in a capacitor",
+      "back": "E = 1/2 C V^2"
+    },
+    {
+      "front": "Effect on resistance of increasing a wire's length",
+      "back": "Resistance increases"
+    },
+    {
+      "front": "Formula for resistance in terms of resistivity",
+      "back": "R = rho*L / A"
+    },
+    {
+      "front": "Kirchhoff's junction (current) rule",
+      "back": "Current into a junction equals current out of it"
+    },
+    {
+      "front": "Kirchhoff's loop (voltage) rule",
+      "back": "The sum of voltage changes around a closed loop is zero"
+    },
+    {
+      "front": "Definition of electromotive force (emf)",
+      "back": "The voltage supplied by a source such as a battery"
+    },
+    {
+      "front": "Formula for the RC time constant",
+      "back": "tau = R*C"
+    },
+    {
+      "front": "Fraction of full charge on a capacitor after one time constant",
+      "back": "About 63%"
+    },
+    {
+      "front": "Current through a fully charged capacitor in a DC circuit",
+      "back": "Zero"
+    },
+    {
+      "front": "How resistors in parallel affect equivalent resistance",
+      "back": "It is lower than the smallest individual resistor"
+    },
+    {
+      "front": "Effect on capacitance of halving the plate separation",
+      "back": "Capacitance doubles"
+    },
+    {
+      "front": "SI unit of magnetic field strength",
+      "back": "tesla (T)"
+    },
+    {
+      "front": "Formula for magnetic force on a moving charge",
+      "back": "F = q*v*B*sin(theta)"
+    },
+    {
+      "front": "Direction of magnetic force on a moving charge relative to velocity",
+      "back": "Perpendicular to both velocity and the field"
+    },
+    {
+      "front": "Work done by a magnetic force on a moving charge",
+      "back": "Zero (force is perpendicular to velocity)"
+    },
+    {
+      "front": "Path of a charged particle moving perpendicular to a uniform magnetic field",
+      "back": "A circle"
+    },
+    {
+      "front": "Formula for magnetic force on a current-carrying wire",
+      "back": "F = B*I*L*sin(theta)"
+    },
+    {
+      "front": "Definition of electromagnetic induction",
+      "back": "The generation of a current by a changing magnetic field"
+    },
+    {
+      "front": "Faraday's law (qualitative)",
+      "back": "An induced emf arises from a changing magnetic flux"
+    },
+    {
+      "front": "Lenz's law",
+      "back": "An induced current opposes the change in flux that produced it"
+    },
+    {
+      "front": "Rule used to find the direction of the magnetic force on a positive charge",
+      "back": "The right-hand rule"
+    },
+    {
+      "front": "Law of reflection",
+      "back": "Angle of incidence equals angle of reflection"
+    },
+    {
+      "front": "Definition of the index of refraction",
+      "back": "n = c / v (speed of light in vacuum over speed in medium)"
+    },
+    {
+      "front": "Speed of light in a vacuum",
+      "back": "About 3 x 10^8 m/s"
+    },
+    {
+      "front": "Snell's law",
+      "back": "n1*sin(theta1) = n2*sin(theta2)"
+    },
+    {
+      "front": "Direction light bends when entering a denser medium",
+      "back": "Toward the normal"
+    },
+    {
+      "front": "Definition of total internal reflection",
+      "back": "Full reflection at a boundary when the angle exceeds the critical angle"
+    },
+    {
+      "front": "Formula for the critical angle",
+      "back": "sin(theta_c) = n2 / n1 (n1 > n2)"
+    },
+    {
+      "front": "Thin lens / mirror equation",
+      "back": "1/f = 1/o + 1/i"
+    },
+    {
+      "front": "Formula for magnification",
+      "back": "m = -i/o"
+    },
+    {
+      "front": "Sign of focal length for a converging (convex) lens",
+      "back": "Positive"
+    },
+    {
+      "front": "Sign of focal length for a diverging (concave) lens",
+      "back": "Negative"
+    },
+    {
+      "front": "Definition of the focal point of a converging lens",
+      "back": "Where parallel rays converge after passing through"
+    },
+    {
+      "front": "Relationship between focal length and radius of curvature for a mirror",
+      "back": "f = R/2"
+    },
+    {
+      "front": "Formula for the power of a lens",
+      "back": "P = 1/f (in diopters, f in meters)"
+    },
+    {
+      "front": "Definition of chromatic aberration",
+      "back": "Failure of a lens to focus all colors to the same point"
+    },
+    {
+      "front": "Type of lens used to correct myopia (nearsightedness)",
+      "back": "Diverging (concave) lens"
+    },
+    {
+      "front": "Type of lens used to correct hyperopia (farsightedness)",
+      "back": "Converging (convex) lens"
+    },
+    {
+      "front": "What a positive image distance indicates",
+      "back": "A real image"
+    },
+    {
+      "front": "Definition of dispersion (optics)",
+      "back": "Separation of light into colors due to wavelength-dependent refraction"
+    },
+    {
+      "front": "Energy of a photon",
+      "back": "E = h*f"
+    },
+    {
+      "front": "What does h represent in E = hf",
+      "back": "Planck's constant"
+    },
+    {
+      "front": "Definition of the photoelectric effect",
+      "back": "Emission of electrons from a metal when light strikes it"
+    },
+    {
+      "front": "de Broglie wavelength formula",
+      "back": "lambda = h / p"
+    },
+    {
+      "front": "Concept: light behaves as both a wave and a particle",
+      "back": "Wave-particle duality"
+    },
+    {
+      "front": "Definition of an alpha particle",
+      "back": "A helium-4 nucleus (2 protons, 2 neutrons)"
+    },
+    {
+      "front": "Definition of a beta-minus particle",
+      "back": "An electron emitted from the nucleus"
+    },
+    {
+      "front": "Definition of a gamma ray",
+      "back": "A high-energy photon emitted from the nucleus"
+    },
+    {
+      "front": "Definition of half-life",
+      "back": "Time for half of a radioactive sample to decay"
+    },
+    {
+      "front": "Which radiation type is most penetrating: alpha, beta, or gamma?",
+      "back": "Gamma"
+    },
+    {
+      "front": "Which radiation type is least penetrating: alpha, beta, or gamma?",
+      "back": "Alpha"
+    },
+    {
+      "front": "Definition of nuclear fission",
+      "back": "Splitting of a heavy nucleus into lighter nuclei"
+    },
+    {
+      "front": "Definition of nuclear fusion",
+      "back": "Combining of light nuclei into a heavier nucleus"
+    },
+    {
+      "front": "Definition of an isotope",
+      "back": "Atoms of an element with the same protons but different neutrons"
+    },
+    {
+      "front": "Definition of atomic number (Z)",
+      "back": "The number of protons in a nucleus"
+    },
+    {
+      "front": "Definition of mass number (A)",
+      "back": "The total number of protons and neutrons"
+    },
+    {
+      "front": "Equation relating mass and energy",
+      "back": "E = m*c^2"
+    },
+    {
+      "front": "In beta-minus decay, a neutron converts into",
+      "back": "A proton plus an electron (and an antineutrino)"
+    }
+  ]
+}

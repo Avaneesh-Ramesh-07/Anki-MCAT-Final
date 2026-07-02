@@ -1,0 +1,271 @@
+/* Copyright: Ankitects Pty Ltd and contributors
+ * License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html */
+@use "../../../../../ts/lib/sass/root-vars";
+@use "../../../../../ts/lib/sass/vars" as *;
+@use "../../../../../ts/lib/sass/card-counts";
+@use "../../../../../ts/lib/sass/elevation" as *;
+
+table {
+    padding: 1rem;
+
+    .fancy & {
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--border-radius-medium);
+
+        @include elevation(1, $opacity-boost: -0.08);
+        &:hover {
+            @include elevation(2);
+        }
+        background: var(--canvas-glass);
+    }
+}
+
+a.deck {
+    color: color(fg);
+    text-decoration: none;
+    min-width: 5em;
+    display: inline-block;
+}
+
+a.deck:hover {
+    text-decoration: underline;
+}
+
+th {
+    border-bottom: 1px solid color(border-subtle);
+    padding-bottom: 5px;
+}
+
+tr.deck td {
+    padding: 1px 12px;
+    border-bottom: 1px solid var(--border-subtle);
+
+    .fancy & {
+        border: unset;
+        padding: 4px 12px;
+    }
+}
+
+tr.top-level-drag-row td {
+    border-bottom: 1px solid transparent;
+}
+
+td {
+    white-space: nowrap;
+}
+
+tr.drag-hover td {
+    border-bottom: 1px solid color(border);
+}
+
+body {
+    margin: 2em 1em 1em 1em;
+    -webkit-user-select: none;
+}
+
+.current,
+tr:hover:not(.top-level-drag-row) {
+    td {
+        background: color(border-subtle);
+        &:first-child {
+            border-top-left-radius: prop(border-radius-medium);
+            border-bottom-left-radius: prop(border-radius-medium);
+        }
+        &:last-child {
+            border-top-right-radius: prop(border-radius-medium);
+            border-bottom-right-radius: prop(border-radius-medium);
+        }
+        .gears {
+            visibility: visible;
+        }
+    }
+}
+[dir="rtl"] {
+    .current,
+    tr:hover:not(.top-level-drag-row) {
+        td {
+            background: color(canvas-inset);
+            &:first-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-right-radius: prop(border-radius-medium);
+                border-bottom-right-radius: prop(border-radius-medium);
+            }
+            &:last-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: prop(border-radius-medium);
+                border-bottom-left-radius: prop(border-radius-medium);
+            }
+        }
+    }
+}
+
+.decktd {
+    min-width: 15em;
+    max-width: calc(100vw - 300px);
+    overflow: hidden;
+}
+
+.count {
+    min-width: 4em;
+    text-align: right;
+}
+
+.optscol {
+    width: 2em;
+}
+
+.collapse {
+    color: color(fg);
+    text-decoration: none;
+    display: inline-block;
+    width: 1em;
+}
+
+.filtered {
+    color: color(fg-link) !important;
+}
+
+.gears {
+    width: 1em;
+    height: 1em;
+    opacity: 0.5;
+    padding-top: 0.2em;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.nightMode {
+    .gears {
+        filter: invert(180);
+    }
+}
+
+.callout {
+    background: color(border);
+    padding: 1em;
+    margin: 1em;
+
+    div {
+        margin: 1em;
+    }
+}
+
+#studiedToday {
+    margin: 2em 0;
+}
+
+/* MCAT deck-browser modernization
+ * --------------------------------
+ * Per-deck "next review" timer chip and Continue/Review action buttons. */
+
+.timercol,
+.actionscol {
+    width: 1em;
+}
+
+.timertd,
+.actionstd {
+    padding: 1px 12px;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    .fancy & {
+        padding: 4px 12px;
+    }
+}
+
+.actionstd {
+    text-align: end;
+}
+
+/* Timer chip / pill */
+.db-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    font-size: 0.78rem;
+    line-height: 1;
+    font-weight: 600;
+    padding: 0.32em 0.7em;
+    border-radius: prop(border-radius-large);
+    border: 1px solid var(--border-subtle);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+/* Something is due right now: prominent, uses the calm encouraging green
+ * (matches primary buttons) rather than the loud semantic review-state green. */
+.db-chip-due {
+    color: white;
+    background: var(--button-primary-bg);
+    border-color: transparent;
+}
+
+/* Upcoming review: subtle informational pill. */
+.db-chip-next {
+    color: color(fg-subtle);
+    background: color(canvas-inset);
+}
+
+/* Never studied: barely-there marker. */
+.db-chip-idle {
+    color: color(fg-faint);
+    background: transparent;
+    border-style: dashed;
+    font-weight: 500;
+}
+
+/* Per-deck action buttons */
+.db-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.45em 0.95em;
+    margin-inline-start: 0.4em;
+    border-radius: prop(border-radius-large);
+    border: 1px solid transparent;
+    cursor: pointer;
+    user-select: none;
+    transition:
+        filter prop(transition) ease,
+        box-shadow prop(transition) ease,
+        background prop(transition) ease;
+}
+
+.db-btn:first-child {
+    margin-inline-start: 0;
+}
+
+.db-btn:hover {
+    filter: brightness(1.06);
+}
+
+.db-btn:active {
+    filter: brightness(0.94);
+}
+
+/* Review: primary action — calm encouraging green (matches the due chip and
+ * the app-wide primary button), not the loud semantic review-state green. */
+.db-btn-review {
+    color: white;
+    background: var(--button-primary-bg);
+    @include elevation(1, $opacity-boost: -0.1);
+}
+
+/* Continue: secondary action — calm sky link colour on a neutral surface. */
+.db-btn-continue {
+    color: color(fg-link);
+    background: color(canvas-elevated);
+    border-color: var(--border);
+}
+
+.nightMode {
+    .db-btn-continue {
+        background: color(button-bg);
+    }
+}

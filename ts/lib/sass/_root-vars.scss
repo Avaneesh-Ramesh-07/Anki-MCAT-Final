@@ -1,0 +1,185 @@
+/* Copyright: Ankitects Pty Ltd and contributors
+ * License: GNU AGPL, version 3 or later, http://www.gnu.org/licenses/agpl.html */
+
+@use "sass:map";
+@use "sass:string";
+@use "vars" as *;
+@use "functions" as *;
+@use "scrollbar";
+
+/*! colors */
+:root {
+    $colors: map.get($vars, colors);
+
+    @each $name, $val in create-vars-from-map($colors, light) {
+        @if string.index($name, "comment") == 1 {
+            /*! #{$val} */
+        } @else {
+            #{$name}: #{$val};
+        }
+    }
+    color-scheme: light;
+
+    &.night-mode {
+        @each $name, $val in create-vars-from-map($colors, dark) {
+            @if string.index($name, "comment") == 1 {
+                /*! #{$val} */
+            } @else {
+                #{$name}: #{$val};
+            }
+        }
+        color-scheme: dark;
+    }
+}
+
+/*! props */
+:root {
+    $props: map.get($vars, props);
+    @each $name, $val in create-vars-from-map($props, light) {
+        @if string.index($name, "comment") == 1 {
+            /*! #{$val} */
+        } @else {
+            #{$name}: #{$val};
+        }
+    }
+    &.night-mode {
+        @each $name, $val in create-vars-from-map($props, dark) {
+            @if string.index($name, "comment") == 1 {
+                /*! #{$val} */
+            } @else {
+                #{$name}: #{$val};
+            }
+        }
+    }
+}
+
+/*! rest */
+html {
+    font-size: prop(font-size);
+    // Friendly rounded UI font across every web surface. Card content keeps its
+    // own font (notetypes scope `.card { font-family }`), so this only warms the
+    // app chrome. Falls back to platform rounded/system fonts if Nunito is absent.
+    font-family: "Nunito", ui-rounded, "SF Pro Rounded", "Segoe UI", Roboto,
+        system-ui, -apple-system, sans-serif;
+    body {
+        overscroll-behavior: none;
+        &:not(.isMac),
+        &:not(.isMac) * {
+            @include scrollbar.custom;
+        }
+    }
+}
+
+/*! ==========================================================================
+    MCAT "calm sketchbook" global re-skin.
+
+    Warms every web surface (Anki's Qt pages + the SvelteKit app, which both
+    @use this file) by overriding the neutral/text/border/link/button tokens
+    with a soft warm-paper palette in light + a warm-charcoal palette in dark.
+    Semantic status colours (state-*, flag-*, accent-danger) are intentionally
+    left untouched so graphs and the reviewer stay legible. Contrast validated
+    (body >= 4.5:1, large >= 3:1) in both themes.
+
+    These blocks come after the token emission above, so they win by source
+    order; the .night-mode block wins in dark by higher specificity.
+    ========================================================================= */
+
+// Nunito (SIL OFL 1.1 — qt/aqt/data/web/fonts/OFL.txt), served by mediasrv at
+// /_anki/fonts/ so it loads in both the Qt webviews and the SvelteKit app.
+@font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/_anki/fonts/nunito-400.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/_anki/fonts/nunito-600.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/_anki/fonts/nunito-700.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/_anki/fonts/nunito-800.woff2") format("woff2");
+}
+
+:root {
+    // surfaces — warm paper
+    --canvas: #fbf8f3;
+    --canvas-elevated: #fffdfa;
+    --canvas-inset: #f6f1e9;
+    --canvas-overlay: #f3ede3;
+    --canvas-code: #fffdfa;
+    --canvas-glass: rgba(255, 253, 250, 0.5);
+    // text — warm charcoal
+    --fg: #3a3532;
+    --fg-subtle: #5c554e;
+    --fg-disabled: #b8b0a4;
+    --fg-faint: #7a7268;
+    --fg-link: #3e7699;
+    // lines — soft pencil
+    --border: #e2d9cb;
+    --border-subtle: #efe8dc;
+    --border-strong: #ccbfab;
+    --border-focus: #3e7699;
+    // depth — warm, low-contrast
+    --shadow: #d8cdbb;
+    --shadow-subtle: #e6dccd;
+    // accents
+    --accent-card: #5b93b8;
+    // buttons — warm neutral default, encouraging green primary
+    --button-bg: #f3ede3;
+    --button-gradient-start: #fffdfa;
+    --button-gradient-end: #f3ede3;
+    --button-hover-border: #ccbfab;
+    --button-disabled: rgba(214, 205, 192, 0.5);
+    --button-primary-bg: #3f7a5e;
+    --button-primary-gradient-start: #4a8a6c;
+    --button-primary-gradient-end: #3f7a5e;
+    --button-primary-disabled: #a9cbbb;
+    // selection
+    --selected-bg: rgba(214, 205, 192, 0.55);
+}
+
+:root.night-mode {
+    --canvas: #211f1d;
+    --canvas-elevated: #2a2724;
+    --canvas-inset: #1b1917;
+    --canvas-overlay: #2a2724;
+    --canvas-code: #1b1917;
+    --canvas-glass: rgba(42, 39, 36, 0.5);
+    --fg: #ece6de;
+    --fg-subtle: #b4aba0;
+    --fg-disabled: #6b635a;
+    --fg-faint: #8e867b;
+    --fg-link: #82b3d4;
+    --border: #3d3833;
+    --border-subtle: #332f2a;
+    --border-strong: #524c44;
+    --border-focus: #82b3d4;
+    --shadow: #131110;
+    --shadow-subtle: #1a1815;
+    --accent-card: #82b3d4;
+    --button-bg: #33302b;
+    --button-gradient-start: #3a3630;
+    --button-gradient-end: #33302b;
+    --button-hover-border: #4a453e;
+    --button-disabled: rgba(58, 54, 48, 0.5);
+    --button-primary-bg: #3f7a5e;
+    --button-primary-gradient-start: #478a6b;
+    --button-primary-gradient-end: #3f7a5e;
+    --button-primary-disabled: #35533f;
+    --selected-bg: rgba(58, 54, 48, 0.6);
+}

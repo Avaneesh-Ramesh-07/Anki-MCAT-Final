@@ -1,0 +1,743 @@
+{
+  "topic": "Psychology",
+  "deck": "MCAT Core::Psychology",
+  "aamc_tag": "aamc::psych-soc::psychology",
+  "cards": [
+    {
+      "front": "Smallest stimulus intensity detectable 50% of the time",
+      "back": "Absolute threshold"
+    },
+    {
+      "front": "Minimum difference between two stimuli detectable 50% of the time",
+      "back": "Difference threshold (just-noticeable difference)"
+    },
+    {
+      "front": "Law stating the JND is a constant proportion of the original stimulus",
+      "back": "Weber's law"
+    },
+    {
+      "front": "Stimulus intensity below the absolute threshold of conscious awareness",
+      "back": "Subliminal (threshold) stimulus"
+    },
+    {
+      "front": "Theory that detecting a stimulus depends on both intensity and the observer's decision criteria",
+      "back": "Signal detection theory"
+    },
+    {
+      "front": "In signal detection, correctly detecting a stimulus that is present",
+      "back": "Hit"
+    },
+    {
+      "front": "In signal detection, reporting a stimulus when none is present",
+      "back": "False alarm"
+    },
+    {
+      "front": "In signal detection, failing to detect a stimulus that is present",
+      "back": "Miss"
+    },
+    {
+      "front": "Signal detection term for an observer's tendency to say 'yes' regardless of the stimulus",
+      "back": "Response bias"
+    },
+    {
+      "front": "Decline in sensory response to a constant, unchanging stimulus",
+      "back": "Sensory adaptation"
+    },
+    {
+      "front": "Conversion of physical stimulus energy into neural signals",
+      "back": "Transduction"
+    },
+    {
+      "front": "Photoreceptors responsible for color vision and fine detail in bright light",
+      "back": "Cones"
+    },
+    {
+      "front": "Photoreceptors responsible for vision in dim light and peripheral vision",
+      "back": "Rods"
+    },
+    {
+      "front": "Theory that color vision arises from three cone types (red, green, blue)",
+      "back": "Trichromatic (Young-Helmholtz) theory"
+    },
+    {
+      "front": "Theory explaining color afterimages via red-green, blue-yellow, black-white pairs",
+      "back": "Opponent-process theory"
+    },
+    {
+      "front": "Inner-ear structure containing hair cells that transduce sound",
+      "back": "Cochlea"
+    },
+    {
+      "front": "Cells in the cochlea that convert sound vibrations into neural signals",
+      "back": "Hair cells"
+    },
+    {
+      "front": "Likely deficit if hair cells are missing in only part of the cochlea",
+      "back": "Inability to hear certain frequencies"
+    },
+    {
+      "front": "Theory that pitch is coded by the location of hair cell stimulation on the basilar membrane",
+      "back": "Place theory"
+    },
+    {
+      "front": "Theory that pitch is coded by the firing rate matching the sound's frequency",
+      "back": "Frequency (temporal) theory"
+    },
+    {
+      "front": "Inner-ear structures that sense rotational movement of the head",
+      "back": "Semicircular canals"
+    },
+    {
+      "front": "Sense of body position and movement of limbs",
+      "back": "Proprioception (kinesthesia)"
+    },
+    {
+      "front": "The five basic taste qualities",
+      "back": "Sweet, sour, salty, bitter, umami"
+    },
+    {
+      "front": "Processing that starts with raw sensory data and builds up to perception",
+      "back": "Bottom-up processing"
+    },
+    {
+      "front": "Processing driven by prior knowledge, expectations, and context",
+      "back": "Top-down processing"
+    },
+    {
+      "front": "School of psychology emphasizing that the whole perception exceeds the sum of parts",
+      "back": "Gestalt psychology"
+    },
+    {
+      "front": "Gestalt principle of grouping nearby elements together",
+      "back": "Proximity"
+    },
+    {
+      "front": "Gestalt principle of grouping elements that look alike",
+      "back": "Similarity"
+    },
+    {
+      "front": "Gestalt principle of filling gaps to perceive a complete figure",
+      "back": "Closure"
+    },
+    {
+      "front": "Perceiving objects as stable in size, shape, and color despite changing sensory input",
+      "back": "Perceptual constancy"
+    },
+    {
+      "front": "Depth cue requiring both eyes, based on retinal image differences",
+      "back": "Binocular disparity (retinal disparity)"
+    },
+    {
+      "front": "Monocular depth cue in which nearer objects block farther ones",
+      "back": "Interposition (overlap)"
+    },
+    {
+      "front": "Focusing attention on one stimulus while filtering others, as at a noisy party",
+      "back": "Selective (cocktail party) attention"
+    },
+    {
+      "front": "Learning in which a neutral stimulus comes to elicit a reflexive response",
+      "back": "Classical conditioning"
+    },
+    {
+      "front": "In classical conditioning, the stimulus that naturally elicits a response",
+      "back": "Unconditioned stimulus (US)"
+    },
+    {
+      "front": "In classical conditioning, the reflexive, unlearned reaction to the US",
+      "back": "Unconditioned response (UR)"
+    },
+    {
+      "front": "In classical conditioning, a previously neutral stimulus that now triggers a learned response",
+      "back": "Conditioned stimulus (CS)"
+    },
+    {
+      "front": "In classical conditioning, the learned response to the conditioned stimulus",
+      "back": "Conditioned response (CR)"
+    },
+    {
+      "front": "Pairing the neutral stimulus with the US to establish a conditioned response",
+      "back": "Acquisition"
+    },
+    {
+      "front": "Weakening of a conditioned response when the CS is presented without the US",
+      "back": "Extinction"
+    },
+    {
+      "front": "Reappearance of an extinguished response after a rest period",
+      "back": "Spontaneous recovery"
+    },
+    {
+      "front": "Responding to stimuli similar to the original conditioned stimulus",
+      "back": "Stimulus generalization"
+    },
+    {
+      "front": "Researcher famous for classical conditioning experiments with dogs",
+      "back": "Ivan Pavlov"
+    },
+    {
+      "front": "Learning in which behavior is shaped by its consequences",
+      "back": "Operant conditioning"
+    },
+    {
+      "front": "Psychologist who formulated the law of effect and operant conditioning",
+      "back": "B. F. Skinner (law of effect: Edward Thorndike)"
+    },
+    {
+      "front": "Consequence that increases the likelihood of a behavior",
+      "back": "Reinforcement"
+    },
+    {
+      "front": "Consequence that decreases the likelihood of a behavior",
+      "back": "Punishment"
+    },
+    {
+      "front": "Adding a pleasant stimulus to increase a behavior",
+      "back": "Positive reinforcement"
+    },
+    {
+      "front": "Removing an unpleasant stimulus to increase a behavior",
+      "back": "Negative reinforcement"
+    },
+    {
+      "front": "Adding an aversive stimulus to decrease a behavior",
+      "back": "Positive punishment"
+    },
+    {
+      "front": "Removing a desirable stimulus to decrease a behavior",
+      "back": "Negative punishment"
+    },
+    {
+      "front": "Reinforcer that gains value through association, such as money or tokens",
+      "back": "Secondary (conditioned) reinforcer"
+    },
+    {
+      "front": "Schedule reinforcing after a set number of responses",
+      "back": "Fixed-ratio schedule"
+    },
+    {
+      "front": "Schedule reinforcing after an unpredictable number of responses",
+      "back": "Variable-ratio schedule"
+    },
+    {
+      "front": "Schedule reinforcing the first response after a fixed time interval",
+      "back": "Fixed-interval schedule"
+    },
+    {
+      "front": "Reinforcement schedule producing the highest, most resistant response rate",
+      "back": "Variable-ratio schedule"
+    },
+    {
+      "front": "Learning by watching and imitating others",
+      "back": "Observational learning (modeling)"
+    },
+    {
+      "front": "Psychologist known for the Bobo doll observational-learning study",
+      "back": "Albert Bandura"
+    },
+    {
+      "front": "Behavior therapy using tokens as secondary reinforcers to shape behavior",
+      "back": "Token economy"
+    },
+    {
+      "front": "Memory store holding sensory input for a fraction of a second",
+      "back": "Sensory memory"
+    },
+    {
+      "front": "Memory store holding information about 15-30 seconds without rehearsal",
+      "back": "Short-term memory"
+    },
+    {
+      "front": "Approximate capacity of short-term memory in items",
+      "back": "Seven plus or minus two"
+    },
+    {
+      "front": "Grouping items into meaningful units to expand short-term capacity",
+      "back": "Chunking"
+    },
+    {
+      "front": "Memory system that both stores and manipulates information for current tasks",
+      "back": "Working memory"
+    },
+    {
+      "front": "Memory store with essentially unlimited capacity and duration",
+      "back": "Long-term memory"
+    },
+    {
+      "front": "Linking new information to existing knowledge for durable storage",
+      "back": "Elaborative rehearsal"
+    },
+    {
+      "front": "Memory type for facts and events that can be consciously recalled",
+      "back": "Explicit (declarative) memory"
+    },
+    {
+      "front": "Explicit memory for general facts and knowledge",
+      "back": "Semantic memory"
+    },
+    {
+      "front": "Explicit memory for personally experienced events",
+      "back": "Episodic memory"
+    },
+    {
+      "front": "Memory type for skills and conditioned responses, recalled unconsciously",
+      "back": "Implicit (nondeclarative) memory"
+    },
+    {
+      "front": "Implicit memory for motor skills such as riding a bicycle",
+      "back": "Procedural memory"
+    },
+    {
+      "front": "Retrieving information without external cues",
+      "back": "Free recall"
+    },
+    {
+      "front": "Identifying previously learned information among options",
+      "back": "Recognition"
+    },
+    {
+      "front": "Tendency to remember items at the start and end of a list best",
+      "back": "Serial position effect"
+    },
+    {
+      "front": "Enhanced memory for items at the beginning of a list",
+      "back": "Primacy effect"
+    },
+    {
+      "front": "Enhanced memory for items at the end of a list",
+      "back": "Recency effect"
+    },
+    {
+      "front": "Better recall for information relevant to oneself",
+      "back": "Self-reference effect"
+    },
+    {
+      "front": "Curve describing decline of memory retention over time",
+      "back": "Ebbinghaus forgetting curve"
+    },
+    {
+      "front": "Old information disrupting the recall of newly learned information",
+      "back": "Proactive interference"
+    },
+    {
+      "front": "New information disrupting the recall of previously learned information",
+      "back": "Retroactive interference"
+    },
+    {
+      "front": "Lasting strengthening of synaptic connections thought to underlie memory",
+      "back": "Long-term potentiation"
+    },
+    {
+      "front": "Inability to form new memories after brain injury",
+      "back": "Anterograde amnesia"
+    },
+    {
+      "front": "Inability to recall memories formed before a brain injury",
+      "back": "Retrograde amnesia"
+    },
+    {
+      "front": "Progressive neurodegenerative disease causing severe memory loss and cortical atrophy",
+      "back": "Alzheimer's disease"
+    },
+    {
+      "front": "Mental shortcut or rule of thumb for solving problems quickly",
+      "back": "Heuristic"
+    },
+    {
+      "front": "Step-by-step procedure guaranteeing a correct solution",
+      "back": "Algorithm"
+    },
+    {
+      "front": "Judging likelihood by how easily examples come to mind",
+      "back": "Availability heuristic"
+    },
+    {
+      "front": "Judging probability by resemblance to a prototype or stereotype",
+      "back": "Representativeness heuristic"
+    },
+    {
+      "front": "Relying too heavily on the first piece of information encountered",
+      "back": "Anchoring bias"
+    },
+    {
+      "front": "Seeking information that supports existing beliefs",
+      "back": "Confirmation bias"
+    },
+    {
+      "front": "Overestimating one's ability to have predicted an outcome after it occurs",
+      "back": "Hindsight bias"
+    },
+    {
+      "front": "Inability to see a novel use for an object beyond its typical function",
+      "back": "Functional fixedness"
+    },
+    {
+      "front": "Tendency to solve problems using previously successful methods",
+      "back": "Mental set"
+    },
+    {
+      "front": "Intelligence based on accumulated knowledge and facts",
+      "back": "Crystallized intelligence"
+    },
+    {
+      "front": "Intelligence based on reasoning and solving novel problems",
+      "back": "Fluid intelligence"
+    },
+    {
+      "front": "Psychologist who proposed a theory of multiple intelligences",
+      "back": "Howard Gardner"
+    },
+    {
+      "front": "Smallest unit of sound in a language",
+      "back": "Phoneme"
+    },
+    {
+      "front": "Smallest unit of meaning in a language",
+      "back": "Morpheme"
+    },
+    {
+      "front": "Hypothesis that language shapes thought and perception",
+      "back": "Linguistic relativity (Sapir-Whorf) hypothesis"
+    },
+    {
+      "front": "Theorist who argued language is learned through operant conditioning",
+      "back": "B. F. Skinner"
+    },
+    {
+      "front": "Theorist who proposed an innate language acquisition device",
+      "back": "Noam Chomsky"
+    },
+    {
+      "front": "Optimal window in development for acquiring language",
+      "back": "Critical (sensitive) period"
+    },
+    {
+      "front": "General state of awareness of oneself and the environment",
+      "back": "Consciousness"
+    },
+    {
+      "front": "Brain waves characteristic of an alert, awake state",
+      "back": "Beta waves"
+    },
+    {
+      "front": "Low-frequency, high-amplitude brain waves of deep (slow-wave) sleep",
+      "back": "Delta waves"
+    },
+    {
+      "front": "Sleep stage characterized by sleep spindles and K-complexes",
+      "back": "Stage 2 (NREM)"
+    },
+    {
+      "front": "Sleep stage dominated by delta waves, also called slow-wave sleep",
+      "back": "Stage 3 (NREM)"
+    },
+    {
+      "front": "Sleep stage of vivid dreaming, rapid eye movement, and muscle paralysis",
+      "back": "REM sleep"
+    },
+    {
+      "front": "Brain-wave feature that makes REM sleep resemble wakefulness",
+      "back": "Beta-like (fast, low-amplitude) waves"
+    },
+    {
+      "front": "Sleep disorder of walking or activity during slow-wave sleep",
+      "back": "Somnambulism (sleepwalking)"
+    },
+    {
+      "front": "Theory that dreams are the cortex interpreting random brainstem activity",
+      "back": "Activation-synthesis theory"
+    },
+    {
+      "front": "Drugs that slow central nervous system activity, such as alcohol",
+      "back": "Depressants"
+    },
+    {
+      "front": "Drugs that speed up CNS activity, such as cocaine and amphetamines",
+      "back": "Stimulants"
+    },
+    {
+      "front": "Drugs that distort perception and cause hallucinations, such as LSD",
+      "back": "Hallucinogens"
+    },
+    {
+      "front": "Dopaminergic pathway most associated with drug reward and addiction",
+      "back": "Mesolimbic pathway"
+    },
+    {
+      "front": "Theory that emotion and physiological arousal occur simultaneously",
+      "back": "Cannon-Bard theory"
+    },
+    {
+      "front": "Theory that emotion results from interpreting bodily physiological responses",
+      "back": "James-Lange theory"
+    },
+    {
+      "front": "Theory that emotion requires physiological arousal plus cognitive labeling",
+      "back": "Schachter-Singer (two-factor) theory"
+    },
+    {
+      "front": "Brain structure central to processing fear and emotional memory",
+      "back": "Amygdala"
+    },
+    {
+      "front": "Theory that behavior is driven by the reduction of unmet biological needs",
+      "back": "Drive-reduction theory"
+    },
+    {
+      "front": "Optimal-level theory that performance peaks at moderate arousal",
+      "back": "Yerkes-Dodson law"
+    },
+    {
+      "front": "Psychologist who proposed the hierarchy of needs",
+      "back": "Abraham Maslow"
+    },
+    {
+      "front": "The need at the top of Maslow's hierarchy",
+      "back": "Self-actualization"
+    },
+    {
+      "front": "Motivation arising from internal satisfaction rather than external reward",
+      "back": "Intrinsic motivation"
+    },
+    {
+      "front": "Freud's structure operating on the pleasure principle",
+      "back": "Id"
+    },
+    {
+      "front": "Freud's structure operating on the reality principle",
+      "back": "Ego"
+    },
+    {
+      "front": "Freud's structure representing internalized moral standards",
+      "back": "Superego"
+    },
+    {
+      "front": "Freud's defense mechanism of pushing threatening thoughts out of awareness",
+      "back": "Repression"
+    },
+    {
+      "front": "Defense mechanism of attributing one's own unacceptable impulses to others",
+      "back": "Projection"
+    },
+    {
+      "front": "Trait model describing personality along five broad dimensions",
+      "back": "Big Five (Five-Factor Model)"
+    },
+    {
+      "front": "The five traits of the Big Five personality model",
+      "back": "Openness, conscientiousness, extraversion, agreeableness, neuroticism"
+    },
+    {
+      "front": "Rogers' concept of accepting a person without conditions",
+      "back": "Unconditional positive regard"
+    },
+    {
+      "front": "Humanistic theorist known for client-centered therapy and the self-concept",
+      "back": "Carl Rogers"
+    },
+    {
+      "front": "Piaget stage (birth-2 yrs) marked by object permanence",
+      "back": "Sensorimotor stage"
+    },
+    {
+      "front": "Understanding that objects continue to exist when out of sight",
+      "back": "Object permanence"
+    },
+    {
+      "front": "Piaget stage (2-7 yrs) marked by symbolic thought and egocentrism",
+      "back": "Preoperational stage"
+    },
+    {
+      "front": "Inability of a preoperational child to take another's perspective",
+      "back": "Egocentrism"
+    },
+    {
+      "front": "Piaget stage (7-11 yrs) marked by logical thought and conservation",
+      "back": "Concrete operational stage"
+    },
+    {
+      "front": "Understanding that quantity stays the same despite changes in shape",
+      "back": "Conservation"
+    },
+    {
+      "front": "Piaget stage (12+ yrs) marked by abstract and hypothetical reasoning",
+      "back": "Formal operational stage"
+    },
+    {
+      "front": "Incorporating new information into an existing mental framework",
+      "back": "Assimilation"
+    },
+    {
+      "front": "Modifying an existing mental framework to fit new information",
+      "back": "Accommodation"
+    },
+    {
+      "front": "Erikson's infancy conflict (0-1 yr)",
+      "back": "Trust vs. mistrust"
+    },
+    {
+      "front": "Erikson's toddler conflict (1-3 yrs)",
+      "back": "Autonomy vs. shame and doubt"
+    },
+    {
+      "front": "Erikson's preschool conflict (3-6 yrs)",
+      "back": "Initiative vs. guilt"
+    },
+    {
+      "front": "Erikson's adolescent conflict involving a 'physiological revolution'",
+      "back": "Identity vs. role confusion"
+    },
+    {
+      "front": "Erikson's young-adult conflict",
+      "back": "Intimacy vs. isolation"
+    },
+    {
+      "front": "Erikson's late-adult conflict resolved by wisdom and peace about death",
+      "back": "Integrity vs. despair"
+    },
+    {
+      "front": "Theorist who described psychosocial stages across the entire lifespan",
+      "back": "Erik Erikson"
+    },
+    {
+      "front": "Theorist who proposed stages of moral development",
+      "back": "Lawrence Kohlberg"
+    },
+    {
+      "front": "Kohlberg's level based on avoiding punishment and gaining rewards",
+      "back": "Preconventional morality"
+    },
+    {
+      "front": "Kohlberg's level based on social approval and law-and-order",
+      "back": "Conventional morality"
+    },
+    {
+      "front": "Kohlberg's level based on abstract ethical principles",
+      "back": "Postconventional morality"
+    },
+    {
+      "front": "Vygotsky's gap between what a child can do alone versus with guidance",
+      "back": "Zone of proximal development"
+    },
+    {
+      "front": "Enduring beliefs and feelings predisposing responses toward objects or people",
+      "back": "Attitudes"
+    },
+    {
+      "front": "Discomfort from holding conflicting attitudes or attitude-behavior mismatch",
+      "back": "Cognitive dissonance"
+    },
+    {
+      "front": "Persuasion route using logic and content of the argument",
+      "back": "Central route"
+    },
+    {
+      "front": "Explaining behavior by internal traits versus external situations",
+      "back": "Attribution"
+    },
+    {
+      "front": "Overemphasizing personality and underestimating situation in others' behavior",
+      "back": "Fundamental attribution error"
+    },
+    {
+      "front": "Attributing one's own successes to internal causes and failures to external ones",
+      "back": "Self-serving bias"
+    },
+    {
+      "front": "Mental framework organizing knowledge about a concept or situation",
+      "back": "Schema"
+    },
+    {
+      "front": "Neurotransmitter involved in reward, movement, and Parkinson's disease",
+      "back": "Dopamine"
+    },
+    {
+      "front": "Neurotransmitter linked to mood regulation and targeted by SSRIs",
+      "back": "Serotonin"
+    },
+    {
+      "front": "Primary inhibitory neurotransmitter of the central nervous system",
+      "back": "GABA"
+    },
+    {
+      "front": "Primary excitatory neurotransmitter of the central nervous system",
+      "back": "Glutamate"
+    },
+    {
+      "front": "Neurotransmitter at the neuromuscular junction and in memory",
+      "back": "Acetylcholine"
+    },
+    {
+      "front": "Brain lobe responsible for executive function, planning, and voluntary movement",
+      "back": "Frontal lobe"
+    },
+    {
+      "front": "Frontal-lobe region controlling speech production",
+      "back": "Broca's area"
+    },
+    {
+      "front": "Temporal-lobe region responsible for language comprehension",
+      "back": "Wernicke's area"
+    },
+    {
+      "front": "Brain lobe that processes visual information",
+      "back": "Occipital lobe"
+    },
+    {
+      "front": "Brain structure essential for forming new long-term memories",
+      "back": "Hippocampus"
+    },
+    {
+      "front": "Brain region regulating hunger, thirst, body temperature, and circadian rhythm",
+      "back": "Hypothalamus"
+    },
+    {
+      "front": "Hindbrain structure coordinating balance and fine motor movement",
+      "back": "Cerebellum"
+    },
+    {
+      "front": "Brainstem structure relaying most sensory information to the cortex",
+      "back": "Thalamus"
+    },
+    {
+      "front": "Set of structures governing emotion and memory, including amygdala and hippocampus",
+      "back": "Limbic system"
+    },
+    {
+      "front": "Disorder marked by hallucinations, delusions, and disorganized thought",
+      "back": "Schizophrenia"
+    },
+    {
+      "front": "Schizophrenia symptoms that are excesses, such as hallucinations and delusions",
+      "back": "Positive symptoms"
+    },
+    {
+      "front": "Neurotransmitter hypothesis linking excess activity to schizophrenia",
+      "back": "Dopamine hypothesis"
+    },
+    {
+      "front": "Mood disorder with persistent low mood and loss of interest",
+      "back": "Major depressive disorder"
+    },
+    {
+      "front": "Mood disorder alternating between depressive and manic episodes",
+      "back": "Bipolar disorder"
+    },
+    {
+      "front": "Disorder of intrusive thoughts and repetitive ritual behaviors",
+      "back": "Obsessive-compulsive disorder"
+    },
+    {
+      "front": "Disorder following trauma with flashbacks and hyperarousal",
+      "back": "Post-traumatic stress disorder"
+    },
+    {
+      "front": "Personality disorder marked by unstable relationships, self-image, and impulsivity",
+      "back": "Borderline personality disorder"
+    },
+    {
+      "front": "Manual used to classify and diagnose mental disorders in the US",
+      "back": "DSM (Diagnostic and Statistical Manual)"
+    }
+  ]
+}

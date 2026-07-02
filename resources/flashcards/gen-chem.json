@@ -1,0 +1,819 @@
+{
+  "topic": "General Chemistry",
+  "deck": "MCAT Core::General Chemistry",
+  "aamc_tag": "aamc::chem-phys::gen-chem",
+  "cards": [
+    {
+      "front": "What property of an electron does the principal quantum number (n) describe?",
+      "back": "Its energy level / shell (size)"
+    },
+    {
+      "front": "Range of allowed values for the azimuthal quantum number l given n",
+      "back": "0 to n-1"
+    },
+    {
+      "front": "The two allowed values of the spin quantum number ms",
+      "back": "+1/2 and -1/2"
+    },
+    {
+      "front": "Maximum number of electrons a d subshell can hold",
+      "back": "10"
+    },
+    {
+      "front": "Principle: no two electrons in an atom share all four quantum numbers",
+      "back": "Pauli exclusion principle"
+    },
+    {
+      "front": "Rule: electrons fill degenerate orbitals singly before pairing",
+      "back": "Hund's rule"
+    },
+    {
+      "front": "Principle: lower-energy orbitals are filled before higher-energy ones",
+      "back": "Aufbau principle"
+    },
+    {
+      "front": "Principle: position and momentum of an electron cannot both be known exactly",
+      "back": "Heisenberg uncertainty principle"
+    },
+    {
+      "front": "Atomic model with electrons in fixed circular orbits at discrete energies",
+      "back": "Bohr model"
+    },
+    {
+      "front": "An atom with unpaired electrons is attracted to a magnetic field; this term is:",
+      "back": "Paramagnetic"
+    },
+    {
+      "front": "An atom with all electrons paired is weakly repelled by a magnetic field; this term is:",
+      "back": "Diamagnetic"
+    },
+    {
+      "front": "Ground-state valence configuration of the alkali metals",
+      "back": "ns1"
+    },
+    {
+      "front": "Electron configuration of a neutral iron (Fe, Z=26) atom",
+      "back": "[Ar] 4s2 3d6"
+    },
+    {
+      "front": "When forming a cation, electrons are removed first from which subshell?",
+      "back": "The highest-n s subshell (before d)"
+    },
+    {
+      "front": "When an electron drops between Bohr energy levels, the energy is released as:",
+      "back": "A photon of a specific wavelength"
+    },
+    {
+      "front": "Equation relating a photon's energy to its frequency",
+      "back": "E = hf (h = Planck's constant)"
+    },
+    {
+      "front": "Group name for the second column (Be, Mg, Ca...)",
+      "back": "Alkaline earth metals"
+    },
+    {
+      "front": "Group name for column 17 (F, Cl, Br, I)",
+      "back": "Halogens"
+    },
+    {
+      "front": "Group name for column 18 (He, Ne, Ar...)",
+      "back": "Noble gases"
+    },
+    {
+      "front": "Elements that commonly form multiple oxidation states and colored compounds",
+      "back": "Transition metals"
+    },
+    {
+      "front": "Periodic trend: atomic radius across a period (left to right)",
+      "back": "Decreases"
+    },
+    {
+      "front": "Periodic trend: atomic radius down a group",
+      "back": "Increases"
+    },
+    {
+      "front": "Periodic trend: ionization energy across a period (left to right)",
+      "back": "Increases"
+    },
+    {
+      "front": "Periodic trend: electronegativity down a group",
+      "back": "Decreases"
+    },
+    {
+      "front": "Element with the highest electronegativity",
+      "back": "Fluorine"
+    },
+    {
+      "front": "Energy required to remove an electron from a gaseous atom",
+      "back": "Ionization energy"
+    },
+    {
+      "front": "Energy change when a gaseous atom gains an electron",
+      "back": "Electron affinity"
+    },
+    {
+      "front": "Net positive charge felt by an outer electron after shielding",
+      "back": "Effective nuclear charge (Zeff)"
+    },
+    {
+      "front": "Halogens are more readily (oxidized / reduced) because they gain an electron",
+      "back": "Reduced"
+    },
+    {
+      "front": "Alkali metals react violently with water mainly because of their very low:",
+      "back": "Ionization energies"
+    },
+    {
+      "front": "Three isotopes of hydrogen",
+      "back": "Protium, deuterium, tritium"
+    },
+    {
+      "front": "Atoms with the same number of protons but different numbers of neutrons",
+      "back": "Isotopes"
+    },
+    {
+      "front": "Bond formed by transfer of electrons between a metal and a nonmetal",
+      "back": "Ionic bond"
+    },
+    {
+      "front": "Bond formed by sharing of electron pairs between atoms",
+      "back": "Covalent bond"
+    },
+    {
+      "front": "Covalent bond where both shared electrons come from one atom",
+      "back": "Coordinate (dative) covalent bond"
+    },
+    {
+      "front": "Type of covalent bonds in a methane (CH4) molecule",
+      "back": "Nonpolar covalent bonds"
+    },
+    {
+      "front": "Of Li-N, H-F, B-S, F-O, which single bond has the most ionic character?",
+      "back": "Li-N (largest electronegativity difference)"
+    },
+    {
+      "front": "A double bond consists of how many sigma and how many pi bonds?",
+      "back": "1 sigma and 1 pi"
+    },
+    {
+      "front": "A triple bond consists of how many sigma and how many pi bonds?",
+      "back": "1 sigma and 2 pi"
+    },
+    {
+      "front": "Order of increasing bond length: ethyne, ethene, ethane",
+      "back": "Ethyne < ethene < ethane"
+    },
+    {
+      "front": "Hybridization of a carbon with four single bonds",
+      "back": "sp3"
+    },
+    {
+      "front": "Hybridization of a carbon in a C=C or carbonyl (one double bond)",
+      "back": "sp2"
+    },
+    {
+      "front": "Hybridization of a carbon with a triple bond",
+      "back": "sp"
+    },
+    {
+      "front": "VSEPR geometry with 2 bonding groups and no lone pairs (e.g. CO2)",
+      "back": "Linear"
+    },
+    {
+      "front": "VSEPR geometry with 3 bonding groups, no lone pairs (e.g. SO3)",
+      "back": "Trigonal planar"
+    },
+    {
+      "front": "VSEPR geometry with 4 bonding groups, no lone pairs (e.g. CH4, SO4^2-)",
+      "back": "Tetrahedral"
+    },
+    {
+      "front": "VSEPR geometry with 3 bonds and 1 lone pair on central atom (e.g. NH3)",
+      "back": "Trigonal pyramidal"
+    },
+    {
+      "front": "VSEPR geometry with 2 bonds and 2 lone pairs on central atom (e.g. H2O)",
+      "back": "Bent"
+    },
+    {
+      "front": "VSEPR geometry with 5 bonding groups, no lone pairs (e.g. PBr5)",
+      "back": "Trigonal bipyramidal"
+    },
+    {
+      "front": "Number of resonance structures of the carbonate ion (CO3^2-)",
+      "back": "3"
+    },
+    {
+      "front": "CO2 has polar bonds but no net dipole because it is:",
+      "back": "Linear (dipoles cancel)"
+    },
+    {
+      "front": "Strongest intermolecular force (excluding covalent/ionic bonds)",
+      "back": "Hydrogen bonding"
+    },
+    {
+      "front": "Weakest intermolecular force, present in all molecules",
+      "back": "London dispersion forces"
+    },
+    {
+      "front": "Only intermolecular force that nonpolar H2 can exert",
+      "back": "London dispersion forces"
+    },
+    {
+      "front": "Elements to which H must bond for hydrogen bonding to occur",
+      "back": "N, O, or F"
+    },
+    {
+      "front": "Reaction that combines two or more substances into one product",
+      "back": "Combination (synthesis) reaction"
+    },
+    {
+      "front": "Reaction where one compound breaks into two or more products",
+      "back": "Decomposition reaction"
+    },
+    {
+      "front": "Reaction: an element replaces another element in a compound",
+      "back": "Single-displacement reaction"
+    },
+    {
+      "front": "Reaction: two compounds exchange ions to form two new compounds",
+      "back": "Double-displacement (metathesis) reaction"
+    },
+    {
+      "front": "Reaction that forms an insoluble solid from two aqueous solutions",
+      "back": "Precipitation reaction"
+    },
+    {
+      "front": "Reaction of a hydrocarbon with O2 producing CO2 and H2O",
+      "back": "Combustion reaction"
+    },
+    {
+      "front": "In a redox reaction, oxidation is the ___ of electrons",
+      "back": "Loss"
+    },
+    {
+      "front": "In a redox reaction, reduction is the ___ of electrons",
+      "back": "Gain"
+    },
+    {
+      "front": "Oxidation state of an element in its pure (elemental) form",
+      "back": "0"
+    },
+    {
+      "front": "Usual oxidation state of oxygen in a compound",
+      "back": "-2"
+    },
+    {
+      "front": "Usual oxidation state of hydrogen when bonded to a nonmetal",
+      "back": "+1"
+    },
+    {
+      "front": "Oxidation state of oxygen in a peroxide (e.g. H2O2)",
+      "back": "-1"
+    },
+    {
+      "front": "Oxidation state of carbon in CO2 and carbonate (CO3^2-)",
+      "back": "+4"
+    },
+    {
+      "front": "The species that is oxidized acts as the ___ agent",
+      "back": "Reducing agent"
+    },
+    {
+      "front": "The species that is reduced acts as the ___ agent",
+      "back": "Oxidizing agent"
+    },
+    {
+      "front": "Number of particles in one mole",
+      "back": "6.022 x 10^23 (Avogadro's number)"
+    },
+    {
+      "front": "Formula for number of moles from mass and molar mass",
+      "back": "moles = mass / molar mass"
+    },
+    {
+      "front": "Formula for percent composition by mass of an element in a compound",
+      "back": "(mass of element / total molar mass) x 100%"
+    },
+    {
+      "front": "Simplest whole-number ratio of atoms in a compound",
+      "back": "Empirical formula"
+    },
+    {
+      "front": "Reactant that is completely consumed first and limits product formed",
+      "back": "Limiting reagent"
+    },
+    {
+      "front": "Maximum amount of product predicted by stoichiometry",
+      "back": "Theoretical yield"
+    },
+    {
+      "front": "Formula for percent yield",
+      "back": "(actual yield / theoretical yield) x 100%"
+    },
+    {
+      "front": "Definition of molarity",
+      "back": "Moles of solute per liter of solution"
+    },
+    {
+      "front": "Definition of molality",
+      "back": "Moles of solute per kilogram of solvent"
+    },
+    {
+      "front": "Dilution equation relating concentrations and volumes",
+      "back": "M1V1 = M2V2"
+    },
+    {
+      "front": "Mole fraction of a component is defined as:",
+      "back": "Moles of that component / total moles"
+    },
+    {
+      "front": "Equivalents of H+ per liter of solution defines which concentration unit?",
+      "back": "Normality"
+    },
+    {
+      "front": "As solvent is added at constant solute mass, molarity ___ and molality ___",
+      "back": "Decreases; stays the same"
+    },
+    {
+      "front": "Ideal gas law equation",
+      "back": "PV = nRT"
+    },
+    {
+      "front": "Value of the ideal gas constant R in L*atm/(mol*K)",
+      "back": "0.0821 L*atm/(mol*K)"
+    },
+    {
+      "front": "Boyle's law relationship (constant T)",
+      "back": "P and V are inversely proportional (PV = constant)"
+    },
+    {
+      "front": "Charles's law relationship (constant P)",
+      "back": "V is directly proportional to T"
+    },
+    {
+      "front": "Volume of one mole of ideal gas at STP",
+      "back": "22.4 L"
+    },
+    {
+      "front": "STP conditions of temperature and pressure",
+      "back": "0 degrees C (273 K) and 1 atm"
+    },
+    {
+      "front": "Two key assumptions of an ideal gas",
+      "back": "Particles have negligible volume and no intermolecular forces"
+    },
+    {
+      "front": "Gases deviate most from ideal behavior at what conditions?",
+      "back": "High pressure and low temperature"
+    },
+    {
+      "front": "Law: total pressure equals the sum of partial pressures",
+      "back": "Dalton's law of partial pressures"
+    },
+    {
+      "front": "Partial pressure of a gas equals total pressure times its ___",
+      "back": "Mole fraction"
+    },
+    {
+      "front": "Graham's law relates effusion rate to what property of the gas?",
+      "back": "Inversely to the square root of molar mass"
+    },
+    {
+      "front": "Solid-to-gas phase transition",
+      "back": "Sublimation"
+    },
+    {
+      "front": "Solid-to-liquid phase transition",
+      "back": "Melting (fusion)"
+    },
+    {
+      "front": "Gas-to-liquid phase transition",
+      "back": "Condensation"
+    },
+    {
+      "front": "Point on a phase diagram where all three phases coexist",
+      "back": "Triple point"
+    },
+    {
+      "front": "Point above which liquid and gas become indistinguishable",
+      "back": "Critical point"
+    },
+    {
+      "front": "Heat needed to melt a solid at its melting point (per unit mass)",
+      "back": "Heat of fusion"
+    },
+    {
+      "front": "Heat needed to vaporize a liquid at its boiling point (per unit mass)",
+      "back": "Heat of vaporization"
+    },
+    {
+      "front": "Equation for heat when temperature changes (no phase change)",
+      "back": "q = mc(delta T)"
+    },
+    {
+      "front": "A liquid boils when its vapor pressure equals the:",
+      "back": "External (atmospheric) pressure"
+    },
+    {
+      "front": "Effect of higher altitude (lower atmospheric pressure) on boiling point",
+      "back": "Lowers the boiling point"
+    },
+    {
+      "front": "Properties that depend on number of solute particles, not their identity",
+      "back": "Colligative properties"
+    },
+    {
+      "front": "Effect of adding a nonvolatile solute on the boiling point of a solvent",
+      "back": "Boiling point elevation"
+    },
+    {
+      "front": "Effect of adding a solute on the freezing point of a solvent",
+      "back": "Freezing point depression"
+    },
+    {
+      "front": "Number of particles a solute dissociates into in solution",
+      "back": "van't Hoff factor (i)"
+    },
+    {
+      "front": "van't Hoff factor for NaCl (fully dissociated)",
+      "back": "2"
+    },
+    {
+      "front": "Equation for boiling point elevation",
+      "back": "delta T = i * Kb * m"
+    },
+    {
+      "front": "Equation for freezing point depression",
+      "back": "delta T = i * Kf * m"
+    },
+    {
+      "front": "Formula for osmotic pressure",
+      "back": "pi = iMRT"
+    },
+    {
+      "front": "Pressure driving solvent across a semipermeable membrane",
+      "back": "Osmotic pressure"
+    },
+    {
+      "front": "Rate law form for a reaction that is first order in A",
+      "back": "Rate = k[A]"
+    },
+    {
+      "front": "Reaction order is determined by ___, not by stoichiometric coefficients",
+      "back": "Experiment"
+    },
+    {
+      "front": "Overall reaction order for Rate = k[A][B]^2",
+      "back": "Third order"
+    },
+    {
+      "front": "Units of the rate constant k for a second-order reaction",
+      "back": "M^-1 * s^-1"
+    },
+    {
+      "front": "Units of the rate constant k for a first-order reaction",
+      "back": "s^-1"
+    },
+    {
+      "front": "Effect of tripling [reactant] on rate of a zeroth-order reaction",
+      "back": "No effect (rate is constant)"
+    },
+    {
+      "front": "Minimum energy colliding molecules must have to react",
+      "back": "Activation energy"
+    },
+    {
+      "front": "Theory: reactions occur when particles collide with sufficient energy and orientation",
+      "back": "Collision theory"
+    },
+    {
+      "front": "Does a catalyst change the delta G or equilibrium position of a reaction?",
+      "back": "No (it only speeds up the rate)"
+    },
+    {
+      "front": "The slowest step of a multistep reaction is called the:",
+      "back": "Rate-determining (rate-limiting) step"
+    },
+    {
+      "front": "Species formed and consumed during a reaction, not in the overall equation",
+      "back": "Reaction intermediate"
+    },
+    {
+      "front": "Are pure solids and liquids included in the equilibrium expression?",
+      "back": "No"
+    },
+    {
+      "front": "The equilibrium constant K is only changed by a change in:",
+      "back": "Temperature"
+    },
+    {
+      "front": "Ratio comparing current product/reactant concentrations to K",
+      "back": "Reaction quotient (Q)"
+    },
+    {
+      "front": "If Q < K, the reaction shifts in which direction?",
+      "back": "Forward (toward products)"
+    },
+    {
+      "front": "If Q > K, the reaction shifts in which direction?",
+      "back": "Reverse (toward reactants)"
+    },
+    {
+      "front": "Principle: a system at equilibrium shifts to counteract an applied stress",
+      "back": "Le Chatelier's principle"
+    },
+    {
+      "front": "Increasing pressure shifts a gaseous equilibrium toward the side with:",
+      "back": "Fewer moles of gas"
+    },
+    {
+      "front": "For an exothermic reaction, increasing temperature shifts equilibrium:",
+      "back": "Toward reactants (reverse)"
+    },
+    {
+      "front": "Equilibrium constant expressed with partial pressures is called:",
+      "back": "Kp"
+    },
+    {
+      "front": "Bronsted-Lowry acid is a proton (H+) ___",
+      "back": "Donor"
+    },
+    {
+      "front": "Lewis acid is an electron pair ___",
+      "back": "Acceptor"
+    },
+    {
+      "front": "Species formed when a Bronsted acid donates its proton",
+      "back": "Conjugate base"
+    },
+    {
+      "front": "Conjugate base of HClO2",
+      "back": "ClO2^-"
+    },
+    {
+      "front": "Name three common strong acids",
+      "back": "HCl, HNO3, H2SO4 (also HBr, HI, HClO4)"
+    },
+    {
+      "front": "Definition of pH in terms of hydrogen ion concentration",
+      "back": "pH = -log[H+]"
+    },
+    {
+      "front": "Relationship between pH and pOH at 25 degrees C",
+      "back": "pH + pOH = 14"
+    },
+    {
+      "front": "pH of a neutral solution at 25 degrees C",
+      "back": "7"
+    },
+    {
+      "front": "Value of the ion product of water (Kw) at 25 degrees C",
+      "back": "1.0 x 10^-14"
+    },
+    {
+      "front": "Relationship between Ka and Kb of a conjugate acid-base pair",
+      "back": "Ka * Kb = Kw"
+    },
+    {
+      "front": "Relationship between pKa and pKb of a conjugate pair (at 25 C)",
+      "back": "pKa + pKb = 14"
+    },
+    {
+      "front": "pH of a 0.01 M strong monoprotic acid solution",
+      "back": "2"
+    },
+    {
+      "front": "Reaction of an acid and a base producing water and a salt",
+      "back": "Neutralization"
+    },
+    {
+      "front": "Is the autoionization of water exothermic or endothermic?",
+      "back": "Endothermic"
+    },
+    {
+      "front": "A solution resisting pH change upon adding small amounts of acid or base",
+      "back": "Buffer"
+    },
+    {
+      "front": "A buffer is made from a weak acid and its ___",
+      "back": "Conjugate base (salt)"
+    },
+    {
+      "front": "Henderson-Hasselbalch equation",
+      "back": "pH = pKa + log([A-]/[HA])"
+    },
+    {
+      "front": "At the half-equivalence point of a weak acid titration, pH equals:",
+      "back": "pKa"
+    },
+    {
+      "front": "Point in a titration where moles of acid equal moles of added base",
+      "back": "Equivalence point"
+    },
+    {
+      "front": "pH at the equivalence point of a strong acid-strong base titration",
+      "back": "7"
+    },
+    {
+      "front": "pH at the equivalence point of a weak acid-strong base titration",
+      "back": "Greater than 7 (basic)"
+    },
+    {
+      "front": "An acid with more than one ionizable proton is called:",
+      "back": "Polyprotic"
+    },
+    {
+      "front": "Number of ionizable protons in phosphoric acid (H3PO4)",
+      "back": "3 (triprotic)"
+    },
+    {
+      "front": "The salt of a weak acid dissolved in water gives a solution that is:",
+      "back": "Basic"
+    },
+    {
+      "front": "Equilibrium constant for dissolution of a slightly soluble salt",
+      "back": "Solubility product (Ksp)"
+    },
+    {
+      "front": "Ksp expression for CaF2 (Ca^2+ + 2 F-)",
+      "back": "Ksp = [Ca2+][F-]^2"
+    },
+    {
+      "front": "If the ion product (Q) exceeds Ksp, what happens?",
+      "back": "A precipitate forms"
+    },
+    {
+      "front": "Moles of a solid that dissolve per liter of solution",
+      "back": "Molar solubility"
+    },
+    {
+      "front": "Adding a common ion to a saturated solution ___ the solubility of the salt",
+      "back": "Decreases"
+    },
+    {
+      "front": "Name of the effect where a shared ion reduces a salt's solubility",
+      "back": "Common ion effect"
+    },
+    {
+      "front": "Sign of delta G for a spontaneous process",
+      "back": "Negative"
+    },
+    {
+      "front": "Value of delta G for a system at equilibrium",
+      "back": "0"
+    },
+    {
+      "front": "Gibbs free energy equation",
+      "back": "delta G = delta H - T(delta S)"
+    },
+    {
+      "front": "Sign of delta H for an exothermic reaction",
+      "back": "Negative"
+    },
+    {
+      "front": "Thermodynamic quantity representing disorder or randomness",
+      "back": "Entropy (S)"
+    },
+    {
+      "front": "Sign of delta S when a gas is produced from solids or liquids",
+      "back": "Positive (entropy increases)"
+    },
+    {
+      "front": "A reaction with negative delta H and positive delta S is spontaneous at:",
+      "back": "All temperatures"
+    },
+    {
+      "front": "A reaction with positive delta H and negative delta S is spontaneous at:",
+      "back": "No temperature (never)"
+    },
+    {
+      "front": "Relationship between delta G-naught and the equilibrium constant K",
+      "back": "delta G-naught = -RT ln K"
+    },
+    {
+      "front": "Sign of delta G-naught when K is greater than 1",
+      "back": "Negative"
+    },
+    {
+      "front": "Heat content of a system at constant pressure",
+      "back": "Enthalpy (H)"
+    },
+    {
+      "front": "Law stating overall delta H is the sum of the steps' enthalpy changes",
+      "back": "Hess's law"
+    },
+    {
+      "front": "Standard enthalpy of formation of an element in its standard state",
+      "back": "0"
+    },
+    {
+      "front": "Electrode where oxidation occurs (in any electrochemical cell)",
+      "back": "Anode"
+    },
+    {
+      "front": "Electrode where reduction occurs (in any electrochemical cell)",
+      "back": "Cathode"
+    },
+    {
+      "front": "Electrochemical cell that generates electricity from a spontaneous reaction",
+      "back": "Galvanic (voltaic) cell"
+    },
+    {
+      "front": "Electrochemical cell that uses electricity to drive a nonspontaneous reaction",
+      "back": "Electrolytic cell"
+    },
+    {
+      "front": "Sign of the cell potential (Ecell) for a galvanic cell",
+      "back": "Positive"
+    },
+    {
+      "front": "Sign of delta G for a galvanic (spontaneous) cell",
+      "back": "Negative"
+    },
+    {
+      "front": "In a galvanic cell, the anode carries which sign of charge?",
+      "back": "Negative"
+    },
+    {
+      "front": "Function of the salt bridge in a galvanic cell",
+      "back": "Maintains charge neutrality by allowing ion flow"
+    },
+    {
+      "front": "Equation relating cell potential to free energy",
+      "back": "delta G = -nFE"
+    },
+    {
+      "front": "A more positive standard reduction potential means the species is a better:",
+      "back": "Oxidizing agent (more easily reduced)"
+    },
+    {
+      "front": "How to calculate standard cell potential from half-reactions",
+      "back": "Ecell = E(cathode) - E(anode)"
+    },
+    {
+      "front": "Equation for cell potential under nonstandard conditions",
+      "back": "Nernst equation"
+    },
+    {
+      "front": "Reference half-cell assigned a standard reduction potential of 0 V",
+      "back": "Standard hydrogen electrode (SHE)"
+    },
+    {
+      "front": "A galvanic cell using the same species at two different concentrations",
+      "back": "Concentration cell"
+    },
+    {
+      "front": "Faraday's constant represents the charge of one mole of:",
+      "back": "Electrons (~96,485 C/mol)"
+    },
+    {
+      "front": "A recharging rechargeable battery behaves like which type of cell?",
+      "back": "Electrolytic cell"
+    },
+    {
+      "front": "Positively charged subatomic particle in the nucleus",
+      "back": "Proton"
+    },
+    {
+      "front": "Mass number equals the number of protons plus:",
+      "back": "Neutrons"
+    },
+    {
+      "front": "Radioactive decay emitting a helium-4 nucleus",
+      "back": "Alpha decay"
+    },
+    {
+      "front": "Decay in which a neutron converts to a proton, emitting an electron",
+      "back": "Beta-minus decay"
+    },
+    {
+      "front": "How alpha decay changes the atomic number",
+      "back": "Decreases it by 2"
+    },
+    {
+      "front": "High-energy photon emitted to shed excess nuclear energy",
+      "back": "Gamma ray"
+    },
+    {
+      "front": "Time for half of a radioactive sample to decay",
+      "back": "Half-life"
+    },
+    {
+      "front": "Splitting of a heavy nucleus into lighter nuclei",
+      "back": "Nuclear fission"
+    },
+    {
+      "front": "Combining light nuclei into a heavier nucleus",
+      "back": "Nuclear fusion"
+    },
+    {
+      "front": "Equation relating mass and energy (mass-energy equivalence)",
+      "back": "E = mc^2"
+    },
+    {
+      "front": "Fraction of a radioisotope remaining after 3 half-lives",
+      "back": "1/8"
+    }
+  ]
+}

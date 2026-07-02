@@ -1,0 +1,131 @@
+// Copyright: Ankitects Pty Ltd and contributors
+// License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
+
+// MCAT "calm sketchbook" theme — a scoped design layer for the MCAT surfaces
+// (readiness dashboard, practice tests). It layers on top of Anki's tokens
+// rather than replacing them: everything lives under the `.mcat` class, and a
+// warm dark variant activates under Anki's `html.night-mode`.
+//
+// The job of this palette is emotional: steady an anxious student. Progress
+// reads as growth (soft blue -> sage green), never as failure (no red for
+// scores). Values are authored from OKLCH intent but emitted as hex/sRGB for
+// the embedded Qt-webview compatibility floor the rest of ts/ targets.
+//
+// The Nunito @font-face + the global warm palette now live in the shared
+// ts/lib/sass/_root-vars.scss so every web surface (this app + Anki's Qt pages)
+// gets them. This file only adds the extra "sketchbook" flourishes the hero MCAT
+// pages layer on top: the score-gradient tokens, dot-grid paper, sketch radii.
+
+.mcat {
+    // ---- type -------------------------------------------------------------
+    --mcat-font: "Nunito", ui-rounded, "Segoe UI Rounded", "SF Pro Rounded",
+        system-ui, -apple-system, sans-serif;
+
+    // ---- surfaces (warm paper) -------------------------------------------
+    --mcat-canvas: #fbf8f3;
+    --mcat-surface: #ffffff;
+    --mcat-surface-2: #fefcf8;
+    --mcat-inset: #f5efe6;
+
+    // ---- ink (all validated >= 4.5:1 on canvas & surface) ----------------
+    --mcat-ink: #3a3532; // body
+    --mcat-ink-soft: #5c554e; // secondary text
+    --mcat-ink-faint: #7a7268; // LARGE / decorative only (< 4.5:1 as body)
+
+    // ---- lines / edges (soft pencil) -------------------------------------
+    --mcat-border: #e7dfd3;
+    --mcat-border-strong: #d9cfbf;
+
+    // ---- accents ----------------------------------------------------------
+    // *-fill values are decorative (bars, dots, doodles); *-ink values are
+    // the text-safe darker variants.
+    --mcat-sage: #6fa98c;
+    --mcat-sage-ink: #3f7a5e;
+    --mcat-sage-tint: #eaf3ee;
+    --mcat-sky: #6ba6c9;
+    --mcat-sky-ink: #3e7699;
+    --mcat-sky-tint: #e9f1f6;
+    --mcat-blush: #eeb79c;
+    --mcat-blush-ink: #9c5a39;
+    --mcat-blush-tint: #f7ece4;
+
+    // ---- primary action --------------------------------------------------
+    --mcat-primary: #3f7a5e; // encouraging green ("go / grow")
+    --mcat-primary-ink: #ffffff;
+    --mcat-primary-hover: #366a51;
+
+    // ---- score gradient (blue -> green, NEVER red) -----------------------
+    --mcat-score-low: #7bb0d6;
+    --mcat-score-high: #74c09a;
+    --mcat-track: #ece4d6; // empty bar track
+
+    // ---- depth (soft, low-contrast) --------------------------------------
+    --mcat-shadow: 0 1px 2px rgba(88, 74, 54, 0.05),
+        0 8px 24px -12px rgba(88, 74, 54, 0.18);
+    --mcat-shadow-lift: 0 2px 4px rgba(88, 74, 54, 0.06),
+        0 14px 32px -14px rgba(88, 74, 54, 0.24);
+    --mcat-dot: rgba(58, 53, 50, 0.05); // dot-grid paper texture
+
+    // ---- radii (gently hand-drawn) ---------------------------------------
+    --mcat-radius: 14px;
+    --mcat-radius-lg: 18px;
+    --mcat-radius-pill: 999px;
+    // asymmetric, sketchbook-ish corner used sparingly on hero cards
+    --mcat-radius-sketch: 22px 18px 20px 16px;
+
+    // ---- motion -----------------------------------------------------------
+    --mcat-ease: cubic-bezier(0.22, 1, 0.36, 1); // ease-out-quint
+    --mcat-fill-dur: 0.9s;
+
+    // ---- applied to the wrapper -----------------------------------------
+    color: var(--mcat-ink);
+    background-color: var(--mcat-canvas);
+    background-image: radial-gradient(var(--mcat-dot) 1.1px, transparent 1.2px);
+    background-size: 22px 22px;
+    background-attachment: local;
+    font-family: var(--mcat-font);
+    -webkit-font-smoothing: antialiased;
+}
+
+// ---- night sketchbook (warm dark) ----------------------------------------
+// This file is imported as a plain (already global) stylesheet, so selectors
+// are written normally — no Svelte `:global()` wrapper. Anki toggles the
+// `night-mode` class on an ancestor (html/body), so match any ancestor.
+.night-mode .mcat {
+    --mcat-canvas: #211f1d;
+    --mcat-surface: #2a2724;
+    --mcat-surface-2: #2f2b28;
+    --mcat-inset: #1b1917;
+
+    --mcat-ink: #ece6de;
+    --mcat-ink-soft: #b4aba0;
+    --mcat-ink-faint: #8e867b;
+
+    --mcat-border: #3a3630;
+    --mcat-border-strong: #4a453e;
+
+    // accents run lighter in the dark so they carry as text unaided
+    --mcat-sage: #84ba9c;
+    --mcat-sage-ink: #9dcbb2;
+    --mcat-sage-tint: #2c4239;
+    --mcat-sky: #82b3d4;
+    --mcat-sky-ink: #9ac4de;
+    --mcat-sky-tint: #26404e;
+    --mcat-blush: #e9b79e;
+    --mcat-blush-ink: #e9b79e;
+    --mcat-blush-tint: #40342c;
+
+    --mcat-primary: #5c9e7c;
+    --mcat-primary-ink: #0f221a; // deep green — validated on the lighter btn
+    --mcat-primary-hover: #6aad8a;
+
+    --mcat-score-low: #6fa3c8;
+    --mcat-score-high: #7fc6a0;
+    --mcat-track: #34302b;
+
+    --mcat-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),
+        0 10px 28px -14px rgba(0, 0, 0, 0.6);
+    --mcat-shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.34),
+        0 16px 36px -16px rgba(0, 0, 0, 0.66);
+    --mcat-dot: rgba(236, 230, 222, 0.045);
+}

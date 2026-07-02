@@ -1,0 +1,1725 @@
+{
+  "test_id": "bio-biochem-1",
+  "section": "Biological and Biochemical Foundations of Living Systems",
+  "section_code": "bio-biochem",
+  "provenance": "Original content. Concepts calibrated against MCAT QBook Ch1 (Biology) + Ch2 (Biochemistry) used privately as ground truth; no source text reproduced.",
+  "composition": {
+    "passages": 10,
+    "passage_questions": 44,
+    "discrete_questions": 15,
+    "total": 59
+  },
+  "weighting_target": {
+    "biology": 0.65,
+    "biochemistry": 0.25,
+    "gen-chem": 0.05,
+    "orgo": 0.05
+  },
+  "trademark_notice": "MCAT is a registered trademark of the AAMC. This material is independently authored and not endorsed by the AAMC.",
+  "passages": [
+    {
+      "passage_id": "bio-biochem-1-p1",
+      "title": "Characterizing inhibitors of the phosphatase PhoX",
+      "topic_tags": [
+        "aamc::bio-biochem::enzyme-kinetics"
+      ],
+      "passage_text": "PhoX is a bacterial phosphatase that obeys Michaelis-Menten kinetics. A pharmaceutical group is characterizing two candidate inhibitors of PhoX, classifying each by its effect on the enzyme's apparent kinetic parameters (Vmax and Km) and by how the inhibition responds to changes in substrate concentration.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p1-q1",
+          "stem": "One candidate inhibitor leaves the enzyme's Vmax unchanged but increases its apparent Km. This behavior is characteristic of which type of inhibition?",
+          "options": {
+            "A": "Competitive inhibition",
+            "B": "Pure noncompetitive inhibition",
+            "C": "Uncompetitive inhibition",
+            "D": "Irreversible inhibition"
+          },
+          "correct": "A",
+          "explanation": "An inhibitor that leaves Vmax unchanged while raising the apparent Km is competitive: it competes with substrate for the active site, so the maximal rate is still reachable at saturating substrate, but more substrate is required to reach half-maximal velocity.",
+          "distractor_notes": {
+            "B": "Pure noncompetitive inhibition lowers Vmax while leaving Km unchanged.",
+            "C": "Uncompetitive inhibition lowers both Vmax and Km.",
+            "D": "Irreversible inhibition progressively removes active enzyme (lowering Vmax) rather than producing a fixed apparent-Km shift."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::enzyme-kinetics"
+          ],
+          "ground_truth_ref": "competitive inhibition signature (QBook Ch2) - original, conceptual (no data table)",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p1-q2",
+          "stem": "For a competitive inhibitor of PhoX, how does the extent of inhibition change as the substrate concentration is raised to very high (saturating) levels?",
+          "options": {
+            "A": "Inhibition intensifies as more enzyme-substrate-inhibitor complex forms",
+            "B": "Inhibition is unaffected because the inhibitor binds a site other than the active site",
+            "C": "Inhibition is largely relieved as substrate outcompetes the inhibitor",
+            "D": "The reaction stops once substrate is in excess"
+          },
+          "correct": "C",
+          "explanation": "A competitive inhibitor binds the active site and competes with substrate. Raising [S] shifts binding toward substrate, so at saturating substrate the same Vmax is reached and the inhibition is overcome.",
+          "distractor_notes": {
+            "A": "Formation of an enzyme-substrate-inhibitor complex describes uncompetitive, not competitive, inhibition.",
+            "B": "Binding away from the active site describes noncompetitive inhibition, which is not relieved by substrate.",
+            "D": "Excess substrate speeds the reaction toward Vmax; it does not halt it."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::enzyme-kinetics"
+          ],
+          "ground_truth_ref": "competitive inhibition reversibility (QBook Ch2) - original, conceptual",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p1-q3",
+          "stem": "The second inhibitor lowers Vmax while leaving Km unchanged (pure noncompetitive inhibition). Compared with the uninhibited enzyme, its Lineweaver-Burk (double-reciprocal) plot shows:",
+          "options": {
+            "A": "An unchanged y-intercept and an x-intercept closer to zero",
+            "B": "A lower y-intercept and a lower slope",
+            "C": "An unchanged y-intercept and x-intercept but a lower slope",
+            "D": "A higher y-intercept and an unchanged x-intercept"
+          },
+          "correct": "D",
+          "explanation": "Pure noncompetitive inhibition lowers Vmax with Km unchanged. The y-intercept equals 1/Vmax, so it increases; the x-intercept equals -1/Km, so it is unchanged.",
+          "distractor_notes": {
+            "A": "An unchanged y-intercept with a shifted x-intercept describes competitive inhibition.",
+            "B": "Lowering Vmax raises 1/Vmax, so the y-intercept goes up, not down.",
+            "C": "Noncompetitive inhibition increases the slope (Km/Vmax) because Vmax falls."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::enzyme-kinetics"
+          ],
+          "ground_truth_ref": "Lineweaver-Burk interpretation (QBook Ch2) - original, conceptual",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p1-q4",
+          "stem": "A PhoX point mutant reaches half-maximal velocity at a lower substrate concentration than wild-type (a lower Km), with Vmax unchanged. Relative to wild-type, the mutant enzyme has:",
+          "options": {
+            "A": "Higher affinity for substrate",
+            "B": "Lower affinity for substrate",
+            "C": "A lower maximal catalytic rate",
+            "D": "A higher turnover number (kcat)"
+          },
+          "correct": "A",
+          "explanation": "Km is inversely related to apparent substrate affinity. Reaching half-maximal velocity at a lower [S] (lower Km) means tighter binding, i.e. higher affinity. An unchanged Vmax means the maximal rate is unchanged.",
+          "distractor_notes": {
+            "B": "Lower affinity corresponds to a higher Km, not a lower one.",
+            "C": "Vmax is unchanged, so the maximal rate is unchanged.",
+            "D": "kcat = Vmax/[E]total; with Vmax and enzyme amount unchanged, kcat is unchanged."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::enzyme-kinetics"
+          ],
+          "ground_truth_ref": "Km as an affinity measure (QBook Ch2) - original, conceptual",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p1-q5",
+          "stem": "For an enzyme obeying Michaelis-Menten kinetics, the reaction velocity equals one-half of Vmax when the substrate concentration equals:",
+          "options": {
+            "A": "Vmax",
+            "B": "2 x Km",
+            "C": "Km",
+            "D": "Km / 2"
+          },
+          "correct": "C",
+          "explanation": "By definition in the Michaelis-Menten equation, v = Vmax/2 exactly when [S] = Km. This is the operational meaning of Km.",
+          "distractor_notes": {
+            "A": "Vmax is a maximal velocity, not a substrate concentration.",
+            "B": "At [S] = 2*Km, v = (2/3)*Vmax, which is above half-maximal.",
+            "D": "At [S] = Km/2, v = (1/3)*Vmax, which is below half-maximal."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::enzyme-kinetics"
+          ],
+          "ground_truth_ref": "v = Vmax/2 at [S] = Km, definition of Km (QBook Ch2) - original, conceptual",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p2",
+      "title": "Folding and stability of a secreted protein",
+      "topic_tags": [
+        "aamc::bio-biochem::protein-structure"
+      ],
+      "passage_text": "A secreted eukaryotic protein, SecP, folds into a compact structure stabilized by several intramolecular disulfide bonds and an extensive hydrophobic core. In vitro, SecP can be unfolded by adding 8 M urea; if a reducing agent such as dithiothreitol (DTT) is also added, the protein cannot refold correctly upon removal of urea. Chaperone proteins in the endoplasmic reticulum assist SecP in reaching its native state during synthesis.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p2-q1",
+          "stem": "The disulfide bonds that stabilize SecP form between the side chains of which amino acid?",
+          "options": {
+            "A": "Methionine",
+            "B": "Serine",
+            "C": "Threonine",
+            "D": "Cysteine"
+          },
+          "correct": "D",
+          "explanation": "Disulfide bonds are covalent S-S linkages formed by oxidation of the thiol (-SH) side chains of two cysteine residues.",
+          "distractor_notes": {
+            "A": "Methionine contains sulfur in a thioether but does not form disulfide bridges.",
+            "B": "Serine has a hydroxyl side chain, not a thiol.",
+            "C": "Threonine has a hydroxyl side chain and does not form disulfides."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::amino-acids",
+            "aamc::bio-biochem::protein-structure"
+          ],
+          "ground_truth_ref": "cysteine disulfides (QBook Ch2) - original protein",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p2-q2",
+          "stem": "The alpha helices and beta sheets within SecP are primarily stabilized by:",
+          "options": {
+            "A": "Hydrogen bonds between backbone amide and carbonyl groups",
+            "B": "Peptide bonds between adjacent residues",
+            "C": "Ionic bonds between charged side chains",
+            "D": "Hydrophobic packing of the protein core"
+          },
+          "correct": "A",
+          "explanation": "Secondary structure (alpha helix, beta sheet) is defined and stabilized by hydrogen bonds between backbone carbonyl oxygens and amide hydrogens.",
+          "distractor_notes": {
+            "B": "Peptide bonds define primary structure (the covalent sequence), not the folded secondary structure.",
+            "C": "Ionic (salt-bridge) interactions between side chains contribute to tertiary structure, not the defining bonds of secondary structure.",
+            "D": "Hydrophobic packing drives tertiary folding, not the H-bond pattern of secondary structure."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::protein-structure"
+          ],
+          "ground_truth_ref": "secondary structure H-bonding (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p2-q3",
+          "stem": "Why does adding DTT along with urea prevent SecP from refolding correctly after urea removal?",
+          "options": {
+            "A": "DTT hydrolyzes peptide bonds, shortening the chain",
+            "B": "DTT denatures chaperones so folding cannot be assisted",
+            "C": "DTT reduces disulfide bonds, so the covalent cross-links needed for the native fold are lost",
+            "D": "DTT permanently oxidizes cysteine residues"
+          },
+          "correct": "C",
+          "explanation": "DTT is a reducing agent that breaks disulfide bonds. Without those covalent cross-links, urea removal allows the polypeptide to collapse into non-native structures rather than the correct fold.",
+          "distractor_notes": {
+            "A": "DTT does not cleave peptide bonds; it reduces disulfides.",
+            "B": "The in vitro refolding described does not depend on chaperones, and DTT's action here is on disulfides.",
+            "D": "DTT reduces (not oxidizes) cysteines; oxidation is what forms disulfides."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::protein-structure"
+          ],
+          "ground_truth_ref": "reducing agents and disulfides (QBook Ch2) - original scenario",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p2-q4",
+          "stem": "Correct folding of SecP is thermodynamically favorable under physiological conditions. This implies that, for folding, the sign of the Gibbs free energy change is:",
+          "options": {
+            "A": "Positive, requiring constant ATP input to maintain the fold",
+            "B": "Zero, because folded and unfolded states are equally stable",
+            "C": "Negative only above the protein's denaturation temperature",
+            "D": "Negative, and folding is driven partly by the hydrophobic effect"
+          },
+          "correct": "D",
+          "explanation": "A spontaneous (favorable) process has a negative Gibbs free energy change. Protein folding is largely driven by the hydrophobic effect: burying nonpolar side chains releases ordered water, increasing the entropy of the system.",
+          "distractor_notes": {
+            "A": "A favorable process has negative delta G; folding to the native state does not require continuous ATP.",
+            "B": "Zero would mean no net drive to fold, contradicting a favorable process.",
+            "C": "Above the denaturation temperature the protein unfolds; folding is favorable below it."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::protein-structure",
+            "aamc::bio-biochem::thermodynamics"
+          ],
+          "ground_truth_ref": "hydrophobic effect / delta G of folding (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p3",
+      "title": "Glucose catabolism and the electron transport chain",
+      "topic_tags": [
+        "aamc::bio-biochem::cellular-respiration"
+      ],
+      "passage_text": "A cultured mammalian cell line oxidizes glucose completely to CO2 and water. Researchers track carbon flux through glycolysis, pyruvate oxidation, and the citric acid cycle, and they monitor ATP production by oxidative phosphorylation. In one experiment, they add 2,4-dinitrophenol (DNP), a small molecule that carries protons across the inner mitochondrial membrane.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p3-q1",
+          "stem": "In these cells, glycolysis occurs in which compartment?",
+          "options": {
+            "A": "The cytosol",
+            "B": "The mitochondrial matrix",
+            "C": "The inner mitochondrial membrane",
+            "D": "The endoplasmic reticulum"
+          },
+          "correct": "A",
+          "explanation": "Glycolysis is a cytosolic pathway; its enzymes are dissolved in the cytosol and do not require the mitochondrion.",
+          "distractor_notes": {
+            "B": "The matrix hosts pyruvate oxidation and the citric acid cycle, not glycolysis.",
+            "C": "The inner membrane houses the electron transport chain and ATP synthase.",
+            "D": "The ER is not a site of glycolysis."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::glycolysis"
+          ],
+          "ground_truth_ref": "glycolysis location (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p3-q2",
+          "stem": "What is the net yield of ATP produced by substrate-level phosphorylation during glycolysis, per molecule of glucose?",
+          "options": {
+            "A": "1 ATP",
+            "B": "2 ATP",
+            "C": "4 ATP",
+            "D": "36 ATP"
+          },
+          "correct": "B",
+          "explanation": "Glycolysis consumes 2 ATP in the investment phase and generates 4 ATP in the payoff phase, for a net gain of 2 ATP by substrate-level phosphorylation.",
+          "distractor_notes": {
+            "A": "1 ATP undercounts the net gain.",
+            "C": "4 ATP is the gross produced in the payoff phase before subtracting the 2 invested.",
+            "D": "~30-38 ATP is the approximate total from complete oxidation including oxidative phosphorylation, not glycolysis alone."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::glycolysis"
+          ],
+          "ground_truth_ref": "net glycolytic ATP (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p3-q3",
+          "stem": "The pyruvate dehydrogenase complex links glycolysis to the citric acid cycle by converting pyruvate into:",
+          "options": {
+            "A": "Lactate",
+            "B": "Oxaloacetate",
+            "C": "Acetyl-CoA plus CO2",
+            "D": "Citrate"
+          },
+          "correct": "C",
+          "explanation": "Pyruvate dehydrogenase catalyzes oxidative decarboxylation of pyruvate to acetyl-CoA, releasing one CO2 and reducing NAD+ to NADH; acetyl-CoA then enters the citric acid cycle.",
+          "distractor_notes": {
+            "A": "Lactate is formed by lactate dehydrogenase during anaerobic fermentation, not by PDH.",
+            "B": "Oxaloacetate is regenerated within the citric acid cycle and combines with acetyl-CoA.",
+            "D": "Citrate is the product of acetyl-CoA condensing with oxaloacetate, one step after PDH."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::citric-acid-cycle"
+          ],
+          "ground_truth_ref": "PDH reaction (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p3-q4",
+          "stem": "During oxidative phosphorylation, the immediate driving force for ATP synthesis by ATP synthase is:",
+          "options": {
+            "A": "Direct transfer of a phosphate from an intermediate to ADP",
+            "B": "Hydrolysis of GTP in the matrix",
+            "C": "The oxidation of NADH by molecular oxygen",
+            "D": "The proton electrochemical gradient across the inner mitochondrial membrane"
+          },
+          "correct": "D",
+          "explanation": "The electron transport chain pumps protons into the intermembrane space, establishing an electrochemical gradient (proton-motive force). ATP synthase uses the flow of protons back into the matrix to drive ATP synthesis (chemiosmosis).",
+          "distractor_notes": {
+            "A": "Direct phosphate transfer is substrate-level phosphorylation, not the mechanism of ATP synthase.",
+            "B": "GTP hydrolysis is not what powers ATP synthase.",
+            "C": "NADH oxidation by the chain builds the gradient; oxygen is the terminal electron acceptor, but the immediate driver of ATP synthase is the proton gradient."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::oxidative-phosphorylation"
+          ],
+          "ground_truth_ref": "chemiosmosis (QBook Ch2) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p3-q5",
+          "stem": "What is the most likely effect of adding DNP to these cells?",
+          "options": {
+            "A": "The proton gradient collapses, so oxygen consumption rises while ATP synthesis falls",
+            "B": "ATP synthase runs faster, increasing net ATP yield",
+            "C": "Electron transport halts because oxygen can no longer be reduced",
+            "D": "Glycolysis stops because NAD+ can no longer be regenerated"
+          },
+          "correct": "A",
+          "explanation": "DNP is an uncoupler: by shuttling protons across the inner membrane it dissipates the gradient. The chain speeds up (oxygen consumption rises) trying to rebuild the gradient, but the energy is released as heat rather than captured, so ATP synthesis falls.",
+          "distractor_notes": {
+            "B": "With the gradient dissipated there is less proton-motive force to drive ATP synthase; net ATP falls.",
+            "C": "DNP does not block electron transfer to oxygen; the chain actually runs faster.",
+            "D": "The chain continues to reoxidize NADH, so NAD+ is still regenerated for glycolysis."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::oxidative-phosphorylation"
+          ],
+          "ground_truth_ref": "uncouplers (QBook Ch2) - original scenario",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p4",
+      "title": "Transport across the intestinal epithelium",
+      "topic_tags": [
+        "aamc::bio-biochem::membrane-transport"
+      ],
+      "passage_text": "Epithelial cells lining the small intestine absorb glucose from the lumen and deliver it to the blood. The apical (luminal) membrane carries a sodium-glucose cotransporter (SGLT1) that moves Na+ and glucose into the cell together. The basolateral membrane carries the Na+/K+-ATPase and a facilitative glucose carrier (GLUT2). The Na+/K+-ATPase keeps intracellular Na+ low.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p4-q1",
+          "stem": "The Na+/K+-ATPase transports ions in which stoichiometry per ATP hydrolyzed?",
+          "options": {
+            "A": "3 Na+ into the cell and 2 K+ out",
+            "B": "3 Na+ out of the cell and 2 K+ in",
+            "C": "2 Na+ out of the cell and 3 K+ in",
+            "D": "1 Na+ out for 1 K+ in"
+          },
+          "correct": "B",
+          "explanation": "The Na+/K+-ATPase pumps 3 Na+ out of the cell and 2 K+ in for each ATP hydrolyzed, making it electrogenic and maintaining a low intracellular Na+ concentration.",
+          "distractor_notes": {
+            "A": "The directions are reversed; the pump extrudes Na+ and imports K+.",
+            "C": "The stoichiometry is 3 Na+ : 2 K+, not 2 : 3.",
+            "D": "A 1:1 exchange is not the pump's stoichiometry and would not be electrogenic."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::membrane-transport"
+          ],
+          "ground_truth_ref": "Na/K-ATPase stoichiometry (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p4-q2",
+          "stem": "Glucose uptake at the apical membrane by SGLT1 is best classified as:",
+          "options": {
+            "A": "Simple diffusion",
+            "B": "Primary active transport",
+            "C": "Secondary active transport",
+            "D": "Facilitated diffusion driven only by the glucose gradient"
+          },
+          "correct": "C",
+          "explanation": "SGLT1 moves glucose against its gradient by coupling it to Na+ moving down the electrochemical gradient established by the Na+/K+-ATPase. Because it uses a pre-existing ion gradient rather than ATP directly, it is secondary active transport.",
+          "distractor_notes": {
+            "A": "Simple diffusion requires no carrier and moves solutes down their gradient.",
+            "B": "Primary active transport hydrolyzes ATP directly (e.g., the Na+/K+-ATPase itself).",
+            "D": "Glucose is often moved against its own gradient here; the energy comes from the Na+ gradient, not the glucose gradient."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::membrane-transport"
+          ],
+          "ground_truth_ref": "secondary active transport (QBook Ch1) - original scenario",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p4-q3",
+          "stem": "If the Na+/K+-ATPase is inhibited by ouabain, glucose absorption by SGLT1 would most directly:",
+          "options": {
+            "A": "Increase, because more Na+ is available in the cell",
+            "B": "Be unaffected, because SGLT1 uses ATP directly",
+            "C": "Reverse instantly and export glucose",
+            "D": "Decrease, because the Na+ gradient that powers SGLT1 dissipates"
+          },
+          "correct": "D",
+          "explanation": "SGLT1 depends on the inward Na+ electrochemical gradient. Blocking the pump lets intracellular Na+ rise, collapsing that gradient, so the driving force for glucose uptake falls.",
+          "distractor_notes": {
+            "A": "Rising intracellular Na+ reduces the inward gradient, impairing uptake rather than boosting it.",
+            "B": "SGLT1 does not hydrolyze ATP itself; it relies on the ion gradient.",
+            "C": "The transporter's rate falls as the gradient collapses; it does not instantly reverse to pump glucose out."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::membrane-transport"
+          ],
+          "ground_truth_ref": "pump inhibition effect on secondary transport (QBook Ch1) - original scenario",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p4-q4",
+          "stem": "Glucose exits across the basolateral membrane through GLUT2 down its concentration gradient without direct energy input. This is an example of:",
+          "options": {
+            "A": "Facilitated diffusion",
+            "B": "Primary active transport",
+            "C": "Endocytosis",
+            "D": "Secondary active transport"
+          },
+          "correct": "A",
+          "explanation": "GLUT2 is a carrier that lets glucose move down its concentration gradient without ATP or a coupled ion, which defines facilitated diffusion.",
+          "distractor_notes": {
+            "B": "No ATP is hydrolyzed at GLUT2.",
+            "C": "Endocytosis engulfs material in vesicles, not relevant to a single-solute carrier.",
+            "D": "No ion gradient is coupled here; movement is simply down the glucose gradient."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::membrane-transport"
+          ],
+          "ground_truth_ref": "facilitated diffusion via GLUT (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p5",
+      "title": "A point mutation in a signaling protein",
+      "topic_tags": [
+        "aamc::bio-biochem::molecular-genetics"
+      ],
+      "passage_text": "A gene encoding a signaling protein is sequenced in a patient. In the coding (sense) strand, a single base change is found within a codon. Investigators compare the wild-type and mutant mRNA reading frames and the resulting polypeptides to determine the functional consequence of the change.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p5-q1",
+          "stem": "During transcription, the RNA polymerase synthesizes mRNA using which strand as the template?",
+          "options": {
+            "A": "The coding (sense) strand",
+            "B": "The template (antisense) strand",
+            "C": "Both strands simultaneously",
+            "D": "A separate primer strand only"
+          },
+          "correct": "B",
+          "explanation": "RNA polymerase reads the template (antisense) strand 3' to 5' and builds an mRNA that is complementary to it and therefore matches the coding strand sequence (with U replacing T).",
+          "distractor_notes": {
+            "A": "The coding strand has the same sequence as the mRNA; it is not the template.",
+            "C": "Only one strand serves as template for a given gene.",
+            "D": "Unlike DNA replication, transcription does not require an RNA primer."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::transcription"
+          ],
+          "ground_truth_ref": "template vs coding strand (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p5-q2",
+          "stem": "The mutation changes a codon from CAA (Gln) to CAG (Gln). This is best described as a:",
+          "options": {
+            "A": "Nonsense mutation",
+            "B": "Silent mutation",
+            "C": "Missense mutation",
+            "D": "Frameshift mutation"
+          },
+          "correct": "B",
+          "explanation": "Both CAA and CAG encode glutamine, so the amino acid sequence is unchanged. A base change that does not alter the encoded amino acid is a silent mutation, reflecting the degeneracy of the genetic code.",
+          "distractor_notes": {
+            "A": "A nonsense mutation creates a premature stop codon.",
+            "C": "A missense mutation changes the encoded amino acid.",
+            "D": "A frameshift results from insertions or deletions not divisible by three, not a single substitution."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::mutations"
+          ],
+          "ground_truth_ref": "silent mutation / codon degeneracy (QBook Ch1) - original codons",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p5-q3",
+          "stem": "A different single-base substitution converts a tryptophan codon (UGG) into UGA. The most likely consequence is:",
+          "options": {
+            "A": "A longer protein with an extra residue",
+            "B": "No change, because UGA still codes for tryptophan",
+            "C": "Premature termination of translation",
+            "D": "A shift of the downstream reading frame"
+          },
+          "correct": "C",
+          "explanation": "UGA is a stop codon. Converting a sense codon to a stop codon (a nonsense mutation) causes the ribosome to terminate translation early, producing a truncated protein.",
+          "distractor_notes": {
+            "A": "Premature termination shortens, not lengthens, the protein.",
+            "B": "UGA is a stop codon, not a tryptophan codon.",
+            "D": "A single substitution does not shift the reading frame; only insertions/deletions do."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::mutations"
+          ],
+          "ground_truth_ref": "nonsense mutation (QBook Ch1) - original codons",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p5-q4",
+          "stem": "Insertion of a single nucleotide near the start of the coding sequence would most likely:",
+          "options": {
+            "A": "Alter only the single codon at the insertion site",
+            "B": "Be silent because ribosomes skip inserted bases",
+            "C": "Have no effect unless it lands in the stop codon",
+            "D": "Shift the reading frame, changing many downstream codons"
+          },
+          "correct": "D",
+          "explanation": "An insertion that is not a multiple of three shifts the reading frame, so every codon downstream of the insertion is altered, usually producing a nonfunctional protein and often a premature stop.",
+          "distractor_notes": {
+            "A": "Frameshifts change downstream codons broadly, not just one.",
+            "B": "Ribosomes do not skip inserted bases; the frame is genuinely shifted.",
+            "C": "An early frameshift has widespread effects, independent of the original stop codon."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::mutations"
+          ],
+          "ground_truth_ref": "frameshift mutation (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p5-q5",
+          "stem": "The coding strand segment reads 5'-ATG ACG-3'. What is the corresponding mRNA sequence?",
+          "options": {
+            "A": "5'-AUG ACG-3'",
+            "B": "5'-UAC UGC-3'",
+            "C": "5'-GCA GUA-3'",
+            "D": "5'-ATG ACG-3'"
+          },
+          "correct": "A",
+          "explanation": "The mRNA sequence matches the coding strand with uracil substituted for thymine. Since this segment contains no thymine, the mRNA reads identically as 5'-AUG ACG-3'.",
+          "distractor_notes": {
+            "B": "This is the complement (template-like) sequence, not the mRNA that matches the coding strand.",
+            "C": "This sequence is unrelated to a simple T-to-U conversion of the coding strand.",
+            "D": "mRNA uses uracil, not thymine, so 'ATG' should read 'AUG'."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::transcription"
+          ],
+          "ground_truth_ref": "coding strand to mRNA (QBook Ch1) - original sequence",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p6",
+      "title": "Hormonal control of blood glucose",
+      "topic_tags": [
+        "aamc::bio-biochem::endocrine"
+      ],
+      "passage_text": "After a carbohydrate-rich meal, blood glucose rises and pancreatic beta cells secrete insulin, while alpha cells reduce glucagon output. Insulin binds a receptor tyrosine kinase on target cells and promotes glucose uptake and glycogen synthesis. Between meals, glucagon predominates, binding a G-protein-coupled receptor that raises intracellular cAMP in hepatocytes.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p6-q1",
+          "stem": "Insulin and glucagon are both:",
+          "options": {
+            "A": "Steroid hormones derived from cholesterol",
+            "B": "Peptide hormones that act on cell-surface receptors",
+            "C": "Amino-acid-derived hormones that enter the nucleus",
+            "D": "Lipid-soluble hormones that diffuse through membranes"
+          },
+          "correct": "B",
+          "explanation": "Insulin and glucagon are peptide (protein) hormones. Being hydrophilic, they cannot cross the plasma membrane and instead bind receptors on the cell surface.",
+          "distractor_notes": {
+            "A": "Steroid hormones (e.g., cortisol) derive from cholesterol; these do not.",
+            "C": "They are peptides, and peptide hormones act at the surface rather than entering the nucleus.",
+            "D": "Peptide hormones are water-soluble and do not diffuse through the lipid bilayer."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::endocrine"
+          ],
+          "ground_truth_ref": "peptide vs steroid hormones (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p6-q2",
+          "stem": "In hepatocytes, glucagon raises cAMP. The most direct downstream effect of increased cAMP is activation of:",
+          "options": {
+            "A": "Adenylate cyclase",
+            "B": "A receptor tyrosine kinase",
+            "C": "Protein kinase A (PKA)",
+            "D": "Phospholipase C"
+          },
+          "correct": "C",
+          "explanation": "cAMP is the second messenger that binds and activates protein kinase A, which then phosphorylates enzymes to mobilize glucose (e.g., stimulating glycogen breakdown).",
+          "distractor_notes": {
+            "A": "Adenylate cyclase produces cAMP; it acts upstream of the cAMP increase, not downstream of it.",
+            "B": "Receptor tyrosine kinases are used by insulin, not the glucagon/cAMP pathway.",
+            "D": "Phospholipase C acts in the IP3/DAG pathway, a different second-messenger system."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::signal-transduction"
+          ],
+          "ground_truth_ref": "cAMP/PKA cascade (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p6-q3",
+          "stem": "Which cellular response to insulin most directly lowers blood glucose?",
+          "options": {
+            "A": "Increased gluconeogenesis in the liver",
+            "B": "Stimulation of glycogen breakdown",
+            "C": "Inhibition of glycogen synthase",
+            "D": "Insertion of GLUT4 transporters into muscle and fat cell membranes"
+          },
+          "correct": "D",
+          "explanation": "Insulin triggers translocation of GLUT4 transporters to the plasma membrane of muscle and adipose cells, increasing glucose uptake from the blood and thereby lowering blood glucose.",
+          "distractor_notes": {
+            "A": "Gluconeogenesis raises blood glucose and is suppressed by insulin.",
+            "B": "Glycogen breakdown (glycogenolysis) raises glucose and is a glucagon effect.",
+            "C": "Insulin activates, not inhibits, glycogen synthase to store glucose."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::endocrine"
+          ],
+          "ground_truth_ref": "insulin/GLUT4 (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p6-q4",
+          "stem": "In type 1 diabetes, beta cells are destroyed. Compared with a healthy person after a meal, a person with untreated type 1 diabetes would most likely show:",
+          "options": {
+            "A": "Higher blood glucose due to insufficient insulin",
+            "B": "Lower blood glucose due to excess insulin",
+            "C": "Normal blood glucose because glucagon compensates",
+            "D": "Higher blood glucose from receptor tyrosine kinase overactivity"
+          },
+          "correct": "A",
+          "explanation": "Destruction of beta cells eliminates insulin secretion. Without insulin, cellular glucose uptake and glycogen storage fall, so blood glucose remains abnormally high (hyperglycemia) after a meal.",
+          "distractor_notes": {
+            "B": "Type 1 diabetes involves too little insulin, not excess.",
+            "C": "Glucagon raises glucose further; it does not correct the lack of insulin.",
+            "D": "The problem is insufficient insulin signaling, not overactive insulin receptors."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::endocrine"
+          ],
+          "ground_truth_ref": "type 1 diabetes physiology (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p7",
+      "title": "The neuronal action potential",
+      "topic_tags": [
+        "aamc::bio-biochem::neurophysiology"
+      ],
+      "passage_text": "A neuron maintains a resting membrane potential near -70 mV. When a stimulus depolarizes the membrane to threshold, voltage-gated ion channels open in sequence to generate an action potential that propagates along the axon to the synaptic terminal, where it triggers neurotransmitter release.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p7-q1",
+          "stem": "The negative resting membrane potential is most directly attributable to:",
+          "options": {
+            "A": "Voltage-gated Na+ channels being open at rest",
+            "B": "High membrane permeability to K+ at rest, allowing K+ to leak out",
+            "C": "Cl- being actively pumped into the cell",
+            "D": "The absence of any ion gradients across the membrane"
+          },
+          "correct": "B",
+          "explanation": "At rest the membrane is far more permeable to K+ (through leak channels) than to Na+. K+ exits down its gradient, leaving the inside negative, so the resting potential lies near the K+ equilibrium potential.",
+          "distractor_notes": {
+            "A": "Voltage-gated Na+ channels are largely closed at rest; they open during depolarization.",
+            "C": "Active Cl- import is not the primary determinant of the resting potential.",
+            "D": "Ion gradients (maintained by the Na+/K+-ATPase) are essential to the resting potential."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::neurophysiology"
+          ],
+          "ground_truth_ref": "resting potential and K+ permeability (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p7-q2",
+          "stem": "The rapid depolarizing (rising) phase of the action potential is caused by:",
+          "options": {
+            "A": "K+ efflux through voltage-gated K+ channels",
+            "B": "Cl- influx through ligand-gated channels",
+            "C": "Na+ influx through voltage-gated Na+ channels",
+            "D": "Ca2+ efflux from the cytosol"
+          },
+          "correct": "C",
+          "explanation": "At threshold, voltage-gated Na+ channels open and Na+ rushes into the cell down its electrochemical gradient, rapidly depolarizing the membrane toward positive potentials.",
+          "distractor_notes": {
+            "A": "K+ efflux drives repolarization, the falling phase, not depolarization.",
+            "B": "Cl- influx is inhibitory/hyperpolarizing, not the cause of the spike.",
+            "D": "Ca2+ influx (not efflux) matters at the synaptic terminal; it does not drive the axonal rising phase."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::neurophysiology"
+          ],
+          "ground_truth_ref": "AP rising phase (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p7-q3",
+          "stem": "Repolarization following the peak of the action potential occurs primarily because:",
+          "options": {
+            "A": "Na+ channels remain open indefinitely",
+            "B": "The Na+/K+-ATPase instantaneously resets the potential",
+            "C": "Ca2+ channels close in the dendrites",
+            "D": "Voltage-gated Na+ channels inactivate and voltage-gated K+ channels open, allowing K+ efflux"
+          },
+          "correct": "D",
+          "explanation": "Near the peak, Na+ channels inactivate while slower voltage-gated K+ channels open. K+ leaves the cell, driving the membrane potential back toward rest (repolarization).",
+          "distractor_notes": {
+            "A": "Na+ channels inactivate quickly; they do not stay open.",
+            "B": "The pump restores gradients over time but is too slow to cause the rapid repolarization.",
+            "C": "Dendritic Ca2+ channels are not the cause of axonal repolarization."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::neurophysiology"
+          ],
+          "ground_truth_ref": "AP repolarization (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p7-q4",
+          "stem": "The absolute refractory period ensures that:",
+          "options": {
+            "A": "The action potential propagates in one direction and cannot immediately re-fire",
+            "B": "Action potentials can summate into larger ones",
+            "C": "The resting potential becomes more positive over time",
+            "D": "Neurotransmitter is synthesized in the axon"
+          },
+          "correct": "A",
+          "explanation": "During the absolute refractory period Na+ channels are inactivated and cannot reopen, so a second action potential cannot be triggered in that region. This enforces unidirectional propagation and limits firing frequency.",
+          "distractor_notes": {
+            "B": "Action potentials are all-or-none and do not summate into larger spikes.",
+            "C": "The refractory period does not progressively raise the resting potential.",
+            "D": "Refractoriness concerns channel state, not neurotransmitter synthesis."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::neurophysiology"
+          ],
+          "ground_truth_ref": "refractory period (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p7-q5",
+          "stem": "At the synaptic terminal, the immediate trigger for neurotransmitter vesicle fusion is:",
+          "options": {
+            "A": "Efflux of K+ from the terminal",
+            "B": "Influx of Ca2+ through voltage-gated calcium channels",
+            "C": "Binding of neurotransmitter to postsynaptic receptors",
+            "D": "Hydrolysis of acetylcholine by acetylcholinesterase"
+          },
+          "correct": "B",
+          "explanation": "Depolarization of the terminal opens voltage-gated Ca2+ channels; the resulting Ca2+ influx triggers synaptic vesicles to fuse with the membrane and release neurotransmitter by exocytosis.",
+          "distractor_notes": {
+            "A": "K+ efflux repolarizes the membrane but does not trigger vesicle fusion.",
+            "C": "Receptor binding is a postsynaptic event that follows release.",
+            "D": "Acetylcholinesterase terminates signaling in the cleft; it does not cause release."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::neurophysiology"
+          ],
+          "ground_truth_ref": "Ca2+-triggered exocytosis (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p8",
+      "title": "Two arms of the immune response",
+      "topic_tags": [
+        "aamc::bio-biochem::immunology"
+      ],
+      "passage_text": "A vaccine introduces a harmless viral protein antigen. Over the following weeks, the adaptive immune system mounts a response: B cells produce antibodies against the antigen, while cytotoxic T cells become primed to recognize the antigen displayed on infected cells. Memory cells persist after the response resolves.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p8-q1",
+          "stem": "Antibody production by B cells is the central feature of which type of immunity?",
+          "options": {
+            "A": "Innate immunity",
+            "B": "Cell-mediated immunity",
+            "C": "Humoral (antibody-mediated) immunity",
+            "D": "Passive immunity from the mother"
+          },
+          "correct": "C",
+          "explanation": "Humoral immunity is defined by antibodies secreted by B cells (plasma cells) that circulate and bind free antigen. It is one arm of the adaptive response.",
+          "distractor_notes": {
+            "A": "Innate immunity is nonspecific and does not depend on antibody-producing B cells.",
+            "B": "Cell-mediated immunity is driven by T cells acting on infected cells, not by secreted antibodies.",
+            "D": "Passive immunity is the transfer of preformed antibodies, not their production by the individual's B cells."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::immunology"
+          ],
+          "ground_truth_ref": "humoral immunity (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p8-q2",
+          "stem": "Cytotoxic (CD8+) T cells recognize antigen presented on:",
+          "options": {
+            "A": "MHC class II molecules only",
+            "B": "Free antibodies in the plasma",
+            "C": "The surface of red blood cells",
+            "D": "MHC class I molecules on the surface of infected cells"
+          },
+          "correct": "D",
+          "explanation": "Cytotoxic T cells surveil MHC class I molecules, which display peptides from proteins made inside a cell (including viral proteins). Recognition of foreign peptide on MHC I marks the cell for destruction.",
+          "distractor_notes": {
+            "A": "MHC class II presents to helper (CD4+) T cells, not cytotoxic CD8+ T cells.",
+            "B": "T cells recognize antigen on MHC, not free antibody.",
+            "C": "Mature mammalian red blood cells lack nuclei and MHC I display of intracellular antigen."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::immunology"
+          ],
+          "ground_truth_ref": "MHC I and cytotoxic T cells (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p8-q3",
+          "stem": "Why is the immune response after a second exposure to the same antigen typically faster and stronger?",
+          "options": {
+            "A": "Memory B and T cells generated during the first exposure respond rapidly",
+            "B": "The innate immune system learns the antigen",
+            "C": "Antibodies from the first exposure never decline",
+            "D": "The antigen mutates to become more immunogenic"
+          },
+          "correct": "A",
+          "explanation": "The primary response leaves a pool of long-lived memory B and T cells specific for the antigen. On re-exposure they proliferate quickly, producing a faster, larger secondary response (the basis of vaccination).",
+          "distractor_notes": {
+            "B": "Innate immunity is not antigen-specific and does not form immunological memory.",
+            "C": "Circulating antibody levels typically wane; the enhanced response comes from memory cells.",
+            "D": "The antigen does not need to change; the host's memory accounts for the stronger response."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::immunology"
+          ],
+          "ground_truth_ref": "immunological memory (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p8-q4",
+          "stem": "The region of an antibody that binds a specific antigen is the:",
+          "options": {
+            "A": "Constant (Fc) region",
+            "B": "Variable region at the tips of the arms",
+            "C": "Hinge region",
+            "D": "Disulfide bonds between heavy chains"
+          },
+          "correct": "B",
+          "explanation": "Antigen specificity resides in the variable regions at the tips of the Y-shaped antibody, where the antigen-binding sites are formed by variable heavy- and light-chain domains.",
+          "distractor_notes": {
+            "A": "The constant Fc region mediates effector functions (e.g., complement, phagocyte binding), not antigen specificity.",
+            "C": "The hinge provides flexibility, not antigen recognition.",
+            "D": "Interchain disulfides hold the antibody together but do not confer antigen specificity."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::immunology"
+          ],
+          "ground_truth_ref": "antibody structure (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p9",
+      "title": "Inheritance of a metabolic trait",
+      "topic_tags": [
+        "aamc::bio-biochem::genetics"
+      ],
+      "passage_text": "A metabolic disorder follows autosomal recessive inheritance. Two unaffected parents, each known to be a carrier, plan to have children. In the wider population, the disorder occurs in 4 of every 100 births, and the population is assumed to be in Hardy-Weinberg equilibrium.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p9-q1",
+          "stem": "For the two carrier parents (both heterozygous), what fraction of their children is expected to be affected (homozygous recessive)?",
+          "options": {
+            "A": "0",
+            "B": "1/2",
+            "C": "1/4",
+            "D": "3/4"
+          },
+          "correct": "C",
+          "explanation": "A cross between two heterozygotes (Aa x Aa) yields offspring genotypes 1 AA : 2 Aa : 1 aa. Only the aa genotype is affected, giving a 1/4 probability.",
+          "distractor_notes": {
+            "A": "Two carriers can have an affected child, so the probability is not zero.",
+            "B": "1/2 is the fraction of carriers (Aa), not affected offspring.",
+            "D": "3/4 is the fraction showing the dominant phenotype (unaffected)."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::genetics"
+          ],
+          "ground_truth_ref": "monohybrid cross (QBook Ch1) - original scenario",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p9-q2",
+          "stem": "Using Hardy-Weinberg, what is the frequency of the recessive allele (q) in this population?",
+          "options": {
+            "A": "0.02",
+            "B": "0.04",
+            "C": "0.4",
+            "D": "0.2"
+          },
+          "correct": "D",
+          "explanation": "The affected (homozygous recessive) frequency is q^2 = 0.04. Taking the square root gives q = 0.2.",
+          "distractor_notes": {
+            "A": "0.02 is neither q nor q^2 for these numbers.",
+            "B": "0.04 is q^2 (the affected frequency), not q itself.",
+            "C": "0.4 would correspond to q^2 = 0.16, not 0.04."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::population-genetics"
+          ],
+          "ground_truth_ref": "Hardy-Weinberg q from q^2 (QBook Ch1) - original numbers",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p9-q3",
+          "stem": "What fraction of the population is expected to be carriers (heterozygous)?",
+          "options": {
+            "A": "0.32",
+            "B": "0.16",
+            "C": "0.64",
+            "D": "0.04"
+          },
+          "correct": "A",
+          "explanation": "With q = 0.2, p = 0.8. Carrier frequency is 2pq = 2(0.8)(0.2) = 0.32.",
+          "distractor_notes": {
+            "B": "0.16 does not match 2pq for these allele frequencies.",
+            "C": "0.64 equals p^2, the homozygous dominant frequency.",
+            "D": "0.04 equals q^2, the affected frequency."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::population-genetics"
+          ],
+          "ground_truth_ref": "Hardy-Weinberg 2pq (QBook Ch1) - original numbers",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p9-q4",
+          "stem": "Which condition is NOT required for a population to remain in Hardy-Weinberg equilibrium?",
+          "options": {
+            "A": "No net migration",
+            "B": "Strong natural selection favoring one allele",
+            "C": "Random mating",
+            "D": "A large population with negligible genetic drift"
+          },
+          "correct": "B",
+          "explanation": "Hardy-Weinberg equilibrium requires no selection, along with no migration, random mating, no mutation, and a large population. Strong selection violates the assumptions, so it is not a requirement for equilibrium.",
+          "distractor_notes": {
+            "A": "No net migration IS a required condition.",
+            "C": "Random mating IS a required condition.",
+            "D": "A large population (minimizing drift) IS a required condition."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::population-genetics"
+          ],
+          "ground_truth_ref": "Hardy-Weinberg assumptions (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    },
+    {
+      "passage_id": "bio-biochem-1-p10",
+      "title": "The cardiac cycle and circulation",
+      "topic_tags": [
+        "aamc::bio-biochem::cardiovascular"
+      ],
+      "passage_text": "In the mammalian heart, electrical activity originating in a specialized region spreads to coordinate contraction. Blood moves through two circuits: the pulmonary circuit to the lungs and the systemic circuit to the rest of the body. Clinicians monitor the timing of contraction and relaxation of the ventricles to assess cardiac function.",
+      "questions": [
+        {
+          "id": "bio-biochem-1-p10-q1",
+          "stem": "The normal pacemaker that initiates each heartbeat is the:",
+          "options": {
+            "A": "Atrioventricular (AV) node",
+            "B": "Bundle of His",
+            "C": "Sinoatrial (SA) node",
+            "D": "Purkinje fibers"
+          },
+          "correct": "C",
+          "explanation": "The sinoatrial node spontaneously depolarizes at the highest intrinsic rate and sets the pace of the heartbeat, initiating atrial contraction.",
+          "distractor_notes": {
+            "A": "The AV node delays and relays the signal to the ventricles but is not the primary pacemaker.",
+            "B": "The bundle of His conducts impulses into the ventricular septum, downstream of the SA node.",
+            "D": "Purkinje fibers distribute the impulse through the ventricles; they do not initiate the beat."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::cardiovascular"
+          ],
+          "ground_truth_ref": "cardiac conduction (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p10-q2",
+          "stem": "During ventricular systole:",
+          "options": {
+            "A": "The ventricles relax and fill with blood",
+            "B": "The atria contract for the first time",
+            "C": "All four heart valves are open",
+            "D": "The ventricles contract and eject blood"
+          },
+          "correct": "D",
+          "explanation": "Systole is the contraction phase; ventricular systole is when the ventricles contract to eject blood into the aorta and pulmonary artery.",
+          "distractor_notes": {
+            "A": "Relaxation and filling occur during diastole.",
+            "B": "Atrial contraction precedes ventricular systole and is not its defining event.",
+            "C": "During ventricular systole the AV valves are closed while the semilunar valves open; not all valves are open."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::cardiovascular"
+          ],
+          "ground_truth_ref": "cardiac cycle systole (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p10-q3",
+          "stem": "Blood leaving the right ventricle travels next to the:",
+          "options": {
+            "A": "Lungs via the pulmonary artery",
+            "B": "Aorta and then the body",
+            "C": "Left atrium directly",
+            "D": "Coronary arteries only"
+          },
+          "correct": "A",
+          "explanation": "The right ventricle pumps deoxygenated blood into the pulmonary artery to the lungs (the pulmonary circuit) for gas exchange, after which it returns to the left atrium.",
+          "distractor_notes": {
+            "B": "The aorta carries blood from the left ventricle to the body, not from the right ventricle.",
+            "C": "Blood reaches the left atrium only after passing through the lungs.",
+            "D": "Coronary arteries branch from the aorta to supply the heart muscle; they are not the right ventricle's outflow."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::cardiovascular"
+          ],
+          "ground_truth_ref": "pulmonary circuit (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        },
+        {
+          "id": "bio-biochem-1-p10-q4",
+          "stem": "Compared with arteries, veins characteristically:",
+          "options": {
+            "A": "Carry blood at higher pressure",
+            "B": "Contain one-way valves that prevent backflow",
+            "C": "Have thicker muscular walls",
+            "D": "Always carry oxygenated blood"
+          },
+          "correct": "B",
+          "explanation": "Veins operate at low pressure and contain one-way valves that, together with skeletal muscle compression, help return blood to the heart against gravity.",
+          "distractor_notes": {
+            "A": "Arteries, not veins, carry blood at higher pressure.",
+            "C": "Arteries have thicker, more muscular walls to withstand higher pressure.",
+            "D": "Pulmonary veins carry oxygenated blood, but most veins carry deoxygenated blood, so 'always' is false."
+          },
+          "topic_tags": [
+            "aamc::bio-biochem::cardiovascular"
+          ],
+          "ground_truth_ref": "vein vs artery structure (QBook Ch1) - original framing",
+          "figure": null,
+          "qa": {
+            "single_defensible_answer": true,
+            "original_not_copied": true,
+            "reviewed": false
+          }
+        }
+      ]
+    }
+  ],
+  "discrete_questions": [
+    {
+      "id": "bio-biochem-1-d1",
+      "stem": "Glycogen contains alpha-1,4-glycosidic linkages along its chains and alpha-1,6 linkages at branch points. The alpha-1,6 branches primarily:",
+      "options": {
+        "A": "Prevent the molecule from being digested",
+        "B": "Convert glycogen into cellulose",
+        "C": "Increase the number of nonreducing ends available for rapid enzymatic mobilization",
+        "D": "Make glycogen insoluble in water"
+      },
+      "correct": "C",
+      "explanation": "Branching creates many nonreducing ends, and glycogen phosphorylase acts at nonreducing ends. More ends allow glucose to be released (or added) at many sites simultaneously, enabling rapid mobilization.",
+      "distractor_notes": {
+        "A": "Branches do not protect glycogen from digestion; debranching enzymes handle the alpha-1,6 links.",
+        "B": "Cellulose has beta-1,4 linkages and is a distinct polymer; branching does not create it.",
+        "D": "Glycogen is highly hydrated and soluble; branching does not make it insoluble."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::carbohydrates"
+      ],
+      "ground_truth_ref": "glycogen branching (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d2",
+      "stem": "Which change would most increase the fluidity of a phospholipid bilayer at body temperature?",
+      "options": {
+        "A": "Increasing the proportion of saturated fatty acid tails",
+        "B": "Lengthening the fatty acid tails",
+        "C": "Removing all membrane proteins",
+        "D": "Increasing the proportion of unsaturated (cis double bond) fatty acid tails"
+      },
+      "correct": "D",
+      "explanation": "Cis double bonds introduce kinks that prevent tight packing of the fatty acid tails, increasing membrane fluidity.",
+      "distractor_notes": {
+        "A": "Saturated tails pack tightly and decrease fluidity.",
+        "B": "Longer tails have more van der Waals contacts and reduce fluidity.",
+        "C": "Removing proteins does not primarily determine bilayer fluidity, which is governed by the lipid composition."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::lipids"
+      ],
+      "ground_truth_ref": "membrane fluidity (QBook Ch2) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d3",
+      "stem": "Two double-stranded DNA samples of equal length are heated. Sample X has 60% G-C content and Sample Y has 40% G-C content. Which will have the higher melting temperature (Tm), and why?",
+      "options": {
+        "A": "Sample Y, because A-T pairs have three hydrogen bonds",
+        "B": "Sample X, because G-C pairs have three hydrogen bonds versus two for A-T",
+        "C": "Both melt at the same Tm because they are the same length",
+        "D": "Sample Y, because it has more hydrogen bonds overall"
+      },
+      "correct": "B",
+      "explanation": "G-C base pairs are held by three hydrogen bonds while A-T pairs have two. Higher G-C content requires more energy (higher temperature) to separate the strands, raising Tm.",
+      "distractor_notes": {
+        "A": "A-T pairs have two hydrogen bonds, not three.",
+        "C": "Equal length does not equalize Tm; base composition controls it.",
+        "D": "The higher-GC sample (X), not Y, has more hydrogen bonds per base pair."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::nucleic-acids"
+      ],
+      "ground_truth_ref": "Tm vs GC content (QBook Ch1) - original numbers",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d4",
+      "stem": "A buffer is prepared from a weak acid (pKa = 4.7) and its conjugate base at equal concentrations. What is the approximate pH of this buffer?",
+      "options": {
+        "A": "4.7",
+        "B": "1.0",
+        "C": "7.0",
+        "D": "9.4"
+      },
+      "correct": "A",
+      "explanation": "By the Henderson-Hasselbalch equation, pH = pKa + log([A-]/[HA]). When [A-] = [HA], the log term is zero, so pH = pKa = 4.7.",
+      "distractor_notes": {
+        "B": "1.0 would require a large excess of acid, not equal concentrations.",
+        "C": "7.0 is neutral water; a buffer at pKa 4.7 is acidic.",
+        "D": "9.4 is double the pKa and does not follow from a 1:1 ratio."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::acid-base",
+        "aamc::bio-biochem::gen-chem"
+      ],
+      "ground_truth_ref": "Henderson-Hasselbalch (QBook Ch4) - original values",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d5",
+      "stem": "A biochemical reaction has delta H > 0 (endothermic) and delta S > 0 (entropy increases). This reaction is spontaneous:",
+      "options": {
+        "A": "At all temperatures",
+        "B": "Only at sufficiently high temperatures",
+        "C": "At no temperature",
+        "D": "Only at sufficiently low temperatures"
+      },
+      "correct": "B",
+      "explanation": "From delta G = delta H - T*delta S, with both delta H and delta S positive, delta G becomes negative only when the T*delta S term outweighs delta H, i.e., at high enough temperature.",
+      "distractor_notes": {
+        "A": "At low T the positive delta H dominates and delta G is positive (nonspontaneous).",
+        "C": "The reaction does become spontaneous once T is high enough.",
+        "D": "Low temperature makes this reaction less, not more, spontaneous."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::thermodynamics",
+        "aamc::bio-biochem::gen-chem"
+      ],
+      "ground_truth_ref": "Gibbs free energy temperature dependence (QBook Ch4) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d6",
+      "stem": "In the reaction where NAD+ is converted to NADH during glucose oxidation, NAD+ functions as:",
+      "options": {
+        "A": "A reducing agent that is itself oxidized",
+        "B": "A catalyst that is unchanged",
+        "C": "An oxidizing agent that is itself reduced",
+        "D": "A proton pump"
+      },
+      "correct": "C",
+      "explanation": "NAD+ accepts electrons (as a hydride) to become NADH, so it is reduced. A species that gains electrons and is reduced acts as the oxidizing agent (it oxidizes the substrate).",
+      "distractor_notes": {
+        "A": "A reducing agent donates electrons and is oxidized; that describes the substrate, not NAD+ here.",
+        "B": "NAD+ is chemically changed to NADH; it is a co-substrate, not an unchanged catalyst.",
+        "D": "NAD+ carries electrons; it is not a membrane proton pump."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::redox",
+        "aamc::bio-biochem::gen-chem"
+      ],
+      "ground_truth_ref": "oxidizing vs reducing agents / NAD+ (QBook Ch4) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d7",
+      "stem": "The amino acid threonine has two stereocenters. What is the maximum number of stereoisomers possible for a molecule with two stereocenters?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "8",
+        "D": "4"
+      },
+      "correct": "D",
+      "explanation": "The maximum number of stereoisomers is 2^n, where n is the number of stereocenters. With n = 2, that is 2^2 = 4.",
+      "distractor_notes": {
+        "A": "A single stereoisomer would imply no stereocenters.",
+        "B": "2 corresponds to a single stereocenter (2^1).",
+        "C": "8 corresponds to three stereocenters (2^3)."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::stereochemistry",
+        "aamc::bio-biochem::orgo"
+      ],
+      "ground_truth_ref": "2^n stereoisomers (QBook Ch7) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d8",
+      "stem": "The bond that links two amino acids in a protein is formed by a condensation (dehydration) reaction and belongs to which functional group class?",
+      "options": {
+        "A": "Amide",
+        "B": "Ester",
+        "C": "Ether",
+        "D": "Anhydride"
+      },
+      "correct": "A",
+      "explanation": "A peptide bond joins the carboxyl group of one amino acid to the amino group of another with loss of water, forming an amide linkage (C(=O)-N).",
+      "distractor_notes": {
+        "B": "An ester forms between a carboxylic acid and an alcohol, not an amine.",
+        "C": "An ether is a C-O-C linkage, not the C(=O)-N of a peptide bond.",
+        "D": "An anhydride forms from two carboxylic acids; a peptide bond is an amide."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::functional-groups",
+        "aamc::bio-biochem::orgo"
+      ],
+      "ground_truth_ref": "peptide bond = amide (QBook Ch7) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d9",
+      "stem": "In SDS-PAGE, proteins are coated with the detergent SDS before electrophoresis. Under these conditions, proteins are separated primarily on the basis of:",
+      "options": {
+        "A": "Their net native charge",
+        "B": "Their molecular size (mass)",
+        "C": "Their isoelectric point",
+        "D": "Their binding affinity for a ligand"
+      },
+      "correct": "B",
+      "explanation": "SDS denatures proteins and coats them with a roughly uniform negative charge per unit mass, so migration through the gel depends mainly on size: smaller proteins move faster.",
+      "distractor_notes": {
+        "A": "SDS masks the native charge, so separation is not by intrinsic charge.",
+        "C": "Separation by isoelectric point is isoelectric focusing, a different technique.",
+        "D": "Ligand-affinity separation describes affinity chromatography, not SDS-PAGE."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::separations",
+        "aamc::bio-biochem::orgo"
+      ],
+      "ground_truth_ref": "SDS-PAGE separates by size (QBook Ch7) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d10",
+      "stem": "In the lac operon of E. coli, transcription of the lactose-metabolizing genes is highest when:",
+      "options": {
+        "A": "Glucose is high and lactose is absent",
+        "B": "Glucose is low and lactose is present",
+        "C": "Both glucose and lactose are high",
+        "D": "Both glucose and lactose are absent"
+      },
+      "correct": "B",
+      "explanation": "Lactose (via allolactose) inactivates the repressor, allowing transcription, while low glucose raises cAMP so the CAP activator boosts transcription. Maximum expression therefore occurs when lactose is present and glucose is low.",
+      "distractor_notes": {
+        "A": "With lactose absent, the repressor stays bound and transcription is off.",
+        "C": "High glucose lowers cAMP, so CAP does not enhance transcription even if lactose is present.",
+        "D": "Absent lactose leaves the repressor bound, blocking transcription."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::microbiology",
+        "aamc::bio-biochem::gene-regulation"
+      ],
+      "ground_truth_ref": "lac operon regulation (QBook Ch1) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d11",
+      "stem": "Pepsin is secreted as inactive pepsinogen and becomes active only in the stomach. What most directly triggers its activation?",
+      "options": {
+        "A": "The alkaline environment of the small intestine",
+        "B": "Bile salts released from the gallbladder",
+        "C": "The low pH created by gastric hydrochloric acid",
+        "D": "Enteropeptidase on the intestinal brush border"
+      },
+      "correct": "C",
+      "explanation": "The acidic environment of the stomach (from HCl secreted by parietal cells) converts pepsinogen to active pepsin, which then works optimally at low pH.",
+      "distractor_notes": {
+        "A": "The alkaline small intestine would not activate pepsin, which needs low pH.",
+        "B": "Bile salts emulsify fats; they do not activate pepsin.",
+        "D": "Enteropeptidase activates trypsinogen in the small intestine, not pepsinogen in the stomach."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::digestive"
+      ],
+      "ground_truth_ref": "pepsinogen activation (QBook Ch1) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d12",
+      "stem": "During intense exercise, active muscle tissue produces more CO2 and becomes more acidic. According to the Bohr effect, this causes the oxygen-hemoglobin dissociation curve to:",
+      "options": {
+        "A": "Shift left, so hemoglobin holds O2 more tightly",
+        "B": "Remain unchanged, since pH does not affect hemoglobin",
+        "C": "Become vertical, eliminating cooperativity",
+        "D": "Shift right, so hemoglobin releases more O2 to the tissue"
+      },
+      "correct": "D",
+      "explanation": "Increased CO2 and H+ (lower pH) lower hemoglobin's affinity for oxygen, shifting the dissociation curve to the right and promoting O2 unloading where metabolically active tissues need it.",
+      "distractor_notes": {
+        "A": "A left shift means tighter binding, the opposite of the Bohr effect.",
+        "B": "pH does affect hemoglobin's O2 affinity, which is the basis of the Bohr effect.",
+        "C": "The curve remains sigmoidal; cooperativity is retained."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::respiratory"
+      ],
+      "ground_truth_ref": "Bohr effect (QBook Ch1) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d13",
+      "stem": "In vertebrate development, the nervous system and the epidermis of the skin are derived from which primary germ layer?",
+      "options": {
+        "A": "Ectoderm",
+        "B": "Endoderm",
+        "C": "Mesoderm",
+        "D": "Blastocoel"
+      },
+      "correct": "A",
+      "explanation": "The ectoderm gives rise to the nervous system (via neurulation) and the epidermis of the skin.",
+      "distractor_notes": {
+        "B": "Endoderm forms the gut lining and associated organs (liver, pancreas, lungs).",
+        "C": "Mesoderm forms muscle, bone, blood, kidneys, and connective tissue.",
+        "D": "The blastocoel is the fluid-filled cavity of the blastula, not a germ layer."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::development"
+      ],
+      "ground_truth_ref": "germ layer derivatives (QBook Ch1) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d14",
+      "stem": "According to the sliding filament model of muscle contraction, the immediate role of Ca2+ released from the sarcoplasmic reticulum is to:",
+      "options": {
+        "A": "Provide the energy for the power stroke",
+        "B": "Bind troponin, moving tropomyosin to expose myosin-binding sites on actin",
+        "C": "Break the cross-bridge between actin and myosin",
+        "D": "Shorten the length of the thick filaments"
+      },
+      "correct": "B",
+      "explanation": "Ca2+ binds troponin, causing tropomyosin to shift and expose the myosin-binding sites on actin, allowing cross-bridge formation and contraction.",
+      "distractor_notes": {
+        "A": "ATP, not Ca2+, provides the energy for the myosin power stroke.",
+        "C": "ATP binding to myosin detaches the cross-bridge; Ca2+ does not break it.",
+        "D": "Filaments slide past one another; the thick filaments themselves do not shorten."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::musculoskeletal"
+      ],
+      "ground_truth_ref": "sliding filament / Ca2+ role (QBook Ch1) - original framing",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    },
+    {
+      "id": "bio-biochem-1-d15",
+      "stem": "A population of beetles shows a range of shell colors. Over several generations in an environment with visual predators, intermediate-colored beetles survive best while the extremes are eaten. This is an example of:",
+      "options": {
+        "A": "Directional selection",
+        "B": "Disruptive selection",
+        "C": "Stabilizing selection",
+        "D": "Genetic drift"
+      },
+      "correct": "C",
+      "explanation": "When intermediate phenotypes are favored and both extremes are selected against, the variance decreases around the mean, which defines stabilizing selection.",
+      "distractor_notes": {
+        "A": "Directional selection favors one extreme, shifting the mean.",
+        "B": "Disruptive selection favors both extremes over intermediates, the opposite pattern.",
+        "D": "Genetic drift is random change in allele frequencies, not a predator-driven selective pattern."
+      },
+      "topic_tags": [
+        "aamc::bio-biochem::evolution"
+      ],
+      "ground_truth_ref": "modes of selection (QBook Ch1) - original scenario",
+      "figure": null,
+      "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+      }
+    }
+  ]
+}

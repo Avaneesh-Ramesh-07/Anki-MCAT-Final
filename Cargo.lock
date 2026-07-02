@@ -134,7 +134,7 @@ dependencies = [
  "rand 0.9.4",
  "rayon",
  "regex",
- "reqwest 0.12.23",
+ "reqwest 0.12.24",
  "rusqlite",
  "rustls-pemfile 2.2.0",
  "same-file",
@@ -1167,7 +1167,7 @@ version = "3.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fde0e0ec90c9dfb3b4b1a0891a7dcd0e2bffde2f7efed5fe7c9bb00e5bfb915e"
 dependencies = [
- "windows-sys 0.59.0",
+ "windows-sys 0.48.0",
 ]
 
 [[package]]
@@ -3216,7 +3216,7 @@ dependencies = [
  "libc",
  "percent-encoding",
  "pin-project-lite",
- "socket2 0.6.0",
+ "socket2 0.5.10",
  "tokio",
  "tower-service",
  "tracing",
@@ -3621,7 +3621,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "07033963ba89ebaf1584d767badaa2e8fcec21aedea6b8c0346d487d49c28667"
 dependencies = [
  "cfg-if",
- "windows-targets 0.53.3",
+ "windows-targets 0.48.5",
 ]
 
 [[package]]
@@ -3694,7 +3694,7 @@ dependencies = [
  "itertools 0.14.0",
  "linkcheck",
  "regex",
- "reqwest 0.12.23",
+ "reqwest 0.12.24",
  "strum 0.27.2",
  "tokio",
 ]
@@ -4138,7 +4138,7 @@ dependencies = [
  "maplit",
  "num_cpus",
  "regex",
- "reqwest 0.12.23",
+ "reqwest 0.12.24",
  "serde_json",
  "sha2 0.11.0",
  "walkdir",
@@ -5106,7 +5106,7 @@ dependencies = [
  "quinn-udp",
  "rustc-hash 2.1.1",
  "rustls",
- "socket2 0.6.0",
+ "socket2 0.5.10",
  "thiserror 2.0.16",
  "tokio",
  "tracing",
@@ -5143,7 +5143,7 @@ dependencies = [
  "cfg_aliases",
  "libc",
  "once_cell",
- "socket2 0.6.0",
+ "socket2 0.5.10",
  "tracing",
  "windows-sys 0.60.2",
 ]
@@ -5408,9 +5408,9 @@ dependencies = [
 
 [[package]]
 name = "reqwest"
-version = "0.12.23"
+version = "0.12.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d429f34c8092b2d42c7c93cec323bb4adeb7c67698f70839adec842ec10c7ceb"
+checksum = "9d0946410b9f7b082a427e4ef5c8ff541a88b357bc6c637c40db3a68ac70a36f"
 dependencies = [
  "base64 0.22.1",
  "bytes",
@@ -5539,7 +5539,7 @@ dependencies = [
  "flate2",
  "hex",
  "junction",
- "reqwest 0.12.23",
+ "reqwest 0.12.24",
  "sha2 0.11.0",
  "tar",
  "termcolor",
@@ -7427,7 +7427,7 @@ version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0978bf7171b3d90bac376700cb56d606feb40f251a475a5d6634613564460b22"
 dependencies = [
- "windows-sys 0.60.2",
+ "windows-sys 0.48.0",
 ]
 
 [[package]]

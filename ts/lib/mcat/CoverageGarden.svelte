@@ -119,9 +119,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         const c = t.components;
         const subtopic = prettifyTopic(t.topic) || "General";
         const stage = stageFor(comfort);
-        const aria = comfort == null
-            ? `${subtopic}: not planted yet — ${unlockHint(t)}`
-            : `${subtopic}: ${STAGE_LABEL[stage].toLowerCase()}, ${pct(comfort)} comfort`;
+        const aria =
+            comfort == null
+                ? `${subtopic}: not planted yet — ${unlockHint(t)}`
+                : `${subtopic}: ${STAGE_LABEL[stage].toLowerCase()}, ${pct(comfort)} comfort`;
         return {
             topic: t.topic,
             subtopic,
@@ -157,9 +158,16 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             .map(toPlant)
             .sort((a, b) => {
                 // Blooms first, seeds last; then alphabetical within a stage.
-                const order: Record<Stage, number> = { bloom: 0, bud: 1, sprout: 2, seed: 3 };
-                return order[a.stage] - order[b.stage]
-                    || a.subtopic.localeCompare(b.subtopic);
+                const order: Record<Stage, number> = {
+                    bloom: 0,
+                    bud: 1,
+                    sprout: 2,
+                    seed: 3,
+                };
+                return (
+                    order[a.stage] - order[b.stage] ||
+                    a.subtopic.localeCompare(b.subtopic)
+                );
             });
         const studied = plants.filter((p) => p.comfort != null);
         const bedComfort = studied.length
@@ -193,17 +201,15 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
     // --- plant detail popover (hover / focus / tap) ---------------------------
     let panelEl: HTMLElement;
-    let detail: { plant: Plant; accent: Accent; top: number; left: number } | null = null;
+    let detail: { plant: Plant; accent: Accent; top: number; left: number } | null =
+        null;
     let pinned = false;
 
     function place(node: HTMLElement): { top: number; left: number } {
         const panel = panelEl.getBoundingClientRect();
         const r = node.getBoundingClientRect();
         const top = r.bottom - panel.top + 8;
-        const left = Math.max(
-            8,
-            Math.min(r.left - panel.left, panel.width - 248),
-        );
+        const left = Math.max(8, Math.min(r.left - panel.left, panel.width - 248));
         return { top, left };
     }
 
@@ -237,8 +243,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <section class="panel garden" bind:this={panelEl}>
     <h2 class="section-title">Your growth garden</h2>
     <p class="intro">
-        Every topic is a seed. It sprouts as you study and blooms as you get
-        comfortable — pick a section to tend its plants.
+        Every topic is a seed. It sprouts as you study and blooms as you get comfortable
+        — pick a section to tend its plants.
     </p>
 
     <div class="beds">
@@ -272,8 +278,20 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         {:else}
                             <span class="muted">growing</span>
                         {/if}
-                        <svg class="caret" class:open={open[bed.code]} viewBox="0 0 16 16" aria-hidden="true">
-                            <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        <svg
+                            class="caret"
+                            class:open={open[bed.code]}
+                            viewBox="0 0 16 16"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M4 6l4 4 4-4"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
                         </svg>
                     </span>
                 </button>
@@ -288,7 +306,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                         class:seed={p.stage === "seed"}
                                         style={`--pct:${p.pct}%; --i:${i};`}
                                         aria-label={p.aria}
-                                        on:mouseenter={(e) => showDetail(e, p, bed.accent)}
+                                        on:mouseenter={(e) =>
+                                            showDetail(e, p, bed.accent)}
                                         on:focus={(e) => showDetail(e, p, bed.accent)}
                                         on:mouseleave={hideDetail}
                                         on:blur={hideDetail}
@@ -296,34 +315,119 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                     >
                                         <span class="glyph" aria-hidden="true">
                                             {#if p.stage === "seed"}
-                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--mcat-ink-faint)" stroke-width="1.4" stroke-linecap="round">
-                                                    <ellipse cx="12" cy="15" rx="4.5" ry="5.5" stroke-dasharray="2.5 2.5" />
-                                                    <path d="M12 9.5c1.5-.5 2.5-1.8 2.5-3.5" stroke-dasharray="2.5 2.5" />
+                                                <svg
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="var(--mcat-ink-faint)"
+                                                    stroke-width="1.4"
+                                                    stroke-linecap="round"
+                                                >
+                                                    <ellipse
+                                                        cx="12"
+                                                        cy="15"
+                                                        rx="4.5"
+                                                        ry="5.5"
+                                                        stroke-dasharray="2.5 2.5"
+                                                    />
+                                                    <path
+                                                        d="M12 9.5c1.5-.5 2.5-1.8 2.5-3.5"
+                                                        stroke-dasharray="2.5 2.5"
+                                                    />
                                                 </svg>
                                             {:else if p.stage === "sprout"}
-                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--mcat-ink-soft)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                                <svg
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="var(--mcat-ink-soft)"
+                                                    stroke-width="1.7"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
                                                     <path d="M12 21v-7" />
-                                                    <path d="M12 15c-1.8 0-3.6-1.2-4-3.2 2 -.4 3.6.8 4 2.8Z" fill="var(--plant-color)" stroke="none" />
-                                                    <path d="M12 14c1.6-.2 3.2-1.6 3.4-3.6-1.9-.2-3.2 1.2-3.4 3.2Z" fill="var(--plant-color)" stroke="none" />
+                                                    <path
+                                                        d="M12 15c-1.8 0-3.6-1.2-4-3.2 2 -.4 3.6.8 4 2.8Z"
+                                                        fill="var(--plant-color)"
+                                                        stroke="none"
+                                                    />
+                                                    <path
+                                                        d="M12 14c1.6-.2 3.2-1.6 3.4-3.6-1.9-.2-3.2 1.2-3.4 3.2Z"
+                                                        fill="var(--plant-color)"
+                                                        stroke="none"
+                                                    />
                                                 </svg>
                                             {:else if p.stage === "bud"}
-                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--mcat-ink-soft)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                                <svg
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="var(--mcat-ink-soft)"
+                                                    stroke-width="1.7"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
                                                     <path d="M12 21v-9" />
-                                                    <path d="M12 16c-1.9 0-3.8-1.3-4-3.4 2.1-.4 3.8.9 4 3Z" fill="var(--plant-color)" stroke="none" />
-                                                    <path d="M9.8 7.4C9.8 5.5 12 3.5 12 3.5s2.2 2 2.2 3.9a2.2 2.2 0 0 1-4.4 0Z" fill="var(--plant-color)" stroke="none" />
+                                                    <path
+                                                        d="M12 16c-1.9 0-3.8-1.3-4-3.4 2.1-.4 3.8.9 4 3Z"
+                                                        fill="var(--plant-color)"
+                                                        stroke="none"
+                                                    />
+                                                    <path
+                                                        d="M9.8 7.4C9.8 5.5 12 3.5 12 3.5s2.2 2 2.2 3.9a2.2 2.2 0 0 1-4.4 0Z"
+                                                        fill="var(--plant-color)"
+                                                        stroke="none"
+                                                    />
                                                 </svg>
                                             {:else}
-                                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--mcat-ink-soft)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                                <svg
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="var(--mcat-ink-soft)"
+                                                    stroke-width="1.7"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
                                                     <path d="M12 21v-8" />
-                                                    <path d="M12 17c-1.9 0-3.8-1.3-4-3.4 2.1-.4 3.8.9 4 3Z" fill="var(--plant-color)" stroke="none" />
-                                                    <g fill="var(--plant-color)" stroke="none">
-                                                        <circle cx="12" cy="7" r="2.1" />
-                                                        <circle cx="8.6" cy="8.4" r="2.1" />
-                                                        <circle cx="15.4" cy="8.4" r="2.1" />
-                                                        <circle cx="9.8" cy="5.2" r="2.1" />
-                                                        <circle cx="14.2" cy="5.2" r="2.1" />
+                                                    <path
+                                                        d="M12 17c-1.9 0-3.8-1.3-4-3.4 2.1-.4 3.8.9 4 3Z"
+                                                        fill="var(--plant-color)"
+                                                        stroke="none"
+                                                    />
+                                                    <g
+                                                        fill="var(--plant-color)"
+                                                        stroke="none"
+                                                    >
+                                                        <circle
+                                                            cx="12"
+                                                            cy="7"
+                                                            r="2.1"
+                                                        />
+                                                        <circle
+                                                            cx="8.6"
+                                                            cy="8.4"
+                                                            r="2.1"
+                                                        />
+                                                        <circle
+                                                            cx="15.4"
+                                                            cy="8.4"
+                                                            r="2.1"
+                                                        />
+                                                        <circle
+                                                            cx="9.8"
+                                                            cy="5.2"
+                                                            r="2.1"
+                                                        />
+                                                        <circle
+                                                            cx="14.2"
+                                                            cy="5.2"
+                                                            r="2.1"
+                                                        />
                                                     </g>
-                                                    <circle cx="12" cy="6.9" r="1.5" fill="var(--mcat-surface)" stroke="none" />
+                                                    <circle
+                                                        cx="12"
+                                                        cy="6.9"
+                                                        r="1.5"
+                                                        fill="var(--mcat-surface)"
+                                                        stroke="none"
+                                                    />
                                                 </svg>
                                             {/if}
                                         </span>
@@ -335,12 +439,22 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     {:else}
                         <div class="bed-empty" id={`plot-${bed.code}`}>
                             <span class="glyph glyph--empty" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--mcat-ink-faint)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2.5 2.5">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="var(--mcat-ink-faint)"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="2.5 2.5"
+                                >
                                     <path d="M4 19h16" />
                                     <ellipse cx="12" cy="15" rx="3.5" ry="4.5" />
                                 </svg>
                             </span>
-                            <p>No seeds planted yet — a topical test in this section starts it growing.</p>
+                            <p>
+                                No seeds planted yet — a topical test in this section
+                                starts it growing.
+                            </p>
                         </div>
                     {/if}
                 {/if}
@@ -357,13 +471,20 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         >
             <div class="detail-head">{detail.plant.subtopic}</div>
             <div class="detail-stage">
-                <span class="stage-dot" class:seed={detail.plant.stage === "seed"}></span>
+                <span
+                    class="stage-dot"
+                    class:seed={detail.plant.stage === "seed"}
+                ></span>
                 {STAGE_LABEL[detail.plant.stage]}
             </div>
             {#if detail.plant.comfort != null}
                 <div class="detail-comfort">
                     {pct(detail.plant.comfort)} comfort
-                    <span class="muted">· likely {pct(detail.plant.rangeLow)}–{pct(detail.plant.rangeHigh)}</span>
+                    <span class="muted">
+                        · likely {pct(detail.plant.rangeLow)}–{pct(
+                            detail.plant.rangeHigh,
+                        )}
+                    </span>
                 </div>
                 <div class="detail-components">
                     <span class="pip" class:off={!detail.plant.hasMemory}>Memory</span>
@@ -376,7 +497,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                             <b>≈{pct(detail.plant.fullLength)}</b>{/if}
                     </span>
                 </div>
-                <p class="detail-note">Practice figures are approximate section-level signals.</p>
+                <p class="detail-note">
+                    Practice figures are approximate section-level signals.
+                </p>
             {:else}
                 <p class="detail-hint">{detail.plant.hint}</p>
             {/if}
@@ -417,9 +540,14 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     }
     .bed {
         border: 1px solid var(--mcat-border);
-        border-radius: var(--mcat-radius);
+        // Hand-shaped, gently asymmetric corners — "no straight lines in nature".
+        border-radius: var(--mcat-radius-sketch);
         background: color-mix(in srgb, var(--bed-tint), var(--mcat-surface) 45%);
         overflow: hidden;
+    }
+    // Alternate the corner rhythm so stacked beds don't read as mechanical.
+    .bed:nth-child(even) {
+        border-radius: 20px 26px 18px 24px;
     }
     .bed-head {
         display: flex;
@@ -465,7 +593,11 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         width: 0.85rem;
         height: 0.85rem;
         border-radius: var(--mcat-radius-pill);
-        background: color-mix(in srgb, var(--mcat-score-low), var(--mcat-score-high) var(--pct));
+        background: color-mix(
+            in srgb,
+            var(--mcat-score-low),
+            var(--mcat-score-high) var(--pct)
+        );
         box-shadow: 0 0 0 1px color-mix(in srgb, var(--mcat-score-high), #000 8%) inset;
     }
     .comfort-val {
@@ -521,8 +653,14 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         cursor: pointer;
         font: inherit;
         color: var(--mcat-ink-soft);
-        --plant-color: color-mix(in srgb, var(--mcat-score-low), var(--mcat-score-high) var(--pct));
-        animation: garden-grow var(--mcat-fill-dur) var(--mcat-ease) calc(var(--i) * 0.035s) both;
+        --plant-color: color-mix(
+            in srgb,
+            var(--mcat-score-low),
+            var(--mcat-score-high) var(--pct)
+        );
+        // Cap the stagger so a big bed doesn't take seconds to finish revealing.
+        animation: garden-grow var(--mcat-fill-dur) var(--mcat-ease)
+            calc(min(var(--i), 10) * 0.03s) both;
 
         &:hover,
         &:focus-visible {
@@ -544,7 +682,15 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             width: 100%;
             height: 100%;
             transform-origin: 50% 90%;
+            transition: transform 0.22s var(--mcat-ease);
         }
+    }
+    // The plant "grows" a touch when you reach for it — gentle, like tending it.
+    // Placed on the svg (not the animated .plant) so the grow-in fill-mode
+    // doesn't suppress it.
+    .plant:hover .glyph svg,
+    .plant:focus-visible .glyph svg {
+        transform: scale(1.12);
     }
     .plant-label {
         font-size: 0.78rem;
@@ -624,7 +770,11 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         width: 0.7rem;
         height: 0.7rem;
         border-radius: var(--mcat-radius-pill);
-        background: color-mix(in srgb, var(--mcat-score-low), var(--mcat-score-high) var(--pct));
+        background: color-mix(
+            in srgb,
+            var(--mcat-score-low),
+            var(--mcat-score-high) var(--pct)
+        );
     }
     .stage-dot.seed {
         background: none;
@@ -675,7 +825,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         .plant {
             animation: none;
         }
-        .caret {
+        .caret,
+        .glyph svg {
             transition: none;
         }
     }

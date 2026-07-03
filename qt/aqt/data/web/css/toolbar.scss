@@ -42,7 +42,10 @@
     padding: 4px;
 
     .fancy & {
-        transition: all var(--transition) ease-in-out;
+        transition:
+            transform var(--transition) ease-in-out,
+            box-shadow var(--transition) ease-in-out,
+            background var(--transition) ease-in-out;
     }
 }
 
@@ -53,8 +56,8 @@
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.01em;
-    padding: 6px 14px;
-    border-radius: prop(border-radius-medium);
+    padding: 6px 15px;
+    border-radius: 999px; // organic pill
     border: 1px solid color(border-subtle);
     background: var(--canvas-elevated);
     color: color(fg-subtle);
@@ -173,7 +176,7 @@ body {
     display: inline-block;
     visibility: visible !important;
     animation-timing-function: linear;
-    transition: all var(--transition) ease-in;
+    transition: transform var(--transition) ease-in;
 }
 
 #sync-spinner {

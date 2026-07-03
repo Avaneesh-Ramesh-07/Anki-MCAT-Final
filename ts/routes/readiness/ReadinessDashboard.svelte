@@ -37,6 +37,24 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
     // Readiness
     $: readyOverall = readiness.overall;
+    // Actual (normalized) contribution split of the overall score, so the
+    // breakdown bar's LABELS match its segment WIDTHS (both from contributions).
+    $: readyBreakdown = (() => {
+        const c = readyOverall?.components;
+        if (!c) {
+            return null;
+        }
+        const sum = c.memoryContribution + c.topicalContribution + c.fullLengthContribution;
+        if (sum <= 0) {
+            return null;
+        }
+        const norm = (x: number): number => Math.round((x / sum) * 100);
+        return {
+            mem: norm(c.memoryContribution),
+            top: norm(c.topicalContribution),
+            fl: norm(c.fullLengthContribution),
+        };
+    })();
     $: readyTopics = [...readiness.topics].sort((a, b) =>
         a.topic.localeCompare(b.topic),
     );
@@ -256,7 +274,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     {#if readyOverall.components}
                         <div
                             class="breakdown"
-                            title="Contribution to readiness — Memory 5% · Topical 45% · Full-length 50%"
+                            title={readyBreakdown
+                                ? `What this score is made of — Memory ${readyBreakdown.mem}% · Topical ${readyBreakdown.top}% · Full-length ${readyBreakdown.fl}%`
+                                : "What this score is made of"}
                         >
                             <span
                                 class="seg mem"
@@ -282,8 +302,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         </div>
                     {/if}
                     <p class="method">
-                        {confidence(readyOverall.rangeLow, readyOverall.rangeHigh)} · memory
-                        5% · topical 45% · full-length 50%
+                        {confidence(readyOverall.rangeLow, readyOverall.rangeHigh)}{#if readyBreakdown}
+                            · made of {readyBreakdown.mem}% memory · {readyBreakdown.top}%
+                            topical · {readyBreakdown.fl}% full-length{/if}
                     </p>
                     <p class="range-note">
                         Range = your three signals' bands blended by weight; sections
@@ -340,21 +361,20 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                             <div class="topic-name">{prettyTopic(t.topic)}</div>
                             <div class="topic-bar">
                                 <ScoreBar
-                                    label={prettyTopic(t.topic)}
-                                    value={t.abstain ? null : t.memoryScore}
+                                    label={`${prettyTopic(t.topic)}: cards mastered`}
+                                    value={t.totalCards > 0
+                                        ? t.masteredCount / t.totalCards
+                                        : 0}
                                     size="sm"
-                                    abstainText="not enough evidence yet"
                                 />
                             </div>
                             <div class="topic-meta">
-                                <span class="chip">
-                                    {t.masteredCount}/{t.totalCards} mastered
+                                <span class="muted">
+                                    {t.masteredCount} of {t.totalCards} cards mastered
                                 </span>
-                                <span class="muted">{t.reviews} cards studied</span>
+                                <span class="muted">{t.reviews} studied</span>
                                 {#if !t.abstain}
-                                    <span class="muted">
-                                        likely {pct(t.rangeLow)}–{pct(t.rangeHigh)}
-                                    </span>
+                                    <span class="muted">recall {pct(t.memoryScore)}</span>
                                 {/if}
                             </div>
                         </div>

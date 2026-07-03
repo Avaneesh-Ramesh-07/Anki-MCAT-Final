@@ -44,6 +44,65 @@ def test_mastery_query_from_python():
         col.close()
 
 
+def _enable_fsrs(col):
+    """Turn FSRS on the way this fork's desktop does (through the deck-config
+    update path), so answering cards populates FSRS memory state."""
+    from anki.decks import UpdateDeckConfigs, UpdateDeckConfigsMode
+
+    deck_id = col.decks.id("Default")
+    data = col.decks.get_deck_configs_for_update(deck_id)
+    if data.fsrs:
+        return
+    selected_id = data.current_deck.config_id
+    selected = next(c.config for c in data.all_config if c.config.id == selected_id)
+    req = UpdateDeckConfigs(
+        target_deck_id=deck_id,
+        configs=[selected],
+        mode=UpdateDeckConfigsMode.UPDATE_DECK_CONFIGS_MODE_NORMAL,
+        card_state_customizer=data.card_state_customizer,
+        limits=data.current_deck.limits,
+        new_cards_ignore_review_limit=data.new_cards_ignore_review_limit,
+        apply_all_parent_limits=data.apply_all_parent_limits,
+        fsrs=True,
+        fsrs_reschedule=False,
+        fsrs_health_check=False,
+    )
+    col.decks.update_deck_configs(req)
+
+
+def test_thorough_study_scores_full():
+    """Spec test 4: study every card in a topic thoroughly -> memory score ~100%."""
+    import time
+
+    col = getEmptyCol()
+    try:
+        _enable_fsrs(col)
+        for i in range(6):
+            _add_tagged_note(col, f"q{i}", ["aamc::bio-biochem::biology"])
+
+        # Study every card thoroughly: answer "Easy", pacing each answer at a
+        # uniform ~3s so no recall is flagged effortful -> the comfort factor
+        # stays 1.0, isolating the "just reviewed -> retrievability ~1.0" effect.
+        answered = 0
+        while (card := col.sched.getCard()) is not None and answered < 100:
+            card.timer_started = time.time() - 3.0
+            col.sched.answerCard(card, 4)
+            answered += 1
+
+        resp = col._backend.mastery_query(search="", min_reviews=0)
+
+        assert len(resp.topics) == 1
+        topic = resp.topics[0]
+        assert topic.topic == "aamc::bio-biochem::biology"
+        assert not topic.abstain
+        assert topic.reviews == 6
+        # Just-reviewed cards -> retrievability ~1.0, no comfort penalty -> ~100%.
+        assert topic.memory_score > 0.99, topic.memory_score
+        assert topic.mastered_count == topic.total_cards == 6
+    finally:
+        col.close()
+
+
 def test_performance_and_readiness_from_python():
     from anki import mcat_pb2
 

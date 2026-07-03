@@ -13,10 +13,10 @@ table {
         border-radius: var(--border-radius-medium);
 
         @include elevation(1, $opacity-boost: -0.08);
-        &:hover {
-            @include elevation(2);
-        }
-        background: var(--canvas-glass);
+        // Opaque (not translucent glass): a translucent table forces the whole
+        // surface — with its shadow — to recomposite on every row-hover
+        // highlight, which caused noticeable lag moving the cursor down the list.
+        background: var(--canvas-elevated);
     }
 }
 
@@ -188,8 +188,8 @@ tr:hover:not(.top-level-drag-row) {
     font-size: 0.78rem;
     line-height: 1;
     font-weight: 600;
-    padding: 0.32em 0.7em;
-    border-radius: prop(border-radius-large);
+    padding: 0.34em 0.75em;
+    border-radius: 999px; // organic pill
     border: 1px solid var(--border-subtle);
     white-space: nowrap;
     letter-spacing: 0.01em;
@@ -225,36 +225,37 @@ tr:hover:not(.top-level-drag-row) {
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1;
-    padding: 0.45em 0.95em;
+    padding: 0.5em 1.05em;
     margin-inline-start: 0.4em;
-    border-radius: prop(border-radius-large);
+    border-radius: 999px; // organic pill
     border: 1px solid transparent;
     cursor: pointer;
     user-select: none;
     transition:
+        transform prop(transition) ease,
         filter prop(transition) ease,
         box-shadow prop(transition) ease,
-        background prop(transition) ease;
+        background prop(transition) ease,
+        border-color prop(transition) ease;
 }
 
 .db-btn:first-child {
     margin-inline-start: 0;
 }
 
-.db-btn:hover {
-    filter: brightness(1.06);
-}
-
+/* Tactile press — the button dips like a pressed river stone. */
 .db-btn:active {
-    filter: brightness(0.94);
+    filter: brightness(0.96);
+    transform: translateY(0) scale(0.97);
 }
 
 /* Review: primary action — calm encouraging green (matches the due chip and
- * the app-wide primary button), not the loud semantic review-state green. */
+ * the app-wide primary button), not the loud semantic review-state green.
+ * Soft moss-tinted shadow instead of neutral elevation, per Organic/Natural. */
 .db-btn-review {
     color: white;
     background: var(--button-primary-bg);
-    @include elevation(1, $opacity-boost: -0.1);
+    box-shadow: 0 4px 14px -4px rgba(93, 112, 82, 0.4);
 }
 
 /* Continue: secondary action — calm sky link colour on a neutral surface. */
@@ -267,5 +268,407 @@ tr:hover:not(.top-level-drag-row) {
 .nightMode {
     .db-btn-continue {
         background: color(button-bg);
+    }
+}
+
+/* Explicit hovers. Without these, the global `button:hover` rule (from
+ * ts/lib/sass/buttons.scss) outranks the class-only styles and forces a
+ * near-white gradient background — which the old `filter: brightness()` then
+ * pushed to pure white, hiding the label. Placed last so they win in night
+ * mode too. */
+.db-btn-review:hover {
+    color: white;
+    background: color-mix(in srgb, var(--button-primary-bg), black 8%);
+    transform: translateY(-1px); // lift like picking up a stone
+    box-shadow: 0 8px 22px -5px rgba(93, 112, 82, 0.5);
+}
+.db-btn-continue:hover {
+    color: color(fg-link);
+    background: color(canvas-inset);
+    border-color: color(border-strong);
+    transform: translateY(-1px);
+}
+
+/* =========================================================================
+   MCAT study garden — the deck list rendered as illustrated flowerbeds.
+   Each deck is a bed: mastered cards bloom as flowers, un-mastered/unstudied
+   ones grow over as weeds, and a bed with cards due "needs watering". Colours
+   are the Organic/Natural palette (moss / clay / sky / dried-grass).
+   ========================================================================= */
+.garden-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0.25rem 0.25rem 2rem;
+}
+.garden-head {
+    text-align: center;
+    margin: 0.25rem auto 1.6rem;
+    max-width: 62ch;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0 0 0.45rem;
+        color: color(fg);
+    }
+    .garden-intro {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: color(fg-subtle);
+
+        b {
+            color: color(fg);
+            font-weight: 700;
+        }
+    }
+}
+
+.beds {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.1rem;
+}
+.garden-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: color(fg-subtle);
+    padding: 2rem;
+}
+
+.bed {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    // hand-shaped, gently asymmetric corners ("no straight lines in nature")
+    border-radius: 26px 20px 24px 18px;
+    background: var(--canvas-elevated);
+    box-shadow: 0 4px 20px -8px rgba(93, 112, 82, 0.28);
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    animation: bed-grow-in 0.4s ease both;
+    animation-delay: calc(min(var(--i, 0), 8) * 0.04s);
+}
+.bed:nth-child(even) {
+    border-radius: 20px 26px 18px 24px;
+}
+.bed:hover {
+    // lift like leaning in to tend a plant
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px -12px rgba(93, 112, 82, 0.34);
+    border-color: color(border-strong);
+}
+.bed:focus-visible {
+    outline: 2px solid var(--button-primary-bg);
+    outline-offset: 2px;
+}
+.bed.current {
+    border-color: var(--button-primary-bg);
+    box-shadow:
+        0 0 0 1px var(--button-primary-bg),
+        0 8px 26px -10px rgba(93, 112, 82, 0.4);
+}
+@keyframes bed-grow-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bed-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.9rem 1.1rem 0.35rem;
+}
+.bed-name {
+    margin: 0;
+    font-size: 1.25rem;
+    color: color(fg);
+}
+.water-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.26em 0.62em;
+    border-radius: 999px;
+    background: color-mix(in srgb, #6ba6c9, transparent 84%);
+    color: #2f6485;
+    font-weight: 700;
+    font-size: 0.71rem;
+    white-space: nowrap;
+
+    .drop {
+        width: 0.7em;
+        height: auto;
+        fill: #6ba6c9;
+    }
+}
+.nightMode .water-badge,
+.night-mode .water-badge {
+    color: #9ecbe4;
+}
+
+/* The bed scene: plants/weeds standing in a soil strip */
+.scene {
+    position: relative;
+    padding: 0.4rem 0.7rem 0;
+}
+.growth {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1px;
+    min-height: 68px;
+}
+.soil {
+    height: 11px;
+    border-radius: 0 0 4px 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #b98a5f,
+        #b98a5f 3px,
+        #a97e54 3px,
+        #a97e54 7px
+    );
+    box-shadow: inset 0 2px 3px rgba(74, 54, 34, 0.28);
+}
+.nightMode .soil,
+.night-mode .soil {
+    background: repeating-linear-gradient(
+        90deg,
+        #6b4f36,
+        #6b4f36 3px,
+        #5f472f 3px,
+        #5f472f 7px
+    );
+}
+.g-cell {
+    flex: 1 1 0;
+    max-width: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    svg {
+        width: 100%;
+        height: auto;
+    }
+}
+// natural, non-mechanical variation in tilt/height
+.g-cell:nth-child(3n) {
+    transform: rotate(-4deg);
+}
+.g-cell:nth-child(3n + 1) {
+    transform: rotate(3deg);
+}
+.g-cell:nth-child(4n + 2) svg {
+    transform: scale(0.9);
+}
+.g-cell:nth-child(5n + 3) svg {
+    transform: scale(1.08);
+}
+
+/* Flowers = mastered cards: upright, vivid blooms */
+.g-flower {
+    .stem {
+        stroke: #5d7052;
+        stroke-width: 2.4;
+        fill: none;
+        stroke-linecap: round;
+    }
+    .leaf {
+        fill: #7c9a6d;
+    }
+    .core {
+        fill: #f0d9a8;
+    }
+    .petals {
+        fill: #cf8f5f;
+    }
+}
+.g-flower.f1 .petals {
+    fill: #7fb0d0; // sky bloom
+}
+.g-flower.f2 .petals {
+    fill: #e3b466; // gold bloom
+}
+
+/* Weeds = un-mastered/unstudied cards: tangled, thorny, dried — never a bloom */
+.g-weed {
+    opacity: 0.9;
+
+    .weed-stalk {
+        stroke: #9a8f72;
+        stroke-width: 1.9;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+}
+.nightMode .g-weed .weed-stalk,
+.night-mode .g-weed .weed-stalk {
+    stroke: #8b8168;
+}
+
+/* thirsty bed (cards due): a soft sky rivulet across the top of the scene */
+.bed.thirsty {
+    border-color: color-mix(in srgb, #6ba6c9, var(--border) 55%);
+}
+.bed.thirsty .scene::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #6ba6c9, transparent);
+    opacity: 0.6;
+}
+
+/* Footer: plant/weed tally + actions */
+.bed-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    padding: 0.7rem 1.1rem 1rem;
+}
+.bed-stats {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+.stat-plants {
+    color: #4c6142; // deep moss — the mastered count
+    font-weight: 800;
+}
+.stat-of {
+    color: color(fg-subtle); // "of N mastered" — neutral, not a backlog
+}
+.nightMode .stat-plants,
+.night-mode .stat-plants {
+    color: #9dcbb2;
+}
+
+.bed-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-inline-start: auto;
+}
+.bed-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.55em 1.05em;
+    border-radius: 999px; // pill
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+
+    .drop {
+        width: 0.85em;
+        height: auto;
+    }
+}
+.bed-btn:active {
+    transform: scale(0.97);
+}
+.bed-btn-water {
+    color: #fff;
+    background: #6ba6c9;
+    box-shadow: 0 4px 14px -4px rgba(107, 166, 201, 0.5);
+
+    .drop {
+        fill: #fff;
+    }
+    &:hover {
+        background: color-mix(in srgb, #6ba6c9, black 8%);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px -5px rgba(107, 166, 201, 0.55);
+    }
+}
+.bed-btn-plant {
+    color: #fff;
+    background: var(--button-primary-bg);
+    box-shadow: 0 4px 14px -4px rgba(93, 112, 82, 0.42);
+
+    &:hover {
+        background: color-mix(in srgb, var(--button-primary-bg), black 8%);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px -5px rgba(93, 112, 82, 0.5);
+    }
+}
+.bed-btn-tended {
+    color: color(fg-subtle);
+    background: var(--canvas-inset);
+    border-color: var(--border);
+    // Longer status copy ("…water it again in 3 days!") — allow it to wrap
+    // instead of forcing the bed wider.
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+
+    &:hover {
+        background: var(--canvas-overlay);
+        border-color: color(border-strong);
+    }
+}
+.bed-gear {
+    display: inline-grid;
+    place-items: center;
+    width: 2.05rem;
+    height: 2.05rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--canvas-elevated);
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+
+    .gears {
+        width: 1rem;
+        height: 1rem;
+        opacity: 0.6;
+    }
+    &:hover {
+        background: var(--canvas-inset);
+        border-color: color(border-strong);
+    }
+}
+.nightMode .bed-gear .gears,
+.night-mode .bed-gear .gears {
+    filter: invert(1);
+}
+
+#studiedToday {
+    text-align: center;
+    color: color(fg-subtle);
+    margin: 1.6rem 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bed {
+        animation: none;
     }
 }

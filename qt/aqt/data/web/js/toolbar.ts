@@ -13,6 +13,11 @@ enum SyncState {
 
 function updateSyncColor(state: SyncState) {
     const elem = document.getElementById("sync");
+    // Sync was removed from the top nav (it lives on the Home page); no-op when
+    // the element is absent.
+    if (!elem) {
+        return;
+    }
     switch (state) {
         case SyncState.NoChanges:
             elem.classList.remove("full-sync", "normal-sync");

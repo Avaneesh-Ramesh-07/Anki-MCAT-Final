@@ -115,40 +115,71 @@ html {
     src: url("/_anki/fonts/nunito-800.woff2") format("woff2");
 }
 
+// Fraunces (SIL OFL 1.1) — a "soft" characterful serif for headings: old-world
+// warmth with modern softness, the counterpoint to Nunito's rounded body. One
+// variable file spans weights 600–900 with the optical-size axis; latin subset,
+// self-hosted at /_anki/fonts/ so it loads offline in both stacks like Nunito.
+@font-face {
+    font-family: "Fraunces";
+    font-style: normal;
+    font-weight: 600 900;
+    font-display: swap;
+    src: url("/_anki/fonts/fraunces.woff2") format("woff2");
+}
+
+// Headings across every web surface get the serif; body/UI stays Nunito. The
+// optical-size axis auto-tunes letterforms to the rendered size. Card content
+// in the reviewer sets its own fonts under `.card`, so this warms app chrome
+// (overview, congrats, stats, SvelteKit pages) without touching flashcards.
 :root {
-    // surfaces — warm paper
-    --canvas: #fbf8f3;
-    --canvas-elevated: #fffdfa;
-    --canvas-inset: #f6f1e9;
-    --canvas-overlay: #f3ede3;
-    --canvas-code: #fffdfa;
-    --canvas-glass: rgba(255, 253, 250, 0.5);
-    // text — warm charcoal
-    --fg: #3a3532;
-    --fg-subtle: #5c554e;
+    --heading-font: "Fraunces", Georgia, "Times New Roman", "Nunito", serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-optical-sizing: auto;
+    letter-spacing: -0.006em;
+}
+
+:root {
+    // surfaces — unbleached paper, clay & stone (Organic/Natural palette)
+    --canvas: #fdfcf8; // rice paper
+    --canvas-elevated: #fefefa; // card / raised
+    --canvas-inset: #f0ebe5; // stone
+    --canvas-overlay: #efe9e0;
+    --canvas-code: #fefefa;
+    --canvas-glass: rgba(254, 254, 250, 0.7); // frosted nav (bg-white/70)
+    // text — deep loam over dried grass
+    --fg: #2c2c24; // deep loam / charcoal
+    --fg-subtle: #4a4a40; // bark
     --fg-disabled: #b8b0a4;
-    --fg-faint: #7a7268;
-    --fg-link: #3e7699;
-    // lines — soft pencil
-    --border: #e2d9cb;
-    --border-subtle: #efe8dc;
-    --border-strong: #ccbfab;
-    --border-focus: #3e7699;
+    --fg-faint: #78786c; // dried grass (muted, >= 4.8:1)
+    --fg-link: #3e7699; // calm river-water blue (pairs with the score gradient)
+    // lines — raw timber
+    --border: #ded8cf; // raw timber
+    --border-subtle: #ebe6dd;
+    --border-strong: #c9bda9;
+    --border-focus: #5d7052; // moss focus ring
     // depth — warm, low-contrast
-    --shadow: #d8cdbb;
-    --shadow-subtle: #e6dccd;
-    // accents
-    --accent-card: #5b93b8;
-    // buttons — warm neutral default, encouraging green primary
-    --button-bg: #f3ede3;
-    --button-gradient-start: #fffdfa;
-    --button-gradient-end: #f3ede3;
-    --button-hover-border: #ccbfab;
+    --shadow: #d3c7b3;
+    --shadow-subtle: #e6dccd; // sand
+    // accents — terracotta clay for the "current" nav marker (distinct from moss)
+    --accent-card: #c18c5d;
+    // buttons — warm neutral default, moss-green primary ("grow", never alarm)
+    --button-bg: #f0ebe5;
+    --button-gradient-start: #fefefa;
+    --button-gradient-end: #f0ebe5;
+    --button-hover-border: #c9bda9;
     --button-disabled: rgba(214, 205, 192, 0.5);
-    --button-primary-bg: #3f7a5e;
-    --button-primary-gradient-start: #4a8a6c;
-    --button-primary-gradient-end: #3f7a5e;
-    --button-primary-disabled: #a9cbbb;
+    --button-primary-bg: #5d7052; // moss green
+    --button-primary-gradient-start: #6b7f5f;
+    --button-primary-gradient-end: #5d7052;
+    --button-primary-disabled: #aab5a1;
     // selection
     --selected-bg: rgba(214, 205, 192, 0.55);
 }
@@ -159,7 +190,7 @@ html {
     --canvas-inset: #1b1917;
     --canvas-overlay: #2a2724;
     --canvas-code: #1b1917;
-    --canvas-glass: rgba(42, 39, 36, 0.5);
+    --canvas-glass: rgba(42, 39, 36, 0.7);
     --fg: #ece6de;
     --fg-subtle: #b4aba0;
     --fg-disabled: #6b635a;
@@ -168,18 +199,42 @@ html {
     --border: #3d3833;
     --border-subtle: #332f2a;
     --border-strong: #524c44;
-    --border-focus: #82b3d4;
+    --border-focus: #93ab83; // moss focus ring, lifted for dark
     --shadow: #131110;
     --shadow-subtle: #1a1815;
-    --accent-card: #82b3d4;
+    --accent-card: #d1a074; // terracotta, lifted for dark
     --button-bg: #33302b;
     --button-gradient-start: #3a3630;
     --button-gradient-end: #33302b;
     --button-hover-border: #4a453e;
     --button-disabled: rgba(58, 54, 48, 0.5);
-    --button-primary-bg: #3f7a5e;
-    --button-primary-gradient-start: #478a6b;
-    --button-primary-gradient-end: #3f7a5e;
-    --button-primary-disabled: #35533f;
+    --button-primary-bg: #5d7052; // moss green (matches light)
+    --button-primary-gradient-start: #6b7f5f;
+    --button-primary-gradient-end: #5d7052;
+    --button-primary-disabled: #3f4a37;
     --selected-bg: rgba(58, 54, 48, 0.6);
+}
+
+/*! ==========================================================================
+    Paper grain — the tactile "wabi-sabi" texture. A fixed, non-interactive
+    fractal-noise layer over every web surface at ~3.5% so it reads as fibre in
+    the paper, never as visible noise. Inline SVG (feTurbulence, desaturated) so
+    there is no binary asset and no build-time url() resolution. Multiply in
+    light warms the whites; overlay in dark lifts rather than muddies. It sits
+    above content with pointer-events:none so it never intercepts interaction.
+    ========================================================================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size: 140px 140px;
+    mix-blend-mode: multiply;
+    opacity: 0.035;
+}
+:root.night-mode body::before {
+    mix-blend-mode: overlay;
+    opacity: 0.05;
 }

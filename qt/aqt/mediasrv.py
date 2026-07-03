@@ -424,6 +424,7 @@ def is_sveltekit_page(path: str) -> bool:
         "image-occlusion",
         "readiness",
         "practice-tests",
+        "stats",
     ]
 
 

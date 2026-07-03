@@ -231,6 +231,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         ? "Full-Length Practice Exam"
         : (sections[0]?.section ?? "");
 
+    // CARS uses a side-by-side reading layout (long passage kept in view beside
+    // its questions), so those views need a wider container.
+    $: hasCars = sections.some((s) => s.section_code === "cars");
+
     // Number each question in display order for stable "Q1..Qn" labels.
     $: numberOf = (() => {
         const map: Record<string, number> = {};
@@ -261,7 +265,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 </script>
 
 <div class="mcat">
-    <div class="practice-tests">
+    <div class="practice-tests" class:wide={hasCars}>
         {#if view === "list"}
             <header class="page-head">
                 <h1>{fullLength ? "Full-length practice exam" : "Practice tests"}</h1>
@@ -320,17 +324,21 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                 {/if}
 
                 {#each section.passages as passage (passage.passage_id)}
-                    <section class="passage">
-                        <h2 class="passage-title">{passage.title}</h2>
-                        <div class="passage-text">{passage.passage_text}</div>
-                        {#each passage.questions as q (q.id)}
-                            <QuestionCard
-                                question={q}
-                                index={numberOf[q.id]}
-                                selected={answers[q.id] ?? null}
-                                onSelect={(letter) => select(q, letter)}
-                            />
-                        {/each}
+                    <section class="passage" class:split={section.section_code === "cars"}>
+                        <div class="passage-read">
+                            <h2 class="passage-title">{passage.title}</h2>
+                            <div class="passage-text">{passage.passage_text}</div>
+                        </div>
+                        <div class="passage-questions">
+                            {#each passage.questions as q (q.id)}
+                                <QuestionCard
+                                    question={q}
+                                    index={numberOf[q.id]}
+                                    selected={answers[q.id] ?? null}
+                                    onSelect={(letter) => select(q, letter)}
+                                />
+                            {/each}
+                        </div>
                     </section>
                 {/each}
 
@@ -452,18 +460,22 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     </div>
                 {/if}
                 {#each section.passages as passage (passage.passage_id)}
-                    <section class="passage">
-                        <h2 class="passage-title">{passage.title}</h2>
-                        <div class="passage-text">{passage.passage_text}</div>
-                        {#each passage.questions as q (q.id)}
-                            <QuestionCard
-                                question={q}
-                                index={numberOf[q.id]}
-                                selected={answers[q.id] ?? null}
-                                graded={true}
-                                onSelect={() => {}}
-                            />
-                        {/each}
+                    <section class="passage" class:split={section.section_code === "cars"}>
+                        <div class="passage-read">
+                            <h2 class="passage-title">{passage.title}</h2>
+                            <div class="passage-text">{passage.passage_text}</div>
+                        </div>
+                        <div class="passage-questions">
+                            {#each passage.questions as q (q.id)}
+                                <QuestionCard
+                                    question={q}
+                                    index={numberOf[q.id]}
+                                    selected={answers[q.id] ?? null}
+                                    graded={true}
+                                    onSelect={() => {}}
+                                />
+                            {/each}
+                        </div>
                     </section>
                 {/each}
                 {#if section.discrete_questions.length}
@@ -527,8 +539,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         justify-content: space-between;
         padding: 0.7rem 0;
         margin-bottom: 0.5rem;
-        background: color-mix(in srgb, var(--mcat-canvas), transparent 8%);
-        backdrop-filter: blur(6px);
+        // Opaque, not a blurred backdrop: a backdrop-filter on a sticky header
+        // re-blurs everything behind it on every scroll frame, which was the
+        // main cause of slow scrolling through a test.
+        background: var(--mcat-canvas);
         border-bottom: 1px solid var(--mcat-border);
     }
     h1 {
@@ -703,6 +717,48 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         background: var(--mcat-inset);
         line-height: 1.65;
         white-space: pre-wrap;
+    }
+
+    // ---- CARS side-by-side reading layout ------------------------------
+    // Wider canvas so the passage and its questions each get a readable column.
+    .practice-tests.wide {
+        max-width: 1180px;
+    }
+    // A CARS passage: passage text on the left (kept in view via sticky +
+    // independent scroll), its questions on the right.
+    .passage.split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        gap: 1.5rem;
+        align-items: start;
+    }
+    .passage.split .passage-read {
+        position: sticky;
+        top: 3.25rem; // clears the sticky take-view header
+        max-height: calc(100vh - 4.5rem);
+        overflow-y: auto;
+    }
+    .passage.split .passage-text {
+        margin-bottom: 0;
+    }
+    .passage.split .passage-questions {
+        min-width: 0;
+    }
+    // Collapse to the normal stacked layout only when the window is genuinely
+    // narrow. The practice-test window is 920px default / 760px min, so keep the
+    // split active well below that (47rem ≈ 752px) — otherwise it never shows.
+    @media (max-width: 47rem) {
+        .passage.split {
+            display: block;
+        }
+        .passage.split .passage-read {
+            position: static;
+            max-height: none;
+            overflow: visible;
+        }
+        .passage.split .passage-text {
+            margin-bottom: 1rem;
+        }
     }
 
     // ---- progress / submit --------------------------------------------

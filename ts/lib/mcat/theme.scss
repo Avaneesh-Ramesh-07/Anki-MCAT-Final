@@ -20,62 +20,73 @@
     // ---- type -------------------------------------------------------------
     --mcat-font: "Nunito", ui-rounded, "Segoe UI Rounded", "SF Pro Rounded",
         system-ui, -apple-system, sans-serif;
+    // Fraunces serif for headings — old-world warmth against Nunito's rounds.
+    --mcat-heading-font: "Fraunces", Georgia, "Times New Roman", serif;
 
-    // ---- surfaces (warm paper) -------------------------------------------
-    --mcat-canvas: #fbf8f3;
-    --mcat-surface: #ffffff;
-    --mcat-surface-2: #fefcf8;
-    --mcat-inset: #f5efe6;
+    // ---- surfaces (unbleached paper) -------------------------------------
+    --mcat-canvas: #fdfcf8; // rice paper
+    --mcat-surface: #fefefa;
+    --mcat-surface-2: #f8f4ec;
+    --mcat-inset: #f0ebe5; // stone
 
     // ---- ink (all validated >= 4.5:1 on canvas & surface) ----------------
-    --mcat-ink: #3a3532; // body
-    --mcat-ink-soft: #5c554e; // secondary text
-    --mcat-ink-faint: #7a7268; // LARGE / decorative only (< 4.5:1 as body)
+    --mcat-ink: #2c2c24; // deep loam / body
+    --mcat-ink-soft: #4a4a40; // bark / secondary text
+    --mcat-ink-faint: #78786c; // dried grass — LARGE / decorative only
 
-    // ---- lines / edges (soft pencil) -------------------------------------
-    --mcat-border: #e7dfd3;
-    --mcat-border-strong: #d9cfbf;
+    // ---- lines / edges (raw timber) --------------------------------------
+    --mcat-border: #ded8cf;
+    --mcat-border-strong: #c9bda9;
 
     // ---- accents ----------------------------------------------------------
     // *-fill values are decorative (bars, dots, doodles); *-ink values are
-    // the text-safe darker variants.
-    --mcat-sage: #6fa98c;
-    --mcat-sage-ink: #3f7a5e;
-    --mcat-sage-tint: #eaf3ee;
-    --mcat-sky: #6ba6c9;
+    // the text-safe darker variants. Drawn from moss, clay, sand & river-stone.
+    --mcat-sage: #7c9a6d; // living moss
+    --mcat-sage-ink: #4c6142; // deep moss (text-safe)
+    --mcat-sage-tint: #edf1e7;
+    --mcat-sky: #6ba6c9; // river water
     --mcat-sky-ink: #3e7699;
     --mcat-sky-tint: #e9f1f6;
-    --mcat-blush: #eeb79c;
-    --mcat-blush-ink: #9c5a39;
-    --mcat-blush-tint: #f7ece4;
+    --mcat-blush: #d9a06f; // terracotta clay (warm "wrong"/attention marks)
+    --mcat-blush-ink: #9c5a39; // burnt sienna (text-safe)
+    --mcat-blush-tint: #f5ebdf;
+    // terracotta secondary + earthy neutral surfaces
+    --mcat-clay: #c18c5d;
+    --mcat-clay-ink: #8f5f38;
+    --mcat-sand: #e6dccd;
+    --mcat-stone: #f0ebe5;
 
     // ---- primary action --------------------------------------------------
-    --mcat-primary: #3f7a5e; // encouraging green ("go / grow")
-    --mcat-primary-ink: #ffffff;
-    --mcat-primary-hover: #366a51;
+    --mcat-primary: #5d7052; // moss green ("grow", never alarm)
+    --mcat-primary-ink: #f3f4f1; // pale mist
+    --mcat-primary-hover: #4e6044;
 
     // ---- score gradient (blue -> green, NEVER red) -----------------------
     --mcat-score-low: #7bb0d6;
     --mcat-score-high: #74c09a;
     --mcat-track: #ece4d6; // empty bar track
 
-    // ---- depth (soft, low-contrast) --------------------------------------
-    --mcat-shadow: 0 1px 2px rgba(88, 74, 54, 0.05),
-        0 8px 24px -12px rgba(88, 74, 54, 0.18);
-    --mcat-shadow-lift: 0 2px 4px rgba(88, 74, 54, 0.06),
-        0 14px 32px -14px rgba(88, 74, 54, 0.24);
+    // ---- depth (soft, colour-tinted per Organic/Natural) -----------------
+    --mcat-shadow: 0 2px 6px -2px rgba(93, 112, 82, 0.1),
+        0 12px 28px -12px rgba(93, 112, 82, 0.18); // moss-tinted
+    --mcat-shadow-lift: 0 6px 16px -6px rgba(93, 112, 82, 0.14),
+        0 20px 44px -16px rgba(93, 112, 82, 0.24);
+    --mcat-shadow-float: 0 10px 40px -10px rgba(193, 140, 93, 0.22); // clay
     --mcat-dot: rgba(58, 53, 50, 0.05); // dot-grid paper texture
 
-    // ---- radii (gently hand-drawn) ---------------------------------------
-    --mcat-radius: 14px;
-    --mcat-radius-lg: 18px;
+    // ---- radii (soft, hand-shaped — "no straight lines in nature") -------
+    --mcat-radius: 16px; // rounded-2xl
+    --mcat-radius-lg: 24px; // rounded-3xl
     --mcat-radius-pill: 999px;
     // asymmetric, sketchbook-ish corner used sparingly on hero cards
-    --mcat-radius-sketch: 22px 18px 20px 16px;
+    --mcat-radius-sketch: 26px 20px 24px 18px;
+    // organic "blob" radii for decorative masks/accents (never text blocks)
+    --mcat-radius-blob: 62% 38% 46% 54% / 55% 48% 52% 45%;
+    --mcat-radius-blob-2: 38% 62% 58% 42% / 46% 42% 58% 54%;
 
     // ---- motion -----------------------------------------------------------
     --mcat-ease: cubic-bezier(0.22, 1, 0.36, 1); // ease-out-quint
-    --mcat-fill-dur: 0.9s;
+    --mcat-fill-dur: 0.45s;
 
     // ---- applied to the wrapper -----------------------------------------
     color: var(--mcat-ink);
@@ -85,6 +96,20 @@
     background-attachment: local;
     font-family: var(--mcat-font);
     -webkit-font-smoothing: antialiased;
+}
+
+// Headings on MCAT surfaces wear Fraunces — a soft, old-world serif that gives
+// the numbers and section titles warmth and authority without shouting. Body
+// text stays Nunito. Optical sizing lets the variable font tune itself to size.
+.mcat :is(h1, h2, h3, h4) {
+    font-family: var(--mcat-heading-font);
+    font-weight: 600;
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+    color: var(--mcat-ink);
+}
+.mcat h1 {
+    font-weight: 700;
 }
 
 // ---- night sketchbook (warm dark) ----------------------------------------
@@ -114,6 +139,10 @@
     --mcat-blush: #e9b79e;
     --mcat-blush-ink: #e9b79e;
     --mcat-blush-tint: #40342c;
+    --mcat-clay: #d1a074;
+    --mcat-clay-ink: #e6b98d;
+    --mcat-sand: #3a352e;
+    --mcat-stone: #33302b;
 
     --mcat-primary: #5c9e7c;
     --mcat-primary-ink: #0f221a; // deep green — validated on the lighter btn
@@ -127,5 +156,6 @@
         0 10px 28px -14px rgba(0, 0, 0, 0.6);
     --mcat-shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.34),
         0 16px 36px -16px rgba(0, 0, 0, 0.66);
+    --mcat-shadow-float: 0 12px 40px -10px rgba(0, 0, 0, 0.55);
     --mcat-dot: rgba(236, 230, 222, 0.045);
 }

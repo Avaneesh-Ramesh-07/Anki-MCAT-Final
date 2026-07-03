@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /home/avaneesh/Anki-Android-MCAT && echo \"=== theme parents ===\" && grep -rn 'style name=\"Theme' AnkiDroid/src/main/res/values/theme_*.xml AnkiDroid/src/main/res/values/styles.xml 2>/dev/null | grep -i parent | head -40; echo; echo \"=== theme_plain appBarColor/dynDeckColor ===\" && grep -n 'appBarColor\\\\|dynDeckColor\\\\|currentDeckBackground' AnkiDroid/src/main/res/values/theme_plain.xml)",
+      "Read(//home/avaneesh/Anki-Android-MCAT/**)",
+      "Bash(git -C /home/avaneesh/Anki-Android-MCAT diff -- AnkiDroid/src/main/java/com/ichi2/anki/deckpicker/DeckPickerViewModel.kt)",
+      "Bash(cd /home/avaneesh/Anki-Android-MCAT && echo \"=== launchCollectionInLifecycleScope ===\" && grep -rn \"fun.*launchCollectionInLifecycleScope\" AnkiDroid/src/main/java/ && echo \"=== withCol signature ===\" && grep -rn \"suspend fun.*withCol\\\\|fun <.*> withCol\" AnkiDroid/src/main/java/com/ichi2/anki/CollectionManager.kt)"
+    ]
+  }
+}

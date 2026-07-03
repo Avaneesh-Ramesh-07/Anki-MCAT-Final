@@ -346,13 +346,15 @@ class Toolbar:
         )
 
     def _centerLinks(self) -> str:
+        state = getattr(self.mw, "state", "")
         links = [
             self.create_link(
-                "readiness",
-                "MCAT Readiness",
-                self._readinessLinkHandler,
-                tip="View your MCAT readiness dashboard",
-                id="readiness",
+                "home",
+                "Home",
+                self._homeLinkHandler,
+                tip="Your MCAT home page",
+                id="home",
+                active=state == "home",
             ),
             self.create_link(
                 "decks",
@@ -360,15 +362,7 @@ class Toolbar:
                 self._deckLinkHandler,
                 tip=tr.actions_shortcut_key(val="D"),
                 id="decks",
-                # Highlight the current page: the deck list is the home screen.
-                active=getattr(self.mw, "state", "") == "deckBrowser",
-            ),
-            self.create_link(
-                "browse",
-                tr.qt_misc_browse(),
-                self._browseLinkHandler,
-                tip=tr.actions_shortcut_key(val="B"),
-                id="browse",
+                active=state in ("deckBrowser", "overview"),
             ),
             self.create_link(
                 "practiceTests",
@@ -388,13 +382,14 @@ class Toolbar:
                 "stats",
                 tr.qt_misc_stats(),
                 self._statsLinkHandler,
-                tip=tr.actions_shortcut_key(val="T"),
+                tip="Readiness + your study statistics (T)",
                 id="stats",
             ),
         ]
 
-        links.append(self._create_sync_link())
-
+        # Sync now lives on the Home page, so it's no longer in the top nav.
+        # (The `Y` shortcut and the sync-status hooks below still work; the
+        # status calls no-op safely when the sync element is absent.)
         gui_hooks.top_toolbar_did_init_links(links, self)
 
         return "\n".join(links)
@@ -431,8 +426,11 @@ class Toolbar:
 
     def set_sync_active(self, active: bool) -> None:
         method = "add" if active else "remove"
+        # The sync spinner only exists if a sync link is present (it isn't in
+        # the default nav anymore); guard so this is a harmless no-op otherwise.
         self.web.eval(
-            f"document.getElementById('sync-spinner').classList.{method}('spin')"
+            "(function(){const s=document.getElementById('sync-spinner');"
+            f"if(s){{s.classList.{method}('spin');}}}})()"
         )
 
     def set_sync_status(self, status: SyncStatus) -> None:
@@ -448,6 +446,9 @@ class Toolbar:
         if link in self.link_handlers:
             self.link_handlers[link]()
         return False
+
+    def _homeLinkHandler(self) -> None:
+        self.mw.moveToState("home")
 
     def _deckLinkHandler(self) -> None:
         self.mw.moveToState("deckBrowser")
@@ -482,7 +483,9 @@ class Toolbar:
         aqt.practice_tests.show_full_length(self.mw)
 
     def _statsLinkHandler(self) -> None:
-        self.mw.onStats()
+        import aqt.stats_combined
+
+        aqt.stats_combined.show_combined_stats(self.mw)
 
     def _syncLinkHandler(self) -> None:
         self.mw.on_sync_button_clicked()

@@ -83,7 +83,13 @@ from aqt.webview import AnkiWebView, AnkiWebViewKind
 install_pylib_legacy()
 
 MainWindowState = Literal[
-    "startup", "deckBrowser", "overview", "review", "resetRequired", "profileManager"
+    "startup",
+    "home",
+    "deckBrowser",
+    "overview",
+    "review",
+    "resetRequired",
+    "profileManager",
 ]
 
 
@@ -239,6 +245,7 @@ class AnkiQt(QMainWindow):
         self.updateTitleBar()
         self.setup_focus()
         # screens
+        self.setupHome()
         self.setupDeckBrowser()
         self.setupOverview()
         self.setupReviewer()
@@ -721,7 +728,7 @@ class AnkiQt(QMainWindow):
             self.update_undo_actions()
             gui_hooks.collection_did_load(self.col)
             self.apply_collection_options()
-            self.moveToState("deckBrowser")
+            self.moveToState("home")
         except Exception:
             # dump error to stderr so it gets picked up by errors.py
             traceback.print_exc()
@@ -865,6 +872,9 @@ class AnkiQt(QMainWindow):
         if state != "resetRequired":
             self.bottomWeb.adjustHeightToFit()
         gui_hooks.state_did_change(state, oldState)
+
+    def _homeState(self, oldState: MainWindowState) -> None:
+        self.home.show()
 
     def _deckBrowserState(self, oldState: MainWindowState) -> None:
         self.deckBrowser.show()
@@ -1153,6 +1163,11 @@ title="{}" {}>{}</button>""".format(
 
     def inMainThread(self) -> bool:
         return self._mainThread == QThread.currentThread()
+
+    def setupHome(self) -> None:
+        from aqt.home import Home
+
+        self.home = Home(self)
 
     def setupDeckBrowser(self) -> None:
         from aqt.deckbrowser import DeckBrowser

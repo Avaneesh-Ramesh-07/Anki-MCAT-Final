@@ -1,5 +1,10 @@
 # MCAT Free-Response Grader — Evaluation
 
+> **Archived.** This is the original MCQ-based *model-competence* eval — does the
+> grader model understand MCAT content well enough to grade it? The current
+> *grader-accuracy* eval (keyword vs. AI on real answers) now lives in
+> [EVAL.md](EVAL.md).
+
 This document explains the offline evaluation that backs the **AI grader** used
 for free-response questions (FRQ) in the MCAT topical practice tests: what the
 eval is for, exactly what it does, how to reproduce it, and the result from the
@@ -8,8 +13,8 @@ context.
 
 - **Harness:** [`tools/eval_grader.py`](tools/eval_grader.py)
 - **Curation (one-time):** [`tools/curate_eval_set.py`](tools/curate_eval_set.py)
-- **Result of record:** composite accuracy **0.698** (350 questions,
-  `gpt-4o-mini`, 2026-07-02). Full table below.
+- **Result of record:** composite accuracy **0.801** (350 questions,
+  `gpt-4.1`, 2026-07-03). Full table below.
 
 ---
 
@@ -127,7 +132,7 @@ out/pyenv/bin/python tools/eval_grader.py --limit 10                # 10/subject
 out/pyenv/bin/python tools/eval_grader.py --model gpt-4o            # try another model
 ```
 
-- Model defaults to `OPENAI_EVAL_MODEL` (env) else `gpt-4o-mini`.
+- Model defaults to `OPENAI_EVAL_MODEL` (env) else `gpt-4.1`.
 - **No key ⇒ prints a notice and exits 0** (safe in CI; the eval is never a build
   gate).
 - Each run prints the per-subject + overall table and saves a timestamped
@@ -150,48 +155,49 @@ Full 350-question run:
 
 | Field | Value |
 |---|---|
-| Date (UTC) | 2026-07-02 (`eval_results_20260702-191541.json`) |
-| Model | `gpt-4o-mini` |
+| Date (UTC) | 2026-07-03 (`eval_results_20260703-193019.json`) |
+| Model | `gpt-4.1` |
 | Questions | 350 (50 × 7 subjects) |
-| **Composite accuracy (mean judge score)** | **0.698** |
-| Exact-match rate (baseline) | 0.663 |
+| **Composite accuracy (mean judge score)** | **0.801** |
+| Exact-match rate (baseline) | 0.763 |
 
 Per subject:
 
 | Subject | n | Composite accuracy | Exact-match |
 |---|---|---|---|
-| sociology | 50 | 0.850 | 0.800 |
-| biochemistry | 50 | 0.798 | 0.740 |
-| psychology | 50 | 0.796 | 0.760 |
-| biology | 50 | 0.772 | 0.680 |
-| orgo | 50 | 0.576 | 0.580 |
-| physics | 50 | 0.556 | 0.540 |
-| gen-chem | 50 | 0.538 | 0.540 |
-| **OVERALL** | **350** | **0.698** | **0.663** |
+| sociology | 50 | 0.910 | 0.880 |
+| biology | 50 | 0.872 | 0.840 |
+| biochemistry | 50 | 0.860 | 0.800 |
+| psychology | 50 | 0.810 | 0.780 |
+| physics | 50 | 0.752 | 0.700 |
+| gen-chem | 50 | 0.732 | 0.720 |
+| orgo | 50 | 0.668 | 0.620 |
+| **OVERALL** | **350** | **0.801** | **0.763** |
 
 ### How to read this
 
-- Composite accuracy (0.698) sits above the exact-match baseline (0.663),
+- Composite accuracy (0.801) sits above the exact-match baseline (0.763),
   meaning the judge is crediting sound reasoning even on some questions where the
   final letter was wrong — as intended.
-- **Knowledge/verbal-heavy subjects score high** (sociology, biochemistry,
-  psychology, biology: ~0.77–0.85). The model is a reliable grader for these,
+- **Knowledge/verbal-heavy subjects score high** (sociology, biology,
+  biochemistry, psychology: ~0.81–0.91). The model is a reliable grader for these,
   which is where most FRQ rubric points live (bio/biochem and psych/soc tests).
-- **Calculation-heavy subjects score notably lower** (gen-chem, physics, orgo:
-  ~0.54–0.58). `gpt-4o-mini` is weaker at multi-step quantitative work, so its
-  grading of physics/chemistry FRQs is less trustworthy.
+- **Calculation-heavy subjects still trail but improved markedly** (physics,
+  gen-chem, orgo: ~0.67–0.75, up from ~0.54–0.58 under `gpt-4o-mini`). `gpt-4.1`
+  handles multi-step quantitative work far better, though orgo remains the weakest.
 
 ### Implications for the grader
 
-- The default `gpt-4o-mini` is defensible for the bulk of FRQ content, which is
-  conceptual and lives in the higher-scoring subjects, and FRQ rubrics are capped
-  at `max_points ≤ 4` (≈ ≤4 MCQs of evidence) so a mis-grade has bounded impact on
-  the Performance score.
-- If FRQ coverage of physics / general chemistry / organic chemistry expands, or
+- The default `gpt-4.1` is well justified across FRQ content: it grades the
+  conceptual, higher-scoring subjects reliably and now handles the
+  calculation-heavy subjects far better than `gpt-4o-mini` did. FRQ rubrics are
+  also capped at `max_points ≤ 4` (≈ ≤4 MCQs of evidence), so a mis-grade has
+  bounded impact on the Performance score.
+- If FRQ coverage of organic chemistry / general chemistry / physics expands, or
   if higher grading fidelity is wanted there, re-run this eval with a stronger
-  model (`--model gpt-4o`) and set `OPENAI_GRADER_MODEL` accordingly. The eval is
-  the mechanism for justifying any such model change — re-run it and update the
-  "Result of record" table above.
+  model and set `OPENAI_GRADER_MODEL` accordingly. The eval is the mechanism for
+  justifying any such model change — re-run it and update the "Result of record"
+  table above.
 
 ---
 

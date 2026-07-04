@@ -40,8 +40,13 @@ class PracticeTestsDialog(QDialog):
         self.setLayout(layout)
 
         restoreGeom(self, self.name, default_size=(920, 820))
-        page = "practice-tests?mode=full-length" if full_length else "practice-tests"
-        self.web.load_sveltekit_page(page)
+        # Pass the Home-page AI-grading toggle through so each free-response card
+        # can flag whether it will be graded by AI or by keyword match. (The Rust
+        # grader decides the real mode from the same config; this is display-only.)
+        ai = "1" if mw.col.get_config("mcatAiGrading", True) else "0"
+        base = "practice-tests?mode=full-length" if full_length else "practice-tests"
+        sep = "&" if "?" in base else "?"
+        self.web.load_sveltekit_page(f"{base}{sep}ai={ai}")
         self.show()
         self.activateWindow()
 

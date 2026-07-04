@@ -1737,6 +1737,18 @@
                     "disqualifiers": [
                         "says positive symptoms are 'good' symptoms",
                         "defines positive symptoms as losses/deficits"
+                    ],
+                    "keywords": [
+                        "positive symptoms",
+                        "added",
+                        "additions",
+                        "excess",
+                        "hallucinations",
+                        "hallucination",
+                        "delusions",
+                        "delusion",
+                        "disorganized speech",
+                        "abnormal experiences"
                     ]
                 },
                 {
@@ -1750,6 +1762,19 @@
                     "disqualifiers": [
                         "says negative symptoms are 'bad' symptoms",
                         "defines negative symptoms as added experiences"
+                    ],
+                    "keywords": [
+                        "negative symptoms",
+                        "deficits",
+                        "reductions",
+                        "loss",
+                        "losses",
+                        "flat affect",
+                        "avolition",
+                        "alogia",
+                        "social withdrawal",
+                        "blunted affect",
+                        "reduced functioning"
                     ]
                 }
             ],
@@ -1782,6 +1807,15 @@
                     "disqualifiers": [
                         "puts the levels out of order",
                         "omits a level"
+                    ],
+                    "keywords": [
+                        "preconventional",
+                        "conventional",
+                        "postconventional",
+                        "pre-conventional",
+                        "post-conventional",
+                        "in order",
+                        "that order"
                     ]
                 },
                 {
@@ -1795,6 +1829,18 @@
                     "disqualifiers": [
                         "swaps preconventional and postconventional reasoning",
                         "says preconventional is based on universal principles"
+                    ],
+                    "keywords": [
+                        "rewards",
+                        "punishment",
+                        "punishments",
+                        "avoiding punishment",
+                        "self-interest",
+                        "consequences to self",
+                        "abstract principles",
+                        "ethical principles",
+                        "justice",
+                        "universal principles"
                     ]
                 }
             ],
@@ -1827,6 +1873,19 @@
                     "disqualifiers": [
                         "says the id is the moral component",
                         "says the superego seeks immediate gratification"
+                    ],
+                    "keywords": [
+                        "the id",
+                        "instinctual drives",
+                        "pleasure principle",
+                        "instincts",
+                        "instinctual",
+                        "superego",
+                        "morals",
+                        "morality",
+                        "conscience",
+                        "ideals",
+                        "moral standards"
                     ]
                 },
                 {
@@ -1840,6 +1899,16 @@
                     "disqualifiers": [
                         "says the ego is purely instinctual",
                         "omits the ego's mediating/reality role"
+                    ],
+                    "keywords": [
+                        "the ego",
+                        "mediates",
+                        "reality principle",
+                        "mediator",
+                        "mediating",
+                        "negotiates",
+                        "balances",
+                        "realistic"
                     ]
                 }
             ],
@@ -1871,6 +1940,18 @@
                     ],
                     "disqualifiers": [
                         "says dissonance comes from agreement between beliefs and behavior"
+                    ],
+                    "keywords": [
+                        "cognitive dissonance",
+                        "conflict",
+                        "conflicting",
+                        "discomfort",
+                        "tension",
+                        "inconsistency",
+                        "attitude and behavior",
+                        "two cognitions",
+                        "mismatch",
+                        "contradictory"
                     ]
                 },
                 {
@@ -1883,6 +1964,18 @@
                     "disqualifiers": [
                         "says people increase the conflict to feel better",
                         "gives no valid reduction strategy"
+                    ],
+                    "keywords": [
+                        "change attitude",
+                        "change behavior",
+                        "rationalize",
+                        "rationalizing",
+                        "justify",
+                        "justification",
+                        "add a cognition",
+                        "new cognition",
+                        "reduce dissonance",
+                        "change belief"
                     ]
                 }
             ],
@@ -1915,6 +2008,18 @@
                     "disqualifiers": [
                         "says REM is dreamless deep sleep",
                         "swaps REM and NREM features"
+                    ],
+                    "keywords": [
+                        "rem",
+                        "rapid eye movement",
+                        "vivid dreaming",
+                        "vivid dreams",
+                        "wake-like",
+                        "resembles wakefulness",
+                        "muscle atonia",
+                        "atonia",
+                        "paralysis",
+                        "paradoxical sleep"
                     ]
                 },
                 {
@@ -1927,6 +2032,18 @@
                     ],
                     "disqualifiers": [
                         "says NREM shows fast awake-like waves and vivid dreams"
+                    ],
+                    "keywords": [
+                        "nrem",
+                        "non-rem",
+                        "slow-wave",
+                        "delta waves",
+                        "delta",
+                        "deep sleep",
+                        "restorative",
+                        "slow waves",
+                        "little dreaming",
+                        "no vivid dreaming"
                     ]
                 }
             ],
@@ -1959,6 +2076,17 @@
                     "disqualifiers": [
                         "puts the stages out of order",
                         "omits a stage"
+                    ],
+                    "keywords": [
+                        "alarm",
+                        "resistance",
+                        "exhaustion",
+                        "alarm stage",
+                        "resistance stage",
+                        "exhaustion stage",
+                        "general adaptation syndrome",
+                        "in order",
+                        "that order"
                     ]
                 },
                 {
@@ -1972,6 +2100,17 @@
                     "disqualifiers": [
                         "says the body is strongest at exhaustion",
                         "says resources are fully restored by the final stage"
+                    ],
+                    "keywords": [
+                        "depleted",
+                        "resources depleted",
+                        "reserves depleted",
+                        "depletion",
+                        "vulnerability to illness",
+                        "susceptibility",
+                        "exhausted",
+                        "weakened",
+                        "susceptible to illness"
                     ]
                 }
             ],
@@ -2004,6 +2143,18 @@
                     "disqualifiers": [
                         "says the FAE over-emphasizes the situation",
                         "applies the FAE to one's own successes"
+                    ],
+                    "keywords": [
+                        "fundamental attribution error",
+                        "disposition",
+                        "dispositional",
+                        "internal",
+                        "character",
+                        "personality",
+                        "underweight situation",
+                        "ignore situation",
+                        "situational factors",
+                        "others' behavior"
                     ]
                 },
                 {
@@ -2016,6 +2167,17 @@
                     "disqualifiers": [
                         "reverses the self-serving bias",
                         "conflates it exactly with the FAE"
+                    ],
+                    "keywords": [
+                        "self-serving bias",
+                        "own successes",
+                        "successes internal",
+                        "failures external",
+                        "credit ability",
+                        "blame external",
+                        "protect self-esteem",
+                        "internal for success",
+                        "external for failure"
                     ]
                 }
             ],
@@ -2047,6 +2209,16 @@
                     "disqualifiers": [
                         "says the amygdala forms long-term memories (that is hippocampus)",
                         "assigns the amygdala a motor role"
+                    ],
+                    "keywords": [
+                        "amygdala",
+                        "emotion",
+                        "fear",
+                        "threat",
+                        "fear processing",
+                        "threat detection",
+                        "emotional processing",
+                        "fear response"
                     ]
                 },
                 {
@@ -2059,6 +2231,17 @@
                     "disqualifiers": [
                         "says the hippocampus is the primary fear center",
                         "says the hippocampus controls heart rate"
+                    ],
+                    "keywords": [
+                        "hippocampus",
+                        "memory",
+                        "long-term memory",
+                        "memory formation",
+                        "consolidation",
+                        "declarative memory",
+                        "forming memories",
+                        "new memories",
+                        "memory consolidation"
                     ]
                 }
             ],
@@ -2091,6 +2274,18 @@
                     "disqualifiers": [
                         "says caste systems allow free upward mobility",
                         "swaps caste and class"
+                    ],
+                    "keywords": [
+                        "caste",
+                        "closed",
+                        "ascribed",
+                        "at birth",
+                        "no mobility",
+                        "little mobility",
+                        "fixed at birth",
+                        "ascribed status",
+                        "closed system",
+                        "immobile"
                     ]
                 },
                 {
@@ -2104,6 +2299,16 @@
                     "disqualifiers": [
                         "says class systems permit no mobility",
                         "defines class as inherited and fixed for life"
+                    ],
+                    "keywords": [
+                        "class system",
+                        "open",
+                        "achieved",
+                        "achieved status",
+                        "social mobility",
+                        "upward mobility",
+                        "open system",
+                        "movement between strata"
                     ]
                 }
             ],
@@ -2135,6 +2340,17 @@
                     ],
                     "disqualifiers": [
                         "says the early stage has low birth and low death rates"
+                    ],
+                    "keywords": [
+                        "high birth",
+                        "high death",
+                        "high birth rates",
+                        "high death rates",
+                        "pre-industrial",
+                        "slow growth",
+                        "little growth",
+                        "both high",
+                        "early stage"
                     ]
                 },
                 {
@@ -2148,6 +2364,17 @@
                     "disqualifiers": [
                         "says the late stage has high birth and high death rates",
                         "reverses the trend"
+                    ],
+                    "keywords": [
+                        "low birth",
+                        "low death",
+                        "low birth rates",
+                        "low death rates",
+                        "post-industrial",
+                        "stabilizes",
+                        "levels off",
+                        "both low",
+                        "late stage"
                     ]
                 }
             ],
@@ -2180,6 +2407,17 @@
                     "disqualifiers": [
                         "says labeling theory locates deviance in blocked goals",
                         "swaps the two theories"
+                    ],
+                    "keywords": [
+                        "labeling theory",
+                        "labeled",
+                        "label",
+                        "society labels",
+                        "labeled deviant",
+                        "social reaction",
+                        "self-fulfilling",
+                        "label shapes",
+                        "internalize label"
                     ]
                 },
                 {
@@ -2192,6 +2430,16 @@
                     "disqualifiers": [
                         "says strain theory is about societal labels",
                         "ignores the goals/means gap"
+                    ],
+                    "keywords": [
+                        "strain theory",
+                        "legitimate means",
+                        "cultural goals",
+                        "culturally valued goals",
+                        "blocked goals",
+                        "lack of means",
+                        "goals-means gap",
+                        "merton"
                     ]
                 }
             ],
@@ -2224,6 +2472,16 @@
                     "disqualifiers": [
                         "defines ethnocentrism as judging a culture on its own terms",
                         "swaps the two terms"
+                    ],
+                    "keywords": [
+                        "ethnocentrism",
+                        "own standards",
+                        "own culture",
+                        "superior",
+                        "own culture's standards",
+                        "judging by own",
+                        "ethnocentric",
+                        "one's own culture"
                     ]
                 },
                 {
@@ -2235,6 +2493,16 @@
                     ],
                     "disqualifiers": [
                         "defines cultural relativism as ranking cultures by one's own values"
+                    ],
+                    "keywords": [
+                        "cultural relativism",
+                        "own terms",
+                        "its own standards",
+                        "own context",
+                        "within its context",
+                        "culture's own",
+                        "relativism",
+                        "on its own terms"
                     ]
                 }
             ],
@@ -2267,6 +2535,19 @@
                     "disqualifiers": [
                         "says the pump moves Na+ in and K+ out",
                         "says resting potential needs no energy/pump at all"
+                    ],
+                    "keywords": [
+                        "sodium-potassium pump",
+                        "na+/k+ pump",
+                        "3 na+ out",
+                        "2 k+ in",
+                        "atp",
+                        "atp-driven",
+                        "sodium potassium pump",
+                        "3 sodium",
+                        "2 potassium",
+                        "active transport",
+                        "na/k pump"
                     ]
                 },
                 {
@@ -2280,6 +2561,18 @@
                     "disqualifiers": [
                         "says the resting membrane is most permeable to Na+",
                         "says the inside is positive at rest"
+                    ],
+                    "keywords": [
+                        "permeable to k+",
+                        "potassium permeability",
+                        "k+ leak",
+                        "leak channels",
+                        "k+ efflux",
+                        "potassium leaks out",
+                        "inside negative",
+                        "-70 mv",
+                        "potassium leak channels",
+                        "more permeable to potassium"
                     ]
                 }
             ],

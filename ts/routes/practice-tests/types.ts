@@ -37,6 +37,9 @@ export interface RubricCriterion {
     points: number;
     required_concepts: string[];
     disqualifiers: string[];
+    // Literal match terms authored offline from the ground-truth reference
+    // answer; used by the keyword-match grader when AI grading is off.
+    keywords?: string[];
 }
 
 /** A free-response question, graded by the AI grader against its rubric.

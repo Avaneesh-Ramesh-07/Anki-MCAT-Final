@@ -1730,6 +1730,19 @@
                     "disqualifiers": [
                         "says classical conditioning shapes voluntary behavior via consequences",
                         "conflates it with operant conditioning"
+                    ],
+                    "keywords": [
+                        "classical conditioning",
+                        "involuntary",
+                        "reflexive",
+                        "reflex",
+                        "automatic response",
+                        "neutral stimulus",
+                        "unconditioned stimulus",
+                        "conditioned stimulus",
+                        "associating two stimuli",
+                        "pairing stimuli",
+                        "cs with us"
                     ]
                 },
                 {
@@ -1743,6 +1756,18 @@
                     "disqualifiers": [
                         "says operant conditioning pairs two stimuli",
                         "says operant conditioning acts on reflexes"
+                    ],
+                    "keywords": [
+                        "operant conditioning",
+                        "voluntary",
+                        "voluntary behavior",
+                        "consequences",
+                        "reinforcement",
+                        "punishment",
+                        "reward",
+                        "instrumental",
+                        "changed by consequences",
+                        "shaped by consequences"
                     ]
                 }
             ],
@@ -1775,6 +1800,19 @@
                     "disqualifiers": [
                         "says negative reinforcement decreases behavior",
                         "equates negative reinforcement with punishment"
+                    ],
+                    "keywords": [
+                        "negative reinforcement",
+                        "removes",
+                        "aversive stimulus",
+                        "remove aversive",
+                        "takes away",
+                        "escape",
+                        "avoidance",
+                        "increases the behavior",
+                        "increases behavior",
+                        "strengthens",
+                        "more likely"
                     ]
                 },
                 {
@@ -1787,6 +1825,16 @@
                     "disqualifiers": [
                         "says punishment increases behavior",
                         "says punishment and reinforcement have the same effect"
+                    ],
+                    "keywords": [
+                        "punishment",
+                        "decreases",
+                        "decrease behavior",
+                        "decreases the behavior",
+                        "reduces",
+                        "suppresses",
+                        "less likely",
+                        "weakens"
                     ]
                 }
             ],
@@ -1821,6 +1869,16 @@
                     "disqualifiers": [
                         "puts the stages out of order",
                         "omits sensory memory entirely"
+                    ],
+                    "keywords": [
+                        "sensory memory",
+                        "short-term memory",
+                        "working memory",
+                        "long-term memory",
+                        "atkinson-shiffrin",
+                        "in order",
+                        "three stages",
+                        "sensory then short-term"
                     ]
                 },
                 {
@@ -1834,6 +1892,20 @@
                     "disqualifiers": [
                         "says short-term memory is unlimited and permanent",
                         "says long-term memory holds only a few items for seconds"
+                    ],
+                    "keywords": [
+                        "limited capacity",
+                        "brief",
+                        "seven items",
+                        "7 items",
+                        "short duration",
+                        "seconds",
+                        "unlimited capacity",
+                        "large capacity",
+                        "durable",
+                        "long duration",
+                        "permanent",
+                        "chunks"
                     ]
                 }
             ],
@@ -1865,6 +1937,15 @@
                     "disqualifiers": [
                         "says proactive interference is new disrupting old",
                         "reverses the direction"
+                    ],
+                    "keywords": [
+                        "proactive interference",
+                        "old learning",
+                        "prior learning",
+                        "previously learned",
+                        "old disrupts new",
+                        "interferes with new",
+                        "forward"
                     ]
                 },
                 {
@@ -1877,6 +1958,15 @@
                     "disqualifiers": [
                         "says retroactive interference is old disrupting new",
                         "conflates the two"
+                    ],
+                    "keywords": [
+                        "retroactive interference",
+                        "new learning",
+                        "newly learned",
+                        "new disrupts old",
+                        "recent learning",
+                        "interferes with old",
+                        "backward"
                     ]
                 }
             ],
@@ -1908,6 +1998,16 @@
                     ],
                     "disqualifiers": [
                         "says absolute threshold is the smallest detectable difference between stimuli (that is difference threshold)"
+                    ],
+                    "keywords": [
+                        "absolute threshold",
+                        "minimum intensity",
+                        "smallest detectable",
+                        "50%",
+                        "half the time",
+                        "lowest intensity",
+                        "minimum stimulus",
+                        "detected"
                     ]
                 },
                 {
@@ -1921,6 +2021,18 @@
                     "disqualifiers": [
                         "says detection depends only on stimulus intensity",
                         "ignores observer/decision factors"
+                    ],
+                    "keywords": [
+                        "signal detection theory",
+                        "response bias",
+                        "criterion",
+                        "expectations",
+                        "motivation",
+                        "noise",
+                        "non-sensory",
+                        "not just intensity",
+                        "decision factors",
+                        "observer"
                     ]
                 }
             ],
@@ -1953,6 +2065,16 @@
                     "disqualifiers": [
                         "defines availability as matching a prototype",
                         "swaps the two heuristics"
+                    ],
+                    "keywords": [
+                        "availability heuristic",
+                        "comes to mind",
+                        "ease of recall",
+                        "easily recalled",
+                        "readily available",
+                        "recent examples",
+                        "memorable",
+                        "how easily"
                     ]
                 },
                 {
@@ -1965,6 +2087,16 @@
                     "disqualifiers": [
                         "defines representativeness as ease of recall",
                         "ignores prototype matching"
+                    ],
+                    "keywords": [
+                        "representativeness heuristic",
+                        "prototype",
+                        "stereotype",
+                        "resembles",
+                        "similarity",
+                        "matches category",
+                        "typical",
+                        "fits the category"
                     ]
                 }
             ],
@@ -1997,6 +2129,15 @@
                     "disqualifiers": [
                         "says assimilation changes the schema",
                         "swaps the two terms"
+                    ],
+                    "keywords": [
+                        "assimilation",
+                        "existing schema",
+                        "fit into",
+                        "incorporate",
+                        "without changing",
+                        "unchanged schema",
+                        "into existing schema"
                     ]
                 },
                 {
@@ -2010,6 +2151,16 @@
                     "disqualifiers": [
                         "says accommodation leaves the schema unchanged",
                         "conflates it with assimilation"
+                    ],
+                    "keywords": [
+                        "accommodation",
+                        "modify schema",
+                        "change schema",
+                        "create new schema",
+                        "adjust schema",
+                        "alter schema",
+                        "new schema",
+                        "changes the schema"
                     ]
                 }
             ],
@@ -2042,6 +2193,16 @@
                     "disqualifiers": [
                         "says James-Lange has emotion causing arousal",
                         "swaps the theories"
+                    ],
+                    "keywords": [
+                        "james-lange",
+                        "arousal first",
+                        "arousal precedes",
+                        "bodily response first",
+                        "interpretation of arousal",
+                        "perception of bodily changes",
+                        "physiological changes first",
+                        "feel afraid because"
                     ]
                 },
                 {
@@ -2055,6 +2216,16 @@
                     "disqualifiers": [
                         "says Cannon-Bard has arousal strictly before emotion",
                         "says Cannon-Bard requires cognitive labeling first"
+                    ],
+                    "keywords": [
+                        "cannon-bard",
+                        "simultaneous",
+                        "simultaneously",
+                        "at the same time",
+                        "independently",
+                        "parallel",
+                        "together",
+                        "independent"
                     ]
                 }
             ],
@@ -2087,6 +2258,17 @@
                     "disqualifiers": [
                         "says material culture is beliefs/values",
                         "gives a nonmaterial example for material culture"
+                    ],
+                    "keywords": [
+                        "material culture",
+                        "physical objects",
+                        "artifacts",
+                        "tangible",
+                        "tools",
+                        "buildings",
+                        "clothing",
+                        "technology",
+                        "objects"
                     ]
                 },
                 {
@@ -2100,6 +2282,16 @@
                     "disqualifiers": [
                         "says nonmaterial culture is physical objects",
                         "gives a physical example for nonmaterial culture"
+                    ],
+                    "keywords": [
+                        "nonmaterial culture",
+                        "beliefs",
+                        "values",
+                        "norms",
+                        "language",
+                        "ideas",
+                        "customs",
+                        "intangible"
                     ]
                 }
             ],
@@ -2132,6 +2324,17 @@
                     "disqualifiers": [
                         "says primary groups are large and impersonal",
                         "swaps the definitions"
+                    ],
+                    "keywords": [
+                        "primary group",
+                        "small",
+                        "close",
+                        "intimate",
+                        "enduring",
+                        "personal",
+                        "family",
+                        "close friends",
+                        "long-lasting"
                     ]
                 },
                 {
@@ -2145,6 +2348,17 @@
                     "disqualifiers": [
                         "says secondary groups are intimate and lifelong",
                         "conflates it with a primary group"
+                    ],
+                    "keywords": [
+                        "secondary group",
+                        "large",
+                        "impersonal",
+                        "goal-oriented",
+                        "task-oriented",
+                        "coworkers",
+                        "formal",
+                        "specific purpose",
+                        "temporary"
                     ]
                 }
             ],
@@ -2177,6 +2391,16 @@
                     "disqualifiers": [
                         "defines socialization as being social/extroverted",
                         "says it is genetic transmission of behavior"
+                    ],
+                    "keywords": [
+                        "socialization",
+                        "learning norms",
+                        "values",
+                        "norms and values",
+                        "internalizing culture",
+                        "learning roles",
+                        "society's expectations",
+                        "internalize"
                     ]
                 },
                 {
@@ -2190,6 +2414,16 @@
                     "disqualifiers": [
                         "names only one agent",
                         "names non-agents (e.g. weather) as agents of socialization"
+                    ],
+                    "keywords": [
+                        "family",
+                        "school",
+                        "peers",
+                        "peer group",
+                        "media",
+                        "two agents",
+                        "transmit",
+                        "teach values"
                     ]
                 }
             ],
@@ -2222,6 +2456,16 @@
                     "disqualifiers": [
                         "defines manifest function as unintended",
                         "swaps manifest and latent"
+                    ],
+                    "keywords": [
+                        "manifest function",
+                        "intended",
+                        "recognized",
+                        "deliberate",
+                        "explicit",
+                        "teaches skills",
+                        "transmit knowledge",
+                        "obvious purpose"
                     ]
                 },
                 {
@@ -2235,6 +2479,17 @@
                     "disqualifiers": [
                         "defines latent function as the intended goal",
                         "conflates it with a dysfunction only"
+                    ],
+                    "keywords": [
+                        "latent function",
+                        "unintended",
+                        "hidden",
+                        "unrecognized",
+                        "childcare",
+                        "social networks",
+                        "friendships",
+                        "dating",
+                        "unanticipated"
                     ]
                 }
             ],
@@ -2267,6 +2522,13 @@
                     "disqualifiers": [
                         "says the parasympathetic system drives fight-or-flight",
                         "names the somatic nervous system"
+                    ],
+                    "keywords": [
+                        "sympathetic nervous system",
+                        "sympathetic",
+                        "sympathetic branch",
+                        "sns",
+                        "fight-or-flight"
                     ]
                 },
                 {
@@ -2279,6 +2541,19 @@
                     "disqualifiers": [
                         "lists parasympathetic 'rest and digest' effects",
                         "gives only one effect"
+                    ],
+                    "keywords": [
+                        "increased heart rate",
+                        "heart rate",
+                        "pupil dilation",
+                        "dilated pupils",
+                        "bronchodilation",
+                        "decreased digestion",
+                        "increased blood pressure",
+                        "sweating",
+                        "adrenaline",
+                        "epinephrine",
+                        "glucose release"
                     ]
                 }
             ],

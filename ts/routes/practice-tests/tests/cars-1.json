@@ -1559,6 +1559,19 @@
                     "disqualifiers": [
                         "says the author fully endorses restoration as honoring the artist",
                         "says aging has no value"
+                    ],
+                    "keywords": [
+                        "restoration",
+                        "restore",
+                        "erases the history",
+                        "destroys the record",
+                        "biography",
+                        "patina",
+                        "historical record",
+                        "record of survival",
+                        "earlier repairs",
+                        "aging",
+                        "valuable record"
                     ]
                 },
                 {
@@ -1572,6 +1585,18 @@
                     "disqualifiers": [
                         "says the author sees no tension",
                         "says the whole history equals the original moment"
+                    ],
+                    "keywords": [
+                        "one moment",
+                        "single moment",
+                        "one moment of its life",
+                        "the whole",
+                        "whole identity",
+                        "pretend it is the whole",
+                        "ignores the rest",
+                        "the work's life",
+                        "privileges the original",
+                        "just a snapshot"
                     ]
                 }
             ],
@@ -1604,6 +1629,18 @@
                     "disqualifiers": [
                         "says the author praises the accessible translation",
                         "says the author thinks difficulty is worthless"
+                    ],
+                    "keywords": [
+                        "critical",
+                        "disapproving",
+                        "disdainful",
+                        "skeptical",
+                        "values difficulty",
+                        "prizes the difficulty",
+                        "difficulty is valuable",
+                        "opposes the accessible translation",
+                        "laments the loss",
+                        "dislikes accessible"
                     ]
                 },
                 {
@@ -1616,6 +1653,15 @@
                     "disqualifiers": [
                         "cites no textual evidence",
                         "quotes text unrelated to the author's attitude"
+                    ],
+                    "keywords": [
+                        "spoon-fed",
+                        "spoonfed",
+                        "invalid",
+                        "friction",
+                        "worth the climb",
+                        "the climb",
+                        "smoothed away"
                     ]
                 }
             ],
@@ -1648,6 +1694,17 @@
                     "disqualifiers": [
                         "says the author accepts the lanes caused the increase",
                         "misidentifies the assumption"
+                    ],
+                    "keywords": [
+                        "caused",
+                        "bike lanes caused",
+                        "cause and effect",
+                        "causation",
+                        "converted drivers",
+                        "lanes created the rise",
+                        "causal direction",
+                        "assumes the lanes caused",
+                        "lanes made people cycle"
                     ]
                 },
                 {
@@ -1661,6 +1718,18 @@
                     "disqualifiers": [
                         "offers no alternative explanation",
                         "restates the planners' causal claim as the alternative"
+                    ],
+                    "keywords": [
+                        "reverse causation",
+                        "reverse causality",
+                        "pre-existing demand",
+                        "already popular",
+                        "already fashionable",
+                        "demand drove the lanes",
+                        "followed the demand",
+                        "causation runs the other way",
+                        "self-selected",
+                        "confounded"
                     ]
                 }
             ],
@@ -1693,6 +1762,17 @@
                     "disqualifiers": [
                         "says the archive is a complete, unbiased record",
                         "says 'innocent' means factually accurate"
+                    ],
+                    "keywords": [
+                        "not neutral",
+                        "not objective",
+                        "not impartial",
+                        "selectively created",
+                        "curated",
+                        "shaped by choices",
+                        "human choices",
+                        "someone chose what to keep",
+                        "biased selection"
                     ]
                 },
                 {
@@ -1706,6 +1786,17 @@
                     "disqualifiers": [
                         "says silences are meaningless gaps",
                         "says silences refer to quiet reading rooms or literal silence"
+                    ],
+                    "keywords": [
+                        "silences",
+                        "omissions",
+                        "what was burned",
+                        "what was destroyed",
+                        "left out",
+                        "excluded",
+                        "authored",
+                        "meaningful gaps",
+                        "gaps in the record"
                     ]
                 }
             ],
@@ -1738,6 +1829,18 @@
                     "disqualifiers": [
                         "proposes evidence about only the same single firm",
                         "proposes irrelevant evidence"
+                    ],
+                    "keywords": [
+                        "many firms",
+                        "multiple firms",
+                        "diverse firms",
+                        "other companies",
+                        "across many firms",
+                        "controlled comparison",
+                        "control group",
+                        "larger sample",
+                        "replicate",
+                        "hold other factors constant"
                     ]
                 },
                 {
@@ -1751,6 +1854,18 @@
                     "disqualifiers": [
                         "gives no reason",
                         "reasoning does not connect the evidence to the claim's weakness"
+                    ],
+                    "keywords": [
+                        "generalize",
+                        "generalization",
+                        "unrepresentative",
+                        "not representative",
+                        "fluke",
+                        "confounding",
+                        "confounded",
+                        "rules out other factors",
+                        "supports generalizing",
+                        "one firm is not enough"
                     ]
                 }
             ],
@@ -1783,6 +1898,18 @@
                     "disqualifiers": [
                         "treats the desire path as merely decorative with no argumentative role",
                         "says it supports top-down planning"
+                    ],
+                    "keywords": [
+                        "desire path",
+                        "example",
+                        "evidence",
+                        "illustrates the claim",
+                        "cities accrete",
+                        "accretion",
+                        "emerge from use",
+                        "actual use",
+                        "grow from use",
+                        "not planned"
                     ]
                 },
                 {
@@ -1796,6 +1923,18 @@
                     "disqualifiers": [
                         "says the grid overrides the desire path",
                         "reverses the author's point"
+                    ],
+                    "keywords": [
+                        "rebuttal",
+                        "pedestrian",
+                        "planner's grid",
+                        "grid",
+                        "use overrides design",
+                        "overrides the plan",
+                        "use wins",
+                        "contradicts the plan",
+                        "top-down planning",
+                        "pedestrian is always right"
                     ]
                 }
             ],
@@ -1828,6 +1967,16 @@
                     "disqualifiers": [
                         "offers another wealthy secular example (which supports, not weakens)",
                         "proposes an irrelevant counterexample"
+                    ],
+                    "keywords": [
+                        "wealthy but religious",
+                        "rich and religious",
+                        "prosperous yet religious",
+                        "poor but secular",
+                        "poor and secular",
+                        "highly religious society",
+                        "counterexample",
+                        "secular poor society"
                     ]
                 },
                 {
@@ -1841,6 +1990,16 @@
                     "disqualifiers": [
                         "gives no reason",
                         "reasoning does not connect to the causal claim"
+                    ],
+                    "keywords": [
+                        "breaks the link",
+                        "breaks the correlation",
+                        "not sufficient",
+                        "not necessary",
+                        "no causal link",
+                        "coincidental",
+                        "correlation is not causation",
+                        "wealth does not cause secularization"
                     ]
                 }
             ],
@@ -1873,6 +2032,16 @@
                     "disqualifiers": [
                         "says the author thinks realism is objectively the truest depiction",
                         "says realism is style-free"
+                    ],
+                    "keywords": [
+                        "style",
+                        "set of conventions",
+                        "conventions",
+                        "not transparent",
+                        "not a neutral depiction",
+                        "not a window onto reality",
+                        "just a style",
+                        "one style among many"
                     ]
                 },
                 {
@@ -1886,6 +2055,17 @@
                     "disqualifiers": [
                         "provides no grounding from the passage",
                         "grounding contradicts the passage"
+                    ],
+                    "keywords": [
+                        "mannered",
+                        "baroque",
+                        "future age",
+                        "historically contingent",
+                        "grown used to",
+                        "stopped noticing",
+                        "dated",
+                        "conventions we no longer notice",
+                        "looks mannered later"
                     ]
                 }
             ],
@@ -1918,6 +2098,16 @@
                     "disqualifiers": [
                         "says the author agrees the tests fairly measure merit",
                         "misses the author's critique"
+                    ],
+                    "keywords": [
+                        "do not measure merit",
+                        "fail to measure merit",
+                        "not a fair measure",
+                        "reflect privilege",
+                        "measure privilege",
+                        "privilege",
+                        "not pure merit",
+                        "do not strip away privilege"
                     ]
                 },
                 {
@@ -1931,6 +2121,17 @@
                     "disqualifiers": [
                         "says the score gap is purely innate ability",
                         "ignores the resource gap the author stresses"
+                    ],
+                    "keywords": [
+                        "resources",
+                        "tutor",
+                        "tutoring",
+                        "quiet room",
+                        "practice attempts",
+                        "preparation",
+                        "unequal resources",
+                        "mislabeled as ability",
+                        "not innate ability"
                     ]
                 }
             ],
@@ -1963,6 +2164,18 @@
                     "disqualifiers": [
                         "says 'acquiring' is used to accurately describe fair purchases only",
                         "misses the euphemism point"
+                    ],
+                    "keywords": [
+                        "euphemism",
+                        "gentle word",
+                        "masks",
+                        "hides",
+                        "looting",
+                        "coercive taking",
+                        "theft",
+                        "pried from a temple wall",
+                        "softens the language",
+                        "disguises looting"
                     ]
                 },
                 {
@@ -1975,6 +2188,16 @@
                     "disqualifiers": [
                         "says the author approves of museum acquisition practices",
                         "says the author is neutral/indifferent"
+                    ],
+                    "keywords": [
+                        "critical",
+                        "skeptical",
+                        "disapproving",
+                        "condemns",
+                        "questions",
+                        "challenges museum practices",
+                        "critical of how museums obtained",
+                        "not approving"
                     ]
                 }
             ],
@@ -2006,6 +2229,15 @@
                     "disqualifiers": [
                         "classifies it as uncertainty",
                         "gives no classification"
+                    ],
+                    "keywords": [
+                        "risk",
+                        "it is risk",
+                        "falls under risk",
+                        "classified as risk",
+                        "the risk category",
+                        "risk not uncertainty",
+                        "this is a risk"
                     ]
                 },
                 {
@@ -2018,6 +2250,16 @@
                     "disqualifiers": [
                         "justification contradicts the author's definitions",
                         "gives no justification"
+                    ],
+                    "keywords": [
+                        "odds are known",
+                        "known probabilities",
+                        "calculable odds",
+                        "calculable probabilities",
+                        "well-documented",
+                        "probabilities are known",
+                        "author defines risk as known odds",
+                        "documented hazard has known odds"
                     ]
                 }
             ],

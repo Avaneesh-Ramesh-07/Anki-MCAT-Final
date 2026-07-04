@@ -641,24 +641,23 @@ tr:hover:not(.top-level-drag-row) {
     border-radius: 999px;
     border: 1px solid var(--border);
     background: var(--canvas-elevated);
+    color: color(fg-subtle);
     cursor: pointer;
     transition:
         background 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        color 0.2s ease;
 
-    .gears {
-        width: 1rem;
-        height: 1rem;
-        opacity: 0.6;
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        visibility: visible;
     }
     &:hover {
         background: var(--canvas-inset);
         border-color: color(border-strong);
+        color: color(fg);
     }
-}
-.nightMode .bed-gear .gears,
-.night-mode .bed-gear .gears {
-    filter: invert(1);
 }
 
 #studiedToday {

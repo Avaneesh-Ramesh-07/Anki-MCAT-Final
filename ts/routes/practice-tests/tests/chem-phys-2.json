@@ -1791,6 +1791,19 @@
                     "disqualifiers": [
                         "says Ksp changes when you add common ion",
                         "says Ksp is the amount of solid"
+                    ],
+                    "keywords": [
+                        "ksp",
+                        "solubility product",
+                        "solubility-product",
+                        "product of ion concentrations",
+                        "product of the dissolved ion concentrations",
+                        "dissolved ion concentrations",
+                        "ion product",
+                        "at saturation",
+                        "saturated solution",
+                        "equilibrium constant",
+                        "constant at a given temperature"
                     ]
                 },
                 {
@@ -1804,6 +1817,19 @@
                     "disqualifiers": [
                         "says added common ion increases solubility",
                         "says Ksp increases with common ion"
+                    ],
+                    "keywords": [
+                        "common ion",
+                        "common-ion effect",
+                        "le chatelier",
+                        "shifts toward solid",
+                        "toward the solid",
+                        "shifts toward the solid",
+                        "precipitates",
+                        "solubility decreases",
+                        "less soluble",
+                        "lowers solubility",
+                        "ksp unchanged"
                     ]
                 }
             ],
@@ -1836,6 +1862,15 @@
                     "disqualifiers": [
                         "swaps anode and cathode",
                         "says both occur at one electrode"
+                    ],
+                    "keywords": [
+                        "oxidation at the anode",
+                        "oxidation occurs at the anode",
+                        "reduction at the cathode",
+                        "reduction occurs at the cathode",
+                        "an ox",
+                        "red cat",
+                        "anox redcat"
                     ]
                 },
                 {
@@ -1849,6 +1884,18 @@
                     "disqualifiers": [
                         "says a spontaneous cell has negative Ecell",
                         "says Ecell = 0 at spontaneity"
+                    ],
+                    "keywords": [
+                        "positive cell potential",
+                        "positive ecell",
+                        "ecell > 0",
+                        "ecell positive",
+                        "positive voltage",
+                        "positive emf",
+                        "negative delta g",
+                        "delta g negative",
+                        "negative gibbs",
+                        "spontaneous"
                     ]
                 }
             ],
@@ -1881,6 +1928,16 @@
                     "disqualifiers": [
                         "says radius increases across a period",
                         "says radius is constant across a period"
+                    ],
+                    "keywords": [
+                        "atomic radius decreases",
+                        "radius decreases",
+                        "decreases across a period",
+                        "decreases left to right",
+                        "smaller toward the right",
+                        "smaller to the right",
+                        "gets smaller",
+                        "atoms get smaller"
                     ]
                 },
                 {
@@ -1895,6 +1952,20 @@
                     "disqualifiers": [
                         "attributes the decrease to adding new shells",
                         "says shielding increases across a period"
+                    ],
+                    "keywords": [
+                        "effective nuclear charge",
+                        "nuclear charge",
+                        "increasing nuclear charge",
+                        "more protons",
+                        "same shell",
+                        "same energy level",
+                        "same principal energy level",
+                        "no new shell",
+                        "pulls electrons in",
+                        "stronger pull",
+                        "pulled in tighter",
+                        "zeff"
                     ]
                 }
             ],
@@ -1927,6 +1998,13 @@
                     "disqualifiers": [
                         "calls it a chemical/reactive property",
                         "says it depends on the reaction"
+                    ],
+                    "keywords": [
+                        "colligative property",
+                        "colligative",
+                        "colligative properties",
+                        "freezing-point depression",
+                        "freezing point depression"
                     ]
                 },
                 {
@@ -1940,6 +2018,20 @@
                     "disqualifiers": [
                         "says it depends on the chemical identity of the solute",
                         "says one mole of any solute gives different depression regardless of dissociation"
+                    ],
+                    "keywords": [
+                        "number of particles",
+                        "concentration of particles",
+                        "number of dissolved particles",
+                        "number of solute particles",
+                        "how many particles",
+                        "not the identity",
+                        "independent of identity",
+                        "regardless of identity",
+                        "not on the identity",
+                        "dissociates into more particles",
+                        "dissociation",
+                        "van't hoff factor"
                     ]
                 }
             ],
@@ -1972,6 +2064,17 @@
                     "disqualifiers": [
                         "says current divides between them",
                         "treats them as parallel"
+                    ],
+                    "keywords": [
+                        "same current",
+                        "current is the same",
+                        "same current through each",
+                        "current through both",
+                        "single path",
+                        "one path",
+                        "single loop",
+                        "current is conserved",
+                        "same current in series"
                     ]
                 },
                 {
@@ -1985,6 +2088,16 @@
                     "disqualifiers": [
                         "says resistances add reciprocally in series",
                         "says total resistance is less than either"
+                    ],
+                    "keywords": [
+                        "resistances add",
+                        "add in series",
+                        "r_total = r1 + r2",
+                        "sum of the resistances",
+                        "total resistance is the sum",
+                        "resistances sum",
+                        "add up",
+                        "greater than either"
                     ]
                 }
             ],
@@ -2017,6 +2130,13 @@
                     "disqualifiers": [
                         "says virtual image",
                         "says upright/erect image"
+                    ],
+                    "keywords": [
+                        "real image",
+                        "real",
+                        "inverted",
+                        "upside down",
+                        "inverted image"
                     ]
                 },
                 {
@@ -2030,6 +2150,19 @@
                     "disqualifiers": [
                         "says the rays diverge",
                         "says a converging lens can only form virtual images"
+                    ],
+                    "keywords": [
+                        "rays converge",
+                        "converge",
+                        "converging rays",
+                        "opposite side",
+                        "far side",
+                        "positive image distance",
+                        "positive di",
+                        "beyond the focal length",
+                        "outside the focal point",
+                        "object beyond f",
+                        "converge on the far side"
                     ]
                 }
             ],
@@ -2062,6 +2195,16 @@
                     "disqualifiers": [
                         "says observed frequency is lower for an approaching source",
                         "says frequency is unchanged"
+                    ],
+                    "keywords": [
+                        "higher frequency",
+                        "observed frequency higher",
+                        "frequency increases",
+                        "pitch rises",
+                        "higher pitch",
+                        "frequency is higher",
+                        "doppler effect",
+                        "doppler"
                     ]
                 },
                 {
@@ -2075,6 +2218,18 @@
                     "disqualifiers": [
                         "says the wavefronts spread out as it approaches",
                         "attributes it to louder volume"
+                    ],
+                    "keywords": [
+                        "wavefronts compressed",
+                        "compressed",
+                        "bunched",
+                        "wavefronts bunch",
+                        "waves bunch",
+                        "shorter wavelength",
+                        "wavelength decreases",
+                        "crests closer",
+                        "waves squeezed",
+                        "compressed wavefronts"
                     ]
                 }
             ],
@@ -2107,6 +2262,19 @@
                     "disqualifiers": [
                         "says low pH increases O2 affinity",
                         "says pH has no effect on hemoglobin"
+                    ],
+                    "keywords": [
+                        "lower ph",
+                        "decreases affinity",
+                        "decreases o2 affinity",
+                        "lower affinity",
+                        "reduced affinity",
+                        "right shift",
+                        "rightward shift",
+                        "shifts right",
+                        "curve shifts right",
+                        "shifts to the right",
+                        "bohr effect"
                     ]
                 },
                 {
@@ -2120,6 +2288,20 @@
                     "disqualifiers": [
                         "says it makes hemoglobin hold O2 more tightly in tissue",
                         "says it impairs O2 delivery"
+                    ],
+                    "keywords": [
+                        "unloads o2",
+                        "releases o2",
+                        "release more oxygen",
+                        "unloading",
+                        "unload more o2",
+                        "active tissue",
+                        "exercising tissue",
+                        "metabolically active",
+                        "delivers oxygen",
+                        "o2 delivery",
+                        "matches demand",
+                        "where it is needed"
                     ]
                 }
             ],
@@ -2152,6 +2334,20 @@
                     "disqualifiers": [
                         "says saturated fatty acids have kinks",
                         "says unsaturated chains pack more tightly"
+                    ],
+                    "keywords": [
+                        "saturated",
+                        "straight chains",
+                        "straight",
+                        "pack tightly",
+                        "tight packing",
+                        "pack closely",
+                        "unsaturated",
+                        "kink",
+                        "kinks",
+                        "cis double bond",
+                        "double bonds",
+                        "bent chains"
                     ]
                 },
                 {
@@ -2165,6 +2361,17 @@
                     "disqualifiers": [
                         "says unsaturated fats have higher melting points",
                         "says packing does not affect melting point"
+                    ],
+                    "keywords": [
+                        "higher melting point",
+                        "saturated higher melting",
+                        "solid at room temperature",
+                        "solids",
+                        "lower melting point",
+                        "unsaturated lower melting",
+                        "oils",
+                        "liquid at room temperature",
+                        "melt at lower temperature"
                     ]
                 }
             ],
@@ -2198,6 +2405,17 @@
                     "disqualifiers": [
                         "says CO2 is the final electron acceptor",
                         "says O2 donates electrons to the chain"
+                    ],
+                    "keywords": [
+                        "terminal electron acceptor",
+                        "final electron acceptor",
+                        "oxygen accepts electrons",
+                        "accepts the electrons",
+                        "forms water",
+                        "produces water",
+                        "reduced to water",
+                        "complex iv",
+                        "cytochrome c oxidase"
                     ]
                 },
                 {
@@ -2212,6 +2430,20 @@
                     "disqualifiers": [
                         "says the chain runs normally without O2",
                         "says glycolysis stops immediately without O2"
+                    ],
+                    "keywords": [
+                        "chain backs up",
+                        "backs up",
+                        "carriers stay reduced",
+                        "fully reduced",
+                        "remain reduced",
+                        "cannot pass electrons",
+                        "electrons cannot be passed",
+                        "etc stops",
+                        "chain stops",
+                        "oxidative phosphorylation stops",
+                        "no atp",
+                        "atp synthesis stops"
                     ]
                 }
             ],
@@ -2243,6 +2475,14 @@
                     "disqualifiers": [
                         "says SN2 dominates for a tertiary substrate",
                         "predicts elimination only"
+                    ],
+                    "keywords": [
+                        "sn1",
+                        "sn1 dominates",
+                        "sn1 pathway",
+                        "sn1 mechanism",
+                        "favors sn1",
+                        "unimolecular"
                     ]
                 },
                 {
@@ -2256,6 +2496,18 @@
                     "disqualifiers": [
                         "says a weak nucleophile favors SN2",
                         "says tertiary substrates favor SN2 due to sterics"
+                    ],
+                    "keywords": [
+                        "tertiary carbocation",
+                        "stable carbocation",
+                        "stabilized carbocation",
+                        "3° carbocation",
+                        "polar protic",
+                        "polar protic solvent",
+                        "weak nucleophile",
+                        "hyperconjugation",
+                        "stabilizes the ions",
+                        "stabilizes the carbocation"
                     ]
                 }
             ],
@@ -2288,6 +2540,18 @@
                     "disqualifiers": [
                         "says number of signals = total number of hydrogens",
                         "says it gives the number of carbons"
+                    ],
+                    "keywords": [
+                        "number of signals",
+                        "distinct hydrogen environments",
+                        "nonequivalent",
+                        "chemically distinct",
+                        "different environments",
+                        "inequivalent protons",
+                        "unique hydrogens",
+                        "chemically inequivalent",
+                        "types of hydrogen",
+                        "distinct proton environments"
                     ]
                 },
                 {
@@ -2301,6 +2565,18 @@
                     "disqualifiers": [
                         "says integration gives the chemical shift",
                         "says integration gives coupling/splitting"
+                    ],
+                    "keywords": [
+                        "integration",
+                        "peak area",
+                        "area under the peak",
+                        "proportional to the number of hydrogens",
+                        "number of protons",
+                        "relative number of protons",
+                        "relative h counts",
+                        "ratio of hydrogens",
+                        "how many hydrogens",
+                        "proportional to protons"
                     ]
                 }
             ],
@@ -2333,6 +2609,17 @@
                     "disqualifiers": [
                         "says the interior is hydrophilic/polar",
                         "says the interior is charged"
+                    ],
+                    "keywords": [
+                        "hydrophobic",
+                        "nonpolar interior",
+                        "nonpolar core",
+                        "hydrophobic core",
+                        "hydrophobic interior",
+                        "fatty acid tails",
+                        "lipid tails",
+                        "hydrophobic region",
+                        "nonpolar tails"
                     ]
                 },
                 {
@@ -2346,6 +2633,20 @@
                     "disqualifiers": [
                         "says ions cross the bilayer freely by simple diffusion",
                         "says nonpolar molecules need protein channels"
+                    ],
+                    "keywords": [
+                        "dissolve",
+                        "pass freely",
+                        "diffuse through",
+                        "nonpolar molecules dissolve",
+                        "energy barrier",
+                        "energetic barrier",
+                        "charged ion",
+                        "ions repelled",
+                        "channels",
+                        "transporters",
+                        "high energy cost",
+                        "cannot cross"
                     ]
                 }
             ],

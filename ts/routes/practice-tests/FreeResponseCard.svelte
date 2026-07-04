@@ -18,6 +18,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     // Optional: re-run grading for this question (offered when grading was
     // unavailable). Refreshes the shown grade only; never re-records evidence.
     export let onRetry: (() => void) | null = null;
+    // Whether this FRQ will be graded by AI (true) or by keyword match (false),
+    // per the Home-page toggle. Display-only: drives the flag + wording. The
+    // Rust grader independently decides the real mode from the same config.
+    export let gradedWithAi = true;
 
     // Stable ids so the textarea has a real accessible name + description.
     $: promptId = `frq-prompt-${question.id}`;
@@ -79,7 +83,16 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     ></textarea>
 
     <div id={metaId} class="meta">
-        Worth {question.max_points} points · graded by rubric
+        Worth {question.max_points} points ·
+        <span
+            class="mode-flag"
+            class:keyword={!gradedWithAi}
+            title={gradedWithAi
+                ? "Graded by AI against the rubric"
+                : "Graded by matching rubric keywords (AI grading is off)"}
+        >
+            {gradedWithAi ? "AI-graded" : "Keyword match"}
+        </span>
     </div>
     {#if !graded}
         <div id={hintId} class="hint">
@@ -132,15 +145,22 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         {question.reference_answer}
                     </div>
                     <p class="caveat">
-                        AI-reviewed against the rubric — an estimate to guide your
-                        studying, not a final grade.
+                        {#if gradedWithAi}
+                            AI-reviewed against the rubric — an estimate to guide your
+                            studying, not a final grade.
+                        {:else}
+                            Matched against the rubric's keywords — a rough check to
+                            guide your studying, not a final grade. (AI grading is off.)
+                        {/if}
                     </p>
                 </div>
             {:else}
                 <div class="feedback unavailable">
                     <div class="verdict">
                         <span class="verdict-icon info" aria-hidden="true">i</span>
-                        AI grading isn't available right now
+                        {gradedWithAi
+                            ? "AI grading isn't available right now"
+                            : "Grading isn't available right now"}
                     </div>
                     <div class="encourage">
                         No problem — use the reference answer below to grade yourself,
@@ -223,6 +243,30 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         margin-top: 0.4rem;
         font-size: 0.8rem;
         color: var(--mcat-ink-soft);
+    }
+    // How this FRQ will be graded — AI (sky) vs keyword match (neutral). Calm
+    // palette only (never red), matching the rest of the card.
+    .mode-flag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25em;
+        padding: 0.08em 0.6em;
+        border-radius: var(--mcat-radius-pill);
+        font-weight: 700;
+        font-size: 0.74rem;
+        background: var(--mcat-sky-tint);
+        color: var(--mcat-sky-ink);
+    }
+    .mode-flag::before {
+        content: "✦"; // "AI" spark
+        font-size: 0.8em;
+    }
+    .mode-flag.keyword {
+        background: var(--mcat-inset);
+        color: var(--mcat-ink-soft);
+    }
+    .mode-flag.keyword::before {
+        content: "⌕"; // magnifier — keyword search
     }
     .hint {
         margin-top: 0.3rem;

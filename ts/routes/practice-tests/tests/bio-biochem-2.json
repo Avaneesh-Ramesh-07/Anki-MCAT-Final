@@ -1736,6 +1736,19 @@
                     "disqualifiers": [
                         "says the loop of Henle secretes urine directly",
                         "says the gradient is highest in the cortex"
+                    ],
+                    "keywords": [
+                        "countercurrent multiplier",
+                        "countercurrent",
+                        "medullary gradient",
+                        "osmotic gradient",
+                        "hypertonic interstitium",
+                        "hypertonic",
+                        "medulla",
+                        "ascending limb",
+                        "pumps out solute",
+                        "nacl",
+                        "hyperosmotic"
                     ]
                 },
                 {
@@ -1750,6 +1763,20 @@
                     "disqualifiers": [
                         "says the ascending limb is water-permeable",
                         "says active pumping of water concentrates urine"
+                    ],
+                    "keywords": [
+                        "water reabsorbed",
+                        "descending limb",
+                        "collecting duct",
+                        "water follows",
+                        "down the gradient",
+                        "osmosis",
+                        "passively",
+                        "adh",
+                        "vasopressin",
+                        "water permeability",
+                        "aquaporins",
+                        "concentrated urine"
                     ]
                 }
             ],
@@ -1783,6 +1810,18 @@
                     "disqualifiers": [
                         "says low O2 is the primary drive under normal conditions",
                         "says rising pH drives breathing"
+                    ],
+                    "keywords": [
+                        "co2",
+                        "carbon dioxide",
+                        "pco2",
+                        "increased co2",
+                        "rising co2",
+                        "decreased ph",
+                        "lower ph",
+                        "more acidic",
+                        "chemoreceptors",
+                        "primary drive"
                     ]
                 },
                 {
@@ -1796,6 +1835,18 @@
                     "disqualifiers": [
                         "says ventilation increases to retain CO2",
                         "says the response lowers pH further"
+                    ],
+                    "keywords": [
+                        "increased ventilation",
+                        "ventilation",
+                        "breathing rate",
+                        "expel co2",
+                        "blow off co2",
+                        "remove co2",
+                        "exhale co2",
+                        "restore ph",
+                        "raise ph",
+                        "toward normal"
                     ]
                 }
             ],
@@ -1829,6 +1880,19 @@
                     "disqualifiers": [
                         "says the action potential jumps the cleft electrically",
                         "says ACh is reabsorbed before binding receptors"
+                    ],
+                    "keywords": [
+                        "acetylcholine",
+                        "ach",
+                        "diffuses",
+                        "synaptic cleft",
+                        "cleft",
+                        "binds postsynaptic receptors",
+                        "postsynaptic receptors",
+                        "postsynaptic membrane",
+                        "postsynaptic potential",
+                        "neurotransmitter",
+                        "receptor binding"
                     ]
                 },
                 {
@@ -1842,6 +1906,18 @@
                     "disqualifiers": [
                         "says the neurotransmitter is destroyed by the postsynaptic receptor",
                         "says the signal ends when the axon repolarizes only"
+                    ],
+                    "keywords": [
+                        "acetylcholinesterase",
+                        "ache",
+                        "hydrolyzes",
+                        "breaks down ach",
+                        "degrades ach",
+                        "cleared from the cleft",
+                        "removes neurotransmitter",
+                        "reuptake",
+                        "terminates the signal",
+                        "enzymatic degradation"
                     ]
                 }
             ],
@@ -1875,6 +1951,17 @@
                     "disqualifiers": [
                         "says aldosterone is the primary response to high osmolarity",
                         "says ADH increases water excretion"
+                    ],
+                    "keywords": [
+                        "adh",
+                        "vasopressin",
+                        "antidiuretic hormone",
+                        "collecting duct",
+                        "water reabsorption",
+                        "reabsorb water",
+                        "water permeability",
+                        "aquaporins",
+                        "increases reabsorption"
                     ]
                 },
                 {
@@ -1888,6 +1975,17 @@
                     "disqualifiers": [
                         "calls it positive feedback",
                         "says the response raises osmolarity further"
+                    ],
+                    "keywords": [
+                        "negative feedback",
+                        "lowers osmolarity",
+                        "reduces osmolarity",
+                        "opposes the stimulus",
+                        "set point",
+                        "toward normal",
+                        "counteracts",
+                        "dilutes blood",
+                        "restores osmolarity"
                     ]
                 }
             ],
@@ -1920,6 +2018,18 @@
                     "disqualifiers": [
                         "says lactose activates the repressor",
                         "says the repressor stays bound when lactose is present"
+                    ],
+                    "keywords": [
+                        "allolactose",
+                        "lactose",
+                        "inactivates the repressor",
+                        "inactivate repressor",
+                        "repressor",
+                        "leaves the operator",
+                        "releases the operator",
+                        "repressor unbinds",
+                        "inducer",
+                        "operator freed"
                     ]
                 },
                 {
@@ -1934,6 +2044,20 @@
                     "disqualifiers": [
                         "says high glucose increases cAMP",
                         "says CAP represses the operon"
+                    ],
+                    "keywords": [
+                        "low glucose",
+                        "camp",
+                        "cyclic amp",
+                        "raises camp",
+                        "high camp",
+                        "cap",
+                        "catabolite activator protein",
+                        "camp-cap",
+                        "binds the promoter",
+                        "increases transcription",
+                        "activates transcription",
+                        "positive control"
                     ]
                 }
             ],
@@ -1967,6 +2091,18 @@
                     "disqualifiers": [
                         "says the filaments themselves shorten/contract",
                         "says myosin slides along the Z-line only"
+                    ],
+                    "keywords": [
+                        "actin",
+                        "thin filaments",
+                        "myosin",
+                        "thick filaments",
+                        "slide past",
+                        "sarcomere shortens",
+                        "sarcomere",
+                        "filament length unchanged",
+                        "lengths unchanged",
+                        "z-lines closer"
                     ]
                 },
                 {
@@ -1980,6 +2116,19 @@
                     "disqualifiers": [
                         "says Ca2+ directly breaks the cross-bridges as the energy source",
                         "says GTP powers contraction"
+                    ],
+                    "keywords": [
+                        "calcium",
+                        "ca2+",
+                        "troponin",
+                        "tropomyosin",
+                        "binding sites",
+                        "myosin-binding sites",
+                        "exposes",
+                        "cross-bridge",
+                        "cross-bridge cycling",
+                        "atp",
+                        "atp hydrolysis"
                     ]
                 }
             ],
@@ -2013,6 +2162,16 @@
                     "disqualifiers": [
                         "says linked genes assort independently",
                         "says they are on different chromosomes"
+                    ],
+                    "keywords": [
+                        "linked",
+                        "linkage",
+                        "same chromosome",
+                        "inherited together",
+                        "violate independent assortment",
+                        "not independent assortment",
+                        "linked genes",
+                        "coinherited"
                     ]
                 },
                 {
@@ -2026,6 +2185,18 @@
                     "disqualifiers": [
                         "says mitosis separates them",
                         "says closer genes recombine more often"
+                    ],
+                    "keywords": [
+                        "crossing over",
+                        "crossover",
+                        "recombination",
+                        "meiosis",
+                        "recombination frequency",
+                        "closer genes",
+                        "lower recombination",
+                        "farther apart",
+                        "map distance",
+                        "separate them"
                     ]
                 }
             ],
@@ -2059,6 +2230,17 @@
                     "disqualifiers": [
                         "says the peptide hormone diffuses through the membrane",
                         "says it binds a cytoplasmic/nuclear receptor directly"
+                    ],
+                    "keywords": [
+                        "cell-surface receptor",
+                        "membrane receptor",
+                        "surface receptor",
+                        "gpcr",
+                        "g protein-coupled",
+                        "does not enter",
+                        "transduces",
+                        "signal transduction",
+                        "extracellular"
                     ]
                 },
                 {
@@ -2072,6 +2254,19 @@
                     "disqualifiers": [
                         "says the hormone directly edits DNA without a cascade",
                         "names ATP as the second messenger"
+                    ],
+                    "keywords": [
+                        "second messenger",
+                        "camp",
+                        "ip3",
+                        "calcium",
+                        "dag",
+                        "signaling cascade",
+                        "cascade",
+                        "kinase",
+                        "protein kinase",
+                        "phosphorylation",
+                        "amplification"
                     ]
                 }
             ],
@@ -2104,6 +2299,18 @@
                     "disqualifiers": [
                         "says ATP activates PFK-1",
                         "says citrate activates PFK-1"
+                    ],
+                    "keywords": [
+                        "amp",
+                        "fructose-2,6-bisphosphate",
+                        "f-2,6-bp",
+                        "f26bp",
+                        "activates",
+                        "activator",
+                        "low energy",
+                        "high amp",
+                        "amp:atp",
+                        "need for glycolysis"
                     ]
                 },
                 {
@@ -2117,6 +2324,18 @@
                     "disqualifiers": [
                         "says AMP inhibits PFK-1",
                         "says low ATP inhibits PFK-1"
+                    ],
+                    "keywords": [
+                        "atp",
+                        "citrate",
+                        "inhibits",
+                        "inhibitor",
+                        "high energy",
+                        "abundant",
+                        "biosynthetic precursors",
+                        "building blocks",
+                        "energy charge",
+                        "plenty of atp"
                     ]
                 }
             ],
@@ -2150,6 +2369,18 @@
                     "disqualifiers": [
                         "says unsaturated tails decrease fluidity",
                         "says saturated tails increase fluidity"
+                    ],
+                    "keywords": [
+                        "unsaturated",
+                        "double bonds",
+                        "kinks",
+                        "cis double bond",
+                        "prevent tight packing",
+                        "loose packing",
+                        "increase fluidity",
+                        "more fluid",
+                        "cannot pack tightly",
+                        "bent tails"
                     ]
                 },
                 {
@@ -2163,6 +2394,18 @@
                     "disqualifiers": [
                         "says cholesterol always increases fluidity",
                         "says cholesterol has no effect on the membrane"
+                    ],
+                    "keywords": [
+                        "cholesterol",
+                        "buffers fluidity",
+                        "fluidity buffer",
+                        "moderates",
+                        "decreases fluidity",
+                        "reduces fluidity",
+                        "high temperature",
+                        "body temperature",
+                        "restrains movement",
+                        "less fluid"
                     ]
                 }
             ],
@@ -2195,6 +2438,17 @@
                     "disqualifiers": [
                         "says it is protonated/positive at pH above pKa",
                         "says charge is neutral regardless of pKa"
+                    ],
+                    "keywords": [
+                        "deprotonated",
+                        "negatively charged",
+                        "negative charge",
+                        "loses a proton",
+                        "loses proton",
+                        "anion",
+                        "carboxylate",
+                        "coo-",
+                        "negative"
                     ]
                 },
                 {
@@ -2208,6 +2462,16 @@
                     "disqualifiers": [
                         "says pH > pKa favors the protonated form",
                         "says pKa does not determine protonation state"
+                    ],
+                    "keywords": [
+                        "henderson-hasselbalch",
+                        "henderson hasselbalch",
+                        "ph > pka",
+                        "ph above pka",
+                        "conjugate base",
+                        "favors deprotonated",
+                        "conjugate-base form",
+                        "predominates"
                     ]
                 }
             ],
@@ -2240,6 +2504,18 @@
                     "disqualifiers": [
                         "says higher pressure shifts toward reactants",
                         "says pressure has no effect"
+                    ],
+                    "keywords": [
+                        "increased pressure",
+                        "higher pressure",
+                        "fewer moles",
+                        "fewer gas moles",
+                        "side with fewer moles",
+                        "shifts toward products",
+                        "toward products",
+                        "more nh3",
+                        "increases nh3",
+                        "product side"
                     ]
                 },
                 {
@@ -2253,6 +2529,18 @@
                     "disqualifiers": [
                         "says higher temperature increases NH3 yield",
                         "treats the reaction as endothermic"
+                    ],
+                    "keywords": [
+                        "higher temperature",
+                        "increased temperature",
+                        "exothermic",
+                        "heat as product",
+                        "adds heat",
+                        "shifts toward reactants",
+                        "toward reactants",
+                        "decreases nh3",
+                        "lowers yield",
+                        "reduces nh3"
                     ]
                 }
             ],
@@ -2285,6 +2573,18 @@
                     "disqualifiers": [
                         "says SN2 rate is independent of nucleophile",
                         "says SN2 gives retention only"
+                    ],
+                    "keywords": [
+                        "sn2",
+                        "bimolecular",
+                        "second order",
+                        "depends on nucleophile",
+                        "nucleophile concentration",
+                        "backside attack",
+                        "inversion",
+                        "inversion of configuration",
+                        "walden inversion",
+                        "concerted"
                     ]
                 },
                 {
@@ -2299,6 +2599,19 @@
                     "disqualifiers": [
                         "says SN1 depends on nucleophile concentration",
                         "says SN1 gives clean inversion"
+                    ],
+                    "keywords": [
+                        "sn1",
+                        "unimolecular",
+                        "first order",
+                        "independent of nucleophile",
+                        "rate independent",
+                        "carbocation",
+                        "planar carbocation",
+                        "carbocation intermediate",
+                        "racemization",
+                        "racemic",
+                        "both faces"
                     ]
                 }
             ],

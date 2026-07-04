@@ -231,6 +231,9 @@ message RubricCriterion {
   repeated string required_concepts = 4;
   // Statements that void the criterion even if required concepts appear.
   repeated string disqualifiers = 5;
+  // Literal match terms (authored offline from the ground-truth reference
+  // answer) used by the deterministic keyword-match grader when AI is off.
+  repeated string keywords = 6;
 }
 
 message GradeFreeResponseRequest {

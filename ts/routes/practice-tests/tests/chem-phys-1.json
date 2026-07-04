@@ -1765,6 +1765,17 @@
                     "disqualifiers": [
                         "says propane is limiting",
                         "ignores the 1:5 propane:O2 ratio"
+                    ],
+                    "keywords": [
+                        "o2 is limiting",
+                        "oxygen is limiting",
+                        "limiting reagent",
+                        "limiting reactant",
+                        "needs 10 mol",
+                        "10 mol o2",
+                        "only 8",
+                        "1:5 ratio",
+                        "5 o2 per propane"
                     ]
                 },
                 {
@@ -1778,6 +1789,17 @@
                     "disqualifiers": [
                         "computes 6 mol CO2 from propane",
                         "uses the wrong mole ratio"
+                    ],
+                    "keywords": [
+                        "4.8 mol co2",
+                        "4.8 mol",
+                        "4.8",
+                        "3 co2 per 5 o2",
+                        "3/5",
+                        "8 x 3/5",
+                        "8 × 3/5",
+                        "3:5 ratio",
+                        "3 co2 : 5 o2"
                     ]
                 }
             ],
@@ -1810,6 +1832,17 @@
                     "disqualifiers": [
                         "says the ratio is 10:1",
                         "says all acid is dissociated"
+                    ],
+                    "keywords": [
+                        "1:1",
+                        "1 to 1",
+                        "ratio is 1",
+                        "[a-] = [ha]",
+                        "a- equals ha",
+                        "equal concentrations",
+                        "half dissociated",
+                        "half deprotonated",
+                        "approximately 1"
                     ]
                 },
                 {
@@ -1823,6 +1856,18 @@
                     "disqualifiers": [
                         "ignores the pKa relationship",
                         "says pH equals concentration"
+                    ],
+                    "keywords": [
+                        "henderson-hasselbalch",
+                        "henderson hasselbalch",
+                        "ph = pka + log",
+                        "log([a-]/[ha])",
+                        "log term = 0",
+                        "log(1) = 0",
+                        "log of 1 is zero",
+                        "ph equals pka",
+                        "pka = ph",
+                        "log ratio is zero"
                     ]
                 }
             ],
@@ -1856,6 +1901,18 @@
                     "disqualifiers": [
                         "says ΔG is independent of temperature",
                         "treats −TΔS as negative"
+                    ],
+                    "keywords": [
+                        "δg = δh − tδs",
+                        "delta g = delta h - t delta s",
+                        "δh − tδs",
+                        "delta h minus t delta s",
+                        "−tδs positive",
+                        "-t delta s is positive",
+                        "tδs grows",
+                        "term grows with temperature",
+                        "δs < 0",
+                        "negative entropy"
                     ]
                 },
                 {
@@ -1869,6 +1926,14 @@
                     "disqualifiers": [
                         "says spontaneous at all temperatures",
                         "says spontaneous at high temperature"
+                    ],
+                    "keywords": [
+                        "spontaneous at low temperature",
+                        "low temperature",
+                        "nonspontaneous at high temperature",
+                        "not spontaneous at high",
+                        "only at low temperature",
+                        "favorable at low temperature"
                     ]
                 }
             ],
@@ -1901,6 +1966,15 @@
                     "disqualifiers": [
                         "says pressure halves",
                         "says pressure is unchanged"
+                    ],
+                    "keywords": [
+                        "pressure doubles",
+                        "doubles",
+                        "twofold",
+                        "increases twofold",
+                        "twice",
+                        "double the pressure",
+                        "p doubles"
                     ]
                 },
                 {
@@ -1914,6 +1988,18 @@
                     "disqualifiers": [
                         "says P proportional to V",
                         "invokes a temperature change"
+                    ],
+                    "keywords": [
+                        "pv = nrt",
+                        "boyle's law",
+                        "boyles law",
+                        "p1v1 = p2v2",
+                        "inversely proportional",
+                        "p ∝ 1/v",
+                        "p proportional to 1/v",
+                        "pv constant",
+                        "pv is constant",
+                        "inverse relationship"
                     ]
                 }
             ],
@@ -1947,6 +2033,18 @@
                     "disqualifiers": [
                         "says horizontal velocity decreases due to gravity",
                         "says gravity acts horizontally"
+                    ],
+                    "keywords": [
+                        "horizontal velocity constant",
+                        "constant horizontal velocity",
+                        "no horizontal acceleration",
+                        "vertical accelerates",
+                        "accelerates at g",
+                        "independent axes",
+                        "independent components",
+                        "gravity acts vertically",
+                        "gravity only vertical",
+                        "no horizontal force"
                     ]
                 },
                 {
@@ -1960,6 +2058,17 @@
                     "disqualifiers": [
                         "says a faster horizontal throw lands later",
                         "says horizontal speed sets the fall time"
+                    ],
+                    "keywords": [
+                        "time depends on height",
+                        "fall height",
+                        "drop height",
+                        "t = √(2h/g)",
+                        "sqrt(2h/g)",
+                        "independent of horizontal speed",
+                        "regardless of horizontal speed",
+                        "not affected by horizontal",
+                        "vertical drop determines time"
                     ]
                 }
             ],
@@ -1993,6 +2102,18 @@
                     "disqualifiers": [
                         "computes +9 J for friction",
                         "uses momentum instead of kinetic energy"
+                    ],
+                    "keywords": [
+                        "work-energy theorem",
+                        "work energy theorem",
+                        "w = δke",
+                        "w = change in ke",
+                        "½mv²",
+                        "9 j",
+                        "9 joules",
+                        "-9 j",
+                        "−9 j",
+                        "initial kinetic energy"
                     ]
                 },
                 {
@@ -2006,6 +2127,16 @@
                     "disqualifiers": [
                         "says energy is stored as potential energy",
                         "says energy is destroyed"
+                    ],
+                    "keywords": [
+                        "dissipated as heat",
+                        "converted to heat",
+                        "thermal energy",
+                        "heat",
+                        "nonconservative",
+                        "non-conservative",
+                        "lost as heat",
+                        "turned into heat"
                     ]
                 }
             ],
@@ -2038,6 +2169,18 @@
                     "disqualifiers": [
                         "says speed decreases where it narrows",
                         "says flow rate changes"
+                    ],
+                    "keywords": [
+                        "continuity equation",
+                        "continuity",
+                        "a·v = constant",
+                        "av = constant",
+                        "a1v1 = a2v2",
+                        "speed increases",
+                        "fluid speeds up",
+                        "faster in narrow",
+                        "narrow section",
+                        "smaller area higher speed"
                     ]
                 },
                 {
@@ -2051,6 +2194,17 @@
                     "disqualifiers": [
                         "says pressure increases where speed increases",
                         "ignores the speed-pressure tradeoff"
+                    ],
+                    "keywords": [
+                        "bernoulli",
+                        "bernoulli's principle",
+                        "bernoullis principle",
+                        "lower pressure",
+                        "pressure decreases",
+                        "faster flow lower pressure",
+                        "higher speed lower pressure",
+                        "pressure drops",
+                        "low pressure in narrow"
                     ]
                 }
             ],
@@ -2083,6 +2237,19 @@
                     "disqualifiers": [
                         "says carboxyl is protonated at pH 7.4",
                         "ignores the carboxyl pKa"
+                    ],
+                    "keywords": [
+                        "carboxyl deprotonated",
+                        "carboxylate",
+                        "coo-",
+                        "coo−",
+                        "carboxyl negative",
+                        "deprotonated carboxyl",
+                        "loses proton",
+                        "ph above pka",
+                        "ph above 2.3",
+                        "pka 2.3",
+                        "well above pka"
                     ]
                 },
                 {
@@ -2097,6 +2264,20 @@
                     "disqualifiers": [
                         "says amino group is deprotonated at pH 7.4",
                         "says the molecule is net charged"
+                    ],
+                    "keywords": [
+                        "amino protonated",
+                        "amino group protonated",
+                        "nh3+",
+                        "nh3⁺",
+                        "amino positive",
+                        "protonated amine",
+                        "ph below pka",
+                        "ph below 9.6",
+                        "pka 9.6",
+                        "zwitterion",
+                        "net neutral",
+                        "no net charge"
                     ]
                 }
             ],
@@ -2129,6 +2310,18 @@
                     "disqualifiers": [
                         "says Km is the maximum rate",
                         "says Km is the enzyme concentration"
+                    ],
+                    "keywords": [
+                        "substrate concentration",
+                        "half vmax",
+                        "half maximal",
+                        "half-maximal velocity",
+                        "½ vmax",
+                        "half of vmax",
+                        "[s] at half vmax",
+                        "concentration at half vmax",
+                        "50% of vmax",
+                        "one half vmax"
                     ]
                 },
                 {
@@ -2142,6 +2335,17 @@
                     "disqualifiers": [
                         "says low Km means low affinity",
                         "says Km is unrelated to affinity"
+                    ],
+                    "keywords": [
+                        "low km",
+                        "high affinity",
+                        "low km high affinity",
+                        "tight binding",
+                        "half-max at low substrate",
+                        "low substrate concentration",
+                        "strong binding",
+                        "greater affinity",
+                        "binds tightly"
                     ]
                 }
             ],
@@ -2174,6 +2378,18 @@
                     "disqualifiers": [
                         "says ATP hydrolysis is endergonic",
                         "says ATP hydrolysis has positive ΔG"
+                    ],
+                    "keywords": [
+                        "atp hydrolysis",
+                        "exergonic",
+                        "negative δg",
+                        "negative delta g",
+                        "large negative",
+                        "releases free energy",
+                        "releases energy",
+                        "energy released",
+                        "δg < 0",
+                        "spontaneous hydrolysis"
                     ]
                 },
                 {
@@ -2187,6 +2403,18 @@
                     "disqualifiers": [
                         "says the unfavorable reaction proceeds without a negative total ΔG",
                         "says coupling changes each reaction's ΔG sign individually"
+                    ],
+                    "keywords": [
+                        "δg values add",
+                        "delta g values add",
+                        "sum of δg",
+                        "add together",
+                        "summed δg",
+                        "overall δg negative",
+                        "total δg negative",
+                        "net negative",
+                        "overall spontaneous",
+                        "coupled spontaneous"
                     ]
                 }
             ],
@@ -2220,6 +2448,18 @@
                     "disqualifiers": [
                         "says constitutional isomers differ only in 3D arrangement",
                         "says they have different formulas"
+                    ],
+                    "keywords": [
+                        "constitutional isomers",
+                        "structural isomers",
+                        "same molecular formula",
+                        "same formula",
+                        "different connectivity",
+                        "different bonding",
+                        "differ in connectivity",
+                        "butane",
+                        "isobutane",
+                        "atoms connected differently"
                     ]
                 },
                 {
@@ -2234,6 +2474,18 @@
                     "disqualifiers": [
                         "says stereoisomers differ in connectivity",
                         "conflates them with constitutional isomers"
+                    ],
+                    "keywords": [
+                        "stereoisomers",
+                        "same connectivity",
+                        "spatial arrangement",
+                        "3d arrangement",
+                        "differ in space",
+                        "cis",
+                        "trans",
+                        "cis-2-butene",
+                        "trans-2-butene",
+                        "geometric isomers"
                     ]
                 }
             ],
@@ -2267,6 +2519,17 @@
                     "disqualifiers": [
                         "puts the alkane highest",
                         "puts the alcohol above the carboxylic acid"
+                    ],
+                    "keywords": [
+                        "carboxylic acid > alcohol > alkane",
+                        "carboxylic acid highest",
+                        "acid highest",
+                        "alcohol middle",
+                        "alkane lowest",
+                        "alkane boils lowest",
+                        "carboxylic acid boils highest",
+                        "acid > alcohol",
+                        "alcohol > alkane"
                     ]
                 },
                 {
@@ -2281,6 +2544,18 @@
                     "disqualifiers": [
                         "says alkanes hydrogen bond",
                         "attributes the order to molecular weight alone"
+                    ],
+                    "keywords": [
+                        "hydrogen bonding",
+                        "hydrogen bond",
+                        "h-bond",
+                        "h bonding",
+                        "dimers",
+                        "dimer",
+                        "london dispersion",
+                        "dispersion forces",
+                        "van der waals",
+                        "alkane only london"
                     ]
                 }
             ],
@@ -2313,6 +2588,18 @@
                     "disqualifiers": [
                         "says the gradient disappears partway (that is concurrent)",
                         "says flow direction does not matter"
+                    ],
+                    "keywords": [
+                        "countercurrent",
+                        "counter-current",
+                        "opposite directions",
+                        "gradient maintained",
+                        "diffusion gradient",
+                        "whole length",
+                        "entire length",
+                        "blood meets higher o2",
+                        "water higher o2",
+                        "favorable gradient"
                     ]
                 },
                 {
@@ -2326,6 +2613,18 @@
                     "disqualifiers": [
                         "says concurrent flow extracts more O2",
                         "says both arrangements extract the same"
+                    ],
+                    "keywords": [
+                        "concurrent",
+                        "same direction",
+                        "equilibrates",
+                        "reaches equilibrium",
+                        "gradient vanishes",
+                        "gradient disappears at equilibrium",
+                        "equilibrate partway",
+                        "less o2",
+                        "extracts less",
+                        "caps extraction"
                     ]
                 }
             ],

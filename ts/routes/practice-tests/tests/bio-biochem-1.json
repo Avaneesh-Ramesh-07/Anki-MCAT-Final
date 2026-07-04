@@ -1740,6 +1740,17 @@
                     "disqualifiers": [
                         "claims branching makes glycogen insoluble",
                         "claims branching protects it from breakdown"
+                    ],
+                    "keywords": [
+                        "nonreducing ends",
+                        "nonreducing end",
+                        "many nonreducing ends",
+                        "multiple nonreducing ends",
+                        "many ends",
+                        "multiple ends",
+                        "more ends",
+                        "increases the number of ends",
+                        "many free ends"
                     ]
                 },
                 {
@@ -1755,6 +1766,18 @@
                         "says phosphorylase acts at the reducing end",
                         "names debranching enzyme as the main mechanism",
                         "says hexokinase or amylase releases the units"
+                    ],
+                    "keywords": [
+                        "glycogen phosphorylase",
+                        "phosphorylase",
+                        "nonreducing ends",
+                        "nonreducing end",
+                        "glucose-1-phosphate",
+                        "glucose 1-phosphate",
+                        "many enzymes at once",
+                        "act simultaneously",
+                        "simultaneously",
+                        "rapid release"
                     ]
                 }
             ],
@@ -1787,6 +1810,17 @@
                     "disqualifiers": [
                         "says Km decreases",
                         "says the inhibitor binds an allosteric/non-active site"
+                    ],
+                    "keywords": [
+                        "km increases",
+                        "increased km",
+                        "higher km",
+                        "raises km",
+                        "increases the km",
+                        "competes for the active site",
+                        "active site",
+                        "competes with substrate",
+                        "competitive"
                     ]
                 },
                 {
@@ -1800,6 +1834,19 @@
                     "disqualifiers": [
                         "says Vmax decreases",
                         "says Vmax increases"
+                    ],
+                    "keywords": [
+                        "vmax unchanged",
+                        "vmax is unchanged",
+                        "same vmax",
+                        "vmax stays the same",
+                        "vmax unaffected",
+                        "excess substrate",
+                        "high substrate",
+                        "saturating substrate",
+                        "outcompetes the inhibitor",
+                        "outcompete",
+                        "overcome the inhibitor"
                     ]
                 }
             ],
@@ -1832,6 +1879,18 @@
                     "disqualifiers": [
                         "says folding is set by chaperones independent of sequence",
                         "says the DNA directly folds the protein"
+                    ],
+                    "keywords": [
+                        "primary structure",
+                        "amino acid sequence",
+                        "sequence determines",
+                        "determines the fold",
+                        "dictates tertiary",
+                        "tertiary structure",
+                        "3d structure",
+                        "three-dimensional structure",
+                        "refolds",
+                        "sequence contains all the information"
                     ]
                 },
                 {
@@ -1845,6 +1904,17 @@
                     "disqualifiers": [
                         "says peptide bonds alone determine the 3D fold",
                         "attributes folding only to disulfide bonds"
+                    ],
+                    "keywords": [
+                        "side chains",
+                        "side-chain interactions",
+                        "r-groups",
+                        "r groups",
+                        "hydrophobic effect",
+                        "hydrophobic interactions",
+                        "interactions between side chains",
+                        "hydrophobic core",
+                        "drive folding"
                     ]
                 }
             ],
@@ -1879,6 +1949,18 @@
                         "says net 4 ATP",
                         "says net 36/38 ATP for glycolysis alone",
                         "says no ATP is invested"
+                    ],
+                    "keywords": [
+                        "2 atp invested",
+                        "invests 2 atp",
+                        "2 atp used",
+                        "investment phase",
+                        "4 atp produced",
+                        "4 atp made",
+                        "payoff phase",
+                        "net 2 atp",
+                        "net gain of 2",
+                        "net two atp"
                     ]
                 },
                 {
@@ -1893,6 +1975,17 @@
                     "disqualifiers": [
                         "says the product is lactate under aerobic conditions",
                         "says the product is acetyl-CoA"
+                    ],
+                    "keywords": [
+                        "pyruvate",
+                        "two pyruvate",
+                        "2 pyruvate",
+                        "3-carbon",
+                        "three-carbon",
+                        "3 carbon",
+                        "2 nadh",
+                        "two nadh",
+                        "nadh"
                     ]
                 }
             ],
@@ -1926,6 +2019,18 @@
                     "disqualifiers": [
                         "says K+ causes depolarization",
                         "says Na+ leaves the cell during the rising phase"
+                    ],
+                    "keywords": [
+                        "na+ influx",
+                        "sodium influx",
+                        "na+ enters",
+                        "sodium enters",
+                        "na+ rushes in",
+                        "voltage-gated sodium channels",
+                        "voltage-gated na+ channels",
+                        "sodium channels",
+                        "depolarization",
+                        "depolarizes"
                     ]
                 },
                 {
@@ -1940,6 +2045,18 @@
                     "disqualifiers": [
                         "says Cl- influx repolarizes",
                         "says Na+ efflux repolarizes"
+                    ],
+                    "keywords": [
+                        "k+ efflux",
+                        "potassium efflux",
+                        "k+ leaves",
+                        "potassium leaves",
+                        "k+ flows out",
+                        "voltage-gated potassium channels",
+                        "voltage-gated k+ channels",
+                        "potassium channels",
+                        "repolarization",
+                        "repolarizes"
                     ]
                 }
             ],
@@ -1973,6 +2090,17 @@
                     "disqualifiers": [
                         "says T cells drive humoral immunity",
                         "says humoral immunity kills infected cells directly"
+                    ],
+                    "keywords": [
+                        "b cells",
+                        "b lymphocytes",
+                        "antibodies",
+                        "humoral",
+                        "plasma cells",
+                        "extracellular pathogens",
+                        "extracellular",
+                        "toxins",
+                        "secrete antibodies"
                     ]
                 },
                 {
@@ -1986,6 +2114,18 @@
                     "disqualifiers": [
                         "says B cells are the effectors of cell-mediated immunity",
                         "says cell-mediated immunity works by secreting antibodies"
+                    ],
+                    "keywords": [
+                        "cytotoxic t cells",
+                        "t cells",
+                        "t lymphocytes",
+                        "cd8",
+                        "kill infected cells",
+                        "infected cells",
+                        "abnormal cells",
+                        "cell-mediated",
+                        "virus-infected",
+                        "destroy infected cells"
                     ]
                 }
             ],
@@ -2019,6 +2159,18 @@
                     "disqualifiers": [
                         "says myoglobin is cooperative",
                         "says the shape is due to a single binding site"
+                    ],
+                    "keywords": [
+                        "cooperativity",
+                        "cooperative binding",
+                        "cooperative",
+                        "positive cooperativity",
+                        "four subunits",
+                        "multiple subunits",
+                        "subunits",
+                        "increases affinity",
+                        "raises the affinity",
+                        "binding increases affinity"
                     ]
                 },
                 {
@@ -2033,6 +2185,18 @@
                     "disqualifiers": [
                         "says hemoglobin cannot release O2 in tissues",
                         "says it binds O2 equally at all pressures"
+                    ],
+                    "keywords": [
+                        "loads o2 in the lungs",
+                        "high po2",
+                        "lungs",
+                        "releases o2",
+                        "low po2",
+                        "tissues",
+                        "unloads",
+                        "unloading",
+                        "release in tissues",
+                        "efficient delivery"
                     ]
                 }
             ],
@@ -2066,6 +2230,17 @@
                     "disqualifiers": [
                         "says glucagon lowers blood glucose",
                         "says alpha cells release insulin"
+                    ],
+                    "keywords": [
+                        "insulin",
+                        "beta cells",
+                        "β cells",
+                        "glucose uptake",
+                        "glycogen synthesis",
+                        "promotes uptake",
+                        "glut4",
+                        "stores glucose",
+                        "glycogenesis"
                     ]
                 },
                 {
@@ -2079,6 +2254,16 @@
                     "disqualifiers": [
                         "calls it positive feedback",
                         "says feedback amplifies the rise in glucose"
+                    ],
+                    "keywords": [
+                        "negative feedback",
+                        "opposes the stimulus",
+                        "counteracts",
+                        "set point",
+                        "returns glucose",
+                        "reduces the stimulus",
+                        "lowers glucose back",
+                        "reverses the rise"
                     ]
                 }
             ],
@@ -2112,6 +2297,17 @@
                     "disqualifiers": [
                         "says the ETC pumps electrons into the matrix to store energy",
                         "says ATP is made directly by the ETC complexes"
+                    ],
+                    "keywords": [
+                        "pumps protons",
+                        "proton gradient",
+                        "h+ gradient",
+                        "protons",
+                        "inner mitochondrial membrane",
+                        "inner membrane",
+                        "electrochemical gradient",
+                        "intermembrane space",
+                        "proton-motive force"
                     ]
                 },
                 {
@@ -2126,6 +2322,16 @@
                     "disqualifiers": [
                         "says substrate-level phosphorylation makes this ATP",
                         "says oxygen directly phosphorylates ADP"
+                    ],
+                    "keywords": [
+                        "atp synthase",
+                        "chemiosmosis",
+                        "protons flow back",
+                        "flow down the gradient",
+                        "phosphorylate adp",
+                        "drives atp synthesis",
+                        "adp to atp",
+                        "flow back into the matrix"
                     ]
                 }
             ],
@@ -2158,6 +2364,16 @@
                     "disqualifiers": [
                         "says a parent is homozygous recessive (aa)",
                         "says the trait must be dominant"
+                    ],
+                    "keywords": [
+                        "heterozygous",
+                        "carriers",
+                        "aa x aa",
+                        "both carriers",
+                        "heterozygous carriers",
+                        "both parents heterozygous",
+                        "each carry one allele",
+                        "carry the recessive allele"
                     ]
                 },
                 {
@@ -2172,6 +2388,15 @@
                         "says 1/2 affected",
                         "says 3/4 affected",
                         "says 0 chance affected"
+                    ],
+                    "keywords": [
+                        "1/4",
+                        "25%",
+                        "one in four",
+                        "25 percent",
+                        "quarter",
+                        "aa offspring",
+                        "homozygous recessive"
                     ]
                 }
             ],
@@ -2204,6 +2429,15 @@
                     "disqualifiers": [
                         "says facilitated diffusion requires ATP",
                         "says it moves solute up the gradient"
+                    ],
+                    "keywords": [
+                        "facilitated diffusion",
+                        "down the gradient",
+                        "down its concentration gradient",
+                        "no atp",
+                        "passive",
+                        "without energy",
+                        "no energy input"
                     ]
                 },
                 {
@@ -2217,6 +2451,16 @@
                     "disqualifiers": [
                         "says active transport goes down the gradient",
                         "says active transport needs no energy"
+                    ],
+                    "keywords": [
+                        "primary active transport",
+                        "against the gradient",
+                        "up the gradient",
+                        "against its concentration gradient",
+                        "requires atp",
+                        "uses atp",
+                        "atp directly",
+                        "consumes atp"
                     ]
                 }
             ],
@@ -2249,6 +2493,17 @@
                     "disqualifiers": [
                         "says the weak acid neutralizes added acid",
                         "says the buffer adds H+ to solution"
+                    ],
+                    "keywords": [
+                        "conjugate base",
+                        "neutralizes",
+                        "neutralizes added acid",
+                        "consumes h+",
+                        "absorbs h+",
+                        "reacts with h+",
+                        "converts to weak acid",
+                        "limits ph change",
+                        "resists ph change"
                     ]
                 },
                 {
@@ -2262,6 +2517,15 @@
                     "disqualifiers": [
                         "says pH depends only on total concentration",
                         "says pH equals pKa regardless of ratio"
+                    ],
+                    "keywords": [
+                        "henderson-hasselbalch",
+                        "henderson hasselbalch",
+                        "pka",
+                        "ratio of conjugate base to acid",
+                        "base to acid ratio",
+                        "log of the ratio",
+                        "base:acid ratio"
                     ]
                 }
             ],
@@ -2295,6 +2559,18 @@
                     "disqualifiers": [
                         "says enantiomers have different melting points",
                         "says enantiomers are the same compound"
+                    ],
+                    "keywords": [
+                        "enantiomers",
+                        "nonsuperimposable mirror images",
+                        "mirror images",
+                        "all stereocenters inverted",
+                        "every stereocenter inverted",
+                        "identical physical properties",
+                        "same melting point",
+                        "plane-polarized light",
+                        "chiral environment",
+                        "optical rotation"
                     ]
                 },
                 {
@@ -2309,6 +2585,15 @@
                     "disqualifiers": [
                         "says diastereomers are mirror images",
                         "says diastereomers have identical physical properties"
+                    ],
+                    "keywords": [
+                        "diastereomers",
+                        "not mirror images",
+                        "non-mirror-image",
+                        "some but not all stereocenters",
+                        "differ at one stereocenter",
+                        "different physical properties",
+                        "different melting points"
                     ]
                 }
             ],

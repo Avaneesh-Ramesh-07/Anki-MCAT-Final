@@ -39,6 +39,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     // view offers only the full-length exam. Otherwise it lists the topical
     // tests. Set from the `?mode=full-length` query param by the route.
     export let fullLength = false;
+    // Whether AI grading is on (the Home-page toggle, passed via the `?ai=`
+    // query param). Only used to label each FRQ "AI-graded" vs "Keyword match" —
+    // the actual grading mode is decided in the Rust grader from the same config.
+    export let aiGrading = true;
 
     let view: View = "list";
     // One section for a topical test; the four MCAT sections for a full-length.
@@ -102,6 +106,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             points: c.points,
             requiredConcepts: c.required_concepts,
             disqualifiers: c.disqualifiers,
+            keywords: c.keywords ?? [],
         }));
     }
 
@@ -262,6 +267,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         (n, q) => n + (frqGrades[q.id]?.maxPoints ?? 0),
         0,
     );
+    // True while any FRQ on the results screen is still being graded (async).
+    $: frqGrading = flatFrqs.some((q) => frqPending[q.id]);
 </script>
 
 <div class="mcat">
@@ -324,7 +331,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                 {/if}
 
                 {#each section.passages as passage (passage.passage_id)}
-                    <section class="passage" class:split={section.section_code === "cars"}>
+                    <section
+                        class="passage"
+                        class:split={section.section_code === "cars"}
+                    >
                         <div class="passage-read">
                             <h2 class="passage-title">{passage.title}</h2>
                             <div class="passage-text">{passage.passage_text}</div>
@@ -364,6 +374,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                 question={q}
                                 index={frqNumberOf[q.id]}
                                 value={frqAnswers[q.id] ?? ""}
+                                gradedWithAi={aiGrading}
                                 onInput={(text) =>
                                     (frqAnswers = { ...frqAnswers, [q.id]: text })}
                             />
@@ -405,18 +416,31 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         caption={`${correctCount} / ${totalCount} correct · approx. scaled ${sectionScores[0]?.scaled} (118–132)`}
                     />
                 {/if}
+
+                {#if flatFrqs.length}
+                    <div class="frq-score" aria-live="polite">
+                        <span class="frq-score-label">Free response</span>
+                        {#if frqPointsMax > 0}
+                            <span class="frq-score-val">
+                                {frqPointsAwarded} / {frqPointsMax}
+                            </span>
+                            <span class="frq-score-cap">
+                                points ({aiGrading ? "AI estimate" : "keyword match"}) ·
+                                feeds your Readiness
+                            </span>
+                        {:else if frqGrading}
+                            <span class="frq-score-val pending">grading…</span>
+                        {:else}
+                            <span class="frq-score-cap">
+                                graded below · feeds your Readiness
+                            </span>
+                        {/if}
+                    </div>
+                {/if}
+
                 <h2 class="test-title in-card">{examTitle}</h2>
                 <button class="secondary" on:click={retake}>Retake</button>
             </div>
-
-            {#if flatFrqs.length}
-                <p class="frq-note">
-                    {#if frqPointsMax > 0}
-                        Free response: {frqPointsAwarded} / {frqPointsMax} points (AI estimate).
-                    {/if}
-                    Graded separately below — it feeds your readiness, not this score.
-                </p>
-            {/if}
 
             {#if isFullLength}
                 <section class="panel">
@@ -460,7 +484,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     </div>
                 {/if}
                 {#each section.passages as passage (passage.passage_id)}
-                    <section class="passage" class:split={section.section_code === "cars"}>
+                    <section
+                        class="passage"
+                        class:split={section.section_code === "cars"}
+                    >
                         <div class="passage-read">
                             <h2 class="passage-title">{passage.title}</h2>
                             <div class="passage-text">{passage.passage_text}</div>
@@ -504,6 +531,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                 graded={true}
                                 grade={frqGrades[q.id] ?? null}
                                 pending={frqPending[q.id] ?? false}
+                                gradedWithAi={aiGrading}
                                 onInput={() => {}}
                                 onRetry={() => regradeFrq(q)}
                             />
@@ -868,12 +896,41 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         color: var(--mcat-ink-faint);
         line-height: 1.55;
     }
-    .frq-note {
-        margin: 0.75rem 0 0;
-        font-size: 0.85rem;
+    // Free-response result, surfaced up in the scorecard next to the MCQ score.
+    // Kept visually distinct (a calm sky pill) because it feeds Readiness rather
+    // than the MCQ-only headline.
+    .frq-score {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.35rem 0.6rem;
+        max-width: 30rem;
+        margin: 1.1rem auto 0;
+        padding: 0.6rem 1rem;
+        border-radius: var(--mcat-radius);
+        background: var(--mcat-sky-tint);
+        border: 1px solid color-mix(in srgb, var(--mcat-sky-ink), transparent 70%);
+    }
+    .frq-score-label {
+        font-weight: 800;
+        color: var(--mcat-ink);
+    }
+    .frq-score-val {
+        font-weight: 800;
+        font-size: 1.5rem;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+        color: var(--mcat-sky-ink);
+    }
+    .frq-score-val.pending {
+        font-size: 1rem;
+        color: var(--mcat-ink-faint);
+    }
+    .frq-score-cap {
+        flex-basis: 100%;
         color: var(--mcat-ink-soft);
-        line-height: 1.55;
-        text-wrap: pretty;
+        font-size: 0.82rem;
     }
 
     // ---- buttons -------------------------------------------------------

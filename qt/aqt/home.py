@@ -84,6 +84,10 @@ class Home:
             else:
                 sub = "Keep watering — every review helps you grow."
 
+        # Free-response AI-grading toggle (collection config; default on). When
+        # off, the Rust grader falls back to a keyword match against the rubric.
+        ai_on = bool(self.mw.col.get_config("mcatAiGrading", True))
+
         cards = [
             self._nav_card(
                 "decks",
@@ -126,9 +130,21 @@ class Home:
       {"".join(cards)}
     </div>
 
-    <button class="sync-pill" onclick="return pycmd('sync')" title="Sync your collection (Y)">
-      {self._ICON_SYNC}<span>Sync</span>
-    </button>
+    <div class="home-footer">
+      <button class="ai-toggle{' on' if ai_on else ''}" role="switch"
+              aria-checked="{'true' if ai_on else 'false'}"
+              onclick="return pycmd('toggleAi')"
+              title="How free-response answers are graded. When off, they're graded by keyword match instead of AI.">
+        <span class="switch" aria-hidden="true"><span class="knob"></span></span>
+        <span class="ai-label">AI grading&nbsp;<b>{'On' if ai_on else 'Off'}</b></span>
+      </button>
+      <button class="sync-pill" onclick="return pycmd('sync')" title="Sync your collection (Y)">
+        {self._ICON_SYNC}<span>Sync</span>
+      </button>
+    </div>
+    <p class="home-foot-note">
+      {'Free-response answers are graded by AI.' if ai_on else 'AI grading is off — free-response answers are graded by keyword match.'}
+    </p>
   </div>
 </div>
 """
@@ -163,6 +179,10 @@ class Home:
             aqt.stats_combined.show_combined_stats(self.mw)
         elif url == "sync":
             self.mw.on_sync_button_clicked()
+        elif url == "toggleAi":
+            current = bool(self.mw.col.get_config("mcatAiGrading", True))
+            self.mw.col.set_config("mcatAiGrading", not current)
+            self.refresh()
         return False
 
     # Inline icons (stroke inherits currentColor)
@@ -316,7 +336,60 @@ class Home:
     border-color: var(--border-strong);
     transform: translateY(-1px);
 }
+.home-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ai-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.5em 1em 0.5em 0.7em;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--canvas-elevated);
+    color: var(--fg);
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.ai-toggle:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+.ai-toggle .switch {
+    position: relative;
+    width: 2.1rem;
+    height: 1.2rem;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: var(--border-strong);
+    transition: background 0.2s ease;
+}
+.ai-toggle .knob {
+    position: absolute;
+    top: 0.15rem;
+    left: 0.15rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    transition: left 0.2s ease;
+}
+.ai-toggle.on .switch { background: var(--button-primary-bg); }
+.ai-toggle.on .knob { left: 1.05rem; }
+.ai-label b { color: var(--fg-subtle); font-weight: 800; }
+.ai-toggle.on .ai-label b { color: var(--button-primary-bg); }
+.home-foot-note {
+    margin: 0.1rem 0 0;
+    font-size: 0.78rem;
+    color: var(--fg-faint);
+    text-align: center;
+}
 @media (prefers-reduced-motion: reduce) {
-    .nav-card, .sync-pill { transition: none; }
+    .nav-card, .sync-pill, .ai-toggle .switch, .ai-toggle .knob { transition: none; }
 }
 """

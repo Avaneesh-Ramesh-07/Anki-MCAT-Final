@@ -52,7 +52,7 @@ EVAL_SET = ROOT / "resources" / "ground_truth" / "eval_set.json"
 OPENAI_URL = os.environ.get(
     "OPENAI_BASE_URL", "https://api.openai.com/v1/chat/completions"
 )
-DEFAULT_MODEL = os.environ.get("OPENAI_EVAL_MODEL", "gpt-4o-mini")
+DEFAULT_MODEL = os.environ.get("OPENAI_EVAL_MODEL", "gpt-4.1")
 
 
 def load_local_env() -> None:

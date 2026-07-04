@@ -464,10 +464,18 @@ class DeckBrowser:
                 "onclick=\"event.stopPropagation(); return pycmd('tended:%d')\">"
                 "%s</button>" % (did, label)
             )
+        # Inline gear (visible in both themes via currentColor). The shared
+        # `.gears` img class is `visibility:hidden` by default in the deck table,
+        # which made this button render as a confusing empty white box.
         gear = (
-            "<button class='bed-gear' title='Deck options' "
+            "<button class='bed-gear' title='Deck options' aria-label='Deck options' "
             "onclick=\"event.stopPropagation(); return pycmd('opts:%d')\">"
-            "<img src='/_anki/imgs/gears.svg' class=gears></button>" % did
+            "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' "
+            "stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round' "
+            "aria-hidden='true'><circle cx='12' cy='12' r='3.2'/>"
+            "<path d='M12 2.4v3.1M12 18.5v3.1M2.4 12h3.1M18.5 12h3.1"
+            "M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2'/>"
+            "</svg></button>" % did
         )
         return f'<div class="bed-actions">{primary}{gear}</div>'
 

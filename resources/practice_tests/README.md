@@ -138,21 +138,27 @@ MCQ of evidence, so an FRQ doesn't dominate the abstain gate / Wilson n).
     "type": "free_response",
     "id": "bio-biochem-1-frq1",
     "prompt": "…the question…",
-    "max_points": 4,                       // == sum of rubric[].points
+    "max_points": 4, // == sum of rubric[].points
     "rubric": [
         {
             "id": "c1",
             "description": "what earns these points (the grader applies this verbatim)",
             "points": 2,
             "required_concepts": ["concept the answer must express", "…"],
-            "disqualifiers": ["statement that voids this criterion even if concepts appear"]
+            "disqualifiers": [
+                "statement that voids this criterion even if concepts appear"
+            ]
         }
     ],
     "reference_answer": "model answer — for authoring/eval/post-grade display ONLY; never sent to the grader",
     "topic_tags": ["aamc::bio-biochem::carbohydrates"],
     "ground_truth_ref": "concept only — original framing",
     "figure": null,
-    "qa": { "single_defensible_answer": true, "original_not_copied": true, "reviewed": false }
+    "qa": {
+        "single_defensible_answer": true,
+        "original_not_copied": true,
+        "reviewed": false
+    }
 }
 ```
 

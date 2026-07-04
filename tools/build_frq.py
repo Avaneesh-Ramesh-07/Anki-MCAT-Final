@@ -527,12 +527,32 @@ BIO_BIOCHEM_2 = [
         "is reabsorbed and what makes it possible.",
         "aamc::bio-biochem::renal",
         [
-            ("Describes the countercurrent multiplier building a medullary osmotic gradient (hypertonic interstitium).", 2,
-             ["countercurrent multiplier", "hypertonic/high-solute medullary interstitium", "descending vs ascending limb differ in permeability"],
-             ["says the loop of Henle secretes urine directly", "says the gradient is highest in the cortex"]),
-            ("States water is reabsorbed passively down the gradient (descending limb / collecting duct via ADH).", 2,
-             ["water reabsorbed in descending limb / collecting duct", "water follows the osmotic gradient", "ADH increases water permeability"],
-             ["says the ascending limb is water-permeable", "says active pumping of water concentrates urine"]),
+            (
+                "Describes the countercurrent multiplier building a medullary osmotic gradient (hypertonic interstitium).",
+                2,
+                [
+                    "countercurrent multiplier",
+                    "hypertonic/high-solute medullary interstitium",
+                    "descending vs ascending limb differ in permeability",
+                ],
+                [
+                    "says the loop of Henle secretes urine directly",
+                    "says the gradient is highest in the cortex",
+                ],
+            ),
+            (
+                "States water is reabsorbed passively down the gradient (descending limb / collecting duct via ADH).",
+                2,
+                [
+                    "water reabsorbed in descending limb / collecting duct",
+                    "water follows the osmotic gradient",
+                    "ADH increases water permeability",
+                ],
+                [
+                    "says the ascending limb is water-permeable",
+                    "says active pumping of water concentrates urine",
+                ],
+            ),
         ],
         "The ascending limb pumps out solute to build a hypertonic medullary gradient "
         "(countercurrent multiplier). Water then leaves the water-permeable descending "
@@ -546,12 +566,31 @@ BIO_BIOCHEM_2 = [
         "explain how it changes with exercise.",
         "aamc::bio-biochem::respiratory",
         [
-            ("Identifies rising CO2 (and resulting drop in blood pH) as the primary drive.", 2,
-             ["increased CO2 / PCO2", "decreased pH / more acidic blood", "chemoreceptors detect it"],
-             ["says low O2 is the primary drive under normal conditions", "says rising pH drives breathing"]),
-            ("Links it to increased ventilation to expel CO2 and restore pH.", 2,
-             ["increased ventilation expels CO2", "restores/raises pH toward normal"],
-             ["says ventilation increases to retain CO2", "says the response lowers pH further"]),
+            (
+                "Identifies rising CO2 (and resulting drop in blood pH) as the primary drive.",
+                2,
+                [
+                    "increased CO2 / PCO2",
+                    "decreased pH / more acidic blood",
+                    "chemoreceptors detect it",
+                ],
+                [
+                    "says low O2 is the primary drive under normal conditions",
+                    "says rising pH drives breathing",
+                ],
+            ),
+            (
+                "Links it to increased ventilation to expel CO2 and restore pH.",
+                2,
+                [
+                    "increased ventilation expels CO2",
+                    "restores/raises pH toward normal",
+                ],
+                [
+                    "says ventilation increases to retain CO2",
+                    "says the response lowers pH further",
+                ],
+            ),
         ],
         "Exercise raises blood CO2, which lowers blood pH; central and peripheral "
         "chemoreceptors sense this (CO2/pH is the primary drive, not O2) and increase "
@@ -564,12 +603,31 @@ BIO_BIOCHEM_2 = [
         "can reset.",
         "aamc::bio-biochem::neurophysiology",
         [
-            ("Neurotransmitter diffuses across the cleft and binds postsynaptic receptors.", 2,
-             ["acetylcholine diffuses across the synaptic cleft", "binds postsynaptic receptors", "triggers postsynaptic potential"],
-             ["says the action potential jumps the cleft electrically", "says ACh is reabsorbed before binding receptors"]),
-            ("Signal terminated by acetylcholinesterase degrading ACh (and/or reuptake).", 2,
-             ["acetylcholinesterase breaks down ACh", "clears neurotransmitter from the cleft"],
-             ["says the neurotransmitter is destroyed by the postsynaptic receptor", "says the signal ends when the axon repolarizes only"]),
+            (
+                "Neurotransmitter diffuses across the cleft and binds postsynaptic receptors.",
+                2,
+                [
+                    "acetylcholine diffuses across the synaptic cleft",
+                    "binds postsynaptic receptors",
+                    "triggers postsynaptic potential",
+                ],
+                [
+                    "says the action potential jumps the cleft electrically",
+                    "says ACh is reabsorbed before binding receptors",
+                ],
+            ),
+            (
+                "Signal terminated by acetylcholinesterase degrading ACh (and/or reuptake).",
+                2,
+                [
+                    "acetylcholinesterase breaks down ACh",
+                    "clears neurotransmitter from the cleft",
+                ],
+                [
+                    "says the neurotransmitter is destroyed by the postsynaptic receptor",
+                    "says the signal ends when the axon repolarizes only",
+                ],
+            ),
         ],
         "Acetylcholine diffuses across the cleft and binds receptors on the postsynaptic "
         "membrane, generating a postsynaptic potential. Acetylcholinesterase then "
@@ -581,12 +639,31 @@ BIO_BIOCHEM_2 = [
         "in the kidney, and its effect on water. Explain how this is negative feedback.",
         "aamc::bio-biochem::endocrine",
         [
-            ("ADH (vasopressin) increases water reabsorption in the collecting duct.", 2,
-             ["ADH / vasopressin", "acts on the collecting duct", "increases water reabsorption"],
-             ["says aldosterone is the primary response to high osmolarity", "says ADH increases water excretion"]),
-            ("Explains negative feedback: reabsorbing water lowers osmolarity back toward set point.", 2,
-             ["negative feedback", "water retention lowers osmolarity / opposes the stimulus"],
-             ["calls it positive feedback", "says the response raises osmolarity further"]),
+            (
+                "ADH (vasopressin) increases water reabsorption in the collecting duct.",
+                2,
+                [
+                    "ADH / vasopressin",
+                    "acts on the collecting duct",
+                    "increases water reabsorption",
+                ],
+                [
+                    "says aldosterone is the primary response to high osmolarity",
+                    "says ADH increases water excretion",
+                ],
+            ),
+            (
+                "Explains negative feedback: reabsorbing water lowers osmolarity back toward set point.",
+                2,
+                [
+                    "negative feedback",
+                    "water retention lowers osmolarity / opposes the stimulus",
+                ],
+                [
+                    "calls it positive feedback",
+                    "says the response raises osmolarity further",
+                ],
+            ),
         ],
         "High osmolarity triggers ADH release; ADH makes the collecting duct more "
         "water-permeable, increasing water reabsorption. Retaining water lowers blood "
@@ -599,12 +676,28 @@ BIO_BIOCHEM_2 = [
         "role of cAMP/CAP.",
         "aamc::bio-biochem::microbiology",
         [
-            ("Lactose (allolactose) inactivates the repressor, so it leaves the operator.", 2,
-             ["lactose/allolactose binds and inactivates the repressor", "repressor releases the operator"],
-             ["says lactose activates the repressor", "says the repressor stays bound when lactose is present"]),
-            ("Low glucose raises cAMP; cAMP-CAP binds and boosts transcription (positive control).", 2,
-             ["low glucose raises cAMP", "cAMP-CAP complex binds the promoter", "increases/activates transcription"],
-             ["says high glucose increases cAMP", "says CAP represses the operon"]),
+            (
+                "Lactose (allolactose) inactivates the repressor, so it leaves the operator.",
+                2,
+                [
+                    "lactose/allolactose binds and inactivates the repressor",
+                    "repressor releases the operator",
+                ],
+                [
+                    "says lactose activates the repressor",
+                    "says the repressor stays bound when lactose is present",
+                ],
+            ),
+            (
+                "Low glucose raises cAMP; cAMP-CAP binds and boosts transcription (positive control).",
+                2,
+                [
+                    "low glucose raises cAMP",
+                    "cAMP-CAP complex binds the promoter",
+                    "increases/activates transcription",
+                ],
+                ["says high glucose increases cAMP", "says CAP represses the operon"],
+            ),
         ],
         "With lactose present, allolactose inactivates the lac repressor, freeing the "
         "operator. With glucose low, cAMP is high and cAMP-CAP binds upstream to strongly "
@@ -617,12 +710,31 @@ BIO_BIOCHEM_2 = [
         "cross-bridge cycling.",
         "aamc::bio-biochem::musculoskeletal",
         [
-            ("Actin (thin) filaments slide past myosin (thick) filaments; the sarcomere shortens.", 2,
-             ["actin/thin filaments slide past myosin/thick filaments", "sarcomere shortens", "filament lengths unchanged"],
-             ["says the filaments themselves shorten/contract", "says myosin slides along the Z-line only"]),
-            ("Ca2+ exposes binding sites (troponin/tropomyosin) and ATP powers cross-bridge cycling.", 2,
-             ["Ca2+ binds troponin, moving tropomyosin to expose binding sites", "ATP powers myosin cross-bridge cycling"],
-             ["says Ca2+ directly breaks the cross-bridges as the energy source", "says GTP powers contraction"]),
+            (
+                "Actin (thin) filaments slide past myosin (thick) filaments; the sarcomere shortens.",
+                2,
+                [
+                    "actin/thin filaments slide past myosin/thick filaments",
+                    "sarcomere shortens",
+                    "filament lengths unchanged",
+                ],
+                [
+                    "says the filaments themselves shorten/contract",
+                    "says myosin slides along the Z-line only",
+                ],
+            ),
+            (
+                "Ca2+ exposes binding sites (troponin/tropomyosin) and ATP powers cross-bridge cycling.",
+                2,
+                [
+                    "Ca2+ binds troponin, moving tropomyosin to expose binding sites",
+                    "ATP powers myosin cross-bridge cycling",
+                ],
+                [
+                    "says Ca2+ directly breaks the cross-bridges as the energy source",
+                    "says GTP powers contraction",
+                ],
+            ),
         ],
         "Thin (actin) filaments slide past thick (myosin) filaments, shortening the "
         "sarcomere without changing filament length. Ca2+ binds troponin, shifting "
@@ -636,12 +748,31 @@ BIO_BIOCHEM_2 = [
         "state how distance affects the chance of separation.",
         "aamc::bio-biochem::genetics",
         [
-            ("Linked genes are inherited together because they are on the same chromosome.", 2,
-             ["genes are linked / on the same chromosome", "tend to be inherited together", "violate independent assortment"],
-             ["says linked genes assort independently", "says they are on different chromosomes"]),
-            ("Crossing over (recombination) can separate them; closer genes recombine less often.", 2,
-             ["crossing over / recombination during meiosis", "closer genes = lower recombination frequency"],
-             ["says mitosis separates them", "says closer genes recombine more often"]),
+            (
+                "Linked genes are inherited together because they are on the same chromosome.",
+                2,
+                [
+                    "genes are linked / on the same chromosome",
+                    "tend to be inherited together",
+                    "violate independent assortment",
+                ],
+                [
+                    "says linked genes assort independently",
+                    "says they are on different chromosomes",
+                ],
+            ),
+            (
+                "Crossing over (recombination) can separate them; closer genes recombine less often.",
+                2,
+                [
+                    "crossing over / recombination during meiosis",
+                    "closer genes = lower recombination frequency",
+                ],
+                [
+                    "says mitosis separates them",
+                    "says closer genes recombine more often",
+                ],
+            ),
         ],
         "Genes close together on one chromosome are linked and tend to be inherited "
         "together, violating independent assortment. Crossing over during meiosis can "
@@ -655,12 +786,31 @@ BIO_BIOCHEM_2 = [
         "mechanism and one common second messenger.",
         "aamc::bio-biochem::signal-transduction",
         [
-            ("Binds a cell-surface receptor that transduces the signal without the ligand entering.", 2,
-             ["binds a membrane/cell-surface receptor", "ligand does not enter the cell", "receptor transduces the signal (e.g. GPCR)"],
-             ["says the peptide hormone diffuses through the membrane", "says it binds a cytoplasmic/nuclear receptor directly"]),
-            ("Triggers a second messenger cascade (e.g. cAMP, IP3/Ca2+) that alters intracellular activity.", 2,
-             ["second messenger such as cAMP or IP3/Ca2+", "intracellular signaling cascade / kinase activation"],
-             ["says the hormone directly edits DNA without a cascade", "names ATP as the second messenger"]),
+            (
+                "Binds a cell-surface receptor that transduces the signal without the ligand entering.",
+                2,
+                [
+                    "binds a membrane/cell-surface receptor",
+                    "ligand does not enter the cell",
+                    "receptor transduces the signal (e.g. GPCR)",
+                ],
+                [
+                    "says the peptide hormone diffuses through the membrane",
+                    "says it binds a cytoplasmic/nuclear receptor directly",
+                ],
+            ),
+            (
+                "Triggers a second messenger cascade (e.g. cAMP, IP3/Ca2+) that alters intracellular activity.",
+                2,
+                [
+                    "second messenger such as cAMP or IP3/Ca2+",
+                    "intracellular signaling cascade / kinase activation",
+                ],
+                [
+                    "says the hormone directly edits DNA without a cascade",
+                    "names ATP as the second messenger",
+                ],
+            ),
         ],
         "A peptide hormone binds a cell-surface receptor (e.g. a GPCR) and never enters "
         "the cell; the activated receptor triggers a second-messenger cascade (such as "
@@ -673,12 +823,24 @@ BIO_BIOCHEM_2 = [
         "the cell's energy state.",
         "aamc::bio-biochem::carbohydrates",
         [
-            ("Gives a correct activator (e.g. AMP or F-2,6-BP) tied to low energy / need for glycolysis.", 2,
-             ["AMP (or F-2,6-bisphosphate) activates PFK-1", "signals low energy / high AMP:ATP"],
-             ["says ATP activates PFK-1", "says citrate activates PFK-1"]),
-            ("Gives a correct inhibitor (e.g. ATP or citrate) tied to high energy / abundant fuel.", 2,
-             ["ATP (or citrate) inhibits PFK-1", "signals high energy / abundant building blocks"],
-             ["says AMP inhibits PFK-1", "says low ATP inhibits PFK-1"]),
+            (
+                "Gives a correct activator (e.g. AMP or F-2,6-BP) tied to low energy / need for glycolysis.",
+                2,
+                [
+                    "AMP (or F-2,6-bisphosphate) activates PFK-1",
+                    "signals low energy / high AMP:ATP",
+                ],
+                ["says ATP activates PFK-1", "says citrate activates PFK-1"],
+            ),
+            (
+                "Gives a correct inhibitor (e.g. ATP or citrate) tied to high energy / abundant fuel.",
+                2,
+                [
+                    "ATP (or citrate) inhibits PFK-1",
+                    "signals high energy / abundant building blocks",
+                ],
+                ["says AMP inhibits PFK-1", "says low ATP inhibits PFK-1"],
+            ),
         ],
         "PFK-1 is activated by AMP (and fructose-2,6-bisphosphate), signaling low energy "
         "so glycolysis should run, and inhibited by ATP and citrate, signaling that "
@@ -690,12 +852,31 @@ BIO_BIOCHEM_2 = [
         "unsaturated fatty acid tails and (b) cholesterol at body temperature.",
         "aamc::bio-biochem::lipids",
         [
-            ("Unsaturated tails (kinks) increase fluidity by preventing tight packing.", 2,
-             ["unsaturated tails have kinks/double bonds", "prevent tight packing", "increase fluidity"],
-             ["says unsaturated tails decrease fluidity", "says saturated tails increase fluidity"]),
-            ("Cholesterol buffers fluidity — at body/high temperature it reduces fluidity.", 2,
-             ["cholesterol buffers/moderates fluidity", "at high/body temperature it decreases fluidity"],
-             ["says cholesterol always increases fluidity", "says cholesterol has no effect on the membrane"]),
+            (
+                "Unsaturated tails (kinks) increase fluidity by preventing tight packing.",
+                2,
+                [
+                    "unsaturated tails have kinks/double bonds",
+                    "prevent tight packing",
+                    "increase fluidity",
+                ],
+                [
+                    "says unsaturated tails decrease fluidity",
+                    "says saturated tails increase fluidity",
+                ],
+            ),
+            (
+                "Cholesterol buffers fluidity — at body/high temperature it reduces fluidity.",
+                2,
+                [
+                    "cholesterol buffers/moderates fluidity",
+                    "at high/body temperature it decreases fluidity",
+                ],
+                [
+                    "says cholesterol always increases fluidity",
+                    "says cholesterol has no effect on the membrane",
+                ],
+            ),
         ],
         "Unsaturated fatty acid tails have kinks that stop phospholipids from packing "
         "tightly, raising fluidity. Cholesterol acts as a fluidity buffer: at body/high "
@@ -709,12 +890,27 @@ BIO_BIOCHEM_2 = [
         "using the relationship between pH and pKa.",
         "aamc::bio-biochem::amino-acids",
         [
-            ("At pH above the pKa the acidic group is deprotonated / negatively charged.", 2,
-             ["deprotonated at pH above pKa", "negatively charged side chain"],
-             ["says it is protonated/positive at pH above pKa", "says charge is neutral regardless of pKa"]),
-            ("Explains via Henderson-Hasselbalch: pH > pKa favors the conjugate base form.", 2,
-             ["pH > pKa favors the deprotonated/conjugate-base form", "Henderson-Hasselbalch reasoning"],
-             ["says pH > pKa favors the protonated form", "says pKa does not determine protonation state"]),
+            (
+                "At pH above the pKa the acidic group is deprotonated / negatively charged.",
+                2,
+                ["deprotonated at pH above pKa", "negatively charged side chain"],
+                [
+                    "says it is protonated/positive at pH above pKa",
+                    "says charge is neutral regardless of pKa",
+                ],
+            ),
+            (
+                "Explains via Henderson-Hasselbalch: pH > pKa favors the conjugate base form.",
+                2,
+                [
+                    "pH > pKa favors the deprotonated/conjugate-base form",
+                    "Henderson-Hasselbalch reasoning",
+                ],
+                [
+                    "says pH > pKa favors the protonated form",
+                    "says pKa does not determine protonation state",
+                ],
+            ),
         ],
         "Because pH 7.4 is above the acidic side chain's pKa, the group is mostly "
         "deprotonated and therefore negatively charged. By Henderson-Hasselbalch, when "
@@ -727,12 +923,30 @@ BIO_BIOCHEM_2 = [
         "(b) increasing temperature.",
         "aamc::bio-biochem::gen-chem",
         [
-            ("Higher pressure shifts toward fewer gas moles (the products), increasing NH3.", 2,
-             ["increased pressure shifts toward fewer moles of gas", "shifts toward products / more NH3"],
-             ["says higher pressure shifts toward reactants", "says pressure has no effect"]),
-            ("Higher temperature shifts an exothermic reaction toward reactants, decreasing NH3.", 2,
-             ["higher temperature favors reactants for an exothermic reaction", "decreases NH3 yield"],
-             ["says higher temperature increases NH3 yield", "treats the reaction as endothermic"]),
+            (
+                "Higher pressure shifts toward fewer gas moles (the products), increasing NH3.",
+                2,
+                [
+                    "increased pressure shifts toward fewer moles of gas",
+                    "shifts toward products / more NH3",
+                ],
+                [
+                    "says higher pressure shifts toward reactants",
+                    "says pressure has no effect",
+                ],
+            ),
+            (
+                "Higher temperature shifts an exothermic reaction toward reactants, decreasing NH3.",
+                2,
+                [
+                    "higher temperature favors reactants for an exothermic reaction",
+                    "decreases NH3 yield",
+                ],
+                [
+                    "says higher temperature increases NH3 yield",
+                    "treats the reaction as endothermic",
+                ],
+            ),
         ],
         "By Le Chatelier, raising pressure shifts the equilibrium toward the side with "
         "fewer gas moles (2 mol NH3 vs 4 mol reactants), increasing NH3. Raising "
@@ -746,12 +960,31 @@ BIO_BIOCHEM_2 = [
         "at the reacting carbon.",
         "aamc::bio-biochem::orgo",
         [
-            ("SN2 is bimolecular (rate depends on nucleophile) with backside attack / inversion.", 2,
-             ["SN2 rate depends on nucleophile concentration (second order)", "inversion of configuration / backside attack"],
-             ["says SN2 rate is independent of nucleophile", "says SN2 gives retention only"]),
-            ("SN1 is unimolecular (rate independent of nucleophile) via a carbocation, giving racemization.", 2,
-             ["SN1 rate independent of nucleophile (first order)", "planar carbocation intermediate", "racemization / mixture of configurations"],
-             ["says SN1 depends on nucleophile concentration", "says SN1 gives clean inversion"]),
+            (
+                "SN2 is bimolecular (rate depends on nucleophile) with backside attack / inversion.",
+                2,
+                [
+                    "SN2 rate depends on nucleophile concentration (second order)",
+                    "inversion of configuration / backside attack",
+                ],
+                [
+                    "says SN2 rate is independent of nucleophile",
+                    "says SN2 gives retention only",
+                ],
+            ),
+            (
+                "SN1 is unimolecular (rate independent of nucleophile) via a carbocation, giving racemization.",
+                2,
+                [
+                    "SN1 rate independent of nucleophile (first order)",
+                    "planar carbocation intermediate",
+                    "racemization / mixture of configurations",
+                ],
+                [
+                    "says SN1 depends on nucleophile concentration",
+                    "says SN1 gives clean inversion",
+                ],
+            ),
         ],
         "SN2 is second order—its rate depends on nucleophile concentration—and proceeds "
         "by backside attack, inverting configuration. SN1 is first order (rate "
@@ -771,12 +1004,22 @@ CHEM_PHYS_1 = [
         "CO2 form. Show the reasoning.",
         "aamc::chem-phys::stoichiometry",
         [
-            ("Identifies O2 as limiting (needs 10 mol O2 for 2 mol propane; only 8 available).", 2,
-             ["O2 is limiting", "2 mol propane needs 10 mol O2", "only 8 mol O2 available"],
-             ["says propane is limiting", "ignores the 1:5 propane:O2 ratio"]),
-            ("Computes CO2 from the limiting O2: 8 mol O2 × (3 CO2 / 5 O2) = 4.8 mol CO2.", 2,
-             ["uses 3 CO2 per 5 O2", "4.8 mol CO2"],
-             ["computes 6 mol CO2 from propane", "uses the wrong mole ratio"]),
+            (
+                "Identifies O2 as limiting (needs 10 mol O2 for 2 mol propane; only 8 available).",
+                2,
+                [
+                    "O2 is limiting",
+                    "2 mol propane needs 10 mol O2",
+                    "only 8 mol O2 available",
+                ],
+                ["says propane is limiting", "ignores the 1:5 propane:O2 ratio"],
+            ),
+            (
+                "Computes CO2 from the limiting O2: 8 mol O2 × (3 CO2 / 5 O2) = 4.8 mol CO2.",
+                2,
+                ["uses 3 CO2 per 5 O2", "4.8 mol CO2"],
+                ["computes 6 mol CO2 from propane", "uses the wrong mole ratio"],
+            ),
         ],
         "2.0 mol propane would need 10 mol O2, but only 8.0 mol is present, so O2 is "
         "limiting. Using the 5 O2 : 3 CO2 ratio, 8.0 mol O2 yields 8.0 × 3/5 = 4.8 mol CO2.",
@@ -788,12 +1031,18 @@ CHEM_PHYS_1 = [
         "relationship.",
         "aamc::chem-phys::acid-base",
         [
-            ("States the ratio [A⁻]/[HA] ≈ 1 when pH = pKa.", 2,
-             ["ratio is 1:1 / equal", "[A-] approximately equals [HA]"],
-             ["says the ratio is 10:1", "says all acid is dissociated"]),
-            ("Justifies with Henderson-Hasselbalch (pH = pKa + log([A⁻]/[HA]); log term = 0).", 2,
-             ["pH = pKa + log([A-]/[HA])", "log ratio = 0 when pH = pKa"],
-             ["ignores the pKa relationship", "says pH equals concentration"]),
+            (
+                "States the ratio [A⁻]/[HA] ≈ 1 when pH = pKa.",
+                2,
+                ["ratio is 1:1 / equal", "[A-] approximately equals [HA]"],
+                ["says the ratio is 10:1", "says all acid is dissociated"],
+            ),
+            (
+                "Justifies with Henderson-Hasselbalch (pH = pKa + log([A⁻]/[HA]); log term = 0).",
+                2,
+                ["pH = pKa + log([A-]/[HA])", "log ratio = 0 when pH = pKa"],
+                ["ignores the pKa relationship", "says pH equals concentration"],
+            ),
         ],
         "When pH equals pKa, Henderson-Hasselbalch (pH = pKa + log[A⁻]/[HA]) requires the "
         "log term to be 0, so [A⁻]/[HA] = 1 — the acid is half dissociated.",
@@ -805,12 +1054,28 @@ CHEM_PHYS_1 = [
         "is spontaneous.",
         "aamc::chem-phys::thermodynamics",
         [
-            ("Uses ΔG = ΔH − TΔS with ΔH<0 and ΔS<0 (so −TΔS is positive and grows with T).", 2,
-             ["ΔG = ΔH − TΔS", "−TΔS is positive because ΔS<0", "the TΔS term grows with temperature"],
-             ["says ΔG is independent of temperature", "treats −TΔS as negative"]),
-            ("Concludes spontaneous (ΔG<0) only at low temperature.", 2,
-             ["spontaneous at low temperature", "nonspontaneous at high temperature"],
-             ["says spontaneous at all temperatures", "says spontaneous at high temperature"]),
+            (
+                "Uses ΔG = ΔH − TΔS with ΔH<0 and ΔS<0 (so −TΔS is positive and grows with T).",
+                2,
+                [
+                    "ΔG = ΔH − TΔS",
+                    "−TΔS is positive because ΔS<0",
+                    "the TΔS term grows with temperature",
+                ],
+                ["says ΔG is independent of temperature", "treats −TΔS as negative"],
+            ),
+            (
+                "Concludes spontaneous (ΔG<0) only at low temperature.",
+                2,
+                [
+                    "spontaneous at low temperature",
+                    "nonspontaneous at high temperature",
+                ],
+                [
+                    "says spontaneous at all temperatures",
+                    "says spontaneous at high temperature",
+                ],
+            ),
         ],
         "With ΔH<0 and ΔS<0, ΔG = ΔH − TΔS has a negative ΔH but a positive −TΔS term that "
         "grows with T. So ΔG is negative (spontaneous) only at low temperature and "
@@ -822,12 +1087,21 @@ CHEM_PHYS_1 = [
         "what happens to its pressure and justify using the ideal gas law.",
         "aamc::chem-phys::ideal-gas",
         [
-            ("States pressure doubles.", 2,
-             ["pressure doubles", "pressure increases twofold"],
-             ["says pressure halves", "says pressure is unchanged"]),
-            ("Justifies with PV = nRT at constant T, n (Boyle's law: P ∝ 1/V).", 2,
-             ["PV = nRT with T and n constant", "P inversely proportional to V (Boyle's law)"],
-             ["says P proportional to V", "invokes a temperature change"]),
+            (
+                "States pressure doubles.",
+                2,
+                ["pressure doubles", "pressure increases twofold"],
+                ["says pressure halves", "says pressure is unchanged"],
+            ),
+            (
+                "Justifies with PV = nRT at constant T, n (Boyle's law: P ∝ 1/V).",
+                2,
+                [
+                    "PV = nRT with T and n constant",
+                    "P inversely proportional to V (Boyle's law)",
+                ],
+                ["says P proportional to V", "invokes a temperature change"],
+            ),
         ],
         "At constant T and n, PV = nRT means PV is constant, so P ∝ 1/V (Boyle's law). "
         "Halving V doubles P.",
@@ -839,12 +1113,31 @@ CHEM_PHYS_1 = [
         "to hit the ground.",
         "aamc::chem-phys::kinematics",
         [
-            ("Horizontal velocity is constant; vertical motion accelerates at g (independent axes).", 2,
-             ["horizontal velocity constant (no horizontal acceleration)", "vertical accelerates at g", "the two axes are independent"],
-             ["says horizontal velocity decreases due to gravity", "says gravity acts horizontally"]),
-            ("Time to land depends only on the vertical drop (height) and g, not horizontal speed.", 2,
-             ["time depends on the fall height and g", "independent of horizontal launch speed"],
-             ["says a faster horizontal throw lands later", "says horizontal speed sets the fall time"]),
+            (
+                "Horizontal velocity is constant; vertical motion accelerates at g (independent axes).",
+                2,
+                [
+                    "horizontal velocity constant (no horizontal acceleration)",
+                    "vertical accelerates at g",
+                    "the two axes are independent",
+                ],
+                [
+                    "says horizontal velocity decreases due to gravity",
+                    "says gravity acts horizontally",
+                ],
+            ),
+            (
+                "Time to land depends only on the vertical drop (height) and g, not horizontal speed.",
+                2,
+                [
+                    "time depends on the fall height and g",
+                    "independent of horizontal launch speed",
+                ],
+                [
+                    "says a faster horizontal throw lands later",
+                    "says horizontal speed sets the fall time",
+                ],
+            ),
         ],
         "Gravity acts only vertically, so horizontal velocity stays constant while the "
         "vertical velocity grows at g; the axes are independent. The fall time is set "
@@ -858,12 +1151,31 @@ CHEM_PHYS_1 = [
         "energy transformation.",
         "aamc::chem-phys::work-energy",
         [
-            ("Computes work by friction = −ΔKE = −(½mv²) = −9 J.", 2,
-             ["work-energy theorem: W = ΔKE", "initial KE = ½·2·3² = 9 J", "friction did −9 J"],
-             ["computes +9 J for friction", "uses momentum instead of kinetic energy"]),
-            ("Explains the KE is dissipated as heat (nonconservative work).", 2,
-             ["kinetic energy converted to heat/thermal energy", "friction is nonconservative"],
-             ["says energy is stored as potential energy", "says energy is destroyed"]),
+            (
+                "Computes work by friction = −ΔKE = −(½mv²) = −9 J.",
+                2,
+                [
+                    "work-energy theorem: W = ΔKE",
+                    "initial KE = ½·2·3² = 9 J",
+                    "friction did −9 J",
+                ],
+                [
+                    "computes +9 J for friction",
+                    "uses momentum instead of kinetic energy",
+                ],
+            ),
+            (
+                "Explains the KE is dissipated as heat (nonconservative work).",
+                2,
+                [
+                    "kinetic energy converted to heat/thermal energy",
+                    "friction is nonconservative",
+                ],
+                [
+                    "says energy is stored as potential energy",
+                    "says energy is destroyed",
+                ],
+            ),
         ],
         "The cart's initial KE is ½·2·3² = 9 J and its final KE is 0, so by the "
         "work-energy theorem friction did W = ΔKE = −9 J. That kinetic energy is "
@@ -876,12 +1188,27 @@ CHEM_PHYS_1 = [
         "speed and pressure in the narrow section.",
         "aamc::chem-phys::fluids",
         [
-            ("Continuity: speed increases where the pipe narrows (A·v constant).", 2,
-             ["continuity equation A·v = constant", "speed increases in the narrow section"],
-             ["says speed decreases where it narrows", "says flow rate changes"]),
-            ("Bernoulli: higher speed means lower pressure in the narrow section.", 2,
-             ["Bernoulli: faster flow = lower pressure", "pressure decreases in the narrow section"],
-             ["says pressure increases where speed increases", "ignores the speed-pressure tradeoff"]),
+            (
+                "Continuity: speed increases where the pipe narrows (A·v constant).",
+                2,
+                [
+                    "continuity equation A·v = constant",
+                    "speed increases in the narrow section",
+                ],
+                ["says speed decreases where it narrows", "says flow rate changes"],
+            ),
+            (
+                "Bernoulli: higher speed means lower pressure in the narrow section.",
+                2,
+                [
+                    "Bernoulli: faster flow = lower pressure",
+                    "pressure decreases in the narrow section",
+                ],
+                [
+                    "says pressure increases where speed increases",
+                    "ignores the speed-pressure tradeoff",
+                ],
+            ),
         ],
         "By continuity (A·v constant), the fluid speeds up in the narrow section. By "
         "Bernoulli's principle, that higher speed corresponds to lower pressure there.",
@@ -893,12 +1220,25 @@ CHEM_PHYS_1 = [
         "explain why.",
         "aamc::chem-phys::amino-acids",
         [
-            ("Carboxyl is deprotonated (−) because pH ≫ its pKa (2.3).", 2,
-             ["carboxyl deprotonated / negative", "pH is well above pKa 2.3"],
-             ["says carboxyl is protonated at pH 7.4", "ignores the carboxyl pKa"]),
-            ("Amino group is protonated (+) because pH < its pKa (9.6); net neutral zwitterion.", 2,
-             ["amino group protonated / positive", "pH below pKa 9.6", "net zwitterion / net neutral"],
-             ["says amino group is deprotonated at pH 7.4", "says the molecule is net charged"]),
+            (
+                "Carboxyl is deprotonated (−) because pH ≫ its pKa (2.3).",
+                2,
+                ["carboxyl deprotonated / negative", "pH is well above pKa 2.3"],
+                ["says carboxyl is protonated at pH 7.4", "ignores the carboxyl pKa"],
+            ),
+            (
+                "Amino group is protonated (+) because pH < its pKa (9.6); net neutral zwitterion.",
+                2,
+                [
+                    "amino group protonated / positive",
+                    "pH below pKa 9.6",
+                    "net zwitterion / net neutral",
+                ],
+                [
+                    "says amino group is deprotonated at pH 7.4",
+                    "says the molecule is net charged",
+                ],
+            ),
         ],
         "At pH 7.4 the carboxyl (pKa 2.3) is deprotonated and negative, while the amino "
         "group (pKa 9.6) is still protonated and positive. Glycine is therefore a "
@@ -910,12 +1250,21 @@ CHEM_PHYS_1 = [
         "indicates about the enzyme's affinity for its substrate.",
         "aamc::chem-phys::enzyme-kinetics",
         [
-            ("Km is the substrate concentration at half of Vmax.", 2,
-             ["Km = substrate concentration at half Vmax", "[S] giving ½ Vmax"],
-             ["says Km is the maximum rate", "says Km is the enzyme concentration"]),
-            ("A low Km means high affinity (half-max reached at low substrate).", 2,
-             ["low Km = high affinity", "reaches half-max at low substrate concentration"],
-             ["says low Km means low affinity", "says Km is unrelated to affinity"]),
+            (
+                "Km is the substrate concentration at half of Vmax.",
+                2,
+                ["Km = substrate concentration at half Vmax", "[S] giving ½ Vmax"],
+                ["says Km is the maximum rate", "says Km is the enzyme concentration"],
+            ),
+            (
+                "A low Km means high affinity (half-max reached at low substrate).",
+                2,
+                [
+                    "low Km = high affinity",
+                    "reaches half-max at low substrate concentration",
+                ],
+                ["says low Km means low affinity", "says Km is unrelated to affinity"],
+            ),
         ],
         "Km is the substrate concentration at which the reaction runs at half its maximal "
         "velocity. A low Km means the enzyme reaches half-max at low substrate — i.e. it "
@@ -928,12 +1277,27 @@ CHEM_PHYS_1 = [
         "of ΔG.",
         "aamc::chem-phys::bioenergetics",
         [
-            ("ATP hydrolysis is exergonic (large negative ΔG).", 2,
-             ["ATP hydrolysis has negative ΔG / is exergonic", "releases free energy"],
-             ["says ATP hydrolysis is endergonic", "says ATP hydrolysis has positive ΔG"]),
-            ("Summed ΔG of coupled reactions is negative, so the overall process is spontaneous.", 2,
-             ["ΔG values add", "coupled total ΔG is negative / spontaneous"],
-             ["says the unfavorable reaction proceeds without a negative total ΔG", "says coupling changes each reaction's ΔG sign individually"]),
+            (
+                "ATP hydrolysis is exergonic (large negative ΔG).",
+                2,
+                [
+                    "ATP hydrolysis has negative ΔG / is exergonic",
+                    "releases free energy",
+                ],
+                [
+                    "says ATP hydrolysis is endergonic",
+                    "says ATP hydrolysis has positive ΔG",
+                ],
+            ),
+            (
+                "Summed ΔG of coupled reactions is negative, so the overall process is spontaneous.",
+                2,
+                ["ΔG values add", "coupled total ΔG is negative / spontaneous"],
+                [
+                    "says the unfavorable reaction proceeds without a negative total ΔG",
+                    "says coupling changes each reaction's ΔG sign individually",
+                ],
+            ),
         ],
         "ATP hydrolysis is strongly exergonic (large negative ΔG). When an unfavorable "
         "(positive-ΔG) reaction is coupled to it, the ΔG values add; as long as the sum "
@@ -945,12 +1309,32 @@ CHEM_PHYS_1 = [
         "one-line example of each for molecules sharing the formula C4H10 or C4H8.",
         "aamc::chem-phys::isomerism",
         [
-            ("Constitutional isomers: same formula, different connectivity/bonding.", 2,
-             ["same molecular formula", "different connectivity / atom-to-atom bonding", "e.g. butane vs isobutane"],
-             ["says constitutional isomers differ only in 3D arrangement", "says they have different formulas"]),
-            ("Stereoisomers: same connectivity, different spatial arrangement (e.g. cis/trans-2-butene).", 2,
-             ["same connectivity", "differ in spatial/3D arrangement", "e.g. cis vs trans-2-butene"],
-             ["says stereoisomers differ in connectivity", "conflates them with constitutional isomers"]),
+            (
+                "Constitutional isomers: same formula, different connectivity/bonding.",
+                2,
+                [
+                    "same molecular formula",
+                    "different connectivity / atom-to-atom bonding",
+                    "e.g. butane vs isobutane",
+                ],
+                [
+                    "says constitutional isomers differ only in 3D arrangement",
+                    "says they have different formulas",
+                ],
+            ),
+            (
+                "Stereoisomers: same connectivity, different spatial arrangement (e.g. cis/trans-2-butene).",
+                2,
+                [
+                    "same connectivity",
+                    "differ in spatial/3D arrangement",
+                    "e.g. cis vs trans-2-butene",
+                ],
+                [
+                    "says stereoisomers differ in connectivity",
+                    "conflates them with constitutional isomers",
+                ],
+            ),
         ],
         "Constitutional (structural) isomers share a molecular formula but differ in "
         "connectivity (e.g. butane vs isobutane, both C4H10). Stereoisomers share "
@@ -963,12 +1347,28 @@ CHEM_PHYS_1 = [
         "the order using intermolecular forces.",
         "aamc::chem-phys::functional-groups",
         [
-            ("Orders carboxylic acid > alcohol > alkane.", 2,
-             ["carboxylic acid highest", "alcohol middle", "alkane lowest"],
-             ["puts the alkane highest", "puts the alcohol above the carboxylic acid"]),
-            ("Justifies by hydrogen bonding vs only London dispersion (alkane).", 2,
-             ["carboxylic acid/alcohol hydrogen bond", "carboxylic acids H-bond most strongly (dimers)", "alkane has only London dispersion"],
-             ["says alkanes hydrogen bond", "attributes the order to molecular weight alone"]),
+            (
+                "Orders carboxylic acid > alcohol > alkane.",
+                2,
+                ["carboxylic acid highest", "alcohol middle", "alkane lowest"],
+                [
+                    "puts the alkane highest",
+                    "puts the alcohol above the carboxylic acid",
+                ],
+            ),
+            (
+                "Justifies by hydrogen bonding vs only London dispersion (alkane).",
+                2,
+                [
+                    "carboxylic acid/alcohol hydrogen bond",
+                    "carboxylic acids H-bond most strongly (dimers)",
+                    "alkane has only London dispersion",
+                ],
+                [
+                    "says alkanes hydrogen bond",
+                    "attributes the order to molecular weight alone",
+                ],
+            ),
         ],
         "Boiling point: carboxylic acid > alcohol > alkane. Carboxylic acids hydrogen "
         "bond most strongly (they can form dimers), alcohols hydrogen bond but less, and "
@@ -980,12 +1380,30 @@ CHEM_PHYS_1 = [
         "gills maximizes oxygen extraction compared with concurrent (same-direction) flow.",
         "aamc::chem-phys::physiology",
         [
-            ("Countercurrent maintains a favorable O2 gradient along the entire exchange surface.", 2,
-             ["countercurrent keeps a diffusion gradient along the whole length", "blood always meets water with higher O2"],
-             ["says the gradient disappears partway (that is concurrent)", "says flow direction does not matter"]),
-            ("Concurrent flow equilibrates partway, so less O2 is extracted.", 2,
-             ["concurrent flow equilibrates / gradient vanishes at equilibrium", "extracts less O2"],
-             ["says concurrent flow extracts more O2", "says both arrangements extract the same"]),
+            (
+                "Countercurrent maintains a favorable O2 gradient along the entire exchange surface.",
+                2,
+                [
+                    "countercurrent keeps a diffusion gradient along the whole length",
+                    "blood always meets water with higher O2",
+                ],
+                [
+                    "says the gradient disappears partway (that is concurrent)",
+                    "says flow direction does not matter",
+                ],
+            ),
+            (
+                "Concurrent flow equilibrates partway, so less O2 is extracted.",
+                2,
+                [
+                    "concurrent flow equilibrates / gradient vanishes at equilibrium",
+                    "extracts less O2",
+                ],
+                [
+                    "says concurrent flow extracts more O2",
+                    "says both arrangements extract the same",
+                ],
+            ),
         ],
         "In countercurrent exchange, blood and water flow in opposite directions, so "
         "blood always encounters water with a slightly higher O2 concentration and a "
@@ -1005,12 +1423,30 @@ CHEM_PHYS_2 = [
         "a common ion shifts the dissolved-ion concentration.",
         "aamc::chem-phys::equilibrium",
         [
-            ("Ksp is the equilibrium product of dissolved ion concentrations for the saturated solution.", 2,
-             ["Ksp = product of dissolved ion concentrations at saturation", "solubility-product equilibrium constant"],
-             ["says Ksp changes when you add common ion", "says Ksp is the amount of solid"]),
-            ("Common-ion effect shifts equilibrium toward solid, lowering solubility.", 2,
-             ["common ion shifts equilibrium toward the solid (Le Chatelier)", "solubility decreases"],
-             ["says added common ion increases solubility", "says Ksp increases with common ion"]),
+            (
+                "Ksp is the equilibrium product of dissolved ion concentrations for the saturated solution.",
+                2,
+                [
+                    "Ksp = product of dissolved ion concentrations at saturation",
+                    "solubility-product equilibrium constant",
+                ],
+                [
+                    "says Ksp changes when you add common ion",
+                    "says Ksp is the amount of solid",
+                ],
+            ),
+            (
+                "Common-ion effect shifts equilibrium toward solid, lowering solubility.",
+                2,
+                [
+                    "common ion shifts equilibrium toward the solid (Le Chatelier)",
+                    "solubility decreases",
+                ],
+                [
+                    "says added common ion increases solubility",
+                    "says Ksp increases with common ion",
+                ],
+            ),
         ],
         "Ksp is the product of the dissolved ion concentrations for a saturated solution "
         "(a constant at a given temperature). Adding a common ion raises one ion's "
@@ -1024,12 +1460,21 @@ CHEM_PHYS_2 = [
         "cell.",
         "aamc::chem-phys::electrochemistry",
         [
-            ("Oxidation at the anode, reduction at the cathode.", 2,
-             ["oxidation at the anode", "reduction at the cathode"],
-             ["swaps anode and cathode", "says both occur at one electrode"]),
-            ("Spontaneous galvanic cell has positive cell potential (Ecell > 0, ΔG < 0).", 2,
-             ["Ecell positive for a spontaneous cell", "corresponds to negative ΔG"],
-             ["says a spontaneous cell has negative Ecell", "says Ecell = 0 at spontaneity"]),
+            (
+                "Oxidation at the anode, reduction at the cathode.",
+                2,
+                ["oxidation at the anode", "reduction at the cathode"],
+                ["swaps anode and cathode", "says both occur at one electrode"],
+            ),
+            (
+                "Spontaneous galvanic cell has positive cell potential (Ecell > 0, ΔG < 0).",
+                2,
+                ["Ecell positive for a spontaneous cell", "corresponds to negative ΔG"],
+                [
+                    "says a spontaneous cell has negative Ecell",
+                    "says Ecell = 0 at spontaneity",
+                ],
+            ),
         ],
         "In a galvanic cell, oxidation occurs at the anode and reduction at the cathode "
         "(mnemonic: 'an ox, red cat'). A spontaneous cell has a positive cell potential "
@@ -1041,12 +1486,28 @@ CHEM_PHYS_2 = [
         "right) and give the underlying reason.",
         "aamc::chem-phys::periodic-trends",
         [
-            ("Atomic radius decreases left to right across a period.", 2,
-             ["atomic radius decreases across a period", "smaller toward the right"],
-             ["says radius increases across a period", "says radius is constant across a period"]),
-            ("Attributes it to increasing effective nuclear charge pulling electrons in.", 2,
-             ["increasing nuclear charge / effective nuclear charge", "same shell / no new energy level", "stronger pull on electrons"],
-             ["attributes the decrease to adding new shells", "says shielding increases across a period"]),
+            (
+                "Atomic radius decreases left to right across a period.",
+                2,
+                ["atomic radius decreases across a period", "smaller toward the right"],
+                [
+                    "says radius increases across a period",
+                    "says radius is constant across a period",
+                ],
+            ),
+            (
+                "Attributes it to increasing effective nuclear charge pulling electrons in.",
+                2,
+                [
+                    "increasing nuclear charge / effective nuclear charge",
+                    "same shell / no new energy level",
+                    "stronger pull on electrons",
+                ],
+                [
+                    "attributes the decrease to adding new shells",
+                    "says shielding increases across a period",
+                ],
+            ),
         ],
         "Atomic radius decreases across a period because protons are added to the nucleus "
         "while electrons fill the same shell; the rising effective nuclear charge pulls "
@@ -1058,12 +1519,27 @@ CHEM_PHYS_2 = [
         "type of property and explain what it depends on (and does not depend on).",
         "aamc::chem-phys::solutions",
         [
-            ("Identifies it as a colligative property.", 2,
-             ["colligative property", "freezing-point depression"],
-             ["calls it a chemical/reactive property", "says it depends on the reaction"]),
-            ("Depends on the number/concentration of dissolved particles, not their identity.", 2,
-             ["depends on the number/concentration of particles", "not on the identity of the solute"],
-             ["says it depends on the chemical identity of the solute", "says one mole of any solute gives different depression regardless of dissociation"]),
+            (
+                "Identifies it as a colligative property.",
+                2,
+                ["colligative property", "freezing-point depression"],
+                [
+                    "calls it a chemical/reactive property",
+                    "says it depends on the reaction",
+                ],
+            ),
+            (
+                "Depends on the number/concentration of dissolved particles, not their identity.",
+                2,
+                [
+                    "depends on the number/concentration of particles",
+                    "not on the identity of the solute",
+                ],
+                [
+                    "says it depends on the chemical identity of the solute",
+                    "says one mole of any solute gives different depression regardless of dissociation",
+                ],
+            ),
         ],
         "Freezing-point depression is a colligative property: it depends only on the "
         "number (concentration) of dissolved solute particles, not on their chemical "
@@ -1076,12 +1552,24 @@ CHEM_PHYS_2 = [
         "resistances, with justification.",
         "aamc::chem-phys::circuits",
         [
-            ("Same current flows through both (single path).", 2,
-             ["same current through each resistor in series", "single path / current is conserved"],
-             ["says current divides between them", "treats them as parallel"]),
-            ("Total resistance is the sum (R_total = R1 + R2).", 2,
-             ["resistances add in series", "R_total = R1 + R2"],
-             ["says resistances add reciprocally in series", "says total resistance is less than either"]),
+            (
+                "Same current flows through both (single path).",
+                2,
+                [
+                    "same current through each resistor in series",
+                    "single path / current is conserved",
+                ],
+                ["says current divides between them", "treats them as parallel"],
+            ),
+            (
+                "Total resistance is the sum (R_total = R1 + R2).",
+                2,
+                ["resistances add in series", "R_total = R1 + R2"],
+                [
+                    "says resistances add reciprocally in series",
+                    "says total resistance is less than either",
+                ],
+            ),
         ],
         "In series there is a single current path, so the same current flows through "
         "both resistors. The resistances add: R_total = R1 + R2 (greater than either "
@@ -1093,12 +1581,24 @@ CHEM_PHYS_2 = [
         "Describe the image formed (real/virtual, orientation) and justify briefly.",
         "aamc::chem-phys::optics",
         [
-            ("Image is real and inverted.", 2,
-             ["real image", "inverted"],
-             ["says virtual image", "says upright/erect image"]),
-            ("Justifies via converging rays / positive image distance for object beyond f.", 2,
-             ["rays converge to form the image on the far side", "object beyond focal length gives a real image (positive image distance)"],
-             ["says the rays diverge", "says a converging lens can only form virtual images"]),
+            (
+                "Image is real and inverted.",
+                2,
+                ["real image", "inverted"],
+                ["says virtual image", "says upright/erect image"],
+            ),
+            (
+                "Justifies via converging rays / positive image distance for object beyond f.",
+                2,
+                [
+                    "rays converge to form the image on the far side",
+                    "object beyond focal length gives a real image (positive image distance)",
+                ],
+                [
+                    "says the rays diverge",
+                    "says a converging lens can only form virtual images",
+                ],
+            ),
         ],
         "For an object beyond the focal length, a converging lens forms a real, inverted "
         "image: the refracted rays actually converge on the opposite side of the lens "
@@ -1111,12 +1611,27 @@ CHEM_PHYS_2 = [
         "one-sentence reason.",
         "aamc::chem-phys::waves-sound",
         [
-            ("Observed frequency is higher than emitted (Doppler effect).", 2,
-             ["observed frequency higher / pitch rises", "Doppler effect"],
-             ["says observed frequency is lower for an approaching source", "says frequency is unchanged"]),
-            ("Reasons that approaching source compresses wavefronts (shorter wavelength).", 2,
-             ["wavefronts compressed / bunched", "shorter wavelength as source approaches"],
-             ["says the wavefronts spread out as it approaches", "attributes it to louder volume"]),
+            (
+                "Observed frequency is higher than emitted (Doppler effect).",
+                2,
+                ["observed frequency higher / pitch rises", "Doppler effect"],
+                [
+                    "says observed frequency is lower for an approaching source",
+                    "says frequency is unchanged",
+                ],
+            ),
+            (
+                "Reasons that approaching source compresses wavefronts (shorter wavelength).",
+                2,
+                [
+                    "wavefronts compressed / bunched",
+                    "shorter wavelength as source approaches",
+                ],
+                [
+                    "says the wavefronts spread out as it approaches",
+                    "attributes it to louder volume",
+                ],
+            ),
         ],
         "An approaching source raises the observed frequency (Doppler effect): the "
         "source's motion compresses the wavefronts ahead of it, shortening the "
@@ -1128,12 +1643,30 @@ CHEM_PHYS_2 = [
         "affect hemoglobin's affinity for O2, and why is this useful?",
         "aamc::chem-phys::hemoglobin",
         [
-            ("Lower pH decreases hemoglobin's O2 affinity (right shift of the curve).", 2,
-             ["lower pH decreases O2 affinity", "rightward shift of the O2 dissociation curve"],
-             ["says low pH increases O2 affinity", "says pH has no effect on hemoglobin"]),
-            ("Explains it promotes O2 unloading where metabolically active tissue needs it.", 2,
-             ["releases/unloads more O2 to active tissue", "matches O2 delivery to demand"],
-             ["says it makes hemoglobin hold O2 more tightly in tissue", "says it impairs O2 delivery"]),
+            (
+                "Lower pH decreases hemoglobin's O2 affinity (right shift of the curve).",
+                2,
+                [
+                    "lower pH decreases O2 affinity",
+                    "rightward shift of the O2 dissociation curve",
+                ],
+                [
+                    "says low pH increases O2 affinity",
+                    "says pH has no effect on hemoglobin",
+                ],
+            ),
+            (
+                "Explains it promotes O2 unloading where metabolically active tissue needs it.",
+                2,
+                [
+                    "releases/unloads more O2 to active tissue",
+                    "matches O2 delivery to demand",
+                ],
+                [
+                    "says it makes hemoglobin hold O2 more tightly in tissue",
+                    "says it impairs O2 delivery",
+                ],
+            ),
         ],
         "The Bohr effect: lower pH (more CO2/acid in active tissue) lowers hemoglobin's O2 "
         "affinity, shifting the dissociation curve right. This promotes O2 unloading "
@@ -1145,12 +1678,30 @@ CHEM_PHYS_2 = [
         "the resulting melting point, and explain the connection.",
         "aamc::chem-phys::lipids",
         [
-            ("Saturated = straight chains that pack tightly; unsaturated = kinked (cis double bonds).", 2,
-             ["saturated chains are straight and pack tightly", "unsaturated have kinks from cis double bonds"],
-             ["says saturated fatty acids have kinks", "says unsaturated chains pack more tightly"]),
-            ("Tighter packing (saturated) → higher melting point; kinks (unsaturated) → lower.", 2,
-             ["saturated have higher melting points", "unsaturated have lower melting points"],
-             ["says unsaturated fats have higher melting points", "says packing does not affect melting point"]),
+            (
+                "Saturated = straight chains that pack tightly; unsaturated = kinked (cis double bonds).",
+                2,
+                [
+                    "saturated chains are straight and pack tightly",
+                    "unsaturated have kinks from cis double bonds",
+                ],
+                [
+                    "says saturated fatty acids have kinks",
+                    "says unsaturated chains pack more tightly",
+                ],
+            ),
+            (
+                "Tighter packing (saturated) → higher melting point; kinks (unsaturated) → lower.",
+                2,
+                [
+                    "saturated have higher melting points",
+                    "unsaturated have lower melting points",
+                ],
+                [
+                    "says unsaturated fats have higher melting points",
+                    "says packing does not affect melting point",
+                ],
+            ),
         ],
         "Saturated fatty acids are straight and pack tightly, giving strong intermolecular "
         "contact and higher melting points (solids at room temp). Cis double bonds kink "
@@ -1163,12 +1714,32 @@ CHEM_PHYS_2 = [
         "the final electron acceptor and what happens to the chain if oxygen is absent.",
         "aamc::chem-phys::redox-metabolism",
         [
-            ("O2 is the terminal electron acceptor, forming water.", 2,
-             ["oxygen is the final/terminal electron acceptor", "forms water", "accepts electrons at complex IV"],
-             ["says CO2 is the final electron acceptor", "says O2 donates electrons to the chain"]),
-            ("Without O2 the chain backs up (carriers stay reduced), halting ETC and its ATP.", 2,
-             ["without O2 electrons cannot be passed on", "carriers become fully reduced / chain backs up", "oxidative phosphorylation stops"],
-             ["says the chain runs normally without O2", "says glycolysis stops immediately without O2"]),
+            (
+                "O2 is the terminal electron acceptor, forming water.",
+                2,
+                [
+                    "oxygen is the final/terminal electron acceptor",
+                    "forms water",
+                    "accepts electrons at complex IV",
+                ],
+                [
+                    "says CO2 is the final electron acceptor",
+                    "says O2 donates electrons to the chain",
+                ],
+            ),
+            (
+                "Without O2 the chain backs up (carriers stay reduced), halting ETC and its ATP.",
+                2,
+                [
+                    "without O2 electrons cannot be passed on",
+                    "carriers become fully reduced / chain backs up",
+                    "oxidative phosphorylation stops",
+                ],
+                [
+                    "says the chain runs normally without O2",
+                    "says glycolysis stops immediately without O2",
+                ],
+            ),
         ],
         "Oxygen is the terminal electron acceptor at complex IV, combining with electrons "
         "and protons to form water and keeping electrons flowing. Without O2, the "
@@ -1181,12 +1752,27 @@ CHEM_PHYS_2 = [
         "solvent. Predict whether SN1 or SN2 dominates and justify with two reasons.",
         "aamc::chem-phys::orgo-reactions",
         [
-            ("Predicts SN1.", 2,
-             ["SN1 dominates"],
-             ["says SN2 dominates for a tertiary substrate", "predicts elimination only"]),
-            ("Justifies: tertiary carbocation is stabilized AND polar protic solvent / weak nucleophile favor SN1.", 2,
-             ["tertiary substrate gives a stable carbocation", "polar protic solvent and weak nucleophile favor SN1"],
-             ["says a weak nucleophile favors SN2", "says tertiary substrates favor SN2 due to sterics"]),
+            (
+                "Predicts SN1.",
+                2,
+                ["SN1 dominates"],
+                [
+                    "says SN2 dominates for a tertiary substrate",
+                    "predicts elimination only",
+                ],
+            ),
+            (
+                "Justifies: tertiary carbocation is stabilized AND polar protic solvent / weak nucleophile favor SN1.",
+                2,
+                [
+                    "tertiary substrate gives a stable carbocation",
+                    "polar protic solvent and weak nucleophile favor SN1",
+                ],
+                [
+                    "says a weak nucleophile favors SN2",
+                    "says tertiary substrates favor SN2 due to sterics",
+                ],
+            ),
         ],
         "SN1 dominates: a tertiary substrate forms a stabilized 3° carbocation, and a weak "
         "nucleophile in a polar protic solvent (which stabilizes the ions) both favor the "
@@ -1198,12 +1784,30 @@ CHEM_PHYS_2 = [
         "tell you about a molecule.",
         "aamc::chem-phys::nmr",
         [
-            ("Number of signals = number of chemically distinct (nonequivalent) hydrogen environments.", 2,
-             ["number of signals = distinct/nonequivalent H environments", "chemically inequivalent protons"],
-             ["says number of signals = total number of hydrogens", "says it gives the number of carbons"]),
-            ("Integration (peak area) is proportional to the number of H in that environment.", 2,
-             ["integration/area proportional to number of protons in that environment", "gives relative H counts"],
-             ["says integration gives the chemical shift", "says integration gives coupling/splitting"]),
+            (
+                "Number of signals = number of chemically distinct (nonequivalent) hydrogen environments.",
+                2,
+                [
+                    "number of signals = distinct/nonequivalent H environments",
+                    "chemically inequivalent protons",
+                ],
+                [
+                    "says number of signals = total number of hydrogens",
+                    "says it gives the number of carbons",
+                ],
+            ),
+            (
+                "Integration (peak area) is proportional to the number of H in that environment.",
+                2,
+                [
+                    "integration/area proportional to number of protons in that environment",
+                    "gives relative H counts",
+                ],
+                [
+                    "says integration gives the chemical shift",
+                    "says integration gives coupling/splitting",
+                ],
+            ),
         ],
         "The number of ¹H NMR signals equals the number of chemically distinct hydrogen "
         "environments. The integration (area under a peak) is proportional to the number "
@@ -1215,12 +1819,30 @@ CHEM_PHYS_2 = [
         "sized ion. Explain why, referring to the properties of the membrane interior.",
         "aamc::chem-phys::membrane-transport",
         [
-            ("The bilayer interior is hydrophobic/nonpolar.", 2,
-             ["membrane interior is hydrophobic/nonpolar", "made of fatty acid tails"],
-             ["says the interior is hydrophilic/polar", "says the interior is charged"]),
-            ("Nonpolar molecules dissolve through it; ions are repelled/require a huge energy cost (need channels).", 2,
-             ["nonpolar molecules dissolve in and pass freely", "ions face a large energy barrier / need channels or transporters"],
-             ["says ions cross the bilayer freely by simple diffusion", "says nonpolar molecules need protein channels"]),
+            (
+                "The bilayer interior is hydrophobic/nonpolar.",
+                2,
+                [
+                    "membrane interior is hydrophobic/nonpolar",
+                    "made of fatty acid tails",
+                ],
+                [
+                    "says the interior is hydrophilic/polar",
+                    "says the interior is charged",
+                ],
+            ),
+            (
+                "Nonpolar molecules dissolve through it; ions are repelled/require a huge energy cost (need channels).",
+                2,
+                [
+                    "nonpolar molecules dissolve in and pass freely",
+                    "ions face a large energy barrier / need channels or transporters",
+                ],
+                [
+                    "says ions cross the bilayer freely by simple diffusion",
+                    "says nonpolar molecules need protein channels",
+                ],
+            ),
         ],
         "The bilayer's interior is a hydrophobic, nonpolar region of fatty-acid tails. "
         "Small nonpolar molecules dissolve in and pass through freely, whereas a charged "
@@ -1239,12 +1861,30 @@ PSYCH_SOC_1 = [
         "of behavior each governs and the key relationship the learner acquires.",
         "aamc::psych-soc::learning",
         [
-            ("Classical: involuntary/reflexive response; associating two stimuli (CS with US).", 2,
-             ["classical conditioning involves involuntary/reflexive responses", "associates a neutral stimulus with an unconditioned stimulus"],
-             ["says classical conditioning shapes voluntary behavior via consequences", "conflates it with operant conditioning"]),
-            ("Operant: voluntary behavior changed by its consequences (reinforcement/punishment).", 2,
-             ["operant conditioning involves voluntary behavior", "behavior changed by consequences (reinforcement/punishment)"],
-             ["says operant conditioning pairs two stimuli", "says operant conditioning acts on reflexes"]),
+            (
+                "Classical: involuntary/reflexive response; associating two stimuli (CS with US).",
+                2,
+                [
+                    "classical conditioning involves involuntary/reflexive responses",
+                    "associates a neutral stimulus with an unconditioned stimulus",
+                ],
+                [
+                    "says classical conditioning shapes voluntary behavior via consequences",
+                    "conflates it with operant conditioning",
+                ],
+            ),
+            (
+                "Operant: voluntary behavior changed by its consequences (reinforcement/punishment).",
+                2,
+                [
+                    "operant conditioning involves voluntary behavior",
+                    "behavior changed by consequences (reinforcement/punishment)",
+                ],
+                [
+                    "says operant conditioning pairs two stimuli",
+                    "says operant conditioning acts on reflexes",
+                ],
+            ),
         ],
         "Classical conditioning shapes involuntary, reflexive responses by associating a "
         "neutral stimulus with an unconditioned stimulus. Operant conditioning changes "
@@ -1256,12 +1896,27 @@ PSYCH_SOC_1 = [
         "has on the frequency of the target behavior.",
         "aamc::psych-soc::learning",
         [
-            ("Negative reinforcement removes an aversive stimulus and increases the behavior.", 2,
-             ["negative reinforcement removes/avoids an aversive stimulus", "increases the behavior"],
-             ["says negative reinforcement decreases behavior", "equates negative reinforcement with punishment"]),
-            ("Punishment decreases the behavior.", 2,
-             ["punishment decreases/suppresses the behavior"],
-             ["says punishment increases behavior", "says punishment and reinforcement have the same effect"]),
+            (
+                "Negative reinforcement removes an aversive stimulus and increases the behavior.",
+                2,
+                [
+                    "negative reinforcement removes/avoids an aversive stimulus",
+                    "increases the behavior",
+                ],
+                [
+                    "says negative reinforcement decreases behavior",
+                    "equates negative reinforcement with punishment",
+                ],
+            ),
+            (
+                "Punishment decreases the behavior.",
+                2,
+                ["punishment decreases/suppresses the behavior"],
+                [
+                    "says punishment increases behavior",
+                    "says punishment and reinforcement have the same effect",
+                ],
+            ),
         ],
         "Negative reinforcement removes an aversive stimulus, which increases the target "
         "behavior; it is not punishment. Punishment (positive or negative) decreases the "
@@ -1273,12 +1928,29 @@ PSYCH_SOC_1 = [
         "in order and one feature that distinguishes short-term from long-term memory.",
         "aamc::psych-soc::memory",
         [
-            ("Names sensory memory → short-term (working) memory → long-term memory, in order.", 2,
-             ["sensory memory", "short-term/working memory", "long-term memory", "in that order"],
-             ["puts the stages out of order", "omits sensory memory entirely"]),
-            ("Contrasts limited/brief short-term with large/durable long-term (capacity or duration).", 2,
-             ["short-term is limited capacity / brief duration", "long-term is large capacity / durable"],
-             ["says short-term memory is unlimited and permanent", "says long-term memory holds only a few items for seconds"]),
+            (
+                "Names sensory memory → short-term (working) memory → long-term memory, in order.",
+                2,
+                [
+                    "sensory memory",
+                    "short-term/working memory",
+                    "long-term memory",
+                    "in that order",
+                ],
+                ["puts the stages out of order", "omits sensory memory entirely"],
+            ),
+            (
+                "Contrasts limited/brief short-term with large/durable long-term (capacity or duration).",
+                2,
+                [
+                    "short-term is limited capacity / brief duration",
+                    "long-term is large capacity / durable",
+                ],
+                [
+                    "says short-term memory is unlimited and permanent",
+                    "says long-term memory holds only a few items for seconds",
+                ],
+            ),
         ],
         "Information flows sensory memory → short-term (working) memory → long-term memory. "
         "Short-term memory holds a limited amount (~7 items) briefly, whereas long-term "
@@ -1290,12 +1962,26 @@ PSYCH_SOC_1 = [
         "forgetting, giving the direction of interference in each.",
         "aamc::psych-soc::memory",
         [
-            ("Proactive: old learning interferes with new memories.", 2,
-             ["proactive interference: old/prior learning disrupts new learning"],
-             ["says proactive interference is new disrupting old", "reverses the direction"]),
-            ("Retroactive: new learning interferes with old memories.", 2,
-             ["retroactive interference: new learning disrupts old/previous memories"],
-             ["says retroactive interference is old disrupting new", "conflates the two"]),
+            (
+                "Proactive: old learning interferes with new memories.",
+                2,
+                ["proactive interference: old/prior learning disrupts new learning"],
+                [
+                    "says proactive interference is new disrupting old",
+                    "reverses the direction",
+                ],
+            ),
+            (
+                "Retroactive: new learning interferes with old memories.",
+                2,
+                [
+                    "retroactive interference: new learning disrupts old/previous memories"
+                ],
+                [
+                    "says retroactive interference is old disrupting new",
+                    "conflates the two",
+                ],
+            ),
         ],
         "Proactive interference is when previously learned information disrupts recall of "
         "newly learned material; retroactive interference is when new learning disrupts "
@@ -1307,12 +1993,29 @@ PSYCH_SOC_1 = [
         "theory adds to this idea by accounting for factors beyond stimulus intensity.",
         "aamc::psych-soc::sensation-perception",
         [
-            ("Absolute threshold = minimum stimulus intensity detectable a set fraction (≈50%) of the time.", 2,
-             ["minimum intensity detectable ~50% of the time", "smallest detectable stimulus"],
-             ["says absolute threshold is the smallest detectable difference between stimuli (that is difference threshold)"]),
-            ("Signal detection theory adds non-sensory factors (expectation/motivation, response bias, noise).", 2,
-             ["signal detection accounts for decision/response bias, expectations, or noise", "detection is not purely about intensity"],
-             ["says detection depends only on stimulus intensity", "ignores observer/decision factors"]),
+            (
+                "Absolute threshold = minimum stimulus intensity detectable a set fraction (≈50%) of the time.",
+                2,
+                [
+                    "minimum intensity detectable ~50% of the time",
+                    "smallest detectable stimulus",
+                ],
+                [
+                    "says absolute threshold is the smallest detectable difference between stimuli (that is difference threshold)"
+                ],
+            ),
+            (
+                "Signal detection theory adds non-sensory factors (expectation/motivation, response bias, noise).",
+                2,
+                [
+                    "signal detection accounts for decision/response bias, expectations, or noise",
+                    "detection is not purely about intensity",
+                ],
+                [
+                    "says detection depends only on stimulus intensity",
+                    "ignores observer/decision factors",
+                ],
+            ),
         ],
         "The absolute threshold is the minimum stimulus intensity a person can detect "
         "about 50% of the time. Signal detection theory adds that detection also depends "
@@ -1325,12 +2028,29 @@ PSYCH_SOC_1 = [
         "giving what each judgment is based on.",
         "aamc::psych-soc::cognition",
         [
-            ("Availability: judging likelihood by how easily examples come to mind.", 2,
-             ["availability heuristic: ease of recalling examples", "how readily instances come to mind"],
-             ["defines availability as matching a prototype", "swaps the two heuristics"]),
-            ("Representativeness: judging by similarity to a prototype/stereotype.", 2,
-             ["representativeness heuristic: similarity to a prototype/stereotype/category"],
-             ["defines representativeness as ease of recall", "ignores prototype matching"]),
+            (
+                "Availability: judging likelihood by how easily examples come to mind.",
+                2,
+                [
+                    "availability heuristic: ease of recalling examples",
+                    "how readily instances come to mind",
+                ],
+                [
+                    "defines availability as matching a prototype",
+                    "swaps the two heuristics",
+                ],
+            ),
+            (
+                "Representativeness: judging by similarity to a prototype/stereotype.",
+                2,
+                [
+                    "representativeness heuristic: similarity to a prototype/stereotype/category"
+                ],
+                [
+                    "defines representativeness as ease of recall",
+                    "ignores prototype matching",
+                ],
+            ),
         ],
         "The availability heuristic judges probability by how easily instances come to "
         "mind, while the representativeness heuristic judges by how closely something "
@@ -1342,12 +2062,27 @@ PSYCH_SOC_1 = [
         "direction of change to the child's schema in each.",
         "aamc::psych-soc::cognition",
         [
-            ("Assimilation: fitting new information into an existing schema (schema unchanged).", 2,
-             ["assimilation fits new info into an existing schema", "schema is not changed"],
-             ["says assimilation changes the schema", "swaps the two terms"]),
-            ("Accommodation: changing/creating a schema to fit new information.", 2,
-             ["accommodation modifies or creates a schema", "schema changes to fit new information"],
-             ["says accommodation leaves the schema unchanged", "conflates it with assimilation"]),
+            (
+                "Assimilation: fitting new information into an existing schema (schema unchanged).",
+                2,
+                [
+                    "assimilation fits new info into an existing schema",
+                    "schema is not changed",
+                ],
+                ["says assimilation changes the schema", "swaps the two terms"],
+            ),
+            (
+                "Accommodation: changing/creating a schema to fit new information.",
+                2,
+                [
+                    "accommodation modifies or creates a schema",
+                    "schema changes to fit new information",
+                ],
+                [
+                    "says accommodation leaves the schema unchanged",
+                    "conflates it with assimilation",
+                ],
+            ),
         ],
         "Assimilation incorporates new information into an existing schema without "
         "changing it; accommodation modifies or creates a schema to fit information that "
@@ -1359,12 +2094,27 @@ PSYCH_SOC_1 = [
         "the order/timing of physiological arousal and the conscious feeling of emotion.",
         "aamc::psych-soc::motivation-emotion",
         [
-            ("James-Lange: physiological arousal comes first and the emotion is the interpretation of it.", 2,
-             ["James-Lange: bodily arousal precedes/causes the emotion", "emotion is the perception of the physiological response"],
-             ["says James-Lange has emotion causing arousal", "swaps the theories"]),
-            ("Cannon-Bard: arousal and the emotional experience occur simultaneously/independently.", 2,
-             ["Cannon-Bard: arousal and emotion occur at the same time", "simultaneous and independent"],
-             ["says Cannon-Bard has arousal strictly before emotion", "says Cannon-Bard requires cognitive labeling first"]),
+            (
+                "James-Lange: physiological arousal comes first and the emotion is the interpretation of it.",
+                2,
+                [
+                    "James-Lange: bodily arousal precedes/causes the emotion",
+                    "emotion is the perception of the physiological response",
+                ],
+                ["says James-Lange has emotion causing arousal", "swaps the theories"],
+            ),
+            (
+                "Cannon-Bard: arousal and the emotional experience occur simultaneously/independently.",
+                2,
+                [
+                    "Cannon-Bard: arousal and emotion occur at the same time",
+                    "simultaneous and independent",
+                ],
+                [
+                    "says Cannon-Bard has arousal strictly before emotion",
+                    "says Cannon-Bard requires cognitive labeling first",
+                ],
+            ),
         ],
         "James-Lange says physiological arousal occurs first and the felt emotion is our "
         "interpretation of that bodily state. Cannon-Bard says the arousal and the "
@@ -1376,12 +2126,30 @@ PSYCH_SOC_1 = [
         "example of each.",
         "aamc::psych-soc::culture",
         [
-            ("Material culture = physical objects/artifacts of a group (with an example).", 2,
-             ["material culture is physical objects/artifacts", "example such as tools, buildings, clothing"],
-             ["says material culture is beliefs/values", "gives a nonmaterial example for material culture"]),
-            ("Nonmaterial culture = ideas/beliefs/values/norms (with an example).", 2,
-             ["nonmaterial culture is ideas, beliefs, values, or norms", "example such as language, customs, laws"],
-             ["says nonmaterial culture is physical objects", "gives a physical example for nonmaterial culture"]),
+            (
+                "Material culture = physical objects/artifacts of a group (with an example).",
+                2,
+                [
+                    "material culture is physical objects/artifacts",
+                    "example such as tools, buildings, clothing",
+                ],
+                [
+                    "says material culture is beliefs/values",
+                    "gives a nonmaterial example for material culture",
+                ],
+            ),
+            (
+                "Nonmaterial culture = ideas/beliefs/values/norms (with an example).",
+                2,
+                [
+                    "nonmaterial culture is ideas, beliefs, values, or norms",
+                    "example such as language, customs, laws",
+                ],
+                [
+                    "says nonmaterial culture is physical objects",
+                    "gives a physical example for nonmaterial culture",
+                ],
+            ),
         ],
         "Material culture is the physical objects a group creates and uses (tools, "
         "buildings, clothing). Nonmaterial culture is its intangible ideas—beliefs, "
@@ -1393,12 +2161,30 @@ PSYCH_SOC_1 = [
         "nature of the relationships in each.",
         "aamc::psych-soc::social-groups",
         [
-            ("Primary group: small, close, enduring, personal relationships (e.g. family).", 2,
-             ["primary group has close/intimate, enduring, personal ties", "example such as family or close friends"],
-             ["says primary groups are large and impersonal", "swaps the definitions"]),
-            ("Secondary group: larger, impersonal, goal-/task-oriented relationships.", 2,
-             ["secondary group is impersonal / task- or goal-oriented", "example such as coworkers or a class"],
-             ["says secondary groups are intimate and lifelong", "conflates it with a primary group"]),
+            (
+                "Primary group: small, close, enduring, personal relationships (e.g. family).",
+                2,
+                [
+                    "primary group has close/intimate, enduring, personal ties",
+                    "example such as family or close friends",
+                ],
+                [
+                    "says primary groups are large and impersonal",
+                    "swaps the definitions",
+                ],
+            ),
+            (
+                "Secondary group: larger, impersonal, goal-/task-oriented relationships.",
+                2,
+                [
+                    "secondary group is impersonal / task- or goal-oriented",
+                    "example such as coworkers or a class",
+                ],
+                [
+                    "says secondary groups are intimate and lifelong",
+                    "conflates it with a primary group",
+                ],
+            ),
         ],
         "Primary groups are small and marked by close, enduring, personal relationships "
         "(e.g. family). Secondary groups are larger and impersonal, organized around a "
@@ -1410,12 +2196,30 @@ PSYCH_SOC_1 = [
         "contributes.",
         "aamc::psych-soc::socialization",
         [
-            ("Defines socialization as learning a society's norms, values, and behaviors.", 2,
-             ["socialization = learning the norms/values/roles of society", "process of internalizing culture"],
-             ["defines socialization as being social/extroverted", "says it is genetic transmission of behavior"]),
-            ("Names two valid agents (e.g. family, school, peers, media) with a role for each.", 2,
-             ["names two agents such as family, school, peers, or media", "gives what each contributes"],
-             ["names only one agent", "names non-agents (e.g. weather) as agents of socialization"]),
+            (
+                "Defines socialization as learning a society's norms, values, and behaviors.",
+                2,
+                [
+                    "socialization = learning the norms/values/roles of society",
+                    "process of internalizing culture",
+                ],
+                [
+                    "defines socialization as being social/extroverted",
+                    "says it is genetic transmission of behavior",
+                ],
+            ),
+            (
+                "Names two valid agents (e.g. family, school, peers, media) with a role for each.",
+                2,
+                [
+                    "names two agents such as family, school, peers, or media",
+                    "gives what each contributes",
+                ],
+                [
+                    "names only one agent",
+                    "names non-agents (e.g. weather) as agents of socialization",
+                ],
+            ),
         ],
         "Socialization is the lifelong process of learning and internalizing a society's "
         "norms, values, and roles. Agents include the family (earliest values and "
@@ -1428,12 +2232,30 @@ PSYCH_SOC_1 = [
         "function of a social institution such as schooling, and explain the difference.",
         "aamc::psych-soc::social-institutions",
         [
-            ("Manifest function = intended, recognized consequence (e.g. schooling teaches skills).", 2,
-             ["manifest function is intended/recognized", "example such as education transmitting knowledge/skills"],
-             ["defines manifest function as unintended", "swaps manifest and latent"]),
-            ("Latent function = unintended/hidden consequence (e.g. schooling as childcare or social networking).", 2,
-             ["latent function is unintended/unrecognized", "example such as childcare, friendship networks, dating"],
-             ["defines latent function as the intended goal", "conflates it with a dysfunction only"]),
+            (
+                "Manifest function = intended, recognized consequence (e.g. schooling teaches skills).",
+                2,
+                [
+                    "manifest function is intended/recognized",
+                    "example such as education transmitting knowledge/skills",
+                ],
+                [
+                    "defines manifest function as unintended",
+                    "swaps manifest and latent",
+                ],
+            ),
+            (
+                "Latent function = unintended/hidden consequence (e.g. schooling as childcare or social networking).",
+                2,
+                [
+                    "latent function is unintended/unrecognized",
+                    "example such as childcare, friendship networks, dating",
+                ],
+                [
+                    "defines latent function as the intended goal",
+                    "conflates it with a dysfunction only",
+                ],
+            ),
         ],
         "A manifest function is an institution's intended, recognized consequence—e.g. "
         "schools teach academic skills. A latent function is an unintended, hidden "
@@ -1446,12 +2268,29 @@ PSYCH_SOC_1 = [
         "physiological effects.",
         "aamc::psych-soc::biological-behavior",
         [
-            ("Identifies the sympathetic nervous system.", 2,
-             ["sympathetic nervous system", "sympathetic branch of the autonomic nervous system"],
-             ["says the parasympathetic system drives fight-or-flight", "names the somatic nervous system"]),
-            ("Gives two correct sympathetic effects (e.g. ↑ heart rate, pupil dilation, ↓ digestion).", 2,
-             ["two effects such as increased heart rate, pupil dilation, bronchodilation, decreased digestion"],
-             ["lists parasympathetic 'rest and digest' effects", "gives only one effect"]),
+            (
+                "Identifies the sympathetic nervous system.",
+                2,
+                [
+                    "sympathetic nervous system",
+                    "sympathetic branch of the autonomic nervous system",
+                ],
+                [
+                    "says the parasympathetic system drives fight-or-flight",
+                    "names the somatic nervous system",
+                ],
+            ),
+            (
+                "Gives two correct sympathetic effects (e.g. ↑ heart rate, pupil dilation, ↓ digestion).",
+                2,
+                [
+                    "two effects such as increased heart rate, pupil dilation, bronchodilation, decreased digestion"
+                ],
+                [
+                    "lists parasympathetic 'rest and digest' effects",
+                    "gives only one effect",
+                ],
+            ),
         ],
         "The sympathetic nervous system drives fight-or-flight. Its effects include "
         "increased heart rate and blood pressure, pupil dilation, bronchodilation, and "
@@ -1469,12 +2308,30 @@ PSYCH_SOC_2 = [
         "giving one example of each.",
         "aamc::psych-soc::psychological-disorders",
         [
-            ("Positive symptoms = added/excess experiences (e.g. hallucinations, delusions).", 2,
-             ["positive symptoms are added/abnormal experiences", "example such as hallucinations or delusions"],
-             ["says positive symptoms are 'good' symptoms", "defines positive symptoms as losses/deficits"]),
-            ("Negative symptoms = reductions/deficits in normal function (e.g. flat affect, avolition).", 2,
-             ["negative symptoms are deficits/reductions in normal functioning", "example such as flat affect, alogia, or avolition"],
-             ["says negative symptoms are 'bad' symptoms", "defines negative symptoms as added experiences"]),
+            (
+                "Positive symptoms = added/excess experiences (e.g. hallucinations, delusions).",
+                2,
+                [
+                    "positive symptoms are added/abnormal experiences",
+                    "example such as hallucinations or delusions",
+                ],
+                [
+                    "says positive symptoms are 'good' symptoms",
+                    "defines positive symptoms as losses/deficits",
+                ],
+            ),
+            (
+                "Negative symptoms = reductions/deficits in normal function (e.g. flat affect, avolition).",
+                2,
+                [
+                    "negative symptoms are deficits/reductions in normal functioning",
+                    "example such as flat affect, alogia, or avolition",
+                ],
+                [
+                    "says negative symptoms are 'bad' symptoms",
+                    "defines negative symptoms as added experiences",
+                ],
+            ),
         ],
         "Positive symptoms are additions to normal experience—hallucinations, delusions, "
         "disorganized speech. Negative symptoms are losses of normal function—flat "
@@ -1486,12 +2343,24 @@ PSYCH_SOC_2 = [
         "state what guides moral reasoning at the first and last levels.",
         "aamc::psych-soc::development",
         [
-            ("Names preconventional → conventional → postconventional, in order.", 2,
-             ["preconventional, conventional, postconventional", "in that order"],
-             ["puts the levels out of order", "omits a level"]),
-            ("Preconventional = consequences to self (reward/punishment); postconventional = abstract principles.", 2,
-             ["preconventional focuses on rewards/punishments/self-interest", "postconventional focuses on abstract ethical principles/justice"],
-             ["swaps preconventional and postconventional reasoning", "says preconventional is based on universal principles"]),
+            (
+                "Names preconventional → conventional → postconventional, in order.",
+                2,
+                ["preconventional, conventional, postconventional", "in that order"],
+                ["puts the levels out of order", "omits a level"],
+            ),
+            (
+                "Preconventional = consequences to self (reward/punishment); postconventional = abstract principles.",
+                2,
+                [
+                    "preconventional focuses on rewards/punishments/self-interest",
+                    "postconventional focuses on abstract ethical principles/justice",
+                ],
+                [
+                    "swaps preconventional and postconventional reasoning",
+                    "says preconventional is based on universal principles",
+                ],
+            ),
         ],
         "Kohlberg's levels are preconventional, conventional, then postconventional. "
         "Preconventional reasoning is driven by rewards and punishments to the self; "
@@ -1503,12 +2372,30 @@ PSYCH_SOC_2 = [
         "and superego and the principle each follows.",
         "aamc::psych-soc::personality",
         [
-            ("Id = instinctual drives, pleasure principle; superego = morals/ideals.", 2,
-             ["id is instinctual drives following the pleasure principle", "superego represents morality/conscience/ideals"],
-             ["says the id is the moral component", "says the superego seeks immediate gratification"]),
-            ("Ego = mediates id and superego via the reality principle.", 2,
-             ["ego mediates between id and superego", "ego follows the reality principle"],
-             ["says the ego is purely instinctual", "omits the ego's mediating/reality role"]),
+            (
+                "Id = instinctual drives, pleasure principle; superego = morals/ideals.",
+                2,
+                [
+                    "id is instinctual drives following the pleasure principle",
+                    "superego represents morality/conscience/ideals",
+                ],
+                [
+                    "says the id is the moral component",
+                    "says the superego seeks immediate gratification",
+                ],
+            ),
+            (
+                "Ego = mediates id and superego via the reality principle.",
+                2,
+                [
+                    "ego mediates between id and superego",
+                    "ego follows the reality principle",
+                ],
+                [
+                    "says the ego is purely instinctual",
+                    "omits the ego's mediating/reality role",
+                ],
+            ),
         ],
         "The id houses instinctual drives and follows the pleasure principle; the "
         "superego embodies morals and ideals; the ego mediates between them and reality, "
@@ -1520,12 +2407,26 @@ PSYCH_SOC_2 = [
         "one way people typically reduce it.",
         "aamc::psych-soc::attitudes",
         [
-            ("Dissonance arises from a conflict between attitudes/beliefs and behavior (or two cognitions).", 2,
-             ["dissonance is discomfort from conflicting cognitions", "mismatch between attitude/belief and behavior"],
-             ["says dissonance comes from agreement between beliefs and behavior"]),
-            ("People reduce it by changing an attitude, changing behavior, or adding justifying cognitions.", 2,
-             ["reduce dissonance by changing the attitude, the behavior, or rationalizing/adding a cognition"],
-             ["says people increase the conflict to feel better", "gives no valid reduction strategy"]),
+            (
+                "Dissonance arises from a conflict between attitudes/beliefs and behavior (or two cognitions).",
+                2,
+                [
+                    "dissonance is discomfort from conflicting cognitions",
+                    "mismatch between attitude/belief and behavior",
+                ],
+                ["says dissonance comes from agreement between beliefs and behavior"],
+            ),
+            (
+                "People reduce it by changing an attitude, changing behavior, or adding justifying cognitions.",
+                2,
+                [
+                    "reduce dissonance by changing the attitude, the behavior, or rationalizing/adding a cognition"
+                ],
+                [
+                    "says people increase the conflict to feel better",
+                    "gives no valid reduction strategy",
+                ],
+            ),
         ],
         "Cognitive dissonance is the discomfort felt when attitudes and behavior (or two "
         "beliefs) conflict. People relieve it by changing their attitude, changing their "
@@ -1537,12 +2438,24 @@ PSYCH_SOC_2 = [
         "experiential feature that distinguishes them.",
         "aamc::psych-soc::consciousness",
         [
-            ("REM: rapid eye movement, vivid dreaming, high/awake-like brain activity, muscle atonia.", 2,
-             ["REM has rapid eye movements and vivid dreaming", "brain activity resembles wakefulness / paralysis of skeletal muscle"],
-             ["says REM is dreamless deep sleep", "swaps REM and NREM features"]),
-            ("NREM (esp. slow-wave): slow delta waves, deep restorative sleep, little/no vivid dreaming.", 2,
-             ["NREM/slow-wave sleep has slow delta waves and is deep/restorative", "little or no vivid dreaming"],
-             ["says NREM shows fast awake-like waves and vivid dreams"]),
+            (
+                "REM: rapid eye movement, vivid dreaming, high/awake-like brain activity, muscle atonia.",
+                2,
+                [
+                    "REM has rapid eye movements and vivid dreaming",
+                    "brain activity resembles wakefulness / paralysis of skeletal muscle",
+                ],
+                ["says REM is dreamless deep sleep", "swaps REM and NREM features"],
+            ),
+            (
+                "NREM (esp. slow-wave): slow delta waves, deep restorative sleep, little/no vivid dreaming.",
+                2,
+                [
+                    "NREM/slow-wave sleep has slow delta waves and is deep/restorative",
+                    "little or no vivid dreaming",
+                ],
+                ["says NREM shows fast awake-like waves and vivid dreams"],
+            ),
         ],
         "REM sleep features rapid eye movements, vivid dreams, wake-like EEG activity, and "
         "skeletal-muscle paralysis. Non-REM (slow-wave) sleep shows slow delta waves and "
@@ -1554,12 +2467,24 @@ PSYCH_SOC_2 = [
         "and what happens to the body's resources by the final stage.",
         "aamc::psych-soc::stress",
         [
-            ("Names alarm → resistance → exhaustion, in order.", 2,
-             ["alarm, resistance, exhaustion", "in that order"],
-             ["puts the stages out of order", "omits a stage"]),
-            ("By exhaustion, the body's resources are depleted, raising vulnerability to illness.", 2,
-             ["in exhaustion the body's resources/reserves are depleted", "increased susceptibility to illness or damage"],
-             ["says the body is strongest at exhaustion", "says resources are fully restored by the final stage"]),
+            (
+                "Names alarm → resistance → exhaustion, in order.",
+                2,
+                ["alarm, resistance, exhaustion", "in that order"],
+                ["puts the stages out of order", "omits a stage"],
+            ),
+            (
+                "By exhaustion, the body's resources are depleted, raising vulnerability to illness.",
+                2,
+                [
+                    "in exhaustion the body's resources/reserves are depleted",
+                    "increased susceptibility to illness or damage",
+                ],
+                [
+                    "says the body is strongest at exhaustion",
+                    "says resources are fully restored by the final stage",
+                ],
+            ),
         ],
         "The General Adaptation Syndrome proceeds alarm → resistance → exhaustion. In the "
         "alarm stage the body mobilizes (fight-or-flight); resistance sustains coping; by "
@@ -1571,12 +2496,26 @@ PSYCH_SOC_2 = [
         "bias in how each explains behavior.",
         "aamc::psych-soc::attribution",
         [
-            ("FAE: over-attributing others' behavior to disposition, under-weighting the situation.", 2,
-             ["fundamental attribution error over-emphasizes dispositional causes for others", "under-weights situational factors"],
-             ["says the FAE over-emphasizes the situation", "applies the FAE to one's own successes"]),
-            ("Self-serving bias: crediting one's own successes to disposition, failures to the situation.", 2,
-             ["self-serving bias attributes one's successes to internal factors and failures to external factors"],
-             ["reverses the self-serving bias", "conflates it exactly with the FAE"]),
+            (
+                "FAE: over-attributing others' behavior to disposition, under-weighting the situation.",
+                2,
+                [
+                    "fundamental attribution error over-emphasizes dispositional causes for others",
+                    "under-weights situational factors",
+                ],
+                [
+                    "says the FAE over-emphasizes the situation",
+                    "applies the FAE to one's own successes",
+                ],
+            ),
+            (
+                "Self-serving bias: crediting one's own successes to disposition, failures to the situation.",
+                2,
+                [
+                    "self-serving bias attributes one's successes to internal factors and failures to external factors"
+                ],
+                ["reverses the self-serving bias", "conflates it exactly with the FAE"],
+            ),
         ],
         "The fundamental attribution error is over-attributing others' behavior to their "
         "character while ignoring the situation. The self-serving bias is attributing "
@@ -1588,12 +2527,26 @@ PSYCH_SOC_2 = [
         "State the primary function most associated with each.",
         "aamc::psych-soc::biological-behavior",
         [
-            ("Amygdala: emotion, especially fear/threat processing.", 2,
-             ["amygdala processes emotion, especially fear/threat"],
-             ["says the amygdala forms long-term memories (that is hippocampus)", "assigns the amygdala a motor role"]),
-            ("Hippocampus: formation/consolidation of new long-term (declarative) memories.", 2,
-             ["hippocampus is critical for forming/consolidating new long-term/declarative memories"],
-             ["says the hippocampus is the primary fear center", "says the hippocampus controls heart rate"]),
+            (
+                "Amygdala: emotion, especially fear/threat processing.",
+                2,
+                ["amygdala processes emotion, especially fear/threat"],
+                [
+                    "says the amygdala forms long-term memories (that is hippocampus)",
+                    "assigns the amygdala a motor role",
+                ],
+            ),
+            (
+                "Hippocampus: formation/consolidation of new long-term (declarative) memories.",
+                2,
+                [
+                    "hippocampus is critical for forming/consolidating new long-term/declarative memories"
+                ],
+                [
+                    "says the hippocampus is the primary fear center",
+                    "says the hippocampus controls heart rate",
+                ],
+            ),
         ],
         "The amygdala processes emotion, especially fear and threat detection. The "
         "hippocampus is essential for forming and consolidating new long-term "
@@ -1605,12 +2558,30 @@ PSYCH_SOC_2 = [
         "respect to social mobility.",
         "aamc::psych-soc::social-stratification",
         [
-            ("Caste: closed, ascribed status at birth, little/no mobility.", 2,
-             ["caste system is closed / status ascribed at birth", "little or no social mobility"],
-             ["says caste systems allow free upward mobility", "swaps caste and class"]),
-            ("Class: more open, achieved status possible, mobility exists.", 2,
-             ["class system is relatively open", "allows social mobility / achieved status"],
-             ["says class systems permit no mobility", "defines class as inherited and fixed for life"]),
+            (
+                "Caste: closed, ascribed status at birth, little/no mobility.",
+                2,
+                [
+                    "caste system is closed / status ascribed at birth",
+                    "little or no social mobility",
+                ],
+                [
+                    "says caste systems allow free upward mobility",
+                    "swaps caste and class",
+                ],
+            ),
+            (
+                "Class: more open, achieved status possible, mobility exists.",
+                2,
+                [
+                    "class system is relatively open",
+                    "allows social mobility / achieved status",
+                ],
+                [
+                    "says class systems permit no mobility",
+                    "defines class as inherited and fixed for life",
+                ],
+            ),
         ],
         "In a caste system, status is ascribed at birth and the system is closed, allowing "
         "essentially no mobility. In a class system, status can be achieved and the system "
@@ -1622,12 +2593,27 @@ PSYCH_SOC_2 = [
         "death rates in the early (pre-industrial) versus late (post-industrial) stages.",
         "aamc::psych-soc::demographics",
         [
-            ("Early stage: high birth rates AND high death rates (slow/low net growth).", 2,
-             ["early/pre-industrial stage has high birth and high death rates", "little net population growth"],
-             ["says the early stage has low birth and low death rates"]),
-            ("Late stage: low birth AND low death rates (population stabilizes).", 2,
-             ["late/post-industrial stage has low birth and low death rates", "population growth stabilizes/levels off"],
-             ["says the late stage has high birth and high death rates", "reverses the trend"]),
+            (
+                "Early stage: high birth rates AND high death rates (slow/low net growth).",
+                2,
+                [
+                    "early/pre-industrial stage has high birth and high death rates",
+                    "little net population growth",
+                ],
+                ["says the early stage has low birth and low death rates"],
+            ),
+            (
+                "Late stage: low birth AND low death rates (population stabilizes).",
+                2,
+                [
+                    "late/post-industrial stage has low birth and low death rates",
+                    "population growth stabilizes/levels off",
+                ],
+                [
+                    "says the late stage has high birth and high death rates",
+                    "reverses the trend",
+                ],
+            ),
         ],
         "The demographic transition moves from high birth and high death rates (slow "
         "growth) in pre-industrial societies, through a phase of falling death rates and "
@@ -1640,12 +2626,29 @@ PSYCH_SOC_2 = [
         "the core cause of deviance each proposes.",
         "aamc::psych-soc::deviance",
         [
-            ("Labeling theory: deviance results from society labeling an act/person deviant.", 2,
-             ["labeling theory: deviance stems from being labeled deviant by society", "the label shapes identity/behavior"],
-             ["says labeling theory locates deviance in blocked goals", "swaps the two theories"]),
-            ("Strain theory: deviance arises from a gap between cultural goals and legitimate means.", 2,
-             ["strain theory: deviance arises from a mismatch between socially valued goals and access to legitimate means"],
-             ["says strain theory is about societal labels", "ignores the goals/means gap"]),
+            (
+                "Labeling theory: deviance results from society labeling an act/person deviant.",
+                2,
+                [
+                    "labeling theory: deviance stems from being labeled deviant by society",
+                    "the label shapes identity/behavior",
+                ],
+                [
+                    "says labeling theory locates deviance in blocked goals",
+                    "swaps the two theories",
+                ],
+            ),
+            (
+                "Strain theory: deviance arises from a gap between cultural goals and legitimate means.",
+                2,
+                [
+                    "strain theory: deviance arises from a mismatch between socially valued goals and access to legitimate means"
+                ],
+                [
+                    "says strain theory is about societal labels",
+                    "ignores the goals/means gap",
+                ],
+            ),
         ],
         "Labeling theory holds that deviance emerges when society labels an act or person "
         "as deviant, and that label reshapes behavior. Strain theory holds that deviance "
@@ -1657,12 +2660,26 @@ PSYCH_SOC_2 = [
         "culture's practices.",
         "aamc::psych-soc::culture",
         [
-            ("Ethnocentrism: judging another culture by one's own culture's standards.", 2,
-             ["ethnocentrism judges other cultures by one's own standards", "sees one's own culture as superior"],
-             ["defines ethnocentrism as judging a culture on its own terms", "swaps the two terms"]),
-            ("Cultural relativism: understanding a culture on its own terms/standards.", 2,
-             ["cultural relativism evaluates a culture by its own standards/context"],
-             ["defines cultural relativism as ranking cultures by one's own values"]),
+            (
+                "Ethnocentrism: judging another culture by one's own culture's standards.",
+                2,
+                [
+                    "ethnocentrism judges other cultures by one's own standards",
+                    "sees one's own culture as superior",
+                ],
+                [
+                    "defines ethnocentrism as judging a culture on its own terms",
+                    "swaps the two terms",
+                ],
+            ),
+            (
+                "Cultural relativism: understanding a culture on its own terms/standards.",
+                2,
+                [
+                    "cultural relativism evaluates a culture by its own standards/context"
+                ],
+                ["defines cultural relativism as ranking cultures by one's own values"],
+            ),
         ],
         "Ethnocentrism evaluates another culture using the standards of one's own culture, "
         "often treating one's own as superior. Cultural relativism instead seeks to "
@@ -1675,12 +2692,30 @@ PSYCH_SOC_2 = [
         "involved.",
         "aamc::psych-soc::biological-behavior",
         [
-            ("Sodium-potassium pump moves 3 Na+ out for 2 K+ in, aiding the gradient (ATP-driven).", 2,
-             ["the Na+/K+ pump moves 3 Na+ out and 2 K+ in", "ATP-driven, contributing to the gradient"],
-             ["says the pump moves Na+ in and K+ out", "says resting potential needs no energy/pump at all"]),
-            ("Membrane is more permeable to K+ at rest; K+ leak leaves the inside net negative.", 2,
-             ["at rest the membrane is most permeable to K+ (K+ leak channels)", "K+ efflux leaves the inside negative (~ −70 mV)"],
-             ["says the resting membrane is most permeable to Na+", "says the inside is positive at rest"]),
+            (
+                "Sodium-potassium pump moves 3 Na+ out for 2 K+ in, aiding the gradient (ATP-driven).",
+                2,
+                [
+                    "the Na+/K+ pump moves 3 Na+ out and 2 K+ in",
+                    "ATP-driven, contributing to the gradient",
+                ],
+                [
+                    "says the pump moves Na+ in and K+ out",
+                    "says resting potential needs no energy/pump at all",
+                ],
+            ),
+            (
+                "Membrane is more permeable to K+ at rest; K+ leak leaves the inside net negative.",
+                2,
+                [
+                    "at rest the membrane is most permeable to K+ (K+ leak channels)",
+                    "K+ efflux leaves the inside negative (~ −70 mV)",
+                ],
+                [
+                    "says the resting membrane is most permeable to Na+",
+                    "says the inside is positive at rest",
+                ],
+            ),
         ],
         "At rest, the membrane is most permeable to K+, so K+ leaks out and leaves the "
         "inside negative (~ −70 mV). The ATP-driven Na+/K+ pump (3 Na+ out, 2 K+ in) "
@@ -1699,7 +2734,7 @@ PSYCH_SOC_2 = [
 CARS_1 = [
     frq(
         "cars-1-frq1",
-        "Passage: \"The restorer who returns a fresco to its original brilliance may "
+        'Passage: "The restorer who returns a fresco to its original brilliance may '
         "believe she honors the artist, yet in scrubbing away the patina of centuries she "
         "also erases the painting's biography—the smoke, the damp, the clumsy earlier "
         "repairs that are themselves a record of the work's survival. To insist on the "
@@ -1708,12 +2743,30 @@ CARS_1 = [
         "the tension the author sees between 'the original' and a work's history.",
         "aamc::cars::humanities",
         [
-            ("Central claim: restoring a work to its 'original' state erases the historical record it has accumulated.", 2,
-             ["restoration to the original erases/destroys the work's history/biography", "the aging/patina is itself a valuable record"],
-             ["says the author fully endorses restoration as honoring the artist", "says aging has no value"]),
-            ("Tension: the 'original' is just one moment of the work's life, wrongly treated as the whole.", 2,
-             ["the 'original' is only one moment of the object's life", "privileging it ignores the rest of the work's existence"],
-             ["says the author sees no tension", "says the whole history equals the original moment"]),
+            (
+                "Central claim: restoring a work to its 'original' state erases the historical record it has accumulated.",
+                2,
+                [
+                    "restoration to the original erases/destroys the work's history/biography",
+                    "the aging/patina is itself a valuable record",
+                ],
+                [
+                    "says the author fully endorses restoration as honoring the artist",
+                    "says aging has no value",
+                ],
+            ),
+            (
+                "Tension: the 'original' is just one moment of the work's life, wrongly treated as the whole.",
+                2,
+                [
+                    "the 'original' is only one moment of the object's life",
+                    "privileging it ignores the rest of the work's existence",
+                ],
+                [
+                    "says the author sees no tension",
+                    "says the whole history equals the original moment",
+                ],
+            ),
         ],
         "The author argues that restoring a work to its 'original' brilliance destroys the "
         "historical record—the patina, damage, and repairs—that documents its survival. "
@@ -1724,17 +2777,34 @@ CARS_1 = [
         "cars-1-frq2",
         "Passage: \"We are told that the new translation is 'accessible,' as though the "
         "reader were an invalid to be spoon-fed. What is lost when difficulty is smoothed "
-        "away is precisely the friction that made the original worth the climb.\"\n\n"
+        'away is precisely the friction that made the original worth the climb."\n\n'
         "Describe the author's attitude toward the 'accessible' translation, and quote a "
         "word or image from the passage that reveals it.",
         "aamc::cars::humanities",
         [
-            ("Attitude: critical/disapproving of the 'accessible' translation; values difficulty.", 2,
-             ["author is critical/skeptical/disapproving of the accessible translation", "values the difficulty of the original"],
-             ["says the author praises the accessible translation", "says the author thinks difficulty is worthless"]),
-            ("Cites supporting text (e.g. 'spoon-fed'/'invalid' or 'friction'/'climb').", 2,
-             ["quotes/points to 'spoon-fed' or 'invalid' or 'friction' or 'worth the climb'"],
-             ["cites no textual evidence", "quotes text unrelated to the author's attitude"]),
+            (
+                "Attitude: critical/disapproving of the 'accessible' translation; values difficulty.",
+                2,
+                [
+                    "author is critical/skeptical/disapproving of the accessible translation",
+                    "values the difficulty of the original",
+                ],
+                [
+                    "says the author praises the accessible translation",
+                    "says the author thinks difficulty is worthless",
+                ],
+            ),
+            (
+                "Cites supporting text (e.g. 'spoon-fed'/'invalid' or 'friction'/'climb').",
+                2,
+                [
+                    "quotes/points to 'spoon-fed' or 'invalid' or 'friction' or 'worth the climb'"
+                ],
+                [
+                    "cites no textual evidence",
+                    "quotes text unrelated to the author's attitude",
+                ],
+            ),
         ],
         "The author is critical and disdainful of the 'accessible' translation, believing "
         "it strips away valuable difficulty. Words like 'spoon-fed' and 'invalid' mock the "
@@ -1743,20 +2813,38 @@ CARS_1 = [
     ),
     frq(
         "cars-1-frq3",
-        "Passage: \"Cities that added bike lanes saw cycling rates rise, and planners "
+        'Passage: "Cities that added bike lanes saw cycling rates rise, and planners '
         "concluded the lanes had converted drivers into cyclists. But the earliest "
         "adopters of bike lanes were cities where cycling was already fashionable; the "
-        "infrastructure may have followed the demand as much as created it.\"\n\nIdentify "
+        'infrastructure may have followed the demand as much as created it."\n\nIdentify '
         "the assumption in the planners' conclusion that the author challenges, and "
         "explain the alternative causal explanation the author offers.",
         "aamc::cars::social-sciences",
         [
-            ("Assumption challenged: that the bike lanes CAUSED the rise in cycling.", 2,
-             ["the planners assume the lanes caused/created the increase in cycling", "assumes a cause-and-effect direction"],
-             ["says the author accepts the lanes caused the increase", "misidentifies the assumption"]),
-            ("Alternative: reverse/confounded causation—existing demand drove lane-building.", 2,
-             ["pre-existing cycling demand/popularity led cities to build lanes", "causation may run the other way / cities self-selected"],
-             ["offers no alternative explanation", "restates the planners' causal claim as the alternative"]),
+            (
+                "Assumption challenged: that the bike lanes CAUSED the rise in cycling.",
+                2,
+                [
+                    "the planners assume the lanes caused/created the increase in cycling",
+                    "assumes a cause-and-effect direction",
+                ],
+                [
+                    "says the author accepts the lanes caused the increase",
+                    "misidentifies the assumption",
+                ],
+            ),
+            (
+                "Alternative: reverse/confounded causation—existing demand drove lane-building.",
+                2,
+                [
+                    "pre-existing cycling demand/popularity led cities to build lanes",
+                    "causation may run the other way / cities self-selected",
+                ],
+                [
+                    "offers no alternative explanation",
+                    "restates the planners' causal claim as the alternative",
+                ],
+            ),
         ],
         "The planners assume the bike lanes caused the rise in cycling. The author "
         "challenges that causal direction, noting the lanes appeared first in cities where "
@@ -1767,16 +2855,34 @@ CARS_1 = [
         "cars-1-frq4",
         "Passage: \"The historian calls the archive 'innocent,' but no archive is "
         "innocent. Someone chose what to keep and what to burn; the silences in the record "
-        "are as authored as the documents that remain.\"\n\nExplain what the author means "
+        'are as authored as the documents that remain."\n\nExplain what the author means '
         "by claiming the archive is not 'innocent,' and what the 'silences' refer to.",
         "aamc::cars::humanities",
         [
-            ("'Not innocent' = the archive is selectively shaped by human choices, not a neutral record.", 2,
-             ["the archive is selectively created/curated by human choices", "not neutral/objective/impartial"],
-             ["says the archive is a complete, unbiased record", "says 'innocent' means factually accurate"]),
-            ("'Silences' = deliberate omissions / what was discarded, which themselves carry meaning.", 2,
-             ["silences are the omissions / what was destroyed or excluded", "these gaps are 'authored' and meaningful"],
-             ["says silences are meaningless gaps", "says silences refer to quiet reading rooms or literal silence"]),
+            (
+                "'Not innocent' = the archive is selectively shaped by human choices, not a neutral record.",
+                2,
+                [
+                    "the archive is selectively created/curated by human choices",
+                    "not neutral/objective/impartial",
+                ],
+                [
+                    "says the archive is a complete, unbiased record",
+                    "says 'innocent' means factually accurate",
+                ],
+            ),
+            (
+                "'Silences' = deliberate omissions / what was discarded, which themselves carry meaning.",
+                2,
+                [
+                    "silences are the omissions / what was destroyed or excluded",
+                    "these gaps are 'authored' and meaningful",
+                ],
+                [
+                    "says silences are meaningless gaps",
+                    "says silences refer to quiet reading rooms or literal silence",
+                ],
+            ),
         ],
         "Calling the archive 'not innocent' means it is not a neutral record but one shaped "
         "by deliberate choices about what to preserve and what to destroy. The 'silences' "
@@ -1785,19 +2891,37 @@ CARS_1 = [
     ),
     frq(
         "cars-1-frq5",
-        "Passage: \"The researcher argued that remote work reduces employee productivity, "
+        'Passage: "The researcher argued that remote work reduces employee productivity, '
         "pointing to a drop in measured output at one large firm after it went fully "
-        "remote.\"\n\nThe claim rests on a single firm. Describe one kind of additional "
+        'remote."\n\nThe claim rests on a single firm. Describe one kind of additional '
         "evidence that would most strengthen the general claim, and explain why it would "
         "help.",
         "aamc::cars::social-sciences",
         [
-            ("Names apt strengthening evidence: the same effect across many/diverse firms, or a controlled comparison.", 2,
-             ["evidence from many/diverse firms showing the same drop", "a controlled comparison / holding other factors constant"],
-             ["proposes evidence about only the same single firm", "proposes irrelevant evidence"]),
-            ("Explains why: broader/controlled data rules out the one firm being unrepresentative or confounded.", 2,
-             ["broader/controlled data supports generalization", "rules out the single firm being a fluke or confounded"],
-             ["gives no reason", "reasoning does not connect the evidence to the claim's weakness"]),
+            (
+                "Names apt strengthening evidence: the same effect across many/diverse firms, or a controlled comparison.",
+                2,
+                [
+                    "evidence from many/diverse firms showing the same drop",
+                    "a controlled comparison / holding other factors constant",
+                ],
+                [
+                    "proposes evidence about only the same single firm",
+                    "proposes irrelevant evidence",
+                ],
+            ),
+            (
+                "Explains why: broader/controlled data rules out the one firm being unrepresentative or confounded.",
+                2,
+                [
+                    "broader/controlled data supports generalization",
+                    "rules out the single firm being a fluke or confounded",
+                ],
+                [
+                    "gives no reason",
+                    "reasoning does not connect the evidence to the claim's weakness",
+                ],
+            ),
         ],
         "The claim would be strengthened by evidence that many diverse firms saw the same "
         "productivity drop after going remote, ideally with a controlled comparison. That "
@@ -1814,12 +2938,30 @@ CARS_1 = [
         "argument about how cities develop.",
         "aamc::cars::humanities",
         [
-            ("The desire path is evidence/example supporting the claim that cities emerge from actual use.", 2,
-             ["the desire path is an example/evidence for cities arising from use/accretion", "illustrates the central claim"],
-             ["treats the desire path as merely decorative with no argumentative role", "says it supports top-down planning"]),
-            ("It functions as the pedestrian's 'rebuttal' to the planner's grid—use overrides design.", 2,
-             ["it is the pedestrian's rebuttal to the planner's grid", "actual use overrides/wins against the planned design"],
-             ["says the grid overrides the desire path", "reverses the author's point"]),
+            (
+                "The desire path is evidence/example supporting the claim that cities emerge from actual use.",
+                2,
+                [
+                    "the desire path is an example/evidence for cities arising from use/accretion",
+                    "illustrates the central claim",
+                ],
+                [
+                    "treats the desire path as merely decorative with no argumentative role",
+                    "says it supports top-down planning",
+                ],
+            ),
+            (
+                "It functions as the pedestrian's 'rebuttal' to the planner's grid—use overrides design.",
+                2,
+                [
+                    "it is the pedestrian's rebuttal to the planner's grid",
+                    "actual use overrides/wins against the planned design",
+                ],
+                [
+                    "says the grid overrides the desire path",
+                    "reverses the author's point",
+                ],
+            ),
         ],
         "The desire path is the author's key example: a route worn by actual pedestrian "
         "use that contradicts the planner's grid. It functions as concrete evidence for "
@@ -1828,18 +2970,33 @@ CARS_1 = [
     ),
     frq(
         "cars-1-frq7",
-        "Passage: \"A popular theory holds that societies grow more secular as they grow "
+        'Passage: "A popular theory holds that societies grow more secular as they grow '
         "wealthier. Sweden and Japan, prosperous and largely secular, are offered as "
-        "proof.\"\n\nIdentify the kind of counterexample that would most weaken the "
+        'proof."\n\nIdentify the kind of counterexample that would most weaken the '
         "wealth-causes-secularization theory, and explain why it undercuts the argument.",
         "aamc::cars::social-sciences",
         [
-            ("Counterexample: a wealthy but highly religious society (or a poor but highly secular one).", 2,
-             ["a wealthy society that is highly religious", "or a poor society that is highly secular"],
-             ["offers another wealthy secular example (which supports, not weakens)", "proposes an irrelevant counterexample"]),
-            ("Why it weakens: it breaks the wealth→secularization link, showing wealth isn't sufficient/necessary.", 2,
-             ["it breaks the claimed correlation between wealth and secularization", "shows wealth is not sufficient (or necessary) for secularization"],
-             ["gives no reason", "reasoning does not connect to the causal claim"]),
+            (
+                "Counterexample: a wealthy but highly religious society (or a poor but highly secular one).",
+                2,
+                [
+                    "a wealthy society that is highly religious",
+                    "or a poor society that is highly secular",
+                ],
+                [
+                    "offers another wealthy secular example (which supports, not weakens)",
+                    "proposes an irrelevant counterexample",
+                ],
+            ),
+            (
+                "Why it weakens: it breaks the wealth→secularization link, showing wealth isn't sufficient/necessary.",
+                2,
+                [
+                    "it breaks the claimed correlation between wealth and secularization",
+                    "shows wealth is not sufficient (or necessary) for secularization",
+                ],
+                ["gives no reason", "reasoning does not connect to the causal claim"],
+            ),
         ],
         "A wealthy society that remains highly religious (or a poor society that is highly "
         "secular) would most weaken the theory. Such a case breaks the claimed link "
@@ -1851,16 +3008,34 @@ CARS_1 = [
         "Passage: \"The critic praised the novel for its 'realism,' but realism is a style "
         "like any other—a set of conventions we have merely grown used to and stopped "
         "noticing. A future age will find our realism as mannered as we find the "
-        "flourishes of the Baroque.\"\n\nState a conclusion about the nature of artistic "
+        'flourishes of the Baroque."\n\nState a conclusion about the nature of artistic '
         "'realism' that the author would most likely endorse, grounded in the passage.",
         "aamc::cars::humanities",
         [
-            ("Conclusion: realism is a set of conventions/a style, not a transparent depiction of reality.", 2,
-             ["realism is a style/set of conventions", "not a neutral or transparent window onto reality"],
-             ["says the author thinks realism is objectively the truest depiction", "says realism is style-free"]),
-            ("Grounds it in the passage's logic (conventions we don't notice will later look 'mannered').", 2,
-             ["because unnoticed conventions will later appear mannered/dated, like the Baroque", "realism is historically contingent"],
-             ["provides no grounding from the passage", "grounding contradicts the passage"]),
+            (
+                "Conclusion: realism is a set of conventions/a style, not a transparent depiction of reality.",
+                2,
+                [
+                    "realism is a style/set of conventions",
+                    "not a neutral or transparent window onto reality",
+                ],
+                [
+                    "says the author thinks realism is objectively the truest depiction",
+                    "says realism is style-free",
+                ],
+            ),
+            (
+                "Grounds it in the passage's logic (conventions we don't notice will later look 'mannered').",
+                2,
+                [
+                    "because unnoticed conventions will later appear mannered/dated, like the Baroque",
+                    "realism is historically contingent",
+                ],
+                [
+                    "provides no grounding from the passage",
+                    "grounding contradicts the passage",
+                ],
+            ),
         ],
         "The author would endorse the view that 'realism' is not a neutral depiction of "
         "reality but simply a style—a set of conventions we no longer notice. The passage "
@@ -1869,7 +3044,7 @@ CARS_1 = [
     ),
     frq(
         "cars-1-frq9",
-        "Passage: \"Standardized tests promise to measure merit while stripping away "
+        'Passage: "Standardized tests promise to measure merit while stripping away '
         "privilege. Yet the child with a tutor, a quiet room, and three practice attempts "
         "arrives at the same exam as the child with none, and we call the gap between "
         "their scores 'ability.'\"\n\nState the author's central argument about "
@@ -1877,12 +3052,30 @@ CARS_1 = [
         "reflect.",
         "aamc::cars::social-sciences",
         [
-            ("Central argument: the tests do NOT fairly/purely measure merit; they reflect privilege.", 2,
-             ["standardized tests do not purely/fairly measure merit or ability", "they reflect privilege/unequal circumstances"],
-             ["says the author agrees the tests fairly measure merit", "misses the author's critique"]),
-            ("Scores reflect unequal resources (tutoring, environment, practice), mislabeled as 'ability.'", 2,
-             ["scores reflect differences in resources/preparation (tutor, quiet room, practice)", "this gap is wrongly called innate 'ability'"],
-             ["says the score gap is purely innate ability", "ignores the resource gap the author stresses"]),
+            (
+                "Central argument: the tests do NOT fairly/purely measure merit; they reflect privilege.",
+                2,
+                [
+                    "standardized tests do not purely/fairly measure merit or ability",
+                    "they reflect privilege/unequal circumstances",
+                ],
+                [
+                    "says the author agrees the tests fairly measure merit",
+                    "misses the author's critique",
+                ],
+            ),
+            (
+                "Scores reflect unequal resources (tutoring, environment, practice), mislabeled as 'ability.'",
+                2,
+                [
+                    "scores reflect differences in resources/preparation (tutor, quiet room, practice)",
+                    "this gap is wrongly called innate 'ability'",
+                ],
+                [
+                    "says the score gap is purely innate ability",
+                    "ignores the resource gap the author stresses",
+                ],
+            ),
         ],
         "The author argues that standardized tests fail to deliver on their promise to "
         "measure merit free of privilege. What the scores actually reflect is unequal "
@@ -1898,12 +3091,29 @@ CARS_1 = [
         "toward museum collections.",
         "aamc::cars::humanities",
         [
-            ("Purpose: to show the neutral word 'acquiring' masks/euphemizes coercive taking (looting).", 2,
-             ["the word 'acquiring' euphemizes / hides coercive or illegitimate taking", "it lumps looting in with purchase and gift"],
-             ["says 'acquiring' is used to accurately describe fair purchases only", "misses the euphemism point"]),
-            ("Stance: critical/skeptical of how (some) museum collections were obtained.", 2,
-             ["author is critical/skeptical of how museums obtained their collections"],
-             ["says the author approves of museum acquisition practices", "says the author is neutral/indifferent"]),
+            (
+                "Purpose: to show the neutral word 'acquiring' masks/euphemizes coercive taking (looting).",
+                2,
+                [
+                    "the word 'acquiring' euphemizes / hides coercive or illegitimate taking",
+                    "it lumps looting in with purchase and gift",
+                ],
+                [
+                    "says 'acquiring' is used to accurately describe fair purchases only",
+                    "misses the euphemism point",
+                ],
+            ),
+            (
+                "Stance: critical/skeptical of how (some) museum collections were obtained.",
+                2,
+                [
+                    "author is critical/skeptical of how museums obtained their collections"
+                ],
+                [
+                    "says the author approves of museum acquisition practices",
+                    "says the author is neutral/indifferent",
+                ],
+            ),
         ],
         "The author highlights 'acquiring' to expose it as a euphemism: a gentle word that "
         "quietly covers looting—the crate 'pried from a temple wall'—alongside legitimate "
@@ -1912,7 +3122,7 @@ CARS_1 = [
     ),
     frq(
         "cars-1-frq11",
-        "Passage: \"Economists distinguish between risk, where the odds are known, and "
+        'Passage: "Economists distinguish between risk, where the odds are known, and '
         "uncertainty, where they are not. Most consequential decisions—whom to marry, "
         "which career to enter—belong to the second category, yet we insist on treating "
         "them like the first.\"\n\nUsing the author's risk/uncertainty distinction, "
@@ -1920,12 +3130,23 @@ CARS_1 = [
         "falls into, and justify your classification.",
         "aamc::cars::social-sciences",
         [
-            ("Correct classification: 'risk' (the odds/probabilities are known).", 2,
-             ["classifies it as risk"],
-             ["classifies it as uncertainty", "gives no classification"]),
-            ("Justification ties to the author's definition (known odds = risk).", 2,
-             ["a well-documented hazard has known/calculable odds, which the author defines as risk"],
-             ["justification contradicts the author's definitions", "gives no justification"]),
+            (
+                "Correct classification: 'risk' (the odds/probabilities are known).",
+                2,
+                ["classifies it as risk"],
+                ["classifies it as uncertainty", "gives no classification"],
+            ),
+            (
+                "Justification ties to the author's definition (known odds = risk).",
+                2,
+                [
+                    "a well-documented hazard has known/calculable odds, which the author defines as risk"
+                ],
+                [
+                    "justification contradicts the author's definitions",
+                    "gives no justification",
+                ],
+            ),
         ],
         "It falls under 'risk.' The author defines risk as decisions where the odds are "
         "known and uncertainty as those where they are not. A common, well-documented "

@@ -40,7 +40,7 @@ class GardenBed:
     total: int  # cards in the deck
     mastered: int  # cards at FSRS retrievability >= 0.9 (the dashboard rule)
     next_due_secs: int | None  # until the soonest future review (None if none)
-    new_remaining: int  # un-introduced new cards left (gated by the daily limit)
+    new_remaining: int  # un-introduced new cards left for FUTURE days (not today's cap)
     new_per_day: int  # the deck's daily new-card limit
 
 
@@ -125,7 +125,7 @@ class DeckBrowser:
         elif cmd == "continue":
             self._study_deck(DeckId(int(arg)))
         elif cmd == "review":
-            self._study_deck(DeckId(int(arg)))
+            self._water_deck(DeckId(int(arg)))
         elif cmd == "opts":
             self._showOptions(arg)
         elif cmd == "import":
@@ -159,21 +159,18 @@ class DeckBrowser:
         name = html.escape(self.mw.col.decks.name(did))
         parts = [f"<b>{name}</b> is tended for today. 🌱", ""]
         if bed and bed.new_remaining > 0:
-            cap = (
-                f" (currently {bed.new_per_day} per day for this deck)"
-                if bed.new_per_day
-                else ""
-            )
+            per_day = bed.new_per_day or 20
             parts.append(
-                "Anki only lets you start a fixed number of <b>new</b> cards each "
-                f"day{cap} — a hard limit that keeps your future reviews from "
-                "piling up. You've hit today's limit here, with "
-                f"<b>{bed.new_remaining}</b> topics still waiting to be planted."
+                "You've planted today's batch of <b>new</b> cards. Anki introduces "
+                f"about <b>{per_day}</b> new per day here — a hard daily limit that "
+                "keeps your future reviews from piling up."
             )
             parts.append("")
             parts.append(
-                "Come back <b>tomorrow</b> to plant the next batch — or raise the "
-                "daily new-card limit in this deck's Options if you want more now."
+                f"The remaining <b>{bed.new_remaining}</b> cards will sprout "
+                f"automatically over the coming days (~{per_day}/day) — you don't "
+                "study them all today. Come back <b>tomorrow</b> for the next batch, "
+                "or raise the daily limit in this deck's Options."
             )
         else:
             parts.append(
@@ -195,6 +192,49 @@ class DeckBrowser:
 
         def begin(_: OpChanges) -> None:
             self.mw.col.startTimebox()
+            self.mw.moveToState("review")
+
+        set_current_deck(parent=self.mw, deck_id=deck_id).success(
+            begin
+        ).run_in_background(initiator=self)
+
+    def _water_deck(self, deck_id: DeckId) -> None:
+        """'Water' = review this deck's due cards only. Suppress new cards for the
+        session by forcing today's new-card limit to 0 (a per-deck override the v3
+        scheduler applies across the whole subtree, ahead of the preset), then
+        restore the prior override when the review session ends so "Plant seeds"
+        works normally afterwards."""
+
+        def begin(_: OpChanges) -> None:
+            col = self.mw.col
+            deck = col._backend.get_deck(deck_id)
+            # Only normal decks carry new_limit_today; skip for filtered decks
+            # (touching deck.normal would flip the deck's kind).
+            if deck.HasField("normal"):
+                had_prior = deck.normal.HasField("new_limit_today")
+                prior_limit = deck.normal.new_limit_today.limit
+                prior_today = deck.normal.new_limit_today.today
+                deck.normal.new_limit_today.limit = 0
+                deck.normal.new_limit_today.today = col.sched.today
+                col._backend.update_deck(message=deck)
+
+                def _restore(new_state: str, old_state: str) -> None:
+                    # Fire only when leaving the review session, then disarm.
+                    if old_state != "review" or new_state == "review":
+                        return
+                    gui_hooks.state_did_change.remove(_restore)
+                    d = self.mw.col._backend.get_deck(deck_id)
+                    if not d.HasField("normal"):
+                        return
+                    if had_prior:
+                        d.normal.new_limit_today.limit = prior_limit
+                        d.normal.new_limit_today.today = prior_today
+                    else:
+                        d.normal.ClearField("new_limit_today")
+                    self.mw.col._backend.update_deck(message=d)
+
+                gui_hooks.state_did_change.append(_restore)
+            col.startTimebox()
             self.mw.moveToState("review")
 
         set_current_deck(parent=self.mw, deck_id=deck_id).success(
@@ -288,7 +328,7 @@ class DeckBrowser:
         '<path d="M20 49C21.6 38.6 25.8 34.6 30 30" />'
         '<path d="M20 49V30" />'
         '<path d="M13.6 34.6 9 31.2M15.6 30.4 10 29M25 31.4l5.2-2.2M23.4 35.4l5.6 1'
-        "M20 33l-3.6-5.6M20 33l3.6-5.6M20 28v-6\" />"
+        'M20 33l-3.6-5.6M20 33l3.6-5.6M20 28v-6" />'
         "</g></svg>"
     )
     # Watering-can droplet, for the "needs watering" badge and the Water button.
@@ -328,9 +368,7 @@ class DeckBrowser:
         db = col.db
         for node in tree.children:
             did = int(node.deck_id)
-            name = (
-                col.decks.name(DeckId(did)).replace("\\", "\\\\").replace('"', '\\"')
-            )
+            name = col.decks.name(DeckId(did)).replace("\\", "\\\\").replace('"', '\\"')
             total = mastered = 0
             try:
                 overall = col._backend.mastery_query(
@@ -432,8 +470,7 @@ class DeckBrowser:
         if due <= 0:
             return ""
         return (
-            f'<span class="water-badge">{self._DROP_SVG}'
-            f"Needs watering · {due}</span>"
+            f'<span class="water-badge">{self._DROP_SVG}Needs watering · {due}</span>'
         )
 
     def _bed_actions(self, node: DeckTreeNode) -> str:

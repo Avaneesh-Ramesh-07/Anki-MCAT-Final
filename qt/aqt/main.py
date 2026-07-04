@@ -727,6 +727,9 @@ class AnkiQt(QMainWindow):
         try:
             self.update_undo_actions()
             gui_hooks.collection_did_load(self.col)
+            from aqt.mcat_presets import ensure_mcat_core_preset
+
+            ensure_mcat_core_preset(self.col)
             self.apply_collection_options()
             self.moveToState("home")
         except Exception:

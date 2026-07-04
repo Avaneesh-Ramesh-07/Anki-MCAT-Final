@@ -27,12 +27,12 @@ points) or rejects a wrong one (< 50%).
 
 ## Accuracy
 
-| Answer type        |   Keyword grader | AI grader (`gpt-4.1`) |
-| ------------------ | ---------------: | --------------------: |
-| Correct answers    |     100% (89/89) |          100% (89/89) |
-| Off-topic wrong    |    96.6% (86/89) |          100% (89/89) |
-| Jargon-heavy wrong |    **0% (0/89)** |     **84.3% (75/89)** |
-| **Overall**        |        **65.5%** |             **94.8%** |
+| Answer type        | Keyword grader | AI grader (`gpt-4.1`) |
+| ------------------ | -------------: | --------------------: |
+| Correct answers    |   100% (89/89) |          100% (89/89) |
+| Off-topic wrong    |  96.6% (86/89) |          100% (89/89) |
+| Jargon-heavy wrong |  **0% (0/89)** |     **84.3% (75/89)** |
+| **Overall**        |      **65.5%** |             **94.8%** |
 
 ## Read-out
 

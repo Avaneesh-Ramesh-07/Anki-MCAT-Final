@@ -44,7 +44,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         if (!c) {
             return null;
         }
-        const sum = c.memoryContribution + c.topicalContribution + c.fullLengthContribution;
+        const sum =
+            c.memoryContribution + c.topicalContribution + c.fullLengthContribution;
         if (sum <= 0) {
             return null;
         }
@@ -302,7 +303,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         </div>
                     {/if}
                     <p class="method">
-                        {confidence(readyOverall.rangeLow, readyOverall.rangeHigh)}{#if readyBreakdown}
+                        {confidence(
+                            readyOverall.rangeLow,
+                            readyOverall.rangeHigh,
+                        )}{#if readyBreakdown}
                             · made of {readyBreakdown.mem}% memory · {readyBreakdown.top}%
                             topical · {readyBreakdown.fl}% full-length{/if}
                     </p>
@@ -374,7 +378,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                 </span>
                                 <span class="muted">{t.reviews} studied</span>
                                 {#if !t.abstain}
-                                    <span class="muted">recall {pct(t.memoryScore)}</span>
+                                    <span class="muted">
+                                        recall {pct(t.memoryScore)}
+                                    </span>
                                 {/if}
                             </div>
                         </div>

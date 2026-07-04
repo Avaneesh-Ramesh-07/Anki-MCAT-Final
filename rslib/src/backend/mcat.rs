@@ -92,10 +92,10 @@ fn env_nonempty(key: &str) -> Option<String> {
 
 /// Deterministic, offline grader used when AI grading is off / unavailable.
 /// Awards a criterion its full points when the student's answer contains ANY of
-/// its ground-truth-derived `keywords` (falling back to `required_concepts` when
-/// no keywords were authored) and no `disqualifier` phrase is present. Reuses
-/// [`assemble_response`] for clamping/summing, so the output shape is identical
-/// to the AI path. Never errors.
+/// its ground-truth-derived `keywords` (falling back to `required_concepts`
+/// when no keywords were authored) and no `disqualifier` phrase is present.
+/// Reuses [`assemble_response`] for clamping/summing, so the output shape is
+/// identical to the AI path. Never errors.
 fn keyword_grade(input: &GradeFreeResponseRequest) -> GradeFreeResponseResponse {
     let answer = normalize(&input.answer);
     let mut met = 0u32;
@@ -103,19 +103,13 @@ fn keyword_grade(input: &GradeFreeResponseRequest) -> GradeFreeResponseResponse 
         .rubric
         .iter()
         .map(|rc| {
-            let disqualified = rc
-                .disqualifiers
-                .iter()
-                .any(|d| contains_phrase(&answer, d));
+            let disqualified = rc.disqualifiers.iter().any(|d| contains_phrase(&answer, d));
             let terms = if rc.keywords.is_empty() {
                 &rc.required_concepts
             } else {
                 &rc.keywords
             };
-            let hits = terms
-                .iter()
-                .filter(|t| contains_phrase(&answer, t))
-                .count();
+            let hits = terms.iter().filter(|t| contains_phrase(&answer, t)).count();
             let matched = !disqualified && hits > 0;
             if matched {
                 met += 1;
@@ -158,9 +152,9 @@ fn normalize(s: &str) -> String {
     out.trim().to_string()
 }
 
-/// Whether the normalized answer contains `term` as a whole-word (phrase) match.
-/// Both sides are space-padded so a token can't match inside a longer word
-/// (e.g. "ion" must not hit "cation").
+/// Whether the normalized answer contains `term` as a whole-word (phrase)
+/// match. Both sides are space-padded so a token can't match inside a longer
+/// word (e.g. "ion" must not hit "cation").
 fn contains_phrase(answer_norm: &str, term: &str) -> bool {
     let t = normalize(term);
     if t.is_empty() {

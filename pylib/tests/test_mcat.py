@@ -165,8 +165,8 @@ def test_performance_and_readiness_from_python():
 def test_grade_free_response_degrades_without_key(monkeypatch):
     from anki import mcat_pb2
 
-    # No API key -> the grader must return graded=false with a reason, never a
-    # hard error (so the app degrades gracefully).
+    # No API key -> the grader degrades gracefully to the offline keyword match
+    # (graded=true, scored against the rubric's terms), never a hard error.
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     col = getEmptyCol()
     try:
@@ -185,9 +185,11 @@ def test_grade_free_response_degrades_without_key(monkeypatch):
             ],
             model="",
         )
-        assert not resp.graded
-        assert resp.error  # a human-readable reason
+        assert resp.graded  # keyword fallback ran
+        assert not resp.error  # no hard error
+        # The answer says "the active site" so the exact concept phrase is unmet.
         assert resp.points_awarded == 0
         assert resp.max_points == 4
+        assert "keyword" in resp.feedback.lower()
     finally:
         col.close()

@@ -1,8 +1,8 @@
 # MCAT Free-Response Grader — Evaluation
 
-> **Archived.** This is the original MCQ-based *model-competence* eval — does the
+> **Archived.** This is the original MCQ-based _model-competence_ eval — does the
 > grader model understand MCAT content well enough to grade it? The current
-> *grader-accuracy* eval (keyword vs. AI on real answers) now lives in
+> _grader-accuracy_ eval (keyword vs. AI on real answers) now lives in
 > [EVAL.md](EVAL.md).
 
 This document explains the offline evaluation that backs the **AI grader** used
@@ -62,7 +62,7 @@ The eval is a two-model pipeline run over the curated set, one question at a tim
 grouped by subject. Every model call is deterministic (`temperature: 0`, fixed
 `seed`) and constrained to return JSON.
 
-1. **Answering agent** — given *only* the question stem and options (no key, no
+1. **Answering agent** — given _only_ the question stem and options (no key, no
    explanation), the model picks an answer and writes 2–4 sentences of reasoning.
    This mirrors what the in-app grader has access to: the problem, not the answer.
 
@@ -80,12 +80,12 @@ grouped by subject. Every model call is deterministic (`temperature: 0`, fixed
    grading behaves than a pure right/wrong count.
 
 ```
-   stem + options ──▶ [ANSWERING AGENT] ──▶ {choice, reasoning}
-                          (no ground truth)          │
-                                                      ▼
-   ground-truth answer + explanation ─▶ [JUDGE] ─▶ score 0..1
-                                                      │
-                                     mean over all ◀──┘  =  composite accuracy
+stem + options ──▶ [ANSWERING AGENT] ──▶ {choice, reasoning}
+                       (no ground truth)          │
+                                                   ▼
+ground-truth answer + explanation ─▶ [JUDGE] ─▶ score 0..1
+                                                   │
+                                  mean over all ◀──┘  =  composite accuracy
 ```
 
 Both the answering-agent and judge system prompts are defined at the top of
@@ -153,26 +153,26 @@ numbers) is safe to commit; the underlying data is not.
 
 Full 350-question run:
 
-| Field | Value |
-|---|---|
-| Date (UTC) | 2026-07-03 (`eval_results_20260703-193019.json`) |
-| Model | `gpt-4.1` |
-| Questions | 350 (50 × 7 subjects) |
-| **Composite accuracy (mean judge score)** | **0.801** |
-| Exact-match rate (baseline) | 0.763 |
+| Field                                     | Value                                            |
+| ----------------------------------------- | ------------------------------------------------ |
+| Date (UTC)                                | 2026-07-03 (`eval_results_20260703-193019.json`) |
+| Model                                     | `gpt-4.1`                                        |
+| Questions                                 | 350 (50 × 7 subjects)                            |
+| **Composite accuracy (mean judge score)** | **0.801**                                        |
+| Exact-match rate (baseline)               | 0.763                                            |
 
 Per subject:
 
-| Subject | n | Composite accuracy | Exact-match |
-|---|---|---|---|
-| sociology | 50 | 0.910 | 0.880 |
-| biology | 50 | 0.872 | 0.840 |
-| biochemistry | 50 | 0.860 | 0.800 |
-| psychology | 50 | 0.810 | 0.780 |
-| physics | 50 | 0.752 | 0.700 |
-| gen-chem | 50 | 0.732 | 0.720 |
-| orgo | 50 | 0.668 | 0.620 |
-| **OVERALL** | **350** | **0.801** | **0.763** |
+| Subject      | n       | Composite accuracy | Exact-match |
+| ------------ | ------- | ------------------ | ----------- |
+| sociology    | 50      | 0.910              | 0.880       |
+| biology      | 50      | 0.872              | 0.840       |
+| biochemistry | 50      | 0.860              | 0.800       |
+| psychology   | 50      | 0.810              | 0.780       |
+| physics      | 50      | 0.752              | 0.700       |
+| gen-chem     | 50      | 0.732              | 0.720       |
+| orgo         | 50      | 0.668              | 0.620       |
+| **OVERALL**  | **350** | **0.801**          | **0.763**   |
 
 ### How to read this
 

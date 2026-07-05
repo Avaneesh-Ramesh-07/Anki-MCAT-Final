@@ -20,6 +20,7 @@ from typing import Any
 
 from anki.collection import Collection
 from aqt import AnkiQt
+from aqt.deckbrowser import MCAT_NEW_PER_DAY_CAP
 from aqt.operations import QueryOp
 from aqt.sound import av_player
 from aqt.toolbar import BottomBar
@@ -265,9 +266,15 @@ def build_suggestion(
 def build_home_suggestion(col: Collection) -> Suggestion | None:
     """Gather the live signals from the collection (safe to run off the main
     thread) and build the home-page suggestion."""
-    # Flashcards ready today (limit-applied counts, same as the deck list shows).
+    # Flashcards ready today. New cards are capped per top-level deck at the same
+    # daily limit the garden's "Plant seeds" enforces (MCAT_NEW_PER_DAY_CAP), so
+    # this count is correct on open even when a deck's preset allows more (e.g. a
+    # deck whose preset is set high still contributes at most the daily cap).
     root = col.sched.deck_due_tree()
-    due_total = sum(n.review_count + n.learn_count + n.new_count for n in root.children)
+    due_total = sum(
+        n.review_count + n.learn_count + min(n.new_count, MCAT_NEW_PER_DAY_CAP)
+        for n in root.children
+    )
 
     # Overall performance (0-1); abstains until a topical test has been taken.
     perf = col._backend.performance_query(min_questions=0).overall

@@ -27,6 +27,12 @@ from aqt.sound import av_player
 from aqt.toolbar import BottomBar
 from aqt.utils import getOnlyText, openLink, shortcut, showInfo, tr
 
+# Hard ceiling on new cards introduced per day for a deck studied via the garden
+# ("Plant seeds"), regardless of the deck's preset — so a topic never dumps its
+# whole backlog at once. Also used by the Home page's "flashcards to study today"
+# count, so the count matches this cap on open (single source of truth).
+MCAT_NEW_PER_DAY_CAP = 20
+
 
 class DeckBrowserBottomBar:
     def __init__(self, deck_browser: DeckBrowser) -> None:
@@ -123,7 +129,7 @@ class DeckBrowser:
         if cmd == "open":
             self.set_current_deck(DeckId(int(arg)))
         elif cmd == "continue":
-            self._study_deck(DeckId(int(arg)))
+            self._plant_deck(DeckId(int(arg)))
         elif cmd == "review":
             self._water_deck(DeckId(int(arg)))
         elif cmd == "opts":
@@ -187,11 +193,29 @@ class DeckBrowser:
             lambda _: self.mw.onOverview()
         ).run_in_background(initiator=self)
 
-    def _study_deck(self, deck_id: DeckId) -> None:
-        """Select the deck and begin studying it immediately (skip overview)."""
+    def _plant_deck(self, deck_id: DeckId) -> None:
+        """'Plant seeds' = learn new cards, but cap today's new-card intake at
+        MCAT_NEW_PER_DAY_CAP. Uses a per-deck today-override (the v3 scheduler
+        applies it across the whole subtree, ahead of the preset); it's a daily
+        cap, so it's left in place for the rest of the day rather than restored.
+        Only lowers the limit — a deck already below the cap keeps its value."""
 
         def begin(_: OpChanges) -> None:
-            self.mw.col.startTimebox()
+            col = self.mw.col
+            deck = col._backend.get_deck(deck_id)
+            # Only normal decks carry new_limit_today (filtered decks have no preset).
+            if deck.HasField("normal"):
+                try:
+                    per_day = col.decks.config_dict_for_deck_id(deck_id)["new"][
+                        "perDay"
+                    ]
+                except Exception:
+                    per_day = MCAT_NEW_PER_DAY_CAP
+                if per_day > MCAT_NEW_PER_DAY_CAP:
+                    deck.normal.new_limit_today.limit = MCAT_NEW_PER_DAY_CAP
+                    deck.normal.new_limit_today.today = col.sched.today
+                    col._backend.update_deck(message=deck)
+            col.startTimebox()
             self.mw.moveToState("review")
 
         set_current_deck(parent=self.mw, deck_id=deck_id).success(

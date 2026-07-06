@@ -337,9 +337,14 @@ impl Collection {
             if !sp.not_tested {
                 sections_tested += 1;
             }
-            if !sp.abstain {
-                scaled_total += sp.scaled_score;
-            }
+            // Every section counts: a tested section contributes its scaled score
+            // (118-132), an untested/thin one the 118 minimum. So the total is
+            // always a valid MCAT scaled score in [472, 528], never a partial sum.
+            scaled_total += if sp.abstain {
+                SCALE_MIN
+            } else {
+                sp.scaled_score
+            };
             sections.push(sp);
         }
 
@@ -457,7 +462,8 @@ mod test {
         assert_eq!(resp.sections.len(), 4);
         assert!(resp.sections.iter().all(|s| s.not_tested && s.abstain));
         assert_eq!(resp.sections_tested, 0);
-        assert_eq!(resp.scaled_total, 0);
+        // Nothing tested -> every section counts as the 118 floor: 4 * 118 = 472.
+        assert_eq!(resp.scaled_total, 472);
         let overall = resp.overall.unwrap();
         assert_eq!(overall.answered, 0);
         assert!(overall.abstain);
@@ -508,7 +514,8 @@ mod test {
         assert_eq!(sec.scaled_score, 129);
         assert!(!sec.not_tested);
         assert_eq!(resp.sections_tested, 1);
-        assert_eq!(resp.scaled_total, 129);
+        // One section tested (129) + three untested at the 118 floor: 129 + 354.
+        assert_eq!(resp.scaled_total, 483);
         Ok(())
     }
 

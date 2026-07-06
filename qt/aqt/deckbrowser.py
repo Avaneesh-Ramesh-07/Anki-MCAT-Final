@@ -13,6 +13,7 @@ from anki.decks import DeckCollapseScope, DeckId, DeckTreeNode
 from anki.utils import int_time
 from aqt import AnkiQt, gui_hooks
 from aqt.deckoptions import display_options_for_deck_id
+from aqt.mcat_limits import MCAT_NEW_PER_DAY_CAP
 from aqt.operations import QueryOp
 from aqt.operations.deck import (
     add_deck_dialog,
@@ -26,12 +27,6 @@ from aqt.qt import *
 from aqt.sound import av_player
 from aqt.toolbar import BottomBar
 from aqt.utils import getOnlyText, openLink, shortcut, showInfo, tr
-
-# Hard ceiling on new cards introduced per day for a deck studied via the garden
-# ("Plant seeds"), regardless of the deck's preset — so a topic never dumps its
-# whole backlog at once. Also used by the Home page's "flashcards to study today"
-# count, so the count matches this cap on open (single source of truth).
-MCAT_NEW_PER_DAY_CAP = 20
 
 
 class DeckBrowserBottomBar:
@@ -126,7 +121,9 @@ class DeckBrowser:
         else:
             cmd = url
             arg = ""
-        if cmd == "open":
+        if cmd == "home":
+            self.mw.moveToState("home")
+        elif cmd == "open":
             self.set_current_deck(DeckId(int(arg)))
         elif cmd == "continue":
             self._plant_deck(DeckId(int(arg)))
@@ -369,13 +366,17 @@ class DeckBrowser:
                 '<div class="garden-empty"><p>Your garden is empty — '
                 "create a deck to plant your first bed.</p></div>"
             )
+        home = (
+            '<button class="home-btn" onclick="return pycmd(\'home\')" '
+            'title="Back to Home">← Home</button>'
+        )
         intro = (
             '<div class="garden-head"><h1>Your study garden</h1>'
             '<p class="garden-intro">Each deck is a flowerbed. Reviewing cards when '
             "they’re due <b>waters your plants</b>; mastered cards bloom, while "
             "untended ones grow over with <b>weeds</b>.</p></div>"
         )
-        return f'<div class="garden">{intro}<div class="beds">{beds}</div></div>'
+        return f'<div class="garden">{home}{intro}<div class="beds">{beds}</div></div>'
 
     def _compute_garden(
         self, col: Collection, tree: DeckTreeNode

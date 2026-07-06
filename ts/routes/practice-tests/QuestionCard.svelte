@@ -3,6 +3,7 @@ Copyright: Ankitects Pty Ltd and contributors
 License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 -->
 <script lang="ts">
+    import { formatSci } from "./sci-format";
     import type { OptionLetter, Question } from "./types";
     import { OPTION_LETTERS } from "./types";
 
@@ -19,7 +20,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <div class="question" class:graded>
     <div class="stem">
         <span class="qnum">Q{index}</span>
-        <span>{question.stem}</span>
+        <span>{formatSci(question.stem)}</span>
     </div>
 
     <div class="options" role="radiogroup" aria-label={`Question ${index} options`}>
@@ -41,7 +42,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     on:change={() => onSelect(letter)}
                 />
                 <span class="letter">{letter}</span>
-                <span class="text">{question.options[letter]}</span>
+                <span class="text">{formatSci(question.options[letter])}</span>
                 {#if graded && correct}
                     <span class="mark correct-mark">✓ correct</span>
                 {:else if graded && chosen && !correct}
@@ -65,11 +66,11 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     Incorrect — correct answer is {question.correct}.
                 {/if}
             </div>
-            <div class="explanation">{question.explanation}</div>
+            <div class="explanation">{formatSci(question.explanation)}</div>
             {#if selected != null && !isCorrect && question.distractor_notes[selected]}
                 <div class="distractor">
                     <strong>Why {selected} is wrong:</strong>
-                    {question.distractor_notes[selected]}
+                    {formatSci(question.distractor_notes[selected])}
                 </div>
             {/if}
         </div>

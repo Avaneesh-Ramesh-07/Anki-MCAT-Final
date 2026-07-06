@@ -5,6 +5,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <script lang="ts">
     import "$lib/mcat/theme.scss";
 
+    import { bridgeCommand } from "@tslib/bridgecommand";
     import { gradeFreeResponse, recordPracticeResult } from "@generated/backend";
     import type { GradeFreeResponseResponse } from "@generated/anki/mcat_pb";
     import { ExamKind } from "@generated/anki/mcat_pb";
@@ -12,6 +13,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     import ScoreBar from "$lib/mcat/ScoreBar.svelte";
     import FreeResponseCard from "./FreeResponseCard.svelte";
     import QuestionCard from "./QuestionCard.svelte";
+    import { formatSci } from "./sci-format";
     import type { FrqGrade } from "./scoring";
     import {
         frqTopicTallies,
@@ -274,6 +276,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <div class="mcat">
     <div class="practice-tests" class:wide={hasCars}>
         {#if view === "list"}
+            <button class="home-btn" on:click={() => bridgeCommand("home")}>
+                ← Home
+            </button>
             <header class="page-head">
                 <h1>{fullLength ? "Full-length practice exam" : "Practice tests"}</h1>
                 <p class="subtitle">
@@ -336,8 +341,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         class:split={section.section_code === "cars"}
                     >
                         <div class="passage-read">
-                            <h2 class="passage-title">{passage.title}</h2>
-                            <div class="passage-text">{passage.passage_text}</div>
+                            <h2 class="passage-title">{formatSci(passage.title)}</h2>
+                            <div class="passage-text">
+                                {formatSci(passage.passage_text)}
+                            </div>
                         </div>
                         <div class="passage-questions">
                             {#each passage.questions as q (q.id)}
@@ -489,8 +496,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                         class:split={section.section_code === "cars"}
                     >
                         <div class="passage-read">
-                            <h2 class="passage-title">{passage.title}</h2>
-                            <div class="passage-text">{passage.passage_text}</div>
+                            <h2 class="passage-title">{formatSci(passage.title)}</h2>
+                            <div class="passage-text">
+                                {formatSci(passage.passage_text)}
+                            </div>
                         </div>
                         <div class="passage-questions">
                             {#each passage.questions as q (q.id)}
@@ -554,6 +563,31 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         margin: 0 auto;
         padding: 2rem 1.25rem 3rem;
         color: var(--mcat-ink);
+    }
+    .home-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 1.1rem;
+        padding: 0.45em 1.1em;
+        border-radius: var(--mcat-radius-pill, 999px);
+        border: 1px solid var(--mcat-border);
+        background: var(--mcat-surface);
+        color: var(--mcat-ink);
+        font: inherit;
+        font-weight: 700;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition:
+            border-color 0.15s var(--mcat-ease),
+            color 0.15s var(--mcat-ease),
+            transform 0.15s var(--mcat-ease);
+
+        &:hover {
+            border-color: var(--mcat-sage-ink);
+            color: var(--mcat-sage-ink);
+            transform: translateY(-1px);
+        }
     }
     .page-head {
         margin-bottom: 1.5rem;

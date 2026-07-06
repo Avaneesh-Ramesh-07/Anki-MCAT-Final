@@ -12,6 +12,8 @@ load the page and manage its window geometry.
 
 from __future__ import annotations
 
+from typing import Any
+
 import aqt
 import aqt.main
 from aqt.qt import *
@@ -46,9 +48,22 @@ class PracticeTestsDialog(QDialog):
         ai = "1" if mw.col.get_config("mcatAiGrading", True) else "0"
         base = "practice-tests?mode=full-length" if full_length else "practice-tests"
         sep = "&" if "?" in base else "?"
+        # The page's top-left "Home" button (shown only on the test list) calls
+        # bridgeCommand("home"); close this window and land on the Home screen.
+        self.web.set_bridge_command(self._on_bridge_cmd, self)
         self.web.load_sveltekit_page(f"{base}{sep}ai={ai}")
         self.show()
         self.activateWindow()
+
+    def _on_bridge_cmd(self, cmd: str) -> Any:
+        if cmd == "home":
+            # Defer so we don't tear down the webview from inside its own callback.
+            QTimer.singleShot(0, self._go_home)
+        return False
+
+    def _go_home(self) -> None:
+        self.mw.moveToState("home")
+        self.reject()
 
     def reject(self) -> None:
         self.web.cleanup()

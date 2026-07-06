@@ -271,8 +271,8 @@ const INJECTION_MARKERS: &[&str] = &[
     "points_awarded",
 ];
 
-/// Redact known grader-impersonation / fence markers (case-insensitive) from the
-/// untrusted answer before it is placed inside the answer fence.
+/// Redact known grader-impersonation / fence markers (case-insensitive) from
+/// the untrusted answer before it is placed inside the answer fence.
 fn sanitize_answer(answer: &str) -> String {
     let mut s = answer.to_string();
     for m in INJECTION_MARKERS {
@@ -303,10 +303,10 @@ fn redact_ci(haystack: &str, needle: &str) -> String {
 }
 
 /// Render the prompt + rubric + (fenced, sanitized) student answer into the
-/// grader's user message. The answer is untrusted: it is enclosed in a fence and
-/// scrubbed of grader/scaffolding markers so it cannot spoof structure, and the
-/// rubric + JSON contract are stated as the authoritative, answer-independent
-/// part of the task.
+/// grader's user message. The answer is untrusted: it is enclosed in a fence
+/// and scrubbed of grader/scaffolding markers so it cannot spoof structure, and
+/// the rubric + JSON contract are stated as the authoritative,
+/// answer-independent part of the task.
 fn build_user_message(input: &GradeFreeResponseRequest) -> String {
     let mut s = String::new();
     s.push_str("QUESTION PROMPT:\n");

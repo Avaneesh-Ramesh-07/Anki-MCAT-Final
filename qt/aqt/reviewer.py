@@ -667,6 +667,8 @@ class Reviewer:
         elif url.startswith("ease"):
             val: Literal[1, 2, 3, 4] = int(url[4:])  # type: ignore
             self._answerCard(val)
+        elif url == "gardenExit":
+            self.mw.moveToState("deckBrowser")
         elif url == "edit":
             self.mw.onEditCurrent()
         elif url == "more":
@@ -804,6 +806,7 @@ class Reviewer:
 <table id=innertable width=100%% cellspacing=0 cellpadding=0>
 <tr>
 <td align=start valign=top class=stat>
+<button title="Exit to your garden" onclick="pycmd('gardenExit');">Garden</button>
 <button title="%(editkey)s" onclick="pycmd('edit');">%(edit)s</button></td>
 <td align=center valign=top id=middle>
 </td>

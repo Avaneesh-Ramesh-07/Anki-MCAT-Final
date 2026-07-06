@@ -15,14 +15,16 @@ thread via a QueryOp so landing here never blocks startup.
 
 from __future__ import annotations
 
+import random
 from dataclasses import dataclass
 from typing import Any
 
 from anki.collection import Collection
 from aqt import AnkiQt
-from aqt.deckbrowser import MCAT_NEW_PER_DAY_CAP
+from aqt.mcat_limits import MCAT_NEW_PER_DAY_CAP
 from aqt.operations import QueryOp
 from aqt.sound import av_player
+from aqt.theme import Theme, theme_manager
 from aqt.toolbar import BottomBar
 
 # Suggested-next-step model
@@ -316,6 +318,558 @@ def build_home_suggestion(col: Collection) -> Suggestion | None:
     )
 
 
+# Readiness forest
+##############################################################################
+# A calm, decorative garden/forest that grows with the readiness score. It's
+# rendered as inline SVG + CSS behind the Home content, framing the centered
+# column in the left/right gutters, a ground strip, and a soft sky. Nearer items
+# are drawn larger + sharper and farther ones smaller + hazier (a gentle 3-D),
+# and the whole scene shifts subtly with the cursor (parallax). Animals arrive
+# at readiness checkpoints: bees + butterflies >= 50%, squirrels >= 65%,
+# deer >= 80%. All motion is slow/ambient and freezes under reduced-motion.
+
+_CLOUD_SVG = (
+    '<svg class="cloud-svg" viewBox="0 0 120 46" aria-hidden="true">'
+    '<path d="M24 44C11 44 5 33 12 25 7 15 22 9 31 15 36 4 57 5 60 16c9-8 26-1 23 12'
+    ' 11 1 12 15 0 16Z"/></svg>'
+)
+
+# A blooming flower (reused from the deck-browser garden). __V__ is swapped for a
+# petal-colour variant class (f0 clay / f1 sky / f2 gold).
+_FLOWER_SVG = (
+    '<svg class="flower-svg __V__" viewBox="0 0 40 50" aria-hidden="true">'
+    '<path class="fl-stem" d="M20 49V26"/>'
+    '<path class="fl-leaf" d="M20 37c-5 .2-9.6-2.6-11-7.7 6.1-1.2 10.2 1.9 11 7.1z"/>'
+    '<path class="fl-leaf" d="M20 32c4.7-.2 8.9-2.9 10-7.8-5.7-1-9.5 1.9-10 6.9z"/>'
+    '<g class="fl-petals"><circle cx="20" cy="15" r="5.4"/><circle cx="13.4" cy="19" r="5.4"/>'
+    '<circle cx="26.6" cy="19" r="5.4"/><circle cx="16" cy="9.8" r="5.4"/>'
+    '<circle cx="24" cy="9.8" r="5.4"/></g><circle class="fl-core" cx="20" cy="15" r="3.3"/></svg>'
+)
+
+# A young sprout (early growth, from the coverage garden).
+_SPROUT_SVG = (
+    '<svg class="flower-svg" viewBox="0 0 40 50" aria-hidden="true">'
+    '<path class="sp-stem" d="M20 49V30"/>'
+    '<path class="sp-leaf" d="M20 34c-4 0-8-2.6-8.8-7 4.4-.9 8 1.8 8.8 6.2Z"/>'
+    '<path class="sp-leaf" d="M20 32c3.6-.4 7-3.4 7.4-7.8-4.2-.4-7 2.6-7.4 7Z"/></svg>'
+)
+
+_GRASS_SVG = (
+    '<svg class="grass-svg" viewBox="0 0 34 26" aria-hidden="true">'
+    '<path d="M6 26C5 17 3 12 1 8M11 26C11 16 10 11 8 6M17 26C17 15 18 10 17 4'
+    'M23 26C23 16 25 11 27 6M28 26C29 17 31 12 33 8"/></svg>'
+)
+
+_BEE_SVG = (
+    '<svg class="bee-svg" viewBox="0 0 30 20" aria-hidden="true">'
+    '<g class="bee-wings"><ellipse class="bee-wing" cx="12" cy="6" rx="4.6" ry="6.6"/>'
+    '<ellipse class="bee-wing" cx="18" cy="6" rx="4.6" ry="6.6"/></g>'
+    '<ellipse class="bee-body" cx="15" cy="13" rx="8" ry="5.4"/>'
+    '<rect class="bee-stripe" x="12.3" y="8.4" width="2.3" height="9.4" rx="1.1"/>'
+    '<rect class="bee-stripe" x="16" y="9" width="2.1" height="8.2" rx="1"/></svg>'
+)
+
+_BUTTERFLY_SVG = (
+    '<svg class="bfly-svg" viewBox="0 0 28 24" aria-hidden="true">'
+    '<g class="bfly-wings">'
+    '<path class="bfly-wing" d="M14 12C10 4 2 3 3 9c-1 4 4 8 11 3Z"/>'
+    '<path class="bfly-wing" d="M14 12C10 20 3 21 4 16c0-3 5-5 10-4Z"/>'
+    '<path class="bfly-wing" d="M14 12C18 4 26 3 25 9c1 4-4 8-11 3Z"/>'
+    '<path class="bfly-wing" d="M14 12C18 20 25 21 24 16c0-3-5-5-10-4Z"/></g>'
+    '<rect class="bfly-body" x="13.2" y="5.5" width="1.6" height="13.5" rx="0.8"/></svg>'
+)
+
+_SQUIRREL_SVG = (
+    '<svg class="critter-svg" viewBox="0 0 44 40" aria-hidden="true">'
+    '<path class="cr-fill" d="M31 39C43 39 45 20 34 13c8 11-3 19-9 16Z"/>'
+    '<path class="cr-fill" d="M15 39c-6 0-9-6-6-12 2-5 8-8 13-6 1-4 7-6 10-2 3 4 0 9-3 9'
+    ' 2 4-2 11-8 11Z"/>'
+    '<circle class="cr-fill" cx="31" cy="15" r="5"/>'
+    '<path class="cr-fill" d="M33 9c0-3 4-2 3 1Z"/>'
+    '<circle class="cr-eye" cx="33" cy="14" r="1"/></svg>'
+)
+
+_DEER_SVG = (
+    '<svg class="critter-svg" viewBox="0 0 72 64" aria-hidden="true">'
+    '<g class="cr-fill">'
+    '<rect x="19" y="33" width="3.4" height="22" rx="1.6"/>'
+    '<rect x="28" y="33" width="3.4" height="22" rx="1.6"/>'
+    '<rect x="43" y="33" width="3.4" height="22" rx="1.6"/>'
+    '<rect x="51" y="33" width="3.4" height="22" rx="1.6"/>'
+    '<path d="M16 24c6-7 34-7 43 1 5 4 3 13-4 13H21c-8 0-11-9-5-14Z"/>'
+    '<path d="M55 25c3-4 5-11 10-13 3-1 5 1 4 4-1 4-6 8-7 11Z"/>'
+    '<ellipse cx="64" cy="12" rx="4.6" ry="3.3"/>'
+    '<path d="M61 9c-2-3 1-5 3-3Z"/></g>'
+    '<path class="cr-antler" d="M65 9c1-4-1-6 1-9M66 6c2-1 4-1 4-3M65 4c-2-1-3-2-4-4"/></svg>'
+)
+
+
+def _tree_svg(kind: str, fullness: float) -> str:
+    """One tree glyph. `fullness` (0..1) grows the canopy; below ~0.28 the tree
+    is a bare dormant sapling. `kind` is 'conifer' or 'round'."""
+    if kind == "conifer" and fullness >= 0.28:
+        body = (
+            '<rect class="trunk" x="45" y="104" width="10" height="44" rx="4"/>'
+            '<path class="canopy conifer" d="M50 76 L88 122 L12 122 Z"/>'
+            '<path class="canopy conifer" d="M50 48 L80 98 L20 98 Z"/>'
+            '<path class="canopy conifer" d="M50 20 L72 68 L28 68 Z"/>'
+        )
+    elif fullness < 0.28:
+        body = (
+            '<path class="branch" d="M50 148V54M50 92L32 72M50 104L70 82'
+            'M50 76L36 58M50 66L66 50"/>'
+        )
+    else:
+        f = 0.72 + fullness * 0.5
+        body = (
+            '<rect class="trunk" x="45" y="94" width="10" height="54" rx="4"/>'
+            '<g class="canopy round">'
+            f'<circle cx="50" cy="50" r="{34 * f:.1f}"/>'
+            f'<circle cx="28" cy="66" r="{23 * f:.1f}"/>'
+            f'<circle cx="72" cy="66" r="{23 * f:.1f}"/>'
+            f'<circle cx="50" cy="76" r="{25 * f:.1f}"/>'
+            "</g>"
+        )
+    return (
+        f'<svg class="tree-svg" viewBox="0 0 100 152" aria-hidden="true">{body}</svg>'
+    )
+
+
+def build_forest(readiness: float) -> str:
+    """The decorative forest layer whose lushness tracks the readiness score
+    (0..1). Returns the `.forest` markup plus the parallax script. Layout is
+    seeded so it stays put across re-renders and only fills in as the score
+    grows."""
+    r = max(0.0, min(1.0, readiness))
+    rng = random.Random(20260705)
+
+    def n(base: float, span: float) -> int:
+        return max(0, round(base + r * span))
+
+    def item(
+        cls: str,
+        x: float,
+        y: float,
+        w: float,
+        depth: float,
+        i: int,
+        svg: str,
+        dur: float | None = None,
+    ) -> str:
+        extra = f";--dur:{dur:.0f}s" if dur is not None else ""
+        return (
+            f'<span class="{cls}" style="left:{x:.1f}%;bottom:{y:.1f}%;'
+            f'--w:{w:.0f}px;--depth:{depth:.2f};--i:{i}{extra}">{svg}</span>'
+        )
+
+    def tree() -> str:
+        full = max(0.0, min(1.0, r + rng.uniform(-0.12, 0.12)))
+        return _tree_svg(rng.choice(["conifer", "round", "round"]), full)
+
+    def flower() -> str:
+        if r < 0.32 or rng.random() > (0.3 + r * 0.7):
+            return _SPROUT_SVG
+        return _FLOWER_SVG.replace("__V__", rng.choice(["f0", "f1", "f2"]))
+
+    lx, rx = (2.0, 32.0), (68.0, 98.0)  # gutters; center [34..66] stays clear
+    parts: list[str] = []
+    i = 0
+
+    # sky: a soft sun + a couple of slow clouds
+    sky = ['<div class="sun"></div>']
+    for _c in range(2 + (1 if r > 0.5 else 0)):
+        sky.append(
+            f'<span class="cloud" style="top:{rng.uniform(6, 30):.0f}%;'
+            f"width:{rng.uniform(90, 150):.0f}px;--dur:{rng.uniform(50, 80):.0f}s;"
+            f'animation-delay:{rng.uniform(-45, 0):.0f}s">{_CLOUD_SVG}</span>'
+        )
+    parts.append(f'<div class="band sky">{"".join(sky)}</div>')
+
+    # far: small hazy trees on the horizon
+    far = []
+    for k in range(n(3, 5)):
+        far.append(
+            item(
+                "tree",
+                rng.uniform(*(lx if k % 2 == 0 else rx)),
+                rng.uniform(30, 46),
+                rng.uniform(46, 66),
+                rng.uniform(0.15, 0.32),
+                i,
+                tree(),
+            )
+        )
+        i += 1
+    parts.append(f'<div class="band far">{"".join(far)}</div>')
+
+    # mid: medium trees + a deer at the treeline (>= 80%)
+    mid = []
+    for k in range(n(2, 6)):
+        mid.append(
+            item(
+                "tree",
+                rng.uniform(*(lx if k % 2 == 0 else rx)),
+                rng.uniform(10, 26),
+                rng.uniform(78, 104),
+                rng.uniform(0.4, 0.6),
+                i,
+                tree(),
+            )
+        )
+        i += 1
+    if r >= 0.80:
+        mid.append(item("critter deer", 22.0, 12.0, 64, 0.55, i, _DEER_SVG))
+        i += 1
+    parts.append(f'<div class="band mid">{"".join(mid)}</div>')
+
+    # near: big edge trees + the flower beds + grass + a squirrel (>= 65%)
+    near = []
+    for k in range(n(1, 3)):
+        near.append(
+            item(
+                "tree",
+                rng.uniform(*((0.0, 13.0) if k % 2 == 0 else (87.0, 100.0))),
+                rng.uniform(-2, 8),
+                rng.uniform(120, 168),
+                rng.uniform(0.82, 1.0),
+                i,
+                tree(),
+            )
+        )
+        i += 1
+    for lo, hi in ((1.0, 22.0), (78.0, 99.0)):
+        for _k in range(n(0, 6)):
+            near.append(
+                item(
+                    "flower",
+                    rng.uniform(lo, hi),
+                    rng.uniform(1, 12),
+                    rng.uniform(34, 52),
+                    rng.uniform(0.8, 1.0),
+                    i,
+                    flower(),
+                )
+            )
+            i += 1
+        for _k in range(n(1, 3)):
+            near.append(
+                item(
+                    "grass",
+                    rng.uniform(lo, hi),
+                    rng.uniform(0, 6),
+                    rng.uniform(30, 46),
+                    rng.uniform(0.78, 0.98),
+                    i,
+                    _GRASS_SVG,
+                )
+            )
+            i += 1
+    if r >= 0.65:
+        near.append(item("critter squirrel", 12.0, 9.0, 34, 0.9, i, _SQUIRREL_SVG))
+        i += 1
+        if r >= 0.85:
+            near.append(item("critter squirrel", 87.0, 7.0, 30, 0.85, i, _SQUIRREL_SVG))
+            i += 1
+    parts.append(f'<div class="band near">{"".join(near)}</div>')
+
+    # flying fauna: bees + butterflies once readiness passes 50%
+    fauna = []
+    if r >= 0.50:
+        for _k in range(1 + round((r - 0.5) * 6)):
+            fauna.append(
+                item(
+                    "bee",
+                    rng.uniform(10, 90),
+                    rng.uniform(20, 55),
+                    rng.uniform(20, 30),
+                    rng.uniform(0.5, 0.9),
+                    i,
+                    _BEE_SVG,
+                    dur=rng.uniform(9, 15),
+                )
+            )
+            i += 1
+        for _k in range(round((r - 0.5) * 4)):
+            cls = "butterfly b1" if _k % 2 else "butterfly"
+            fauna.append(
+                item(
+                    cls,
+                    rng.uniform(8, 92),
+                    rng.uniform(16, 48),
+                    rng.uniform(20, 30),
+                    rng.uniform(0.5, 0.85),
+                    i,
+                    _BUTTERFLY_SVG,
+                    dur=rng.uniform(12, 18),
+                )
+            )
+            i += 1
+    parts.append(f'<div class="band near fauna">{"".join(fauna)}</div>')
+
+    parts.append('<div class="ground"></div>')
+
+    return (
+        f'<div class="forest" aria-hidden="true" style="--richness:{r:.2f}">'
+        + "".join(parts)
+        + "</div>"
+        + _FOREST_PARALLAX_JS
+    )
+
+
+_FOREST_PARALLAX_JS = """
+<script>
+(function () {
+  var f = document.querySelector('.forest');
+  if (!f) return;
+  try {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  } catch (e) {}
+  var raf = 0, tx = 0, ty = 0;
+  window.addEventListener('pointermove', function (e) {
+    var w = window.innerWidth || 1, h = window.innerHeight || 1;
+    tx = (e.clientX / w - 0.5) * 2;
+    ty = (e.clientY / h - 0.5) * 2;
+    if (!raf) {
+      raf = requestAnimationFrame(function () {
+        raf = 0;
+        f.style.setProperty('--px', tx.toFixed(3));
+        f.style.setProperty('--py', ty.toFixed(3));
+      });
+    }
+  }, { passive: true });
+})();
+</script>
+"""
+
+
+_FOREST_CSS = """
+.home { position: relative; overflow: hidden; }
+.home-inner { position: relative; z-index: 1; }
+
+.forest {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    filter: saturate(calc(0.5 + var(--richness, 0) * 0.6));
+    animation: forest-in 0.9s ease both;
+    /* light palette — the .mcat garden colours, hardcoded because Home isn't
+       inside a .mcat scope */
+    --sky-tint: #cfe4ef;
+    --sun: #f6ead0;
+    --cloud: #fbfaf6;
+    --bark: #8a6a4a;
+    --leaf: #7c9a6d;
+    --leaf-deep: #4c6142;
+    --grass: #93ac79;
+    --bloom-clay: #cf8f5f;
+    --bloom-sky: #7fb0d0;
+    --bloom-gold: #e3b466;
+    --core: #f0d9a8;
+    --bee-body: #e0a94e;
+    --bee-stripe: #5a4326;
+    --wing: rgba(255, 255, 255, 0.82);
+    --critter: #b07d4f;
+}
+:root.night-mode .forest {
+    opacity: 0.9;
+    --sky-tint: #2c3f4c;
+    --sun: #5f5a46;
+    --cloud: #3a3630;
+    --bark: #705540;
+    --leaf: #6f9e83;
+    --leaf-deep: #3f6a55;
+    --grass: #4a6a52;
+    --bloom-clay: #c98f68;
+    --bloom-sky: #6d9ec0;
+    --bloom-gold: #c6a06a;
+    --core: #cbb98a;
+    --bee-body: #cf9a4a;
+    --bee-stripe: #3a2c18;
+    --wing: rgba(220, 230, 240, 0.5);
+    --critter: #9a7550;
+}
+@keyframes forest-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* sky */
+.forest .sky {
+    height: 62%;
+    inset: 0 0 auto 0;
+    background: linear-gradient(to bottom,
+        color-mix(in srgb, var(--sky-tint) 72%, transparent) 0%, transparent 82%);
+}
+.forest .sun {
+    position: absolute;
+    top: 7%;
+    right: 13%;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--sun) 0%, transparent 68%);
+    opacity: 0.8;
+}
+.forest .cloud {
+    position: absolute;
+    color: var(--cloud);
+    opacity: 0.75;
+    animation: cloud-drift var(--dur, 60s) linear infinite;
+}
+.forest .cloud-svg { width: 100%; height: auto; fill: currentColor; }
+
+/* depth bands + cursor parallax */
+.forest .band {
+    position: absolute;
+    inset: 0;
+    transform: translate(calc(var(--px, 0) * var(--par, 0px)),
+        calc(var(--py, 0) * var(--par, 0px) * 0.4));
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+.forest .band.sky { --par: 2px; z-index: 0; }
+.forest .band.far { --par: 4px; z-index: 1; }
+.forest .band.mid { --par: 9px; z-index: 2; }
+.forest .band.near { --par: 16px; z-index: 3; }
+
+/* scenery items: sized by width (so transform stays free for sway), depth drives
+   haze + fade */
+.forest .tree, .forest .flower, .forest .grass {
+    position: absolute;
+    width: var(--w, 60px);
+    transform-origin: bottom center;
+    filter: blur(calc((1 - var(--depth, 1)) * 1.5px));
+    opacity: calc(0.5 + var(--depth, 1) * 0.5);
+    animation: sway calc(6s + var(--depth, 0.5) * 4s) ease-in-out infinite alternate;
+    animation-delay: calc(var(--i, 0) * -0.9s);
+}
+.forest svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+@keyframes sway {
+    from { transform: rotate(calc(-0.55deg - var(--depth, 0.5) * 0.8deg)); }
+    to   { transform: rotate(calc(0.55deg + var(--depth, 0.5) * 0.8deg)); }
+}
+@keyframes cloud-drift {
+    from { transform: translateX(-14vw); }
+    to   { transform: translateX(114vw); }
+}
+
+/* trees */
+.forest .trunk { fill: var(--bark); }
+.forest .canopy { fill: var(--leaf); }
+.forest .canopy.conifer { fill: var(--leaf-deep); }
+.forest .branch {
+    fill: none;
+    stroke: var(--bark);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* flowers + sprouts */
+.forest .fl-stem, .forest .sp-stem {
+    fill: none;
+    stroke: var(--leaf-deep);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+}
+.forest .fl-leaf, .forest .sp-leaf { fill: var(--leaf); }
+.forest .fl-core { fill: var(--core); }
+.forest .fl-petals { fill: var(--bloom-clay); }
+.forest .f1 .fl-petals { fill: var(--bloom-sky); }
+.forest .f2 .fl-petals { fill: var(--bloom-gold); }
+
+/* grass */
+.forest .grass-svg {
+    fill: none;
+    stroke: var(--leaf);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+}
+
+/* ground mound */
+.forest .ground {
+    position: absolute;
+    left: -6%;
+    right: -6%;
+    bottom: -2%;
+    height: 24%;
+    z-index: 2;
+    opacity: 0.92;
+    border-radius: 50% 50% 0 0 / 26% 26% 0 0;
+    background: radial-gradient(130% 120% at 50% 100%,
+        var(--grass) 0%, var(--grass) 62%, transparent 100%);
+}
+
+/* animals */
+.forest .bee, .forest .butterfly, .forest .critter {
+    position: absolute;
+    width: var(--w, 26px);
+    opacity: calc(0.55 + var(--depth, 0.7) * 0.45);
+    filter: blur(calc((1 - var(--depth, 1)) * 0.8px));
+}
+.forest .bee { animation: bee-fly var(--dur, 11s) ease-in-out infinite; }
+.forest .butterfly { animation: flit var(--dur, 14s) ease-in-out infinite; }
+.forest .critter { transform-origin: bottom center; }
+.forest .squirrel { animation: hop 5s ease-in-out infinite; }
+.forest .deer { animation: idle-bob 6s ease-in-out infinite; }
+
+.forest .bee-body { fill: var(--bee-body); }
+.forest .bee-stripe { fill: var(--bee-stripe); }
+.forest .bee-wing { fill: var(--wing); }
+.forest .bee-wings { transform-origin: 15px 6px; animation: buzz 0.18s ease-in-out infinite; }
+.forest .bfly-wing { fill: var(--bloom-clay); }
+.forest .butterfly.b1 .bfly-wing { fill: var(--bloom-sky); }
+.forest .bfly-body { fill: var(--bark); }
+.forest .bfly-wings { transform-origin: 14px 12px; animation: flap 0.34s ease-in-out infinite; }
+.forest .cr-fill { fill: var(--critter); }
+.forest .cr-eye { fill: #2c2c24; }
+.forest .cr-antler {
+    fill: none;
+    stroke: var(--bark);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+@keyframes buzz { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.5); } }
+@keyframes flap { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(0.32); } }
+@keyframes idle-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes bee-fly {
+    0%   { transform: translate(0, 0) rotate(-4deg); }
+    25%  { transform: translate(42px, -26px) rotate(6deg); }
+    50%  { transform: translate(14px, -48px) rotate(-3deg); }
+    75%  { transform: translate(-32px, -18px) rotate(5deg); }
+    100% { transform: translate(0, 0) rotate(-4deg); }
+}
+@keyframes flit {
+    0%   { transform: translate(0, 0) rotate(-6deg); }
+    33%  { transform: translate(-36px, -42px) rotate(8deg); }
+    66%  { transform: translate(32px, -66px) rotate(-8deg); }
+    100% { transform: translate(0, 0) rotate(-6deg); }
+}
+
+/* keep the centred content readable on smaller windows */
+@media (max-width: 900px) {
+    .forest .band.mid, .forest .band.near { opacity: 0.72; }
+}
+@media (max-width: 680px) {
+    .forest .tree, .forest .flower, .forest .grass,
+    .forest .bee, .forest .butterfly, .forest .critter { display: none; }
+    .forest .sky { height: 38%; }
+    .forest .ground { height: 15%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .forest, .forest .cloud, .forest .tree, .forest .flower, .forest .grass,
+    .forest .bee, .forest .butterfly, .forest .critter,
+    .forest .bee-wings, .forest .bfly-wings {
+        animation: none !important;
+    }
+    .forest .band { transition: none !important; transform: none !important; }
+}
+"""
+
+
 class HomeBottomBar:
     def __init__(self, home: Home) -> None:
         self.home = home
@@ -392,6 +946,14 @@ class Home:
         # off, the Rust grader falls back to a keyword match against the rubric.
         ai_on = bool(self.mw.col.get_config("mcatAiGrading", True))
 
+        # Light/dark toggle reflects Anki's current effective theme.
+        night_on = bool(theme_manager.night_mode)
+
+        # The decorative forest grows with readiness (0 until a full-length
+        # unlocks the score, matching the abstain "plant me" state).
+        richness = 0.0 if data.abstain else max(0.0, min(1.0, data.score))
+        forest = build_forest(richness)
+
         suggestion_html = self._suggestion_html(data.suggestion)
 
         cards = [
@@ -422,8 +984,9 @@ class Home:
         ]
 
         return f"""
-<style>{self._CSS}</style>
+<style>{self._CSS}{_FOREST_CSS}</style>
 <div class="home">
+  {forest}
   <div class="home-inner">
     <div class="score-hero">
       <div class="score-label">Your Readiness Score</div>
@@ -436,6 +999,13 @@ class Home:
     </div>
 
     <div class="home-footer">
+      <button class="ai-toggle{" on" if night_on else ""}" role="switch"
+              aria-checked="{"true" if night_on else "false"}"
+              onclick="return pycmd('toggleTheme')"
+              title="Switch between light and dark mode.">
+        <span class="switch" aria-hidden="true"><span class="knob"></span></span>
+        <span class="ai-label">Dark mode&nbsp;<b>{"On" if night_on else "Off"}</b></span>
+      </button>
       <button class="ai-toggle{" on" if ai_on else ""}" role="switch"
               aria-checked="{"true" if ai_on else "false"}"
               onclick="return pycmd('toggleAi')"
@@ -507,6 +1077,11 @@ class Home:
         elif url == "toggleAi":
             current = bool(self.mw.col.get_config("mcatAiGrading", True))
             self.mw.col.set_config("mcatAiGrading", not current)
+            self.refresh()
+        elif url == "toggleTheme":
+            # Flip Anki's theme (light <-> dark), then re-render so the home
+            # page + forest pick up the new night-mode class.
+            self.mw.set_theme(Theme.LIGHT if theme_manager.night_mode else Theme.DARK)
             self.refresh()
         return False
 
@@ -638,11 +1213,15 @@ class Home:
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
-        filter 0.2s ease;
+        background 0.2s ease;
 }
 .sp-cta:hover {
+    /* Set background + color explicitly: the app's global button:hover rule
+       has higher specificity than a class and would otherwise wash the button
+       white, hiding the white label. */
+    background: color-mix(in srgb, var(--button-primary-bg), black 10%);
+    color: #fff;
     transform: translateY(-2px);
-    filter: brightness(1.05);
     box-shadow: 0 14px 26px -12px rgba(93, 112, 82, 0.75);
 }
 .sp-cta:active { transform: translateY(0) scale(0.99); }
@@ -718,6 +1297,8 @@ class Home:
 }
 .nav-card:nth-child(even) { border-radius: 18px 22px 18px 20px; }
 .nav-card:hover {
+    /* pin bg: the global button:hover rule would otherwise wash it white */
+    background: var(--canvas-elevated);
     transform: translateY(-3px);
     box-shadow: 0 16px 32px -12px rgba(93, 112, 82, 0.34);
     border-color: var(--border-strong);
@@ -779,7 +1360,7 @@ class Home:
     cursor: pointer;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-.ai-toggle:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+.ai-toggle:hover { background: var(--canvas-elevated); border-color: var(--border-strong); transform: translateY(-1px); }
 .ai-toggle .switch {
     position: relative;
     width: 2.1rem;

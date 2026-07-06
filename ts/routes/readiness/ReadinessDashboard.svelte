@@ -134,6 +134,48 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             </p>
         </header>
 
+        <!-- Headline: the two numbers people ask for — predicted MCAT score
+             (from the performance model) and overall readiness %. -->
+        <div class="headline">
+            <div
+                class="headline-stat"
+                style="--card-accent: var(--mcat-blush); --card-tint: var(--mcat-blush-tint);"
+            >
+                <span class="headline-label">Predicted MCAT score</span>
+                <span class="headline-value">{performance.scaledTotal}</span>
+                <span class="headline-sub">
+                    {#if performance.sectionsTested === 4}
+                        on the 472–528 scale · all 4 sections tested
+                    {:else if performance.sectionsTested > 0}
+                        on the 472–528 scale · {performance.sectionsTested} of 4 sections
+                        tested (untested count as the 118 minimum)
+                    {:else}
+                        floor of the 472–528 scale · no sections tested yet (each
+                        untested section counts as 118)
+                    {/if}
+                </span>
+            </div>
+            <div
+                class="headline-stat"
+                style="--card-accent: var(--mcat-sage); --card-tint: var(--mcat-sage-tint);"
+            >
+                <span class="headline-label">Readiness</span>
+                {#if readyOverall && !readyOverall.abstain}
+                    <span class="headline-value">
+                        {pct(readyOverall.readinessScore)}
+                    </span>
+                    <span class="headline-sub">
+                        likely {pct(readyOverall.rangeLow)}–{pct(
+                            readyOverall.rangeHigh,
+                        )}
+                    </span>
+                {:else}
+                    <span class="headline-value muted">—</span>
+                    <span class="headline-sub">Take a full-length exam to unlock</span>
+                {/if}
+            </div>
+        </div>
+
         <div class="models">
             <!-- Memory -->
             <section
@@ -565,6 +607,48 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         max-width: 62ch;
         font-size: 1rem;
         line-height: 1.55;
+        color: var(--mcat-ink-soft);
+    }
+
+    // ---- headline: predicted MCAT score + readiness % --------------------
+    .headline {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.15rem;
+        margin: 1.75rem 0 2.25rem;
+    }
+    .headline-stat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 1.25rem 1.4rem;
+        background: var(--card-tint);
+        border: 1px solid var(--mcat-border);
+        border-left: 4px solid var(--card-accent);
+        border-radius: var(--mcat-radius-lg);
+        box-shadow: var(--mcat-shadow);
+    }
+    .headline-label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--card-accent);
+    }
+    .headline-value {
+        font-size: clamp(2.4rem, 1.8rem + 2.5vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--mcat-ink);
+
+        &.muted {
+            color: var(--mcat-ink-faint);
+        }
+    }
+    .headline-sub {
+        font-size: 0.85rem;
+        line-height: 1.4;
         color: var(--mcat-ink-soft);
     }
 

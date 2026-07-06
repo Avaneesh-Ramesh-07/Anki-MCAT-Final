@@ -22,6 +22,10 @@
 //! - **Compound give-up (R4):** a topic abstains until it has enough card
 //!   evidence AND >=1 topical test covering it AND >=1 completed full-length
 //!   exam on record. With no full-length at all, every topic abstains.
+//!   *Exception — CARS:* the CARS section has no flashcards (it's reasoning, not
+//!   memorization), so CARS topics skip the card requirement and drop the 5%
+//!   memory weight, scoring purely on topical + full-length (renormalized to
+//!   sum to 1.0). Otherwise CARS could never contribute, capping overall at ~77%.
 //! - **Full (overall) readiness (R5):** an AAMC-content-weighted aggregate over
 //!   the whole taxonomy; unstudied *or* individually-abstaining topics count as
 //!   0 (MBH-1, anti-overconfidence). It abstains only until the first
@@ -152,12 +156,25 @@ fn compute_topic_readiness(
         None => (0.0, 0.0, 0.0, false),
     };
 
-    let readiness = W_MEMORY * mem + W_TOPICAL * top + W_FULL_LENGTH * fl;
-    let range_low = W_MEMORY * mem_lo + W_TOPICAL * top_lo + W_FULL_LENGTH * fl_lo;
-    let range_high = W_MEMORY * mem_hi + W_TOPICAL * top_hi + W_FULL_LENGTH * fl_hi;
+    // CARS is a reasoning section with no flashcards by design, so it can never
+    // produce a memory signal. Rather than penalize it forever, CARS topics drop
+    // the 5% memory weight — redistributed across topical + full-length,
+    // renormalized to sum to 1.0 — and are exempt from the card gate below.
+    // Every other section keeps the standard 0.05/0.45/0.50 split and the gate.
+    let is_cars = section_of(&topic) == Some("cars");
+    let (w_mem, w_top, w_fl) = if is_cars {
+        let denom = W_TOPICAL + W_FULL_LENGTH;
+        (0.0, W_TOPICAL / denom, W_FULL_LENGTH / denom)
+    } else {
+        (W_MEMORY, W_TOPICAL, W_FULL_LENGTH)
+    };
 
-    // Compound give-up rule (R4).
-    let cards_ok = cards >= min_reviewed_cards;
+    let readiness = w_mem * mem + w_top * top + w_fl * fl;
+    let range_low = w_mem * mem_lo + w_top * top_lo + w_fl * fl_lo;
+    let range_high = w_mem * mem_hi + w_top * top_hi + w_fl * fl_hi;
+
+    // Compound give-up rule (R4). CARS is exempt from the card gate (no cards).
+    let cards_ok = is_cars || cards >= min_reviewed_cards;
     let topical_ok = tests >= 1;
     let fl_ok = completed_fls >= 1;
     let abstain = !(cards_ok && topical_ok && fl_ok);
@@ -174,9 +191,9 @@ fn compute_topic_readiness(
             has_memory: cards >= 1,
             has_topical: tests >= 1,
             has_full_length: has_fl_topic,
-            memory_contribution: W_MEMORY * mem,
-            topical_contribution: W_TOPICAL * top,
-            full_length_contribution: W_FULL_LENGTH * fl,
+            memory_contribution: w_mem * mem,
+            topical_contribution: w_top * top,
+            full_length_contribution: w_fl * fl,
         }),
         abstain,
         reviewed_cards: cards,
@@ -319,7 +336,9 @@ mod test {
     fn missing_full_length_component_drags_without_abstaining() {
         // Gate satisfied (>=5 cards, >=1 topical test, a full-length exists), but
         // this topic had NO questions in any full-length -> component 3 = 0.
-        let m = mastery("aamc::cars::humanities", 1.0, 10);
+        // (Uses a non-CARS section so the standard 0.05/0.45/0.50 weights apply;
+        // CARS is special-cased in cars_scores_without_flashcards.)
+        let m = mastery("aamc::psych-soc::learning", 1.0, 10);
         let top = evidence(1.0, 2);
         let tr = compute_topic_readiness(m.topic.clone(), Some(&m), Some(&top), None, 1, 5);
         assert!(!tr.abstain); // MBH-1: a real, shown low score (not abstain)
@@ -347,6 +366,37 @@ mod test {
         let tr = compute_topic_readiness(m.topic.clone(), Some(&m), Some(&top), Some(&fl), 1, 5);
         assert!(tr.abstain);
         assert_eq!(tr.reviewed_cards, 3);
+    }
+
+    #[test]
+    fn cars_scores_without_flashcards() {
+        // CARS has no flashcards: no memory topic, only topical + full-length.
+        // It must NOT abstain (exempt from the card gate) and, when both are
+        // perfect, reach ~1.0 — the 5% memory weight is redistributed across
+        // topical + full-length, renormalized to sum to 1.0.
+        let top = evidence(1.0, 2);
+        let fl = evidence(1.0, 1);
+        let tr = compute_topic_readiness(
+            "aamc::cars::humanities".to_string(),
+            None, // no flashcard memory for CARS, ever
+            Some(&top),
+            Some(&fl),
+            1,
+            5,
+        );
+        assert!(!tr.abstain);
+        assert!((tr.readiness_score - 1.0).abs() < 1e-9);
+
+        // A non-CARS topic with no card memory still abstains (gate intact).
+        let tr2 = compute_topic_readiness(
+            "aamc::bio-biochem::biology".to_string(),
+            None,
+            Some(&top),
+            Some(&fl),
+            1,
+            5,
+        );
+        assert!(tr2.abstain);
     }
 
     #[test]

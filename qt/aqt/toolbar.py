@@ -282,21 +282,19 @@ class Toolbar:
         web_context: Any | None = None,
         link_handler: Callable[[str], Any] | None = None,
     ) -> None:
+        # The MCAT build has no global top nav bar — every screen carries its
+        # own Home button instead — so the toolbar renders as an empty,
+        # zero-height strip. (Rendering empty keeps it collapsed even when the
+        # state machine calls show()/adjustHeightToFit on it.)
         web_context = web_context or TopToolbar(self)
         link_handler = link_handler or self._linkHandler
         self.web.set_bridge_command(link_handler, web_context)
-        body = self._body.format(
-            toolbar_content=self._centerLinks(),
-            left_tray_content=self._left_tray_content(),
-            right_tray_content=self._right_tray_content(),
-        )
         self.web.stdHtml(
-            body,
+            "<style>html,body{height:0;min-height:0;margin:0;padding:0;overflow:hidden}</style>",
             css=["css/toolbar.css"],
-            js=["js/vendor/jquery.min.js", "js/toolbar.js"],
             context=web_context,
         )
-        self.web.adjustHeightToFit()
+        self.web.setFixedHeight(0)
 
     def redraw(self) -> None:
         self.set_sync_active(self.mw.media_syncer.is_syncing())
@@ -347,6 +345,9 @@ class Toolbar:
 
     def _centerLinks(self) -> str:
         state = getattr(self.mw, "state", "")
+        # The top nav is intentionally minimal: only a link back to Home. Every
+        # other destination (Decks, the practice tests, Stats) is reached from
+        # the Home page itself, so we don't duplicate them in the header.
         links = [
             self.create_link(
                 "home",
@@ -355,35 +356,6 @@ class Toolbar:
                 tip="Your MCAT home page",
                 id="home",
                 active=state == "home",
-            ),
-            self.create_link(
-                "decks",
-                tr.actions_decks(),
-                self._deckLinkHandler,
-                tip=tr.actions_shortcut_key(val="D"),
-                id="decks",
-                active=state in ("deckBrowser", "overview"),
-            ),
-            self.create_link(
-                "practiceTests",
-                "Topical Practice Tests",
-                self._practiceTestsLinkHandler,
-                tip="Take a topical MCAT practice test",
-                id="practice-tests",
-            ),
-            self.create_link(
-                "fullLength",
-                "Full-Length Practice Test",
-                self._fullLengthLinkHandler,
-                tip="Take a full-length MCAT practice exam",
-                id="full-length",
-            ),
-            self.create_link(
-                "stats",
-                tr.qt_misc_stats(),
-                self._statsLinkHandler,
-                tip="Readiness + your study statistics (T)",
-                id="stats",
             ),
         ]
 
@@ -434,7 +406,12 @@ class Toolbar:
         )
 
     def set_sync_status(self, status: SyncStatus) -> None:
-        self.web.eval(f"updateSyncColor({status.required})")
+        # `updateSyncColor` lived in the toolbar JS, which the MCAT build no
+        # longer loads (the nav has no sync link to colour). Guard so this is a
+        # harmless no-op instead of a ReferenceError.
+        self.web.eval(
+            f"if(typeof updateSyncColor==='function'){{updateSyncColor({status.required});}}"
+        )
 
     def update_sync_status(self) -> None:
         get_sync_status(self.mw, self.mw.toolbar.set_sync_status)

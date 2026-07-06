@@ -36,6 +36,10 @@ button {
 
 .stat {
     padding-top: 10px;
+    /* MCAT: give both side columns equal width so the centre answer buttons
+       (Forgot / Got it) sit at the true horizontal centre of the bar. Without
+       this the wider left column (Garden + Edit) pushes them off-centre. */
+    width: 50%;
 
     @media (max-width: 583px) {
         display: none;

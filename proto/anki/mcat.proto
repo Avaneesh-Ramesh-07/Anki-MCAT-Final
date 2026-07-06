@@ -124,12 +124,14 @@ message PerformanceQueryResponse {
   repeated SectionPerformance sections = 2;
   // Collection-wide rollup (the performance-model headline).
   TopicPerformance overall = 3;
-  // Approximate total MCAT scaled score (472-528) summed across the four
-  // sections; only meaningful when !overall.abstain. Partial until all four
-  // sections are tested (see sections_tested) — never a full-exam claim.
+  // Total MCAT scaled score in [472, 528]: each of the four sections
+  // contributes its scaled score (118-132) when tested, or the 118 section
+  // minimum when untested/thin. Always a full-scale number — untested sections
+  // drag it toward the 472 floor (see sections_tested for how much of it is
+  // real evidence).
   uint32 scaled_total = 4;
   // How many of the four canonical sections have any evidence (0-4). Lets the
-  // dashboard show "X of 4 sections tested" and avoid faking a full score.
+  // dashboard show "X of 4 sections tested" alongside the floor-based score.
   uint32 sections_tested = 5;
 }
 

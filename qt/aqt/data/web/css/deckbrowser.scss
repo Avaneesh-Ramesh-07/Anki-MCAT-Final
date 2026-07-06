@@ -300,6 +300,31 @@ tr:hover:not(.top-level-drag-row) {
     margin: 0 auto;
     padding: 0.25rem 0.25rem 2rem;
 }
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 1.1rem;
+    padding: 0.45em 1.1em;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--canvas-elevated);
+    color: var(--fg);
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+
+    &:hover {
+        border-color: var(--button-primary-bg);
+        color: var(--button-primary-bg);
+        transform: translateY(-1px);
+    }
+}
 .garden-head {
     text-align: center;
     margin: 0.25rem auto 1.6rem;

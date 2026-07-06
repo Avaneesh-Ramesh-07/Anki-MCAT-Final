@@ -11,6 +11,8 @@ route only wraps/embeds them, never reimplements them.
 <script lang="ts">
     import "$lib/mcat/theme.scss";
 
+    import { bridgeCommand } from "@tslib/bridgecommand";
+
     import type { PageData } from "./$types";
 
     // Readiness dashboard (owned by the readiness route).
@@ -57,6 +59,7 @@ route only wraps/embeds them, never reimplements them.
 
 <div class="mcat stats-page">
     <div class="stats-shell">
+        <button class="home-btn" on:click={() => bridgeCommand("home")}>← Home</button>
         <h1>Statistics</h1>
 
         <details class="accordion" open>
@@ -133,6 +136,32 @@ route only wraps/embeds them, never reimplements them.
         display: flex;
         flex-direction: column;
         gap: clamp(1rem, 2.5vw, 1.75rem);
+    }
+
+    .home-btn {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.45em 1.1em;
+        border-radius: var(--mcat-radius-pill, 999px);
+        border: 1px solid var(--mcat-border);
+        background: var(--mcat-surface);
+        color: var(--mcat-ink);
+        font: inherit;
+        font-weight: 700;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition:
+            border-color 0.15s var(--mcat-ease),
+            color 0.15s var(--mcat-ease),
+            transform 0.15s var(--mcat-ease);
+
+        &:hover {
+            border-color: var(--mcat-sage-ink);
+            color: var(--mcat-sage-ink);
+            transform: translateY(-1px);
+        }
     }
 
     h1 {

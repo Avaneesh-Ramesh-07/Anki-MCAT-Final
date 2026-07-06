@@ -5,6 +5,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <script lang="ts">
     import type { GradeFreeResponseResponse } from "@generated/anki/mcat_pb";
 
+    import { formatSci } from "./sci-format";
     import type { FreeResponseQuestion } from "./types";
 
     export let question: FreeResponseQuestion;
@@ -68,7 +69,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 <div class="question" class:graded>
     <div class="stem">
         <span class="qnum">FR{index}</span>
-        <span id={promptId}>{question.prompt}</span>
+        <span id={promptId}>{formatSci(question.prompt)}</span>
     </div>
 
     <textarea
@@ -130,19 +131,19 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                                 <span class="cpts">
                                     {c.pointsAwarded}/{c.pointsPossible}
                                 </span>
-                                <span class="crat">{c.rationale}</span>
+                                <span class="crat">{formatSci(c.rationale)}</span>
                             </div>
                         {/each}
                     </div>
                     {#if grade.feedback}
                         <div class="fb">
                             <strong>Feedback:</strong>
-                            {grade.feedback}
+                            {formatSci(grade.feedback)}
                         </div>
                     {/if}
                     <div class="reference">
                         <strong>Reference answer:</strong>
-                        {question.reference_answer}
+                        {formatSci(question.reference_answer)}
                     </div>
                     <p class="caveat">
                         {#if gradedWithAi}
@@ -173,7 +174,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
                     {/if}
                     <div class="reference">
                         <strong>Reference answer (self-grade):</strong>
-                        {question.reference_answer}
+                        {formatSci(question.reference_answer)}
                     </div>
                     {#if grade && grade.error}
                         <details class="tech">
